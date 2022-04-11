@@ -5,6 +5,29 @@
                 "url": "assets/FufuSuperDino.png",
                 "type": "image",
                 "key": "FufuSuperDino"
+            },
+            {
+                "url": "assets/gamedevjs.PNG",
+                "type": "image",
+                "key": "gamedevjs"
+            },
+            {
+                "url": "assets/platformer_fun.json",
+                "type": "tilemapTiledJSON",
+                "key": "platformer_fun"
+            },
+            {
+                "url": "assets/tiles_packed.png",
+                "frameConfig": {
+                    "frameWidth": 32,
+                    "frameHeight": 32,
+                    "startFrame": 0,
+                    "endFrame": -1,
+                    "spacing": 0,
+                    "margin": 0
+                },
+                "type": "spritesheet",
+                "key": "tiles_packed"
             }
         ]
     },

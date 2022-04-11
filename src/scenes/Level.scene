@@ -7,7 +7,9 @@
         "preloadPackFiles": [],
         "createMethodName": "editorCreate",
         "sceneKey": "Level",
-        "compilerOutputLanguage": "TYPE_SCRIPT"
+        "compilerOutputLanguage": "TYPE_SCRIPT",
+        "borderWidth": 640,
+        "borderHeight": 360
     },
     "displayList": [
         {
@@ -15,11 +17,11 @@
             "id": "5c228da6-971a-4347-84e8-9f62464ba76d",
             "label": "text",
             "components": [],
-            "x": 400,
-            "y": 436,
+            "x": 456,
+            "y": 58,
             "originX": 0.5,
             "originY": 0.5,
-            "text": "Phaser 3 + Phaser Editor 2D\nVite + TypeScript",
+            "text": "Gamedev JS Game Jam\n2022",
             "align": "center",
             "fontFamily": "Arial",
             "fontSize": "3em"
@@ -30,13 +32,59 @@
             "label": "image",
             "components": [],
             "texture": {
-                "key": "FufuSuperDino"
+                "key": "gamedevjs"
             },
-            "x": 400,
-            "y": 243
+            "x": 132,
+            "y": 86
+        },
+        {
+            "type": "TilemapLayer",
+            "id": "1d5a6012-1d21-494e-ace5-8c458d5fc1d3",
+            "label": "ground_1",
+            "components": [],
+            "tilemapId": "f3f7a5e6-f129-4fb2-a88d-715a641466f5",
+            "layerName": "ground",
+            "tilesets": [
+                "pixelPlatformer"
+            ]
+        },
+        {
+            "type": "TilemapLayer",
+            "id": "17efc03c-5131-48cb-aaed-bbede89ca5b1",
+            "label": "block_1",
+            "components": [],
+            "tilemapId": "f3f7a5e6-f129-4fb2-a88d-715a641466f5",
+            "layerName": "block",
+            "tilesets": [
+                "pixelPlatformer"
+            ]
+        },
+        {
+            "type": "TilemapLayer",
+            "id": "98263cca-ac16-4d35-8fcb-61c4b26b0682",
+            "label": "water_1",
+            "components": [],
+            "tilemapId": "f3f7a5e6-f129-4fb2-a88d-715a641466f5",
+            "layerName": "water",
+            "tilesets": [
+                "pixelPlatformer"
+            ]
         }
     ],
-    "plainObjects": [],
+    "plainObjects": [
+        {
+            "id": "f3f7a5e6-f129-4fb2-a88d-715a641466f5",
+            "type": "Tilemap",
+            "label": "platformer_fun",
+            "key": "platformer_fun",
+            "tilesets": [
+                {
+                    "name": "pixelPlatformer",
+                    "imageKey": "tiles_packed"
+                }
+            ]
+        }
+    ],
     "meta": {
         "app": "Phaser Editor 2D - Scene Editor",
         "url": "https://phasereditor2d.com",
