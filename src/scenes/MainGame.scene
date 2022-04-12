@@ -1,24 +1,38 @@
 {
-  "id": "294ae7f0-1efa-4526-89da-9055c7164bac",
-  "settings": {
-    "compilerOutputLanguage": "TYPE_SCRIPT",
-    "javaScriptInitFieldsInConstructor": false,
-    "exportClass": true,
-    "autoImport": true,
-    "createMethodName": "editorCreate",
-    "compilerInsertSpaces": false,
-    "compilerTabSize": 4,
-    "borderWidth": 640,
-    "borderHeight": 360,
-    "borderX": 0,
-    "borderY": 0,
-    "sceneKey": "MainGame"
-  },
-  "sceneType": "SCENE",
-  "displayList": [],
-  "meta": {
-    "app": "Phaser Editor 2D - Scene Editor",
-    "url": "https://phasereditor2d.com",
-    "contentType": "phasereditor2d.core.scene.SceneContentType"
-  }
+    "id": "294ae7f0-1efa-4526-89da-9055c7164bac",
+    "sceneType": "SCENE",
+    "settings": {
+        "exportClass": true,
+        "autoImport": true,
+        "preloadPackFiles": [],
+        "createMethodName": "editorCreate",
+        "sceneKey": "MainGame",
+        "compilerOutputLanguage": "TYPE_SCRIPT",
+        "borderWidth": 640,
+        "borderHeight": 360
+    },
+    "displayList": [
+        {
+            "type": "Sprite",
+            "id": "db236369-aab0-4df0-95f0-becc8001d74a",
+            "label": "sprite_1",
+            "scope": "PUBLIC",
+            "components": [],
+            "texture": {
+                "key": "493-export",
+                "frame": 1
+            },
+            "x": 320,
+            "y": 180,
+            "scaleX": 0.5,
+            "scaleY": 0.5
+        }
+    ],
+    "plainObjects": [],
+    "meta": {
+        "app": "Phaser Editor 2D - Scene Editor",
+        "url": "https://phasereditor2d.com",
+        "contentType": "phasereditor2d.core.scene.SceneContentType",
+        "version": 3
+    }
 }
