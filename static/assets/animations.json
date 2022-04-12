@@ -1,76 +1,12 @@
 {
     "anims": [
         {
-            "key": "green-walk,yellow-walk,enemy",
+            "key": "left-idle",
             "type": "frame",
             "frames": [
                 {
-                    "key": "characters_packed",
-                    "frame": 0,
-                    "duration": 0,
-                    "keyframe": false
-                },
-                {
-                    "key": "characters_packed",
+                    "key": "493-export",
                     "frame": 1,
-                    "duration": 0,
-                    "keyframe": false
-                }
-            ],
-            "frameRate": 6,
-            "skipMissedFrames": true,
-            "repeat": -1,
-            "showOnStart": true
-        },
-        {
-            "key": "yellow-walk",
-            "type": "frame",
-            "frames": [
-                {
-                    "key": "characters_packed",
-                    "frame": 9,
-                    "duration": 0,
-                    "keyframe": false
-                },
-                {
-                    "key": "characters_packed",
-                    "frame": 10,
-                    "duration": 0,
-                    "keyframe": false
-                }
-            ],
-            "frameRate": 6,
-            "skipMissedFrames": true,
-            "repeat": -1
-        },
-        {
-            "key": "enemy",
-            "type": "frame",
-            "frames": [
-                {
-                    "key": "characters_packed",
-                    "frame": 18,
-                    "duration": 0,
-                    "keyframe": false
-                },
-                {
-                    "key": "characters_packed",
-                    "frame": 19,
-                    "duration": 0,
-                    "keyframe": false
-                }
-            ],
-            "frameRate": 6,
-            "skipMissedFrames": true,
-            "repeat": -1
-        },
-        {
-            "key": "small-closed",
-            "type": "frame",
-            "frames": [
-                {
-                    "key": "characters_packed",
-                    "frame": 20,
                     "duration": 0,
                     "keyframe": false
                 }
@@ -80,53 +16,52 @@
             "repeat": -1
         },
         {
-            "key": "drill-walk",
+            "key": "right-idle",
             "type": "frame",
             "frames": [
                 {
-                    "key": "characters_packed",
-                    "frame": 15,
-                    "duration": 0,
-                    "keyframe": false
-                },
-                {
-                    "key": "characters_packed",
-                    "frame": 16,
+                    "key": "493-export",
+                    "frame": 2,
                     "duration": 0,
                     "keyframe": false
                 }
             ],
-            "frameRate": 6,
+            "frameRate": 24,
             "skipMissedFrames": true,
             "repeat": -1
         },
         {
-            "key": "bat-fly",
+            "key": "left-walk",
             "type": "frame",
             "frames": [
                 {
-                    "key": "characters_packed",
-                    "frame": 24,
+                    "key": "493-export",
+                    "frame": 8,
                     "duration": 0,
                     "keyframe": false
                 },
                 {
-                    "key": "characters_packed",
-                    "frame": 25,
+                    "key": "493-export",
+                    "frame": 9,
                     "duration": 0,
                     "keyframe": false
                 },
                 {
-                    "key": "characters_packed",
-                    "frame": 26,
+                    "key": "493-export",
+                    "frame": 10,
+                    "duration": 0,
+                    "keyframe": false
+                },
+                {
+                    "key": "493-export",
+                    "frame": 11,
                     "duration": 0,
                     "keyframe": false
                 }
             ],
-            "frameRate": 6,
+            "frameRate": 3,
             "skipMissedFrames": true,
-            "repeat": -1,
-            "yoyo": true
+            "repeat": -1
         }
     ],
     "globalTimeScale": 1,
