@@ -2,6 +2,24 @@
     "section1": {
         "files": [
             {
+                "url": "assets/493-export.png",
+                "frameConfig": {
+                    "frameWidth": 320,
+                    "frameHeight": 320,
+                    "startFrame": 0,
+                    "endFrame": -1,
+                    "spacing": 0,
+                    "margin": 0
+                },
+                "type": "spritesheet",
+                "key": "493-export"
+            },
+            {
+                "url": "assets/animations.json",
+                "type": "animation",
+                "key": "animations"
+            },
+            {
                 "url": "assets/FufuSuperDino.png",
                 "type": "image",
                 "key": "FufuSuperDino"

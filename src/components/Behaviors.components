@@ -11,6 +11,23 @@
             "baseClass": "UserComponent",
             "gameObjectType": "Phaser.GameObjects.Text",
             "properties": []
+        },
+        {
+            "name": "Movement",
+            "baseClass": "UserComponent",
+            "gameObjectType": "Phaser.GameObjects.Sprite",
+            "properties": [
+                {
+                    "name": "speed",
+                    "label": "speed",
+                    "tooltip": "spd",
+                    "defValue": 10,
+                    "customDefinition": false,
+                    "type": {
+                        "id": "number"
+                    }
+                }
+            ]
         }
     ],
     "meta": {
