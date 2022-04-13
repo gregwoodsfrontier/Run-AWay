@@ -40,13 +40,22 @@ export default class Level extends Phaser.Scene {
 		// water_1
 		platformer_fun.createLayer("water", ["pixelPlatformer"], 0, 0);
 
+		// player
+		const player = this.add.sprite(150, 200, "493-export", 2);
+		player.name = "player";
+		player.scaleX = 0.28;
+		player.scaleY = 0.28;
+
+		this.player = player;
 		this.platformer_fun = platformer_fun;
 
 		this.events.emit("scene-awake");
 	}
 
-	/* START-USER-CODE */
+	public player!: Phaser.GameObjects.Sprite;
 
+	/* START-USER-CODE */
+	public platformer_fun!: Phaser.Tilemaps.Tilemap
 	// Write your code here
 
 	preload()
@@ -57,6 +66,7 @@ export default class Level extends Phaser.Scene {
 	create() {
 
 		this.editorCreate();
+
 	}
 
 	/* END-USER-CODE */

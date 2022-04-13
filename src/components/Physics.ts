@@ -5,33 +5,33 @@
 
 import UserComponent from "./UserComponent";
 import Phaser from "phaser";
+/* START-USER-IMPORTS */
+/* END-USER-IMPORTS */
 
 export default class Physics extends UserComponent {
-	
-	constructor(gameObject: Phaser.GameObjects.Sprite) {
+
+	constructor(gameObject: Phaser.GameObjects.Image) {
 		super(gameObject);
-		
+
 		this.gameObject = gameObject;
 		(gameObject as any)["__Physics"] = this;
-		
+
 		/* START-USER-CTR-CODE */
-		//const scene = this.gameObject.scene
-		//scene.events.once(Phaser.Scenes.Events.UPDATE, this.start, this)
-		
+		// Write your code here.
 		/* END-USER-CTR-CODE */
 	}
-	
-	static getComponent(gameObject: Phaser.GameObjects.Sprite): Physics {
+
+	static getComponent(gameObject: Phaser.GameObjects.Image): Physics {
 		return (gameObject as any)["__Physics"];
 	}
-	
-	private gameObject: Phaser.GameObjects.Sprite;
+
+	private gameObject: Phaser.GameObjects.Image;
 	public static: boolean = false;
 	public width: number = 0;
 	public height: number = 0;
 	public offsetX: number = 0;
 	public offsetY: number = 0;
-	
+
 	/* START-USER-CODE */
 	start()
 	{
@@ -42,7 +42,6 @@ export default class Physics extends UserComponent {
 		body.setSize(this.width, this.height)
 		body.setOffset(this.offsetX, this.offsetY)
 	}
-
 	/* END-USER-CODE */
 }
 

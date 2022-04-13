@@ -3,29 +3,35 @@
 
 /* START OF COMPILED CODE */
 
+import UserComponent from "./UserComponent";
 import Phaser from "phaser";
+/* START-USER-IMPORTS */
+/* END-USER-IMPORTS */
 
-export default class Movement {
-	
+export default class Movement extends UserComponent {
+
 	constructor(gameObject: Phaser.GameObjects.Sprite) {
+		super(gameObject);
+
 		this.gameObject = gameObject;
 		(gameObject as any)["__Movement"] = this;
-		
+
 		/* START-USER-CTR-CODE */
 		const scene = this.gameObject.scene;
-		
+
 
 		// each time the scene is updated, call the `update` method
         scene.events.on(Phaser.Scenes.Events.UPDATE, this.update, this);
 		/* END-USER-CTR-CODE */
 	}
-	
+
 	static getComponent(gameObject: Phaser.GameObjects.Sprite): Movement {
 		return (gameObject as any)["__Movement"];
 	}
-	
+
 	private gameObject: Phaser.GameObjects.Sprite;
-	
+	public speed: number = 10;
+
 	/* START-USER-CODE */
 	update()
 	{

@@ -69,6 +69,22 @@
             "tilesets": [
                 "pixelPlatformer"
             ]
+        },
+        {
+            "type": "Sprite",
+            "id": "4ee8e452-0e59-4290-9e05-84a32b9d471f",
+            "label": "player",
+            "useGameObjectName": true,
+            "scope": "PUBLIC",
+            "components": [],
+            "texture": {
+                "key": "493-export",
+                "frame": 2
+            },
+            "x": 150,
+            "y": 200,
+            "scaleX": 0.28,
+            "scaleY": 0.28
         }
     ],
     "plainObjects": [
