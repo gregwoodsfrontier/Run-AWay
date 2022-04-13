@@ -11,7 +11,7 @@
                     "keyframe": false
                 }
             ],
-            "frameRate": 1,
+            "frameRate": 24,
             "skipMissedFrames": true,
             "repeat": -1
         },
@@ -59,7 +59,40 @@
                     "keyframe": false
                 }
             ],
-            "frameRate": 3,
+            "frameRate": 6,
+            "skipMissedFrames": true,
+            "repeat": -1
+        },
+        {
+            "key": "right-walk",
+            "type": "frame",
+            "frames": [
+                {
+                    "key": "493-export",
+                    "frame": 12,
+                    "duration": 0,
+                    "keyframe": false
+                },
+                {
+                    "key": "493-export",
+                    "frame": 13,
+                    "duration": 0,
+                    "keyframe": false
+                },
+                {
+                    "key": "493-export",
+                    "frame": 14,
+                    "duration": 0,
+                    "keyframe": false
+                },
+                {
+                    "key": "493-export",
+                    "frame": 15,
+                    "duration": 0,
+                    "keyframe": false
+                }
+            ],
+            "frameRate": 6,
             "skipMissedFrames": true,
             "repeat": -1
         }

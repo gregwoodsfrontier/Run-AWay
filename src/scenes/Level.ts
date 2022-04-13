@@ -3,6 +3,8 @@
 /* START OF COMPILED CODE */
 
 import Phaser from "phaser";
+import Physics from "../components/Physics";
+import Movement from "../components/Movement";
 /* START-USER-IMPORTS */
 /* END-USER-IMPORTS */
 
@@ -46,6 +48,12 @@ export default class Level extends Phaser.Scene {
 		player.scaleX = 0.28;
 		player.scaleY = 0.28;
 
+		// player (components)
+		const playerPhysics = new Physics(player);
+		playerPhysics.width = 320;
+		playerPhysics.height = 320;
+		new Movement(player);
+
 		this.player = player;
 		this.platformer_fun = platformer_fun;
 
@@ -66,7 +74,7 @@ export default class Level extends Phaser.Scene {
 	create() {
 
 		this.editorCreate();
-
+		this.player.play('right-idle')
 	}
 
 	/* END-USER-CODE */

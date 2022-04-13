@@ -76,7 +76,12 @@
             "label": "player",
             "useGameObjectName": true,
             "scope": "PUBLIC",
-            "components": [],
+            "components": [
+                "Physics",
+                "Movement"
+            ],
+            "Physics.width": 320,
+            "Physics.height": 320,
             "texture": {
                 "key": "493-export",
                 "frame": 2

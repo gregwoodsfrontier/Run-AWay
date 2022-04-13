@@ -55,14 +55,14 @@ export default class Movement extends UserComponent {
 		if (cursors.left.isDown)
 		{
 			body.setVelocity(-speed, 0)
-			player.play('player-walk-left', true)
+			player.play('left-walk', true)
 		}
 		else if (cursors.right.isDown)
 		{
 			body.setVelocity(speed, 0)
-			player.play('player-walk-right', true)
+			player.play('right-walk', true)
 		}
-		else if (cursors.up.isDown)
+		/* else if (cursors.up.isDown)
 		{
 			body.setVelocity(0, -speed)
 			player.play('player-walk-up', true)
@@ -71,14 +71,14 @@ export default class Movement extends UserComponent {
 		{
 			body.setVelocity(0, speed)
 			player.play('player-walk-down', true)
-		}
+		} */
 		else
 		{
 			body.setVelocity(0, 0)
 			const key = player.anims.currentAnim.key
 			const parts = key.split('-')
-			const direction = parts[2]
-			player.play(`player-idle-${direction}`)
+			const direction = parts[0]
+			player.play(`${direction}-idle`)
 		}
 	}
 
