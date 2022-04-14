@@ -8,43 +8,10 @@
         "createMethodName": "editorCreate",
         "sceneKey": "Level",
         "compilerOutputLanguage": "TYPE_SCRIPT",
-        "borderWidth": 640,
-        "borderHeight": 360
+        "borderWidth": 360,
+        "borderHeight": 640
     },
     "displayList": [
-        {
-            "type": "TilemapLayer",
-            "id": "1d5a6012-1d21-494e-ace5-8c458d5fc1d3",
-            "label": "ground_1",
-            "components": [],
-            "tilemapId": "f3f7a5e6-f129-4fb2-a88d-715a641466f5",
-            "layerName": "ground",
-            "tilesets": [
-                "pixelPlatformer"
-            ]
-        },
-        {
-            "type": "TilemapLayer",
-            "id": "17efc03c-5131-48cb-aaed-bbede89ca5b1",
-            "label": "block_1",
-            "components": [],
-            "tilemapId": "f3f7a5e6-f129-4fb2-a88d-715a641466f5",
-            "layerName": "block",
-            "tilesets": [
-                "pixelPlatformer"
-            ]
-        },
-        {
-            "type": "TilemapLayer",
-            "id": "98263cca-ac16-4d35-8fcb-61c4b26b0682",
-            "label": "water_1",
-            "components": [],
-            "tilemapId": "f3f7a5e6-f129-4fb2-a88d-715a641466f5",
-            "layerName": "water",
-            "tilesets": [
-                "pixelPlatformer"
-            ]
-        },
         {
             "type": "Sprite",
             "id": "4ee8e452-0e59-4290-9e05-84a32b9d471f",
@@ -61,26 +28,13 @@
                 "key": "493-export",
                 "frame": 2
             },
-            "x": 150,
-            "y": 200,
+            "x": 180,
+            "y": 320,
             "scaleX": 0.28,
             "scaleY": 0.28
         }
     ],
-    "plainObjects": [
-        {
-            "id": "f3f7a5e6-f129-4fb2-a88d-715a641466f5",
-            "type": "Tilemap",
-            "label": "platformer_fun",
-            "key": "platformer_fun",
-            "tilesets": [
-                {
-                    "name": "pixelPlatformer",
-                    "imageKey": "tiles_packed"
-                }
-            ]
-        }
-    ],
+    "plainObjects": [],
     "meta": {
         "app": "Phaser Editor 2D - Scene Editor",
         "url": "https://phasereditor2d.com",

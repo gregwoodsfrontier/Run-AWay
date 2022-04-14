@@ -20,21 +20,8 @@ export default class Level extends Phaser.Scene {
 
 	editorCreate(): void {
 
-		// platformer_fun
-		const platformer_fun = this.add.tilemap("platformer_fun");
-		platformer_fun.addTilesetImage("pixelPlatformer", "tiles_packed");
-
-		// ground_1
-		platformer_fun.createLayer("ground", ["pixelPlatformer"], 0, 0);
-
-		// block_1
-		platformer_fun.createLayer("block", ["pixelPlatformer"], 0, 0);
-
-		// water_1
-		platformer_fun.createLayer("water", ["pixelPlatformer"], 0, 0);
-
 		// player
-		const player = this.add.sprite(150, 200, "493-export", 2);
+		const player = this.add.sprite(180, 320, "493-export", 2);
 		player.name = "player";
 		player.scaleX = 0.28;
 		player.scaleY = 0.28;
@@ -46,7 +33,6 @@ export default class Level extends Phaser.Scene {
 		new Movement(player);
 
 		this.player = player;
-		this.platformer_fun = platformer_fun;
 
 		this.events.emit("scene-awake");
 	}
