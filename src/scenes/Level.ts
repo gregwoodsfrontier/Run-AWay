@@ -24,15 +24,6 @@ export default class Level extends Phaser.Scene {
 		const platformer_fun = this.add.tilemap("platformer_fun");
 		platformer_fun.addTilesetImage("pixelPlatformer", "tiles_packed");
 
-		// text
-		const text = this.add.text(456, 58, "", {});
-		text.setOrigin(0.5, 0.5);
-		text.text = "Gamedev JS Game Jam\n2022";
-		text.setStyle({ "align": "center", "fontFamily": "Arial", "fontSize": "3em" });
-
-		// image
-		this.add.image(132, 86, "gamedevjs");
-
 		// ground_1
 		platformer_fun.createLayer("ground", ["pixelPlatformer"], 0, 0);
 
