@@ -41,6 +41,7 @@ export default class Physics extends UserComponent {
 		const body = this.gameObject.body as Phaser.Physics.Arcade.Body
 		body.setSize(this.width, this.height)
 		body.setOffset(this.offsetX, this.offsetY)
+		body.setCollideWorldBounds()
 	}
 	/* END-USER-CODE */
 }

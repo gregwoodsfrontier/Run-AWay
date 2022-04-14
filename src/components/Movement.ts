@@ -62,16 +62,16 @@ export default class Movement extends UserComponent {
 			body.setVelocity(speed, 0)
 			player.play('right-walk', true)
 		}
-		/* else if (cursors.up.isDown)
+		else if (cursors.up.isDown)
 		{
 			body.setVelocity(0, -speed)
-			player.play('player-walk-up', true)
+			player.play('back-walk', true)
 		}
 		else if (cursors.down.isDown)
 		{
 			body.setVelocity(0, speed)
-			player.play('player-walk-down', true)
-		} */
+			player.play('front-walk', true)
+		}
 		else
 		{
 			body.setVelocity(0, 0)

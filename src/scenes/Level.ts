@@ -3,8 +3,8 @@
 /* START OF COMPILED CODE */
 
 import Phaser from "phaser";
-import Physics from "../components/Physics";
 import Movement from "../components/Movement";
+import Physics from "../components/Physics";
 /* START-USER-IMPORTS */
 /* END-USER-IMPORTS */
 
@@ -21,16 +21,11 @@ export default class Level extends Phaser.Scene {
 	editorCreate(): void {
 
 		// player
-		const player = this.add.sprite(180, 320, "493-export", 2);
-		player.name = "player";
-		player.scaleX = 0.28;
-		player.scaleY = 0.28;
+		const player = this.add.sprite(180, 283, "your-dude", 2);
 
 		// player (components)
-		const playerPhysics = new Physics(player);
-		playerPhysics.width = 320;
-		playerPhysics.height = 320;
 		new Movement(player);
+		new Physics(player);
 
 		this.player = player;
 

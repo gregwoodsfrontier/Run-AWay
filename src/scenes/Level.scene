@@ -14,24 +14,19 @@
     "displayList": [
         {
             "type": "Sprite",
-            "id": "4ee8e452-0e59-4290-9e05-84a32b9d471f",
+            "id": "42b95460-e481-4d5a-a546-36ecd30eebd5",
             "label": "player",
-            "useGameObjectName": true,
             "scope": "PUBLIC",
             "components": [
-                "Physics",
-                "Movement"
+                "Movement",
+                "Physics"
             ],
-            "Physics.width": 320,
-            "Physics.height": 320,
             "texture": {
-                "key": "493-export",
+                "key": "your-dude",
                 "frame": 2
             },
             "x": 180,
-            "y": 320,
-            "scaleX": 0.28,
-            "scaleY": 0.28
+            "y": 283
         }
     ],
     "plainObjects": [],
