@@ -167,6 +167,54 @@
             "baseClass": "",
             "gameObjectType": "Phaser.GameObjects.Sprite",
             "properties": []
+        },
+        {
+            "name": "FollowTarget",
+            "baseClass": "UserComponent",
+            "gameObjectType": "Phaser.GameObjects.Sprite",
+            "properties": [
+                {
+                    "name": "target",
+                    "label": "target",
+                    "tooltip": "target",
+                    "defValue": "",
+                    "customDefinition": false,
+                    "type": {
+                        "id": "object-var",
+                        "expressionType": "Phaser.GameObjects.Sprite"
+                    }
+                },
+                {
+                    "name": "range",
+                    "label": "range",
+                    "tooltip": "range",
+                    "defValue": 35,
+                    "customDefinition": false,
+                    "type": {
+                        "id": "number"
+                    }
+                },
+                {
+                    "name": "deadRangeX",
+                    "label": "deadRangeX",
+                    "tooltip": "deadRangeX",
+                    "defValue": 15,
+                    "customDefinition": false,
+                    "type": {
+                        "id": "number"
+                    }
+                },
+                {
+                    "name": "deadRangeY",
+                    "label": "deadRangeY",
+                    "tooltip": "deadRangeY",
+                    "defValue": 60,
+                    "customDefinition": false,
+                    "type": {
+                        "id": "number"
+                    }
+                }
+            ]
         }
     ],
     "meta": {
