@@ -8,8 +8,8 @@
         "createMethodName": "editorCreate",
         "sceneKey": "Bootstrap",
         "compilerOutputLanguage": "TYPE_SCRIPT",
-        "borderWidth": 640,
-        "borderHeight": 360
+        "borderWidth": 320,
+        "borderHeight": 640
     },
     "displayList": [
         {

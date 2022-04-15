@@ -20,6 +20,24 @@
                 "key": "animations"
             },
             {
+                "url": "assets/cave-test-map-1.json",
+                "type": "tilemapTiledJSON",
+                "key": "cave-test-map-1"
+            },
+            {
+                "url": "assets/cave-test-tileset-1.png",
+                "frameConfig": {
+                    "frameWidth": 32,
+                    "frameHeight": 32,
+                    "startFrame": 0,
+                    "endFrame": -1,
+                    "spacing": 0,
+                    "margin": 0
+                },
+                "type": "spritesheet",
+                "key": "cave-test-tileset-1"
+            },
+            {
                 "url": "assets/FufuSuperDino.png",
                 "type": "image",
                 "key": "FufuSuperDino"
