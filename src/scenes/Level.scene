@@ -44,7 +44,32 @@
             "label": "player",
             "scope": "PUBLIC",
             "components": [
-                "Movement",
+                "Physics",
+                "KeyboardInput",
+                "JustMovement",
+                "Animation"
+            ],
+            "Physics.width": 32,
+            "Physics.height": 40,
+            "Physics.offsetX": 16,
+            "Physics.offsetY": 26,
+            "JustMovement.speed": 100,
+            "Animation.frontWalk": "dude-front-walk",
+            "Animation.backWalk": "dude-back-walk",
+            "Animation.leftWalk": "dude-left-walk",
+            "Animation.rightWalk": "dude-right-walk",
+            "texture": {
+                "key": "dude-front-walk-1"
+            },
+            "x": 160,
+            "y": 175
+        },
+        {
+            "type": "Sprite",
+            "id": "115cc89a-9068-4fc3-9ca0-09682c7d0b1e",
+            "label": "enemy",
+            "scope": "CLASS",
+            "components": [
                 "Physics"
             ],
             "Physics.width": 32,
@@ -52,10 +77,10 @@
             "Physics.offsetX": 16,
             "Physics.offsetY": 32,
             "texture": {
-                "key": "swarm-right-walk-1"
+                "key": "swarm-front-walk-1"
             },
-            "x": 158,
-            "y": 144
+            "x": 136,
+            "y": 71
         }
     ],
     "plainObjects": [
@@ -77,5 +102,14 @@
         "url": "https://phasereditor2d.com",
         "contentType": "phasereditor2d.core.scene.SceneContentType",
         "version": 3
-    }
+    },
+    "lists": [
+        {
+            "id": "97ea1992-d8cd-43db-92a5-734f0b5c68b4",
+            "label": "enemyTeam",
+            "objectIds": [
+                "115cc89a-9068-4fc3-9ca0-09682c7d0b1e"
+            ]
+        }
+    ]
 }
