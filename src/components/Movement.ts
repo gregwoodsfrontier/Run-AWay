@@ -55,30 +55,31 @@ export default class Movement extends UserComponent {
 		if (cursors.left.isDown)
 		{
 			body.setVelocity(-speed, 0)
-			player.play('left-walk', true)
+			player.play('swarm-left-walk', true)
 		}
 		else if (cursors.right.isDown)
 		{
 			body.setVelocity(speed, 0)
-			player.play('right-walk', true)
+			player.play('swarm-right-walk', true)
 		}
 		else if (cursors.up.isDown)
 		{
 			body.setVelocity(0, -speed)
-			player.play('back-walk', true)
+			player.play('swarm-back-walk', true)
 		}
 		else if (cursors.down.isDown)
 		{
 			body.setVelocity(0, speed)
-			player.play('front-walk', true)
+			player.play('swarm-front-walk', true)
 		}
 		else
 		{
 			body.setVelocity(0, 0)
 			const key = player.anims.currentAnim.key
 			const parts = key.split('-')
-			const direction = parts[0]
-			player.play(`${direction}-idle`)
+			const char = parts[0]
+			const direction = parts[1]
+			player.play(`${char}-${direction}-idle`)
 		}
 	}
 

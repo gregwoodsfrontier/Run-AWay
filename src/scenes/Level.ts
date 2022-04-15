@@ -32,7 +32,7 @@ export default class Level extends Phaser.Scene {
 		const wall_1 = cave_test_map_1.createLayer("wall", ["Gamdev jam cate tiles test 1"], 0, 0);
 
 		// player
-		const player = this.add.sprite(158, 144, "your-dude", 2);
+		const player = this.add.sprite(158, 144, "swarm-right-walk-1");
 
 		// wall_1 (components)
 		new TileMapLayerPhysics(wall_1);
@@ -69,7 +69,7 @@ export default class Level extends Phaser.Scene {
 	create() {
 
 		this.editorCreate();
-		this.player.play('right-idle')
+		this.player.play('swarm-right-idle')
 
 		this.physics.add.collider(this.player, this.wall_1);
 	}
