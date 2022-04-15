@@ -91,6 +91,12 @@
             "baseClass": "UserComponent",
             "gameObjectType": "Phaser.Tilemaps.TilemapLayer",
             "properties": []
+        },
+        {
+            "name": "Enemy",
+            "baseClass": "",
+            "gameObjectType": "Phaser.GameObjects.Sprite",
+            "properties": []
         }
     ],
     "meta": {

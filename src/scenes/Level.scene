@@ -55,8 +55,59 @@
                 "key": "your-dude",
                 "frame": 2
             },
-            "x": 158,
-            "y": 144
+            "x": 160,
+            "y": 493
+        },
+        {
+            "type": "Sprite",
+            "id": "5820927d-697a-464f-8225-73d09e81c7bf",
+            "label": "swarm",
+            "scope": "CLASS",
+            "components": [
+                "Physics"
+            ],
+            "texture": {
+                "key": "493-export",
+                "frame": 1
+            },
+            "x": 129,
+            "y": 89,
+            "scaleX": 0.15,
+            "scaleY": 0.15
+        },
+        {
+            "type": "Sprite",
+            "id": "c4b3ce47-9ef0-430c-b2d5-c17b0da324e2",
+            "label": "swarm_1",
+            "scope": "CLASS",
+            "components": [
+                "Physics"
+            ],
+            "texture": {
+                "key": "493-export",
+                "frame": 1
+            },
+            "x": 197,
+            "y": 96,
+            "scaleX": 0.15,
+            "scaleY": 0.15
+        },
+        {
+            "type": "Sprite",
+            "id": "d8cda082-e148-49da-b295-be043a90ca1d",
+            "label": "swarm_1_1",
+            "scope": "CLASS",
+            "components": [
+                "Physics"
+            ],
+            "texture": {
+                "key": "493-export",
+                "frame": 1
+            },
+            "x": 157,
+            "y": 177,
+            "scaleX": 0.15,
+            "scaleY": 0.15
         }
     ],
     "plainObjects": [
@@ -78,5 +129,16 @@
         "url": "https://phasereditor2d.com",
         "contentType": "phasereditor2d.core.scene.SceneContentType",
         "version": 3
-    }
+    },
+    "lists": [
+        {
+            "id": "9fe7840c-10b1-433a-a4a1-40655f357dac",
+            "label": "Swarms",
+            "objectIds": [
+                "5820927d-697a-464f-8225-73d09e81c7bf",
+                "c4b3ce47-9ef0-430c-b2d5-c17b0da324e2",
+                "d8cda082-e148-49da-b295-be043a90ca1d"
+            ]
+        }
+    ]
 }
