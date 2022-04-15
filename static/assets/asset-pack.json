@@ -48,6 +48,32 @@
                 "key": "gamedevjs"
             },
             {
+                "url": "assets/SWARM_V1.png",
+                "frameConfig": {
+                    "frameWidth": 64,
+                    "frameHeight": 64,
+                    "startFrame": 0,
+                    "endFrame": -1,
+                    "spacing": 0,
+                    "margin": 0
+                },
+                "type": "spritesheet",
+                "key": "SWARM_V1"
+            },
+            {
+                "url": "assets/Temp_Boss_V1.png",
+                "frameConfig": {
+                    "frameWidth": 64,
+                    "frameHeight": 64,
+                    "startFrame": 0,
+                    "endFrame": -1,
+                    "spacing": 0,
+                    "margin": 0
+                },
+                "type": "spritesheet",
+                "key": "Temp_Boss_V1"
+            },
+            {
                 "url": "assets/test-tile-set.png",
                 "frameConfig": {
                     "frameWidth": 32,
