@@ -7,10 +7,10 @@ import Phaser from "phaser";
 /* START-USER-IMPORTS */
 /* END-USER-IMPORTS */
 
-export default class MainGame extends Phaser.Scene {
+export default class Bootstrap extends Phaser.Scene {
 
 	constructor() {
-		super("MainGame");
+		super("Bootstrap");
 
 		/* START-USER-CTR-CODE */
 		// Write your code here.
@@ -19,17 +19,16 @@ export default class MainGame extends Phaser.Scene {
 
 	editorCreate(): void {
 
-		// sprite_1
-		const sprite_1 = this.add.sprite(320, 180, "493-export", 1);
-		sprite_1.scaleX = 0.5;
-		sprite_1.scaleY = 0.5;
-
-		this.sprite_1 = sprite_1;
+		// image_1
+		const image_1 = this.add.image(320, 180, "FufuSuperDino");
+		image_1.alpha = 0;
+		image_1.alphaTopLeft = 0;
+		image_1.alphaTopRight = 0;
+		image_1.alphaBottomLeft = 0;
+		image_1.alphaBottomRight = 0;
 
 		this.events.emit("scene-awake");
 	}
-
-	public sprite_1!: Phaser.GameObjects.Sprite;
 
 	/* START-USER-CODE */
 
@@ -38,6 +37,18 @@ export default class MainGame extends Phaser.Scene {
 	create() {
 
 		this.editorCreate();
+		this.createNewGame()
+	}
+
+	private startTitleScene()
+	{
+		this.scene.launch("Title")
+	}
+
+	private createNewGame()
+	{
+		console.log('new game')
+		this.scene.launch("Level")
 	}
 
 	/* END-USER-CODE */

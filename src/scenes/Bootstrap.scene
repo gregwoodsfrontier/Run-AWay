@@ -1,31 +1,32 @@
 {
-    "id": "294ae7f0-1efa-4526-89da-9055c7164bac",
+    "id": "942c9f53-344f-4172-a3dd-3cb5529a9fca",
     "sceneType": "SCENE",
     "settings": {
         "exportClass": true,
         "autoImport": true,
         "preloadPackFiles": [],
         "createMethodName": "editorCreate",
-        "sceneKey": "MainGame",
+        "sceneKey": "Bootstrap",
         "compilerOutputLanguage": "TYPE_SCRIPT",
-        "borderWidth": 640,
-        "borderHeight": 360
+        "borderWidth": 320,
+        "borderHeight": 640
     },
     "displayList": [
         {
-            "type": "Sprite",
-            "id": "db236369-aab0-4df0-95f0-becc8001d74a",
-            "label": "sprite_1",
-            "scope": "PUBLIC",
+            "type": "Image",
+            "id": "f8d8c539-0f73-4af1-b584-8be5b86e59c0",
+            "label": "image_1",
             "components": [],
             "texture": {
-                "key": "493-export",
-                "frame": 1
+                "key": "FufuSuperDino"
             },
             "x": 320,
             "y": 180,
-            "scaleX": 0.5,
-            "scaleY": 0.5
+            "alpha": 0,
+            "alphaTopLeft": 0,
+            "alphaTopRight": 0,
+            "alphaBottomLeft": 0,
+            "alphaBottomRight": 0
         }
     ],
     "plainObjects": [],

@@ -28,6 +28,69 @@
                     }
                 }
             ]
+        },
+        {
+            "name": "Physics",
+            "baseClass": "UserComponent",
+            "gameObjectType": "Phaser.GameObjects.Image",
+            "properties": [
+                {
+                    "name": "static",
+                    "label": "static",
+                    "tooltip": "static",
+                    "defValue": false,
+                    "customDefinition": false,
+                    "type": {
+                        "id": "boolean"
+                    }
+                },
+                {
+                    "name": "width",
+                    "label": "width",
+                    "tooltip": "width",
+                    "defValue": 0,
+                    "customDefinition": false,
+                    "type": {
+                        "id": "number"
+                    }
+                },
+                {
+                    "name": "height",
+                    "label": "height",
+                    "tooltip": "height",
+                    "defValue": 0,
+                    "customDefinition": false,
+                    "type": {
+                        "id": "number"
+                    }
+                },
+                {
+                    "name": "offsetX",
+                    "label": "offsetX",
+                    "tooltip": "offsetX",
+                    "defValue": 0,
+                    "customDefinition": false,
+                    "type": {
+                        "id": "number"
+                    }
+                },
+                {
+                    "name": "offsetY",
+                    "label": "offsetY",
+                    "tooltip": "offsetY",
+                    "defValue": 0,
+                    "customDefinition": false,
+                    "type": {
+                        "id": "number"
+                    }
+                }
+            ]
+        },
+        {
+            "name": "TileMapLayerPhysics",
+            "baseClass": "UserComponent",
+            "gameObjectType": "Phaser.Tilemaps.TilemapLayer",
+            "properties": []
         }
     ],
     "meta": {

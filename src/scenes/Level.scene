@@ -8,79 +8,67 @@
         "createMethodName": "editorCreate",
         "sceneKey": "Level",
         "compilerOutputLanguage": "TYPE_SCRIPT",
-        "borderWidth": 640,
-        "borderHeight": 360
+        "borderWidth": 320,
+        "borderHeight": 640
     },
     "displayList": [
         {
-            "type": "Text",
-            "id": "5c228da6-971a-4347-84e8-9f62464ba76d",
-            "label": "text",
+            "type": "TilemapLayer",
+            "id": "1edc09cf-1d5b-49df-ae2b-9d0b10c8b0be",
+            "label": "floor_1",
+            "scope": "CLASS",
             "components": [],
-            "x": 456,
-            "y": 58,
-            "originX": 0.5,
-            "originY": 0.5,
-            "text": "Gamedev JS Game Jam\n2022",
-            "align": "center",
-            "fontFamily": "Arial",
-            "fontSize": "3em"
+            "tilemapId": "fd3e5dbc-cd6f-447a-9b6b-34fee3410aaa",
+            "layerName": "floor",
+            "tilesets": [
+                "Gamdev jam cate tiles test 1"
+            ]
         },
         {
-            "type": "Image",
-            "id": "e76c3dfa-1a98-4174-a50e-d25a2aab6dd4",
-            "label": "image",
-            "components": [],
+            "type": "TilemapLayer",
+            "id": "9840a633-38ec-464c-aa28-8785b97ca8f5",
+            "label": "wall_1",
+            "scope": "CLASS",
+            "components": [
+                "TileMapLayerPhysics"
+            ],
+            "tilemapId": "fd3e5dbc-cd6f-447a-9b6b-34fee3410aaa",
+            "layerName": "wall",
+            "tilesets": [
+                "Gamdev jam cate tiles test 1"
+            ]
+        },
+        {
+            "type": "Sprite",
+            "id": "42b95460-e481-4d5a-a546-36ecd30eebd5",
+            "label": "player",
+            "scope": "PUBLIC",
+            "components": [
+                "Movement",
+                "Physics"
+            ],
+            "Physics.width": 32,
+            "Physics.height": 32,
+            "Physics.offsetX": 16,
+            "Physics.offsetY": 32,
             "texture": {
-                "key": "gamedevjs"
+                "key": "your-dude",
+                "frame": 2
             },
-            "x": 132,
-            "y": 86
-        },
-        {
-            "type": "TilemapLayer",
-            "id": "1d5a6012-1d21-494e-ace5-8c458d5fc1d3",
-            "label": "ground_1",
-            "components": [],
-            "tilemapId": "f3f7a5e6-f129-4fb2-a88d-715a641466f5",
-            "layerName": "ground",
-            "tilesets": [
-                "pixelPlatformer"
-            ]
-        },
-        {
-            "type": "TilemapLayer",
-            "id": "17efc03c-5131-48cb-aaed-bbede89ca5b1",
-            "label": "block_1",
-            "components": [],
-            "tilemapId": "f3f7a5e6-f129-4fb2-a88d-715a641466f5",
-            "layerName": "block",
-            "tilesets": [
-                "pixelPlatformer"
-            ]
-        },
-        {
-            "type": "TilemapLayer",
-            "id": "98263cca-ac16-4d35-8fcb-61c4b26b0682",
-            "label": "water_1",
-            "components": [],
-            "tilemapId": "f3f7a5e6-f129-4fb2-a88d-715a641466f5",
-            "layerName": "water",
-            "tilesets": [
-                "pixelPlatformer"
-            ]
+            "x": 158,
+            "y": 144
         }
     ],
     "plainObjects": [
         {
-            "id": "f3f7a5e6-f129-4fb2-a88d-715a641466f5",
+            "id": "fd3e5dbc-cd6f-447a-9b6b-34fee3410aaa",
             "type": "Tilemap",
-            "label": "platformer_fun",
-            "key": "platformer_fun",
+            "label": "cave_test_map_1",
+            "key": "cave-test-map-1",
             "tilesets": [
                 {
-                    "name": "pixelPlatformer",
-                    "imageKey": "tiles_packed"
+                    "name": "Gamdev jam cate tiles test 1",
+                    "imageKey": "cave-test-tileset-1"
                 }
             ]
         }

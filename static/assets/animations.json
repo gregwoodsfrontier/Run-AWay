@@ -5,13 +5,13 @@
             "type": "frame",
             "frames": [
                 {
-                    "key": "493-export",
+                    "key": "your-dude",
                     "frame": 1,
                     "duration": 0,
                     "keyframe": false
                 }
             ],
-            "frameRate": 1,
+            "frameRate": 12,
             "skipMissedFrames": true,
             "repeat": -1
         },
@@ -20,8 +20,317 @@
             "type": "frame",
             "frames": [
                 {
-                    "key": "493-export",
+                    "key": "your-dude",
                     "frame": 2,
+                    "duration": 0,
+                    "keyframe": false
+                }
+            ],
+            "frameRate": 12,
+            "skipMissedFrames": true,
+            "repeat": -1
+        },
+        {
+            "key": "left-walk",
+            "type": "frame",
+            "frames": [
+                {
+                    "key": "your-dude",
+                    "frame": 8,
+                    "duration": 0,
+                    "keyframe": false
+                },
+                {
+                    "key": "your-dude",
+                    "frame": 9,
+                    "duration": 0,
+                    "keyframe": false
+                },
+                {
+                    "key": "your-dude",
+                    "frame": 10,
+                    "duration": 0,
+                    "keyframe": false
+                },
+                {
+                    "key": "your-dude",
+                    "frame": 11,
+                    "duration": 0,
+                    "keyframe": false
+                }
+            ],
+            "frameRate": 12,
+            "skipMissedFrames": true,
+            "repeat": -1
+        },
+        {
+            "key": "right-walk",
+            "type": "frame",
+            "frames": [
+                {
+                    "key": "your-dude",
+                    "frame": 12,
+                    "duration": 0,
+                    "keyframe": false
+                },
+                {
+                    "key": "your-dude",
+                    "frame": 13,
+                    "duration": 0,
+                    "keyframe": false
+                },
+                {
+                    "key": "your-dude",
+                    "frame": 14,
+                    "duration": 0,
+                    "keyframe": false
+                },
+                {
+                    "key": "your-dude",
+                    "frame": 15,
+                    "duration": 0,
+                    "keyframe": false
+                }
+            ],
+            "frameRate": 12,
+            "skipMissedFrames": true,
+            "repeat": -1
+        },
+        {
+            "key": "front-idle",
+            "type": "frame",
+            "frames": [
+                {
+                    "key": "your-dude",
+                    "frame": 0,
+                    "duration": 0,
+                    "keyframe": false
+                }
+            ],
+            "frameRate": 12,
+            "skipMissedFrames": true,
+            "repeat": -1
+        },
+        {
+            "key": "back-idle",
+            "type": "frame",
+            "frames": [
+                {
+                    "key": "your-dude",
+                    "frame": 3,
+                    "duration": 0,
+                    "keyframe": false
+                }
+            ],
+            "frameRate": 12,
+            "skipMissedFrames": true,
+            "repeat": -1
+        },
+        {
+            "key": "front-walk",
+            "type": "frame",
+            "frames": [
+                {
+                    "key": "your-dude",
+                    "frame": 4,
+                    "duration": 0,
+                    "keyframe": false
+                },
+                {
+                    "key": "your-dude",
+                    "frame": 5,
+                    "duration": 0,
+                    "keyframe": false
+                },
+                {
+                    "key": "your-dude",
+                    "frame": 6,
+                    "duration": 0,
+                    "keyframe": false
+                },
+                {
+                    "key": "your-dude",
+                    "frame": 7,
+                    "duration": 0,
+                    "keyframe": false
+                }
+            ],
+            "frameRate": 12,
+            "skipMissedFrames": true,
+            "repeat": -1
+        },
+        {
+            "key": "back-walk",
+            "type": "frame",
+            "frames": [
+                {
+                    "key": "your-dude",
+                    "frame": 16,
+                    "duration": 0,
+                    "keyframe": false
+                },
+                {
+                    "key": "your-dude",
+                    "frame": 17,
+                    "duration": 0,
+                    "keyframe": false
+                },
+                {
+                    "key": "your-dude",
+                    "frame": 18,
+                    "duration": 0,
+                    "keyframe": false
+                },
+                {
+                    "key": "your-dude",
+                    "frame": 19,
+                    "duration": 0,
+                    "keyframe": false
+                }
+            ],
+            "frameRate": 12,
+            "skipMissedFrames": true,
+            "repeat": -1
+        },
+        {
+            "key": "front-walk-hold",
+            "type": "frame",
+            "frames": [
+                {
+                    "key": "your-dude",
+                    "frame": 20,
+                    "duration": 0,
+                    "keyframe": false
+                },
+                {
+                    "key": "your-dude",
+                    "frame": 21,
+                    "duration": 0,
+                    "keyframe": false
+                },
+                {
+                    "key": "your-dude",
+                    "frame": 22,
+                    "duration": 0,
+                    "keyframe": false
+                },
+                {
+                    "key": "your-dude",
+                    "frame": 23,
+                    "duration": 0,
+                    "keyframe": false
+                }
+            ],
+            "frameRate": 12,
+            "skipMissedFrames": true,
+            "repeat": -1
+        },
+        {
+            "key": "back-walk-hold",
+            "type": "frame",
+            "frames": [
+                {
+                    "key": "your-dude",
+                    "frame": 32,
+                    "duration": 0,
+                    "keyframe": false
+                },
+                {
+                    "key": "your-dude",
+                    "frame": 33,
+                    "duration": 0,
+                    "keyframe": false
+                },
+                {
+                    "key": "your-dude",
+                    "frame": 34,
+                    "duration": 0,
+                    "keyframe": false
+                },
+                {
+                    "key": "your-dude",
+                    "frame": 35,
+                    "duration": 0,
+                    "keyframe": false
+                }
+            ],
+            "frameRate": 12,
+            "skipMissedFrames": true,
+            "repeat": -1
+        },
+        {
+            "key": "left-walk-hold",
+            "type": "frame",
+            "frames": [
+                {
+                    "key": "your-dude",
+                    "frame": 24,
+                    "duration": 0,
+                    "keyframe": false
+                },
+                {
+                    "key": "your-dude",
+                    "frame": 25,
+                    "duration": 0,
+                    "keyframe": false
+                },
+                {
+                    "key": "your-dude",
+                    "frame": 26,
+                    "duration": 0,
+                    "keyframe": false
+                },
+                {
+                    "key": "your-dude",
+                    "frame": 27,
+                    "duration": 0,
+                    "keyframe": false
+                }
+            ],
+            "frameRate": 12,
+            "skipMissedFrames": true,
+            "repeat": -1
+        },
+        {
+            "key": "right-walk-hold",
+            "type": "frame",
+            "frames": [
+                {
+                    "key": "your-dude",
+                    "frame": 28,
+                    "duration": 0,
+                    "keyframe": false
+                },
+                {
+                    "key": "your-dude",
+                    "frame": 29,
+                    "duration": 0,
+                    "keyframe": false
+                },
+                {
+                    "key": "your-dude",
+                    "frame": 30,
+                    "duration": 0,
+                    "keyframe": false
+                },
+                {
+                    "key": "your-dude",
+                    "frame": 31,
+                    "duration": 0,
+                    "keyframe": false
+                }
+            ],
+            "frameRate": 12,
+            "skipMissedFrames": true,
+            "repeat": -1
+        },
+        {
+            "key": "left-idle-hold",
+            "type": "frame",
+            "frames": [
+                {
+                    "key": "your-dude",
+                    "frame": 24,
                     "duration": 0,
                     "keyframe": false
                 }
@@ -31,35 +340,47 @@
             "repeat": -1
         },
         {
-            "key": "left-walk",
+            "key": "right-idle-hold",
             "type": "frame",
             "frames": [
                 {
-                    "key": "493-export",
-                    "frame": 8,
-                    "duration": 0,
-                    "keyframe": false
-                },
-                {
-                    "key": "493-export",
-                    "frame": 9,
-                    "duration": 0,
-                    "keyframe": false
-                },
-                {
-                    "key": "493-export",
-                    "frame": 10,
-                    "duration": 0,
-                    "keyframe": false
-                },
-                {
-                    "key": "493-export",
-                    "frame": 11,
+                    "key": "your-dude",
+                    "frame": 28,
                     "duration": 0,
                     "keyframe": false
                 }
             ],
-            "frameRate": 3,
+            "frameRate": 24,
+            "skipMissedFrames": true,
+            "repeat": -1
+        },
+        {
+            "key": "front-idle-hold",
+            "type": "frame",
+            "frames": [
+                {
+                    "key": "your-dude",
+                    "frame": 20,
+                    "duration": 0,
+                    "keyframe": false
+                }
+            ],
+            "frameRate": 24,
+            "skipMissedFrames": true,
+            "repeat": -1
+        },
+        {
+            "key": "back-idle-hold",
+            "type": "frame",
+            "frames": [
+                {
+                    "key": "your-dude",
+                    "frame": 32,
+                    "duration": 0,
+                    "keyframe": false
+                }
+            ],
+            "frameRate": 24,
             "skipMissedFrames": true,
             "repeat": -1
         }

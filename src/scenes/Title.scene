@@ -1,13 +1,12 @@
 {
-    "id": "04331fb6-ed91-4d74-b6e9-4bfe0fcfb457",
+    "id": "f3940592-5a08-436a-b431-b2d8bb36f408",
     "sceneType": "SCENE",
     "settings": {
         "exportClass": true,
         "autoImport": true,
-        "preloadMethodName": "editorPreload",
         "preloadPackFiles": [],
         "createMethodName": "editorCreate",
-        "sceneKey": "Preload",
+        "sceneKey": "Title",
         "compilerOutputLanguage": "TYPE_SCRIPT",
         "borderWidth": 320,
         "borderHeight": 640
@@ -15,30 +14,38 @@
     "displayList": [
         {
             "type": "Image",
-            "id": "e413cbbf-ce25-4dad-a117-b7cf0791f655",
-            "label": "guapen",
+            "id": "2435ed4f-a212-49fc-9792-9761badaec27",
+            "label": "image",
             "components": [],
             "texture": {
-                "key": "guapen"
+                "key": "gamedevjs"
             },
             "x": 160,
-            "y": 320,
-            "scaleX": 0.5915891440784282,
-            "scaleY": 0.5915891440784282
+            "y": 163
         },
         {
             "type": "Text",
-            "id": "2ce42443-5227-4c9b-b498-e81f9a21cde3",
-            "label": "progress",
-            "components": [
-                "PreloadText"
-            ],
+            "id": "026d54dc-c980-4bf4-93c5-79d3ef868702",
+            "label": "text",
+            "components": [],
             "x": 160,
-            "y": 475,
+            "y": 300,
             "originX": 0.5,
             "originY": 0.5,
-            "text": "0%",
-            "fontSize": "30px"
+            "text": "Gamedev JS Game Jam\n2022",
+            "align": "center",
+            "fontFamily": "Arial",
+            "fontSize": "2em"
+        },
+        {
+            "type": "Text",
+            "id": "ab183599-7d52-42f8-8867-4b36fef63410",
+            "label": "startGame",
+            "components": [],
+            "x": 54,
+            "y": 396,
+            "text": "Start Game!",
+            "fontSize": "32px"
         }
     ],
     "plainObjects": [],
