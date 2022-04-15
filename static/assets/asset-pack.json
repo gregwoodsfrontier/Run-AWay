@@ -2,19 +2,6 @@
     "section1": {
         "files": [
             {
-                "url": "assets/493-export.png",
-                "frameConfig": {
-                    "frameWidth": 320,
-                    "frameHeight": 320,
-                    "startFrame": 0,
-                    "endFrame": -1,
-                    "spacing": 0,
-                    "margin": 0
-                },
-                "type": "spritesheet",
-                "key": "493-export"
-            },
-            {
                 "url": "assets/animations.json",
                 "type": "animation",
                 "key": "animations"
@@ -38,6 +25,106 @@
                 "key": "cave-test-tileset-1"
             },
             {
+                "url": "assets/dude/dude-front-walk/dude-front-walk-1.png",
+                "type": "image",
+                "key": "dude-front-walk-1"
+            },
+            {
+                "url": "assets/dude/dude-front-walk/dude-front-walk-2.png",
+                "type": "image",
+                "key": "dude-front-walk-2"
+            },
+            {
+                "url": "assets/dude/dude-front-walk/dude-front-walk-3.png",
+                "type": "image",
+                "key": "dude-front-walk-3"
+            },
+            {
+                "url": "assets/dude/dude-front-walk/dude-front-walk-4.png",
+                "type": "image",
+                "key": "dude-front-walk-4"
+            },
+            {
+                "url": "assets/dude/dude-left-walk/dude-left-walk-1.png",
+                "type": "image",
+                "key": "dude-left-walk-1"
+            },
+            {
+                "url": "assets/dude/dude-left-walk/dude-left-walk-2.png",
+                "type": "image",
+                "key": "dude-left-walk-2"
+            },
+            {
+                "url": "assets/dude/dude-left-walk/dude-left-walk-3.png",
+                "type": "image",
+                "key": "dude-left-walk-3"
+            },
+            {
+                "url": "assets/dude/dude-left-walk/dude-left-walk-4.png",
+                "type": "image",
+                "key": "dude-left-walk-4"
+            },
+            {
+                "url": "assets/dude/dude-left-walk-hold/dude-left-walk-hold-1.png",
+                "type": "image",
+                "key": "dude-left-walk-hold-1"
+            },
+            {
+                "url": "assets/dude/dude-left-walk-hold/dude-left-walk-hold-2.png",
+                "type": "image",
+                "key": "dude-left-walk-hold-2"
+            },
+            {
+                "url": "assets/dude/dude-left-walk-hold/dude-left-walk-hold-3.png",
+                "type": "image",
+                "key": "dude-left-walk-hold-3"
+            },
+            {
+                "url": "assets/dude/dude-left-walk-hold/dude-left-walk-hold-4.png",
+                "type": "image",
+                "key": "dude-left-walk-hold-4"
+            },
+            {
+                "url": "assets/dude/dude-right-walk/dude-right-walk-1.png",
+                "type": "image",
+                "key": "dude-right-walk-1"
+            },
+            {
+                "url": "assets/dude/dude-right-walk/dude-right-walk-2.png",
+                "type": "image",
+                "key": "dude-right-walk-2"
+            },
+            {
+                "url": "assets/dude/dude-right-walk/dude-right-walk-3.png",
+                "type": "image",
+                "key": "dude-right-walk-3"
+            },
+            {
+                "url": "assets/dude/dude-right-walk/dude-right-walk-4.png",
+                "type": "image",
+                "key": "dude-right-walk-4"
+            },
+            {
+                "url": "assets/dude/dude-right-walk-hold/dude-right-walk-hold-1.png",
+                "type": "image",
+                "key": "dude-right-walk-hold-1"
+            },
+            {
+                "url": "assets/dude/dude-right-walk-hold/dude-right-walk-hold-2.png",
+                "type": "image",
+                "key": "dude-right-walk-hold-2"
+            },
+            {
+                "url": "assets/dude/dude-right-walk-hold/dude-right-walk-hold-3.png",
+                "type": "image",
+                "key": "dude-right-walk-hold-3"
+            },
+            {
+                "url": "assets/dude/dude-right-walk-hold/dude-right-walk-hold-4.png",
+                "type": "image",
+                "key": "dude-right-walk-hold-4"
+            },
+            {
                 "url": "assets/FufuSuperDino.png",
                 "type": "image",
                 "key": "FufuSuperDino"
@@ -48,30 +135,164 @@
                 "key": "gamedevjs"
             },
             {
-                "url": "assets/SWARM_V1.png",
-                "frameConfig": {
-                    "frameWidth": 64,
-                    "frameHeight": 64,
-                    "startFrame": 0,
-                    "endFrame": -1,
-                    "spacing": 0,
-                    "margin": 0
-                },
-                "type": "spritesheet",
-                "key": "SWARM_V1"
+                "url": "assets/swarm/swarm-back-walk-1.png",
+                "type": "image",
+                "key": "swarm-back-walk-1"
             },
             {
-                "url": "assets/Temp_Boss_V1.png",
-                "frameConfig": {
-                    "frameWidth": 64,
-                    "frameHeight": 64,
-                    "startFrame": 0,
-                    "endFrame": -1,
-                    "spacing": 0,
-                    "margin": 0
-                },
-                "type": "spritesheet",
-                "key": "Temp_Boss_V1"
+                "url": "assets/swarm/swarm-back-walk-2.png",
+                "type": "image",
+                "key": "swarm-back-walk-2"
+            },
+            {
+                "url": "assets/swarm/swarm-back-walk-3.png",
+                "type": "image",
+                "key": "swarm-back-walk-3"
+            },
+            {
+                "url": "assets/swarm/swarm-back-walk-4.png",
+                "type": "image",
+                "key": "swarm-back-walk-4"
+            },
+            {
+                "url": "assets/swarm/swarm-front-walk-1.png",
+                "type": "image",
+                "key": "swarm-front-walk-1"
+            },
+            {
+                "url": "assets/swarm/swarm-front-walk-2.png",
+                "type": "image",
+                "key": "swarm-front-walk-2"
+            },
+            {
+                "url": "assets/swarm/swarm-front-walk-3.png",
+                "type": "image",
+                "key": "swarm-front-walk-3"
+            },
+            {
+                "url": "assets/swarm/swarm-front-walk-4.png",
+                "type": "image",
+                "key": "swarm-front-walk-4"
+            },
+            {
+                "url": "assets/swarm/swarm-left-walk-1.png",
+                "type": "image",
+                "key": "swarm-left-walk-1"
+            },
+            {
+                "url": "assets/swarm/swarm-left-walk-2.png",
+                "type": "image",
+                "key": "swarm-left-walk-2"
+            },
+            {
+                "url": "assets/swarm/swarm-left-walk-3.png",
+                "type": "image",
+                "key": "swarm-left-walk-3"
+            },
+            {
+                "url": "assets/swarm/swarm-left-walk-4.png",
+                "type": "image",
+                "key": "swarm-left-walk-4"
+            },
+            {
+                "url": "assets/swarm/swarm-right-walk-1.png",
+                "type": "image",
+                "key": "swarm-right-walk-1"
+            },
+            {
+                "url": "assets/swarm/swarm-right-walk-2.png",
+                "type": "image",
+                "key": "swarm-right-walk-2"
+            },
+            {
+                "url": "assets/swarm/swarm-right-walk-3.png",
+                "type": "image",
+                "key": "swarm-right-walk-3"
+            },
+            {
+                "url": "assets/swarm/swarm-right-walk-4.png",
+                "type": "image",
+                "key": "swarm-right-walk-4"
+            },
+            {
+                "url": "assets/tempboss/tempboss-back-walk-1.png",
+                "type": "image",
+                "key": "tempboss-back-walk-1"
+            },
+            {
+                "url": "assets/tempboss/tempboss-back-walk-2.png",
+                "type": "image",
+                "key": "tempboss-back-walk-2"
+            },
+            {
+                "url": "assets/tempboss/tempboss-back-walk-3.png",
+                "type": "image",
+                "key": "tempboss-back-walk-3"
+            },
+            {
+                "url": "assets/tempboss/tempboss-back-walk-4.png",
+                "type": "image",
+                "key": "tempboss-back-walk-4"
+            },
+            {
+                "url": "assets/tempboss/tempboss-front-walk-1.png",
+                "type": "image",
+                "key": "tempboss-front-walk-1"
+            },
+            {
+                "url": "assets/tempboss/tempboss-front-walk-2.png",
+                "type": "image",
+                "key": "tempboss-front-walk-2"
+            },
+            {
+                "url": "assets/tempboss/tempboss-front-walk-3.png",
+                "type": "image",
+                "key": "tempboss-front-walk-3"
+            },
+            {
+                "url": "assets/tempboss/tempboss-front-walk-4.png",
+                "type": "image",
+                "key": "tempboss-front-walk-4"
+            },
+            {
+                "url": "assets/tempboss/tempboss-left-walk-1.png",
+                "type": "image",
+                "key": "tempboss-left-walk-1"
+            },
+            {
+                "url": "assets/tempboss/tempboss-left-walk-2.png",
+                "type": "image",
+                "key": "tempboss-left-walk-2"
+            },
+            {
+                "url": "assets/tempboss/tempboss-left-walk-3.png",
+                "type": "image",
+                "key": "tempboss-left-walk-3"
+            },
+            {
+                "url": "assets/tempboss/tempboss-left-walk-4.png",
+                "type": "image",
+                "key": "tempboss-left-walk-4"
+            },
+            {
+                "url": "assets/tempboss/tempboss-right-walk-1.png",
+                "type": "image",
+                "key": "tempboss-right-walk-1"
+            },
+            {
+                "url": "assets/tempboss/tempboss-right-walk-2.png",
+                "type": "image",
+                "key": "tempboss-right-walk-2"
+            },
+            {
+                "url": "assets/tempboss/tempboss-right-walk-3.png",
+                "type": "image",
+                "key": "tempboss-right-walk-3"
+            },
+            {
+                "url": "assets/tempboss/tempboss-right-walk-4.png",
+                "type": "image",
+                "key": "tempboss-right-walk-4"
             },
             {
                 "url": "assets/test-tile-set.png",
@@ -87,17 +308,24 @@
                 "key": "test-tile-set"
             },
             {
-                "url": "assets/tiles_packed.png",
-                "frameConfig": {
-                    "frameWidth": 32,
-                    "frameHeight": 32,
-                    "startFrame": 0,
-                    "endFrame": -1,
-                    "spacing": 0,
-                    "margin": 0
-                },
-                "type": "spritesheet",
-                "key": "tiles_packed"
+                "url": "assets/dude/dude-back-walk/walk-1.png",
+                "type": "image",
+                "key": "walk-1"
+            },
+            {
+                "url": "assets/dude/dude-back-walk/walk-2.png",
+                "type": "image",
+                "key": "walk-2"
+            },
+            {
+                "url": "assets/dude/dude-back-walk/walk-3.png",
+                "type": "image",
+                "key": "walk-3"
+            },
+            {
+                "url": "assets/dude/dude-back-walk/walk-4.png",
+                "type": "image",
+                "key": "walk-4"
             },
             {
                 "url": "assets/your-dude.png",

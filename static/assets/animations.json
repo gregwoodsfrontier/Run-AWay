@@ -1,12 +1,26 @@
 {
     "anims": [
         {
-            "key": "left-idle",
+            "key": "swarm-back-walk",
             "type": "frame",
             "frames": [
                 {
-                    "key": "your-dude",
-                    "frame": 1,
+                    "key": "swarm-back-walk-1",
+                    "duration": 0,
+                    "keyframe": false
+                },
+                {
+                    "key": "swarm-back-walk-2",
+                    "duration": 0,
+                    "keyframe": false
+                },
+                {
+                    "key": "swarm-back-walk-3",
+                    "duration": 0,
+                    "keyframe": false
+                },
+                {
+                    "key": "swarm-back-walk-4",
                     "duration": 0,
                     "keyframe": false
                 }
@@ -16,12 +30,26 @@
             "repeat": -1
         },
         {
-            "key": "right-idle",
+            "key": "swarm-front-walk",
             "type": "frame",
             "frames": [
                 {
-                    "key": "your-dude",
-                    "frame": 2,
+                    "key": "swarm-front-walk-1",
+                    "duration": 0,
+                    "keyframe": false
+                },
+                {
+                    "key": "swarm-front-walk-2",
+                    "duration": 0,
+                    "keyframe": false
+                },
+                {
+                    "key": "swarm-front-walk-3",
+                    "duration": 0,
+                    "keyframe": false
+                },
+                {
+                    "key": "swarm-front-walk-4",
                     "duration": 0,
                     "keyframe": false
                 }
@@ -31,30 +59,26 @@
             "repeat": -1
         },
         {
-            "key": "left-walk",
+            "key": "swarm-left-walk",
             "type": "frame",
             "frames": [
                 {
-                    "key": "your-dude",
-                    "frame": 8,
+                    "key": "swarm-left-walk-1",
                     "duration": 0,
                     "keyframe": false
                 },
                 {
-                    "key": "your-dude",
-                    "frame": 9,
+                    "key": "swarm-left-walk-2",
                     "duration": 0,
                     "keyframe": false
                 },
                 {
-                    "key": "your-dude",
-                    "frame": 10,
+                    "key": "swarm-left-walk-3",
                     "duration": 0,
                     "keyframe": false
                 },
                 {
-                    "key": "your-dude",
-                    "frame": 11,
+                    "key": "swarm-left-walk-4",
                     "duration": 0,
                     "keyframe": false
                 }
@@ -64,30 +88,26 @@
             "repeat": -1
         },
         {
-            "key": "right-walk",
+            "key": "swarm-right-walk",
             "type": "frame",
             "frames": [
                 {
-                    "key": "your-dude",
-                    "frame": 12,
+                    "key": "swarm-right-walk-1",
                     "duration": 0,
                     "keyframe": false
                 },
                 {
-                    "key": "your-dude",
-                    "frame": 13,
+                    "key": "swarm-right-walk-2",
                     "duration": 0,
                     "keyframe": false
                 },
                 {
-                    "key": "your-dude",
-                    "frame": 14,
+                    "key": "swarm-right-walk-3",
                     "duration": 0,
                     "keyframe": false
                 },
                 {
-                    "key": "your-dude",
-                    "frame": 15,
+                    "key": "swarm-right-walk-4",
                     "duration": 0,
                     "keyframe": false
                 }
@@ -97,12 +117,26 @@
             "repeat": -1
         },
         {
-            "key": "front-idle",
+            "key": "tempboss-back-walk",
             "type": "frame",
             "frames": [
                 {
-                    "key": "your-dude",
-                    "frame": 0,
+                    "key": "tempboss-back-walk-1",
+                    "duration": 0,
+                    "keyframe": false
+                },
+                {
+                    "key": "tempboss-back-walk-2",
+                    "duration": 0,
+                    "keyframe": false
+                },
+                {
+                    "key": "tempboss-back-walk-3",
+                    "duration": 0,
+                    "keyframe": false
+                },
+                {
+                    "key": "tempboss-back-walk-4",
                     "duration": 0,
                     "keyframe": false
                 }
@@ -112,12 +146,26 @@
             "repeat": -1
         },
         {
-            "key": "back-idle",
+            "key": "tempboss-front-walk",
             "type": "frame",
             "frames": [
                 {
-                    "key": "your-dude",
-                    "frame": 3,
+                    "key": "tempboss-front-walk-1",
+                    "duration": 0,
+                    "keyframe": false
+                },
+                {
+                    "key": "tempboss-front-walk-2",
+                    "duration": 0,
+                    "keyframe": false
+                },
+                {
+                    "key": "tempboss-front-walk-3",
+                    "duration": 0,
+                    "keyframe": false
+                },
+                {
+                    "key": "tempboss-front-walk-4",
                     "duration": 0,
                     "keyframe": false
                 }
@@ -127,30 +175,26 @@
             "repeat": -1
         },
         {
-            "key": "front-walk",
+            "key": "tempboss-left-walk",
             "type": "frame",
             "frames": [
                 {
-                    "key": "your-dude",
-                    "frame": 4,
+                    "key": "tempboss-left-walk-1",
                     "duration": 0,
                     "keyframe": false
                 },
                 {
-                    "key": "your-dude",
-                    "frame": 5,
+                    "key": "tempboss-left-walk-2",
                     "duration": 0,
                     "keyframe": false
                 },
                 {
-                    "key": "your-dude",
-                    "frame": 6,
+                    "key": "tempboss-left-walk-3",
                     "duration": 0,
                     "keyframe": false
                 },
                 {
-                    "key": "your-dude",
-                    "frame": 7,
+                    "key": "tempboss-left-walk-4",
                     "duration": 0,
                     "keyframe": false
                 }
@@ -160,30 +204,26 @@
             "repeat": -1
         },
         {
-            "key": "back-walk",
+            "key": "tempboss-right-walk",
             "type": "frame",
             "frames": [
                 {
-                    "key": "your-dude",
-                    "frame": 16,
+                    "key": "tempboss-right-walk-1",
                     "duration": 0,
                     "keyframe": false
                 },
                 {
-                    "key": "your-dude",
-                    "frame": 17,
+                    "key": "tempboss-right-walk-2",
                     "duration": 0,
                     "keyframe": false
                 },
                 {
-                    "key": "your-dude",
-                    "frame": 18,
+                    "key": "tempboss-right-walk-3",
                     "duration": 0,
                     "keyframe": false
                 },
                 {
-                    "key": "your-dude",
-                    "frame": 19,
+                    "key": "tempboss-right-walk-4",
                     "duration": 0,
                     "keyframe": false
                 }
@@ -193,30 +233,11 @@
             "repeat": -1
         },
         {
-            "key": "front-walk-hold",
+            "key": "swarm-back-idle",
             "type": "frame",
             "frames": [
                 {
-                    "key": "your-dude",
-                    "frame": 20,
-                    "duration": 0,
-                    "keyframe": false
-                },
-                {
-                    "key": "your-dude",
-                    "frame": 21,
-                    "duration": 0,
-                    "keyframe": false
-                },
-                {
-                    "key": "your-dude",
-                    "frame": 22,
-                    "duration": 0,
-                    "keyframe": false
-                },
-                {
-                    "key": "your-dude",
-                    "frame": 23,
+                    "key": "swarm-back-walk-1",
                     "duration": 0,
                     "keyframe": false
                 }
@@ -226,30 +247,11 @@
             "repeat": -1
         },
         {
-            "key": "back-walk-hold",
+            "key": "swarm-front-idle",
             "type": "frame",
             "frames": [
                 {
-                    "key": "your-dude",
-                    "frame": 32,
-                    "duration": 0,
-                    "keyframe": false
-                },
-                {
-                    "key": "your-dude",
-                    "frame": 33,
-                    "duration": 0,
-                    "keyframe": false
-                },
-                {
-                    "key": "your-dude",
-                    "frame": 34,
-                    "duration": 0,
-                    "keyframe": false
-                },
-                {
-                    "key": "your-dude",
-                    "frame": 35,
+                    "key": "swarm-front-walk-1",
                     "duration": 0,
                     "keyframe": false
                 }
@@ -259,30 +261,11 @@
             "repeat": -1
         },
         {
-            "key": "left-walk-hold",
+            "key": "swarm-left-idle",
             "type": "frame",
             "frames": [
                 {
-                    "key": "your-dude",
-                    "frame": 24,
-                    "duration": 0,
-                    "keyframe": false
-                },
-                {
-                    "key": "your-dude",
-                    "frame": 25,
-                    "duration": 0,
-                    "keyframe": false
-                },
-                {
-                    "key": "your-dude",
-                    "frame": 26,
-                    "duration": 0,
-                    "keyframe": false
-                },
-                {
-                    "key": "your-dude",
-                    "frame": 27,
+                    "key": "swarm-left-walk-1",
                     "duration": 0,
                     "keyframe": false
                 }
@@ -292,30 +275,11 @@
             "repeat": -1
         },
         {
-            "key": "right-walk-hold",
+            "key": "swarm-right-idle",
             "type": "frame",
             "frames": [
                 {
-                    "key": "your-dude",
-                    "frame": 28,
-                    "duration": 0,
-                    "keyframe": false
-                },
-                {
-                    "key": "your-dude",
-                    "frame": 29,
-                    "duration": 0,
-                    "keyframe": false
-                },
-                {
-                    "key": "your-dude",
-                    "frame": 30,
-                    "duration": 0,
-                    "keyframe": false
-                },
-                {
-                    "key": "your-dude",
-                    "frame": 31,
+                    "key": "swarm-right-walk-1",
                     "duration": 0,
                     "keyframe": false
                 }
@@ -325,12 +289,241 @@
             "repeat": -1
         },
         {
-            "key": "left-idle-hold",
+            "key": "tempboss-front-idle",
             "type": "frame",
             "frames": [
                 {
-                    "key": "your-dude",
-                    "frame": 24,
+                    "key": "tempboss-front-walk-1",
+                    "duration": 0,
+                    "keyframe": false
+                }
+            ],
+            "frameRate": 12,
+            "skipMissedFrames": true,
+            "repeat": -1
+        },
+        {
+            "key": "tempboss-back-idle",
+            "type": "frame",
+            "frames": [
+                {
+                    "key": "tempboss-back-walk-1",
+                    "duration": 0,
+                    "keyframe": false
+                }
+            ],
+            "frameRate": 12,
+            "skipMissedFrames": true,
+            "repeat": -1
+        },
+        {
+            "key": "tempboss-left-idle",
+            "type": "frame",
+            "frames": [
+                {
+                    "key": "tempboss-left-walk-1",
+                    "duration": 0,
+                    "keyframe": false
+                }
+            ],
+            "frameRate": 12,
+            "skipMissedFrames": true,
+            "repeat": -1
+        },
+        {
+            "key": "tempboss-right-idle",
+            "type": "frame",
+            "frames": [
+                {
+                    "key": "tempboss-right-walk-1",
+                    "duration": 0,
+                    "keyframe": false
+                }
+            ],
+            "frameRate": 12,
+            "skipMissedFrames": true,
+            "repeat": -1
+        },
+        {
+            "key": "dude-front-walk",
+            "type": "frame",
+            "frames": [
+                {
+                    "key": "dude-front-walk-1",
+                    "duration": 0,
+                    "keyframe": false
+                },
+                {
+                    "key": "dude-front-walk-2",
+                    "duration": 0,
+                    "keyframe": false
+                },
+                {
+                    "key": "dude-front-walk-3",
+                    "duration": 0,
+                    "keyframe": false
+                },
+                {
+                    "key": "dude-front-walk-4",
+                    "duration": 0,
+                    "keyframe": false
+                }
+            ],
+            "frameRate": 12,
+            "skipMissedFrames": true,
+            "repeat": -1
+        },
+        {
+            "key": "dude-back-walk",
+            "type": "frame",
+            "frames": [
+                {
+                    "key": "walk-1",
+                    "duration": 0,
+                    "keyframe": false
+                },
+                {
+                    "key": "walk-2",
+                    "duration": 0,
+                    "keyframe": false
+                },
+                {
+                    "key": "walk-3",
+                    "duration": 0,
+                    "keyframe": false
+                },
+                {
+                    "key": "walk-4",
+                    "duration": 0,
+                    "keyframe": false
+                }
+            ],
+            "frameRate": 12,
+            "skipMissedFrames": true,
+            "repeat": -1
+        },
+        {
+            "key": "dude-left-walk",
+            "type": "frame",
+            "frames": [
+                {
+                    "key": "dude-left-walk-1",
+                    "duration": 0,
+                    "keyframe": false
+                },
+                {
+                    "key": "dude-left-walk-2",
+                    "duration": 0,
+                    "keyframe": false
+                },
+                {
+                    "key": "dude-left-walk-3",
+                    "duration": 0,
+                    "keyframe": false
+                },
+                {
+                    "key": "dude-left-walk-4",
+                    "duration": 0,
+                    "keyframe": false
+                }
+            ],
+            "frameRate": 12,
+            "skipMissedFrames": true,
+            "repeat": -1
+        },
+        {
+            "key": "dude-left-walk-hold",
+            "type": "frame",
+            "frames": [
+                {
+                    "key": "dude-left-walk-hold-1",
+                    "duration": 0,
+                    "keyframe": false
+                },
+                {
+                    "key": "dude-left-walk-hold-2",
+                    "duration": 0,
+                    "keyframe": false
+                },
+                {
+                    "key": "dude-left-walk-hold-3",
+                    "duration": 0,
+                    "keyframe": false
+                },
+                {
+                    "key": "dude-left-walk-hold-4",
+                    "duration": 0,
+                    "keyframe": false
+                }
+            ],
+            "frameRate": 12,
+            "skipMissedFrames": true,
+            "repeat": -1
+        },
+        {
+            "key": "dude-right-walk",
+            "type": "frame",
+            "frames": [
+                {
+                    "key": "dude-right-walk-1",
+                    "duration": 0,
+                    "keyframe": false
+                },
+                {
+                    "key": "dude-right-walk-2",
+                    "duration": 0,
+                    "keyframe": false
+                },
+                {
+                    "key": "dude-right-walk-3",
+                    "duration": 0,
+                    "keyframe": false
+                },
+                {
+                    "key": "dude-right-walk-4",
+                    "duration": 0,
+                    "keyframe": false
+                }
+            ],
+            "frameRate": 12,
+            "skipMissedFrames": true,
+            "repeat": -1
+        },
+        {
+            "key": "dude-right-walk-hold",
+            "type": "frame",
+            "frames": [
+                {
+                    "key": "dude-right-walk-hold-1",
+                    "duration": 0,
+                    "keyframe": false
+                },
+                {
+                    "key": "dude-right-walk-hold-2",
+                    "duration": 0,
+                    "keyframe": false
+                },
+                {
+                    "key": "dude-right-walk-hold-3",
+                    "duration": 0,
+                    "keyframe": false
+                },
+                {
+                    "key": "dude-right-walk-hold-4",
+                    "duration": 0,
+                    "keyframe": false
+                }
+            ],
+            "frameRate": 12,
+            "skipMissedFrames": true,
+            "repeat": -1
+        },
+        {
+            "key": "dude-front-idle",
+            "type": "frame",
+            "frames": [
+                {
+                    "key": "dude-front-walk-1",
                     "duration": 0,
                     "keyframe": false
                 }
@@ -340,12 +533,11 @@
             "repeat": -1
         },
         {
-            "key": "right-idle-hold",
+            "key": "dude-back-idle",
             "type": "frame",
             "frames": [
                 {
-                    "key": "your-dude",
-                    "frame": 28,
+                    "key": "walk-1",
                     "duration": 0,
                     "keyframe": false
                 }
@@ -355,12 +547,11 @@
             "repeat": -1
         },
         {
-            "key": "front-idle-hold",
+            "key": "dude-left-idle",
             "type": "frame",
             "frames": [
                 {
-                    "key": "your-dude",
-                    "frame": 20,
+                    "key": "dude-left-walk-1",
                     "duration": 0,
                     "keyframe": false
                 }
@@ -370,12 +561,39 @@
             "repeat": -1
         },
         {
-            "key": "back-idle-hold",
+            "key": "dude-right-idle",
             "type": "frame",
             "frames": [
                 {
-                    "key": "your-dude",
-                    "frame": 32,
+                    "key": "dude-right-walk-1",
+                    "duration": 0,
+                    "keyframe": false
+                }
+            ],
+            "frameRate": 24,
+            "skipMissedFrames": true,
+            "repeat": -1
+        },
+        {
+            "key": "dude-left-idle-hold",
+            "type": "frame",
+            "frames": [
+                {
+                    "key": "dude-left-walk-hold-1",
+                    "duration": 0,
+                    "keyframe": false
+                }
+            ],
+            "frameRate": 24,
+            "skipMissedFrames": true,
+            "repeat": -1
+        },
+        {
+            "key": "dude-right-idle-hold",
+            "type": "frame",
+            "frames": [
+                {
+                    "key": "dude-right-walk-hold-1",
                     "duration": 0,
                     "keyframe": false
                 }

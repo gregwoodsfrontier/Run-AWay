@@ -52,8 +52,7 @@
             "Physics.offsetX": 16,
             "Physics.offsetY": 32,
             "texture": {
-                "key": "your-dude",
-                "frame": 2
+                "key": "swarm-right-walk-1"
             },
             "x": 158,
             "y": 144

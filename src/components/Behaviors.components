@@ -91,6 +91,12 @@
             "baseClass": "UserComponent",
             "gameObjectType": "Phaser.Tilemaps.TilemapLayer",
             "properties": []
+        },
+        {
+            "name": "KeyboardInput",
+            "baseClass": "UserComponent",
+            "gameObjectType": "Phaser.GameObjects.Sprite",
+            "properties": []
         }
     ],
     "meta": {
