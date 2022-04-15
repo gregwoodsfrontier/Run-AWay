@@ -85,6 +85,12 @@
                     }
                 }
             ]
+        },
+        {
+            "name": "TileMapLayerPhysics",
+            "baseClass": "UserComponent",
+            "gameObjectType": "Phaser.Tilemaps.TilemapLayer",
+            "properties": []
         }
     ],
     "meta": {

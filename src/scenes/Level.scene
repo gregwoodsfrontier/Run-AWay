@@ -14,12 +14,26 @@
     "displayList": [
         {
             "type": "TilemapLayer",
-            "id": "1583d77a-9933-4584-bf2e-bf3f8b517ab2",
-            "label": "cave",
-            "scope": "PUBLIC",
+            "id": "1edc09cf-1d5b-49df-ae2b-9d0b10c8b0be",
+            "label": "floor_1",
+            "scope": "CLASS",
             "components": [],
-            "tilemapId": "1b1cbe24-d18c-4cda-909e-739d6e0e83e5",
-            "layerName": "Tile Layer 1",
+            "tilemapId": "fd3e5dbc-cd6f-447a-9b6b-34fee3410aaa",
+            "layerName": "floor",
+            "tilesets": [
+                "Gamdev jam cate tiles test 1"
+            ]
+        },
+        {
+            "type": "TilemapLayer",
+            "id": "9840a633-38ec-464c-aa28-8785b97ca8f5",
+            "label": "wall_1",
+            "scope": "CLASS",
+            "components": [
+                "TileMapLayerPhysics"
+            ],
+            "tilemapId": "fd3e5dbc-cd6f-447a-9b6b-34fee3410aaa",
+            "layerName": "wall",
             "tilesets": [
                 "Gamdev jam cate tiles test 1"
             ]
@@ -33,17 +47,21 @@
                 "Movement",
                 "Physics"
             ],
+            "Physics.width": 32,
+            "Physics.height": 32,
+            "Physics.offsetX": 16,
+            "Physics.offsetY": 32,
             "texture": {
                 "key": "your-dude",
                 "frame": 2
             },
-            "x": 180,
-            "y": 283
+            "x": 158,
+            "y": 144
         }
     ],
     "plainObjects": [
         {
-            "id": "1b1cbe24-d18c-4cda-909e-739d6e0e83e5",
+            "id": "fd3e5dbc-cd6f-447a-9b6b-34fee3410aaa",
             "type": "Tilemap",
             "label": "cave_test_map_1",
             "key": "cave-test-map-1",
