@@ -10,6 +10,7 @@ import JustMovement from "../components/JustMovement";
 import Animation from "../components/Animation";
 import DepthSortY from "../components/DepthSortY";
 import Enemy from "../prefabs/Enemy";
+import FollowTarget from "../components/FollowTarget";
 /* START-USER-IMPORTS */
 /* END-USER-IMPORTS */
 
@@ -39,15 +40,11 @@ export default class Level extends Phaser.Scene {
 		const player = this.add.sprite(160, 175, "dude-front-walk-1");
 
 		// enemy
-		const enemy = new Enemy(this, 193, 353);
+		const enemy = new Enemy(this, 193, 405);
 		this.add.existing(enemy);
 
-		// enemy_1
-		const enemy_1 = new Enemy(this, 129, 490);
-		this.add.existing(enemy_1);
-
 		// lists
-		const enemyTeam = [enemy, enemy_1];
+		const enemyTeam = [enemy];
 
 		// wall_1 (components)
 		new TileMapLayerPhysics(wall_1);
@@ -67,6 +64,13 @@ export default class Level extends Phaser.Scene {
 		playerAnimation.leftWalk = "dude-left-walk";
 		playerAnimation.rightWalk = "dude-right-walk";
 		new DepthSortY(player);
+
+		// enemy (components)
+		const enemyJustMovement = new JustMovement(enemy);
+		enemyJustMovement.speed = 80;
+		const enemyFollowTarget = new FollowTarget(enemy);
+		enemyFollowTarget.target = player;
+		enemyFollowTarget.range = 140;
 
 		this.floor_1 = floor_1;
 		this.wall_1 = wall_1;
