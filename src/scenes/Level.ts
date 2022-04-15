@@ -8,6 +8,7 @@ import Physics from "../components/Physics";
 import KeyboardInput from "../components/KeyboardInput";
 import JustMovement from "../components/JustMovement";
 import Animation from "../components/Animation";
+import DepthSortY from "../components/DepthSortY";
 /* START-USER-IMPORTS */
 /* END-USER-IMPORTS */
 
@@ -59,13 +60,20 @@ export default class Level extends Phaser.Scene {
 		playerAnimation.backWalk = "dude-back-walk";
 		playerAnimation.leftWalk = "dude-left-walk";
 		playerAnimation.rightWalk = "dude-right-walk";
+		new DepthSortY(player);
 
 		// enemy (components)
 		const enemyPhysics = new Physics(enemy);
 		enemyPhysics.width = 32;
-		enemyPhysics.height = 32;
+		enemyPhysics.height = 40;
 		enemyPhysics.offsetX = 16;
-		enemyPhysics.offsetY = 32;
+		enemyPhysics.offsetY = 26;
+		new DepthSortY(enemy);
+		const enemyAnimation = new Animation(enemy);
+		enemyAnimation.frontWalk = "swarm-front-walk";
+		enemyAnimation.backWalk = "swarm-back-walk";
+		enemyAnimation.leftWalk = "swarm-left-walk";
+		enemyAnimation.rightWalk = "swarm-right-walk";
 
 		this.floor_1 = floor_1;
 		this.wall_1 = wall_1;
@@ -91,6 +99,8 @@ export default class Level extends Phaser.Scene {
 
 		this.editorCreate();
 		this.player.play('dude-front-idle')
+		this.floor_1.depth = 0
+		this.wall_1.depth = 0
 
 		const playerKeyboardInput = KeyboardInput.getComponent(this.player)
 		const playerMove = JustMovement.getComponent(this.player)
@@ -120,6 +130,11 @@ export default class Level extends Phaser.Scene {
 		this.physics.add.collider(this.player, this.wall_1);
 	}
 
+	update()
+	{
+		this.handleDepthSort()
+	}
+
 	private layerDebug(layer: Phaser.Tilemaps.TilemapLayer)
 	{
 		const debugGraphics = this.add.graphics().setAlpha(0.75);
@@ -128,6 +143,20 @@ export default class Level extends Phaser.Scene {
 			collidingTileColor: new Phaser.Display.Color(243, 134, 48, 255), // Color of colliding tiles
 			faceColor: new Phaser.Display.Color(40, 39, 37, 255) // Color of colliding face edges
 		});
+	}
+
+	private handleDepthSort()
+	{
+		this.children.each(c => {
+			const child = c as Phaser.GameObjects.Sprite;
+
+			if(!DepthSortY.getComponent(child))
+			{
+				return
+			}
+
+			child.setDepth(child.y)
+		})
 	}
 
 	/* END-USER-CODE */

@@ -47,7 +47,8 @@
                 "Physics",
                 "KeyboardInput",
                 "JustMovement",
-                "Animation"
+                "Animation",
+                "DepthSortY"
             ],
             "Physics.width": 32,
             "Physics.height": 40,
@@ -70,12 +71,18 @@
             "label": "enemy",
             "scope": "CLASS",
             "components": [
-                "Physics"
+                "Physics",
+                "DepthSortY",
+                "Animation"
             ],
             "Physics.width": 32,
-            "Physics.height": 32,
+            "Physics.height": 40,
             "Physics.offsetX": 16,
-            "Physics.offsetY": 32,
+            "Physics.offsetY": 26,
+            "Animation.frontWalk": "swarm-front-walk",
+            "Animation.backWalk": "swarm-back-walk",
+            "Animation.leftWalk": "swarm-left-walk",
+            "Animation.rightWalk": "swarm-right-walk",
             "texture": {
                 "key": "swarm-front-walk-1"
             },

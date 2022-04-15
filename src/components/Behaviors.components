@@ -161,6 +161,12 @@
                     }
                 }
             ]
+        },
+        {
+            "name": "DepthSortY",
+            "baseClass": "",
+            "gameObjectType": "Phaser.GameObjects.Sprite",
+            "properties": []
         }
     ],
     "meta": {
