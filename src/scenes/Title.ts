@@ -20,16 +20,16 @@ export default class Title extends Phaser.Scene {
 	editorCreate(): void {
 
 		// image
-		this.add.image(144, 101, "gamedevjs");
+		this.add.image(160, 163, "gamedevjs");
 
 		// text
-		const text = this.add.text(451, 101, "", {});
+		const text = this.add.text(160, 300, "", {});
 		text.setOrigin(0.5, 0.5);
 		text.text = "Gamedev JS Game Jam\n2022";
-		text.setStyle({ "align": "center", "fontFamily": "Arial", "fontSize": "3em" });
+		text.setStyle({ "align": "center", "fontFamily": "Arial", "fontSize": "2em" });
 
 		// startGame
-		const startGame = this.add.text(214, 229, "", {});
+		const startGame = this.add.text(54, 396, "", {});
 		startGame.text = "Start Game!";
 		startGame.setStyle({ "fontSize": "32px" });
 

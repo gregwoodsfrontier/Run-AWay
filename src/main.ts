@@ -21,7 +21,7 @@ class Boot extends Phaser.Scene {
 }
 
 const game = new Phaser.Game({
-    width: 360,
+    width: 320,
     height: 640,
     backgroundColor: "#2f2f2f",
     scale: {

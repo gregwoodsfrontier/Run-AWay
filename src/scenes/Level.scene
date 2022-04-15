@@ -8,10 +8,22 @@
         "createMethodName": "editorCreate",
         "sceneKey": "Level",
         "compilerOutputLanguage": "TYPE_SCRIPT",
-        "borderWidth": 360,
+        "borderWidth": 320,
         "borderHeight": 640
     },
     "displayList": [
+        {
+            "type": "TilemapLayer",
+            "id": "1583d77a-9933-4584-bf2e-bf3f8b517ab2",
+            "label": "cave",
+            "scope": "PUBLIC",
+            "components": [],
+            "tilemapId": "1b1cbe24-d18c-4cda-909e-739d6e0e83e5",
+            "layerName": "Tile Layer 1",
+            "tilesets": [
+                "Gamdev jam cate tiles test 1"
+            ]
+        },
         {
             "type": "Sprite",
             "id": "42b95460-e481-4d5a-a546-36ecd30eebd5",
@@ -29,7 +41,20 @@
             "y": 283
         }
     ],
-    "plainObjects": [],
+    "plainObjects": [
+        {
+            "id": "1b1cbe24-d18c-4cda-909e-739d6e0e83e5",
+            "type": "Tilemap",
+            "label": "cave_test_map_1",
+            "key": "cave-test-map-1",
+            "tilesets": [
+                {
+                    "name": "Gamdev jam cate tiles test 1",
+                    "imageKey": "cave-test-tileset-1"
+                }
+            ]
+        }
+    ],
     "meta": {
         "app": "Phaser Editor 2D - Scene Editor",
         "url": "https://phasereditor2d.com",

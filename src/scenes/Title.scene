@@ -8,8 +8,8 @@
         "createMethodName": "editorCreate",
         "sceneKey": "Title",
         "compilerOutputLanguage": "TYPE_SCRIPT",
-        "borderWidth": 640,
-        "borderHeight": 360
+        "borderWidth": 320,
+        "borderHeight": 640
     },
     "displayList": [
         {
@@ -20,30 +20,30 @@
             "texture": {
                 "key": "gamedevjs"
             },
-            "x": 144,
-            "y": 101
+            "x": 160,
+            "y": 163
         },
         {
             "type": "Text",
             "id": "026d54dc-c980-4bf4-93c5-79d3ef868702",
             "label": "text",
             "components": [],
-            "x": 451,
-            "y": 101,
+            "x": 160,
+            "y": 300,
             "originX": 0.5,
             "originY": 0.5,
             "text": "Gamedev JS Game Jam\n2022",
             "align": "center",
             "fontFamily": "Arial",
-            "fontSize": "3em"
+            "fontSize": "2em"
         },
         {
             "type": "Text",
             "id": "ab183599-7d52-42f8-8867-4b36fef63410",
             "label": "startGame",
             "components": [],
-            "x": 214,
-            "y": 229,
+            "x": 54,
+            "y": 396,
             "text": "Start Game!",
             "fontSize": "32px"
         }
