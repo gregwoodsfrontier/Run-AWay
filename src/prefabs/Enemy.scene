@@ -1,0 +1,45 @@
+{
+    "id": "408d4d35-1d26-4f5e-9315-9d890dbf9ae0",
+    "sceneType": "PREFAB",
+    "settings": {
+        "exportClass": true,
+        "autoImport": true,
+        "preloadMethodName": "",
+        "preloadPackFiles": [],
+        "createMethodName": "",
+        "compilerOutputLanguage": "TYPE_SCRIPT",
+        "borderWidth": 320,
+        "borderHeight": 640
+    },
+    "displayList": [
+        {
+            "type": "Sprite",
+            "id": "50c4bf00-c955-4424-9f59-db345d034fc2",
+            "label": "enemy",
+            "scope": "CLASS",
+            "components": [
+                "Physics",
+                "DepthSortY",
+                "Animation"
+            ],
+            "Physics.width": 32,
+            "Physics.height": 40,
+            "Physics.offsetX": 16,
+            "Physics.offsetY": 26,
+            "Animation.frontWalk": "swarm-front-walk",
+            "Animation.backWalk": "swarm-back-walk",
+            "Animation.leftWalk": "swarm-left-walk",
+            "Animation.rightWalk": "swarm-right-walk",
+            "texture": {
+                "key": "swarm-front-walk-1"
+            }
+        }
+    ],
+    "plainObjects": [],
+    "meta": {
+        "app": "Phaser Editor 2D - Scene Editor",
+        "url": "https://phasereditor2d.com",
+        "contentType": "phasereditor2d.core.scene.SceneContentType",
+        "version": 3
+    }
+}

@@ -9,6 +9,7 @@ import KeyboardInput from "../components/KeyboardInput";
 import JustMovement from "../components/JustMovement";
 import Animation from "../components/Animation";
 import DepthSortY from "../components/DepthSortY";
+import Enemy from "../prefabs/Enemy";
 /* START-USER-IMPORTS */
 /* END-USER-IMPORTS */
 
@@ -38,10 +39,15 @@ export default class Level extends Phaser.Scene {
 		const player = this.add.sprite(160, 175, "dude-front-walk-1");
 
 		// enemy
-		const enemy = this.add.sprite(136, 71, "swarm-front-walk-1");
+		const enemy = new Enemy(this, 193, 353);
+		this.add.existing(enemy);
+
+		// enemy_1
+		const enemy_1 = new Enemy(this, 129, 490);
+		this.add.existing(enemy_1);
 
 		// lists
-		const enemyTeam = [enemy];
+		const enemyTeam = [enemy, enemy_1];
 
 		// wall_1 (components)
 		new TileMapLayerPhysics(wall_1);
@@ -62,23 +68,9 @@ export default class Level extends Phaser.Scene {
 		playerAnimation.rightWalk = "dude-right-walk";
 		new DepthSortY(player);
 
-		// enemy (components)
-		const enemyPhysics = new Physics(enemy);
-		enemyPhysics.width = 32;
-		enemyPhysics.height = 40;
-		enemyPhysics.offsetX = 16;
-		enemyPhysics.offsetY = 26;
-		new DepthSortY(enemy);
-		const enemyAnimation = new Animation(enemy);
-		enemyAnimation.frontWalk = "swarm-front-walk";
-		enemyAnimation.backWalk = "swarm-back-walk";
-		enemyAnimation.leftWalk = "swarm-left-walk";
-		enemyAnimation.rightWalk = "swarm-right-walk";
-
 		this.floor_1 = floor_1;
 		this.wall_1 = wall_1;
 		this.player = player;
-		this.enemy = enemy;
 		this.cave_test_map_1 = cave_test_map_1;
 		this.enemyTeam = enemyTeam;
 
@@ -88,8 +80,7 @@ export default class Level extends Phaser.Scene {
 	private floor_1!: Phaser.Tilemaps.TilemapLayer;
 	private wall_1!: Phaser.Tilemaps.TilemapLayer;
 	public player!: Phaser.GameObjects.Sprite;
-	private enemy!: Phaser.GameObjects.Sprite;
-	private enemyTeam!: Phaser.GameObjects.Sprite[];
+	private enemyTeam!: Enemy[];
 
 	/* START-USER-CODE */
 	public platformer_fun!: Phaser.Tilemaps.Tilemap
@@ -128,6 +119,9 @@ export default class Level extends Phaser.Scene {
 		}
 
 		this.physics.add.collider(this.player, this.wall_1);
+		this.physics.add.collider(this.player, this.enemyTeam)
+		this.physics.add.collider(this.enemyTeam, this.enemyTeam)
+		this.physics.add.collider(this.enemyTeam, this.wall_1)
 	}
 
 	update()
