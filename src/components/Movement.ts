@@ -33,6 +33,7 @@ export default class Movement extends UserComponent {
 	public speed: number = 10;
 
 	/* START-USER-CODE */
+
 	update()
 	{
 		const scene = this.gameObject.scene;
