@@ -66,6 +66,19 @@
             "FollowTarget.target": "player",
             "x": 144,
             "y": 564
+        },
+        {
+            "prefabId": "57d8a10b-f4c7-4c0f-9397-cde30c2a5293",
+            "id": "d61ec7a6-70e8-4927-99d3-f5f1e147c447",
+            "unlock": [
+                "x",
+                "y"
+            ],
+            "label": "block_1",
+            "scope": "CLASS",
+            "components": [],
+            "x": 130,
+            "y": 208
         }
     ],
     "plainObjects": [
