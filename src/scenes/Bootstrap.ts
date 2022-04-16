@@ -49,6 +49,7 @@ export default class Bootstrap extends Phaser.Scene {
 	{
 		console.log('new game')
 		this.scene.launch("Level")
+		this.scene.launch("UI")
 	}
 
 	/* END-USER-CODE */
