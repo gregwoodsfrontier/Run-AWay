@@ -64,7 +64,7 @@ export default class AnimationV2 extends UserComponent {
 
 		if(parts.length < 4)
 		{
-			this.gameObject.play(`${char}-${direction}-idle`)
+			this.gameObject.play(`${char}-${direction}-idle`, true)
 		}
 		else
 		{
