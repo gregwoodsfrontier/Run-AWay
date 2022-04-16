@@ -34,6 +34,8 @@ export default class Animation extends UserComponent {
 	/* START-USER-CODE */
 
 	// Write your code here.
+	// [char]-[dir]-[state]-[holdstate]
+	
 	playLeft()
 	{
 		this.gameObject.play(this.leftWalk, true)

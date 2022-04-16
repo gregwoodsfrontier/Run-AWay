@@ -18,6 +18,7 @@
             "label": "floor_1",
             "scope": "CLASS",
             "components": [],
+            "y": -960,
             "tilemapId": "fd3e5dbc-cd6f-447a-9b6b-34fee3410aaa",
             "layerName": "floor",
             "tilesets": [
@@ -32,6 +33,7 @@
             "components": [
                 "TileMapLayerPhysics"
             ],
+            "y": -960,
             "tilemapId": "fd3e5dbc-cd6f-447a-9b6b-34fee3410aaa",
             "layerName": "wall",
             "tilesets": [
@@ -55,15 +57,15 @@
             "Physics.offsetX": 16,
             "Physics.offsetY": 26,
             "JustMovement.speed": 100,
-            "Animation.frontWalk": "dude-front-walk",
-            "Animation.backWalk": "dude-back-walk",
-            "Animation.leftWalk": "dude-left-walk",
-            "Animation.rightWalk": "dude-right-walk",
+            "Animation.frontWalk": "player-front-idle",
+            "Animation.backWalk": "player-back-idle",
+            "Animation.leftWalk": "player-left-idle",
+            "Animation.rightWalk": "player-right-idle",
             "texture": {
-                "key": "dude-front-walk-1"
+                "key": "playerOnly-4"
             },
-            "x": 160,
-            "y": 175
+            "x": 147,
+            "y": 335
         },
         {
             "prefabId": "408d4d35-1d26-4f5e-9315-9d890dbf9ae0",
@@ -80,8 +82,26 @@
             "JustMovement.speed": 80,
             "FollowTarget.target": "player",
             "FollowTarget.range": 140,
-            "x": 193,
-            "y": 405
+            "x": 131,
+            "y": 557
+        },
+        {
+            "prefabId": "408d4d35-1d26-4f5e-9315-9d890dbf9ae0",
+            "id": "ebe165a3-ad09-409a-9afe-3ed0261f31d3",
+            "unlock": [
+                "x",
+                "y"
+            ],
+            "label": "enemy_1",
+            "components": [
+                "JustMovement",
+                "FollowTarget"
+            ],
+            "JustMovement.speed": 80,
+            "FollowTarget.target": "player",
+            "FollowTarget.range": 140,
+            "x": 188,
+            "y": 557
         }
     ],
     "plainObjects": [
