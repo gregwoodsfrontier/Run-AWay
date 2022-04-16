@@ -22,13 +22,14 @@
                 "KeyboardInput",
                 "JustMovement",
                 "DepthSortY",
-                "AnimationV2"
+                "AnimationV2",
+                "CameraFollow"
             ],
             "Physics.width": 32,
             "Physics.height": 40,
             "Physics.offsetX": 16,
             "Physics.offsetY": 26,
-            "JustMovement.speed": 100,
+            "JustMovement.speed": 150,
             "texture": {
                 "key": "playerOnly-4"
             }

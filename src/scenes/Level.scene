@@ -91,7 +91,10 @@
     "lists": [
         {
             "id": "97ea1992-d8cd-43db-92a5-734f0b5c68b4",
-            "label": "enemyTeam"
+            "label": "enemyTeam",
+            "objectIds": [
+                "d86897d8-8de3-428b-8480-7b8365b0853f"
+            ]
         }
     ]
 }

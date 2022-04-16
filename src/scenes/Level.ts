@@ -45,7 +45,7 @@ export default class Level extends Phaser.Scene {
 		this.add.existing(enemy);
 
 		// lists
-		const enemyTeam: Array<any> = [];
+		const enemyTeam = [enemy];
 
 		// wall_1 (components)
 		new TileMapLayerPhysics(wall_1);
@@ -66,7 +66,7 @@ export default class Level extends Phaser.Scene {
 	private floor_1!: Phaser.Tilemaps.TilemapLayer;
 	private wall_1!: Phaser.Tilemaps.TilemapLayer;
 	public player!: Player;
-	private enemyTeam!: Array<any>;
+	private enemyTeam!: Enemy[];
 
 	/* START-USER-CODE */
 	public platformer_fun!: Phaser.Tilemaps.Tilemap
@@ -76,8 +76,8 @@ export default class Level extends Phaser.Scene {
 
 		this.editorCreate();
 		this.player.play('player-front-idle')
-		this.floor_1.depth = 0
-		this.wall_1.depth = 0
+		this.floor_1.depth = -1000
+		this.wall_1.depth = -1000
 
 		const playerKeyboardInput = KeyboardInput.getComponent(this.player)
 		const playerMove = JustMovement.getComponent(this.player)

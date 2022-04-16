@@ -28,7 +28,7 @@ export default class Enemy extends Phaser.GameObjects.Sprite {
 		thisFollowTarget.range = 130;
 		new AnimationV2(this);
 		const thisJustMovement = new JustMovement(this);
-		thisJustMovement.speed = 100;
+		thisJustMovement.speed = 90;
 
 		/* START-USER-CTR-CODE */
 		// Write your code here.
