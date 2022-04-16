@@ -50,8 +50,8 @@
             "label": "player",
             "scope": "PUBLIC",
             "components": [],
-            "x": 147,
-            "y": 335
+            "x": 193,
+            "y": 446
         },
         {
             "prefabId": "408d4d35-1d26-4f5e-9315-9d890dbf9ae0",
@@ -64,8 +64,8 @@
             "label": "enemy",
             "components": [],
             "FollowTarget.target": "player",
-            "x": 144,
-            "y": 564
+            "x": -193,
+            "y": 484
         },
         {
             "prefabId": "57d8a10b-f4c7-4c0f-9397-cde30c2a5293",
@@ -79,6 +79,50 @@
             "components": [],
             "x": 130,
             "y": 208
+        },
+        {
+            "prefabId": "408d4d35-1d26-4f5e-9315-9d890dbf9ae0",
+            "id": "aec9ecb6-06ec-466a-bc1c-9e599833f441",
+            "unlock": [
+                "x",
+                "y",
+                "FollowTarget.target"
+            ],
+            "label": "enemy_1",
+            "components": [],
+            "FollowTarget.target": "player",
+            "x": -187,
+            "y": 109
+        },
+        {
+            "prefabId": "408d4d35-1d26-4f5e-9315-9d890dbf9ae0",
+            "id": "63f44b6a-316d-4ac2-9257-71741dcfd6ba",
+            "unlock": [
+                "x",
+                "y",
+                "FollowTarget.target",
+                "FollowTarget.deadRangeX"
+            ],
+            "label": "enemy_3",
+            "components": [],
+            "FollowTarget.target": "player",
+            "FollowTarget.deadRangeX": 30,
+            "x": 119,
+            "y": 445
+        },
+        {
+            "prefabId": "408d4d35-1d26-4f5e-9315-9d890dbf9ae0",
+            "id": "8002ba82-0b4c-44d4-a61b-e2e237664d68",
+            "unlock": [
+                "x",
+                "y",
+                "FollowTarget.target"
+            ],
+            "label": "enemy_2",
+            "components": [],
+            "FollowTarget.target": "player",
+            "x": 197,
+            "y": 126
         }
     ],
     "plainObjects": [
@@ -106,7 +150,10 @@
             "id": "97ea1992-d8cd-43db-92a5-734f0b5c68b4",
             "label": "enemyTeam",
             "objectIds": [
-                "d86897d8-8de3-428b-8480-7b8365b0853f"
+                "aec9ecb6-06ec-466a-bc1c-9e599833f441",
+                "d86897d8-8de3-428b-8480-7b8365b0853f",
+                "8002ba82-0b4c-44d4-a61b-e2e237664d68",
+                "63f44b6a-316d-4ac2-9257-71741dcfd6ba"
             ]
         }
     ]
