@@ -1,5 +1,5 @@
 {
-    "id": "408d4d35-1d26-4f5e-9315-9d890dbf9ae0",
+    "id": "e0ddcad0-6688-4c91-8511-b98aa83b6507",
     "sceneType": "PREFAB",
     "settings": {
         "exportClass": true,
@@ -14,24 +14,23 @@
     "displayList": [
         {
             "type": "Sprite",
-            "id": "50c4bf00-c955-4424-9f59-db345d034fc2",
-            "label": "enemy",
-            "scope": "CLASS",
+            "id": "dfafffa1-0788-4a93-8e3e-b6ff9cbe7d13",
+            "label": "player",
+            "scope": "PUBLIC",
             "components": [
                 "Physics",
+                "KeyboardInput",
+                "JustMovement",
                 "DepthSortY",
-                "FollowTarget",
-                "AnimationV2",
-                "JustMovement"
+                "AnimationV2"
             ],
             "Physics.width": 32,
             "Physics.height": 40,
             "Physics.offsetX": 16,
             "Physics.offsetY": 26,
-            "FollowTarget.range": 130,
             "JustMovement.speed": 100,
             "texture": {
-                "key": "swarm-front-walk-1"
+                "key": "playerOnly-4"
             }
         }
     ],

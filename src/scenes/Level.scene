@@ -41,67 +41,31 @@
             ]
         },
         {
-            "type": "Sprite",
+            "prefabId": "e0ddcad0-6688-4c91-8511-b98aa83b6507",
             "id": "42b95460-e481-4d5a-a546-36ecd30eebd5",
+            "unlock": [
+                "x",
+                "y"
+            ],
             "label": "player",
             "scope": "PUBLIC",
-            "components": [
-                "Physics",
-                "KeyboardInput",
-                "JustMovement",
-                "Animation",
-                "DepthSortY"
-            ],
-            "Physics.width": 32,
-            "Physics.height": 40,
-            "Physics.offsetX": 16,
-            "Physics.offsetY": 26,
-            "JustMovement.speed": 100,
-            "Animation.frontWalk": "player-front-idle",
-            "Animation.backWalk": "player-back-idle",
-            "Animation.leftWalk": "player-left-idle",
-            "Animation.rightWalk": "player-right-idle",
-            "texture": {
-                "key": "playerOnly-4"
-            },
+            "components": [],
             "x": 147,
             "y": 335
         },
         {
             "prefabId": "408d4d35-1d26-4f5e-9315-9d890dbf9ae0",
-            "id": "2cc9f3c4-6986-4001-9025-015500b5cf3b",
+            "id": "d86897d8-8de3-428b-8480-7b8365b0853f",
             "unlock": [
                 "x",
-                "y"
+                "y",
+                "FollowTarget.target"
             ],
             "label": "enemy",
-            "components": [
-                "JustMovement",
-                "FollowTarget"
-            ],
-            "JustMovement.speed": 80,
+            "components": [],
             "FollowTarget.target": "player",
-            "FollowTarget.range": 140,
-            "x": 131,
-            "y": 557
-        },
-        {
-            "prefabId": "408d4d35-1d26-4f5e-9315-9d890dbf9ae0",
-            "id": "ebe165a3-ad09-409a-9afe-3ed0261f31d3",
-            "unlock": [
-                "x",
-                "y"
-            ],
-            "label": "enemy_1",
-            "components": [
-                "JustMovement",
-                "FollowTarget"
-            ],
-            "JustMovement.speed": 80,
-            "FollowTarget.target": "player",
-            "FollowTarget.range": 140,
-            "x": 188,
-            "y": 557
+            "x": 144,
+            "y": 564
         }
     ],
     "plainObjects": [
@@ -127,10 +91,7 @@
     "lists": [
         {
             "id": "97ea1992-d8cd-43db-92a5-734f0b5c68b4",
-            "label": "enemyTeam",
-            "objectIds": [
-                "2cc9f3c4-6986-4001-9025-015500b5cf3b"
-            ]
+            "label": "enemyTeam"
         }
     ]
 }
