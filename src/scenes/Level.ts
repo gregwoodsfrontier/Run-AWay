@@ -78,7 +78,7 @@ export default class Level extends Phaser.Scene {
 		// enemy_3 (components)
 		const enemy_3FollowTarget = FollowTarget.getComponent(enemy_3);
 		enemy_3FollowTarget.target = player;
-		enemy_3FollowTarget.deadRangeX = 30;
+		enemy_3FollowTarget.deadRangeX = 35;
 
 		// enemy_2 (components)
 		const enemy_2FollowTarget = FollowTarget.getComponent(enemy_2);

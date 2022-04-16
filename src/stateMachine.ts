@@ -80,7 +80,7 @@ export default class StateMachine
 
 		this.isChangingState = true
 
-		console.log(`[StateMachine (${this.id})] change from ${this.currentState?.name ?? 'none'} to ${name}`)
+		console.warn(`[StateMachine (${this.id})] change from ${this.currentState?.name ?? 'none'} to ${name}`)
 
 		if (this.currentState && this.currentState.onExit)
 		{

@@ -97,7 +97,6 @@ export default class Enemy extends Phaser.GameObjects.Sprite {
 
 	private disableSlapBox()
 	{
-		console.log('disable slap box')
 		this.slapHitBox.setPosition(0, 0)
 
 		this.slapHitBox.body.enable = false
