@@ -7,6 +7,7 @@ import UserComponent from "./UserComponent";
 import Phaser from "phaser";
 /* START-USER-IMPORTS */
 import JustMovement from "./JustMovement";
+import { DIRECTION } from "../prefabs/Enemy";
 /* END-USER-IMPORTS */
 
 export default class FollowTarget extends UserComponent {
@@ -44,6 +45,7 @@ export default class FollowTarget extends UserComponent {
 
 		if(!this.checkWithinRange())
 		{
+			this.gameObject.emit('stay-still')
 			return
 		}
 
@@ -54,32 +56,27 @@ export default class FollowTarget extends UserComponent {
 	{
 		const diffX = this.target.x - this.gameObject.x
 		const diffY = this.target.y - this.gameObject.y
-		const moveComp = JustMovement.getComponent(this.gameObject)
+		// const moveComp = JustMovement.getComponent(this.gameObject)
 
 		if(diffX > this.deadRangeX)
 		{
-			moveComp.moveRight()
-			// TODO: should emit events of gameObject rather than just move
+			this.gameObject.emit('move', DIRECTION.RIGHT)
 		}
 		else if(diffX < -this.deadRangeX)
 		{
-			moveComp.moveLeft()
-			// TODO: should emit events of gameObject rather than just move
+			this.gameObject.emit('move', DIRECTION.LEFT)
 		}
 		else if(diffY > this.deadRangeY)
 		{
-			moveComp.moveDown()
-			// TODO: should emit events of gameObject rather than just move
+			this.gameObject.emit('move', DIRECTION.FRONT)
 		}
 		else if(diffY < -this.deadRangeY)
 		{
-			moveComp.moveUp()
-			// TODO: should emit events of gameObject rather than just move
+			this.gameObject.emit('move', DIRECTION.BACK)
 		}
 		else
 		{
-			moveComp.stayStill()
-			// TODO: should emit events of gameObject rather than just move
+			this.gameObject.emit('attack')
 		}
 	}
 

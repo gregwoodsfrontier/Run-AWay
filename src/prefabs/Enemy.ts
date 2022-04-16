@@ -13,9 +13,16 @@ import JustMovement from "../components/JustMovement";
 /* START-USER-IMPORTS */
 import StateMachine from "../stateMachine";
 enum ENEMY_STATE_KEYS {
-	IDLE,
-	WALK,
-	ATTACK,
+	IDLE = 'idle',
+	WALK = 'walk',
+	ATTACK = 'attack',
+}
+
+export enum DIRECTION {
+	BACK,
+	LEFT,
+	FRONT,
+	RIGHT
 }
 /* END-USER-IMPORTS */
 
@@ -40,17 +47,22 @@ export default class Enemy extends Phaser.GameObjects.Sprite {
 		/* START-USER-CTR-CODE */
 		// Write your code here.
 		scene.events.on(Phaser.Scenes.Events.UPDATE, this.update, this);
+
 		this.enemyAnimation = AnimationV2.getComponent(this)
+		this.enemyMovement = JustMovement.getComponent(this)
 		this.enemyAnimation.playAnims({
 			character: 'swarm',
 			direction: 'front',
 			state: 'idle'
 		})
 
+		this.slapHitBox = this.scene.add.rectangle(0, 0, 32, 64, 0xffffff, 0)  as unknown as Phaser.Types.Physics.Arcade.ImageWithDynamicBody
+		this.scene.physics.add.existing(this.slapHitBox)
+		this.disableSlapBox()
+
 		this.stateMachine = new StateMachine(this, 'enemy')
 		this.stateMachine.addState('idle', {
-			onEnter: this.onIdleEnter,
-			onUpdate: this.onIdleUpdate
+			onEnter: this.onIdleEnter
 		})
 		.addState('walk', {
 			onEnter: this.onWalkEnter,
@@ -63,6 +75,9 @@ export default class Enemy extends Phaser.GameObjects.Sprite {
 		.setState('idle')
 
 		// create events only for this enemy instance
+		this.on('move', this.moveTheUnit)
+		this.on('stay-still', this.stayStill)
+		this.on('attack', this.initAttack)
 		/* END-USER-CTR-CODE */
 	}
 
@@ -71,46 +86,266 @@ export default class Enemy extends Phaser.GameObjects.Sprite {
 	// Write your code here.
 	private stateMachine: StateMachine
 	private enemyAnimation: AnimationV2
+	private enemyMovement: JustMovement
+	private direction = DIRECTION.FRONT
+	private slapHitBox: Phaser.Types.Physics.Arcade.ImageWithDynamicBody
 
 	update(dt: number)
 	{
 		this.stateMachine.update(dt)
 	}
 
+	private disableSlapBox()
+	{
+		console.log('disable slap box')
+		this.slapHitBox.setPosition(0, 0)
+
+		this.slapHitBox.body.enable = false
+		this.scene.physics.world.remove(this.slapHitBox.body)
+
+		
+	}
+
+	private enableSlapBox()
+	{
+		this.slapHitBox.body.enable = true
+		this.scene.physics.world.add(this.slapHitBox.body)
+	}
+
+	private debugSlapHitBox()
+	{
+		const graphics = this.scene.add.graphics()
+		graphics.lineStyle(5, 0x00ffff)
+		graphics.strokeRect(
+			this.slapHitBox.body.x, 
+			this.slapHitBox.body.y, 
+			this.slapHitBox.body.width, 
+			this.slapHitBox.body.height
+		)
+		
+	}
+
+	private stayStill()
+	{
+		this.stateMachine.setState(ENEMY_STATE_KEYS.IDLE)
+	}
+
+	private moveTheUnit(dir: number)
+	{
+		this.direction = dir
+		this.stateMachine.setState(ENEMY_STATE_KEYS.WALK)
+	}
+
+	private initAttack()
+	{
+		this.stateMachine.setState(ENEMY_STATE_KEYS.ATTACK)
+	}
+
+	private getDirectionName(dir: number)
+	{
+		switch (dir) {
+			case DIRECTION.BACK: {
+				return 'back'
+				break
+			}
+
+			case DIRECTION.FRONT: {
+				return 'front'
+				break
+			}
+
+			case DIRECTION.LEFT: {
+				return 'left'
+				break
+			}
+
+			case DIRECTION.RIGHT: {
+				return 'right'
+				break
+			}
+
+			default: {
+				console.warn('no such direction')
+				return
+			}
+		}
+	}
+
+	private setSlapHitBox(dir: number)
+	{
+		const boxMargin = 10
+		const boxWidth = 32
+		const boxHeight = 15
+		const physics = Physics.getComponent(this)
+
+		switch (dir) {
+			case DIRECTION.BACK: {
+				this.slapHitBox.setPosition(
+					this.x, 
+					this.y - boxMargin - boxHeight)
+				this.slapHitBox.body.setSize(
+					boxWidth,
+					boxHeight
+				)
+				break
+			}
+
+			case DIRECTION.FRONT: {
+				const body = this.body as Phaser.Physics.Arcade.Body
+
+				this.slapHitBox.setPosition(
+					this.x, 
+					this.y + body.height + boxMargin
+				)
+				this.slapHitBox.body.setSize(
+					boxWidth,
+					boxHeight
+				)
+				break
+			}
+
+			case DIRECTION.RIGHT: {
+				const body = this.body as Phaser.Physics.Arcade.Body
+
+				this.slapHitBox.setPosition(
+					this.x + physics.offsetX/2 + body.width/2 + boxMargin,
+					this.y + physics.offsetY/2
+				)
+				this.slapHitBox.body.setSize(
+					boxHeight,
+					boxWidth
+				)
+				break
+			}
+
+			case DIRECTION.LEFT: {
+				this.slapHitBox.setPosition(
+					this.x - physics.offsetX/2 - boxMargin - boxHeight,
+					this.y + physics.offsetY/2
+				)
+				this.slapHitBox.body.setSize(
+					boxHeight,
+					boxWidth
+				)
+				break
+			}
+		}
+	}
+
 	private onIdleEnter()
 	{
+		this.disableSlapBox()
+
+		const dirName = this.getDirectionName(this.direction)
+
+		if(!dirName)
+		{
+			console.warn('direction should be defined')
+			return
+		}
+
+		this.enemyMovement.stayStill()
+		this.enemyAnimation.playAnims({
+			character: 'swarm',
+			direction: dirName,
+			state: 'idle'
+		})
 
 	}
-	
-	private onIdleUpdate()
-	{
-		this.enemyAnimation.playIdleFromWalk()
-	}
-	
+
 	private onWalkEnter()
 	{
-
+		this.disableSlapBox()
 	}
 	
 	private onWalkUpdate()
 	{
-		JustMovement.getComponent(this).moveDown()
+		const dirName = this.getDirectionName(this.direction)
+
+		if(!dirName)
+		{
+			console.warn('direction should be defined')
+			return
+		}
+
+		switch (this.direction) {
+			case DIRECTION.BACK: {
+				this.enemyMovement.moveUp()
+				break
+			}
+
+			case DIRECTION.FRONT: {
+				this.enemyMovement.moveDown()
+				break
+			}
+
+			case DIRECTION.LEFT: {
+				this.enemyMovement.moveLeft()
+				break
+			}
+
+			case DIRECTION.RIGHT: {
+				this.enemyMovement.moveRight()
+				break
+			}
+		}
+
 		this.enemyAnimation.playAnims({
 			character: 'swarm',
-			direction: 'front',
+			direction: dirName,
 			state: 'walk'
 		})
 	}
 	
 	private onAttackEnter()
 	{
+		const dirName = this.getDirectionName(this.direction)
+		
+		if(!dirName)
+		{
+			console.warn('direction should be defined')
+			return
+		}
 
+		this.enemyMovement.stayStill()
+
+		this.enemyAnimation.playAnims({
+			character: 'swarm',
+			direction: dirName,
+			state: 'attack'
+		})
+
+		const startHit = () => {
+			
+			this.off(Phaser.Animations.Events.ANIMATION_UPDATE, startHit)
+
+			this.setSlapHitBox(this.direction)
+
+			this.enableSlapBox()
+
+			// this.debugSlapHitBox()
+		}
+
+		this.on(Phaser.Animations.Events.ANIMATION_UPDATE, startHit)
+
+		/* this.once(Phaser.Animations.Events.ANIMATION_STOP + `swarm-${dirName}-attack`, () => {
+			this.stateMachine.setState(ENEMY_STATE_KEYS.IDLE)
+
+			
+		}) */
+
+		/* this.scene.time.delayedCall(2000, () => {
+			this.slapHitBox.setPosition(0, 0)
+		}) */
 	}
 	
 	private onAttackUpdate()
 	{
+		
 
 	}
+
+	
 	
 
 	/* END-USER-CODE */
