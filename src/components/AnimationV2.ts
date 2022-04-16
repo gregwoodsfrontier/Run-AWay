@@ -52,7 +52,7 @@ export default class AnimationV2 extends UserComponent {
 		}
 
 		this.gameObject.play(`${character}-${direction}-${state}-${holdState}`, true)
-		
+
 	}
 
 	playIdleFromWalk()
@@ -68,8 +68,8 @@ export default class AnimationV2 extends UserComponent {
 		}
 		else
 		{
-			const holdstate = parts[3]
-			this.gameObject.play(`dude-${direction}-idle-${holdstate}`, true)
+			const holdstate = parts[parts.length-1]
+			this.gameObject.play(`${char}-${direction}-idle-${holdstate}`, true)
 		}
 	}
 

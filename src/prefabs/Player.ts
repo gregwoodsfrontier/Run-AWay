@@ -9,6 +9,7 @@ import KeyboardInput from "../components/KeyboardInput";
 import JustMovement from "../components/JustMovement";
 import DepthSortY from "../components/DepthSortY";
 import AnimationV2 from "../components/AnimationV2";
+import CameraFollow from "../components/CameraFollow";
 /* START-USER-IMPORTS */
 /* END-USER-IMPORTS */
 
@@ -25,9 +26,10 @@ export default class Player extends Phaser.GameObjects.Sprite {
 		thisPhysics.offsetY = 26;
 		new KeyboardInput(this);
 		const thisJustMovement = new JustMovement(this);
-		thisJustMovement.speed = 100;
+		thisJustMovement.speed = 150;
 		new DepthSortY(this);
 		new AnimationV2(this);
+		new CameraFollow(this);
 
 		/* START-USER-CTR-CODE */
 		// Write your code here.
