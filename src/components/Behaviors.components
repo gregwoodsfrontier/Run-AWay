@@ -198,6 +198,12 @@
                     }
                 }
             ]
+        },
+        {
+            "name": "AnimationV2",
+            "baseClass": "UserComponent",
+            "gameObjectType": "Phaser.GameObjects.Sprite",
+            "properties": []
         }
     ],
     "meta": {

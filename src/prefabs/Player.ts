@@ -5,17 +5,17 @@
 
 import Phaser from "phaser";
 import Physics from "../components/Physics";
-import DepthSortY from "../components/DepthSortY";
-import FollowTarget from "../components/FollowTarget";
-import AnimationV2 from "../components/AnimationV2";
+import KeyboardInput from "../components/KeyboardInput";
 import JustMovement from "../components/JustMovement";
+import DepthSortY from "../components/DepthSortY";
+import AnimationV2 from "../components/AnimationV2";
 /* START-USER-IMPORTS */
 /* END-USER-IMPORTS */
 
-export default class Enemy extends Phaser.GameObjects.Sprite {
+export default class Player extends Phaser.GameObjects.Sprite {
 
 	constructor(scene: Phaser.Scene, x?: number, y?: number, texture?: string, frame?: number | string) {
-		super(scene, x ?? 0, y ?? 0, texture || "swarm-front-walk-1", frame);
+		super(scene, x ?? 0, y ?? 0, texture || "playerOnly-4", frame);
 
 		// this (components)
 		const thisPhysics = new Physics(this);
@@ -23,12 +23,11 @@ export default class Enemy extends Phaser.GameObjects.Sprite {
 		thisPhysics.height = 40;
 		thisPhysics.offsetX = 16;
 		thisPhysics.offsetY = 26;
-		new DepthSortY(this);
-		const thisFollowTarget = new FollowTarget(this);
-		thisFollowTarget.range = 130;
-		new AnimationV2(this);
+		new KeyboardInput(this);
 		const thisJustMovement = new JustMovement(this);
 		thisJustMovement.speed = 100;
+		new DepthSortY(this);
+		new AnimationV2(this);
 
 		/* START-USER-CTR-CODE */
 		// Write your code here.

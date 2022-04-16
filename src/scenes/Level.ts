@@ -4,14 +4,14 @@
 
 import Phaser from "phaser";
 import TileMapLayerPhysics from "../components/TileMapLayerPhysics";
-import Physics from "../components/Physics";
-import KeyboardInput from "../components/KeyboardInput";
-import JustMovement from "../components/JustMovement";
-import Animation from "../components/Animation";
-import DepthSortY from "../components/DepthSortY";
+import Player from "../prefabs/Player";
 import Enemy from "../prefabs/Enemy";
 import FollowTarget from "../components/FollowTarget";
 /* START-USER-IMPORTS */
+import KeyboardInput from "../components/KeyboardInput";
+import JustMovement from "../components/JustMovement";
+import AnimationV2 from "../components/AnimationV2";
+import DepthSortY from "../components/DepthSortY";
 /* END-USER-IMPORTS */
 
 export default class Level extends Phaser.Scene {
@@ -37,51 +37,22 @@ export default class Level extends Phaser.Scene {
 		const wall_1 = cave_test_map_1.createLayer("wall", ["Gamdev jam cate tiles test 1"], 0, -960);
 
 		// player
-		const player = this.add.sprite(147, 335, "playerOnly-4");
+		const player = new Player(this, 147, 335);
+		this.add.existing(player);
 
 		// enemy
-		const enemy = new Enemy(this, 131, 557);
+		const enemy = new Enemy(this, 144, 564);
 		this.add.existing(enemy);
 
-		// enemy_1
-		const enemy_1 = new Enemy(this, 188, 557);
-		this.add.existing(enemy_1);
-
 		// lists
-		const enemyTeam = [enemy];
+		const enemyTeam: Array<any> = [];
 
 		// wall_1 (components)
 		new TileMapLayerPhysics(wall_1);
 
-		// player (components)
-		const playerPhysics = new Physics(player);
-		playerPhysics.width = 32;
-		playerPhysics.height = 40;
-		playerPhysics.offsetX = 16;
-		playerPhysics.offsetY = 26;
-		new KeyboardInput(player);
-		const playerJustMovement = new JustMovement(player);
-		playerJustMovement.speed = 100;
-		const playerAnimation = new Animation(player);
-		playerAnimation.frontWalk = "player-front-idle";
-		playerAnimation.backWalk = "player-back-idle";
-		playerAnimation.leftWalk = "player-left-idle";
-		playerAnimation.rightWalk = "player-right-idle";
-		new DepthSortY(player);
-
 		// enemy (components)
-		const enemyJustMovement = new JustMovement(enemy);
-		enemyJustMovement.speed = 80;
-		const enemyFollowTarget = new FollowTarget(enemy);
+		const enemyFollowTarget = FollowTarget.getComponent(enemy);
 		enemyFollowTarget.target = player;
-		enemyFollowTarget.range = 140;
-
-		// enemy_1 (components)
-		const enemy_1JustMovement = new JustMovement(enemy_1);
-		enemy_1JustMovement.speed = 80;
-		const enemy_1FollowTarget = new FollowTarget(enemy_1);
-		enemy_1FollowTarget.target = player;
-		enemy_1FollowTarget.range = 140;
 
 		this.floor_1 = floor_1;
 		this.wall_1 = wall_1;
@@ -94,8 +65,8 @@ export default class Level extends Phaser.Scene {
 
 	private floor_1!: Phaser.Tilemaps.TilemapLayer;
 	private wall_1!: Phaser.Tilemaps.TilemapLayer;
-	public player!: Phaser.GameObjects.Sprite;
-	private enemyTeam!: Enemy[];
+	public player!: Player;
+	private enemyTeam!: Array<any>;
 
 	/* START-USER-CODE */
 	public platformer_fun!: Phaser.Tilemaps.Tilemap
@@ -104,29 +75,45 @@ export default class Level extends Phaser.Scene {
 	create() {
 
 		this.editorCreate();
-		this.player.play('dude-front-idle')
+		this.player.play('player-front-idle')
 		this.floor_1.depth = 0
 		this.wall_1.depth = 0
 
 		const playerKeyboardInput = KeyboardInput.getComponent(this.player)
 		const playerMove = JustMovement.getComponent(this.player)
-		const playerAnims = Animation.getComponent(this.player)
+		const playerAnims = AnimationV2.getComponent(this.player)
 
 		playerKeyboardInput.executeLeft = () => {
 			playerMove.moveLeft()
-			playerAnims.playLeft()
+			playerAnims.playAnims({
+				character: 'player',
+				direction: 'left',
+				state: 'walk'
+			})
 		}
 		playerKeyboardInput.executeRight = () => {
 			playerMove.moveRight()
-			playerAnims.playRight()
+			playerAnims.playAnims({
+				character: 'player',
+				direction: 'right',
+				state: 'walk'
+			})
 		}
 		playerKeyboardInput.executeUp = () => {
 			playerMove.moveUp()
-			playerAnims.playBack()
+			playerAnims.playAnims({
+				character: 'player',
+				direction: 'back',
+				state: 'walk'
+			})
 		}
 		playerKeyboardInput.executeDown = () => {
 			playerMove.moveDown()
-			playerAnims.playFront()
+			playerAnims.playAnims({
+				character: 'player',
+				direction: 'front',
+				state: 'walk'
+			})
 		}
 		playerKeyboardInput.executeKeyUp = () => {
 			playerMove.stayStill()
