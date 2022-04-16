@@ -59,22 +59,27 @@ export default class FollowTarget extends UserComponent {
 		if(diffX > this.deadRangeX)
 		{
 			moveComp.moveRight()
+			// TODO: should emit events of gameObject rather than just move
 		}
 		else if(diffX < -this.deadRangeX)
 		{
 			moveComp.moveLeft()
+			// TODO: should emit events of gameObject rather than just move
 		}
 		else if(diffY > this.deadRangeY)
 		{
 			moveComp.moveDown()
+			// TODO: should emit events of gameObject rather than just move
 		}
 		else if(diffY < -this.deadRangeY)
 		{
 			moveComp.moveUp()
+			// TODO: should emit events of gameObject rather than just move
 		}
 		else
 		{
 			moveComp.stayStill()
+			// TODO: should emit events of gameObject rather than just move
 		}
 	}
 
