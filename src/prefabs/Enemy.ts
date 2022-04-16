@@ -101,8 +101,6 @@ export default class Enemy extends Phaser.GameObjects.Sprite {
 
 		this.slapHitBox.body.enable = false
 		this.scene.physics.world.remove(this.slapHitBox.body)
-
-		
 	}
 
 	private enableSlapBox()
