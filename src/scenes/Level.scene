@@ -106,7 +106,7 @@
             "label": "enemy_3",
             "components": [],
             "FollowTarget.target": "player",
-            "FollowTarget.deadRangeX": 30,
+            "FollowTarget.deadRangeX": 35,
             "x": 119,
             "y": 445
         },
