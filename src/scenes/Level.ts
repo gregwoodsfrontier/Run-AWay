@@ -7,6 +7,7 @@ import TileMapLayerPhysics from "../components/TileMapLayerPhysics";
 import Player from "../prefabs/Player";
 import Enemy from "../prefabs/Enemy";
 import FollowTarget from "../components/FollowTarget";
+import Block from "../prefabs/Block";
 /* START-USER-IMPORTS */
 import KeyboardInput from "../components/KeyboardInput";
 import JustMovement from "../components/JustMovement";
@@ -44,6 +45,10 @@ export default class Level extends Phaser.Scene {
 		const enemy = new Enemy(this, 144, 564);
 		this.add.existing(enemy);
 
+		// block_1
+		const block_1 = new Block(this, 130, 208);
+		this.add.existing(block_1);
+
 		// lists
 		const enemyTeam = [enemy];
 
@@ -57,6 +62,7 @@ export default class Level extends Phaser.Scene {
 		this.floor_1 = floor_1;
 		this.wall_1 = wall_1;
 		this.player = player;
+		this.block_1 = block_1;
 		this.cave_test_map_1 = cave_test_map_1;
 		this.enemyTeam = enemyTeam;
 
@@ -66,6 +72,7 @@ export default class Level extends Phaser.Scene {
 	private floor_1!: Phaser.Tilemaps.TilemapLayer;
 	private wall_1!: Phaser.Tilemaps.TilemapLayer;
 	public player!: Player;
+	private block_1!: Block;
 	private enemyTeam!: Enemy[];
 
 	/* START-USER-CODE */
