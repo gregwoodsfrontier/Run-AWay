@@ -243,8 +243,7 @@
                 }
             ],
             "frameRate": 12,
-            "skipMissedFrames": true,
-            "repeat": -1
+            "skipMissedFrames": true
         },
         {
             "key": "swarm-front-idle",
@@ -257,8 +256,7 @@
                 }
             ],
             "frameRate": 12,
-            "skipMissedFrames": true,
-            "repeat": -1
+            "skipMissedFrames": true
         },
         {
             "key": "swarm-left-idle",
@@ -271,8 +269,7 @@
                 }
             ],
             "frameRate": 12,
-            "skipMissedFrames": true,
-            "repeat": -1
+            "skipMissedFrames": true
         },
         {
             "key": "swarm-right-idle",
@@ -285,8 +282,7 @@
                 }
             ],
             "frameRate": 12,
-            "skipMissedFrames": true,
-            "repeat": -1
+            "skipMissedFrames": true
         },
         {
             "key": "tempboss-front-idle",
@@ -299,8 +295,7 @@
                 }
             ],
             "frameRate": 12,
-            "skipMissedFrames": true,
-            "repeat": -1
+            "skipMissedFrames": true
         },
         {
             "key": "tempboss-back-idle",
@@ -313,8 +308,7 @@
                 }
             ],
             "frameRate": 12,
-            "skipMissedFrames": true,
-            "repeat": -1
+            "skipMissedFrames": true
         },
         {
             "key": "tempboss-left-idle",
@@ -327,8 +321,7 @@
                 }
             ],
             "frameRate": 12,
-            "skipMissedFrames": true,
-            "repeat": -1
+            "skipMissedFrames": true
         },
         {
             "key": "tempboss-right-idle",
@@ -341,8 +334,7 @@
                 }
             ],
             "frameRate": 12,
-            "skipMissedFrames": true,
-            "repeat": -1
+            "skipMissedFrames": true
         },
         {
             "key": "dude-front-walk",
@@ -528,9 +520,8 @@
                     "keyframe": false
                 }
             ],
-            "frameRate": 24,
-            "skipMissedFrames": true,
-            "repeat": -1
+            "frameRate": 12,
+            "skipMissedFrames": true
         },
         {
             "key": "dude-back-idle",
@@ -542,9 +533,8 @@
                     "keyframe": false
                 }
             ],
-            "frameRate": 24,
-            "skipMissedFrames": true,
-            "repeat": -1
+            "frameRate": 12,
+            "skipMissedFrames": true
         },
         {
             "key": "dude-left-idle",
@@ -556,9 +546,8 @@
                     "keyframe": false
                 }
             ],
-            "frameRate": 24,
-            "skipMissedFrames": true,
-            "repeat": -1
+            "frameRate": 12,
+            "skipMissedFrames": true
         },
         {
             "key": "dude-right-idle",
@@ -570,9 +559,8 @@
                     "keyframe": false
                 }
             ],
-            "frameRate": 24,
-            "skipMissedFrames": true,
-            "repeat": -1
+            "frameRate": 12,
+            "skipMissedFrames": true
         },
         {
             "key": "dude-left-idle-hold",
@@ -584,9 +572,8 @@
                     "keyframe": false
                 }
             ],
-            "frameRate": 24,
-            "skipMissedFrames": true,
-            "repeat": -1
+            "frameRate": 12,
+            "skipMissedFrames": true
         },
         {
             "key": "dude-right-idle-hold",
@@ -594,6 +581,641 @@
             "frames": [
                 {
                     "key": "dude-right-walk-hold-1",
+                    "duration": 0,
+                    "keyframe": false
+                }
+            ],
+            "frameRate": 12,
+            "skipMissedFrames": true
+        },
+        {
+            "key": "swarm-right-attack",
+            "type": "frame",
+            "frames": [
+                {
+                    "key": "swarm-right-attack-1",
+                    "duration": 0,
+                    "keyframe": false
+                },
+                {
+                    "key": "swarm-right-attack-2",
+                    "duration": 0,
+                    "keyframe": false
+                },
+                {
+                    "key": "swarm-right-attack-3",
+                    "duration": 0,
+                    "keyframe": false
+                },
+                {
+                    "key": "swarm-right-attack-4",
+                    "duration": 0,
+                    "keyframe": false
+                }
+            ],
+            "frameRate": 12,
+            "skipMissedFrames": true,
+            "repeat": -1,
+            "repeatDelay": 10
+        },
+        {
+            "key": "swarm-left-attack",
+            "type": "frame",
+            "frames": [
+                {
+                    "key": "swarm-left-attack-1",
+                    "duration": 0,
+                    "keyframe": false
+                },
+                {
+                    "key": "swarm-left-attack-2",
+                    "duration": 0,
+                    "keyframe": false
+                },
+                {
+                    "key": "swarm-left-attack-3",
+                    "duration": 0,
+                    "keyframe": false
+                },
+                {
+                    "key": "swarm-left-attack-4",
+                    "duration": 0,
+                    "keyframe": false
+                }
+            ],
+            "frameRate": 12,
+            "skipMissedFrames": true,
+            "repeat": -1,
+            "repeatDelay": 10
+        },
+        {
+            "key": "swarm-front-attack",
+            "type": "frame",
+            "frames": [
+                {
+                    "key": "swarm-front-attack-1",
+                    "duration": 0,
+                    "keyframe": false
+                },
+                {
+                    "key": "swarm-front-attack-2",
+                    "duration": 0,
+                    "keyframe": false
+                },
+                {
+                    "key": "swarm-front-attack-3",
+                    "duration": 0,
+                    "keyframe": false
+                },
+                {
+                    "key": "swarm-front-attack-4",
+                    "duration": 0,
+                    "keyframe": false
+                }
+            ],
+            "frameRate": 12,
+            "skipMissedFrames": true,
+            "repeat": -1,
+            "repeatDelay": 10
+        },
+        {
+            "key": "swarm-back-attack",
+            "type": "frame",
+            "frames": [
+                {
+                    "key": "swarm-back-attack-1",
+                    "duration": 0,
+                    "keyframe": false
+                },
+                {
+                    "key": "swarm-back-attack-2",
+                    "duration": 0,
+                    "keyframe": false
+                },
+                {
+                    "key": "swarm-back-attack-3",
+                    "duration": 0,
+                    "keyframe": false
+                },
+                {
+                    "key": "swarm-back-attack-4",
+                    "duration": 0,
+                    "keyframe": false
+                }
+            ],
+            "frameRate": 12,
+            "skipMissedFrames": true,
+            "repeat": -1,
+            "repeatDelay": 10
+        },
+        {
+            "key": "player-front-walk-gun",
+            "type": "frame",
+            "frames": [
+                {
+                    "key": "playerHoldGun-20",
+                    "duration": 0,
+                    "keyframe": false
+                },
+                {
+                    "key": "playerHoldGun-21",
+                    "duration": 0,
+                    "keyframe": false
+                },
+                {
+                    "key": "playerHoldGun-22",
+                    "duration": 0,
+                    "keyframe": false
+                },
+                {
+                    "key": "playerHoldGun-23",
+                    "duration": 0,
+                    "keyframe": false
+                }
+            ],
+            "frameRate": 12,
+            "skipMissedFrames": true,
+            "repeat": -1
+        },
+        {
+            "key": "player-left-walk-gun",
+            "type": "frame",
+            "frames": [
+                {
+                    "key": "playerHoldGun-24",
+                    "duration": 0,
+                    "keyframe": false
+                },
+                {
+                    "key": "playerHoldGun-25",
+                    "duration": 0,
+                    "keyframe": false
+                },
+                {
+                    "key": "playerHoldGun-26",
+                    "duration": 0,
+                    "keyframe": false
+                },
+                {
+                    "key": "playerHoldGun-27",
+                    "duration": 0,
+                    "keyframe": false
+                }
+            ],
+            "frameRate": 12,
+            "skipMissedFrames": true,
+            "repeat": -1
+        },
+        {
+            "key": "player-right-walk-gun",
+            "type": "frame",
+            "frames": [
+                {
+                    "key": "playerHoldGun-28",
+                    "duration": 0,
+                    "keyframe": false
+                },
+                {
+                    "key": "playerHoldGun-29",
+                    "duration": 0,
+                    "keyframe": false
+                },
+                {
+                    "key": "playerHoldGun-30",
+                    "duration": 0,
+                    "keyframe": false
+                },
+                {
+                    "key": "playerHoldGun-31",
+                    "duration": 0,
+                    "keyframe": false
+                }
+            ],
+            "frameRate": 12,
+            "skipMissedFrames": true,
+            "repeat": -1
+        },
+        {
+            "key": "playerHoldGun",
+            "type": "frame",
+            "frames": [
+                {
+                    "key": "playerHoldGun-32",
+                    "duration": 0,
+                    "keyframe": false
+                },
+                {
+                    "key": "playerHoldGun-33",
+                    "duration": 0,
+                    "keyframe": false
+                },
+                {
+                    "key": "playerHoldGun-34",
+                    "duration": 0,
+                    "keyframe": false
+                },
+                {
+                    "key": "playerHoldGun-35",
+                    "duration": 0,
+                    "keyframe": false
+                }
+            ],
+            "frameRate": 12,
+            "skipMissedFrames": true,
+            "repeat": -1
+        },
+        {
+            "key": "player-back-walk",
+            "type": "frame",
+            "frames": [
+                {
+                    "key": "playerOnly-16",
+                    "duration": 0,
+                    "keyframe": false
+                },
+                {
+                    "key": "playerOnly-17",
+                    "duration": 0,
+                    "keyframe": false
+                },
+                {
+                    "key": "playerOnly-18",
+                    "duration": 0,
+                    "keyframe": false
+                },
+                {
+                    "key": "playerOnly-19",
+                    "duration": 0,
+                    "keyframe": false
+                }
+            ],
+            "frameRate": 12,
+            "skipMissedFrames": true,
+            "repeat": -1
+        },
+        {
+            "key": "player-front-walk-hold",
+            "type": "frame",
+            "frames": [
+                {
+                    "key": "playerOnly-20",
+                    "duration": 0,
+                    "keyframe": false
+                },
+                {
+                    "key": "playerOnly-21",
+                    "duration": 0,
+                    "keyframe": false
+                },
+                {
+                    "key": "playerOnly-22",
+                    "duration": 0,
+                    "keyframe": false
+                },
+                {
+                    "key": "playerOnly-23",
+                    "duration": 0,
+                    "keyframe": false
+                }
+            ],
+            "frameRate": 12,
+            "skipMissedFrames": true,
+            "repeat": -1
+        },
+        {
+            "key": "player-front-walk",
+            "type": "frame",
+            "frames": [
+                {
+                    "key": "playerOnly-4",
+                    "duration": 0,
+                    "keyframe": false
+                },
+                {
+                    "key": "playerOnly-5",
+                    "duration": 0,
+                    "keyframe": false
+                },
+                {
+                    "key": "playerOnly-6",
+                    "duration": 0,
+                    "keyframe": false
+                },
+                {
+                    "key": "playerOnly-7",
+                    "duration": 0,
+                    "keyframe": false
+                }
+            ],
+            "frameRate": 12,
+            "skipMissedFrames": true,
+            "repeat": -1
+        },
+        {
+            "key": "player-left-walk",
+            "type": "frame",
+            "frames": [
+                {
+                    "key": "playerOnly-10",
+                    "duration": 0,
+                    "keyframe": false
+                },
+                {
+                    "key": "playerOnly-11",
+                    "duration": 0,
+                    "keyframe": false
+                },
+                {
+                    "key": "playerOnly-8",
+                    "duration": 0,
+                    "keyframe": false
+                },
+                {
+                    "key": "playerOnly-9",
+                    "duration": 0,
+                    "keyframe": false
+                }
+            ],
+            "frameRate": 12,
+            "skipMissedFrames": true,
+            "repeat": -1
+        },
+        {
+            "key": "player-right-walk",
+            "type": "frame",
+            "frames": [
+                {
+                    "key": "playerOnly-12",
+                    "duration": 0,
+                    "keyframe": false
+                },
+                {
+                    "key": "playerOnly-13",
+                    "duration": 0,
+                    "keyframe": false
+                },
+                {
+                    "key": "playerOnly-14",
+                    "duration": 0,
+                    "keyframe": false
+                },
+                {
+                    "key": "playerOnly-15",
+                    "duration": 0,
+                    "keyframe": false
+                }
+            ],
+            "frameRate": 12,
+            "skipMissedFrames": true,
+            "repeat": -1
+        },
+        {
+            "key": "player-back-walk-hold",
+            "type": "frame",
+            "frames": [
+                {
+                    "key": "playerOnly-32",
+                    "duration": 0,
+                    "keyframe": false
+                },
+                {
+                    "key": "playerOnly-33",
+                    "duration": 0,
+                    "keyframe": false
+                },
+                {
+                    "key": "playerOnly-34",
+                    "duration": 0,
+                    "keyframe": false
+                },
+                {
+                    "key": "playerOnly-35",
+                    "duration": 0,
+                    "keyframe": false
+                }
+            ],
+            "frameRate": 12,
+            "skipMissedFrames": true,
+            "repeat": -1
+        },
+        {
+            "key": "player-left-walk-hold",
+            "type": "frame",
+            "frames": [
+                {
+                    "key": "playerOnly-24",
+                    "duration": 0,
+                    "keyframe": false
+                },
+                {
+                    "key": "playerOnly-25",
+                    "duration": 0,
+                    "keyframe": false
+                },
+                {
+                    "key": "playerOnly-26",
+                    "duration": 0,
+                    "keyframe": false
+                },
+                {
+                    "key": "playerOnly-27",
+                    "duration": 0,
+                    "keyframe": false
+                }
+            ],
+            "frameRate": 12,
+            "skipMissedFrames": true,
+            "repeat": -1
+        },
+        {
+            "key": "player-right-walk-hold",
+            "type": "frame",
+            "frames": [
+                {
+                    "key": "playerOnly-28",
+                    "duration": 0,
+                    "keyframe": false
+                },
+                {
+                    "key": "playerOnly-29",
+                    "duration": 0,
+                    "keyframe": false
+                },
+                {
+                    "key": "playerOnly-30",
+                    "duration": 0,
+                    "keyframe": false
+                },
+                {
+                    "key": "playerOnly-31",
+                    "duration": 0,
+                    "keyframe": false
+                }
+            ],
+            "frameRate": 12,
+            "skipMissedFrames": true,
+            "repeat": -1
+        },
+        {
+            "key": "player-front-idle-gun",
+            "type": "frame",
+            "frames": [
+                {
+                    "key": "playerHoldGun-20",
+                    "duration": 0,
+                    "keyframe": false
+                }
+            ],
+            "frameRate": 12,
+            "skipMissedFrames": true,
+            "repeat": -1
+        },
+        {
+            "key": "player-left-idle-gun",
+            "type": "frame",
+            "frames": [
+                {
+                    "key": "playerHoldGun-24",
+                    "duration": 0,
+                    "keyframe": false
+                }
+            ],
+            "frameRate": 24,
+            "skipMissedFrames": true,
+            "repeat": -1
+        },
+        {
+            "key": "player-right-idle-gun",
+            "type": "frame",
+            "frames": [
+                {
+                    "key": "playerHoldGun-28",
+                    "duration": 0,
+                    "keyframe": false
+                }
+            ],
+            "frameRate": 24,
+            "skipMissedFrames": true,
+            "repeat": -1
+        },
+        {
+            "key": "player-back-idle-gun",
+            "type": "frame",
+            "frames": [
+                {
+                    "key": "playerHoldGun-32",
+                    "duration": 0,
+                    "keyframe": false
+                }
+            ],
+            "frameRate": 24,
+            "skipMissedFrames": true,
+            "repeat": -1
+        },
+        {
+            "key": "player-front-idle-hold",
+            "type": "frame",
+            "frames": [
+                {
+                    "key": "playerOnly-20",
+                    "duration": 0,
+                    "keyframe": false
+                }
+            ],
+            "frameRate": 24,
+            "skipMissedFrames": true,
+            "repeat": -1
+        },
+        {
+            "key": "player-back-idle-hold",
+            "type": "frame",
+            "frames": [
+                {
+                    "key": "playerOnly-32",
+                    "duration": 0,
+                    "keyframe": false
+                }
+            ],
+            "frameRate": 24,
+            "skipMissedFrames": true,
+            "repeat": -1
+        },
+        {
+            "key": "player-left-idle-hold",
+            "type": "frame",
+            "frames": [
+                {
+                    "key": "playerOnly-24",
+                    "duration": 0,
+                    "keyframe": false
+                }
+            ],
+            "frameRate": 24,
+            "skipMissedFrames": true,
+            "repeat": -1
+        },
+        {
+            "key": "player-right-idle-hold",
+            "type": "frame",
+            "frames": [
+                {
+                    "key": "playerOnly-28",
+                    "duration": 0,
+                    "keyframe": false
+                }
+            ],
+            "frameRate": 24,
+            "skipMissedFrames": true,
+            "repeat": -1
+        },
+        {
+            "key": "player-front-idle",
+            "type": "frame",
+            "frames": [
+                {
+                    "key": "playerOnly-4",
+                    "duration": 0,
+                    "keyframe": false
+                }
+            ],
+            "frameRate": 24,
+            "skipMissedFrames": true,
+            "repeat": -1
+        },
+        {
+            "key": "player-back-idle",
+            "type": "frame",
+            "frames": [
+                {
+                    "key": "playerOnly-16",
+                    "duration": 0,
+                    "keyframe": false
+                }
+            ],
+            "frameRate": 24,
+            "skipMissedFrames": true,
+            "repeat": -1
+        },
+        {
+            "key": "player-left-idle",
+            "type": "frame",
+            "frames": [
+                {
+                    "key": "playerOnly-8",
+                    "duration": 0,
+                    "keyframe": false
+                }
+            ],
+            "frameRate": 24,
+            "skipMissedFrames": true,
+            "repeat": -1
+        },
+        {
+            "key": "player-right-idle",
+            "type": "frame",
+            "frames": [
+                {
+                    "key": "playerOnly-12",
                     "duration": 0,
                     "keyframe": false
                 }

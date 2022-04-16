@@ -31,17 +31,21 @@ export default class Level extends Phaser.Scene {
 		cave_test_map_1.addTilesetImage("Gamdev jam cate tiles test 1", "cave-test-tileset-1");
 
 		// floor_1
-		const floor_1 = cave_test_map_1.createLayer("floor", ["Gamdev jam cate tiles test 1"], 0, 0);
+		const floor_1 = cave_test_map_1.createLayer("floor", ["Gamdev jam cate tiles test 1"], 0, -960);
 
 		// wall_1
-		const wall_1 = cave_test_map_1.createLayer("wall", ["Gamdev jam cate tiles test 1"], 0, 0);
+		const wall_1 = cave_test_map_1.createLayer("wall", ["Gamdev jam cate tiles test 1"], 0, -960);
 
 		// player
-		const player = this.add.sprite(160, 175, "dude-front-walk-1");
+		const player = this.add.sprite(147, 335, "playerOnly-4");
 
 		// enemy
-		const enemy = new Enemy(this, 193, 405);
+		const enemy = new Enemy(this, 131, 557);
 		this.add.existing(enemy);
+
+		// enemy_1
+		const enemy_1 = new Enemy(this, 188, 557);
+		this.add.existing(enemy_1);
 
 		// lists
 		const enemyTeam = [enemy];
@@ -59,10 +63,10 @@ export default class Level extends Phaser.Scene {
 		const playerJustMovement = new JustMovement(player);
 		playerJustMovement.speed = 100;
 		const playerAnimation = new Animation(player);
-		playerAnimation.frontWalk = "dude-front-walk";
-		playerAnimation.backWalk = "dude-back-walk";
-		playerAnimation.leftWalk = "dude-left-walk";
-		playerAnimation.rightWalk = "dude-right-walk";
+		playerAnimation.frontWalk = "player-front-idle";
+		playerAnimation.backWalk = "player-back-idle";
+		playerAnimation.leftWalk = "player-left-idle";
+		playerAnimation.rightWalk = "player-right-idle";
 		new DepthSortY(player);
 
 		// enemy (components)
@@ -71,6 +75,13 @@ export default class Level extends Phaser.Scene {
 		const enemyFollowTarget = new FollowTarget(enemy);
 		enemyFollowTarget.target = player;
 		enemyFollowTarget.range = 140;
+
+		// enemy_1 (components)
+		const enemy_1JustMovement = new JustMovement(enemy_1);
+		enemy_1JustMovement.speed = 80;
+		const enemy_1FollowTarget = new FollowTarget(enemy_1);
+		enemy_1FollowTarget.target = player;
+		enemy_1FollowTarget.range = 140;
 
 		this.floor_1 = floor_1;
 		this.wall_1 = wall_1;

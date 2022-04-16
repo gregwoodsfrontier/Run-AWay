@@ -135,6 +135,266 @@
                 "key": "gamedevjs"
             },
             {
+                "url": "assets/playerOnly/front-walk-gun/playerHoldGun-20.png",
+                "type": "image",
+                "key": "playerHoldGun-20"
+            },
+            {
+                "url": "assets/playerOnly/front-walk-gun/playerHoldGun-21.png",
+                "type": "image",
+                "key": "playerHoldGun-21"
+            },
+            {
+                "url": "assets/playerOnly/front-walk-gun/playerHoldGun-22.png",
+                "type": "image",
+                "key": "playerHoldGun-22"
+            },
+            {
+                "url": "assets/playerOnly/front-walk-gun/playerHoldGun-23.png",
+                "type": "image",
+                "key": "playerHoldGun-23"
+            },
+            {
+                "url": "assets/playerOnly/left-walk-gun/playerHoldGun-24.png",
+                "type": "image",
+                "key": "playerHoldGun-24"
+            },
+            {
+                "url": "assets/playerOnly/left-walk-gun/playerHoldGun-25.png",
+                "type": "image",
+                "key": "playerHoldGun-25"
+            },
+            {
+                "url": "assets/playerOnly/left-walk-gun/playerHoldGun-26.png",
+                "type": "image",
+                "key": "playerHoldGun-26"
+            },
+            {
+                "url": "assets/playerOnly/left-walk-gun/playerHoldGun-27.png",
+                "type": "image",
+                "key": "playerHoldGun-27"
+            },
+            {
+                "url": "assets/playerOnly/right-walk-gun/playerHoldGun-28.png",
+                "type": "image",
+                "key": "playerHoldGun-28"
+            },
+            {
+                "url": "assets/playerOnly/right-walk-gun/playerHoldGun-29.png",
+                "type": "image",
+                "key": "playerHoldGun-29"
+            },
+            {
+                "url": "assets/playerOnly/right-walk-gun/playerHoldGun-30.png",
+                "type": "image",
+                "key": "playerHoldGun-30"
+            },
+            {
+                "url": "assets/playerOnly/right-walk-gun/playerHoldGun-31.png",
+                "type": "image",
+                "key": "playerHoldGun-31"
+            },
+            {
+                "url": "assets/playerOnly/back-walk-gun/playerHoldGun-32.png",
+                "type": "image",
+                "key": "playerHoldGun-32"
+            },
+            {
+                "url": "assets/playerOnly/back-walk-gun/playerHoldGun-33.png",
+                "type": "image",
+                "key": "playerHoldGun-33"
+            },
+            {
+                "url": "assets/playerOnly/back-walk-gun/playerHoldGun-34.png",
+                "type": "image",
+                "key": "playerHoldGun-34"
+            },
+            {
+                "url": "assets/playerOnly/back-walk-gun/playerHoldGun-35.png",
+                "type": "image",
+                "key": "playerHoldGun-35"
+            },
+            {
+                "url": "assets/playerOnly/left-walk/playerOnly-10.png",
+                "type": "image",
+                "key": "playerOnly-10"
+            },
+            {
+                "url": "assets/playerOnly/left-walk/playerOnly-11.png",
+                "type": "image",
+                "key": "playerOnly-11"
+            },
+            {
+                "url": "assets/playerOnly/right-walk/playerOnly-12.png",
+                "type": "image",
+                "key": "playerOnly-12"
+            },
+            {
+                "url": "assets/playerOnly/right-walk/playerOnly-13.png",
+                "type": "image",
+                "key": "playerOnly-13"
+            },
+            {
+                "url": "assets/playerOnly/right-walk/playerOnly-14.png",
+                "type": "image",
+                "key": "playerOnly-14"
+            },
+            {
+                "url": "assets/playerOnly/right-walk/playerOnly-15.png",
+                "type": "image",
+                "key": "playerOnly-15"
+            },
+            {
+                "url": "assets/playerOnly/back-walk/playerOnly-16.png",
+                "type": "image",
+                "key": "playerOnly-16"
+            },
+            {
+                "url": "assets/playerOnly/back-walk/playerOnly-17.png",
+                "type": "image",
+                "key": "playerOnly-17"
+            },
+            {
+                "url": "assets/playerOnly/back-walk/playerOnly-18.png",
+                "type": "image",
+                "key": "playerOnly-18"
+            },
+            {
+                "url": "assets/playerOnly/back-walk/playerOnly-19.png",
+                "type": "image",
+                "key": "playerOnly-19"
+            },
+            {
+                "url": "assets/playerOnly/front-walk-hold/playerOnly-20.png",
+                "type": "image",
+                "key": "playerOnly-20"
+            },
+            {
+                "url": "assets/playerOnly/front-walk-hold/playerOnly-21.png",
+                "type": "image",
+                "key": "playerOnly-21"
+            },
+            {
+                "url": "assets/playerOnly/front-walk-hold/playerOnly-22.png",
+                "type": "image",
+                "key": "playerOnly-22"
+            },
+            {
+                "url": "assets/playerOnly/front-walk-hold/playerOnly-23.png",
+                "type": "image",
+                "key": "playerOnly-23"
+            },
+            {
+                "url": "assets/playerOnly/left-walk-hold/playerOnly-24.png",
+                "type": "image",
+                "key": "playerOnly-24"
+            },
+            {
+                "url": "assets/playerOnly/left-walk-hold/playerOnly-25.png",
+                "type": "image",
+                "key": "playerOnly-25"
+            },
+            {
+                "url": "assets/playerOnly/left-walk-hold/playerOnly-26.png",
+                "type": "image",
+                "key": "playerOnly-26"
+            },
+            {
+                "url": "assets/playerOnly/left-walk-hold/playerOnly-27.png",
+                "type": "image",
+                "key": "playerOnly-27"
+            },
+            {
+                "url": "assets/playerOnly/right-walk-hold/playerOnly-28.png",
+                "type": "image",
+                "key": "playerOnly-28"
+            },
+            {
+                "url": "assets/playerOnly/right-walk-hold/playerOnly-29.png",
+                "type": "image",
+                "key": "playerOnly-29"
+            },
+            {
+                "url": "assets/playerOnly/right-walk-hold/playerOnly-30.png",
+                "type": "image",
+                "key": "playerOnly-30"
+            },
+            {
+                "url": "assets/playerOnly/right-walk-hold/playerOnly-31.png",
+                "type": "image",
+                "key": "playerOnly-31"
+            },
+            {
+                "url": "assets/playerOnly/back-walk-hold/playerOnly-32.png",
+                "type": "image",
+                "key": "playerOnly-32"
+            },
+            {
+                "url": "assets/playerOnly/back-walk-hold/playerOnly-33.png",
+                "type": "image",
+                "key": "playerOnly-33"
+            },
+            {
+                "url": "assets/playerOnly/back-walk-hold/playerOnly-34.png",
+                "type": "image",
+                "key": "playerOnly-34"
+            },
+            {
+                "url": "assets/playerOnly/back-walk-hold/playerOnly-35.png",
+                "type": "image",
+                "key": "playerOnly-35"
+            },
+            {
+                "url": "assets/playerOnly/front-walk/playerOnly-4.png",
+                "type": "image",
+                "key": "playerOnly-4"
+            },
+            {
+                "url": "assets/playerOnly/front-walk/playerOnly-5.png",
+                "type": "image",
+                "key": "playerOnly-5"
+            },
+            {
+                "url": "assets/playerOnly/front-walk/playerOnly-6.png",
+                "type": "image",
+                "key": "playerOnly-6"
+            },
+            {
+                "url": "assets/playerOnly/front-walk/playerOnly-7.png",
+                "type": "image",
+                "key": "playerOnly-7"
+            },
+            {
+                "url": "assets/playerOnly/left-walk/playerOnly-8.png",
+                "type": "image",
+                "key": "playerOnly-8"
+            },
+            {
+                "url": "assets/playerOnly/left-walk/playerOnly-9.png",
+                "type": "image",
+                "key": "playerOnly-9"
+            },
+            {
+                "url": "assets/swarm/back-attack/swarm-back-attack-1.png",
+                "type": "image",
+                "key": "swarm-back-attack-1"
+            },
+            {
+                "url": "assets/swarm/back-attack/swarm-back-attack-2.png",
+                "type": "image",
+                "key": "swarm-back-attack-2"
+            },
+            {
+                "url": "assets/swarm/back-attack/swarm-back-attack-3.png",
+                "type": "image",
+                "key": "swarm-back-attack-3"
+            },
+            {
+                "url": "assets/swarm/back-attack/swarm-back-attack-4.png",
+                "type": "image",
+                "key": "swarm-back-attack-4"
+            },
+            {
                 "url": "assets/swarm/swarm-back-walk-1.png",
                 "type": "image",
                 "key": "swarm-back-walk-1"
@@ -153,6 +413,26 @@
                 "url": "assets/swarm/swarm-back-walk-4.png",
                 "type": "image",
                 "key": "swarm-back-walk-4"
+            },
+            {
+                "url": "assets/swarm/front-attack/swarm-front-attack-1.png",
+                "type": "image",
+                "key": "swarm-front-attack-1"
+            },
+            {
+                "url": "assets/swarm/front-attack/swarm-front-attack-2.png",
+                "type": "image",
+                "key": "swarm-front-attack-2"
+            },
+            {
+                "url": "assets/swarm/front-attack/swarm-front-attack-3.png",
+                "type": "image",
+                "key": "swarm-front-attack-3"
+            },
+            {
+                "url": "assets/swarm/front-attack/swarm-front-attack-4.png",
+                "type": "image",
+                "key": "swarm-front-attack-4"
             },
             {
                 "url": "assets/swarm/swarm-front-walk-1.png",
@@ -175,6 +455,26 @@
                 "key": "swarm-front-walk-4"
             },
             {
+                "url": "assets/swarm/left-attack/swarm-left-attack-1.png",
+                "type": "image",
+                "key": "swarm-left-attack-1"
+            },
+            {
+                "url": "assets/swarm/left-attack/swarm-left-attack-2.png",
+                "type": "image",
+                "key": "swarm-left-attack-2"
+            },
+            {
+                "url": "assets/swarm/left-attack/swarm-left-attack-3.png",
+                "type": "image",
+                "key": "swarm-left-attack-3"
+            },
+            {
+                "url": "assets/swarm/left-attack/swarm-left-attack-4.png",
+                "type": "image",
+                "key": "swarm-left-attack-4"
+            },
+            {
                 "url": "assets/swarm/swarm-left-walk-1.png",
                 "type": "image",
                 "key": "swarm-left-walk-1"
@@ -193,6 +493,26 @@
                 "url": "assets/swarm/swarm-left-walk-4.png",
                 "type": "image",
                 "key": "swarm-left-walk-4"
+            },
+            {
+                "url": "assets/swarm/right-attack/swarm-right-attack-1.png",
+                "type": "image",
+                "key": "swarm-right-attack-1"
+            },
+            {
+                "url": "assets/swarm/right-attack/swarm-right-attack-2.png",
+                "type": "image",
+                "key": "swarm-right-attack-2"
+            },
+            {
+                "url": "assets/swarm/right-attack/swarm-right-attack-3.png",
+                "type": "image",
+                "key": "swarm-right-attack-3"
+            },
+            {
+                "url": "assets/swarm/right-attack/swarm-right-attack-4.png",
+                "type": "image",
+                "key": "swarm-right-attack-4"
             },
             {
                 "url": "assets/swarm/swarm-right-walk-1.png",
@@ -295,19 +615,6 @@
                 "key": "tempboss-right-walk-4"
             },
             {
-                "url": "assets/test-tile-set.png",
-                "frameConfig": {
-                    "frameWidth": 32,
-                    "frameHeight": 32,
-                    "startFrame": 0,
-                    "endFrame": -1,
-                    "spacing": 0,
-                    "margin": 0
-                },
-                "type": "spritesheet",
-                "key": "test-tile-set"
-            },
-            {
                 "url": "assets/dude/dude-back-walk/walk-1.png",
                 "type": "image",
                 "key": "walk-1"
@@ -326,19 +633,6 @@
                 "url": "assets/dude/dude-back-walk/walk-4.png",
                 "type": "image",
                 "key": "walk-4"
-            },
-            {
-                "url": "assets/your-dude.png",
-                "frameConfig": {
-                    "frameWidth": 64,
-                    "frameHeight": 64,
-                    "startFrame": 0,
-                    "endFrame": -1,
-                    "spacing": 0,
-                    "margin": 0
-                },
-                "type": "spritesheet",
-                "key": "your-dude"
             }
         ]
     },
