@@ -7,7 +7,7 @@ import UserComponent from "./UserComponent";
 import Phaser from "phaser";
 /* START-USER-IMPORTS */
 import JustMovement from "./JustMovement";
-import { DIRECTION } from "../prefabs/Enemy";
+import { DIRECTION } from "../types/direction";
 /* END-USER-IMPORTS */
 
 export default class FollowTarget extends UserComponent {
@@ -20,6 +20,7 @@ export default class FollowTarget extends UserComponent {
 
 		/* START-USER-CTR-CODE */
 		// Write your code here.
+		// this.target = this.gameObject.scene.add.sprite(-50, -50, "playerHoldGun-20")
 		/* END-USER-CTR-CODE */
 	}
 

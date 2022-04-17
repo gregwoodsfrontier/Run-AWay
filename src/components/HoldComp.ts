@@ -11,6 +11,7 @@ import { DIRECTION, getDirectionName } from "../types/direction";
 import { HOLD_ITEM } from "../types/holdItem";
 import JustMovement from "./JustMovement";
 import Physics from "./Physics";
+import { HOLD_COMP_STATE } from "../types/holdCompState";
 /* END-USER-IMPORTS */
 
 export default class HoldComp extends UserComponent {
@@ -23,23 +24,23 @@ export default class HoldComp extends UserComponent {
 
 		/* START-USER-CTR-CODE */
 		// Write your code here.
-		this.stateMachine = new StateMachine(this, "hold")
+		this.stateMachine = new StateMachine(this, "hold-comp")
 
-		this.stateMachine.addState("empty", {
+		this.stateMachine.addState(HOLD_COMP_STATE.EMPTY, {
 			onEnter: this.onEmptyEnter
 		})
-		.addState("hold-idle", {
+		.addState(HOLD_COMP_STATE.IDLE, {
 			onEnter: this.onHoldIdleEnter
 		})
-		.addState("hold-walk", {
+		.addState(HOLD_COMP_STATE.WALK, {
 			onUpdate: this.onHoldWalkUpdate
 		})
 
-		this.stateMachine.setState("empty")
+		this.stateMachine.setState(HOLD_COMP_STATE.EMPTY)
 
-		const {scene, x, y} = this.gameObject
+		const {scene} = this.gameObject
 
-		this.gunSprite = scene.add.sprite(x, y, "front-gunonly-idle")
+		this.gunSprite = scene.add.sprite(-20, -20, "front-gunonly-idle")
 		this.disableGun()
 		
 		this.gObjMovement = JustMovement.getComponent(this.gameObject)
@@ -75,6 +76,17 @@ export default class HoldComp extends UserComponent {
 		}
 		this.gunSprite.setActive(true)
 		this.gunSprite.setVisible(true)
+		this.gunSprite.setDepth(this.gameObject.depth + 60)
+
+		if(!this.gunSprite.body)
+		{
+			return
+		}
+
+		const body = this.gunSprite.body as Phaser.Physics.Arcade.Body
+		body.enable = true
+		this.scene.physics.world.add(body)
+
 	}
 
 	private disableGun()
@@ -85,6 +97,15 @@ export default class HoldComp extends UserComponent {
 		}
 		this.gunSprite.setActive(false)
 		this.gunSprite.setVisible(false)
+
+		if(!this.gunSprite.body)
+		{
+			return
+		}
+
+		const body = this.gunSprite.body as Phaser.Physics.Arcade.Body
+		body.enable = false
+		this.scene.physics.world.remove(body)
 	}
 
 	private onEmptyEnter()
@@ -104,6 +125,11 @@ export default class HoldComp extends UserComponent {
 
 		this.enableGun()
 
+		this.gunSprite.setPosition(
+			this.gameObject.x,
+			this.gameObject.y
+		)
+
 		this.gunSprite.play(`${dirName}-gunonly-idle`, true)
 	}
 
@@ -122,13 +148,18 @@ export default class HoldComp extends UserComponent {
 
 		this.assignGunSpeedTo(this.gObjMovement.speed)		
 
-		if(this.item < 1)
+		if(this.item < HOLD_ITEM.GUN)
 		{
 			console.error('game object should be holding something.')
 			return
 		}
 
 		this.enableGun()
+
+		this.gunSprite.setPosition(
+			this.gameObject.x,
+			this.gameObject.y
+		)
 
 		const dirName = getDirectionName(this.direction)
 
@@ -138,7 +169,7 @@ export default class HoldComp extends UserComponent {
 			return
 		}
 
-		switch (this.direction) {
+		/* switch (this.direction) {
 			case DIRECTION.BACK: {
 				this.gunMovement.moveUp()
 				break
@@ -158,7 +189,7 @@ export default class HoldComp extends UserComponent {
 				this.gunMovement.moveRight()
 				break
 			}
-		}
+		} */
 
 		this.gunSprite.play(`${dirName}-gunonly-walk`, true)
 	}

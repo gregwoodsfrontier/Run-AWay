@@ -15,6 +15,7 @@ import AimComp from "../components/AimComp";
 import StateMachine from "../stateMachine";
 import { PLAYER_STATE } from "../types/playerState";
 import { DIRECTION, getDirectionName } from "../types/direction";
+import { HOLD_COMP_STATE } from "../types/holdCompState";
 /* END-USER-IMPORTS */
 
 export default class Player extends Phaser.GameObjects.Sprite {
@@ -45,9 +46,15 @@ export default class Player extends Phaser.GameObjects.Sprite {
 			onEnter: this.onIdleEnter
 		})
 		.addState(PLAYER_STATE.WALK, {
-			onUpdate: this.onWalkUpdate
+			onEnter: this.onWalkEnter,
+			// onUpdate: this.onWalkUpdate
 		})
-		.addState(PLAYER_STATE.HOLD)
+		.addState(PLAYER_STATE.HOLD_IDLE, {
+			onEnter: this.onHoldIdleEnter
+		})
+		.addState(PLAYER_STATE.HOLD_WALK, {
+			onUpdate: this.onHoldWalkUpdate
+		})
 		.addState(PLAYER_STATE.AIM)
 
 		this.scene.events.once(Phaser.Scenes.Events.UPDATE, this.start, this);
@@ -56,7 +63,8 @@ export default class Player extends Phaser.GameObjects.Sprite {
 		this.playerMovement = JustMovement.getComponent(this)
 		this.playerAnims = AnimationV2.getComponent(this)
 		this.playerHold = HoldComp.getComponent(this)
-		this.playerAim = AimComp.getComponent(this)
+		this.playerAimComp = AimComp.getComponent(this)
+		this.playerKeyboard = KeyboardInput.getComponent(this)
 
 		/* END-USER-CTR-CODE */
 	}
@@ -66,22 +74,154 @@ export default class Player extends Phaser.GameObjects.Sprite {
 	// Write your code here.
 	private stateMachine: StateMachine
 	private playerMovement: JustMovement
+	private playerKeyboard: KeyboardInput
 	private playerAnims: AnimationV2
 	private playerHold: HoldComp
-	private playerAim: AimComp
+	private playerAimComp: AimComp
+	private flipSwitch = false
 	//@ts-ignore
 	private direction: number
 
 	start()
 	{
 		this.stateMachine.setState(PLAYER_STATE.IDLE)
-		this.playerHold.stateMachine.setState('empty')
+		this.playerHold.stateMachine.setState(HOLD_COMP_STATE.EMPTY)
+
+		this.handleStateSwitching()
+
 	}
 
 	update(dt: number)
 	{
 		this.stateMachine.update(dt)
 		this.playerHold.stateMachine.update(dt)
+	}
+
+	private handleStateSwitching()
+	{
+		this.playerKeyboard.executeLeft = () => {
+			this.direction = DIRECTION.LEFT
+
+			if(this.playerHold.stateMachine.isCurrentState(HOLD_COMP_STATE.WALK))
+			{
+				this.stateMachine.setState(PLAYER_STATE.HOLD_WALK)
+				return
+			}
+			this.stateMachine.setState(PLAYER_STATE.WALK)
+		}
+		this.playerKeyboard.executeRight = () => {
+			this.direction = DIRECTION.RIGHT
+
+			if(this.playerHold.stateMachine.isCurrentState(HOLD_COMP_STATE.WALK))
+			{
+				this.stateMachine.setState(PLAYER_STATE.HOLD_WALK)
+				return
+			}
+
+			this.stateMachine.setState(PLAYER_STATE.WALK)
+		}
+		this.playerKeyboard.executeUp = () => {
+			this.direction = DIRECTION.BACK
+
+			if(this.playerHold.stateMachine.isCurrentState(HOLD_COMP_STATE.WALK))
+			{
+				this.stateMachine.setState(PLAYER_STATE.HOLD_WALK)
+				return
+			}
+
+			this.stateMachine.setState(PLAYER_STATE.WALK)
+		}
+		this.playerKeyboard.executeDown = () => {
+			this.direction = DIRECTION.FRONT
+
+			if(this.playerHold.stateMachine.isCurrentState(HOLD_COMP_STATE.WALK))
+			{
+				this.stateMachine.setState(PLAYER_STATE.HOLD_WALK)
+				return
+			}
+
+			this.stateMachine.setState(PLAYER_STATE.WALK)
+		}
+		this.playerKeyboard.executeKeyUp = () => {
+			if(this.stateMachine.isCurrentState(PLAYER_STATE.WALK))
+			{
+				this.stateMachine.setState(PLAYER_STATE.IDLE)
+				this.playerHold.stateMachine.setState(HOLD_COMP_STATE.EMPTY)
+			}
+			else if(this.stateMachine.isCurrentState(PLAYER_STATE.HOLD_WALK))
+			{
+				this.stateMachine.setState(PLAYER_STATE.HOLD_IDLE)
+				this.playerHold.stateMachine.setState(HOLD_COMP_STATE.IDLE)
+			}
+		}
+
+		// space should be toggling the raise gun logic
+		this.playerKeyboard.executeSpace = () => {
+			if(this.stateMachine.isCurrentState(PLAYER_STATE.WALK) || this.stateMachine.isCurrentState(PLAYER_STATE.HOLD_WALK))
+			{
+				console.error('space toggling for gun mode is disabled during walk state')
+				return
+			}
+
+			if(!this.flipSwitch)
+			{
+				this.updateHoldDir()
+				this.playerHold.stateMachine.setState(HOLD_COMP_STATE.IDLE)
+				this.stateMachine.setState(PLAYER_STATE.HOLD_IDLE)
+				this.flipSwitch = !this.flipSwitch
+				return
+			}
+
+			this.playerHold.stateMachine.setState(HOLD_COMP_STATE.EMPTY)
+			this.stateMachine.setState(PLAYER_STATE.IDLE)
+			this.flipSwitch = !this.flipSwitch
+
+		}
+	}
+
+	private updateHoldDir()
+	{
+		this.playerHold.direction = this.direction
+	}
+
+	private onHoldWalkUpdate()
+	{
+		const dirName = getDirectionName(this.direction)
+
+		if(!dirName)
+		{
+			console.warn('direction should be defined')
+			return
+		}
+
+		this.handlePlayerMovement()
+
+		this.playerAnims.playAnims({
+			character: 'player',
+			direction: dirName,
+			state: 'walk',
+			holdState: 'hold'
+		})
+	}
+
+	private onHoldIdleEnter()
+	{
+		const dirName = getDirectionName(this.direction)
+
+		if(!dirName)
+		{
+			console.warn('direction should be defined')
+			return
+		}
+
+		this.playerMovement.stayStill()
+
+		this.playerAnims.playAnims({
+			character: 'player',
+			direction: dirName,
+			state: 'idle',
+			holdState: 'hold'
+		})
 	}
 
 	private onIdleEnter()
@@ -103,16 +243,9 @@ export default class Player extends Phaser.GameObjects.Sprite {
 
 	}
 
-	private onWalkUpdate()
+	private handlePlayerMovement()
 	{
-		const dirName = getDirectionName(this.direction)
-
-		if(!dirName)
-		{
-			console.warn('direction should be defined')
-			return
-		}
-
+		console.log('on handle player move')
 		switch (this.direction) {
 			case DIRECTION.BACK: {
 				this.playerMovement.moveUp()
@@ -134,6 +267,20 @@ export default class Player extends Phaser.GameObjects.Sprite {
 				break
 			}
 		}
+	}
+
+	private onWalkEnter()
+	{
+		console.log('on walk update')
+		const dirName = getDirectionName(this.direction)
+
+		if(!dirName)
+		{
+			console.warn('direction should be defined')
+			return
+		}
+
+		this.handlePlayerMovement()
 
 		this.playerAnims.playAnims({
 			character: 'player',

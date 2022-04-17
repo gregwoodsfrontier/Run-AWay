@@ -37,11 +37,11 @@ export default class Level extends Phaser.Scene {
 		const wall_1 = cave_test_map_1.createLayer("wall", ["Gamdev jam cate tiles test 1"], 0, -960);
 
 		// player
-		const player = new Player(this, 193, 446);
+		const player = new Player(this, 159, 436);
 		this.add.existing(player);
 
 		// enemy_3
-		const enemy_3 = new Enemy(this, 119, 445);
+		const enemy_3 = new Enemy(this, 146, 254);
 		this.add.existing(enemy_3);
 
 		// silver
@@ -89,15 +89,16 @@ export default class Level extends Phaser.Scene {
 
 	/* START-USER-CODE */
 	public platformer_fun!: Phaser.Tilemaps.Tilemap
+	cave_test_map_1!: Phaser.Tilemaps.Tilemap
 	// Write your code here
 
 	create() {
 
 		this.editorCreate();
 		this.player.play('player-front-idle')
-		this.floor_1.depth = -1000
-		this.wall_1.depth = -1000
-
+		this.floor_1.depth = this.wall_1.y * 2
+		this.wall_1.depth = this.wall_1.y * 2
+/* 
 		const playerKeyboardInput = KeyboardInput.getComponent(this.player)
 		const playerMove = JustMovement.getComponent(this.player)
 		const playerAnims = AnimationV2.getComponent(this.player)
@@ -137,7 +138,7 @@ export default class Level extends Phaser.Scene {
 		playerKeyboardInput.executeKeyUp = () => {
 			playerMove.stayStill()
 			playerAnims.playIdleFromWalk()
-		}
+		} */
 
 		this.physics.add.collider(this.player, this.wall_1);
 		this.physics.add.collider(this.player, this.enemyTeam)

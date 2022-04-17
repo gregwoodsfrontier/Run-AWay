@@ -50,8 +50,8 @@
             "label": "player",
             "scope": "PUBLIC",
             "components": [],
-            "x": 193,
-            "y": 446
+            "x": 159,
+            "y": 436
         },
         {
             "prefabId": "408d4d35-1d26-4f5e-9315-9d890dbf9ae0",
@@ -66,8 +66,8 @@
             "components": [],
             "FollowTarget.target": "player",
             "FollowTarget.deadRangeX": 35,
-            "x": 119,
-            "y": 445
+            "x": 146,
+            "y": 254
         },
         {
             "type": "Image",
