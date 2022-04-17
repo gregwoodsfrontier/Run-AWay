@@ -95,6 +95,11 @@
                 "key": "left-gunonly-4"
             },
             {
+                "url": "assets/PCProjectile.png",
+                "type": "image",
+                "key": "PCProjectile"
+            },
+            {
                 "url": "assets/playerOnly/front-walk-gun/playerHoldGun-20.png",
                 "type": "image",
                 "key": "playerHoldGun-20"
@@ -356,6 +361,19 @@
                 "url": "assets/ProxyBurstEndFrame.png",
                 "type": "image",
                 "key": "ProxyBurstEndFrame"
+            },
+            {
+                "url": "assets/PSDField.png",
+                "frameConfig": {
+                    "frameWidth": 16,
+                    "frameHeight": 16,
+                    "startFrame": 0,
+                    "endFrame": -1,
+                    "spacing": 0,
+                    "margin": 0
+                },
+                "type": "spritesheet",
+                "key": "PSDField"
             },
             {
                 "url": "assets/raw-break-interact.png",

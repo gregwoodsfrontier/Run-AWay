@@ -1784,6 +1784,19 @@
             "frameRate": 9,
             "skipMissedFrames": true,
             "repeat": -1
+        },
+        {
+            "key": "pc-projectile",
+            "type": "frame",
+            "frames": [
+                {
+                    "key": "PCProjectile",
+                    "duration": 0,
+                    "keyframe": false
+                }
+            ],
+            "frameRate": 2,
+            "skipMissedFrames": true
         }
     ],
     "globalTimeScale": 1,
