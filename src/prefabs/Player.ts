@@ -1,6 +1,5 @@
 
 // You can write more code here
-
 /* START OF COMPILED CODE */
 
 import Phaser from "phaser";
@@ -12,6 +11,8 @@ import AnimationV2 from "../components/AnimationV2";
 import CameraFollow from "../components/CameraFollow";
 /* START-USER-IMPORTS */
 import StateMachine from "../stateMachine";
+import { PLAYER_STATE } from "../types/playerState";
+import { DIRECTION, getDirectionName } from "../types/direction";
 /* END-USER-IMPORTS */
 
 export default class Player extends Phaser.GameObjects.Sprite {
@@ -35,8 +36,19 @@ export default class Player extends Phaser.GameObjects.Sprite {
 		/* START-USER-CTR-CODE */
 		// Write your code here.
 		
-		
+		this.stateMachine = new StateMachine(this, 'player')
+		this.stateMachine.addState(PLAYER_STATE.IDLE, {
+			onEnter: this.onIdleEnter
+		})
+		.addState(PLAYER_STATE.WALK, {
+			onUpdate: this.onWalkUpdate
+		})
 
+		this.scene.events.once(Phaser.Scenes.Events.UPDATE, this.start, this);
+
+		this.direction = DIRECTION.FRONT
+		this.playerMovement = JustMovement.getComponent(this)
+		this.playerAnims = AnimationV2.getComponent(this)
 		/* END-USER-CTR-CODE */
 	}
 
@@ -44,13 +56,79 @@ export default class Player extends Phaser.GameObjects.Sprite {
 
 	// Write your code here.
 	private stateMachine: StateMachine
-	private direction = DIRECTION.FRONT
+	private playerMovement: JustMovement
+	private playerAnims: AnimationV2
+	//@ts-ignore
+	private direction: number
+
+	start()
+	{
+		this.stateMachine.setState(PLAYER_STATE.IDLE)
+	}
 
 	update(dt: number)
 	{
 		this.stateMachine.update(dt)
 	}
 
+	private onIdleEnter()
+	{
+		const dirName = getDirectionName(this.direction)
+
+		if(!dirName)
+		{
+			console.warn('direction should be defined')
+			return
+		}
+
+		this.playerMovement.stayStill()
+		this.playerAnims.playAnims({
+			character: 'player',
+			direction: dirName,
+			state: 'idle'
+		})
+
+	}
+
+	private onWalkUpdate()
+	{
+		const dirName = getDirectionName(this.direction)
+
+		if(!dirName)
+		{
+			console.warn('direction should be defined')
+			return
+		}
+
+		switch (this.direction) {
+			case DIRECTION.BACK: {
+				this.playerMovement.moveUp()
+				break
+			}
+
+			case DIRECTION.FRONT: {
+				this.playerMovement.moveDown()
+				break
+			}
+
+			case DIRECTION.LEFT: {
+				this.playerMovement.moveLeft()
+				break
+			}
+
+			case DIRECTION.RIGHT: {
+				this.playerMovement.moveRight()
+				break
+			}
+		}
+
+		this.playerAnims.playAnims({
+			character: 'player',
+			direction: dirName,
+			state: 'walk'
+		})
+	}
+	
 	/* END-USER-CODE */
 }
 
