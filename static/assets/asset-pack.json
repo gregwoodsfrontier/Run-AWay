@@ -365,8 +365,8 @@
             {
                 "url": "assets/PSDField.png",
                 "frameConfig": {
-                    "frameWidth": 16,
-                    "frameHeight": 16,
+                    "frameWidth": 32,
+                    "frameHeight": 32,
                     "startFrame": 0,
                     "endFrame": -1,
                     "spacing": 0,
