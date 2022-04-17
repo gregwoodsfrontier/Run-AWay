@@ -363,6 +363,19 @@
                 "key": "ProxyBurstEndFrame"
             },
             {
+                "url": "assets/PSDField.png",
+                "frameConfig": {
+                    "frameWidth": 16,
+                    "frameHeight": 16,
+                    "startFrame": 0,
+                    "endFrame": -1,
+                    "spacing": 0,
+                    "margin": 0
+                },
+                "type": "spritesheet",
+                "key": "PSDField"
+            },
+            {
                 "url": "assets/raw-break-interact.png",
                 "frameConfig": {
                     "frameWidth": 32,
