@@ -46,6 +46,9 @@ export default class HoldComp extends UserComponent {
 		this.gObjMovement = JustMovement.getComponent(this.gameObject)
 
 		this.gunPhysics = new Physics(this.gunSprite)
+		this.gunPhysics.offsetX = 32
+		this.gunPhysics.offsetY = 32
+
 		this.gunMovement = new JustMovement(this.gunSprite)
 
 		// this.scene.events.on(Phaser.Scenes.Events.UPDATE, this.stateUpdate, this);
@@ -134,7 +137,7 @@ export default class HoldComp extends UserComponent {
 		)
 
 		this.gunMovement.stayStill()
-		
+
 		this.gunSprite.play(`${dirName}-gunonly-idle`, true)
 	}
 
