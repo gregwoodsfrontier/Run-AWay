@@ -19,10 +19,10 @@ export default class UI extends Phaser.Scene {
 
 	editorCreate(): void {
 
-		// text_1
-		const text_1 = this.add.text(28, 33, "", {});
-		text_1.text = "UI Scene";
-		text_1.setStyle({ "fontSize": "32px" });
+		// UI_text
+		const uI_text = this.add.text(28, 33, "", {});
+		uI_text.text = "UI Scene";
+		uI_text.setStyle({ "fontSize": "32px" });
 
 		this.events.emit("scene-awake");
 	}

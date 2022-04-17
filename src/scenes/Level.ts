@@ -5,7 +5,6 @@
 import Phaser from "phaser";
 import TileMapLayerPhysics from "../components/TileMapLayerPhysics";
 import Player from "../prefabs/Player";
-import Block from "../prefabs/Block";
 import Enemy from "../prefabs/Enemy";
 import FollowTarget from "../components/FollowTarget";
 /* START-USER-IMPORTS */
@@ -41,20 +40,22 @@ export default class Level extends Phaser.Scene {
 		const player = new Player(this, 193, 446);
 		this.add.existing(player);
 
-		// block_1
-		const block_1 = new Block(this, 130, 208);
-		this.add.existing(block_1);
-
 		// enemy_3
 		const enemy_3 = new Enemy(this, 119, 445);
 		this.add.existing(enemy_3);
 
-		// enemy_2
-		const enemy_2 = new Enemy(this, 197, 126);
-		this.add.existing(enemy_2);
+		// silver
+		const silver = this.add.image(120, 192, "raw-break-interact", 0);
+
+		// copper
+		const copper = this.add.image(200, 192, "raw-break-interact", 8);
+
+		// gold
+		const gold = this.add.image(124, -88, "raw-break-interact", 16);
 
 		// lists
-		const enemyTeam = [enemy_2, enemy_3];
+		const enemyTeam = [enemy_3];
+		const silverList: Array<any> = [];
 
 		// wall_1 (components)
 		new TileMapLayerPhysics(wall_1);
@@ -64,16 +65,15 @@ export default class Level extends Phaser.Scene {
 		enemy_3FollowTarget.target = player;
 		enemy_3FollowTarget.deadRangeX = 35;
 
-		// enemy_2 (components)
-		const enemy_2FollowTarget = FollowTarget.getComponent(enemy_2);
-		enemy_2FollowTarget.target = player;
-
 		this.floor_1 = floor_1;
 		this.wall_1 = wall_1;
 		this.player = player;
-		this.block_1 = block_1;
+		this.silver = silver;
+		this.copper = copper;
+		this.gold = gold;
 		this.cave_test_map_1 = cave_test_map_1;
 		this.enemyTeam = enemyTeam;
+		this.silverList = silverList;
 
 		this.events.emit("scene-awake");
 	}
@@ -81,8 +81,11 @@ export default class Level extends Phaser.Scene {
 	private floor_1!: Phaser.Tilemaps.TilemapLayer;
 	private wall_1!: Phaser.Tilemaps.TilemapLayer;
 	public player!: Player;
-	private block_1!: Block;
+	private silver!: Phaser.GameObjects.Image;
+	private copper!: Phaser.GameObjects.Image;
+	private gold!: Phaser.GameObjects.Image;
 	private enemyTeam!: Enemy[];
+	private silverList!: Array<any>;
 
 	/* START-USER-CODE */
 	public platformer_fun!: Phaser.Tilemaps.Tilemap

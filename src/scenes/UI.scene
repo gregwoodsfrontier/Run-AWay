@@ -15,7 +15,7 @@
         {
             "type": "Text",
             "id": "5a55012c-3dc7-42ee-908d-25cef87a4ae4",
-            "label": "text_1",
+            "label": "UI_text",
             "components": [],
             "x": 28,
             "y": 33,
