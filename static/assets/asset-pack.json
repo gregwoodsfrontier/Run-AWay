@@ -95,6 +95,11 @@
                 "key": "left-gunonly-4"
             },
             {
+                "url": "assets/PCProjectile.png",
+                "type": "image",
+                "key": "PCProjectile"
+            },
+            {
                 "url": "assets/playerOnly/front-walk-gun/playerHoldGun-20.png",
                 "type": "image",
                 "key": "playerHoldGun-20"
