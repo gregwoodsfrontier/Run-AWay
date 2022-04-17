@@ -1,5 +1,5 @@
 {
-    "id": "e0ddcad0-6688-4c91-8511-b98aa83b6507",
+    "id": "c5f5294e-53aa-4098-9c83-a93ace8d8997",
     "sceneType": "PREFAB",
     "settings": {
         "exportClass": true,
@@ -14,28 +14,19 @@
     "displayList": [
         {
             "type": "Sprite",
-            "id": "dfafffa1-0788-4a93-8e3e-b6ff9cbe7d13",
-            "label": "player",
-            "scope": "PUBLIC",
+            "id": "1942858c-df75-4a7d-910d-e3a504bdfa1c",
+            "label": "pCProjectile",
+            "scope": "CLASS",
             "components": [
                 "Physics",
-                "KeyboardInput",
-                "JustMovement",
-                "DepthSortY",
-                "AnimationV2",
-                "CameraFollow",
-                "HoldComp",
-                "AimComp",
-                "PSDComp",
-                "SelectionSquare"
+                "JustMovement"
             ],
             "Physics.width": 32,
-            "Physics.height": 40,
-            "Physics.offsetX": 16,
-            "Physics.offsetY": 26,
-            "JustMovement.speed": 150,
+            "Physics.height": 32,
+            "JustMovement.speed": 180,
             "texture": {
-                "key": "playerOnly-4"
+                "key": "PCProjectile32",
+                "frame": 0
             }
         }
     ],

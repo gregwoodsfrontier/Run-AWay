@@ -1797,6 +1797,96 @@
             ],
             "frameRate": 2,
             "skipMissedFrames": true
+        },
+        {
+            "key": "bppsd-left-idle-none",
+            "type": "frame",
+            "frames": [
+                {
+                    "key": "playerPSDeq",
+                    "frame": 1,
+                    "duration": 0,
+                    "keyframe": false
+                }
+            ],
+            "frameRate": 24,
+            "skipMissedFrames": true,
+            "repeat": -1
+        },
+        {
+            "key": "bppsd-right-idle-none",
+            "type": "frame",
+            "frames": [
+                {
+                    "key": "playerPSDeq",
+                    "frame": 2,
+                    "duration": 0,
+                    "keyframe": false
+                }
+            ],
+            "frameRate": 24,
+            "skipMissedFrames": true,
+            "repeat": -1
+        },
+        {
+            "key": "bppsd-back-idle-none",
+            "type": "frame",
+            "frames": [
+                {
+                    "key": "playerPSDeq",
+                    "frame": 3,
+                    "duration": 0,
+                    "keyframe": false
+                }
+            ],
+            "frameRate": 24,
+            "skipMissedFrames": true,
+            "repeat": -1
+        },
+        {
+            "key": "bppsd-left-idle-hold",
+            "type": "frame",
+            "frames": [
+                {
+                    "key": "playerPSDeq",
+                    "frame": 24,
+                    "duration": 0,
+                    "keyframe": false
+                }
+            ],
+            "frameRate": 24,
+            "skipMissedFrames": true,
+            "repeat": -1
+        },
+        {
+            "key": "bppsd-right-idle-hold",
+            "type": "frame",
+            "frames": [
+                {
+                    "key": "playerPSDeq",
+                    "frame": 28,
+                    "duration": 0,
+                    "keyframe": false
+                }
+            ],
+            "frameRate": 24,
+            "skipMissedFrames": true,
+            "repeat": -1
+        },
+        {
+            "key": "bppsd-back-idle-hold",
+            "type": "frame",
+            "frames": [
+                {
+                    "key": "playerPSDeq",
+                    "frame": 32,
+                    "duration": 0,
+                    "keyframe": false
+                }
+            ],
+            "frameRate": 24,
+            "skipMissedFrames": true,
+            "repeat": -1
         }
     ],
     "globalTimeScale": 1,

@@ -52,6 +52,11 @@
                 "key": "cave-test-map-1"
             },
             {
+                "url": "assets/cave-test-map-2.json",
+                "type": "tilemapTiledJSON",
+                "key": "cave-test-map-2"
+            },
+            {
                 "url": "assets/cave-test-tileset-1.png",
                 "frameConfig": {
                     "frameWidth": 32,
@@ -188,6 +193,19 @@
                 "url": "assets/PCProjectile.png",
                 "type": "image",
                 "key": "PCProjectile"
+            },
+            {
+                "url": "assets/PCProjectile32.png",
+                "frameConfig": {
+                    "frameWidth": 32,
+                    "frameHeight": 32,
+                    "startFrame": 0,
+                    "endFrame": -1,
+                    "spacing": 0,
+                    "margin": 0
+                },
+                "type": "spritesheet",
+                "key": "PCProjectile32"
             },
             {
                 "url": "assets/playerOnly/front-walk-gun/playerHoldGun-20.png",

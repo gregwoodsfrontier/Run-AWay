@@ -20,6 +20,7 @@ export default class FollowTarget extends UserComponent {
 
 		/* START-USER-CTR-CODE */
 		// Write your code here.
+		// this.target = this.gameObject.scene.add.sprite(-50, -50, "playerHoldGun-20")
 		/* END-USER-CTR-CODE */
 	}
 

@@ -18,6 +18,7 @@ export default class KeyboardInput extends UserComponent {
 
 		/* START-USER-CTR-CODE */
 		// Write your code here.
+		this.XKey = this.gameObject.scene.input.keyboard.addKey(Phaser.Input.Keyboard.KeyCodes.X)
 		/* END-USER-CTR-CODE */
 	}
 
@@ -29,15 +30,64 @@ export default class KeyboardInput extends UserComponent {
 
 	/* START-USER-CODE */
 	private cursors!: Phaser.Types.Input.Keyboard.CursorKeys
+	private XKey: Phaser.Input.Keyboard.Key
 
 	start()
 	{
 		const scene = this.gameObject.scene
 		this.cursors = scene.input.keyboard.createCursorKeys();
+
+		/* this.scene.input.keyboard.on('keydown-UP', function (event: KeyboardEvent) {
+			if(event.shiftKey)
+			{
+				console.log('shift + UP')
+				return
+			}
+		}) */
 	}
 
 	update()
 	{
+		if(this.XKey.isDown)
+		{
+			this.executeXKeyDown()
+		}
+
+		if(Phaser.Input.Keyboard.JustUp(this.XKey))
+		{
+			this.executeXKeyUp()
+		}
+
+		if(this.cursors.shift.isDown)
+		{
+			if(this.cursors.up.isDown)
+			{
+				this.executeShiftUp()
+			}
+			else if(this.cursors.down.isDown)
+			{
+				this.executeShiftDown()
+			}
+			else if(this.cursors.left.isDown)
+			{
+				this.executeShiftLeft()
+			}
+			else if(this.cursors.right.isDown)
+			{
+				this.executeShiftRight()
+			}
+			else
+			{
+				this.executeShiftArrowKeyUp()
+			}
+			return
+		}
+
+		if(Phaser.Input.Keyboard.JustUp(this.cursors.shift))
+		{
+			this.executeShiftJustUp()
+		}
+
 		if(this.cursors.left.isDown)
 		{
 			this.executeLeft()
@@ -59,20 +109,27 @@ export default class KeyboardInput extends UserComponent {
 			this.executeKeyUp()
 		}
 
-		if(this.cursors.space.isDown)
+		if(Phaser.Input.Keyboard.JustDown(this.cursors.space))
 		{
 			this.executeSpace()
 		}
-
-		if(this.cursors.shift.isDown)
-		{
-			this.executeShift()
-		}
 	}
+
+	executeXKeyDown(){
+		console.log('x key is down')
+	}
+	executeXKeyUp(){
+	}
+	executeShiftJustUp(){}
+	executeShiftUp(){}
+	executeShiftDown(){}
+	executeShiftLeft(){}
+	executeShiftRight(){}
+	executeShiftArrowKeyUp(){}
 
 	executeKeyUp()
 	{
-
+		console.log('up is input')
 	}
 
 	executeLeft()
