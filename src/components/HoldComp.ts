@@ -65,6 +65,12 @@ export default class HoldComp extends UserComponent {
 	private gunMovement: JustMovement
 
 	// Write your code here.
+	private enableGun()
+	{
+		this.gunSprite.setActive(true)
+		this.gunSprite.setVisible(true)
+	}
+
 	private onEmptyUpdate()
 	{
 
@@ -79,6 +85,8 @@ export default class HoldComp extends UserComponent {
 			console.warn('direction should be defined')
 			return
 		}
+
+		this.enableGun()
 
 		this.gunSprite.play(`${dirName}-gunonly-idle`, true)
 	}
@@ -103,6 +111,8 @@ export default class HoldComp extends UserComponent {
 			console.error('game object should be holding something.')
 			return
 		}
+
+		this.enableGun()
 
 		const dirName = getDirectionName(this.direction)
 
