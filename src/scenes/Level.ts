@@ -5,9 +5,9 @@
 import Phaser from "phaser";
 import TileMapLayerPhysics from "../components/TileMapLayerPhysics";
 import Player from "../prefabs/Player";
+import Block from "../prefabs/Block";
 import Enemy from "../prefabs/Enemy";
 import FollowTarget from "../components/FollowTarget";
-import Block from "../prefabs/Block";
 /* START-USER-IMPORTS */
 import KeyboardInput from "../components/KeyboardInput";
 import JustMovement from "../components/JustMovement";
@@ -41,17 +41,9 @@ export default class Level extends Phaser.Scene {
 		const player = new Player(this, 193, 446);
 		this.add.existing(player);
 
-		// enemy
-		const enemy = new Enemy(this, -193, 484);
-		this.add.existing(enemy);
-
 		// block_1
 		const block_1 = new Block(this, 130, 208);
 		this.add.existing(block_1);
-
-		// enemy_1
-		const enemy_1 = new Enemy(this, -187, 109);
-		this.add.existing(enemy_1);
 
 		// enemy_3
 		const enemy_3 = new Enemy(this, 119, 445);
@@ -62,18 +54,10 @@ export default class Level extends Phaser.Scene {
 		this.add.existing(enemy_2);
 
 		// lists
-		const enemyTeam = [enemy_1, enemy, enemy_2, enemy_3];
+		const enemyTeam = [enemy_2, enemy_3];
 
 		// wall_1 (components)
 		new TileMapLayerPhysics(wall_1);
-
-		// enemy (components)
-		const enemyFollowTarget = FollowTarget.getComponent(enemy);
-		enemyFollowTarget.target = player;
-
-		// enemy_1 (components)
-		const enemy_1FollowTarget = FollowTarget.getComponent(enemy_1);
-		enemy_1FollowTarget.target = player;
 
 		// enemy_3 (components)
 		const enemy_3FollowTarget = FollowTarget.getComponent(enemy_3);

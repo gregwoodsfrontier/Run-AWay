@@ -70,6 +70,7 @@ export default class AnimationV2 extends UserComponent {
 		{
 			const holdstate = parts[parts.length-1]
 			this.gameObject.play(`${char}-${direction}-idle-${holdstate}`, true)
+			
 		}
 	}
 
