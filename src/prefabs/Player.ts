@@ -11,6 +11,7 @@ import DepthSortY from "../components/DepthSortY";
 import AnimationV2 from "../components/AnimationV2";
 import CameraFollow from "../components/CameraFollow";
 /* START-USER-IMPORTS */
+import StateMachine from "../stateMachine";
 /* END-USER-IMPORTS */
 
 export default class Player extends Phaser.GameObjects.Sprite {
@@ -33,12 +34,22 @@ export default class Player extends Phaser.GameObjects.Sprite {
 
 		/* START-USER-CTR-CODE */
 		// Write your code here.
+		
+		
+
 		/* END-USER-CTR-CODE */
 	}
 
 	/* START-USER-CODE */
 
 	// Write your code here.
+	private stateMachine: StateMachine
+	private direction = DIRECTION.FRONT
+
+	update(dt: number)
+	{
+		this.stateMachine.update(dt)
+	}
 
 	/* END-USER-CODE */
 }
