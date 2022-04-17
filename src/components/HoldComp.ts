@@ -110,11 +110,14 @@ export default class HoldComp extends UserComponent {
 
 	private onEmptyEnter()
 	{
+		this.item = HOLD_ITEM.NONE
 		this.disableGun()
 	}
 
 	private onHoldIdleEnter()
 	{
+		this.item = HOLD_ITEM.GUN
+
 		const dirName = getDirectionName(this.direction)
 
 		if(!dirName)
@@ -130,6 +133,8 @@ export default class HoldComp extends UserComponent {
 			this.gameObject.y
 		)
 
+		this.gunMovement.stayStill()
+		
 		this.gunSprite.play(`${dirName}-gunonly-idle`, true)
 	}
 
@@ -169,7 +174,7 @@ export default class HoldComp extends UserComponent {
 			return
 		}
 
-		/* switch (this.direction) {
+		switch (this.direction) {
 			case DIRECTION.BACK: {
 				this.gunMovement.moveUp()
 				break
@@ -189,7 +194,7 @@ export default class HoldComp extends UserComponent {
 				this.gunMovement.moveRight()
 				break
 			}
-		} */
+		}
 
 		this.gunSprite.play(`${dirName}-gunonly-walk`, true)
 	}

@@ -46,18 +46,20 @@ export default class Player extends Phaser.GameObjects.Sprite {
 			onEnter: this.onIdleEnter
 		})
 		.addState(PLAYER_STATE.WALK, {
-			onEnter: this.onWalkEnter,
-			// onUpdate: this.onWalkUpdate
+			// onEnter: this.onWalkEnter,
+			onUpdate: this.onWalkUpdate
 		})
 		.addState(PLAYER_STATE.HOLD_IDLE, {
 			onEnter: this.onHoldIdleEnter
 		})
 		.addState(PLAYER_STATE.HOLD_WALK, {
-			onEnter: this.onHoldWalkEnter
+			// onEnter: this.onHoldWalkEnter
+			onUpdate: this.onHoldWalkUpdate
 		})
 		.addState(PLAYER_STATE.AIM)
 
 		this.scene.events.once(Phaser.Scenes.Events.UPDATE, this.start, this);
+		this.scene.events.on(Phaser.Scenes.Events.UPDATE, this.Update, this);
 
 		this.direction = DIRECTION.FRONT
 		this.playerMovement = JustMovement.getComponent(this)
@@ -91,10 +93,15 @@ export default class Player extends Phaser.GameObjects.Sprite {
 
 	}
 
-	update(dt: number)
+	Update(dt: number)
 	{
 		this.stateMachine.update(dt)
 		this.playerHold.stateMachine.update(dt)
+	}
+
+	private onIdleUpdate()
+	{
+		// console.log('idle update')
 	}
 
 	private handleStateSwitching()
@@ -167,6 +174,7 @@ export default class Player extends Phaser.GameObjects.Sprite {
 		}
 
 		this.stateMachine.setState(PLAYER_STATE.HOLD_WALK)
+		this.playerHold.stateMachine.setState(HOLD_COMP_STATE.WALK)
 	}
 
 	private updateHoldDir()
@@ -174,9 +182,9 @@ export default class Player extends Phaser.GameObjects.Sprite {
 		this.playerHold.direction = this.direction
 	}
 
-	private onHoldWalkEnter()
+	// private onHoldWalkEnter()
+	private onHoldWalkUpdate()
 	{
-		console.log('hold walk enter')
 		const dirName = getDirectionName(this.direction)
 
 		if(!dirName)
@@ -186,15 +194,14 @@ export default class Player extends Phaser.GameObjects.Sprite {
 		}
 
 		this.handlePlayerMovement()
+		this.updateHoldDir()
 
-		this.play(`player-${dirName}-walk-hold`, true)
-		console.log(this.anims.currentAnim.key)
-		/* this.playerAnims.playAnims({
+		this.playerAnims.playAnims({
 			character: 'player',
 			direction: dirName,
 			state: 'walk',
 			holdState: 'hold'
-		}) */
+		})
 	}
 
 	private onHoldIdleEnter()
@@ -206,6 +213,8 @@ export default class Player extends Phaser.GameObjects.Sprite {
 			console.warn('direction should be defined')
 			return
 		}
+
+		this.updateHoldDir()
 
 		this.playerMovement.stayStill()
 
@@ -261,7 +270,7 @@ export default class Player extends Phaser.GameObjects.Sprite {
 		}
 	}
 
-	private onWalkEnter()
+	private onWalkUpdate()
 	{
 		const dirName = getDirectionName(this.direction)
 
