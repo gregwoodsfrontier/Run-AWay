@@ -7,6 +7,26 @@
                 "key": "animations"
             },
             {
+                "url": "assets/gunOnly/back-gunonly/back-gunonly-1.png",
+                "type": "image",
+                "key": "back-gunonly-1"
+            },
+            {
+                "url": "assets/gunOnly/back-gunonly/back-gunonly-2.png",
+                "type": "image",
+                "key": "back-gunonly-2"
+            },
+            {
+                "url": "assets/gunOnly/back-gunonly/back-gunonly-3.png",
+                "type": "image",
+                "key": "back-gunonly-3"
+            },
+            {
+                "url": "assets/gunOnly/back-gunonly/back-gunonly-4.png",
+                "type": "image",
+                "key": "back-gunonly-4"
+            },
+            {
                 "url": "assets/cave-test-map-1.json",
                 "type": "tilemapTiledJSON",
                 "key": "cave-test-map-1"
@@ -25,104 +45,24 @@
                 "key": "cave-test-tileset-1"
             },
             {
-                "url": "assets/dude/dude-front-walk/dude-front-walk-1.png",
+                "url": "assets/gunOnly/front-gunonly/front-gunonly-1.png",
                 "type": "image",
-                "key": "dude-front-walk-1"
+                "key": "front-gunonly-1"
             },
             {
-                "url": "assets/dude/dude-front-walk/dude-front-walk-2.png",
+                "url": "assets/gunOnly/front-gunonly/front-gunonly-2.png",
                 "type": "image",
-                "key": "dude-front-walk-2"
+                "key": "front-gunonly-2"
             },
             {
-                "url": "assets/dude/dude-front-walk/dude-front-walk-3.png",
+                "url": "assets/gunOnly/front-gunonly/front-gunonly-3.png",
                 "type": "image",
-                "key": "dude-front-walk-3"
+                "key": "front-gunonly-3"
             },
             {
-                "url": "assets/dude/dude-front-walk/dude-front-walk-4.png",
+                "url": "assets/gunOnly/front-gunonly/front-gunonly-4.png",
                 "type": "image",
-                "key": "dude-front-walk-4"
-            },
-            {
-                "url": "assets/dude/dude-left-walk/dude-left-walk-1.png",
-                "type": "image",
-                "key": "dude-left-walk-1"
-            },
-            {
-                "url": "assets/dude/dude-left-walk/dude-left-walk-2.png",
-                "type": "image",
-                "key": "dude-left-walk-2"
-            },
-            {
-                "url": "assets/dude/dude-left-walk/dude-left-walk-3.png",
-                "type": "image",
-                "key": "dude-left-walk-3"
-            },
-            {
-                "url": "assets/dude/dude-left-walk/dude-left-walk-4.png",
-                "type": "image",
-                "key": "dude-left-walk-4"
-            },
-            {
-                "url": "assets/dude/dude-left-walk-hold/dude-left-walk-hold-1.png",
-                "type": "image",
-                "key": "dude-left-walk-hold-1"
-            },
-            {
-                "url": "assets/dude/dude-left-walk-hold/dude-left-walk-hold-2.png",
-                "type": "image",
-                "key": "dude-left-walk-hold-2"
-            },
-            {
-                "url": "assets/dude/dude-left-walk-hold/dude-left-walk-hold-3.png",
-                "type": "image",
-                "key": "dude-left-walk-hold-3"
-            },
-            {
-                "url": "assets/dude/dude-left-walk-hold/dude-left-walk-hold-4.png",
-                "type": "image",
-                "key": "dude-left-walk-hold-4"
-            },
-            {
-                "url": "assets/dude/dude-right-walk/dude-right-walk-1.png",
-                "type": "image",
-                "key": "dude-right-walk-1"
-            },
-            {
-                "url": "assets/dude/dude-right-walk/dude-right-walk-2.png",
-                "type": "image",
-                "key": "dude-right-walk-2"
-            },
-            {
-                "url": "assets/dude/dude-right-walk/dude-right-walk-3.png",
-                "type": "image",
-                "key": "dude-right-walk-3"
-            },
-            {
-                "url": "assets/dude/dude-right-walk/dude-right-walk-4.png",
-                "type": "image",
-                "key": "dude-right-walk-4"
-            },
-            {
-                "url": "assets/dude/dude-right-walk-hold/dude-right-walk-hold-1.png",
-                "type": "image",
-                "key": "dude-right-walk-hold-1"
-            },
-            {
-                "url": "assets/dude/dude-right-walk-hold/dude-right-walk-hold-2.png",
-                "type": "image",
-                "key": "dude-right-walk-hold-2"
-            },
-            {
-                "url": "assets/dude/dude-right-walk-hold/dude-right-walk-hold-3.png",
-                "type": "image",
-                "key": "dude-right-walk-hold-3"
-            },
-            {
-                "url": "assets/dude/dude-right-walk-hold/dude-right-walk-hold-4.png",
-                "type": "image",
-                "key": "dude-right-walk-hold-4"
+                "key": "front-gunonly-4"
             },
             {
                 "url": "assets/FufuSuperDino.png",
@@ -133,6 +73,26 @@
                 "url": "assets/gamedevjs.PNG",
                 "type": "image",
                 "key": "gamedevjs"
+            },
+            {
+                "url": "assets/gunOnly/left-gunonly/left-gunonly-1.png",
+                "type": "image",
+                "key": "left-gunonly-1"
+            },
+            {
+                "url": "assets/gunOnly/left-gunonly/left-gunonly-2.png",
+                "type": "image",
+                "key": "left-gunonly-2"
+            },
+            {
+                "url": "assets/gunOnly/left-gunonly/left-gunonly-3.png",
+                "type": "image",
+                "key": "left-gunonly-3"
+            },
+            {
+                "url": "assets/gunOnly/left-gunonly/left-gunonly-4.png",
+                "type": "image",
+                "key": "left-gunonly-4"
             },
             {
                 "url": "assets/playerOnly/front-walk-gun/playerHoldGun-20.png",
@@ -373,6 +333,62 @@
                 "url": "assets/playerOnly/left-walk/playerOnly-9.png",
                 "type": "image",
                 "key": "playerOnly-9"
+            },
+            {
+                "url": "assets/playerPSDeq.png",
+                "frameConfig": {
+                    "frameWidth": 64,
+                    "frameHeight": 64,
+                    "startFrame": 0,
+                    "endFrame": -1,
+                    "spacing": 0,
+                    "margin": 0
+                },
+                "type": "spritesheet",
+                "key": "playerPSDeq"
+            },
+            {
+                "url": "assets/PoisonRocktEndFrame.png",
+                "type": "image",
+                "key": "PoisonRocktEndFrame"
+            },
+            {
+                "url": "assets/ProxyBurstEndFrame.png",
+                "type": "image",
+                "key": "ProxyBurstEndFrame"
+            },
+            {
+                "url": "assets/raw-break-interact.png",
+                "frameConfig": {
+                    "frameWidth": 32,
+                    "frameHeight": 32,
+                    "startFrame": 0,
+                    "endFrame": -1,
+                    "spacing": 0,
+                    "margin": 0
+                },
+                "type": "spritesheet",
+                "key": "raw-break-interact"
+            },
+            {
+                "url": "assets/gunOnly/right-gunonly/right-gunonly-1.png",
+                "type": "image",
+                "key": "right-gunonly-1"
+            },
+            {
+                "url": "assets/gunOnly/right-gunonly/right-gunonly-2.png",
+                "type": "image",
+                "key": "right-gunonly-2"
+            },
+            {
+                "url": "assets/gunOnly/right-gunonly/right-gunonly-3.png",
+                "type": "image",
+                "key": "right-gunonly-3"
+            },
+            {
+                "url": "assets/gunOnly/right-gunonly/right-gunonly-4.png",
+                "type": "image",
+                "key": "right-gunonly-4"
             },
             {
                 "url": "assets/swarm/back-attack/swarm-back-attack-1.png",
@@ -626,26 +642,6 @@
                 "url": "assets/tempboss/tempboss-right-walk-4.png",
                 "type": "image",
                 "key": "tempboss-right-walk-4"
-            },
-            {
-                "url": "assets/dude/dude-back-walk/walk-1.png",
-                "type": "image",
-                "key": "walk-1"
-            },
-            {
-                "url": "assets/dude/dude-back-walk/walk-2.png",
-                "type": "image",
-                "key": "walk-2"
-            },
-            {
-                "url": "assets/dude/dude-back-walk/walk-3.png",
-                "type": "image",
-                "key": "walk-3"
-            },
-            {
-                "url": "assets/dude/dude-back-walk/walk-4.png",
-                "type": "image",
-                "key": "walk-4"
             }
         ]
     },

@@ -99,53 +99,6 @@
             ]
         },
         {
-            "name": "Animation",
-            "baseClass": "UserComponent",
-            "gameObjectType": "Phaser.GameObjects.Sprite",
-            "properties": [
-                {
-                    "name": "frontWalk",
-                    "label": "frontWalk",
-                    "tooltip": "frontWalk",
-                    "defValue": "",
-                    "customDefinition": false,
-                    "type": {
-                        "id": "animation-key"
-                    }
-                },
-                {
-                    "name": "backWalk",
-                    "label": "backWalk",
-                    "tooltip": "backWalk",
-                    "defValue": "",
-                    "customDefinition": false,
-                    "type": {
-                        "id": "animation-key"
-                    }
-                },
-                {
-                    "name": "leftWalk",
-                    "label": "leftWalk",
-                    "tooltip": "leftWalk",
-                    "defValue": "",
-                    "customDefinition": false,
-                    "type": {
-                        "id": "animation-key"
-                    }
-                },
-                {
-                    "name": "rightWalk",
-                    "label": "rightWalk",
-                    "tooltip": "rightWalk",
-                    "defValue": "",
-                    "customDefinition": false,
-                    "type": {
-                        "id": "animation-key"
-                    }
-                }
-            ]
-        },
-        {
             "name": "DepthSortY",
             "baseClass": "",
             "gameObjectType": "Phaser.GameObjects.Sprite",
