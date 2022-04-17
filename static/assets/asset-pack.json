@@ -348,6 +348,16 @@
                 "key": "playerPSDeq"
             },
             {
+                "url": "assets/PoisonRocktEndFrame.png",
+                "type": "image",
+                "key": "PoisonRocktEndFrame"
+            },
+            {
+                "url": "assets/ProxyBurstEndFrame.png",
+                "type": "image",
+                "key": "ProxyBurstEndFrame"
+            },
+            {
                 "url": "assets/raw-break-interact.png",
                 "frameConfig": {
                     "frameWidth": 32,

@@ -58,6 +58,9 @@ export default class AnimationV2 extends UserComponent {
 	playIdleFromWalk()
 	{
 		const key = this.gameObject.anims.currentAnim.key
+
+		// this.gameObject.anims.setCurrentFrame()
+
 		const parts = key.split('-')
 		const char = parts[0]
 		const direction = parts[1]

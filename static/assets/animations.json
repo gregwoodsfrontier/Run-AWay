@@ -1102,7 +1102,7 @@
                     "keyframe": false
                 }
             ],
-            "frameRate": 12,
+            "frameRate": 24,
             "skipMissedFrames": true,
             "repeat": -1
         },
@@ -1116,7 +1116,7 @@
                     "keyframe": false
                 }
             ],
-            "frameRate": 12,
+            "frameRate": 24,
             "skipMissedFrames": true,
             "repeat": -1
         },
@@ -1130,7 +1130,7 @@
                     "keyframe": false
                 }
             ],
-            "frameRate": 12,
+            "frameRate": 24,
             "skipMissedFrames": true,
             "repeat": -1
         },
@@ -1144,7 +1144,7 @@
                     "keyframe": false
                 }
             ],
-            "frameRate": 12,
+            "frameRate": 24,
             "skipMissedFrames": true,
             "repeat": -1
         },
@@ -1310,7 +1310,8 @@
                 }
             ],
             "frameRate": 12,
-            "skipMissedFrames": true
+            "skipMissedFrames": true,
+            "repeat": -1
         },
         {
             "key": "bppsd-back-walk-hold",
@@ -1342,7 +1343,8 @@
                 }
             ],
             "frameRate": 12,
-            "skipMissedFrames": true
+            "skipMissedFrames": true,
+            "repeat": -1
         },
         {
             "key": "silver-break",
@@ -1487,7 +1489,7 @@
                     "keyframe": false
                 }
             ],
-            "frameRate": 6,
+            "frameRate": 9,
             "skipMissedFrames": true,
             "hideOnComplete": true
         },
@@ -1526,7 +1528,7 @@
                     "keyframe": false
                 }
             ],
-            "frameRate": 6,
+            "frameRate": 9,
             "skipMissedFrames": true
         },
         {
@@ -1578,7 +1580,7 @@
                     "keyframe": false
                 }
             ],
-            "frameRate": 2,
+            "frameRate": 24,
             "skipMissedFrames": true
         },
         {
@@ -1592,7 +1594,7 @@
                     "keyframe": false
                 }
             ],
-            "frameRate": 2,
+            "frameRate": 24,
             "skipMissedFrames": true
         },
         {
@@ -1619,7 +1621,8 @@
                 }
             ],
             "frameRate": 9,
-            "skipMissedFrames": true
+            "skipMissedFrames": true,
+            "hideOnComplete": true
         },
         {
             "key": "meat",
@@ -1693,9 +1696,14 @@
                     "frame": 99,
                     "duration": 0,
                     "keyframe": false
+                },
+                {
+                    "key": "ProxyBurstEndFrame",
+                    "duration": 0,
+                    "keyframe": false
                 }
             ],
-            "frameRate": 12,
+            "frameRate": 9,
             "skipMissedFrames": true
         },
         {
@@ -1746,9 +1754,14 @@
                     "frame": 107,
                     "duration": 0,
                     "keyframe": false
+                },
+                {
+                    "key": "PoisonRocktEndFrame",
+                    "duration": 0,
+                    "keyframe": false
                 }
             ],
-            "frameRate": 12,
+            "frameRate": 9,
             "skipMissedFrames": true
         },
         {
