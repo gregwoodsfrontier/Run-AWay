@@ -12,18 +12,8 @@ import JustMovement from "../components/JustMovement";
 
 /* START-USER-IMPORTS */
 import StateMachine from "../stateMachine";
-enum ENEMY_STATE_KEYS {
-	IDLE = 'idle',
-	WALK = 'walk',
-	ATTACK = 'attack',
-}
-
-export enum DIRECTION {
-	BACK,
-	LEFT,
-	FRONT,
-	RIGHT
-}
+import { ENEMY_STATE_KEYS } from "../types/enemyStateKeys";
+import { DIRECTION, getDirectionName } from "../types/direction";
 /* END-USER-IMPORTS */
 
 export default class Enemy extends Phaser.GameObjects.Sprite {
@@ -138,36 +128,6 @@ export default class Enemy extends Phaser.GameObjects.Sprite {
 		this.stateMachine.setState(ENEMY_STATE_KEYS.ATTACK)
 	}
 
-	private getDirectionName(dir: number)
-	{
-		switch (dir) {
-			case DIRECTION.BACK: {
-				return 'back'
-				break
-			}
-
-			case DIRECTION.FRONT: {
-				return 'front'
-				break
-			}
-
-			case DIRECTION.LEFT: {
-				return 'left'
-				break
-			}
-
-			case DIRECTION.RIGHT: {
-				return 'right'
-				break
-			}
-
-			default: {
-				console.warn('no such direction')
-				return
-			}
-		}
-	}
-
 	private setSlapHitBox(dir: number)
 	{
 		const boxMargin = 10
@@ -233,7 +193,7 @@ export default class Enemy extends Phaser.GameObjects.Sprite {
 	{
 		this.disableSlapBox()
 
-		const dirName = this.getDirectionName(this.direction)
+		const dirName = getDirectionName(this.direction)
 
 		if(!dirName)
 		{
@@ -257,7 +217,7 @@ export default class Enemy extends Phaser.GameObjects.Sprite {
 	
 	private onWalkUpdate()
 	{
-		const dirName = this.getDirectionName(this.direction)
+		const dirName = getDirectionName(this.direction)
 
 		if(!dirName)
 		{
@@ -296,7 +256,7 @@ export default class Enemy extends Phaser.GameObjects.Sprite {
 	
 	private onAttackEnter()
 	{
-		const dirName = this.getDirectionName(this.direction)
+		const dirName = getDirectionName(this.direction)
 		
 		if(!dirName)
 		{
