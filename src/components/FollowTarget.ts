@@ -7,7 +7,7 @@ import UserComponent from "./UserComponent";
 import Phaser from "phaser";
 /* START-USER-IMPORTS */
 import JustMovement from "./JustMovement";
-import { DIRECTION } from "../prefabs/Enemy";
+import { DIRECTION } from "../types/direction";
 /* END-USER-IMPORTS */
 
 export default class FollowTarget extends UserComponent {
