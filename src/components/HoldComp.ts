@@ -26,7 +26,7 @@ export default class HoldComp extends UserComponent {
 		this.stateMachine = new StateMachine(this, "hold")
 
 		this.stateMachine.addState("empty", {
-			onUpdate: this.onEmptyUpdate
+			onEnter: this.onEmptyEnter
 		})
 		.addState("hold-idle", {
 			onEnter: this.onHoldIdleEnter
@@ -39,7 +39,9 @@ export default class HoldComp extends UserComponent {
 
 		const {scene, x, y} = this.gameObject
 
-		this.gunSprite = scene.add.sprite(x, y, "front-gunonly-idle").setVisible(false).setActive(false)
+		this.gunSprite = scene.add.sprite(x, y, "front-gunonly-idle")
+		this.disableGun()
+		
 		this.gObjMovement = JustMovement.getComponent(this.gameObject)
 
 		this.gunPhysics = new Physics(this.gunSprite)
@@ -67,13 +69,27 @@ export default class HoldComp extends UserComponent {
 	// Write your code here.
 	private enableGun()
 	{
+		if(!this.gunSprite)
+		{
+			return
+		}
 		this.gunSprite.setActive(true)
 		this.gunSprite.setVisible(true)
 	}
 
-	private onEmptyUpdate()
+	private disableGun()
 	{
+		if(!this.gunSprite)
+		{
+			return
+		}
+		this.gunSprite.setActive(false)
+		this.gunSprite.setVisible(false)
+	}
 
+	private onEmptyEnter()
+	{
+		this.disableGun()
 	}
 
 	private onHoldIdleEnter()
