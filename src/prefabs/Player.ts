@@ -53,7 +53,7 @@ export default class Player extends Phaser.GameObjects.Sprite {
 			onEnter: this.onHoldIdleEnter
 		})
 		.addState(PLAYER_STATE.HOLD_WALK, {
-			onUpdate: this.onHoldWalkUpdate
+			onEnter: this.onHoldWalkEnter
 		})
 		.addState(PLAYER_STATE.AIM)
 
@@ -102,45 +102,24 @@ export default class Player extends Phaser.GameObjects.Sprite {
 		this.playerKeyboard.executeLeft = () => {
 			this.direction = DIRECTION.LEFT
 
-			if(this.playerHold.stateMachine.isCurrentState(HOLD_COMP_STATE.WALK))
-			{
-				this.stateMachine.setState(PLAYER_STATE.HOLD_WALK)
-				return
-			}
-			this.stateMachine.setState(PLAYER_STATE.WALK)
+			this.handleNonEmptyHoldState()
 		}
 		this.playerKeyboard.executeRight = () => {
 			this.direction = DIRECTION.RIGHT
 
-			if(this.playerHold.stateMachine.isCurrentState(HOLD_COMP_STATE.WALK))
-			{
-				this.stateMachine.setState(PLAYER_STATE.HOLD_WALK)
-				return
-			}
-
-			this.stateMachine.setState(PLAYER_STATE.WALK)
+			this.handleNonEmptyHoldState()
 		}
 		this.playerKeyboard.executeUp = () => {
 			this.direction = DIRECTION.BACK
 
-			if(this.playerHold.stateMachine.isCurrentState(HOLD_COMP_STATE.WALK))
-			{
-				this.stateMachine.setState(PLAYER_STATE.HOLD_WALK)
-				return
-			}
-
-			this.stateMachine.setState(PLAYER_STATE.WALK)
+			this.handleNonEmptyHoldState()
 		}
 		this.playerKeyboard.executeDown = () => {
 			this.direction = DIRECTION.FRONT
 
-			if(this.playerHold.stateMachine.isCurrentState(HOLD_COMP_STATE.WALK))
-			{
-				this.stateMachine.setState(PLAYER_STATE.HOLD_WALK)
-				return
-			}
+			this.handleNonEmptyHoldState()
 
-			this.stateMachine.setState(PLAYER_STATE.WALK)
+			
 		}
 		this.playerKeyboard.executeKeyUp = () => {
 			if(this.stateMachine.isCurrentState(PLAYER_STATE.WALK))
@@ -179,13 +158,25 @@ export default class Player extends Phaser.GameObjects.Sprite {
 		}
 	}
 
+	private handleNonEmptyHoldState()
+	{
+		if(this.playerHold.stateMachine.isCurrentState(HOLD_COMP_STATE.EMPTY))
+		{
+			this.stateMachine.setState(PLAYER_STATE.WALK)
+			return
+		}
+
+		this.stateMachine.setState(PLAYER_STATE.HOLD_WALK)
+	}
+
 	private updateHoldDir()
 	{
 		this.playerHold.direction = this.direction
 	}
 
-	private onHoldWalkUpdate()
+	private onHoldWalkEnter()
 	{
+		console.log('hold walk enter')
 		const dirName = getDirectionName(this.direction)
 
 		if(!dirName)
@@ -196,12 +187,14 @@ export default class Player extends Phaser.GameObjects.Sprite {
 
 		this.handlePlayerMovement()
 
-		this.playerAnims.playAnims({
+		this.play(`player-${dirName}-walk-hold`, true)
+		console.log(this.anims.currentAnim.key)
+		/* this.playerAnims.playAnims({
 			character: 'player',
 			direction: dirName,
 			state: 'walk',
 			holdState: 'hold'
-		})
+		}) */
 	}
 
 	private onHoldIdleEnter()
@@ -245,7 +238,6 @@ export default class Player extends Phaser.GameObjects.Sprite {
 
 	private handlePlayerMovement()
 	{
-		console.log('on handle player move')
 		switch (this.direction) {
 			case DIRECTION.BACK: {
 				this.playerMovement.moveUp()
@@ -271,7 +263,6 @@ export default class Player extends Phaser.GameObjects.Sprite {
 
 	private onWalkEnter()
 	{
-		console.log('on walk update')
 		const dirName = getDirectionName(this.direction)
 
 		if(!dirName)

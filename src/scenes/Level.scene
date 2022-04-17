@@ -66,8 +66,8 @@
             "components": [],
             "FollowTarget.target": "player",
             "FollowTarget.deadRangeX": 35,
-            "x": 146,
-            "y": 254
+            "x": 173,
+            "y": 55
         },
         {
             "type": "Image",

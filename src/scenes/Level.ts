@@ -41,7 +41,7 @@ export default class Level extends Phaser.Scene {
 		this.add.existing(player);
 
 		// enemy_3
-		const enemy_3 = new Enemy(this, 146, 254);
+		const enemy_3 = new Enemy(this, 173, 55);
 		this.add.existing(enemy_3);
 
 		// silver
