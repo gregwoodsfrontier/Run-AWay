@@ -59,20 +59,25 @@ export default class KeyboardInput extends UserComponent {
 			this.executeKeyUp()
 		}
 
-		if(this.cursors.space.isDown)
+		/* if(this.cursors.space.isDown)
 		{
 			this.executeSpace()
-		}
+		} */
 
-		if(this.cursors.shift.isDown)
+		/* if(this.cursors.shift.isDown)
 		{
 			this.executeShift()
+		} */
+
+		if(Phaser.Input.Keyboard.JustDown(this.cursors.space))
+		{
+			this.executeSpace()
 		}
 	}
 
 	executeKeyUp()
 	{
-
+		console.log('up is input')
 	}
 
 	executeLeft()

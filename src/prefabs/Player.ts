@@ -9,6 +9,8 @@ import JustMovement from "../components/JustMovement";
 import DepthSortY from "../components/DepthSortY";
 import AnimationV2 from "../components/AnimationV2";
 import CameraFollow from "../components/CameraFollow";
+import HoldComp from "../components/HoldComp";
+import AimComp from "../components/AimComp";
 /* START-USER-IMPORTS */
 import StateMachine from "../stateMachine";
 import { PLAYER_STATE } from "../types/playerState";
@@ -32,10 +34,12 @@ export default class Player extends Phaser.GameObjects.Sprite {
 		new DepthSortY(this);
 		new AnimationV2(this);
 		new CameraFollow(this);
+		new HoldComp(this);
+		new AimComp(this);
 
 		/* START-USER-CTR-CODE */
 		// Write your code here.
-		
+
 		this.stateMachine = new StateMachine(this, 'player')
 		this.stateMachine.addState(PLAYER_STATE.IDLE, {
 			onEnter: this.onIdleEnter
@@ -43,12 +47,17 @@ export default class Player extends Phaser.GameObjects.Sprite {
 		.addState(PLAYER_STATE.WALK, {
 			onUpdate: this.onWalkUpdate
 		})
+		.addState(PLAYER_STATE.HOLD)
+		.addState(PLAYER_STATE.AIM)
 
 		this.scene.events.once(Phaser.Scenes.Events.UPDATE, this.start, this);
 
 		this.direction = DIRECTION.FRONT
 		this.playerMovement = JustMovement.getComponent(this)
 		this.playerAnims = AnimationV2.getComponent(this)
+		this.playerHold = HoldComp.getComponent(this)
+		this.playerAim = AimComp.getComponent(this)
+
 		/* END-USER-CTR-CODE */
 	}
 
@@ -58,17 +67,21 @@ export default class Player extends Phaser.GameObjects.Sprite {
 	private stateMachine: StateMachine
 	private playerMovement: JustMovement
 	private playerAnims: AnimationV2
+	private playerHold: HoldComp
+	private playerAim: AimComp
 	//@ts-ignore
 	private direction: number
 
 	start()
 	{
 		this.stateMachine.setState(PLAYER_STATE.IDLE)
+		this.playerHold.stateMachine.setState('empty')
 	}
 
 	update(dt: number)
 	{
 		this.stateMachine.update(dt)
+		this.playerHold.stateMachine.update(dt)
 	}
 
 	private onIdleEnter()
@@ -128,7 +141,7 @@ export default class Player extends Phaser.GameObjects.Sprite {
 			state: 'walk'
 		})
 	}
-	
+
 	/* END-USER-CODE */
 }
 

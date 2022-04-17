@@ -23,7 +23,9 @@
                 "JustMovement",
                 "DepthSortY",
                 "AnimationV2",
-                "CameraFollow"
+                "CameraFollow",
+                "HoldComp",
+                "AimComp"
             ],
             "Physics.width": 32,
             "Physics.height": 40,
