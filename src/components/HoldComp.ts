@@ -39,7 +39,7 @@ export default class HoldComp extends UserComponent {
 
 		const {scene, x, y} = this.gameObject
 
-		this.gunSprite = scene.add.sprite(x, y, "front-gunonly-idle")
+		this.gunSprite = scene.add.sprite(x, y, "front-gunonly-idle").setVisible(false).setActive(false)
 		this.gObjMovement = JustMovement.getComponent(this.gameObject)
 
 		this.gunPhysics = new Physics(this.gunSprite)
