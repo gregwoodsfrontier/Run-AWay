@@ -1,0 +1,111 @@
+{
+    "id": "cdf3842d-d90d-41f3-a83d-c6827807bbb1",
+    "sceneType": "SCENE",
+    "settings": {
+        "exportClass": true,
+        "autoImport": true,
+        "preloadPackFiles": [],
+        "createMethodName": "editorCreate",
+        "sceneKey": "Scene",
+        "compilerOutputLanguage": "TYPE_SCRIPT",
+        "borderWidth": 320,
+        "borderHeight": 640
+    },
+    "displayList": [
+        {
+            "type": "Image",
+            "id": "3dc36c64-caae-4e62-9ad2-7f3d57c4a118",
+            "label": "menu_Button",
+            "components": [],
+            "texture": {
+                "key": "Menu Button"
+            },
+            "x": 288,
+            "y": 32
+        },
+        {
+            "type": "Image",
+            "id": "ce61c3f5-8ed0-43b7-9952-ac458b94804a",
+            "label": "menu_Background",
+            "components": [],
+            "texture": {
+                "key": "Menu Background"
+            },
+            "x": 160,
+            "y": 319
+        },
+        {
+            "type": "Image",
+            "id": "ebe0af65-adfc-435c-b5f5-f55b936e8949",
+            "label": "menu_Button_Pressed",
+            "components": [],
+            "texture": {
+                "key": "Menu Button Pressed"
+            },
+            "x": 288,
+            "y": 32
+        },
+        {
+            "type": "Image",
+            "id": "e024e84e-fe0a-4fbd-8d76-a62c11841053",
+            "label": "start_Button",
+            "components": [],
+            "texture": {
+                "key": "Start Button"
+            },
+            "x": 160,
+            "y": 255
+        },
+        {
+            "type": "Image",
+            "id": "c3643e81-0414-4ba8-94b3-08db4fe89ab7",
+            "label": "restart_Button",
+            "components": [],
+            "texture": {
+                "key": "Restart Button"
+            },
+            "x": 160,
+            "y": 287
+        },
+        {
+            "type": "Image",
+            "id": "25fea230-a043-40ef-a767-7599b457e2d7",
+            "label": "volume_Button",
+            "components": [],
+            "texture": {
+                "key": "Volume Button"
+            },
+            "x": 160,
+            "y": 319
+        },
+        {
+            "type": "Image",
+            "id": "bf654d8f-d9c1-43a9-b388-4b401f0fa3e1",
+            "label": "about_Button",
+            "components": [],
+            "texture": {
+                "key": "About Button"
+            },
+            "x": 160,
+            "y": 383
+        },
+        {
+            "type": "Image",
+            "id": "7e0ae149-7a7e-45e2-b79a-7f2183fc250b",
+            "label": "mainMenuButton",
+            "components": [],
+            "texture": {
+                "key": "MainMenuButton"
+            },
+            "x": 160,
+            "y": 351
+        }
+    ],
+    "plainObjects": [],
+    "meta": {
+        "app": "Phaser Editor 2D - Scene Editor",
+        "url": "https://phasereditor2d.com",
+        "contentType": "phasereditor2d.core.scene.SceneContentType",
+        "version": 3
+    }
+}

@@ -110,6 +110,11 @@
                 "key": "gamedevjs"
             },
             {
+                "url": "assets/ui-assets/GunButton.png",
+                "type": "image",
+                "key": "GunButton"
+            },
+            {
                 "url": "assets/ui-assets/Health Item Copper.png",
                 "type": "image",
                 "key": "Health Item Copper"
@@ -148,6 +153,16 @@
                 "url": "assets/gunOnly/left-gunonly/left-gunonly-4.png",
                 "type": "image",
                 "key": "left-gunonly-4"
+            },
+            {
+                "url": "assets/ui-assets/MainMenuButton.png",
+                "type": "image",
+                "key": "MainMenuButton"
+            },
+            {
+                "url": "assets/ui-assets/MainMenuButton Pressed.png",
+                "type": "image",
+                "key": "MainMenuButton Pressed"
             },
             {
                 "url": "assets/ui-assets/Menu Background.png",
@@ -522,11 +537,6 @@
                 "url": "assets/ui-assets/Sanity Point.png",
                 "type": "image",
                 "key": "Sanity Point"
-            },
-            {
-                "url": "assets/ui-assets/GunButton.png",
-                "type": "image",
-                "key": "GunButton"
             },
             {
                 "url": "assets/ui-assets/Start Button.png",
