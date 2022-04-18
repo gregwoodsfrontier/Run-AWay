@@ -166,7 +166,7 @@
         },
         {
             "name": "HoldComp",
-            "baseClass": "UserComponent",
+            "baseClass": "",
             "gameObjectType": "Phaser.GameObjects.Sprite",
             "properties": [
                 {
@@ -204,6 +204,44 @@
         },
         {
             "name": "AimComp",
+            "baseClass": "",
+            "gameObjectType": "Phaser.GameObjects.Sprite",
+            "properties": [
+                {
+                    "name": "stateMachine",
+                    "label": "stateMachine",
+                    "tooltip": "stateMachine",
+                    "defValue": "",
+                    "customDefinition": false,
+                    "type": {
+                        "id": "object-var",
+                        "expressionType": "StateMachine"
+                    }
+                },
+                {
+                    "name": "facingDir",
+                    "label": "facingDir",
+                    "tooltip": "facingDir",
+                    "defValue": 0,
+                    "customDefinition": false,
+                    "type": {
+                        "id": "number"
+                    }
+                },
+                {
+                    "name": "movingDir",
+                    "label": "movingDir",
+                    "tooltip": "movingDir",
+                    "defValue": 0,
+                    "customDefinition": false,
+                    "type": {
+                        "id": "number"
+                    }
+                }
+            ]
+        },
+        {
+            "name": "Shoot",
             "baseClass": "",
             "gameObjectType": "Phaser.GameObjects.Sprite",
             "properties": []

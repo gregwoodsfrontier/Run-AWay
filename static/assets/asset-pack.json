@@ -32,6 +32,11 @@
                 "key": "cave-test-map-1"
             },
             {
+                "url": "assets/cave-test-map-2.json",
+                "type": "tilemapTiledJSON",
+                "key": "cave-test-map-2"
+            },
+            {
                 "url": "assets/cave-test-tileset-1.png",
                 "frameConfig": {
                     "frameWidth": 32,

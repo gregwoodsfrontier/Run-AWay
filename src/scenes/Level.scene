@@ -2,6 +2,7 @@
     "id": "b685c081-ee5f-4b67-b583-415922c9e2c4",
     "sceneType": "SCENE",
     "settings": {
+        "snapEnabled": true,
         "exportClass": true,
         "autoImport": true,
         "preloadPackFiles": [],
@@ -14,30 +15,30 @@
     "displayList": [
         {
             "type": "TilemapLayer",
-            "id": "1edc09cf-1d5b-49df-ae2b-9d0b10c8b0be",
-            "label": "floor_1",
+            "id": "562d17d3-800a-4161-bf7a-a5b1cda5e407",
+            "label": "floor_2",
             "scope": "CLASS",
             "components": [],
             "y": -960,
-            "tilemapId": "fd3e5dbc-cd6f-447a-9b6b-34fee3410aaa",
+            "tilemapId": "354c610f-cbd2-46f3-be19-7277b4220f55",
             "layerName": "floor",
             "tilesets": [
-                "Gamdev jam cate tiles test 1"
+                "gamedevjs-cave-tileset-1"
             ]
         },
         {
             "type": "TilemapLayer",
-            "id": "9840a633-38ec-464c-aa28-8785b97ca8f5",
-            "label": "wall_1",
+            "id": "0f721626-ca84-4b46-9e0b-dd30d3f46c21",
+            "label": "wall_2",
             "scope": "CLASS",
             "components": [
                 "TileMapLayerPhysics"
             ],
             "y": -960,
-            "tilemapId": "fd3e5dbc-cd6f-447a-9b6b-34fee3410aaa",
+            "tilemapId": "354c610f-cbd2-46f3-be19-7277b4220f55",
             "layerName": "wall",
             "tilesets": [
-                "Gamdev jam cate tiles test 1"
+                "gamedevjs-cave-tileset-1"
             ]
         },
         {
@@ -50,8 +51,8 @@
             "label": "player",
             "scope": "PUBLIC",
             "components": [],
-            "x": 159,
-            "y": 436
+            "x": 160,
+            "y": 160
         },
         {
             "prefabId": "408d4d35-1d26-4f5e-9315-9d890dbf9ae0",
@@ -66,8 +67,8 @@
             "components": [],
             "FollowTarget.target": "player",
             "FollowTarget.deadRangeX": 35,
-            "x": 173,
-            "y": 55
+            "x": 112,
+            "y": 560
         },
         {
             "type": "Image",
@@ -79,8 +80,8 @@
                 "key": "raw-break-interact",
                 "frame": 0
             },
-            "x": 120,
-            "y": 192
+            "x": 96,
+            "y": 304
         },
         {
             "type": "Image",
@@ -92,8 +93,8 @@
                 "key": "raw-break-interact",
                 "frame": 8
             },
-            "x": 200,
-            "y": 192
+            "x": 224,
+            "y": 304
         },
         {
             "type": "Image",
@@ -105,8 +106,8 @@
                 "key": "raw-break-interact",
                 "frame": 16
             },
-            "x": 124,
-            "y": -88
+            "x": 160,
+            "y": 240
         }
     ],
     "plainObjects": [
@@ -118,6 +119,18 @@
             "tilesets": [
                 {
                     "name": "Gamdev jam cate tiles test 1",
+                    "imageKey": "cave-test-tileset-1"
+                }
+            ]
+        },
+        {
+            "id": "354c610f-cbd2-46f3-be19-7277b4220f55",
+            "type": "Tilemap",
+            "label": "cave_test_map_2",
+            "key": "cave-test-map-2",
+            "tilesets": [
+                {
+                    "name": "gamedevjs-cave-tileset-1",
                     "imageKey": "cave-test-tileset-1"
                 }
             ]

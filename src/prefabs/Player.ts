@@ -125,7 +125,6 @@ export default class Player extends Phaser.GameObjects.Sprite {
 			this.direction = DIRECTION.FRONT
 
 			this.handleNonEmptyHoldState()
-
 			
 		}
 		this.playerKeyboard.executeKeyUp = () => {

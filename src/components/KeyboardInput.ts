@@ -34,10 +34,44 @@ export default class KeyboardInput extends UserComponent {
 	{
 		const scene = this.gameObject.scene
 		this.cursors = scene.input.keyboard.createCursorKeys();
+
+		/* this.scene.input.keyboard.on('keydown-UP', function (event: KeyboardEvent) {
+			if(event.shiftKey)
+			{
+				console.log('shift + UP')
+				return
+			}
+		}) */
 	}
 
 	update()
 	{
+		if(this.cursors.shift.isDown)
+		{
+			if(this.cursors.up.isDown)
+			{
+				this.executeShiftUp()
+			}
+			else if(this.cursors.down.isDown)
+			{
+				this.executeShiftDown()
+			}
+			else if(this.cursors.left.isDown)
+			{
+				this.executeShiftLeft()
+			}
+			else if(this.cursors.right.isDown)
+			{
+				this.executeShiftRight()
+			}
+			else
+			{
+				this.executeShiftKeyUp()
+			}
+
+			return
+		}
+
 		if(this.cursors.left.isDown)
 		{
 			this.executeLeft()
@@ -59,20 +93,35 @@ export default class KeyboardInput extends UserComponent {
 			this.executeKeyUp()
 		}
 
-		/* if(this.cursors.space.isDown)
-		{
-			this.executeSpace()
-		} */
-
-		/* if(this.cursors.shift.isDown)
-		{
-			this.executeShift()
-		} */
-
 		if(Phaser.Input.Keyboard.JustDown(this.cursors.space))
 		{
 			this.executeSpace()
 		}
+	}
+
+	executeShiftUp()
+	{
+		
+	}
+
+	executeShiftDown()
+	{
+		
+	}
+
+	executeShiftLeft()
+	{
+		
+	}
+
+	executeShiftRight()
+	{
+		
+	}
+
+	executeShiftKeyUp()
+	{
+		
 	}
 
 	executeKeyUp()

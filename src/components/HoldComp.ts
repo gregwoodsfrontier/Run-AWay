@@ -3,7 +3,6 @@
 
 /* START OF COMPILED CODE */
 
-import UserComponent from "./UserComponent";
 import Phaser from "phaser";
 /* START-USER-IMPORTS */
 import StateMachine from "../stateMachine";
@@ -14,11 +13,9 @@ import Physics from "./Physics";
 import { HOLD_COMP_STATE } from "../types/holdCompState";
 /* END-USER-IMPORTS */
 
-export default class HoldComp extends UserComponent {
+export default class HoldComp {
 
 	constructor(gameObject: Phaser.GameObjects.Sprite) {
-		super(gameObject);
-
 		this.gameObject = gameObject;
 		(gameObject as any)["__HoldComp"] = this;
 
@@ -42,7 +39,7 @@ export default class HoldComp extends UserComponent {
 
 		this.gunSprite = scene.add.sprite(-20, -20, "front-gunonly-idle")
 		this.disableGun()
-		
+
 		this.gObjMovement = JustMovement.getComponent(this.gameObject)
 
 		this.gunPhysics = new Physics(this.gunSprite)
@@ -88,7 +85,7 @@ export default class HoldComp extends UserComponent {
 
 		const body = this.gunSprite.body as Phaser.Physics.Arcade.Body
 		body.enable = true
-		this.scene.physics.world.add(body)
+		this.gameObject.scene.physics.world.add(body)
 
 	}
 
@@ -108,7 +105,7 @@ export default class HoldComp extends UserComponent {
 
 		const body = this.gunSprite.body as Phaser.Physics.Arcade.Body
 		body.enable = false
-		this.scene.physics.world.remove(body)
+		this.gameObject.scene.physics.world.remove(body)
 	}
 
 	private onEmptyEnter()
