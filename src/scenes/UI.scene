@@ -13,14 +13,389 @@
     },
     "displayList": [
         {
-            "type": "Text",
-            "id": "5a55012c-3dc7-42ee-908d-25cef87a4ae4",
-            "label": "text_1",
+            "type": "Image",
+            "id": "50952ab8-da32-40a9-9449-68ff3501853f",
+            "label": "menu_Button",
             "components": [],
-            "x": 28,
-            "y": 33,
-            "text": "UI Scene",
-            "fontSize": "32px"
+            "texture": {
+                "key": "Menu Button"
+            },
+            "x": 288,
+            "y": 32
+        },
+        {
+            "type": "Image",
+            "id": "d0549796-44a7-4287-ac22-5c3df5e48353",
+            "label": "bottom_Pannel",
+            "components": [],
+            "texture": {
+                "key": "Bottom Pannel"
+            },
+            "x": 160,
+            "y": 584.5
+        },
+        {
+            "type": "Image",
+            "id": "dd317e74-7eb0-461d-8a32-7965581e1882",
+            "label": "health_Point",
+            "components": [],
+            "texture": {
+                "key": "Health Point"
+            },
+            "x": 276,
+            "y": 557
+        },
+        {
+            "type": "Image",
+            "id": "0b33a5be-1f13-4b23-b8dd-ae1cfdc9bcd5",
+            "label": "health_Point_1",
+            "components": [],
+            "texture": {
+                "key": "Health Point"
+            },
+            "x": 270,
+            "y": 557
+        },
+        {
+            "type": "Image",
+            "id": "da45c618-488a-4eb6-887c-4f4eddc78491",
+            "label": "health_Point_2",
+            "components": [],
+            "texture": {
+                "key": "Health Point"
+            },
+            "x": 264,
+            "y": 557
+        },
+        {
+            "type": "Image",
+            "id": "e6287591-3506-451f-a8d1-fb59b9fd2e05",
+            "label": "health_Point_3",
+            "components": [],
+            "texture": {
+                "key": "Health Point"
+            },
+            "x": 258,
+            "y": 557
+        },
+        {
+            "type": "Image",
+            "id": "bef71095-3e5d-44c1-9180-d2215528f6f5",
+            "label": "health_Point_4",
+            "components": [],
+            "texture": {
+                "key": "Health Point"
+            },
+            "x": 252,
+            "y": 557
+        },
+        {
+            "type": "Image",
+            "id": "4eeb488c-9c1c-4985-8bc0-f8dd7f111df2",
+            "label": "health_Point_5",
+            "components": [],
+            "texture": {
+                "key": "Health Point"
+            },
+            "x": 246,
+            "y": 557
+        },
+        {
+            "type": "Image",
+            "id": "b19a6a83-31fe-4efa-8cb3-c88bd4e9cbaa",
+            "label": "health_Point_6",
+            "components": [],
+            "texture": {
+                "key": "Health Point"
+            },
+            "x": 240,
+            "y": 557
+        },
+        {
+            "type": "Image",
+            "id": "e692fb12-0cf7-478e-9ab0-ec8d5914daf8",
+            "label": "health_Point_7",
+            "components": [],
+            "texture": {
+                "key": "Health Point"
+            },
+            "x": 234,
+            "y": 557
+        },
+        {
+            "type": "Image",
+            "id": "0573c495-39ae-49c2-a41e-45fb67adbe44",
+            "label": "health_Point_8",
+            "components": [],
+            "texture": {
+                "key": "Health Point"
+            },
+            "x": 228,
+            "y": 557
+        },
+        {
+            "type": "Image",
+            "id": "ecc36ce1-7fff-4d56-9056-024f468a5055",
+            "label": "health_Point_9",
+            "components": [],
+            "texture": {
+                "key": "Health Point"
+            },
+            "x": 222,
+            "y": 557
+        },
+        {
+            "type": "Image",
+            "id": "80be9438-b752-46eb-a788-a3358a1ecd09",
+            "label": "energy_Point",
+            "components": [],
+            "texture": {
+                "key": "Energy Point"
+            },
+            "x": 276,
+            "y": 585
+        },
+        {
+            "type": "Image",
+            "id": "9c9e7138-4786-4d3c-8a7b-63becd34c671",
+            "label": "energy_Point_1",
+            "components": [],
+            "texture": {
+                "key": "Energy Point"
+            },
+            "x": 270,
+            "y": 585
+        },
+        {
+            "type": "Image",
+            "id": "06c89f21-c641-43ad-8c48-22a2a7f9e4b4",
+            "label": "energy_Point_2",
+            "components": [],
+            "texture": {
+                "key": "Energy Point"
+            },
+            "x": 264,
+            "y": 585
+        },
+        {
+            "type": "Image",
+            "id": "c811f214-6609-4a22-9bbe-229c6f05f7b9",
+            "label": "energy_Point_3",
+            "components": [],
+            "texture": {
+                "key": "Energy Point"
+            },
+            "x": 258,
+            "y": 585
+        },
+        {
+            "type": "Image",
+            "id": "ee544275-001e-4006-9043-fa4f36c0588a",
+            "label": "energy_Point_4",
+            "components": [],
+            "texture": {
+                "key": "Energy Point"
+            },
+            "x": 252,
+            "y": 585
+        },
+        {
+            "type": "Image",
+            "id": "cd298977-c128-4e72-a990-19c77dc53553",
+            "label": "energy_Point_5",
+            "components": [],
+            "texture": {
+                "key": "Energy Point"
+            },
+            "x": 246,
+            "y": 585
+        },
+        {
+            "type": "Image",
+            "id": "8b5145f5-7ac3-46b9-891e-3c6449d3cecc",
+            "label": "energy_Point_6",
+            "components": [],
+            "texture": {
+                "key": "Energy Point"
+            },
+            "x": 240,
+            "y": 585
+        },
+        {
+            "type": "Image",
+            "id": "c8fc0963-b32e-4cdf-a0e3-c29f06394206",
+            "label": "energy_Point_7",
+            "components": [],
+            "texture": {
+                "key": "Energy Point"
+            },
+            "x": 234,
+            "y": 585
+        },
+        {
+            "type": "Image",
+            "id": "5b62e87f-c1a5-47fc-b579-1e20fe0fe57e",
+            "label": "energy_Point_8",
+            "components": [],
+            "texture": {
+                "key": "Energy Point"
+            },
+            "x": 228,
+            "y": 585
+        },
+        {
+            "type": "Image",
+            "id": "491151be-969b-4e6c-90ba-6675c172da81",
+            "label": "energy_Point_9",
+            "components": [],
+            "texture": {
+                "key": "Energy Point"
+            },
+            "x": 222,
+            "y": 585
+        },
+        {
+            "type": "Image",
+            "id": "819310ab-695e-4223-9230-e9aad35ff90b",
+            "label": "sanity_Point",
+            "components": [],
+            "texture": {
+                "key": "Sanity Point"
+            },
+            "x": 276,
+            "y": 613
+        },
+        {
+            "type": "Image",
+            "id": "38b8f47e-e902-4c0a-8fa5-99ded9a42756",
+            "label": "sanity_Point_1",
+            "components": [],
+            "texture": {
+                "key": "Sanity Point"
+            },
+            "x": 270,
+            "y": 613
+        },
+        {
+            "type": "Image",
+            "id": "5b8b6354-1394-457c-b7a5-4af715b81d00",
+            "label": "sanity_Point_2",
+            "components": [],
+            "texture": {
+                "key": "Sanity Point"
+            },
+            "x": 264,
+            "y": 613
+        },
+        {
+            "type": "Image",
+            "id": "18f6dd6a-3f6f-4b8c-a043-21fe747f4e47",
+            "label": "sanity_Point_3",
+            "components": [],
+            "texture": {
+                "key": "Sanity Point"
+            },
+            "x": 258,
+            "y": 613
+        },
+        {
+            "type": "Image",
+            "id": "67ba08c4-430b-4e49-954e-0184b6499d2a",
+            "label": "sanity_Point_4",
+            "components": [],
+            "texture": {
+                "key": "Sanity Point"
+            },
+            "x": 252,
+            "y": 613
+        },
+        {
+            "type": "Image",
+            "id": "e8330480-0166-4de3-b612-6f1e795d504b",
+            "label": "sanity_Point_5",
+            "components": [],
+            "texture": {
+                "key": "Sanity Point"
+            },
+            "x": 246,
+            "y": 613
+        },
+        {
+            "type": "Image",
+            "id": "73419dca-195d-4e99-8afe-63999b821b82",
+            "label": "sanity_Point_6",
+            "components": [],
+            "texture": {
+                "key": "Sanity Point"
+            },
+            "x": 240,
+            "y": 613
+        },
+        {
+            "type": "Image",
+            "id": "fab06b6e-8255-47e5-b9fd-8d54575e02c0",
+            "label": "sanity_Point_7",
+            "components": [],
+            "texture": {
+                "key": "Sanity Point"
+            },
+            "x": 234,
+            "y": 613
+        },
+        {
+            "type": "Image",
+            "id": "e72a6866-e56d-4cda-a5e4-586073ef26eb",
+            "label": "sanity_Point_8",
+            "components": [],
+            "texture": {
+                "key": "Sanity Point"
+            },
+            "x": 228,
+            "y": 613
+        },
+        {
+            "type": "Image",
+            "id": "7e7d49e4-cea8-4688-93db-d0e5b5cfdb98",
+            "label": "sanity_Point_9",
+            "components": [],
+            "texture": {
+                "key": "Sanity Point"
+            },
+            "x": 222,
+            "y": 613
+        },
+        {
+            "type": "Image",
+            "id": "fd88a61d-fc82-41cf-b70e-784666571292",
+            "label": "status_Red_Overlay",
+            "components": [],
+            "texture": {
+                "key": "Status Red Overlay"
+            },
+            "x": 294,
+            "y": 557
+        },
+        {
+            "type": "Image",
+            "id": "5a0164eb-2909-4128-ac69-fece1220469a",
+            "label": "status_Red_Overlay_1",
+            "components": [],
+            "texture": {
+                "key": "Status Red Overlay"
+            },
+            "x": 294,
+            "y": 585
+        },
+        {
+            "type": "Image",
+            "id": "ed2990e9-3622-4bd9-a0d6-f54a25922aad",
+            "label": "status_Red_Overlay_2",
+            "components": [],
+            "texture": {
+                "key": "Status Red Overlay"
+            },
+            "x": 294,
+            "y": 613
         }
     ],
     "plainObjects": [],
