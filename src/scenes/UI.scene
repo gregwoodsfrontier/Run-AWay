@@ -396,6 +396,17 @@
             },
             "x": 294,
             "y": 613
+        },
+        {
+            "type": "Image",
+            "id": "de17ce51-8c11-4c69-9cdc-b9700c5a8678",
+            "label": "pSDButton",
+            "components": [],
+            "texture": {
+                "key": "PSDButton"
+            },
+            "x": 156,
+            "y": 557
         }
     ],
     "plainObjects": [],

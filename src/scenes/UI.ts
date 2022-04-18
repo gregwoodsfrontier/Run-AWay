@@ -124,6 +124,9 @@ export default class UI extends Phaser.Scene {
 		// status_Red_Overlay_2
 		this.add.image(294, 613, "Status Red Overlay");
 
+		// pSDButton
+		this.add.image(156, 557, "PSDButton");
+
 		this.events.emit("scene-awake");
 	}
 

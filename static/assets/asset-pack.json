@@ -443,6 +443,11 @@
                 "key": "PSD Button Red"
             },
             {
+                "url": "assets/ui-assets/PSDButton.png",
+                "type": "image",
+                "key": "PSDButton"
+            },
+            {
                 "url": "assets/PSDField.png",
                 "frameConfig": {
                     "frameWidth": 32,
