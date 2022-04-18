@@ -59,7 +59,7 @@ export default class HoldComp {
 	private gameObject: Phaser.GameObjects.Sprite;
 	public stateMachine: StateMachine;
 	public direction: number = 1;
-	public item: number = 0;
+	public hand: number = 0;
 
 	/* START-USER-CODE */
 	private gunSprite: Phaser.GameObjects.Sprite
@@ -110,13 +110,13 @@ export default class HoldComp {
 
 	private onEmptyEnter()
 	{
-		this.item = HOLD_ITEM.NONE
+		this.hand = HOLD_ITEM.NONE
 		this.disableGun()
 	}
 
 	private onHoldIdleEnter()
 	{
-		this.item = HOLD_ITEM.GUN
+		this.hand = HOLD_ITEM.GUN
 
 		const dirName = getDirectionName(this.direction)
 
@@ -153,7 +153,7 @@ export default class HoldComp {
 
 		this.assignGunSpeedTo(this.gObjMovement.speed)		
 
-		if(this.item < HOLD_ITEM.GUN)
+		if(this.hand < HOLD_ITEM.GUN)
 		{
 			console.error('game object should be holding something.')
 			return

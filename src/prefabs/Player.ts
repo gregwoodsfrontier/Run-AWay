@@ -16,6 +16,7 @@ import StateMachine from "../stateMachine";
 import { PLAYER_STATE } from "../types/playerState";
 import { DIRECTION, getDirectionName } from "../types/direction";
 import { HOLD_COMP_STATE } from "../types/holdCompState";
+import { AIM_STATE } from "../types/aimCompState";
 /* END-USER-IMPORTS */
 
 export default class Player extends Phaser.GameObjects.Sprite {
@@ -56,7 +57,9 @@ export default class Player extends Phaser.GameObjects.Sprite {
 			// onEnter: this.onHoldWalkEnter
 			onUpdate: this.onHoldWalkUpdate
 		})
-		.addState(PLAYER_STATE.AIM)
+		.addState(PLAYER_STATE.AIM, {
+			onEnter: this.onAimEnter
+		})
 
 		this.scene.events.once(Phaser.Scenes.Events.UPDATE, this.start, this);
 		this.scene.events.on(Phaser.Scenes.Events.UPDATE, this.Update, this);
@@ -88,6 +91,7 @@ export default class Player extends Phaser.GameObjects.Sprite {
 	{
 		this.stateMachine.setState(PLAYER_STATE.IDLE)
 		this.playerHold.stateMachine.setState(HOLD_COMP_STATE.EMPTY)
+		this.playerAimComp.stateMachine.setState(AIM_STATE.EMPTY)
 
 		this.handleStateSwitching()
 
@@ -97,15 +101,36 @@ export default class Player extends Phaser.GameObjects.Sprite {
 	{
 		this.stateMachine.update(dt)
 		this.playerHold.stateMachine.update(dt)
+		this.playerAimComp.stateMachine.update(dt)
 	}
 
-	private onIdleUpdate()
+	private onAimEnter()
 	{
-		// console.log('idle update')
+		this.playerAimComp.setFacingDir(this.direction)
 	}
 
 	private handleStateSwitching()
 	{
+		this.playerKeyboard.executeShiftArrowKeyUp = () => {
+			if(this.playerHold.stateMachine.isCurrentState(HOLD_COMP_STATE.EMPTY))
+			{
+				return
+			}
+
+			this.playerAimComp.stateMachine.setState(AIM_STATE.STAY)
+		}
+
+		this.playerKeyboard.executeShiftJustUp = () => {
+			if(this.playerHold.stateMachine.isCurrentState(HOLD_COMP_STATE.EMPTY))
+			{
+				return
+			}
+
+			this.playerAimComp.stateMachine.setState(AIM_STATE.EMPTY)
+			this.playerHold.stateMachine.setState(HOLD_COMP_STATE.IDLE)
+			this.stateMachine.setState(PLAYER_STATE.HOLD_IDLE)
+		}
+
 		this.playerKeyboard.executeLeft = () => {
 			this.direction = DIRECTION.LEFT
 
@@ -128,6 +153,7 @@ export default class Player extends Phaser.GameObjects.Sprite {
 			
 		}
 		this.playerKeyboard.executeKeyUp = () => {
+
 			if(this.stateMachine.isCurrentState(PLAYER_STATE.WALK))
 			{
 				this.stateMachine.setState(PLAYER_STATE.IDLE)
@@ -174,6 +200,18 @@ export default class Player extends Phaser.GameObjects.Sprite {
 
 		this.stateMachine.setState(PLAYER_STATE.HOLD_WALK)
 		this.playerHold.stateMachine.setState(HOLD_COMP_STATE.WALK)
+	}
+
+	private handleNonEmptyAimState()
+	{
+		if(this.playerAimComp.stateMachine.isCurrentState(AIM_STATE.EMPTY))
+		{
+			this.stateMachine.setState(PLAYER_STATE.WALK)
+			return
+		}
+
+		this.stateMachine.setState(PLAYER_STATE.AIM)
+		this.playerHold.stateMachine.setState(AIM_STATE.WALK)
 	}
 
 	private updateHoldDir()

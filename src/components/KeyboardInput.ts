@@ -66,10 +66,14 @@ export default class KeyboardInput extends UserComponent {
 			}
 			else
 			{
-				this.executeShiftKeyUp()
+				this.executeShiftArrowKeyUp()
 			}
-
 			return
+		}
+
+		if(Phaser.Input.Keyboard.JustUp(this.cursors.shift))
+		{
+			this.executeShiftJustUp()
 		}
 
 		if(this.cursors.left.isDown)
@@ -99,6 +103,11 @@ export default class KeyboardInput extends UserComponent {
 		}
 	}
 
+	executeShiftJustUp()
+	{
+
+	}
+
 	executeShiftUp()
 	{
 		
@@ -119,7 +128,7 @@ export default class KeyboardInput extends UserComponent {
 		
 	}
 
-	executeShiftKeyUp()
+	executeShiftArrowKeyUp()
 	{
 		
 	}
