@@ -660,6 +660,57 @@
                 "url": "assets/tempboss/tempboss-right-walk-4.png",
                 "type": "image",
                 "key": "tempboss-right-walk-4"
+            },
+            {
+                "url": "assets/temp-break-interact.png",
+                "frameConfig": {
+                    "frameWidth": 32,
+                    "frameHeight": 32,
+                    "startFrame": 0,
+                    "endFrame": 8,
+                    "spacing": 0,
+                    "margin": 0
+                },
+                "type": "spritesheet",
+                "key": "WhiteBlock"
+            },
+            {
+                "url": "assets/temp-break-interact.png",
+                "frameConfig": {
+                    "frameWidth": 32,
+                    "frameHeight": 32,
+                    "startFrame": 8,
+                    "endFrame": 16,
+                    "spacing": 0,
+                    "margin": 0
+                },
+                "type": "spritesheet",
+                "key": "RedBlock"
+            },{
+                "url": "assets/temp-break-interact.png",
+                "frameConfig": {
+                    "frameWidth": 32,
+                    "frameHeight": 32,
+                    "startFrame": 16,
+                    "endFrame": 24,
+                    "spacing": 0,
+                    "margin": 0
+                },
+                "type": "spritesheet",
+                "key": "GreenBlock"
+            },
+            {
+                "url": "assets/temp-break-interact.png",
+                "frameConfig": {
+                    "frameWidth": 32,
+                    "frameHeight": 32,
+                    "startFrame": 24,
+                    "endFrame": 28,
+                    "spacing": 0,
+                    "margin": 0
+                },
+                "type": "spritesheet",
+                "key": "YellowBlock"
             }
         ]
     },

@@ -13,6 +13,8 @@ import KeyboardInput from "../components/KeyboardInput";
 import JustMovement from "../components/JustMovement";
 import AnimationV2 from "../components/AnimationV2";
 import DepthSortY from "../components/DepthSortY";
+import CopperBlock from "../components/CopperBlock";
+import Block from "../prefabs/Block";
 /* END-USER-IMPORTS */
 
 export default class Level extends Phaser.Scene {
@@ -42,8 +44,16 @@ export default class Level extends Phaser.Scene {
 		this.add.existing(player);
 
 		// block_1
-		const block_1 = new Block(this, 130, 208);
-		this.add.existing(block_1);
+		//important to set the frame to check it in the callback
+		const block3 = new Block(this, 170, 180,"WhiteBlock" , 3) ;
+		this.add.existing(block3)
+		const block1 = new Block(this, 130, 208,"GreenBlock" , 17) ;
+		this.add.existing(block1)
+		const block2 = new Block(this, 170, 208,"RedBlock" , 9) ;
+		this.add.existing(block2)
+		
+		const block_1 = [block1,block2,block3]
+
 
 		// enemy_3
 		const enemy_3 = new Enemy(this, 119, 445);
@@ -135,11 +145,13 @@ export default class Level extends Phaser.Scene {
 			playerMove.stayStill()
 			playerAnims.playIdleFromWalk()
 		}
-
+		const block = new Block(this);
 		this.physics.add.collider(this.player, this.wall_1);
 		this.physics.add.collider(this.player, this.enemyTeam)
 		this.physics.add.collider(this.enemyTeam, this.enemyTeam)
 		this.physics.add.collider(this.enemyTeam, this.wall_1)
+		this.physics.add.collider(this.player , this.block_1 ,block.onCopperhit)
+		
 	}
 
 	update()
