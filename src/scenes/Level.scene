@@ -153,6 +153,10 @@
         {
             "id": "5d525c7c-af17-4006-926c-ce78ede55616",
             "label": "silverList"
+        },
+        {
+            "id": "975bfebc-cb90-40a9-80ec-b238df8344aa",
+            "label": "bulletList"
         }
     ]
 }

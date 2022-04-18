@@ -8,10 +8,11 @@ import Player from "../prefabs/Player";
 import Enemy from "../prefabs/Enemy";
 import FollowTarget from "../components/FollowTarget";
 /* START-USER-IMPORTS */
-import KeyboardInput from "../components/KeyboardInput";
-import JustMovement from "../components/JustMovement";
-import AnimationV2 from "../components/AnimationV2";
 import DepthSortY from "../components/DepthSortY";
+import { DIRECTION } from "../types/direction";
+import Physics from "../components/Physics";
+import Bullet from "../prefabs/Bullet";
+import JustMovement from "../components/JustMovement";
 /* END-USER-IMPORTS */
 
 export default class Level extends Phaser.Scene {
@@ -60,6 +61,7 @@ export default class Level extends Phaser.Scene {
 		// lists
 		const enemyTeam = [enemy_3];
 		const silverList: Array<any> = [];
+		const bulletList: Array<any> = [];
 
 		// wall_2 (components)
 		new TileMapLayerPhysics(wall_2);
@@ -79,6 +81,7 @@ export default class Level extends Phaser.Scene {
 		this.cave_test_map_2 = cave_test_map_2;
 		this.enemyTeam = enemyTeam;
 		this.silverList = silverList;
+		this.bulletList = bulletList;
 
 		this.events.emit("scene-awake");
 	}
@@ -91,70 +94,132 @@ export default class Level extends Phaser.Scene {
 	private gold!: Phaser.GameObjects.Image;
 	private enemyTeam!: Enemy[];
 	private silverList!: Array<any>;
+	private bulletList!: Array<any>;
 
 	/* START-USER-CODE */
 	public platformer_fun!: Phaser.Tilemaps.Tilemap
 	cave_test_map_2!: Phaser.Tilemaps.Tilemap
 	cave_test_map_1!: Phaser.Tilemaps.Tilemap
 	// Write your code here
+	bulletGroup!: Phaser.GameObjects.Group
+	lastfired = 0
 
 	create() {
 
 		this.editorCreate();
+
 		this.player.play('player-front-idle')
 		this.floor_2.depth = this.wall_2.y * 2
 		this.wall_2.depth = this.wall_2.y * 2
-/* 
-		const playerKeyboardInput = KeyboardInput.getComponent(this.player)
-		const playerMove = JustMovement.getComponent(this.player)
-		const playerAnims = AnimationV2.getComponent(this.player)
 
-		playerKeyboardInput.executeLeft = () => {
-			playerMove.moveLeft()
-			playerAnims.playAnims({
-				character: 'player',
-				direction: 'left',
-				state: 'walk'
-			})
-		}
-		playerKeyboardInput.executeRight = () => {
-			playerMove.moveRight()
-			playerAnims.playAnims({
-				character: 'player',
-				direction: 'right',
-				state: 'walk'
-			})
-		}
-		playerKeyboardInput.executeUp = () => {
-			playerMove.moveUp()
-			playerAnims.playAnims({
-				character: 'player',
-				direction: 'back',
-				state: 'walk'
-			})
-		}
-		playerKeyboardInput.executeDown = () => {
-			playerMove.moveDown()
-			playerAnims.playAnims({
-				character: 'player',
-				direction: 'front',
-				state: 'walk'
-			})
-		}
-		playerKeyboardInput.executeKeyUp = () => {
-			playerMove.stayStill()
-			playerAnims.playIdleFromWalk()
-		} */
+		this.initObjectPool()
 
 		this.physics.add.collider(this.player, this.wall_2);
 		this.physics.add.collider(this.player, this.enemyTeam)
 		this.physics.add.collider(this.enemyTeam, this.enemyTeam)
 		this.physics.add.collider(this.enemyTeam, this.wall_2)
+		this.physics.add.collider(this.bulletGroup, this.wall_2, this.handleBulletWallCollision, undefined, this)
+
+		this.events.on('create-bullet', this.handleBulletUpdate, this)
 	}
 
-	update()
+	update(time: number, delta: number)
 	{
 		this.handleDepthSort()
+
+		// this.handleBulletUpdate(time)
+	}
+
+	private handleBulletUpdate(dir: number)
+	{
+		const bullet = this.bulletGroup.get()
+
+		const delay = 500
+
+		if(bullet && this.time.now > this.lastfired)
+		{
+			bullet.fire(this.player.x, this.player.y)
+
+			this.setBulletRotationAndVel(bullet, dir)
+			// console.log('bullet', bullet.x, bullet.y)
+
+			this.lastfired = this.time.now + delay
+		}
+	}
+
+	private initObjectPool()
+	{
+		this.bulletGroup = this.add.group({
+			classType: Bullet,
+			maxSize: 50,
+			runChildUpdate: true
+		})
+	}
+
+	//@ts-ignore
+	private handleBulletWallCollision(b , w)
+	{
+		const bullet = b as Bullet
+		bullet.despawn()
+	}
+
+	private createBullet(dir: number)
+	{
+		if(!this.player)
+		{
+			return
+		}
+
+		const {x, y} = this.player
+		let bullet = this.bulletList.find(b => b.active === false)
+
+		// const bullet = new Bullet(this, x, y)
+
+		if(!bullet)
+		{
+			bullet = new Bullet(this, x, y)
+			this.physics.add.existing(bullet)
+			this.bulletList.push(bullet)
+			this.setBulletRotationAndVel(bullet, dir)
+
+			return
+		}
+
+		bullet.spawn(x, y)
+		this.setBulletRotationAndVel(bullet, dir)
+	}
+
+	private setBulletRotationAndVel(bul: Bullet, dir: number)
+	{
+		const bulMovement = JustMovement.getComponent(bul)
+		if(!bulMovement){ return }
+
+		switch(dir)
+		{
+			case DIRECTION.LEFT: {
+				bul.angle = 0
+				bulMovement.moveLeft()
+				break
+			}
+
+			case DIRECTION.RIGHT: {
+				bul.angle = 180
+				bulMovement.moveRight()
+				break
+			}
+
+			case DIRECTION.BACK: {
+				bul.angle = 90
+				bulMovement.moveUp()
+				break
+			}
+
+			case DIRECTION.FRONT: {
+				bul.angle = 270
+				bulMovement.moveDown()
+				break
+			}
+		}
 	}
 
 	private layerDebug(layer: Phaser.Tilemaps.TilemapLayer)

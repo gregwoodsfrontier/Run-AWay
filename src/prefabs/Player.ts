@@ -112,12 +112,23 @@ export default class Player extends Phaser.GameObjects.Sprite {
 	private handleStateSwitching()
 	{
 		this.playerKeyboard.executeShiftArrowKeyUp = () => {
-			if(this.playerHold.stateMachine.isCurrentState(HOLD_COMP_STATE.EMPTY))
-			{
-				return
-			}
+			this.enterAimState()
+		}
 
-			this.playerAimComp.stateMachine.setState(AIM_STATE.STAY)
+		this.playerKeyboard.executeShiftLeft = () => {
+			this.handleAimStateMovement(DIRECTION.LEFT)
+		}
+
+		this.playerKeyboard.executeShiftRight = () => {
+			this.handleAimStateMovement(DIRECTION.RIGHT)
+		}
+
+		this.playerKeyboard.executeShiftUp = () => {
+			this.handleAimStateMovement(DIRECTION.BACK)
+		}
+
+		this.playerKeyboard.executeShiftDown = () => {
+			this.handleAimStateMovement(DIRECTION.FRONT)
 		}
 
 		this.playerKeyboard.executeShiftJustUp = () => {
@@ -132,25 +143,16 @@ export default class Player extends Phaser.GameObjects.Sprite {
 		}
 
 		this.playerKeyboard.executeLeft = () => {
-			this.direction = DIRECTION.LEFT
-
-			this.handleNonEmptyHoldState()
+			this.handleNonEmptyHoldState(DIRECTION.LEFT)
 		}
 		this.playerKeyboard.executeRight = () => {
-			this.direction = DIRECTION.RIGHT
-
-			this.handleNonEmptyHoldState()
+			this.handleNonEmptyHoldState(DIRECTION.RIGHT)
 		}
 		this.playerKeyboard.executeUp = () => {
-			this.direction = DIRECTION.BACK
-
-			this.handleNonEmptyHoldState()
+			this.handleNonEmptyHoldState(DIRECTION.BACK)
 		}
 		this.playerKeyboard.executeDown = () => {
-			this.direction = DIRECTION.FRONT
-
-			this.handleNonEmptyHoldState()
-			
+			this.handleNonEmptyHoldState(DIRECTION.FRONT)
 		}
 		this.playerKeyboard.executeKeyUp = () => {
 
@@ -190,8 +192,10 @@ export default class Player extends Phaser.GameObjects.Sprite {
 		}
 	}
 
-	private handleNonEmptyHoldState()
+	private handleNonEmptyHoldState(dir: number)
 	{
+		this.direction = dir
+
 		if(this.playerHold.stateMachine.isCurrentState(HOLD_COMP_STATE.EMPTY))
 		{
 			this.stateMachine.setState(PLAYER_STATE.WALK)
@@ -202,16 +206,32 @@ export default class Player extends Phaser.GameObjects.Sprite {
 		this.playerHold.stateMachine.setState(HOLD_COMP_STATE.WALK)
 	}
 
-	private handleNonEmptyAimState()
+	private handleAimStateMovement(dir: number)
 	{
-		if(this.playerAimComp.stateMachine.isCurrentState(AIM_STATE.EMPTY))
+		if(this.playerHold.stateMachine.isCurrentState(HOLD_COMP_STATE.EMPTY) || this.playerAimComp.stateMachine.isCurrentState(AIM_STATE.EMPTY))
 		{
-			this.stateMachine.setState(PLAYER_STATE.WALK)
 			return
 		}
 
-		this.stateMachine.setState(PLAYER_STATE.AIM)
-		this.playerHold.stateMachine.setState(AIM_STATE.WALK)
+		this.playerAimComp.setFacingDir(this.direction)
+		this.playerAimComp.setMovingDir(dir)
+		this.playerAimComp.stateMachine.setState(AIM_STATE.WALK)
+
+		this.playerHold.direction = this.direction
+		this.playerHold.stateMachine.setState(HOLD_COMP_STATE.WALK)
+	}
+
+	private enterAimState()
+	{
+		if(
+			this.playerHold.stateMachine.isCurrentState(HOLD_COMP_STATE.EMPTY) ||
+			this.stateMachine.isCurrentState(PLAYER_STATE.HOLD_WALK)
+		)
+		{
+			return
+		}
+
+		this.playerAimComp.stateMachine.setState(AIM_STATE.STAY)
 	}
 
 	private updateHoldDir()

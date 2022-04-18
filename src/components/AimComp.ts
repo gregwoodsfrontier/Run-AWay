@@ -113,32 +113,38 @@ export default class AimComp {
 					break
 				}
 			}
-
-			return
+			
+		}
+		else
+		{
+			switch (this.movingDir) {
+				case DIRECTION.BACK: {
+					movementComp.moveUp()
+					break
+				}
+	
+				case DIRECTION.FRONT: {
+					movementComp.moveDown()
+					break
+				}
+	
+				default: {
+					console.warn('you cannot move along your facing direction.')
+					break
+				}
+			}
 		}
 		
-		switch (this.movingDir) {
-			case DIRECTION.BACK: {
-				movementComp.moveUp()
-				break
-			}
-
-			case DIRECTION.FRONT: {
-				movementComp.moveDown()
-				break
-			}
-
-			default: {
-				console.warn('you cannot move along your facing direction.')
-				break
-			}
-		}
+		this.gameObject.scene.events.emit('create-bullet', this.facingDir)
+		
 	}
 
 	private displayAimMode()
 	{
 		this.gameObject.setTint(0x00ffff)
 	}
+
+	
 
 	/* END-USER-CODE */
 }
