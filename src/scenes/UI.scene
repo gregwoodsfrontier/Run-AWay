@@ -2,6 +2,8 @@
     "id": "2daee086-22b3-4754-9739-c049b63b357b",
     "sceneType": "SCENE",
     "settings": {
+        "snapWidth": 1,
+        "snapHeight": 1,
         "exportClass": true,
         "autoImport": true,
         "preloadPackFiles": [],
@@ -399,14 +401,25 @@
         },
         {
             "type": "Image",
-            "id": "de17ce51-8c11-4c69-9cdc-b9700c5a8678",
+            "id": "9a329c46-66eb-4b0d-9686-38ca111f0fcc",
+            "label": "gunButton",
+            "components": [],
+            "texture": {
+                "key": "GunButton"
+            },
+            "x": 156,
+            "y": 601
+        },
+        {
+            "type": "Image",
+            "id": "2fcaaff5-05f5-4515-8f9d-b3a657444238",
             "label": "pSDButton",
             "components": [],
             "texture": {
                 "key": "PSDButton"
             },
             "x": 156,
-            "y": 557
+            "y": 556
         }
     ],
     "plainObjects": [],

@@ -524,6 +524,11 @@
                 "key": "Sanity Point"
             },
             {
+                "url": "assets/ui-assets/GunButton.png",
+                "type": "image",
+                "key": "GunButton"
+            },
+            {
                 "url": "assets/ui-assets/Start Button.png",
                 "type": "image",
                 "key": "Start Button"
