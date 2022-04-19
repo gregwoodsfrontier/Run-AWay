@@ -155,6 +155,11 @@
                 "key": "left-gunonly-4"
             },
             {
+                "url": "assets/Logo v2.png",
+                "type": "image",
+                "key": "Logo v2"
+            },
+            {
                 "url": "assets/ui-assets/MainMenuButton.png",
                 "type": "image",
                 "key": "MainMenuButton"
@@ -537,6 +542,11 @@
                 "url": "assets/ui-assets/Sanity Point.png",
                 "type": "image",
                 "key": "Sanity Point"
+            },
+            {
+                "url": "assets/Start Anin/Start Anim1.png",
+                "type": "image",
+                "key": "Start Anim1"
             },
             {
                 "url": "assets/ui-assets/Start Button.png",
