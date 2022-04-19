@@ -2,6 +2,16 @@
     "section1": {
         "files": [
             {
+                "url": "assets/ui-assets/About Button.png",
+                "type": "image",
+                "key": "About Button"
+            },
+            {
+                "url": "assets/ui-assets/About Button Pressed.png",
+                "type": "image",
+                "key": "About Button Pressed"
+            },
+            {
                 "url": "assets/animations.json",
                 "type": "animation",
                 "key": "animations"
@@ -27,6 +37,16 @@
                 "key": "back-gunonly-4"
             },
             {
+                "url": "assets/ui-assets/Bottom Pannel.png",
+                "type": "image",
+                "key": "Bottom Pannel"
+            },
+            {
+                "url": "assets/ui-assets/Bottom Text Box.png",
+                "type": "image",
+                "key": "Bottom Text Box"
+            },
+            {
                 "url": "assets/cave-test-map-1.json",
                 "type": "tilemapTiledJSON",
                 "key": "cave-test-map-1"
@@ -43,6 +63,21 @@
                 },
                 "type": "spritesheet",
                 "key": "cave-test-tileset-1"
+            },
+            {
+                "url": "assets/ui-assets/Energy Item Gold.png",
+                "type": "image",
+                "key": "Energy Item Gold"
+            },
+            {
+                "url": "assets/ui-assets/Energy Item Ore.png",
+                "type": "image",
+                "key": "Energy Item Ore"
+            },
+            {
+                "url": "assets/ui-assets/Energy Point.png",
+                "type": "image",
+                "key": "Energy Point"
             },
             {
                 "url": "assets/gunOnly/front-gunonly/front-gunonly-1.png",
@@ -75,6 +110,31 @@
                 "key": "gamedevjs"
             },
             {
+                "url": "assets/ui-assets/GunButton.png",
+                "type": "image",
+                "key": "GunButton"
+            },
+            {
+                "url": "assets/ui-assets/Health Item Copper.png",
+                "type": "image",
+                "key": "Health Item Copper"
+            },
+            {
+                "url": "assets/ui-assets/Health Item Gold.png",
+                "type": "image",
+                "key": "Health Item Gold"
+            },
+            {
+                "url": "assets/ui-assets/Health Item Ore.png",
+                "type": "image",
+                "key": "Health Item Ore"
+            },
+            {
+                "url": "assets/ui-assets/Health Point.png",
+                "type": "image",
+                "key": "Health Point"
+            },
+            {
                 "url": "assets/gunOnly/left-gunonly/left-gunonly-1.png",
                 "type": "image",
                 "key": "left-gunonly-1"
@@ -93,6 +153,36 @@
                 "url": "assets/gunOnly/left-gunonly/left-gunonly-4.png",
                 "type": "image",
                 "key": "left-gunonly-4"
+            },
+            {
+                "url": "assets/Logo v2.png",
+                "type": "image",
+                "key": "Logo v2"
+            },
+            {
+                "url": "assets/ui-assets/MainMenuButton.png",
+                "type": "image",
+                "key": "MainMenuButton"
+            },
+            {
+                "url": "assets/ui-assets/MainMenuButton Pressed.png",
+                "type": "image",
+                "key": "MainMenuButton Pressed"
+            },
+            {
+                "url": "assets/ui-assets/Menu Background.png",
+                "type": "image",
+                "key": "Menu Background"
+            },
+            {
+                "url": "assets/ui-assets/Menu Button.png",
+                "type": "image",
+                "key": "Menu Button"
+            },
+            {
+                "url": "assets/ui-assets/Menu Button Pressed.png",
+                "type": "image",
+                "key": "Menu Button Pressed"
             },
             {
                 "url": "assets/PCProjectile.png",
@@ -358,9 +448,24 @@
                 "key": "PoisonRocktEndFrame"
             },
             {
+                "url": "assets/ui-assets/Power Item Copper.png",
+                "type": "image",
+                "key": "Power Item Copper"
+            },
+            {
                 "url": "assets/ProxyBurstEndFrame.png",
                 "type": "image",
                 "key": "ProxyBurstEndFrame"
+            },
+            {
+                "url": "assets/ui-assets/PSD Button Red.png",
+                "type": "image",
+                "key": "PSD Button Red"
+            },
+            {
+                "url": "assets/ui-assets/PSDButton.png",
+                "type": "image",
+                "key": "PSDButton"
             },
             {
                 "url": "assets/PSDField.png",
@@ -389,6 +494,16 @@
                 "key": "raw-break-interact"
             },
             {
+                "url": "assets/ui-assets/Restart Button.png",
+                "type": "image",
+                "key": "Restart Button"
+            },
+            {
+                "url": "assets/ui-assets/Restart Button Pressed.png",
+                "type": "image",
+                "key": "Restart Button Pressed"
+            },
+            {
                 "url": "assets/gunOnly/right-gunonly/right-gunonly-1.png",
                 "type": "image",
                 "key": "right-gunonly-1"
@@ -407,6 +522,46 @@
                 "url": "assets/gunOnly/right-gunonly/right-gunonly-4.png",
                 "type": "image",
                 "key": "right-gunonly-4"
+            },
+            {
+                "url": "assets/ui-assets/Sanity Item Copper.png",
+                "type": "image",
+                "key": "Sanity Item Copper"
+            },
+            {
+                "url": "assets/ui-assets/Sanity Item Gold.png",
+                "type": "image",
+                "key": "Sanity Item Gold"
+            },
+            {
+                "url": "assets/ui-assets/Sanity Item Ore.png",
+                "type": "image",
+                "key": "Sanity Item Ore"
+            },
+            {
+                "url": "assets/ui-assets/Sanity Point.png",
+                "type": "image",
+                "key": "Sanity Point"
+            },
+            {
+                "url": "assets/Start Anin/Start Anim1.png",
+                "type": "image",
+                "key": "Start Anim1"
+            },
+            {
+                "url": "assets/ui-assets/Start Button.png",
+                "type": "image",
+                "key": "Start Button"
+            },
+            {
+                "url": "assets/ui-assets/Start Button Pressed.png",
+                "type": "image",
+                "key": "Start Button Pressed"
+            },
+            {
+                "url": "assets/ui-assets/Status Red Overlay.png",
+                "type": "image",
+                "key": "Status Red Overlay"
             },
             {
                 "url": "assets/swarm/back-attack/swarm-back-attack-1.png",
@@ -660,6 +815,16 @@
                 "url": "assets/tempboss/tempboss-right-walk-4.png",
                 "type": "image",
                 "key": "tempboss-right-walk-4"
+            },
+            {
+                "url": "assets/ui-assets/Volume Button.png",
+                "type": "image",
+                "key": "Volume Button"
+            },
+            {
+                "url": "assets/ui-assets/Volume Button Pressed.png",
+                "type": "image",
+                "key": "Volume Button Pressed"
             }
         ]
     },

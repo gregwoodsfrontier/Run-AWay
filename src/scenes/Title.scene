@@ -20,15 +20,15 @@
             "texture": {
                 "key": "gamedevjs"
             },
-            "x": 160,
-            "y": 163
+            "x": -177,
+            "y": 162
         },
         {
             "type": "Text",
             "id": "026d54dc-c980-4bf4-93c5-79d3ef868702",
             "label": "text",
             "components": [],
-            "x": 160,
+            "x": -177,
             "y": 300,
             "originX": 0.5,
             "originY": 0.5,
@@ -42,10 +42,70 @@
             "id": "ab183599-7d52-42f8-8867-4b36fef63410",
             "label": "startGame",
             "components": [],
-            "x": 54,
+            "x": -283,
             "y": 396,
             "text": "Start Game!",
             "fontSize": "32px"
+        },
+        {
+            "type": "Image",
+            "id": "7dc355bc-af57-4918-b8eb-f9a0d1e05868",
+            "label": "start_Anim1",
+            "components": [],
+            "texture": {
+                "key": "Start Anim1"
+            },
+            "x": 160,
+            "y": 320
+        },
+        {
+            "type": "Image",
+            "id": "1caae4bd-c003-44a8-a56a-3b52f15e9431",
+            "label": "logo_v2",
+            "components": [],
+            "texture": {
+                "key": "Logo v2"
+            },
+            "x": 160,
+            "y": 142,
+            "scaleX": 0.7061279801116807,
+            "scaleY": 0.7061279801116807
+        },
+        {
+            "type": "Image",
+            "id": "3248bb97-2b07-4656-8618-d4fb8e49dd9c",
+            "label": "start_Button",
+            "scope": "CLASS",
+            "components": [],
+            "texture": {
+                "key": "Start Button"
+            },
+            "x": 160,
+            "y": 191
+        },
+        {
+            "type": "Image",
+            "id": "6dfd77d8-475e-4df9-8461-0ebddc91da63",
+            "label": "volume_Button",
+            "scope": "CLASS",
+            "components": [],
+            "texture": {
+                "key": "Volume Button"
+            },
+            "x": 160,
+            "y": 255
+        },
+        {
+            "type": "Image",
+            "id": "f0bd7b5d-cd11-47d5-a51b-b8b7fcaf9155",
+            "label": "about_Button",
+            "scope": "CLASS",
+            "components": [],
+            "texture": {
+                "key": "About Button"
+            },
+            "x": 160,
+            "y": 223
         }
     ],
     "plainObjects": [],
