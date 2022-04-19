@@ -18,6 +18,7 @@ export default class KeyboardInput extends UserComponent {
 
 		/* START-USER-CTR-CODE */
 		// Write your code here.
+		this.XKey = this.gameObject.scene.input.keyboard.addKey(Phaser.Input.Keyboard.KeyCodes.X)
 		/* END-USER-CTR-CODE */
 	}
 
@@ -29,6 +30,7 @@ export default class KeyboardInput extends UserComponent {
 
 	/* START-USER-CODE */
 	private cursors!: Phaser.Types.Input.Keyboard.CursorKeys
+	private XKey: Phaser.Input.Keyboard.Key
 
 	start()
 	{
@@ -46,6 +48,16 @@ export default class KeyboardInput extends UserComponent {
 
 	update()
 	{
+		if(this.XKey.isDown)
+		{
+			this.executeXKeyDown()
+		}
+		
+		if(Phaser.Input.Keyboard.JustUp(this.XKey))
+		{
+			this.executeXKeyUp()
+		}
+
 		if(this.cursors.shift.isDown)
 		{
 			if(this.cursors.up.isDown)
@@ -103,35 +115,17 @@ export default class KeyboardInput extends UserComponent {
 		}
 	}
 
-	executeShiftJustUp()
-	{
-
+	executeXKeyDown(){
+		console.log('x key is down')
 	}
-
-	executeShiftUp()
-	{
-
+	executeXKeyUp(){
 	}
-
-	executeShiftDown()
-	{
-
-	}
-
-	executeShiftLeft()
-	{
-
-	}
-
-	executeShiftRight()
-	{
-
-	}
-
-	executeShiftArrowKeyUp()
-	{
-
-	}
+	executeShiftJustUp(){}
+	executeShiftUp(){}
+	executeShiftDown(){}
+	executeShiftLeft(){}
+	executeShiftRight(){}
+	executeShiftArrowKeyUp(){}
 
 	executeKeyUp()
 	{

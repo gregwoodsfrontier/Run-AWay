@@ -12,21 +12,24 @@ import JustMovement from "../components/JustMovement";
 export default class Bullet extends Phaser.GameObjects.Sprite {
 
 	constructor(scene: Phaser.Scene, x?: number, y?: number, texture?: string, frame?: number | string) {
-		super(scene, x ?? 0, y ?? 0, texture || "PCProjectile", frame);
+		super(scene, x ?? 0, y ?? 0, texture || "PCProjectile32", frame ?? 0);
 
 		// this (components)
 		const thisPhysics = new Physics(this);
-		thisPhysics.width = 7;
-		thisPhysics.height = 2;
+		thisPhysics.width = 32;
+		thisPhysics.height = 32;
 		const thisJustMovement = new JustMovement(this);
 		thisJustMovement.speed = 180;
 
 		/* START-USER-CTR-CODE */
 		// Write your code here.
+		this.life = this.maxlife
 		/* END-USER-CTR-CODE */
 	}
 
 	/* START-USER-CODE */
+	private life = 0
+	private maxlife = 2000
 
 	// Write your code here.
 	fire(x: number, y: number)
@@ -38,8 +41,6 @@ export default class Bullet extends Phaser.GameObjects.Sprite {
 
 		const body = this.body as Phaser.Physics.Arcade.Body
 		body.enable = true
-		body.x = this.x
-		body.y = this.y
 		this.scene.physics.world.add(body)
 	}
 
@@ -58,11 +59,21 @@ export default class Bullet extends Phaser.GameObjects.Sprite {
 
 		body.enable = false
 		this.scene.physics.world.remove(body)
+
+		this.resetLife()
 	}
 
-	update()
+	resetLife()
 	{
-		if(this.y < - 1000)
+		this.life = this.maxlife
+	}
+
+	//@ts-ignore
+	update(time: number, dt: number)
+	{
+		this.life -= dt
+
+		if(this.y < - 1000 || this.life < 0)
 		{
 			this.despawn()
 		}

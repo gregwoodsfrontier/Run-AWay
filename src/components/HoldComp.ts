@@ -66,6 +66,7 @@ export default class HoldComp {
 	private gObjMovement: JustMovement
 	private gunPhysics: Physics
 	private gunMovement: JustMovement
+	private hand: number = 0
 
 	// Write your code here.
 	private enableGun()

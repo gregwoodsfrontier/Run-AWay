@@ -100,6 +100,8 @@ export default class Player extends Phaser.GameObjects.Sprite {
 
 		this.handleStateSwitching()
 
+		this.handleShooting()
+
 	}
 
 	Update(dt: number)
@@ -108,6 +110,19 @@ export default class Player extends Phaser.GameObjects.Sprite {
 		this.playerHold.stateMachine.update(dt)
 		this.playerAimComp.stateMachine.update(dt)
 		this.playerPSD.stateMachine.update(dt)
+	}
+
+	private handleShooting()
+	{
+		this.playerKeyboard.executeXKeyDown = () => {
+			if(
+				this.playerHold.stateMachine.isCurrentState(HOLD_COMP_STATE.EMPTY)
+			)
+			{
+				return
+			}
+			this.scene.events.emit('create-bullet', this.direction)
+		}
 	}
 
 	private onAimEnter()

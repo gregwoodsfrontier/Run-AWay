@@ -21,11 +21,12 @@
                 "Physics",
                 "JustMovement"
             ],
-            "Physics.width": 7,
-            "Physics.height": 2,
+            "Physics.width": 32,
+            "Physics.height": 32,
             "JustMovement.speed": 180,
             "texture": {
-                "key": "PCProjectile"
+                "key": "PCProjectile32",
+                "frame": 0
             }
         }
     ],
