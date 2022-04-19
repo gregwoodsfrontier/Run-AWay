@@ -8,6 +8,8 @@ import { IGameOverSceneData, ILevelData } from "../types/scenes";
 /* START-USER-IMPORTS */
 /* END-USER-IMPORTS */
 
+// TODO: Bootstrap should be handling all the scene transition but since
+// I could not figure that out yet, it is pasued for now
 export default class Bootstrap extends Phaser.Scene {
 
 	constructor() {
