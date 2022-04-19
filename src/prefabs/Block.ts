@@ -11,7 +11,6 @@ import Physics from "../components/Physics";
 let WhiteHealth = 4;
 let RedHealth = 12;
 let GreenHealth = 20;
-let YellowHealth = 28;
 var objframe = 0;
 export default class Block extends Phaser.GameObjects.Sprite {
 	constructor(scene: Phaser.Scene,  x?: number, y?: number, texture?: string, frame?: number | string ) {
@@ -21,7 +20,18 @@ export default class Block extends Phaser.GameObjects.Sprite {
 		// Write your code here.
 		const physIcs = new Physics(this);
 		physIcs.static = true;
-		const keyA = this.scene.input.keyboard.addKey(Phaser.Input.Keyboard.KeyCodes.A);
+		switch(texture){
+			case("WhiteBlock"):
+			this.setTexture("WhiteBlock" , 3)
+			break;
+			case("RedBlock"):
+			this.setTexture("RedBlock" , 10)
+			break;
+			case("GreenBlock"):
+			this.setTexture("GreenBlock" , 17)
+			break;
+		}
+	
 		/* END-USER-CTR-CODE */
 	
 	}
@@ -41,22 +51,10 @@ export default class Block extends Phaser.GameObjects.Sprite {
 		else if(obj2?.texture.key == "GreenBlock" && objframe>GreenHealth){
 			obj2.destroy();
 		}
-		else if(obj2?.texture.key == "YellowBlock" && objframe>YellowHealth){
-			obj2.destroy();
-		}
 		//apply texture to the block
 		else{
 			obj2?.setTexture(obj2.texture.key , objframe)
 		}
-		/*if(obj2?.texture.key == "RedBlock" && RedHealth < 20 && boolee ){
-			RedHealth++
-			obj2.setTexture(obj2.texture.key , objframe++ )
-			boolee = false;
-		}
-		if(RedHealth == 20){
-			obj2?.destroy()
-			RedHealth =10
-		}*/
 	
 	}
 

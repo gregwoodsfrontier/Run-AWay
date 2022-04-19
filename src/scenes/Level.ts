@@ -45,11 +45,11 @@ export default class Level extends Phaser.Scene {
 
 		// block_1
 		//important to set the frame to check it in the callback
-		const block3 = new Block(this, 170, 180,"WhiteBlock" , 3) ;
+		const block3 = new Block(this, 170, 180,"WhiteBlock" ) ;
 		this.add.existing(block3)
-		const block1 = new Block(this, 130, 208,"GreenBlock" , 17) ;
+		const block1 = new Block(this, 130, 208,"GreenBlock" ) ;
 		this.add.existing(block1)
-		const block2 = new Block(this, 170, 208,"RedBlock" , 9) ;
+		const block2 = new Block(this, 170, 208,"RedBlock" ) ;
 		this.add.existing(block2)
 		
 		const block_1 = [block1,block2,block3]
