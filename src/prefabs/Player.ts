@@ -18,6 +18,7 @@ import { PLAYER_STATE } from "../types/playerState";
 import { DIRECTION, getDirectionName } from "../types/direction";
 import { HOLD_COMP_STATE } from "../types/holdCompState";
 import { AIM_STATE } from "../types/aimCompState";
+import { PSD_STATE } from "../types/PSD";
 /* END-USER-IMPORTS */
 
 export default class Player extends Phaser.GameObjects.Sprite {
@@ -72,6 +73,7 @@ export default class Player extends Phaser.GameObjects.Sprite {
 		this.playerHold = HoldComp.getComponent(this)
 		this.playerAimComp = AimComp.getComponent(this)
 		this.playerKeyboard = KeyboardInput.getComponent(this)
+		this.playerPSD = PSDComp.getComponent(this)
 
 		/* END-USER-CTR-CODE */
 	}
@@ -85,6 +87,7 @@ export default class Player extends Phaser.GameObjects.Sprite {
 	private playerAnims: AnimationV2
 	private playerHold: HoldComp
 	private playerAimComp: AimComp
+	private playerPSD: PSDComp
 	private flipSwitch = false
 	//@ts-ignore
 	private direction: number
@@ -104,6 +107,7 @@ export default class Player extends Phaser.GameObjects.Sprite {
 		this.stateMachine.update(dt)
 		this.playerHold.stateMachine.update(dt)
 		this.playerAimComp.stateMachine.update(dt)
+		this.playerPSD.stateMachine.update(dt)
 	}
 
 	private onAimEnter()
@@ -142,6 +146,9 @@ export default class Player extends Phaser.GameObjects.Sprite {
 			this.playerAimComp.stateMachine.setState(AIM_STATE.EMPTY)
 			this.playerHold.stateMachine.setState(HOLD_COMP_STATE.IDLE)
 			this.stateMachine.setState(PLAYER_STATE.HOLD_IDLE)
+
+			this.playerPSD.setAimState(false)
+			this.playerPSD.stateMachine.setState(PSD_STATE.EQIUP_IDLE)
 		}
 
 		this.playerKeyboard.executeLeft = () => {
@@ -168,6 +175,9 @@ export default class Player extends Phaser.GameObjects.Sprite {
 				this.stateMachine.setState(PLAYER_STATE.HOLD_IDLE)
 				this.playerHold.stateMachine.setState(HOLD_COMP_STATE.IDLE)
 			}
+
+			this.playerPSD.setFacingDir(this.direction)
+			this.playerPSD.stateMachine.setState(PSD_STATE.EQIUP_IDLE)
 		}
 
 		// space should be toggling the raise gun logic
@@ -183,12 +193,14 @@ export default class Player extends Phaser.GameObjects.Sprite {
 				this.updateHoldDir()
 				this.playerHold.stateMachine.setState(HOLD_COMP_STATE.IDLE)
 				this.stateMachine.setState(PLAYER_STATE.HOLD_IDLE)
+				this.playerPSD.setHoldState(true)
 				this.flipSwitch = !this.flipSwitch
 				return
 			}
 
 			this.playerHold.stateMachine.setState(HOLD_COMP_STATE.EMPTY)
 			this.stateMachine.setState(PLAYER_STATE.IDLE)
+			this.playerPSD.setHoldState(false)
 			this.flipSwitch = !this.flipSwitch
 
 		}
@@ -201,16 +213,25 @@ export default class Player extends Phaser.GameObjects.Sprite {
 		if(this.playerHold.stateMachine.isCurrentState(HOLD_COMP_STATE.EMPTY))
 		{
 			this.stateMachine.setState(PLAYER_STATE.WALK)
+
+			this.playerPSD.setFacingDir(dir)
+			this.playerPSD.stateMachine.setState(PSD_STATE.EQUIP_WALK)
 			return
 		}
 
 		this.stateMachine.setState(PLAYER_STATE.HOLD_WALK)
 		this.playerHold.stateMachine.setState(HOLD_COMP_STATE.WALK)
+
+		this.playerPSD.setFacingDir(dir)
+		this.playerPSD.stateMachine.setState(PSD_STATE.EQUIP_WALK)
 	}
 
 	private handleAimStateMovement(dir: number)
 	{
-		if(this.playerHold.stateMachine.isCurrentState(HOLD_COMP_STATE.EMPTY) || this.playerAimComp.stateMachine.isCurrentState(AIM_STATE.EMPTY))
+		if(
+			this.playerHold.stateMachine.isCurrentState(HOLD_COMP_STATE.EMPTY) || 
+			this.playerAimComp.stateMachine.isCurrentState(AIM_STATE.EMPTY)
+		)
 		{
 			return
 		}
@@ -221,6 +242,43 @@ export default class Player extends Phaser.GameObjects.Sprite {
 
 		this.playerHold.direction = this.direction
 		this.playerHold.stateMachine.setState(HOLD_COMP_STATE.WALK)
+
+		this.playerPSD.setFacingDir(this.direction)
+		this.playerPSD.setAimState(true)
+		this.playerPSD.stateMachine.setState(PSD_STATE.EQUIP_WALK)
+
+		this.handleAimModeAnims(true)
+	}
+
+	private handleAimModeAnims(isWalk: boolean)
+	{
+		const dirname = getDirectionName(this.direction)
+
+		if(!dirname)
+		{
+			return
+		}
+
+		if(isWalk)
+		{
+			this.playerAnims.playAnims({
+				character: 'player',
+				direction: dirname,
+				state: 'walk',
+				holdState: 'hold'
+			})
+		}
+		else
+		{
+			this.playerAnims.playAnims({
+				character: 'player',
+				direction: dirname,
+				state: 'idle',
+				holdState: 'hold'
+			})
+		}
+
+		
 	}
 
 	private enterAimState()
@@ -233,7 +291,11 @@ export default class Player extends Phaser.GameObjects.Sprite {
 			return
 		}
 
+		this.playerPSD.setAimState(true)
 		this.playerAimComp.stateMachine.setState(AIM_STATE.STAY)
+		this.playerHold.stateMachine.setState(HOLD_COMP_STATE.IDLE)
+
+		this.handleAimModeAnims(false)
 	}
 
 	private updateHoldDir()
