@@ -247,6 +247,11 @@ export default class Player extends Phaser.GameObjects.Sprite {
 		this.playerPSD.setAimState(true)
 		this.playerPSD.stateMachine.setState(PSD_STATE.EQUIP_WALK)
 
+		if(this.direction % 2 === dir % 2)
+		{
+			return
+		}
+
 		this.handleAimModeAnims(true)
 	}
 
