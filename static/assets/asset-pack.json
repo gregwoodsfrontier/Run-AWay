@@ -105,6 +105,19 @@
                 "key": "PCProjectile"
             },
             {
+                "url": "assets/PCProjectile32.png",
+                "frameConfig": {
+                    "frameWidth": 32,
+                    "frameHeight": 32,
+                    "startFrame": 0,
+                    "endFrame": -1,
+                    "spacing": 0,
+                    "margin": 0
+                },
+                "type": "spritesheet",
+                "key": "PCProjectile32"
+            },
+            {
                 "url": "assets/playerOnly/front-walk-gun/playerHoldGun-20.png",
                 "type": "image",
                 "key": "playerHoldGun-20"
