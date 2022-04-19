@@ -1650,7 +1650,7 @@
                     "keyframe": false
                 }
             ],
-            "frameRate": 24,
+            "frameRate": 12,
             "skipMissedFrames": true,
             "repeat": -1
         },

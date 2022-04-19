@@ -162,6 +162,9 @@
             "name": "CameraFollow",
             "baseClass": "UserComponent",
             "gameObjectType": "Phaser.GameObjects.Sprite",
+            "name": "TileMapLayerPhysics",
+            "baseClass": "UserComponent",
+            "gameObjectType": "Phaser.Tilemaps.TilemapLayer",
             "properties": []
         }
     ],

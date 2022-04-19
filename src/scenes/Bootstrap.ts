@@ -18,15 +18,6 @@ export default class Bootstrap extends Phaser.Scene {
 	}
 
 	editorCreate(): void {
-
-		// image_1
-		const image_1 = this.add.image(320, 180, "FufuSuperDino");
-		image_1.alpha = 0;
-		image_1.alphaTopLeft = 0;
-		image_1.alphaTopRight = 0;
-		image_1.alphaBottomLeft = 0;
-		image_1.alphaBottomRight = 0;
-
 		this.events.emit("scene-awake");
 	}
 

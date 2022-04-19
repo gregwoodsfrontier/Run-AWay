@@ -33,7 +33,7 @@ export default class UI extends Phaser.Scene {
 
 	create() {
 
-		this.editorCreate();
+		this.editorCreate()
 	}
 
 	/* END-USER-CODE */
