@@ -75,6 +75,7 @@
             "type": "Image",
             "id": "3248bb97-2b07-4656-8618-d4fb8e49dd9c",
             "label": "start_Button",
+            "scope": "CLASS",
             "components": [],
             "texture": {
                 "key": "Start Button"
@@ -86,6 +87,7 @@
             "type": "Image",
             "id": "6dfd77d8-475e-4df9-8461-0ebddc91da63",
             "label": "volume_Button",
+            "scope": "CLASS",
             "components": [],
             "texture": {
                 "key": "Volume Button"
@@ -97,6 +99,7 @@
             "type": "Image",
             "id": "f0bd7b5d-cd11-47d5-a51b-b8b7fcaf9155",
             "label": "about_Button",
+            "scope": "CLASS",
             "components": [],
             "texture": {
                 "key": "About Button"

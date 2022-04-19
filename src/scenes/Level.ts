@@ -13,6 +13,7 @@ import KeyboardInput from "../components/KeyboardInput";
 import JustMovement from "../components/JustMovement";
 import AnimationV2 from "../components/AnimationV2";
 import DepthSortY from "../components/DepthSortY";
+import { ILevelData } from "../types/scenes";
 /* END-USER-IMPORTS */
 
 export default class Level extends Phaser.Scene {
@@ -88,7 +89,7 @@ export default class Level extends Phaser.Scene {
 	public platformer_fun!: Phaser.Tilemaps.Tilemap
 	// Write your code here
 
-	create() {
+	create(data: ILevelData) {
 
 		this.editorCreate();
 		this.player.play('player-front-idle')
@@ -145,6 +146,12 @@ export default class Level extends Phaser.Scene {
 	update()
 	{
 		this.handleDepthSort()
+	}
+
+	private handlePause()
+	{
+		this.scene.pause('Level')
+		this.scene.launch('Pause')
 	}
 
 	private layerDebug(layer: Phaser.Tilemaps.TilemapLayer)

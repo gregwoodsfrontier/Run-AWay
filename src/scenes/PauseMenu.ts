@@ -10,7 +10,7 @@ import Phaser from "phaser";
 export default class PauseMenu extends Phaser.Scene {
 
 	constructor() {
-		super("Scene");
+		super("Pause");
 
 		/* START-USER-CTR-CODE */
 		// Write your code here.
@@ -53,6 +53,12 @@ export default class PauseMenu extends Phaser.Scene {
 	create() {
 
 		this.editorCreate();
+	}
+
+	private resumeGame()
+	{
+		this.scene.stop('Pause')
+		this.scene.resume('Level')
 	}
 
 	/* END-USER-CODE */

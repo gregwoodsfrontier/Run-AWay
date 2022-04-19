@@ -4,6 +4,7 @@
 /* START OF COMPILED CODE */
 
 import Phaser from "phaser";
+import { ITitleData, ILevelData } from "../types/scenes";
 /* START-USER-IMPORTS */
 /* END-USER-IMPORTS */
 
@@ -42,16 +43,24 @@ export default class Title extends Phaser.Scene {
 		logo_v2.scaleY = 0.7061279801116807;
 
 		// start_Button
-		this.add.image(160, 191, "Start Button");
+		const start_Button = this.add.image(160, 191, "Start Button");
 
 		// volume_Button
-		this.add.image(160, 255, "Volume Button");
+		const volume_Button = this.add.image(160, 255, "Volume Button");
 
 		// about_Button
-		this.add.image(160, 223, "About Button");
+		const about_Button = this.add.image(160, 223, "About Button");
+
+		this.start_Button = start_Button;
+		this.volume_Button = volume_Button;
+		this.about_Button = about_Button;
 
 		this.events.emit("scene-awake");
 	}
+
+	private start_Button!: Phaser.GameObjects.Image;
+	private volume_Button!: Phaser.GameObjects.Image;
+	private about_Button!: Phaser.GameObjects.Image;
 
 	/* START-USER-CODE */
 
@@ -60,6 +69,14 @@ export default class Title extends Phaser.Scene {
 	create() {
 
 		this.editorCreate();
+
+		this.start_Button.on('pointerup', this.handleStartUp, this)
+	}
+
+	private handleStartUp()
+	{
+		this.scene.stop('Title')
+		this.scene.launch('Level')
 	}
 
 	/* END-USER-CODE */
