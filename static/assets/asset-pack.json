@@ -569,19 +569,6 @@
                 "key": "swarm-right-walk-4"
             },
             {
-                "url": "assets/temp-break-interact.png",
-                "frameConfig": {
-                    "frameWidth": 32,
-                    "frameHeight": 32,
-                    "startFrame": 0,
-                    "endFrame": -1,
-                    "spacing": 0,
-                    "margin": 0
-                },
-                "type": "spritesheet",
-                "key": "temp-break-interact"
-            },
-            {
                 "url": "assets/tempboss/tempboss-back-walk-1.png",
                 "type": "image",
                 "key": "tempboss-back-walk-1"
@@ -662,45 +649,44 @@
                 "key": "tempboss-right-walk-4"
             },
             {
-                "url": "assets/temp-break-interact.png",
+                "url": "assets/raw-break-interact.png",
                 "frameConfig": {
                     "frameWidth": 32,
                     "frameHeight": 32,
                     "startFrame": 0,
-                    "endFrame": 8,
+                    "endFrame": 4,
                     "spacing": 0,
                     "margin": 0
                 },
                 "type": "spritesheet",
-                "key": "WhiteBlock"
+                "key": "SilverBlock"
             },
             {
-                "url": "assets/temp-break-interact.png",
+                "url": "assets/raw-break-interact.png",
                 "frameConfig": {
                     "frameWidth": 32,
                     "frameHeight": 32,
                     "startFrame": 8,
-                    "endFrame": 16,
+                    "endFrame": 12,
                     "spacing": 0,
                     "margin": 0
                 },
                 "type": "spritesheet",
-                "key": "RedBlock"
+                "key": "CopperBlock"
             },{
-                "url": "assets/temp-break-interact.png",
+                "url": "assets/raw-break-interact.png",
                 "frameConfig": {
                     "frameWidth": 32,
                     "frameHeight": 32,
                     "startFrame": 16,
-                    "endFrame": 24,
+                    "endFrame": 20,
                     "spacing": 0,
                     "margin": 0
                 },
                 "type": "spritesheet",
-                "key": "GreenBlock"
-            },
-            {
-                "url": "assets/temp-break-interact.png",
+                "key": "GoldBlock"
+            },{
+                "url": "assets/raw-break-interact.png",
                 "frameConfig": {
                     "frameWidth": 32,
                     "frameHeight": 32,
@@ -710,7 +696,32 @@
                     "margin": 0
                 },
                 "type": "spritesheet",
-                "key": "YellowBlock"
+                "key": "NormalBlock"
+            },{
+                "url": "assets/raw-break-interact.png",
+                "frameConfig": {
+                    "frameWidth": 32,
+                    "frameHeight": 32,
+                    "startFrame": 88,
+                    "endFrame": 88,
+                    "spacing": 0,
+                    "margin": 0
+                },
+                "type": "spritesheet",
+                "key": "Floor"
+            },
+            {
+                "url": "assets/Borders.png",
+                "frameConfig": {
+                    "frameWidth": 64,
+                    "frameHeight": 64,
+                    "startFrame": 0,
+                    "endFrame": -1,
+                    "spacing": 0,
+                    "margin": 0
+                },
+                "type": "spritesheet",
+                "key": "Borders"
             }
         ]
     },

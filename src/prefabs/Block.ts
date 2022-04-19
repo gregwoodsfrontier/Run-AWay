@@ -8,9 +8,10 @@ import CopperBlock from "../components/CopperBlock";
 import Physics from "../components/Physics";
 /* START-USER-IMPORTS */
 /* END-USER-IMPORTS */
-let WhiteHealth = 4;
-let RedHealth = 12;
-let GreenHealth = 20;
+let SilverHealth = 4;
+let CopperHealth = 12;
+let GoldHealth = 20;
+let NormalHealth = 28;
 var objframe = 0;
 export default class Block extends Phaser.GameObjects.Sprite {
 	constructor(scene: Phaser.Scene,  x?: number, y?: number, texture?: string, frame?: number | string ) {
@@ -18,19 +19,48 @@ export default class Block extends Phaser.GameObjects.Sprite {
 
 		/* START-USER-CTR-CODE */
 		// Write your code here.
-		const physIcs = new Physics(this);
-		physIcs.static = true;
-		switch(texture){
-			case("WhiteBlock"):
-			this.setTexture("WhiteBlock" , 3)
-			break;
-			case("RedBlock"):
-			this.setTexture("RedBlock" , 10)
-			break;
-			case("GreenBlock"):
-			this.setTexture("GreenBlock" , 17)
-			break;
+		if(texture != "Floor"){
+			const physIcs = new Physics(this);
+			physIcs.static = true;
+			switch(texture){
+				case("SilverBlock"):
+				this.setTexture("SilverBlock" , 3)
+				break;
+				case("CopperBlock"):
+				this.setTexture("CopperBlock" , 10)
+				break;
+				case("GoldBlock"):
+				this.setTexture("GoldBlock" , 17)
+				break;
+				case("NormalBlock"):
+				this.setTexture("NormalBlock" , 26)
+				break;
+				case("ULBorder"):
+				this.setTexture("Borders" ,24)
+				break;
+				case("UBorder"):
+				this.setTexture("Borders" ,25)
+				break;
+				case("URBorder"):
+				this.setTexture("Borders" ,26)
+				break;
+				case("LBorder"):
+				this.setTexture("Borders" ,32)
+				break;
+				case("RBorder"):
+				this.setTexture("Borders" ,34)
+				break;
+				case("BLBorder"):
+				this.setTexture("Borders" ,40)
+				break;
+				case("BRBorder"):
+				this.setTexture("Borders" ,42)
+				break;
 		}
+	}
+	else{
+		this.setTexture("Floor" , 88)
+	}
 	
 		/* END-USER-CTR-CODE */
 	
@@ -42,17 +72,20 @@ export default class Block extends Phaser.GameObjects.Sprite {
 		objframe = parseInt(obj2?.frame.name)
 		objframe++;
 		//checks if the object's frame has reached the limit
-		if(obj2?.texture.key == "WhiteBlock" && objframe>WhiteHealth){
+		if(obj2?.texture.key == "SilverBlock" && objframe>SilverHealth){
 			obj2.destroy();
 		}
-		else if(obj2?.texture.key == "RedBlock" && objframe>RedHealth){
+		else if(obj2?.texture.key == "CopperBlock" && objframe>CopperHealth){
 			obj2.destroy();
 		}
-		else if(obj2?.texture.key == "GreenBlock" && objframe>GreenHealth){
+		else if(obj2?.texture.key == "GoldBlock" && objframe>GoldHealth){
+			obj2.destroy();
+		}
+		else if(obj2?.texture.key == "NormalBlock" && objframe>NormalHealth){
 			obj2.destroy();
 		}
 		//apply texture to the block
-		else{
+		else if(obj2?.texture.key != "Borders"){
 			obj2?.setTexture(obj2.texture.key , objframe)
 		}
 	
