@@ -1,132 +1,1802 @@
 {
     "anims": [
         {
-            "key": "green-walk,yellow-walk,enemy",
+            "key": "swarm-back-walk",
             "type": "frame",
             "frames": [
                 {
-                    "key": "characters_packed",
-                    "frame": 0,
+                    "key": "swarm-back-walk-1",
                     "duration": 0,
                     "keyframe": false
                 },
                 {
-                    "key": "characters_packed",
-                    "frame": 1,
+                    "key": "swarm-back-walk-2",
+                    "duration": 0,
+                    "keyframe": false
+                },
+                {
+                    "key": "swarm-back-walk-3",
+                    "duration": 0,
+                    "keyframe": false
+                },
+                {
+                    "key": "swarm-back-walk-4",
                     "duration": 0,
                     "keyframe": false
                 }
             ],
-            "frameRate": 6,
+            "frameRate": 12,
             "skipMissedFrames": true,
-            "repeat": -1,
-            "showOnStart": true
+            "repeat": -1
         },
         {
-            "key": "yellow-walk",
+            "key": "swarm-front-walk",
             "type": "frame",
             "frames": [
                 {
-                    "key": "characters_packed",
+                    "key": "swarm-front-walk-1",
+                    "duration": 0,
+                    "keyframe": false
+                },
+                {
+                    "key": "swarm-front-walk-2",
+                    "duration": 0,
+                    "keyframe": false
+                },
+                {
+                    "key": "swarm-front-walk-3",
+                    "duration": 0,
+                    "keyframe": false
+                },
+                {
+                    "key": "swarm-front-walk-4",
+                    "duration": 0,
+                    "keyframe": false
+                }
+            ],
+            "frameRate": 12,
+            "skipMissedFrames": true,
+            "repeat": -1
+        },
+        {
+            "key": "swarm-left-walk",
+            "type": "frame",
+            "frames": [
+                {
+                    "key": "swarm-left-walk-1",
+                    "duration": 0,
+                    "keyframe": false
+                },
+                {
+                    "key": "swarm-left-walk-2",
+                    "duration": 0,
+                    "keyframe": false
+                },
+                {
+                    "key": "swarm-left-walk-3",
+                    "duration": 0,
+                    "keyframe": false
+                },
+                {
+                    "key": "swarm-left-walk-4",
+                    "duration": 0,
+                    "keyframe": false
+                }
+            ],
+            "frameRate": 12,
+            "skipMissedFrames": true,
+            "repeat": -1
+        },
+        {
+            "key": "swarm-right-walk",
+            "type": "frame",
+            "frames": [
+                {
+                    "key": "swarm-right-walk-1",
+                    "duration": 0,
+                    "keyframe": false
+                },
+                {
+                    "key": "swarm-right-walk-2",
+                    "duration": 0,
+                    "keyframe": false
+                },
+                {
+                    "key": "swarm-right-walk-3",
+                    "duration": 0,
+                    "keyframe": false
+                },
+                {
+                    "key": "swarm-right-walk-4",
+                    "duration": 0,
+                    "keyframe": false
+                }
+            ],
+            "frameRate": 12,
+            "skipMissedFrames": true,
+            "repeat": -1
+        },
+        {
+            "key": "tempboss-back-walk",
+            "type": "frame",
+            "frames": [
+                {
+                    "key": "tempboss-back-walk-1",
+                    "duration": 0,
+                    "keyframe": false
+                },
+                {
+                    "key": "tempboss-back-walk-2",
+                    "duration": 0,
+                    "keyframe": false
+                },
+                {
+                    "key": "tempboss-back-walk-3",
+                    "duration": 0,
+                    "keyframe": false
+                },
+                {
+                    "key": "tempboss-back-walk-4",
+                    "duration": 0,
+                    "keyframe": false
+                }
+            ],
+            "frameRate": 12,
+            "skipMissedFrames": true,
+            "repeat": -1
+        },
+        {
+            "key": "tempboss-front-walk",
+            "type": "frame",
+            "frames": [
+                {
+                    "key": "tempboss-front-walk-1",
+                    "duration": 0,
+                    "keyframe": false
+                },
+                {
+                    "key": "tempboss-front-walk-2",
+                    "duration": 0,
+                    "keyframe": false
+                },
+                {
+                    "key": "tempboss-front-walk-3",
+                    "duration": 0,
+                    "keyframe": false
+                },
+                {
+                    "key": "tempboss-front-walk-4",
+                    "duration": 0,
+                    "keyframe": false
+                }
+            ],
+            "frameRate": 12,
+            "skipMissedFrames": true,
+            "repeat": -1
+        },
+        {
+            "key": "tempboss-left-walk",
+            "type": "frame",
+            "frames": [
+                {
+                    "key": "tempboss-left-walk-1",
+                    "duration": 0,
+                    "keyframe": false
+                },
+                {
+                    "key": "tempboss-left-walk-2",
+                    "duration": 0,
+                    "keyframe": false
+                },
+                {
+                    "key": "tempboss-left-walk-3",
+                    "duration": 0,
+                    "keyframe": false
+                },
+                {
+                    "key": "tempboss-left-walk-4",
+                    "duration": 0,
+                    "keyframe": false
+                }
+            ],
+            "frameRate": 12,
+            "skipMissedFrames": true,
+            "repeat": -1
+        },
+        {
+            "key": "tempboss-right-walk",
+            "type": "frame",
+            "frames": [
+                {
+                    "key": "tempboss-right-walk-1",
+                    "duration": 0,
+                    "keyframe": false
+                },
+                {
+                    "key": "tempboss-right-walk-2",
+                    "duration": 0,
+                    "keyframe": false
+                },
+                {
+                    "key": "tempboss-right-walk-3",
+                    "duration": 0,
+                    "keyframe": false
+                },
+                {
+                    "key": "tempboss-right-walk-4",
+                    "duration": 0,
+                    "keyframe": false
+                }
+            ],
+            "frameRate": 12,
+            "skipMissedFrames": true,
+            "repeat": -1
+        },
+        {
+            "key": "swarm-back-idle",
+            "type": "frame",
+            "frames": [
+                {
+                    "key": "swarm-back-walk-1",
+                    "duration": 0,
+                    "keyframe": false
+                }
+            ],
+            "frameRate": 12,
+            "skipMissedFrames": true,
+            "repeat": -1
+        },
+        {
+            "key": "swarm-front-idle",
+            "type": "frame",
+            "frames": [
+                {
+                    "key": "swarm-front-walk-1",
+                    "duration": 0,
+                    "keyframe": false
+                }
+            ],
+            "frameRate": 12,
+            "skipMissedFrames": true,
+            "repeat": -1
+        },
+        {
+            "key": "swarm-left-idle",
+            "type": "frame",
+            "frames": [
+                {
+                    "key": "swarm-left-walk-1",
+                    "duration": 0,
+                    "keyframe": false
+                }
+            ],
+            "frameRate": 12,
+            "skipMissedFrames": true,
+            "repeat": -1
+        },
+        {
+            "key": "swarm-right-idle",
+            "type": "frame",
+            "frames": [
+                {
+                    "key": "swarm-right-walk-1",
+                    "duration": 0,
+                    "keyframe": false
+                }
+            ],
+            "frameRate": 12,
+            "skipMissedFrames": true,
+            "repeat": -1
+        },
+        {
+            "key": "tempboss-front-idle",
+            "type": "frame",
+            "frames": [
+                {
+                    "key": "tempboss-front-walk-1",
+                    "duration": 0,
+                    "keyframe": false
+                }
+            ],
+            "frameRate": 12,
+            "skipMissedFrames": true,
+            "repeat": -1
+        },
+        {
+            "key": "tempboss-back-idle",
+            "type": "frame",
+            "frames": [
+                {
+                    "key": "tempboss-back-walk-1",
+                    "duration": 0,
+                    "keyframe": false
+                }
+            ],
+            "frameRate": 12,
+            "skipMissedFrames": true,
+            "repeat": -1
+        },
+        {
+            "key": "tempboss-left-idle",
+            "type": "frame",
+            "frames": [
+                {
+                    "key": "tempboss-left-walk-1",
+                    "duration": 0,
+                    "keyframe": false
+                }
+            ],
+            "frameRate": 12,
+            "skipMissedFrames": true,
+            "repeat": -1
+        },
+        {
+            "key": "tempboss-right-idle",
+            "type": "frame",
+            "frames": [
+                {
+                    "key": "tempboss-right-walk-1",
+                    "duration": 0,
+                    "keyframe": false
+                }
+            ],
+            "frameRate": 12,
+            "skipMissedFrames": true,
+            "repeat": -1
+        },
+        {
+            "key": "swarm-right-attack",
+            "type": "frame",
+            "frames": [
+                {
+                    "key": "swarm-right-attack-1",
+                    "duration": 0,
+                    "keyframe": false
+                },
+                {
+                    "key": "swarm-right-attack-2",
+                    "duration": 0,
+                    "keyframe": false
+                },
+                {
+                    "key": "swarm-right-attack-3",
+                    "duration": 0,
+                    "keyframe": false
+                },
+                {
+                    "key": "swarm-right-attack-4",
+                    "duration": 0,
+                    "keyframe": false
+                }
+            ],
+            "frameRate": 12,
+            "skipMissedFrames": true,
+            "repeatDelay": 60
+        },
+        {
+            "key": "swarm-left-attack",
+            "type": "frame",
+            "frames": [
+                {
+                    "key": "swarm-left-attack-1",
+                    "duration": 0,
+                    "keyframe": false
+                },
+                {
+                    "key": "swarm-left-attack-2",
+                    "duration": 0,
+                    "keyframe": false
+                },
+                {
+                    "key": "swarm-left-attack-3",
+                    "duration": 0,
+                    "keyframe": false
+                },
+                {
+                    "key": "swarm-left-attack-4",
+                    "duration": 0,
+                    "keyframe": false
+                }
+            ],
+            "frameRate": 12,
+            "skipMissedFrames": true,
+            "repeatDelay": 60
+        },
+        {
+            "key": "swarm-front-attack",
+            "type": "frame",
+            "frames": [
+                {
+                    "key": "swarm-front-attack-1",
+                    "duration": 0,
+                    "keyframe": false
+                },
+                {
+                    "key": "swarm-front-attack-2",
+                    "duration": 0,
+                    "keyframe": false
+                },
+                {
+                    "key": "swarm-front-attack-3",
+                    "duration": 0,
+                    "keyframe": false
+                },
+                {
+                    "key": "swarm-front-attack-4",
+                    "duration": 0,
+                    "keyframe": false
+                }
+            ],
+            "frameRate": 12,
+            "skipMissedFrames": true,
+            "repeatDelay": 60
+        },
+        {
+            "key": "swarm-back-attack",
+            "type": "frame",
+            "frames": [
+                {
+                    "key": "swarm-back-attack-1",
+                    "duration": 0,
+                    "keyframe": false
+                },
+                {
+                    "key": "swarm-back-attack-2",
+                    "duration": 0,
+                    "keyframe": false
+                },
+                {
+                    "key": "swarm-back-attack-3",
+                    "duration": 0,
+                    "keyframe": false
+                },
+                {
+                    "key": "swarm-back-attack-4",
+                    "duration": 0,
+                    "keyframe": false
+                }
+            ],
+            "frameRate": 12,
+            "skipMissedFrames": true,
+            "repeatDelay": 60
+        },
+        {
+            "key": "player-front-walk-gun",
+            "type": "frame",
+            "frames": [
+                {
+                    "key": "playerHoldGun-20",
+                    "duration": 0,
+                    "keyframe": false
+                },
+                {
+                    "key": "playerHoldGun-21",
+                    "duration": 0,
+                    "keyframe": false
+                },
+                {
+                    "key": "playerHoldGun-22",
+                    "duration": 0,
+                    "keyframe": false
+                },
+                {
+                    "key": "playerHoldGun-23",
+                    "duration": 0,
+                    "keyframe": false
+                }
+            ],
+            "frameRate": 12,
+            "skipMissedFrames": true,
+            "repeat": -1
+        },
+        {
+            "key": "player-left-walk-gun",
+            "type": "frame",
+            "frames": [
+                {
+                    "key": "playerHoldGun-24",
+                    "duration": 0,
+                    "keyframe": false
+                },
+                {
+                    "key": "playerHoldGun-25",
+                    "duration": 0,
+                    "keyframe": false
+                },
+                {
+                    "key": "playerHoldGun-26",
+                    "duration": 0,
+                    "keyframe": false
+                },
+                {
+                    "key": "playerHoldGun-27",
+                    "duration": 0,
+                    "keyframe": false
+                }
+            ],
+            "frameRate": 12,
+            "skipMissedFrames": true,
+            "repeat": -1
+        },
+        {
+            "key": "player-right-walk-gun",
+            "type": "frame",
+            "frames": [
+                {
+                    "key": "playerHoldGun-28",
+                    "duration": 0,
+                    "keyframe": false
+                },
+                {
+                    "key": "playerHoldGun-29",
+                    "duration": 0,
+                    "keyframe": false
+                },
+                {
+                    "key": "playerHoldGun-30",
+                    "duration": 0,
+                    "keyframe": false
+                },
+                {
+                    "key": "playerHoldGun-31",
+                    "duration": 0,
+                    "keyframe": false
+                }
+            ],
+            "frameRate": 12,
+            "skipMissedFrames": true,
+            "repeat": -1
+        },
+        {
+            "key": "playerHoldGun",
+            "type": "frame",
+            "frames": [
+                {
+                    "key": "playerHoldGun-32",
+                    "duration": 0,
+                    "keyframe": false
+                },
+                {
+                    "key": "playerHoldGun-33",
+                    "duration": 0,
+                    "keyframe": false
+                },
+                {
+                    "key": "playerHoldGun-34",
+                    "duration": 0,
+                    "keyframe": false
+                },
+                {
+                    "key": "playerHoldGun-35",
+                    "duration": 0,
+                    "keyframe": false
+                }
+            ],
+            "frameRate": 12,
+            "skipMissedFrames": true,
+            "repeat": -1
+        },
+        {
+            "key": "player-back-walk",
+            "type": "frame",
+            "frames": [
+                {
+                    "key": "playerOnly-16",
+                    "duration": 0,
+                    "keyframe": false
+                },
+                {
+                    "key": "playerOnly-17",
+                    "duration": 0,
+                    "keyframe": false
+                },
+                {
+                    "key": "playerOnly-18",
+                    "duration": 0,
+                    "keyframe": false
+                },
+                {
+                    "key": "playerOnly-19",
+                    "duration": 0,
+                    "keyframe": false
+                }
+            ],
+            "frameRate": 12,
+            "skipMissedFrames": true,
+            "repeat": -1
+        },
+        {
+            "key": "player-front-walk-hold",
+            "type": "frame",
+            "frames": [
+                {
+                    "key": "playerOnly-20",
+                    "duration": 0,
+                    "keyframe": false
+                },
+                {
+                    "key": "playerOnly-21",
+                    "duration": 0,
+                    "keyframe": false
+                },
+                {
+                    "key": "playerOnly-22",
+                    "duration": 0,
+                    "keyframe": false
+                },
+                {
+                    "key": "playerOnly-23",
+                    "duration": 0,
+                    "keyframe": false
+                }
+            ],
+            "frameRate": 12,
+            "skipMissedFrames": true,
+            "repeat": -1
+        },
+        {
+            "key": "player-front-walk",
+            "type": "frame",
+            "frames": [
+                {
+                    "key": "playerOnly-4",
+                    "duration": 0,
+                    "keyframe": false
+                },
+                {
+                    "key": "playerOnly-5",
+                    "duration": 0,
+                    "keyframe": false
+                },
+                {
+                    "key": "playerOnly-6",
+                    "duration": 0,
+                    "keyframe": false
+                },
+                {
+                    "key": "playerOnly-7",
+                    "duration": 0,
+                    "keyframe": false
+                }
+            ],
+            "frameRate": 12,
+            "skipMissedFrames": true,
+            "repeat": -1
+        },
+        {
+            "key": "player-left-walk",
+            "type": "frame",
+            "frames": [
+                {
+                    "key": "playerOnly-10",
+                    "duration": 0,
+                    "keyframe": false
+                },
+                {
+                    "key": "playerOnly-11",
+                    "duration": 0,
+                    "keyframe": false
+                },
+                {
+                    "key": "playerOnly-8",
+                    "duration": 0,
+                    "keyframe": false
+                },
+                {
+                    "key": "playerOnly-9",
+                    "duration": 0,
+                    "keyframe": false
+                }
+            ],
+            "frameRate": 12,
+            "skipMissedFrames": true,
+            "repeat": -1
+        },
+        {
+            "key": "player-right-walk",
+            "type": "frame",
+            "frames": [
+                {
+                    "key": "playerOnly-12",
+                    "duration": 0,
+                    "keyframe": false
+                },
+                {
+                    "key": "playerOnly-13",
+                    "duration": 0,
+                    "keyframe": false
+                },
+                {
+                    "key": "playerOnly-14",
+                    "duration": 0,
+                    "keyframe": false
+                },
+                {
+                    "key": "playerOnly-15",
+                    "duration": 0,
+                    "keyframe": false
+                }
+            ],
+            "frameRate": 12,
+            "skipMissedFrames": true,
+            "repeat": -1
+        },
+        {
+            "key": "player-back-walk-hold",
+            "type": "frame",
+            "frames": [
+                {
+                    "key": "playerOnly-32",
+                    "duration": 0,
+                    "keyframe": false
+                },
+                {
+                    "key": "playerOnly-33",
+                    "duration": 0,
+                    "keyframe": false
+                },
+                {
+                    "key": "playerOnly-34",
+                    "duration": 0,
+                    "keyframe": false
+                },
+                {
+                    "key": "playerOnly-35",
+                    "duration": 0,
+                    "keyframe": false
+                }
+            ],
+            "frameRate": 12,
+            "skipMissedFrames": true,
+            "repeat": -1
+        },
+        {
+            "key": "player-left-walk-hold",
+            "type": "frame",
+            "frames": [
+                {
+                    "key": "playerOnly-24",
+                    "duration": 0,
+                    "keyframe": false
+                },
+                {
+                    "key": "playerOnly-25",
+                    "duration": 0,
+                    "keyframe": false
+                },
+                {
+                    "key": "playerOnly-26",
+                    "duration": 0,
+                    "keyframe": false
+                },
+                {
+                    "key": "playerOnly-27",
+                    "duration": 0,
+                    "keyframe": false
+                }
+            ],
+            "frameRate": 12,
+            "skipMissedFrames": true,
+            "repeat": -1
+        },
+        {
+            "key": "player-right-walk-hold",
+            "type": "frame",
+            "frames": [
+                {
+                    "key": "playerOnly-28",
+                    "duration": 0,
+                    "keyframe": false
+                },
+                {
+                    "key": "playerOnly-29",
+                    "duration": 0,
+                    "keyframe": false
+                },
+                {
+                    "key": "playerOnly-30",
+                    "duration": 0,
+                    "keyframe": false
+                },
+                {
+                    "key": "playerOnly-31",
+                    "duration": 0,
+                    "keyframe": false
+                }
+            ],
+            "frameRate": 12,
+            "skipMissedFrames": true,
+            "repeat": -1
+        },
+        {
+            "key": "player-front-idle-gun",
+            "type": "frame",
+            "frames": [
+                {
+                    "key": "playerHoldGun-20",
+                    "duration": 0,
+                    "keyframe": false
+                }
+            ],
+            "frameRate": 12,
+            "skipMissedFrames": true,
+            "repeat": -1
+        },
+        {
+            "key": "player-left-idle-gun",
+            "type": "frame",
+            "frames": [
+                {
+                    "key": "playerHoldGun-24",
+                    "duration": 0,
+                    "keyframe": false
+                }
+            ],
+            "frameRate": 12,
+            "skipMissedFrames": true,
+            "repeat": -1
+        },
+        {
+            "key": "player-right-idle-gun",
+            "type": "frame",
+            "frames": [
+                {
+                    "key": "playerHoldGun-28",
+                    "duration": 0,
+                    "keyframe": false
+                }
+            ],
+            "frameRate": 12,
+            "skipMissedFrames": true,
+            "repeat": -1
+        },
+        {
+            "key": "player-back-idle-gun",
+            "type": "frame",
+            "frames": [
+                {
+                    "key": "playerHoldGun-32",
+                    "duration": 0,
+                    "keyframe": false
+                }
+            ],
+            "frameRate": 12,
+            "skipMissedFrames": true,
+            "repeat": -1
+        },
+        {
+            "key": "player-front-idle-hold",
+            "type": "frame",
+            "frames": [
+                {
+                    "key": "playerOnly-20",
+                    "duration": 0,
+                    "keyframe": false
+                }
+            ],
+            "frameRate": 12,
+            "skipMissedFrames": true,
+            "repeat": -1
+        },
+        {
+            "key": "player-back-idle-hold",
+            "type": "frame",
+            "frames": [
+                {
+                    "key": "playerOnly-32",
+                    "duration": 0,
+                    "keyframe": false
+                }
+            ],
+            "frameRate": 12,
+            "skipMissedFrames": true,
+            "repeat": -1
+        },
+        {
+            "key": "player-left-idle-hold",
+            "type": "frame",
+            "frames": [
+                {
+                    "key": "playerOnly-24",
+                    "duration": 0,
+                    "keyframe": false
+                }
+            ],
+            "frameRate": 12,
+            "skipMissedFrames": true,
+            "repeat": -1
+        },
+        {
+            "key": "player-right-idle-hold",
+            "type": "frame",
+            "frames": [
+                {
+                    "key": "playerOnly-28",
+                    "duration": 0,
+                    "keyframe": false
+                }
+            ],
+            "frameRate": 12,
+            "skipMissedFrames": true,
+            "repeat": -1
+        },
+        {
+            "key": "player-front-idle",
+            "type": "frame",
+            "frames": [
+                {
+                    "key": "playerOnly-4",
+                    "duration": 0,
+                    "keyframe": false
+                }
+            ],
+            "frameRate": 12,
+            "skipMissedFrames": true,
+            "repeat": -1
+        },
+        {
+            "key": "player-back-idle",
+            "type": "frame",
+            "frames": [
+                {
+                    "key": "playerOnly-16",
+                    "duration": 0,
+                    "keyframe": false
+                }
+            ],
+            "frameRate": 12,
+            "skipMissedFrames": true,
+            "repeat": -1
+        },
+        {
+            "key": "player-left-idle",
+            "type": "frame",
+            "frames": [
+                {
+                    "key": "playerOnly-8",
+                    "duration": 0,
+                    "keyframe": false
+                }
+            ],
+            "frameRate": 12,
+            "skipMissedFrames": true,
+            "repeat": -1
+        },
+        {
+            "key": "player-right-idle",
+            "type": "frame",
+            "frames": [
+                {
+                    "key": "playerOnly-12",
+                    "duration": 0,
+                    "keyframe": false
+                }
+            ],
+            "frameRate": 12,
+            "skipMissedFrames": true,
+            "repeat": -1
+        },
+        {
+            "key": "back-gunonly-walk",
+            "type": "frame",
+            "frames": [
+                {
+                    "key": "back-gunonly-1",
+                    "duration": 0,
+                    "keyframe": false
+                },
+                {
+                    "key": "back-gunonly-2",
+                    "duration": 0,
+                    "keyframe": false
+                },
+                {
+                    "key": "back-gunonly-3",
+                    "duration": 0,
+                    "keyframe": false
+                },
+                {
+                    "key": "back-gunonly-4",
+                    "duration": 0,
+                    "keyframe": false
+                }
+            ],
+            "frameRate": 12,
+            "skipMissedFrames": true,
+            "repeat": -1
+        },
+        {
+            "key": "front-gunonly-walk",
+            "type": "frame",
+            "frames": [
+                {
+                    "key": "front-gunonly-1",
+                    "duration": 0,
+                    "keyframe": false
+                },
+                {
+                    "key": "front-gunonly-2",
+                    "duration": 0,
+                    "keyframe": false
+                },
+                {
+                    "key": "front-gunonly-3",
+                    "duration": 0,
+                    "keyframe": false
+                },
+                {
+                    "key": "front-gunonly-4",
+                    "duration": 0,
+                    "keyframe": false
+                }
+            ],
+            "frameRate": 12,
+            "skipMissedFrames": true,
+            "repeat": -1
+        },
+        {
+            "key": "left-gunonly-walk",
+            "type": "frame",
+            "frames": [
+                {
+                    "key": "left-gunonly-1",
+                    "duration": 0,
+                    "keyframe": false
+                },
+                {
+                    "key": "left-gunonly-2",
+                    "duration": 0,
+                    "keyframe": false
+                },
+                {
+                    "key": "left-gunonly-3",
+                    "duration": 0,
+                    "keyframe": false
+                },
+                {
+                    "key": "left-gunonly-4",
+                    "duration": 0,
+                    "keyframe": false
+                }
+            ],
+            "frameRate": 12,
+            "skipMissedFrames": true,
+            "repeat": -1
+        },
+        {
+            "key": "right-gunonly-walk",
+            "type": "frame",
+            "frames": [
+                {
+                    "key": "right-gunonly-1",
+                    "duration": 0,
+                    "keyframe": false
+                },
+                {
+                    "key": "right-gunonly-2",
+                    "duration": 0,
+                    "keyframe": false
+                },
+                {
+                    "key": "right-gunonly-3",
+                    "duration": 0,
+                    "keyframe": false
+                },
+                {
+                    "key": "right-gunonly-4",
+                    "duration": 0,
+                    "keyframe": false
+                }
+            ],
+            "frameRate": 12,
+            "skipMissedFrames": true,
+            "repeat": -1
+        },
+        {
+            "key": "back-gunonly-idle",
+            "type": "frame",
+            "frames": [
+                {
+                    "key": "back-gunonly-1",
+                    "duration": 0,
+                    "keyframe": false
+                }
+            ],
+            "frameRate": 24,
+            "skipMissedFrames": true,
+            "repeat": -1
+        },
+        {
+            "key": "front-gunonly-idle",
+            "type": "frame",
+            "frames": [
+                {
+                    "key": "front-gunonly-1",
+                    "duration": 0,
+                    "keyframe": false
+                }
+            ],
+            "frameRate": 24,
+            "skipMissedFrames": true,
+            "repeat": -1
+        },
+        {
+            "key": "left-gunonly-idle",
+            "type": "frame",
+            "frames": [
+                {
+                    "key": "left-gunonly-1",
+                    "duration": 0,
+                    "keyframe": false
+                }
+            ],
+            "frameRate": 24,
+            "skipMissedFrames": true,
+            "repeat": -1
+        },
+        {
+            "key": "right-gunonly-idle",
+            "type": "frame",
+            "frames": [
+                {
+                    "key": "right-gunonly-1",
+                    "duration": 0,
+                    "keyframe": false
+                }
+            ],
+            "frameRate": 24,
+            "skipMissedFrames": true,
+            "repeat": -1
+        },
+        {
+            "key": "bppsd-left-walk-none",
+            "type": "frame",
+            "frames": [
+                {
+                    "key": "playerPSDeq",
+                    "frame": 8,
+                    "duration": 0,
+                    "keyframe": false
+                },
+                {
+                    "key": "playerPSDeq",
                     "frame": 9,
                     "duration": 0,
                     "keyframe": false
                 },
                 {
-                    "key": "characters_packed",
+                    "key": "playerPSDeq",
                     "frame": 10,
+                    "duration": 0,
+                    "keyframe": false
+                },
+                {
+                    "key": "playerPSDeq",
+                    "frame": 11,
                     "duration": 0,
                     "keyframe": false
                 }
             ],
-            "frameRate": 6,
+            "frameRate": 12,
             "skipMissedFrames": true,
             "repeat": -1
         },
         {
-            "key": "enemy",
+            "key": "bppsd-right-walk-none",
             "type": "frame",
             "frames": [
                 {
-                    "key": "characters_packed",
+                    "key": "playerPSDeq",
+                    "frame": 12,
+                    "duration": 0,
+                    "keyframe": false
+                },
+                {
+                    "key": "playerPSDeq",
+                    "frame": 13,
+                    "duration": 0,
+                    "keyframe": false
+                },
+                {
+                    "key": "playerPSDeq",
+                    "frame": 14,
+                    "duration": 0,
+                    "keyframe": false
+                },
+                {
+                    "key": "playerPSDeq",
+                    "frame": 15,
+                    "duration": 0,
+                    "keyframe": false
+                }
+            ],
+            "frameRate": 12,
+            "skipMissedFrames": true,
+            "repeat": -1
+        },
+        {
+            "key": "bppsd-back-walk-none",
+            "type": "frame",
+            "frames": [
+                {
+                    "key": "playerPSDeq",
+                    "frame": 16,
+                    "duration": 0,
+                    "keyframe": false
+                },
+                {
+                    "key": "playerPSDeq",
+                    "frame": 17,
+                    "duration": 0,
+                    "keyframe": false
+                },
+                {
+                    "key": "playerPSDeq",
                     "frame": 18,
                     "duration": 0,
                     "keyframe": false
                 },
                 {
-                    "key": "characters_packed",
+                    "key": "playerPSDeq",
                     "frame": 19,
                     "duration": 0,
                     "keyframe": false
                 }
             ],
-            "frameRate": 6,
+            "frameRate": 12,
             "skipMissedFrames": true,
             "repeat": -1
         },
         {
-            "key": "small-closed",
+            "key": "bppsd-left-walk-hold",
             "type": "frame",
             "frames": [
                 {
-                    "key": "characters_packed",
-                    "frame": 20,
-                    "duration": 0,
-                    "keyframe": false
-                }
-            ],
-            "frameRate": 1,
-            "skipMissedFrames": true,
-            "repeat": -1
-        },
-        {
-            "key": "drill-walk",
-            "type": "frame",
-            "frames": [
-                {
-                    "key": "characters_packed",
-                    "frame": 15,
-                    "duration": 0,
-                    "keyframe": false
-                },
-                {
-                    "key": "characters_packed",
-                    "frame": 16,
-                    "duration": 0,
-                    "keyframe": false
-                }
-            ],
-            "frameRate": 6,
-            "skipMissedFrames": true,
-            "repeat": -1
-        },
-        {
-            "key": "bat-fly",
-            "type": "frame",
-            "frames": [
-                {
-                    "key": "characters_packed",
+                    "key": "playerPSDeq",
                     "frame": 24,
                     "duration": 0,
                     "keyframe": false
                 },
                 {
-                    "key": "characters_packed",
+                    "key": "playerPSDeq",
                     "frame": 25,
                     "duration": 0,
                     "keyframe": false
                 },
                 {
-                    "key": "characters_packed",
+                    "key": "playerPSDeq",
                     "frame": 26,
+                    "duration": 0,
+                    "keyframe": false
+                },
+                {
+                    "key": "playerPSDeq",
+                    "frame": 27,
                     "duration": 0,
                     "keyframe": false
                 }
             ],
-            "frameRate": 6,
+            "frameRate": 12,
             "skipMissedFrames": true,
-            "repeat": -1,
-            "yoyo": true
+            "repeat": -1
+        },
+        {
+            "key": "bppsd-right-walk-hold",
+            "type": "frame",
+            "frames": [
+                {
+                    "key": "playerPSDeq",
+                    "frame": 28,
+                    "duration": 0,
+                    "keyframe": false
+                },
+                {
+                    "key": "playerPSDeq",
+                    "frame": 29,
+                    "duration": 0,
+                    "keyframe": false
+                },
+                {
+                    "key": "playerPSDeq",
+                    "frame": 30,
+                    "duration": 0,
+                    "keyframe": false
+                },
+                {
+                    "key": "playerPSDeq",
+                    "frame": 31,
+                    "duration": 0,
+                    "keyframe": false
+                }
+            ],
+            "frameRate": 12,
+            "skipMissedFrames": true,
+            "repeat": -1
+        },
+        {
+            "key": "bppsd-back-walk-hold",
+            "type": "frame",
+            "frames": [
+                {
+                    "key": "playerPSDeq",
+                    "frame": 32,
+                    "duration": 0,
+                    "keyframe": false
+                },
+                {
+                    "key": "playerPSDeq",
+                    "frame": 33,
+                    "duration": 0,
+                    "keyframe": false
+                },
+                {
+                    "key": "playerPSDeq",
+                    "frame": 34,
+                    "duration": 0,
+                    "keyframe": false
+                },
+                {
+                    "key": "playerPSDeq",
+                    "frame": 35,
+                    "duration": 0,
+                    "keyframe": false
+                }
+            ],
+            "frameRate": 12,
+            "skipMissedFrames": true,
+            "repeat": -1
+        },
+        {
+            "key": "silver-break",
+            "type": "frame",
+            "frames": [
+                {
+                    "key": "raw-break-interact",
+                    "frame": 0,
+                    "duration": 0,
+                    "keyframe": false
+                },
+                {
+                    "key": "raw-break-interact",
+                    "frame": 1,
+                    "duration": 0,
+                    "keyframe": false
+                },
+                {
+                    "key": "raw-break-interact",
+                    "frame": 2,
+                    "duration": 0,
+                    "keyframe": false
+                },
+                {
+                    "key": "raw-break-interact",
+                    "frame": 3,
+                    "duration": 0,
+                    "keyframe": false
+                },
+                {
+                    "key": "raw-break-interact",
+                    "frame": 4,
+                    "duration": 0,
+                    "keyframe": false
+                }
+            ],
+            "frameRate": 2,
+            "skipMissedFrames": true
+        },
+        {
+            "key": "copper-break",
+            "type": "frame",
+            "frames": [
+                {
+                    "key": "raw-break-interact",
+                    "frame": 8,
+                    "duration": 0,
+                    "keyframe": false
+                },
+                {
+                    "key": "raw-break-interact",
+                    "frame": 9,
+                    "duration": 0,
+                    "keyframe": false
+                },
+                {
+                    "key": "raw-break-interact",
+                    "frame": 10,
+                    "duration": 0,
+                    "keyframe": false
+                },
+                {
+                    "key": "raw-break-interact",
+                    "frame": 11,
+                    "duration": 0,
+                    "keyframe": false
+                },
+                {
+                    "key": "raw-break-interact",
+                    "frame": 12,
+                    "duration": 0,
+                    "keyframe": false
+                }
+            ],
+            "frameRate": 2,
+            "skipMissedFrames": true
+        },
+        {
+            "key": "gold-break",
+            "type": "frame",
+            "frames": [
+                {
+                    "key": "raw-break-interact",
+                    "frame": 16,
+                    "duration": 0,
+                    "keyframe": false
+                },
+                {
+                    "key": "raw-break-interact",
+                    "frame": 17,
+                    "duration": 0,
+                    "keyframe": false
+                },
+                {
+                    "key": "raw-break-interact",
+                    "frame": 18,
+                    "duration": 0,
+                    "keyframe": false
+                },
+                {
+                    "key": "raw-break-interact",
+                    "frame": 19,
+                    "duration": 0,
+                    "keyframe": false
+                },
+                {
+                    "key": "raw-break-interact",
+                    "frame": 20,
+                    "duration": 0,
+                    "keyframe": false
+                }
+            ],
+            "frameRate": 2,
+            "skipMissedFrames": true
+        },
+        {
+            "key": "mining",
+            "type": "frame",
+            "frames": [
+                {
+                    "key": "raw-break-interact",
+                    "frame": 7,
+                    "duration": 0,
+                    "keyframe": false
+                },
+                {
+                    "key": "raw-break-interact",
+                    "frame": 15,
+                    "duration": 0,
+                    "keyframe": false
+                },
+                {
+                    "key": "raw-break-interact",
+                    "frame": 23,
+                    "duration": 0,
+                    "keyframe": false
+                },
+                {
+                    "key": "raw-break-interact",
+                    "frame": 31,
+                    "duration": 0,
+                    "keyframe": false
+                }
+            ],
+            "frameRate": 9,
+            "skipMissedFrames": true,
+            "hideOnComplete": true
+        },
+        {
+            "key": "psd-deployraw-break-interact",
+            "type": "frame",
+            "frames": [
+                {
+                    "key": "raw-break-interact",
+                    "frame": 64,
+                    "duration": 0,
+                    "keyframe": false
+                },
+                {
+                    "key": "raw-break-interact",
+                    "frame": 65,
+                    "duration": 0,
+                    "keyframe": false
+                },
+                {
+                    "key": "raw-break-interact",
+                    "frame": 66,
+                    "duration": 0,
+                    "keyframe": false
+                },
+                {
+                    "key": "raw-break-interact",
+                    "frame": 67,
+                    "duration": 0,
+                    "keyframe": false
+                },
+                {
+                    "key": "raw-break-interact",
+                    "frame": 68,
+                    "duration": 0,
+                    "keyframe": false
+                }
+            ],
+            "frameRate": 9,
+            "skipMissedFrames": true
+        },
+        {
+            "key": "emptyrock-break",
+            "type": "frame",
+            "frames": [
+                {
+                    "key": "raw-break-interact",
+                    "frame": 24,
+                    "duration": 0,
+                    "keyframe": false
+                },
+                {
+                    "key": "raw-break-interact",
+                    "frame": 25,
+                    "duration": 0,
+                    "keyframe": false
+                },
+                {
+                    "key": "raw-break-interact",
+                    "frame": 26,
+                    "duration": 0,
+                    "keyframe": false
+                },
+                {
+                    "key": "raw-break-interact",
+                    "frame": 27,
+                    "duration": 0,
+                    "keyframe": false
+                },
+                {
+                    "key": "raw-break-interact",
+                    "frame": 28,
+                    "duration": 0,
+                    "keyframe": false
+                }
+            ],
+            "frameRate": 2,
+            "skipMissedFrames": true
+        },
+        {
+            "key": "rock-block",
+            "type": "frame",
+            "frames": [
+                {
+                    "key": "raw-break-interact",
+                    "frame": 32,
+                    "duration": 0,
+                    "keyframe": false
+                }
+            ],
+            "frameRate": 24,
+            "skipMissedFrames": true
+        },
+        {
+            "key": "rock-pass",
+            "type": "frame",
+            "frames": [
+                {
+                    "key": "raw-break-interact",
+                    "frame": 33,
+                    "duration": 0,
+                    "keyframe": false
+                }
+            ],
+            "frameRate": 24,
+            "skipMissedFrames": true
+        },
+        {
+            "key": "blood-splash",
+            "type": "frame",
+            "frames": [
+                {
+                    "key": "raw-break-interact",
+                    "frame": 72,
+                    "duration": 0,
+                    "keyframe": false
+                },
+                {
+                    "key": "raw-break-interact",
+                    "frame": 73,
+                    "duration": 0,
+                    "keyframe": false
+                },
+                {
+                    "key": "raw-break-interact",
+                    "frame": 74,
+                    "duration": 0,
+                    "keyframe": false
+                }
+            ],
+            "frameRate": 9,
+            "skipMissedFrames": true,
+            "hideOnComplete": true
+        },
+        {
+            "key": "meat",
+            "type": "frame",
+            "frames": [
+                {
+                    "key": "raw-break-interact",
+                    "frame": 75,
+                    "duration": 0,
+                    "keyframe": false
+                }
+            ],
+            "frameRate": 24,
+            "skipMissedFrames": true,
+            "repeat": -1
+        },
+        {
+            "key": "null",
+            "type": "frame",
+            "frames": [
+                {
+                    "key": "raw-break-interact",
+                    "frame": 80,
+                    "duration": 0,
+                    "keyframe": false
+                }
+            ],
+            "frameRate": 24,
+            "skipMissedFrames": true,
+            "repeat": -1
+        },
+        {
+            "key": "mud",
+            "type": "frame",
+            "frames": [
+                {
+                    "key": "raw-break-interact",
+                    "frame": 88,
+                    "duration": 0,
+                    "keyframe": false
+                }
+            ],
+            "frameRate": 24,
+            "skipMissedFrames": true,
+            "repeat": -1
+        },
+        {
+            "key": "trap-explode",
+            "type": "frame",
+            "frames": [
+                {
+                    "key": "raw-break-interact",
+                    "frame": 96,
+                    "duration": 0,
+                    "keyframe": false
+                },
+                {
+                    "key": "raw-break-interact",
+                    "frame": 97,
+                    "duration": 0,
+                    "keyframe": false
+                },
+                {
+                    "key": "raw-break-interact",
+                    "frame": 98,
+                    "duration": 0,
+                    "keyframe": false
+                },
+                {
+                    "key": "raw-break-interact",
+                    "frame": 99,
+                    "duration": 0,
+                    "keyframe": false
+                },
+                {
+                    "key": "ProxyBurstEndFrame",
+                    "duration": 0,
+                    "keyframe": false
+                }
+            ],
+            "frameRate": 9,
+            "skipMissedFrames": true
+        },
+        {
+            "key": "trap-explode-projectile",
+            "type": "frame",
+            "frames": [
+                {
+                    "key": "raw-break-interact",
+                    "frame": 100,
+                    "duration": 0,
+                    "keyframe": false
+                },
+                {
+                    "key": "raw-break-interact",
+                    "frame": 101,
+                    "duration": 0,
+                    "keyframe": false
+                }
+            ],
+            "frameRate": 9,
+            "skipMissedFrames": true,
+            "repeat": -1
+        },
+        {
+            "key": "trap-poison",
+            "type": "frame",
+            "frames": [
+                {
+                    "key": "raw-break-interact",
+                    "frame": 104,
+                    "duration": 0,
+                    "keyframe": false
+                },
+                {
+                    "key": "raw-break-interact",
+                    "frame": 105,
+                    "duration": 0,
+                    "keyframe": false
+                },
+                {
+                    "key": "raw-break-interact",
+                    "frame": 106,
+                    "duration": 0,
+                    "keyframe": false
+                },
+                {
+                    "key": "raw-break-interact",
+                    "frame": 107,
+                    "duration": 0,
+                    "keyframe": false
+                },
+                {
+                    "key": "PoisonRocktEndFrame",
+                    "duration": 0,
+                    "keyframe": false
+                }
+            ],
+            "frameRate": 9,
+            "skipMissedFrames": true
+        },
+        {
+            "key": "trap-poison-mistraw-break-interact",
+            "type": "frame",
+            "frames": [
+                {
+                    "key": "raw-break-interact",
+                    "frame": 108,
+                    "duration": 0,
+                    "keyframe": false
+                },
+                {
+                    "key": "raw-break-interact",
+                    "frame": 109,
+                    "duration": 0,
+                    "keyframe": false
+                }
+            ],
+            "frameRate": 9,
+            "skipMissedFrames": true,
+            "repeat": -1
+        },
+        {
+            "key": "pc-projectile",
+            "type": "frame",
+            "frames": [
+                {
+                    "key": "PCProjectile",
+                    "duration": 0,
+                    "keyframe": false
+                }
+            ],
+            "frameRate": 2,
+            "skipMissedFrames": true
         }
     ],
     "globalTimeScale": 1,

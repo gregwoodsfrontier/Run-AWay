@@ -8,79 +8,105 @@
         "createMethodName": "editorCreate",
         "sceneKey": "Level",
         "compilerOutputLanguage": "TYPE_SCRIPT",
-        "borderWidth": 640,
-        "borderHeight": 360
+        "borderWidth": 320,
+        "borderHeight": 640
     },
     "displayList": [
         {
-            "type": "Text",
-            "id": "5c228da6-971a-4347-84e8-9f62464ba76d",
-            "label": "text",
-            "components": [],
-            "x": 456,
-            "y": 58,
-            "originX": 0.5,
-            "originY": 0.5,
-            "text": "Gamedev JS Game Jam\n2022",
-            "align": "center",
-            "fontFamily": "Arial",
-            "fontSize": "3em"
-        },
-        {
-            "type": "Image",
-            "id": "e76c3dfa-1a98-4174-a50e-d25a2aab6dd4",
-            "label": "image",
-            "components": [],
-            "texture": {
-                "key": "gamedevjs"
-            },
-            "x": 132,
-            "y": 86
-        },
-        {
             "type": "TilemapLayer",
-            "id": "1d5a6012-1d21-494e-ace5-8c458d5fc1d3",
-            "label": "ground_1",
+            "id": "1edc09cf-1d5b-49df-ae2b-9d0b10c8b0be",
+            "label": "floor_1",
+            "scope": "CLASS",
             "components": [],
-            "tilemapId": "f3f7a5e6-f129-4fb2-a88d-715a641466f5",
-            "layerName": "ground",
+            "y": -960,
+            "tilemapId": "fd3e5dbc-cd6f-447a-9b6b-34fee3410aaa",
+            "layerName": "floor",
             "tilesets": [
-                "pixelPlatformer"
+                "Gamdev jam cate tiles test 1"
             ]
         },
         {
             "type": "TilemapLayer",
-            "id": "17efc03c-5131-48cb-aaed-bbede89ca5b1",
+            "id": "9840a633-38ec-464c-aa28-8785b97ca8f5",
+            "label": "wall_1",
+            "scope": "CLASS",
+            "components": [
+                "TileMapLayerPhysics"
+            ],
+            "y": -960,
+            "tilemapId": "fd3e5dbc-cd6f-447a-9b6b-34fee3410aaa",
+            "layerName": "wall",
+            "tilesets": [
+                "Gamdev jam cate tiles test 1"
+            ]
+        },
+        {
+            "prefabId": "e0ddcad0-6688-4c91-8511-b98aa83b6507",
+            "id": "42b95460-e481-4d5a-a546-36ecd30eebd5",
+            "unlock": [
+                "x",
+                "y"
+            ],
+            "label": "player",
+            "scope": "PUBLIC",
+            "components": [],
+            "x": 193,
+            "y": 446
+        },
+        {
+            "prefabId": "57d8a10b-f4c7-4c0f-9397-cde30c2a5293",
+            "id": "d61ec7a6-70e8-4927-99d3-f5f1e147c447",
+            "unlock": [
+                "x",
+                "y"
+            ],
             "label": "block_1",
+            "scope": "CLASS",
             "components": [],
-            "tilemapId": "f3f7a5e6-f129-4fb2-a88d-715a641466f5",
-            "layerName": "block",
-            "tilesets": [
-                "pixelPlatformer"
-            ]
+            "x": 130,
+            "y": 208
         },
         {
-            "type": "TilemapLayer",
-            "id": "98263cca-ac16-4d35-8fcb-61c4b26b0682",
-            "label": "water_1",
+            "prefabId": "408d4d35-1d26-4f5e-9315-9d890dbf9ae0",
+            "id": "63f44b6a-316d-4ac2-9257-71741dcfd6ba",
+            "unlock": [
+                "x",
+                "y",
+                "FollowTarget.target",
+                "FollowTarget.deadRangeX"
+            ],
+            "label": "enemy_3",
             "components": [],
-            "tilemapId": "f3f7a5e6-f129-4fb2-a88d-715a641466f5",
-            "layerName": "water",
-            "tilesets": [
-                "pixelPlatformer"
-            ]
+            "FollowTarget.target": "player",
+            "FollowTarget.deadRangeX": 35,
+            "x": 119,
+            "y": 445
+        },
+        {
+            "prefabId": "408d4d35-1d26-4f5e-9315-9d890dbf9ae0",
+            "id": "8002ba82-0b4c-44d4-a61b-e2e237664d68",
+            "unlock": [
+                "x",
+                "y",
+                "FollowTarget.target"
+            ],
+            "label": "enemy_2",
+            "components": [],
+            "FollowTarget.target": "player",
+            "x": 197,
+            "y": 126
         }
     ],
     "plainObjects": [
         {
-            "id": "f3f7a5e6-f129-4fb2-a88d-715a641466f5",
+            "id": "fd3e5dbc-cd6f-447a-9b6b-34fee3410aaa",
             "type": "Tilemap",
-            "label": "platformer_fun",
-            "key": "platformer_fun",
+            "label": "cave_test_map_1",
+            "key": "cave-test-map-1",
             "tilesets": [
                 {
-                    "name": "pixelPlatformer",
-                    "imageKey": "tiles_packed"
+                    "name": "Gamdev jam cate tiles test 1",
+                    "imageKey": "cave-test-tileset-1"
                 }
             ]
         }
@@ -90,5 +116,15 @@
         "url": "https://phasereditor2d.com",
         "contentType": "phasereditor2d.core.scene.SceneContentType",
         "version": 3
-    }
+    },
+    "lists": [
+        {
+            "id": "97ea1992-d8cd-43db-92a5-734f0b5c68b4",
+            "label": "enemyTeam",
+            "objectIds": [
+                "8002ba82-0b4c-44d4-a61b-e2e237664d68",
+                "63f44b6a-316d-4ac2-9257-71741dcfd6ba"
+            ]
+        }
+    ]
 }

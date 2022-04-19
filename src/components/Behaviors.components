@@ -11,6 +11,158 @@
             "baseClass": "UserComponent",
             "gameObjectType": "Phaser.GameObjects.Text",
             "properties": []
+        },
+        {
+            "name": "Physics",
+            "baseClass": "UserComponent",
+            "gameObjectType": "Phaser.GameObjects.Image",
+            "properties": [
+                {
+                    "name": "static",
+                    "label": "static",
+                    "tooltip": "static",
+                    "defValue": false,
+                    "customDefinition": false,
+                    "type": {
+                        "id": "boolean"
+                    }
+                },
+                {
+                    "name": "width",
+                    "label": "width",
+                    "tooltip": "width",
+                    "defValue": 0,
+                    "customDefinition": false,
+                    "type": {
+                        "id": "number"
+                    }
+                },
+                {
+                    "name": "height",
+                    "label": "height",
+                    "tooltip": "height",
+                    "defValue": 0,
+                    "customDefinition": false,
+                    "type": {
+                        "id": "number"
+                    }
+                },
+                {
+                    "name": "offsetX",
+                    "label": "offsetX",
+                    "tooltip": "offsetX",
+                    "defValue": 0,
+                    "customDefinition": false,
+                    "type": {
+                        "id": "number"
+                    }
+                },
+                {
+                    "name": "offsetY",
+                    "label": "offsetY",
+                    "tooltip": "offsetY",
+                    "defValue": 0,
+                    "customDefinition": false,
+                    "type": {
+                        "id": "number"
+                    }
+                }
+            ]
+        },
+        {
+            "name": "TileMapLayerPhysics",
+            "baseClass": "UserComponent",
+            "gameObjectType": "Phaser.Tilemaps.TilemapLayer",
+            "properties": []
+        },
+        {
+            "name": "KeyboardInput",
+            "baseClass": "UserComponent",
+            "gameObjectType": "Phaser.GameObjects.Sprite",
+            "properties": []
+        },
+        {
+            "name": "JustMovement",
+            "baseClass": "UserComponent",
+            "gameObjectType": "Phaser.GameObjects.Sprite",
+            "properties": [
+                {
+                    "name": "speed",
+                    "label": "speed",
+                    "tooltip": "speed",
+                    "defValue": 10,
+                    "customDefinition": false,
+                    "type": {
+                        "id": "number"
+                    }
+                }
+            ]
+        },
+        {
+            "name": "DepthSortY",
+            "baseClass": "",
+            "gameObjectType": "Phaser.GameObjects.Sprite",
+            "properties": []
+        },
+        {
+            "name": "FollowTarget",
+            "baseClass": "UserComponent",
+            "gameObjectType": "Phaser.GameObjects.Sprite",
+            "properties": [
+                {
+                    "name": "target",
+                    "label": "target",
+                    "tooltip": "target",
+                    "defValue": "",
+                    "customDefinition": false,
+                    "type": {
+                        "id": "object-var",
+                        "expressionType": "Phaser.GameObjects.Sprite"
+                    }
+                },
+                {
+                    "name": "range",
+                    "label": "range",
+                    "tooltip": "range",
+                    "defValue": 35,
+                    "customDefinition": false,
+                    "type": {
+                        "id": "number"
+                    }
+                },
+                {
+                    "name": "deadRangeX",
+                    "label": "deadRangeX",
+                    "tooltip": "deadRangeX",
+                    "defValue": 15,
+                    "customDefinition": false,
+                    "type": {
+                        "id": "number"
+                    }
+                },
+                {
+                    "name": "deadRangeY",
+                    "label": "deadRangeY",
+                    "tooltip": "deadRangeY",
+                    "defValue": 60,
+                    "customDefinition": false,
+                    "type": {
+                        "id": "number"
+                    }
+                }
+            ]
+        },
+        {
+            "name": "AnimationV2",
+            "baseClass": "UserComponent",
+            "gameObjectType": "Phaser.GameObjects.Sprite",
+            "properties": []
+        },
+        {
+            "name": "CameraFollow",
+            "baseClass": "UserComponent",
+            "gameObjectType": "Phaser.GameObjects.Sprite",
+            "properties": []
         }
     ],
     "meta": {
