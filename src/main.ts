@@ -3,6 +3,8 @@ import Bootstrap from "./scenes/Bootstrap";
 import Level from "./scenes/Level";
 import Preload from "./scenes/Preload";
 import UI from "./scenes/UI";
+import Title from "./scenes/Title";
+import PauseMenu from "./scenes/PauseMenu";
 
 class Boot extends Phaser.Scene {
 
@@ -36,7 +38,7 @@ const game = new Phaser.Game({
             debug: true
         }
     },
-    scene: [Boot, Preload, Bootstrap, Level, UI]
+    scene: [Boot, Preload, Bootstrap, Title, PauseMenu, Level, UI]
 });
 
 game.scene.start("Boot");

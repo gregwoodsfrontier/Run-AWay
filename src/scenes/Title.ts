@@ -4,7 +4,6 @@
 /* START OF COMPILED CODE */
 
 import Phaser from "phaser";
-import { ITitleData, ILevelData } from "../types/scenes";
 /* START-USER-IMPORTS */
 /* END-USER-IMPORTS */
 
@@ -35,7 +34,7 @@ export default class Title extends Phaser.Scene {
 		startGame.setStyle({ "fontSize": "32px" });
 
 		// start_Anim1
-		this.add.image(160, 320, "Start Anim1");
+		const start_Anim1 = this.add.sprite(160, 320, "Start Anim1");
 
 		// logo_v2
 		const logo_v2 = this.add.image(160, 142, "Logo v2");
@@ -51,6 +50,7 @@ export default class Title extends Phaser.Scene {
 		// about_Button
 		const about_Button = this.add.image(160, 223, "About Button");
 
+		this.start_Anim1 = start_Anim1;
 		this.start_Button = start_Button;
 		this.volume_Button = volume_Button;
 		this.about_Button = about_Button;
@@ -58,25 +58,73 @@ export default class Title extends Phaser.Scene {
 		this.events.emit("scene-awake");
 	}
 
+	private start_Anim1!: Phaser.GameObjects.Sprite;
 	private start_Button!: Phaser.GameObjects.Image;
 	private volume_Button!: Phaser.GameObjects.Image;
 	private about_Button!: Phaser.GameObjects.Image;
 
 	/* START-USER-CODE */
+	private endScale = 1.2
 
 	// Write your code here
 
 	create() {
 
 		this.editorCreate();
+		this.start_Button.setInteractive()
+		this.volume_Button.setInteractive()
+		this.about_Button.setInteractive()
 
 		this.start_Button.on('pointerup', this.handleStartUp, this)
+
+		const buttons = [
+			this.start_Button,
+			this.volume_Button,
+			this.about_Button
+		]
+
+		buttons.forEach(button => {
+			button.setInteractive()
+			button.on('pointerover', () => {
+				this.handleButtonHover(button)
+			}, this)
+			button.on('pointerout', () => {
+				this.handleButtonOut(button)
+			}, this)
+		})
+	}
+
+	private handleButtonOut(button: Phaser.GameObjects.Image)
+	{
+		const tween = this.tweens.addCounter({
+			from: this.endScale,
+			to: 1,
+			duration: 300,
+			onUpdate: () => {
+				const scalin = tween.getValue()
+				button.setScale(scalin)
+			}
+		})
+	}
+
+	private handleButtonHover(button: Phaser.GameObjects.Image)
+	{
+		const tween = this.tweens.addCounter({
+			from: 1,
+			to: this.endScale,
+			duration: 300,
+			onUpdate: () => {
+				const scalin = tween.getValue()
+				button.setScale(scalin)
+			}
+		})
 	}
 
 	private handleStartUp()
 	{
 		this.scene.stop('Title')
 		this.scene.launch('Level')
+		this.scene.launch('UI')
 	}
 
 	/* END-USER-CODE */

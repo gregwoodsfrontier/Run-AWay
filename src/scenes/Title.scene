@@ -48,9 +48,10 @@
             "fontSize": "32px"
         },
         {
-            "type": "Image",
+            "type": "Sprite",
             "id": "7dc355bc-af57-4918-b8eb-f9a0d1e05868",
             "label": "start_Anim1",
+            "scope": "CLASS",
             "components": [],
             "texture": {
                 "key": "Start Anim1"
