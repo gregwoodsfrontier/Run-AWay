@@ -26,7 +26,8 @@
                 "CameraFollow",
                 "HoldComp",
                 "AimComp",
-                "PSDComp"
+                "PSDComp",
+                "SelectionSquare"
             ],
             "Physics.width": 32,
             "Physics.height": 40,

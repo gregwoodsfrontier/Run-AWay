@@ -52,7 +52,7 @@ export default class KeyboardInput extends UserComponent {
 		{
 			this.executeXKeyDown()
 		}
-		
+
 		if(Phaser.Input.Keyboard.JustUp(this.XKey))
 		{
 			this.executeXKeyUp()

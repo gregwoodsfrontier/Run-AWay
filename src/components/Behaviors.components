@@ -245,6 +245,12 @@
             "baseClass": "UserComponent",
             "gameObjectType": "Phaser.GameObjects.Sprite",
             "properties": []
+        },
+        {
+            "name": "SelectionSquare",
+            "baseClass": "UserComponent",
+            "gameObjectType": "Phaser.GameObjects.Sprite",
+            "properties": []
         }
     ],
     "meta": {

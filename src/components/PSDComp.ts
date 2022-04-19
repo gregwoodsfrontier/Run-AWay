@@ -41,7 +41,7 @@ export default class PSDComp extends UserComponent {
 		})
 		.setState(PSD_STATE.EQIUP_IDLE)
 
-		
+
 		this.sprite.setVisible(false)
 		/* END-USER-CTR-CODE */
 	}
@@ -187,7 +187,7 @@ export default class PSDComp extends UserComponent {
 
 	private onDeployEnter()
 	{
-
+		this.sprite.setVisible(false)
 	}
 
 	/* END-USER-CODE */

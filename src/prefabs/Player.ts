@@ -12,6 +12,7 @@ import CameraFollow from "../components/CameraFollow";
 import HoldComp from "../components/HoldComp";
 import AimComp from "../components/AimComp";
 import PSDComp from "../components/PSDComp";
+import SelectionSquare from "../components/SelectionSquare";
 /* START-USER-IMPORTS */
 import StateMachine from "../stateMachine";
 import { PLAYER_STATE } from "../types/playerState";
@@ -41,6 +42,7 @@ export default class Player extends Phaser.GameObjects.Sprite {
 		new HoldComp(this);
 		new AimComp(this);
 		new PSDComp(this);
+		new SelectionSquare(this);
 
 		/* START-USER-CTR-CODE */
 		// Write your code here.
@@ -98,10 +100,10 @@ export default class Player extends Phaser.GameObjects.Sprite {
 		this.playerHold.stateMachine.setState(HOLD_COMP_STATE.EMPTY)
 		this.playerAimComp.stateMachine.setState(AIM_STATE.EMPTY)
 
+
 		this.handleStateSwitching()
 
 		this.handleShooting()
-
 	}
 
 	Update(dt: number)
@@ -110,6 +112,8 @@ export default class Player extends Phaser.GameObjects.Sprite {
 		this.playerHold.stateMachine.update(dt)
 		this.playerAimComp.stateMachine.update(dt)
 		this.playerPSD.stateMachine.update(dt)
+
+		this.scene.events.emit('selection-sq', this.direction, 50)
 	}
 
 	private handleShooting()
@@ -298,7 +302,7 @@ export default class Player extends Phaser.GameObjects.Sprite {
 			})
 		}
 
-		
+
 	}
 
 	private enterAimState()
