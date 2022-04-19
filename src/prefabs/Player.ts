@@ -11,6 +11,7 @@ import AnimationV2 from "../components/AnimationV2";
 import CameraFollow from "../components/CameraFollow";
 import HoldComp from "../components/HoldComp";
 import AimComp from "../components/AimComp";
+import PSDComp from "../components/PSDComp";
 /* START-USER-IMPORTS */
 import StateMachine from "../stateMachine";
 import { PLAYER_STATE } from "../types/playerState";
@@ -38,6 +39,7 @@ export default class Player extends Phaser.GameObjects.Sprite {
 		new CameraFollow(this);
 		new HoldComp(this);
 		new AimComp(this);
+		new PSDComp(this);
 
 		/* START-USER-CTR-CODE */
 		// Write your code here.

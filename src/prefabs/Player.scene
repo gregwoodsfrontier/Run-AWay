@@ -25,7 +25,8 @@
                 "AnimationV2",
                 "CameraFollow",
                 "HoldComp",
-                "AimComp"
+                "AimComp",
+                "PSDComp"
             ],
             "Physics.width": 32,
             "Physics.height": 40,

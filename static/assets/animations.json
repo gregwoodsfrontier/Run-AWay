@@ -1,7 +1,7 @@
 {
     "anims": [
         {
-            "key": "swarm-back-walk",
+            "key": "swarm-back-walk,swarm-front-walk,swarm-left-walk,swarm-right-walk,tempboss-back-walk,tempboss-front-walk,tempboss-left-walk,tempboss-right-walk,swarm-back-idle,swarm-front-idle,swarm-left-idle,swarm-right-idle,tempboss-front-idle,tempboss-back-idle,tempboss-left-idle,tempboss-right-idle,swarm-right-attack,swarm-left-attack,swarm-front-attack,swarm-back-attack,player-front-walk-gun,player-left-walk-gun,player-right-walk-gun,playerHoldGun,player-back-walk,player-front-walk-hold,player-front-walk,player-left-walk,player-right-walk,player-back-walk-hold,player-left-walk-hold,player-right-walk-hold,player-front-idle-gun,player-left-idle-gun,player-right-idle-gun,player-back-idle-gun,player-front-idle-hold,player-back-idle-hold,player-left-idle-hold,player-right-idle-hold,player-front-idle,player-back-idle,player-left-idle,player-right-idle,back-gunonly-walk,front-gunonly-walk,left-gunonly-walk,right-gunonly-walk,back-gunonly-idle,front-gunonly-idle,left-gunonly-idle,right-gunonly-idle,bppsd-left-walk-none,bppsd-right-walk-none,bppsd-back-walk-none,bppsd-left-walk-hold,bppsd-right-walk-hold,bppsd-back-walk-hold,silver-break,copper-break,gold-break,mining,psd-deployraw-break-interact,emptyrock-break,rock-block,rock-pass,blood-splash,meat,null,mud,trap-explode,trap-explode-projectile,trap-poison,trap-poison-mistraw-break-interact,pc-projectile,bppsd-left-idle-none,bppsd-right-idle-none,bppsd-back-idle-none,animation",
             "type": "frame",
             "frames": [
                 {
@@ -1797,6 +1797,96 @@
             ],
             "frameRate": 2,
             "skipMissedFrames": true
+        },
+        {
+            "key": "bppsd-left-idle-none",
+            "type": "frame",
+            "frames": [
+                {
+                    "key": "playerPSDeq",
+                    "frame": 1,
+                    "duration": 0,
+                    "keyframe": false
+                }
+            ],
+            "frameRate": 24,
+            "skipMissedFrames": true,
+            "repeat": -1
+        },
+        {
+            "key": "bppsd-right-idle-none",
+            "type": "frame",
+            "frames": [
+                {
+                    "key": "playerPSDeq",
+                    "frame": 2,
+                    "duration": 0,
+                    "keyframe": false
+                }
+            ],
+            "frameRate": 24,
+            "skipMissedFrames": true,
+            "repeat": -1
+        },
+        {
+            "key": "bppsd-back-idle-none",
+            "type": "frame",
+            "frames": [
+                {
+                    "key": "playerPSDeq",
+                    "frame": 3,
+                    "duration": 0,
+                    "keyframe": false
+                }
+            ],
+            "frameRate": 24,
+            "skipMissedFrames": true,
+            "repeat": -1
+        },
+        {
+            "key": "animation",
+            "type": "frame",
+            "frames": [
+                {
+                    "key": "playerPSDeq",
+                    "frame": 24,
+                    "duration": 0,
+                    "keyframe": false
+                }
+            ],
+            "frameRate": 24,
+            "skipMissedFrames": true,
+            "repeat": -1
+        },
+        {
+            "key": "bppsd-right-idle-hold",
+            "type": "frame",
+            "frames": [
+                {
+                    "key": "playerPSDeq",
+                    "frame": 28,
+                    "duration": 0,
+                    "keyframe": false
+                }
+            ],
+            "frameRate": 24,
+            "skipMissedFrames": true,
+            "repeat": -1
+        },
+        {
+            "key": "bppsd-back-idle-hold",
+            "type": "frame",
+            "frames": [
+                {
+                    "key": "playerPSDeq",
+                    "frame": 32,
+                    "duration": 0,
+                    "keyframe": false
+                }
+            ],
+            "frameRate": 24,
+            "skipMissedFrames": true,
+            "repeat": -1
         }
     ],
     "globalTimeScale": 1,

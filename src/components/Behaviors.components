@@ -241,7 +241,7 @@
             ]
         },
         {
-            "name": "Shoot",
+            "name": "PSDComp",
             "baseClass": "",
             "gameObjectType": "Phaser.GameObjects.Sprite",
             "properties": []

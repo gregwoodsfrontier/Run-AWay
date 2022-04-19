@@ -33,7 +33,7 @@ export default class AimComp {
 
 		this.stateMachine.setState(AIM_STATE.EMPTY)
 
-		
+
 		/* END-USER-CTR-CODE */
 	}
 
@@ -113,7 +113,7 @@ export default class AimComp {
 					break
 				}
 			}
-			
+
 		}
 		else
 		{
@@ -122,21 +122,21 @@ export default class AimComp {
 					movementComp.moveUp()
 					break
 				}
-	
+
 				case DIRECTION.FRONT: {
 					movementComp.moveDown()
 					break
 				}
-	
+
 				default: {
 					console.warn('you cannot move along your facing direction.')
 					break
 				}
 			}
 		}
-		
+
 		this.gameObject.scene.events.emit('create-bullet', this.facingDir)
-		
+
 	}
 
 	private displayAimMode()
@@ -144,7 +144,7 @@ export default class AimComp {
 		this.gameObject.setTint(0x00ffff)
 	}
 
-	
+
 
 	/* END-USER-CODE */
 }

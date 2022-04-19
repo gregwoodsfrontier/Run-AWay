@@ -7,11 +7,6 @@ export enum PLAYER_STATE {
     AIM = 'aim'
 }
 
-export enum PSD_STATE {
-	EQUIPPED,
-	DEPLOYED
-}
-
 export enum GUN_STATE {
 	EQUIPPED,
 	INVENTORY

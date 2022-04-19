@@ -59,7 +59,7 @@ export default class HoldComp {
 	private gameObject: Phaser.GameObjects.Sprite;
 	public stateMachine: StateMachine;
 	public direction: number = 1;
-	public hand: number = 0;
+	public item: number = 0;
 
 	/* START-USER-CODE */
 	private gunSprite: Phaser.GameObjects.Sprite
