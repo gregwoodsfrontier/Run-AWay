@@ -52,7 +52,8 @@
             "scope": "PUBLIC",
             "components": [],
             "x": 160,
-            "y": 160
+            "y": 160,
+            "nestedPrefabs": []
         },
         {
             "prefabId": "408d4d35-1d26-4f5e-9315-9d890dbf9ae0",
@@ -122,6 +123,18 @@
             "components": [],
             "x": -64,
             "y": 256
+        },
+        {
+            "type": "Sprite",
+            "id": "145f1d46-48c0-44b1-b3b8-27e241bc2624",
+            "label": "start_level",
+            "scope": "CLASS",
+            "components": [],
+            "texture": {
+                "key": "Start-Level-Anim-Short-20"
+            },
+            "x": 144,
+            "y": 160
         }
     ],
     "plainObjects": [

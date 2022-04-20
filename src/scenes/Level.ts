@@ -24,7 +24,7 @@ export default class Level extends Phaser.Scene {
 
 		/* START-USER-CTR-CODE */
 		// Write your code here.
-		
+
 		/* END-USER-CTR-CODE */
 	}
 
@@ -66,6 +66,9 @@ export default class Level extends Phaser.Scene {
 		this.add.existing(pSDRobot);
 		pSDRobot.name = "PSDRobot";
 
+		// start_level
+		const start_level = this.add.sprite(144, 160, "Start-Level-Anim-Short-20");
+
 		// lists
 		const enemyTeam = [enemy_3];
 		const silverList: Array<any> = [];
@@ -86,6 +89,7 @@ export default class Level extends Phaser.Scene {
 		this.copper = copper;
 		this.gold = gold;
 		this.pSDRobot = pSDRobot;
+		this.start_level = start_level;
 		this.cave_test_map_1 = cave_test_map_1;
 		this.cave_test_map_2 = cave_test_map_2;
 		this.enemyTeam = enemyTeam;
@@ -102,6 +106,7 @@ export default class Level extends Phaser.Scene {
 	private copper!: Phaser.GameObjects.Image;
 	private gold!: Phaser.GameObjects.Image;
 	private pSDRobot!: PSD;
+	private start_level!: Phaser.GameObjects.Sprite;
 	private enemyTeam!: Enemy[];
 	private silverList!: Array<any>;
 	private bulletList!: Array<any>;

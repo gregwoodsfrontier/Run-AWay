@@ -315,6 +315,186 @@
                 "key": "Health Point"
             },
             {
+                "url": "assets/Large Boss/largeboss-back-attack-1.png",
+                "type": "image",
+                "key": "largeboss-back-attack-1"
+            },
+            {
+                "url": "assets/Large Boss/largeboss-back-attack-2.png",
+                "type": "image",
+                "key": "largeboss-back-attack-2"
+            },
+            {
+                "url": "assets/Large Boss/largeboss-back-attack-3.png",
+                "type": "image",
+                "key": "largeboss-back-attack-3"
+            },
+            {
+                "url": "assets/Large Boss/largeboss-back-attack-4.png",
+                "type": "image",
+                "key": "largeboss-back-attack-4"
+            },
+            {
+                "url": "assets/Large Boss/largeboss-back-idle-.png",
+                "type": "image",
+                "key": "largeboss-back-idle-"
+            },
+            {
+                "url": "assets/Large Boss/largeboss-back-walk-1.png",
+                "type": "image",
+                "key": "largeboss-back-walk-1"
+            },
+            {
+                "url": "assets/Large Boss/largeboss-back-walk-2.png",
+                "type": "image",
+                "key": "largeboss-back-walk-2"
+            },
+            {
+                "url": "assets/Large Boss/largeboss-back-walk-3.png",
+                "type": "image",
+                "key": "largeboss-back-walk-3"
+            },
+            {
+                "url": "assets/Large Boss/largeboss-back-walk-4.png",
+                "type": "image",
+                "key": "largeboss-back-walk-4"
+            },
+            {
+                "url": "assets/Large Boss/largeboss-front-attack-1.png",
+                "type": "image",
+                "key": "largeboss-front-attack-1"
+            },
+            {
+                "url": "assets/Large Boss/largeboss-front-attack-2.png",
+                "type": "image",
+                "key": "largeboss-front-attack-2"
+            },
+            {
+                "url": "assets/Large Boss/largeboss-front-attack-3.png",
+                "type": "image",
+                "key": "largeboss-front-attack-3"
+            },
+            {
+                "url": "assets/Large Boss/largeboss-front-attack-4.png",
+                "type": "image",
+                "key": "largeboss-front-attack-4"
+            },
+            {
+                "url": "assets/Large Boss/largeboss-front-idle-.png",
+                "type": "image",
+                "key": "largeboss-front-idle-"
+            },
+            {
+                "url": "assets/Large Boss/largeboss-front-walk-1.png",
+                "type": "image",
+                "key": "largeboss-front-walk-1"
+            },
+            {
+                "url": "assets/Large Boss/largeboss-front-walk-2.png",
+                "type": "image",
+                "key": "largeboss-front-walk-2"
+            },
+            {
+                "url": "assets/Large Boss/largeboss-front-walk-3.png",
+                "type": "image",
+                "key": "largeboss-front-walk-3"
+            },
+            {
+                "url": "assets/Large Boss/largeboss-front-walk-4.png",
+                "type": "image",
+                "key": "largeboss-front-walk-4"
+            },
+            {
+                "url": "assets/Large Boss/largeboss-left-attack-1.png",
+                "type": "image",
+                "key": "largeboss-left-attack-1"
+            },
+            {
+                "url": "assets/Large Boss/largeboss-left-attack-2.png",
+                "type": "image",
+                "key": "largeboss-left-attack-2"
+            },
+            {
+                "url": "assets/Large Boss/largeboss-left-attack-3.png",
+                "type": "image",
+                "key": "largeboss-left-attack-3"
+            },
+            {
+                "url": "assets/Large Boss/largeboss-left-attack-4.png",
+                "type": "image",
+                "key": "largeboss-left-attack-4"
+            },
+            {
+                "url": "assets/Large Boss/largeboss-left-idle-.png",
+                "type": "image",
+                "key": "largeboss-left-idle-"
+            },
+            {
+                "url": "assets/Large Boss/largeboss-left-walk-1.png",
+                "type": "image",
+                "key": "largeboss-left-walk-1"
+            },
+            {
+                "url": "assets/Large Boss/largeboss-left-walk-2.png",
+                "type": "image",
+                "key": "largeboss-left-walk-2"
+            },
+            {
+                "url": "assets/Large Boss/largeboss-left-walk-3.png",
+                "type": "image",
+                "key": "largeboss-left-walk-3"
+            },
+            {
+                "url": "assets/Large Boss/largeboss-left-walk-4.png",
+                "type": "image",
+                "key": "largeboss-left-walk-4"
+            },
+            {
+                "url": "assets/Large Boss/largeboss-right-attack-1.png",
+                "type": "image",
+                "key": "largeboss-right-attack-1"
+            },
+            {
+                "url": "assets/Large Boss/largeboss-right-attack-2.png",
+                "type": "image",
+                "key": "largeboss-right-attack-2"
+            },
+            {
+                "url": "assets/Large Boss/largeboss-right-attack-3.png",
+                "type": "image",
+                "key": "largeboss-right-attack-3"
+            },
+            {
+                "url": "assets/Large Boss/largeboss-right-attack-4.png",
+                "type": "image",
+                "key": "largeboss-right-attack-4"
+            },
+            {
+                "url": "assets/Large Boss/largeboss-right-idle-.png",
+                "type": "image",
+                "key": "largeboss-right-idle-"
+            },
+            {
+                "url": "assets/Large Boss/largeboss-right-walk-1.png",
+                "type": "image",
+                "key": "largeboss-right-walk-1"
+            },
+            {
+                "url": "assets/Large Boss/largeboss-right-walk-2.png",
+                "type": "image",
+                "key": "largeboss-right-walk-2"
+            },
+            {
+                "url": "assets/Large Boss/largeboss-right-walk-3.png",
+                "type": "image",
+                "key": "largeboss-right-walk-3"
+            },
+            {
+                "url": "assets/Large Boss/largeboss-right-walk-4.png",
+                "type": "image",
+                "key": "largeboss-right-walk-4"
+            },
+            {
                 "url": "assets/gunOnly/left-gunonly/left-gunonly-1.png",
                 "type": "image",
                 "key": "left-gunonly-1"
@@ -1650,6 +1830,106 @@
                 "url": "assets/Start level Anim/Start-Level-Anim-9.png",
                 "type": "image",
                 "key": "Start-Level-Anim-9"
+            },
+            {
+                "url": "assets/Start level Anim Short/Start-Level-Anim-Short-01.png",
+                "type": "image",
+                "key": "Start-Level-Anim-Short-01"
+            },
+            {
+                "url": "assets/Start level Anim Short/Start-Level-Anim-Short-02.png",
+                "type": "image",
+                "key": "Start-Level-Anim-Short-02"
+            },
+            {
+                "url": "assets/Start level Anim Short/Start-Level-Anim-Short-03.png",
+                "type": "image",
+                "key": "Start-Level-Anim-Short-03"
+            },
+            {
+                "url": "assets/Start level Anim Short/Start-Level-Anim-Short-04.png",
+                "type": "image",
+                "key": "Start-Level-Anim-Short-04"
+            },
+            {
+                "url": "assets/Start level Anim Short/Start-Level-Anim-Short-05.png",
+                "type": "image",
+                "key": "Start-Level-Anim-Short-05"
+            },
+            {
+                "url": "assets/Start level Anim Short/Start-Level-Anim-Short-06.png",
+                "type": "image",
+                "key": "Start-Level-Anim-Short-06"
+            },
+            {
+                "url": "assets/Start level Anim Short/Start-Level-Anim-Short-07.png",
+                "type": "image",
+                "key": "Start-Level-Anim-Short-07"
+            },
+            {
+                "url": "assets/Start level Anim Short/Start-Level-Anim-Short-08.png",
+                "type": "image",
+                "key": "Start-Level-Anim-Short-08"
+            },
+            {
+                "url": "assets/Start level Anim Short/Start-Level-Anim-Short-09.png",
+                "type": "image",
+                "key": "Start-Level-Anim-Short-09"
+            },
+            {
+                "url": "assets/Start level Anim Short/Start-Level-Anim-Short-10.png",
+                "type": "image",
+                "key": "Start-Level-Anim-Short-10"
+            },
+            {
+                "url": "assets/Start level Anim Short/Start-Level-Anim-Short-11.png",
+                "type": "image",
+                "key": "Start-Level-Anim-Short-11"
+            },
+            {
+                "url": "assets/Start level Anim Short/Start-Level-Anim-Short-12.png",
+                "type": "image",
+                "key": "Start-Level-Anim-Short-12"
+            },
+            {
+                "url": "assets/Start level Anim Short/Start-Level-Anim-Short-13.png",
+                "type": "image",
+                "key": "Start-Level-Anim-Short-13"
+            },
+            {
+                "url": "assets/Start level Anim Short/Start-Level-Anim-Short-14.png",
+                "type": "image",
+                "key": "Start-Level-Anim-Short-14"
+            },
+            {
+                "url": "assets/Start level Anim Short/Start-Level-Anim-Short-15.png",
+                "type": "image",
+                "key": "Start-Level-Anim-Short-15"
+            },
+            {
+                "url": "assets/Start level Anim Short/Start-Level-Anim-Short-16.png",
+                "type": "image",
+                "key": "Start-Level-Anim-Short-16"
+            },
+            {
+                "url": "assets/Start level Anim Short/Start-Level-Anim-Short-17.png",
+                "type": "image",
+                "key": "Start-Level-Anim-Short-17"
+            },
+            {
+                "url": "assets/Start level Anim Short/Start-Level-Anim-Short-18.png",
+                "type": "image",
+                "key": "Start-Level-Anim-Short-18"
+            },
+            {
+                "url": "assets/Start level Anim Short/Start-Level-Anim-Short-19.png",
+                "type": "image",
+                "key": "Start-Level-Anim-Short-19"
+            },
+            {
+                "url": "assets/Start level Anim Short/Start-Level-Anim-Short-20.png",
+                "type": "image",
+                "key": "Start-Level-Anim-Short-20"
             },
             {
                 "url": "assets/ui-assets/Status Red Overlay.png",

@@ -1,7 +1,7 @@
 {
     "anims": [
         {
-            "key": "swarm-back-walk",
+            "key": "swarm-back-walk,swarm-front-walk,swarm-left-walk,swarm-right-walk,swarm-back-idle,swarm-front-idle,swarm-left-idle,swarm-right-idle,swarm-right-attack,swarm-left-attack,swarm-front-attack,swarm-back-attack,player-front-walk-gun,player-left-walk-gun,player-right-walk-gun,playerHoldGun,player-back-walk,player-front-walk-hold,player-front-walk,player-left-walk,player-right-walk,player-back-walk-hold,player-left-walk-hold,player-right-walk-hold,player-front-idle-gun,player-left-idle-gun,player-right-idle-gun,player-back-idle-gun,player-front-idle-hold,player-back-idle-hold,player-left-idle-hold,player-right-idle-hold,player-front-idle,player-back-idle,player-left-idle,player-right-idle,back-gunonly-walk,front-gunonly-walk,left-gunonly-walk,right-gunonly-walk,back-gunonly-idle,front-gunonly-idle,left-gunonly-idle,right-gunonly-idle,bppsd-left-walk-none,bppsd-right-walk-none,bppsd-back-walk-none,bppsd-left-walk-hold,bppsd-right-walk-hold,bppsd-back-walk-hold,silver-break,copper-break,gold-break,mining,psd-deploy,emptyrock-break,rock-block,rock-pass,blood-splash,meat,null,mud,trap-explode,trap-explode-projectile,trap-poison,trap-poison-mistraw-break-interact,pc-projectile,bppsd-left-idle-none,bppsd-right-idle-none,bppsd-back-idle-none,bppsd-left-idle-hold,bppsd-right-idle-hold,bppsd-back-idle-hold,start-anim,start-level,boss-back-attack,boss-back-walk,boss-front-attack,boss-front-walk,boss-left-attack,boss-left-walk,boss-right-attack,boss-right-walk,largeboss-back-attack,largeboss-back-walk,largeboss-front-attack,largeboss-front-walk,largeboss-left-attack,largeboss-left-walk,largeboss-right-attack,largeboss-right-walk,largeboss-back-idle,largeboss",
             "type": "frame",
             "frames": [
                 {
@@ -26,8 +26,7 @@
                 }
             ],
             "frameRate": 12,
-            "skipMissedFrames": true,
-            "repeat": -1
+            "skipMissedFrames": true
         },
         {
             "key": "swarm-front-walk",
@@ -55,8 +54,7 @@
                 }
             ],
             "frameRate": 12,
-            "skipMissedFrames": true,
-            "repeat": -1
+            "skipMissedFrames": true
         },
         {
             "key": "swarm-left-walk",
@@ -84,8 +82,7 @@
                 }
             ],
             "frameRate": 12,
-            "skipMissedFrames": true,
-            "repeat": -1
+            "skipMissedFrames": true
         },
         {
             "key": "swarm-right-walk",
@@ -113,8 +110,7 @@
                 }
             ],
             "frameRate": 12,
-            "skipMissedFrames": true,
-            "repeat": -1
+            "skipMissedFrames": true
         },
         {
             "key": "swarm-back-idle",
@@ -127,8 +123,7 @@
                 }
             ],
             "frameRate": 12,
-            "skipMissedFrames": true,
-            "repeat": -1
+            "skipMissedFrames": true
         },
         {
             "key": "swarm-front-idle",
@@ -141,8 +136,7 @@
                 }
             ],
             "frameRate": 12,
-            "skipMissedFrames": true,
-            "repeat": -1
+            "skipMissedFrames": true
         },
         {
             "key": "swarm-left-idle",
@@ -155,8 +149,7 @@
                 }
             ],
             "frameRate": 12,
-            "skipMissedFrames": true,
-            "repeat": -1
+            "skipMissedFrames": true
         },
         {
             "key": "swarm-right-idle",
@@ -169,8 +162,7 @@
                 }
             ],
             "frameRate": 12,
-            "skipMissedFrames": true,
-            "repeat": -1
+            "skipMissedFrames": true
         },
         {
             "key": "swarm-right-attack",
@@ -314,8 +306,7 @@
                 }
             ],
             "frameRate": 12,
-            "skipMissedFrames": true,
-            "repeat": -1
+            "skipMissedFrames": true
         },
         {
             "key": "player-left-walk-gun",
@@ -343,8 +334,7 @@
                 }
             ],
             "frameRate": 12,
-            "skipMissedFrames": true,
-            "repeat": -1
+            "skipMissedFrames": true
         },
         {
             "key": "player-right-walk-gun",
@@ -372,8 +362,7 @@
                 }
             ],
             "frameRate": 12,
-            "skipMissedFrames": true,
-            "repeat": -1
+            "skipMissedFrames": true
         },
         {
             "key": "playerHoldGun",
@@ -401,8 +390,7 @@
                 }
             ],
             "frameRate": 12,
-            "skipMissedFrames": true,
-            "repeat": -1
+            "skipMissedFrames": true
         },
         {
             "key": "player-back-walk",
@@ -430,8 +418,7 @@
                 }
             ],
             "frameRate": 12,
-            "skipMissedFrames": true,
-            "repeat": -1
+            "skipMissedFrames": true
         },
         {
             "key": "player-front-walk-hold",
@@ -459,8 +446,7 @@
                 }
             ],
             "frameRate": 12,
-            "skipMissedFrames": true,
-            "repeat": -1
+            "skipMissedFrames": true
         },
         {
             "key": "player-front-walk",
@@ -488,8 +474,7 @@
                 }
             ],
             "frameRate": 12,
-            "skipMissedFrames": true,
-            "repeat": -1
+            "skipMissedFrames": true
         },
         {
             "key": "player-left-walk",
@@ -517,8 +502,7 @@
                 }
             ],
             "frameRate": 12,
-            "skipMissedFrames": true,
-            "repeat": -1
+            "skipMissedFrames": true
         },
         {
             "key": "player-right-walk",
@@ -546,8 +530,7 @@
                 }
             ],
             "frameRate": 12,
-            "skipMissedFrames": true,
-            "repeat": -1
+            "skipMissedFrames": true
         },
         {
             "key": "player-back-walk-hold",
@@ -575,8 +558,7 @@
                 }
             ],
             "frameRate": 12,
-            "skipMissedFrames": true,
-            "repeat": -1
+            "skipMissedFrames": true
         },
         {
             "key": "player-left-walk-hold",
@@ -604,8 +586,7 @@
                 }
             ],
             "frameRate": 12,
-            "skipMissedFrames": true,
-            "repeat": -1
+            "skipMissedFrames": true
         },
         {
             "key": "player-right-walk-hold",
@@ -633,8 +614,7 @@
                 }
             ],
             "frameRate": 12,
-            "skipMissedFrames": true,
-            "repeat": -1
+            "skipMissedFrames": true
         },
         {
             "key": "player-front-idle-gun",
@@ -647,8 +627,7 @@
                 }
             ],
             "frameRate": 12,
-            "skipMissedFrames": true,
-            "repeat": -1
+            "skipMissedFrames": true
         },
         {
             "key": "player-left-idle-gun",
@@ -661,8 +640,7 @@
                 }
             ],
             "frameRate": 12,
-            "skipMissedFrames": true,
-            "repeat": -1
+            "skipMissedFrames": true
         },
         {
             "key": "player-right-idle-gun",
@@ -675,8 +653,7 @@
                 }
             ],
             "frameRate": 12,
-            "skipMissedFrames": true,
-            "repeat": -1
+            "skipMissedFrames": true
         },
         {
             "key": "player-back-idle-gun",
@@ -689,8 +666,7 @@
                 }
             ],
             "frameRate": 12,
-            "skipMissedFrames": true,
-            "repeat": -1
+            "skipMissedFrames": true
         },
         {
             "key": "player-front-idle-hold",
@@ -703,8 +679,7 @@
                 }
             ],
             "frameRate": 12,
-            "skipMissedFrames": true,
-            "repeat": -1
+            "skipMissedFrames": true
         },
         {
             "key": "player-back-idle-hold",
@@ -717,8 +692,7 @@
                 }
             ],
             "frameRate": 12,
-            "skipMissedFrames": true,
-            "repeat": -1
+            "skipMissedFrames": true
         },
         {
             "key": "player-left-idle-hold",
@@ -731,8 +705,7 @@
                 }
             ],
             "frameRate": 12,
-            "skipMissedFrames": true,
-            "repeat": -1
+            "skipMissedFrames": true
         },
         {
             "key": "player-right-idle-hold",
@@ -745,8 +718,7 @@
                 }
             ],
             "frameRate": 12,
-            "skipMissedFrames": true,
-            "repeat": -1
+            "skipMissedFrames": true
         },
         {
             "key": "player-front-idle",
@@ -759,8 +731,7 @@
                 }
             ],
             "frameRate": 12,
-            "skipMissedFrames": true,
-            "repeat": -1
+            "skipMissedFrames": true
         },
         {
             "key": "player-back-idle",
@@ -773,8 +744,7 @@
                 }
             ],
             "frameRate": 12,
-            "skipMissedFrames": true,
-            "repeat": -1
+            "skipMissedFrames": true
         },
         {
             "key": "player-left-idle",
@@ -787,8 +757,7 @@
                 }
             ],
             "frameRate": 12,
-            "skipMissedFrames": true,
-            "repeat": -1
+            "skipMissedFrames": true
         },
         {
             "key": "player-right-idle",
@@ -801,8 +770,7 @@
                 }
             ],
             "frameRate": 12,
-            "skipMissedFrames": true,
-            "repeat": -1
+            "skipMissedFrames": true
         },
         {
             "key": "back-gunonly-walk",
@@ -830,8 +798,7 @@
                 }
             ],
             "frameRate": 12,
-            "skipMissedFrames": true,
-            "repeat": -1
+            "skipMissedFrames": true
         },
         {
             "key": "front-gunonly-walk",
@@ -859,8 +826,7 @@
                 }
             ],
             "frameRate": 12,
-            "skipMissedFrames": true,
-            "repeat": -1
+            "skipMissedFrames": true
         },
         {
             "key": "left-gunonly-walk",
@@ -888,8 +854,7 @@
                 }
             ],
             "frameRate": 12,
-            "skipMissedFrames": true,
-            "repeat": -1
+            "skipMissedFrames": true
         },
         {
             "key": "right-gunonly-walk",
@@ -917,8 +882,7 @@
                 }
             ],
             "frameRate": 12,
-            "skipMissedFrames": true,
-            "repeat": -1
+            "skipMissedFrames": true
         },
         {
             "key": "back-gunonly-idle",
@@ -931,8 +895,7 @@
                 }
             ],
             "frameRate": 24,
-            "skipMissedFrames": true,
-            "repeat": -1
+            "skipMissedFrames": true
         },
         {
             "key": "front-gunonly-idle",
@@ -945,8 +908,7 @@
                 }
             ],
             "frameRate": 24,
-            "skipMissedFrames": true,
-            "repeat": -1
+            "skipMissedFrames": true
         },
         {
             "key": "left-gunonly-idle",
@@ -959,8 +921,7 @@
                 }
             ],
             "frameRate": 24,
-            "skipMissedFrames": true,
-            "repeat": -1
+            "skipMissedFrames": true
         },
         {
             "key": "right-gunonly-idle",
@@ -973,8 +934,7 @@
                 }
             ],
             "frameRate": 24,
-            "skipMissedFrames": true,
-            "repeat": -1
+            "skipMissedFrames": true
         },
         {
             "key": "bppsd-left-walk-none",
@@ -1006,8 +966,7 @@
                 }
             ],
             "frameRate": 12,
-            "skipMissedFrames": true,
-            "repeat": -1
+            "skipMissedFrames": true
         },
         {
             "key": "bppsd-right-walk-none",
@@ -1039,8 +998,7 @@
                 }
             ],
             "frameRate": 12,
-            "skipMissedFrames": true,
-            "repeat": -1
+            "skipMissedFrames": true
         },
         {
             "key": "bppsd-back-walk-none",
@@ -1072,8 +1030,7 @@
                 }
             ],
             "frameRate": 12,
-            "skipMissedFrames": true,
-            "repeat": -1
+            "skipMissedFrames": true
         },
         {
             "key": "bppsd-left-walk-hold",
@@ -1105,8 +1062,7 @@
                 }
             ],
             "frameRate": 12,
-            "skipMissedFrames": true,
-            "repeat": -1
+            "skipMissedFrames": true
         },
         {
             "key": "bppsd-right-walk-hold",
@@ -1138,8 +1094,7 @@
                 }
             ],
             "frameRate": 12,
-            "skipMissedFrames": true,
-            "repeat": -1
+            "skipMissedFrames": true
         },
         {
             "key": "bppsd-back-walk-hold",
@@ -1171,8 +1126,7 @@
                 }
             ],
             "frameRate": 12,
-            "skipMissedFrames": true,
-            "repeat": -1
+            "skipMissedFrames": true
         },
         {
             "key": "silver-break",
@@ -1464,8 +1418,7 @@
                 }
             ],
             "frameRate": 24,
-            "skipMissedFrames": true,
-            "repeat": -1
+            "skipMissedFrames": true
         },
         {
             "key": "null",
@@ -1479,8 +1432,7 @@
                 }
             ],
             "frameRate": 24,
-            "skipMissedFrames": true,
-            "repeat": -1
+            "skipMissedFrames": true
         },
         {
             "key": "mud",
@@ -1494,8 +1446,7 @@
                 }
             ],
             "frameRate": 24,
-            "skipMissedFrames": true,
-            "repeat": -1
+            "skipMissedFrames": true
         },
         {
             "key": "trap-explode",
@@ -1552,8 +1503,7 @@
                 }
             ],
             "frameRate": 9,
-            "skipMissedFrames": true,
-            "repeat": -1
+            "skipMissedFrames": true
         },
         {
             "key": "trap-poison",
@@ -1610,20 +1560,6 @@
                 }
             ],
             "frameRate": 9,
-            "skipMissedFrames": true,
-            "repeat": -1
-        },
-        {
-            "key": "pc-projectile",
-            "type": "frame",
-            "frames": [
-                {
-                    "key": "PCProjectile",
-                    "duration": 0,
-                    "keyframe": false
-                }
-            ],
-            "frameRate": 2,
             "skipMissedFrames": true
         },
         {
@@ -1638,8 +1574,7 @@
                 }
             ],
             "frameRate": 24,
-            "skipMissedFrames": true,
-            "repeat": -1
+            "skipMissedFrames": true
         },
         {
             "key": "bppsd-right-idle-none",
@@ -1653,8 +1588,7 @@
                 }
             ],
             "frameRate": 24,
-            "skipMissedFrames": true,
-            "repeat": -1
+            "skipMissedFrames": true
         },
         {
             "key": "bppsd-back-idle-none",
@@ -1668,8 +1602,7 @@
                 }
             ],
             "frameRate": 24,
-            "skipMissedFrames": true,
-            "repeat": -1
+            "skipMissedFrames": true
         },
         {
             "key": "bppsd-left-idle-hold",
@@ -1683,8 +1616,7 @@
                 }
             ],
             "frameRate": 24,
-            "skipMissedFrames": true,
-            "repeat": -1
+            "skipMissedFrames": true
         },
         {
             "key": "bppsd-right-idle-hold",
@@ -1698,8 +1630,7 @@
                 }
             ],
             "frameRate": 24,
-            "skipMissedFrames": true,
-            "repeat": -1
+            "skipMissedFrames": true
         },
         {
             "key": "bppsd-back-idle-hold",
@@ -1713,8 +1644,7 @@
                 }
             ],
             "frameRate": 24,
-            "skipMissedFrames": true,
-            "repeat": -1
+            "skipMissedFrames": true
         },
         {
             "key": "start-anim",
@@ -2664,8 +2594,7 @@
                 }
             ],
             "frameRate": 12,
-            "skipMissedFrames": true,
-            "repeat": -1
+            "skipMissedFrames": true
         },
         {
             "key": "boss-back-walk",
@@ -2693,8 +2622,7 @@
                 }
             ],
             "frameRate": 12,
-            "skipMissedFrames": true,
-            "repeat": -1
+            "skipMissedFrames": true
         },
         {
             "key": "boss-front-attack",
@@ -2722,8 +2650,7 @@
                 }
             ],
             "frameRate": 12,
-            "skipMissedFrames": true,
-            "repeat": -1
+            "skipMissedFrames": true
         },
         {
             "key": "boss-front-walk",
@@ -2751,8 +2678,7 @@
                 }
             ],
             "frameRate": 12,
-            "skipMissedFrames": true,
-            "repeat": -1
+            "skipMissedFrames": true
         },
         {
             "key": "boss-left-attack",
@@ -2780,8 +2706,7 @@
                 }
             ],
             "frameRate": 12,
-            "skipMissedFrames": true,
-            "repeat": -1
+            "skipMissedFrames": true
         },
         {
             "key": "boss-left-walk",
@@ -2809,8 +2734,7 @@
                 }
             ],
             "frameRate": 12,
-            "skipMissedFrames": true,
-            "repeat": -1
+            "skipMissedFrames": true
         },
         {
             "key": "boss-right-attack",
@@ -2838,8 +2762,7 @@
                 }
             ],
             "frameRate": 12,
-            "skipMissedFrames": true,
-            "repeat": -1
+            "skipMissedFrames": true
         },
         {
             "key": "boss-right-walk",
@@ -2867,8 +2790,444 @@
                 }
             ],
             "frameRate": 12,
+            "skipMissedFrames": true
+        },
+        {
+            "key": "largeboss-back-attack",
+            "type": "frame",
+            "frames": [
+                {
+                    "key": "largeboss-back-attack-1",
+                    "duration": 0,
+                    "keyframe": false
+                },
+                {
+                    "key": "largeboss-back-attack-2",
+                    "duration": 0,
+                    "keyframe": false
+                },
+                {
+                    "key": "largeboss-back-attack-3",
+                    "duration": 0,
+                    "keyframe": false
+                },
+                {
+                    "key": "largeboss-back-attack-4",
+                    "duration": 0,
+                    "keyframe": false
+                }
+            ],
+            "frameRate": 12,
+            "skipMissedFrames": true
+        },
+        {
+            "key": "largeboss-back-walk",
+            "type": "frame",
+            "frames": [
+                {
+                    "key": "largeboss-back-walk-1",
+                    "duration": 0,
+                    "keyframe": false
+                },
+                {
+                    "key": "largeboss-back-walk-2",
+                    "duration": 0,
+                    "keyframe": false
+                },
+                {
+                    "key": "largeboss-back-walk-3",
+                    "duration": 0,
+                    "keyframe": false
+                },
+                {
+                    "key": "largeboss-back-walk-4",
+                    "duration": 0,
+                    "keyframe": false
+                }
+            ],
+            "frameRate": 12,
+            "skipMissedFrames": true
+        },
+        {
+            "key": "largeboss-front-attack",
+            "type": "frame",
+            "frames": [
+                {
+                    "key": "largeboss-front-attack-1",
+                    "duration": 0,
+                    "keyframe": false
+                },
+                {
+                    "key": "largeboss-front-attack-2",
+                    "duration": 0,
+                    "keyframe": false
+                },
+                {
+                    "key": "largeboss-front-attack-3",
+                    "duration": 0,
+                    "keyframe": false
+                },
+                {
+                    "key": "largeboss-front-attack-4",
+                    "duration": 0,
+                    "keyframe": false
+                }
+            ],
+            "frameRate": 12,
+            "skipMissedFrames": true
+        },
+        {
+            "key": "largeboss-front-walk",
+            "type": "frame",
+            "frames": [
+                {
+                    "key": "largeboss-front-walk-1",
+                    "duration": 0,
+                    "keyframe": false
+                },
+                {
+                    "key": "largeboss-front-walk-2",
+                    "duration": 0,
+                    "keyframe": false
+                },
+                {
+                    "key": "largeboss-front-walk-3",
+                    "duration": 0,
+                    "keyframe": false
+                },
+                {
+                    "key": "largeboss-front-walk-4",
+                    "duration": 0,
+                    "keyframe": false
+                }
+            ],
+            "frameRate": 12,
+            "skipMissedFrames": true
+        },
+        {
+            "key": "largeboss-left-attack",
+            "type": "frame",
+            "frames": [
+                {
+                    "key": "largeboss-left-attack-1",
+                    "duration": 0,
+                    "keyframe": false
+                },
+                {
+                    "key": "largeboss-left-attack-2",
+                    "duration": 0,
+                    "keyframe": false
+                },
+                {
+                    "key": "largeboss-left-attack-3",
+                    "duration": 0,
+                    "keyframe": false
+                },
+                {
+                    "key": "largeboss-left-attack-4",
+                    "duration": 0,
+                    "keyframe": false
+                }
+            ],
+            "frameRate": 12,
+            "skipMissedFrames": true
+        },
+        {
+            "key": "largeboss-left-walk",
+            "type": "frame",
+            "frames": [
+                {
+                    "key": "largeboss-left-walk-1",
+                    "duration": 0,
+                    "keyframe": false
+                },
+                {
+                    "key": "largeboss-left-walk-2",
+                    "duration": 0,
+                    "keyframe": false
+                },
+                {
+                    "key": "largeboss-left-walk-3",
+                    "duration": 0,
+                    "keyframe": false
+                },
+                {
+                    "key": "largeboss-left-walk-4",
+                    "duration": 0,
+                    "keyframe": false
+                }
+            ],
+            "frameRate": 12,
+            "skipMissedFrames": true
+        },
+        {
+            "key": "largeboss-right-attack",
+            "type": "frame",
+            "frames": [
+                {
+                    "key": "largeboss-right-attack-1",
+                    "duration": 0,
+                    "keyframe": false
+                },
+                {
+                    "key": "largeboss-right-attack-2",
+                    "duration": 0,
+                    "keyframe": false
+                },
+                {
+                    "key": "largeboss-right-attack-3",
+                    "duration": 0,
+                    "keyframe": false
+                },
+                {
+                    "key": "largeboss-right-attack-4",
+                    "duration": 0,
+                    "keyframe": false
+                }
+            ],
+            "frameRate": 12,
+            "skipMissedFrames": true
+        },
+        {
+            "key": "largeboss-right-walk",
+            "type": "frame",
+            "frames": [
+                {
+                    "key": "largeboss-right-walk-1",
+                    "duration": 0,
+                    "keyframe": false
+                },
+                {
+                    "key": "largeboss-right-walk-2",
+                    "duration": 0,
+                    "keyframe": false
+                },
+                {
+                    "key": "largeboss-right-walk-3",
+                    "duration": 0,
+                    "keyframe": false
+                },
+                {
+                    "key": "largeboss-right-walk-4",
+                    "duration": 0,
+                    "keyframe": false
+                }
+            ],
+            "frameRate": 12,
+            "skipMissedFrames": true
+        },
+        {
+            "key": "largeboss-back-idle",
+            "type": "frame",
+            "frames": [
+                {
+                    "key": "largeboss-back-idle-",
+                    "duration": 0,
+                    "keyframe": false
+                }
+            ],
+            "frameRate": 24,
+            "skipMissedFrames": true
+        },
+        {
+            "key": "largeboss",
+            "type": "frame",
+            "frames": [
+                {
+                    "key": "largeboss-front-idle-",
+                    "duration": 0,
+                    "keyframe": false
+                }
+            ],
+            "frameRate": 24,
+            "skipMissedFrames": true
+        },
+        {
+            "key": "largeboss-left-idle",
+            "type": "frame",
+            "frames": [
+                {
+                    "key": "largeboss-left-idle-",
+                    "duration": 0,
+                    "keyframe": false
+                }
+            ],
+            "frameRate": 24,
+            "skipMissedFrames": true
+        },
+        {
+            "key": "largeboss-right-idle",
+            "type": "frame",
+            "frames": [
+                {
+                    "key": "largeboss-right-idle-",
+                    "duration": 0,
+                    "keyframe": false
+                }
+            ],
+            "frameRate": 24,
+            "skipMissedFrames": true
+        },
+        {
+            "key": "boss-back-idle",
+            "type": "frame",
+            "frames": [
+                {
+                    "key": "boss-back-idle-1",
+                    "duration": 0,
+                    "keyframe": false
+                }
+            ],
+            "frameRate": 24,
+            "skipMissedFrames": true
+        },
+        {
+            "key": "boss-front-idle",
+            "type": "frame",
+            "frames": [
+                {
+                    "key": "boss-front-idle-1",
+                    "duration": 0,
+                    "keyframe": false
+                }
+            ],
+            "frameRate": 24,
+            "skipMissedFrames": true
+        },
+        {
+            "key": "boss-left-idle",
+            "type": "frame",
+            "frames": [
+                {
+                    "key": "boss-left-idle-1",
+                    "duration": 0,
+                    "keyframe": false
+                }
+            ],
+            "frameRate": 24,
+            "skipMissedFrames": true
+        },
+        {
+            "key": "boss-right-idle",
+            "type": "frame",
+            "frames": [
+                {
+                    "key": "boss-right-idle-1",
+                    "duration": 0,
+                    "keyframe": false
+                }
+            ],
+            "frameRate": 24,
+            "skipMissedFrames": true
+        },
+        {
+            "key": "start-level-short",
+            "type": "frame",
+            "frames": [
+                {
+                    "key": "Start-Level-Anim-Short-01",
+                    "duration": 0,
+                    "keyframe": false
+                },
+                {
+                    "key": "Start-Level-Anim-Short-02",
+                    "duration": 0,
+                    "keyframe": false
+                },
+                {
+                    "key": "Start-Level-Anim-Short-03",
+                    "duration": 0,
+                    "keyframe": false
+                },
+                {
+                    "key": "Start-Level-Anim-Short-04",
+                    "duration": 0,
+                    "keyframe": false
+                },
+                {
+                    "key": "Start-Level-Anim-Short-05",
+                    "duration": 0,
+                    "keyframe": false
+                },
+                {
+                    "key": "Start-Level-Anim-Short-06",
+                    "duration": 0,
+                    "keyframe": false
+                },
+                {
+                    "key": "Start-Level-Anim-Short-07",
+                    "duration": 0,
+                    "keyframe": false
+                },
+                {
+                    "key": "Start-Level-Anim-Short-08",
+                    "duration": 0,
+                    "keyframe": false
+                },
+                {
+                    "key": "Start-Level-Anim-Short-09",
+                    "duration": 0,
+                    "keyframe": false
+                },
+                {
+                    "key": "Start-Level-Anim-Short-10",
+                    "duration": 0,
+                    "keyframe": false
+                },
+                {
+                    "key": "Start-Level-Anim-Short-11",
+                    "duration": 0,
+                    "keyframe": false
+                },
+                {
+                    "key": "Start-Level-Anim-Short-12",
+                    "duration": 0,
+                    "keyframe": false
+                },
+                {
+                    "key": "Start-Level-Anim-Short-13",
+                    "duration": 0,
+                    "keyframe": false
+                },
+                {
+                    "key": "Start-Level-Anim-Short-14",
+                    "duration": 0,
+                    "keyframe": false
+                },
+                {
+                    "key": "Start-Level-Anim-Short-15",
+                    "duration": 0,
+                    "keyframe": false
+                },
+                {
+                    "key": "Start-Level-Anim-Short-16",
+                    "duration": 0,
+                    "keyframe": false
+                },
+                {
+                    "key": "Start-Level-Anim-Short-17",
+                    "duration": 0,
+                    "keyframe": false
+                },
+                {
+                    "key": "Start-Level-Anim-Short-18",
+                    "duration": 0,
+                    "keyframe": false
+                },
+                {
+                    "key": "Start-Level-Anim-Short-19",
+                    "duration": 0,
+                    "keyframe": false
+                },
+                {
+                    "key": "Start-Level-Anim-Short-20",
+                    "duration": 0,
+                    "keyframe": false
+                }
+            ],
+            "frameRate": 9,
             "skipMissedFrames": true,
-            "repeat": -1
+            "hideOnComplete": true
         }
     ],
     "globalTimeScale": 1,
