@@ -2102,19 +2102,6 @@
                 "key": "swarm-right-walk-4"
             },
             {
-                "url": "assets/temp-break-interact.png",
-                "frameConfig": {
-                    "frameWidth": 32,
-                    "frameHeight": 32,
-                    "startFrame": 0,
-                    "endFrame": -1,
-                    "spacing": 0,
-                    "margin": 0
-                },
-                "type": "spritesheet",
-                "key": "temp-break-interact"
-            },
-            {
                 "url": "assets/ui-assets/UI-Explainer.png",
                 "type": "image",
                 "key": "UI-Explainer"
