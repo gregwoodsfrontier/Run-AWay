@@ -33,6 +33,7 @@ export default class KeyboardInput extends UserComponent {
 	private cursors!: Phaser.Types.Input.Keyboard.CursorKeys
 	private XKey: Phaser.Input.Keyboard.Key
 	private CKey: Phaser.Input.Keyboard.Key
+	private active = false
 
 	start()
 	{
@@ -48,8 +49,18 @@ export default class KeyboardInput extends UserComponent {
 		}) */
 	}
 
+	setActive(state: boolean)
+	{
+		this.active = state
+	}
+
 	update()
 	{
+		if(!this.active)
+		{
+			return
+		}
+
 		if(Phaser.Input.Keyboard.JustDown(this.CKey))
 		{
 			this.executeCKeyJustDown()

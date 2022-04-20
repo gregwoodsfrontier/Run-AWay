@@ -15,6 +15,7 @@ import { DIRECTION } from "../types/direction";
 import Bullet from "../prefabs/Bullet";
 import JustMovement from "../components/JustMovement";
 import SelectionSquare from "../components/SelectionSquare";
+import KeyboardInput from "../components/KeyboardInput";
 /* END-USER-IMPORTS */
 
 export default class Level extends Phaser.Scene {
@@ -135,6 +136,7 @@ export default class Level extends Phaser.Scene {
 		this.physics.add.collider(this.enemyTeam, this.enemyTeam)
 		this.physics.add.collider(this.enemyTeam, this.wall_2)
 		this.physics.add.collider(this.bulletGroup, this.wall_2, this.handleBulletWallCollision, undefined, this)
+		this.physics.add.overlap(this.bulletGroup, this.enemyTeam, this.handleBulletSwarm, undefined, this)
 
 		this.#destination = SelectionSquare.getComponent(this.player)
 
@@ -143,9 +145,7 @@ export default class Level extends Phaser.Scene {
 		this.events.on('create-bullet', this.handleBulletUpdate, this)
 		this.events.on('deploy-PSD', this.deployPSD, this)
 		this.events.on('takeback-PSD', this.takeBackPSD, this)
-		this.start_level.on('animationcomplete', () => {
-			this.player.setVisible(true)
-		}, this)
+		this.start_level.on('animationcomplete', this.onStartLevelAnimsComplete, this)
 		
 		this.playStartLevelAnims()
 	}
@@ -154,6 +154,23 @@ export default class Level extends Phaser.Scene {
 	{
 		this.handleDepthSort()
 		this.showSelectionSquare()
+	}
+
+	private onStartLevelAnimsComplete()
+	{
+		this.player.setVisible(true)
+		const input = KeyboardInput.getComponent(this.player)
+		if(!input)
+		{
+			return
+		}
+		input.setActive(true)
+	}
+
+	private handleBulletSwarm(a: Phaser.Types.Physics.Arcade.GameObjectWithBody, b: Phaser.Types.Physics.Arcade.GameObjectWithBody)
+	{
+		const bullet = a as Bullet
+		bullet.despawn()
 	}
 
 	private playStartLevelAnims()
