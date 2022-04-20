@@ -4,6 +4,7 @@
 /* START OF COMPILED CODE */
 
 import Phaser from "phaser";
+import Button from "../components/Button";
 /* START-USER-IMPORTS */
 /* END-USER-IMPORTS */
 
@@ -36,6 +37,15 @@ export default class Title extends Phaser.Scene {
 		// about_Button
 		const about_Button = this.add.image(160, 223, "About Button");
 
+		// start_Button (components)
+		new Button(start_Button);
+
+		// volume_Button (components)
+		new Button(volume_Button);
+
+		// about_Button (components)
+		new Button(about_Button);
+
 		this.start_Anim1 = start_Anim1;
 		this.start_Button = start_Button;
 		this.volume_Button = volume_Button;
@@ -57,11 +67,10 @@ export default class Title extends Phaser.Scene {
 	create() {
 
 		this.editorCreate();
-		this.start_Button.setInteractive()
-		this.volume_Button.setInteractive()
-		this.about_Button.setInteractive()
 
-		this.start_Button.on('pointerup', this.handleStartUp, this)
+		Button.getComponent(this.start_Button).handlePointerUp = () => {
+			this.startNewGame()
+		}
 
 		const buttons = [
 			this.start_Button,
@@ -70,17 +79,17 @@ export default class Title extends Phaser.Scene {
 		]
 
 		buttons.forEach(button => {
-			button.setInteractive()
-			button.on('pointerover', () => {
-				this.handleButtonHover(button)
-			}, this)
-			button.on('pointerout', () => {
-				this.handleButtonOut(button)
-			}, this)
+			const comp = Button.getComponent(button)
+			comp.handlePointerOver = () => {
+				this.scaleUp(button)
+			}
+			comp.handlePointerOut = () => {
+				this.scaleDown(button)
+			}
 		})
 	}
 
-	private handleButtonOut(button: Phaser.GameObjects.Image)
+	private scaleDown(button: Phaser.GameObjects.Image)
 	{
 		const tween = this.tweens.addCounter({
 			from: this.endScale,
@@ -93,7 +102,7 @@ export default class Title extends Phaser.Scene {
 		})
 	}
 
-	private handleButtonHover(button: Phaser.GameObjects.Image)
+	private scaleUp(button: Phaser.GameObjects.Image)
 	{
 		const tween = this.tweens.addCounter({
 			from: 1,
@@ -106,7 +115,7 @@ export default class Title extends Phaser.Scene {
 		})
 	}
 
-	private handleStartUp()
+	private startNewGame()
 	{
 		this.scene.stop('Title')
 		this.scene.launch('Level')

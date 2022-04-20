@@ -40,8 +40,8 @@ export default class Bootstrap extends Phaser.Scene {
 	create() {
 
 		this.editorCreate();
-		// this.startTitleScene()
-		this.createNewGame()
+		this.startTitleScene()
+		// this.createNewGame()
 	}
 
 	private startTitleScene()

@@ -20,7 +20,7 @@ export default class SelectionSquare extends UserComponent {
 		/* START-USER-CTR-CODE */
 		// Write your code here.
 		this.dir = 0
-		
+
 		/* END-USER-CTR-CODE */
 	}
 
@@ -70,7 +70,7 @@ export default class SelectionSquare extends UserComponent {
 		{
 			return
 		}
-		
+
 		const {x, y} = this.gameObject
 
 		switch(dir)

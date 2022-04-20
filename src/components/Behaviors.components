@@ -251,6 +251,12 @@
             "baseClass": "UserComponent",
             "gameObjectType": "Phaser.GameObjects.Sprite",
             "properties": []
+        },
+        {
+            "name": "Button",
+            "baseClass": "UserComponent",
+            "gameObjectType": "Phaser.GameObjects.Image",
+            "properties": []
         }
     ],
     "meta": {
