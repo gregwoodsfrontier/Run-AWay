@@ -56,8 +56,8 @@ export default class Title extends Phaser.Scene {
 		triangle_2.fillColor = 0;
 
 		// rectangle_1
-		const rectangle_1 = this.add.rectangle(160, 768, 128, 128);
-		rectangle_1.scaleX = 2.7585779134229176;
+		const rectangle_1 = this.add.rectangle(0, 704, 320, 700);
+		rectangle_1.setOrigin(0, 0);
 		rectangle_1.isFilled = true;
 		rectangle_1.fillColor = 0;
 
@@ -121,12 +121,29 @@ export default class Title extends Phaser.Scene {
 		})
 
 		this.events.once('element-finished-tween', this.startTitleAnims, this)
+		this.events.once('shape-finished', () => {
+			this.time.delayedCall(500, this.startNewGame, undefined, this)
+		}, this)
 		this.start_Anim1.once(Phaser.Animations.Events.ANIMATION_COMPLETE, this.handleAnimsEnd,this)
 	}
 
 	private handleAnimsEnd()
 	{
 		console.log('handle anims end')
+		// add transition scene
+		this.transition.forEach(e => {
+			this.tweens.add({
+				targets: e,
+				duration: 800,
+				y: '-=728',
+				onUpdate: () => {
+					this.start_Anim1.y -= 2
+				},
+				onComplete: () => {
+					this.events.emit('shape-finished')
+				}
+			})
+		})
 	}
 
 	private startTitleAnims()
@@ -186,7 +203,6 @@ export default class Title extends Phaser.Scene {
 			})
 		})
 
-		console.log(`tween finished`)
 		this.events.emit('element-finished-tween')
 	}
 

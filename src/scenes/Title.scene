@@ -119,13 +119,13 @@
             "id": "0488c7af-5fd2-4820-b9c4-dab58b8f3939",
             "label": "rectangle_1",
             "components": [],
-            "x": 160,
-            "y": 768,
-            "scaleX": 2.7585779134229176,
+            "y": 704,
+            "originX": 0,
+            "originY": 0,
             "isFilled": true,
             "fillColor": "#000",
-            "width": 128,
-            "height": 128
+            "width": 320,
+            "height": 700
         }
     ],
     "plainObjects": [],
