@@ -1650,6 +1650,11 @@
                 "key": "temp-break-interact"
             },
             {
+                "url": "assets/ui-assets/UI-Explainer.png",
+                "type": "image",
+                "key": "UI-Explainer"
+            },
+            {
                 "url": "assets/ui-assets/Volume Button.png",
                 "type": "image",
                 "key": "Volume Button"
