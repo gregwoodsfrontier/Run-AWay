@@ -138,10 +138,7 @@ export default class KeyboardInput extends UserComponent {
 	executeShiftRight(){}
 	executeShiftArrowKeyUp(){}
 
-	executeKeyUp()
-	{
-		console.log('up is input')
-	}
+	executeKeyUp(){}
 
 	executeLeft()
 	{

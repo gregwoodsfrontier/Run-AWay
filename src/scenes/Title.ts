@@ -129,7 +129,6 @@ export default class Title extends Phaser.Scene {
 
 	private handleAnimsEnd()
 	{
-		console.log('handle anims end')
 		// add transition scene
 		this.transition.forEach(e => {
 			this.tweens.add({
