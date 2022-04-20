@@ -151,7 +151,7 @@ export default class PSDComp extends UserComponent {
 		this.sprite.play(`bppsd-${dirName}-walk-${holdName}`, true)
 	}
 
-	private movePSD()
+	/* private movePSD()
 	{
 		const speed = JustMovement.getComponent(this.gameObject).speed
 		const body = this.sprite.body as Phaser.Physics.Arcade.Body
@@ -184,7 +184,7 @@ export default class PSDComp extends UserComponent {
 				break
 			}
 		}
-	}
+	} */
 
 	private onDeployEnter()
 	{
