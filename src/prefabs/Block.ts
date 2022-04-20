@@ -4,7 +4,6 @@
 /* START OF COMPILED CODE */
 
 import Phaser from "phaser";
-import CopperBlock from "../components/CopperBlock";
 import Physics from "../components/Physics";
 /* START-USER-IMPORTS */
 /* END-USER-IMPORTS */
@@ -37,24 +36,45 @@ export default class Block extends Phaser.GameObjects.Sprite {
 				break;
 				case("ULBorder"):
 				this.setTexture("Borders" ,24)
+				this.setScale(0.5);
+				physIcs.height =32;
+				physIcs.width =32;
 				break;
 				case("UBorder"):
 				this.setTexture("Borders" ,25)
+				this.setScale(0.5);
+				physIcs.height =32;
+				physIcs.width =32;
 				break;
 				case("URBorder"):
 				this.setTexture("Borders" ,26)
+				this.setScale(0.5);
+				physIcs.height =32;
+				physIcs.width =32;
 				break;
 				case("LBorder"):
 				this.setTexture("Borders" ,32)
+				this.setScale(0.5);
+				physIcs.height =32;
+				physIcs.width =32;
 				break;
 				case("RBorder"):
 				this.setTexture("Borders" ,34)
+				this.setScale(0.5);
+				physIcs.height =32;
+				physIcs.width =32;
 				break;
 				case("BLBorder"):
 				this.setTexture("Borders" ,40)
+				this.setScale(0.5);
+				physIcs.height =32;
+				physIcs.width =32;
 				break;
 				case("BRBorder"):
 				this.setTexture("Borders" ,42)
+				this.setScale(0.5);
+				physIcs.height =32;
+				physIcs.width =32;
 				break;
 		}
 	}
