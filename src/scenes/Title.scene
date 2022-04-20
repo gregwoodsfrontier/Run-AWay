@@ -82,50 +82,15 @@
             "y": 223
         },
         {
-            "type": "Triangle",
-            "id": "f73954ba-dd8e-4e28-a3de-85459eec6191",
-            "label": "triangle_1",
+            "type": "Image",
+            "id": "e9baa801-0145-4dd4-b020-4f3a3700d940",
+            "label": "dithered_Triangles",
             "components": [],
-            "x": 48,
-            "y": 672,
-            "scaleY": 0.5,
-            "isFilled": true,
-            "fillColor": "#000"
-        },
-        {
-            "type": "Triangle",
-            "id": "87a5a5e5-35cc-4cce-80e2-8fe48bdfb8f1",
-            "label": "triangle",
-            "components": [],
+            "texture": {
+                "key": "Dithered Triangles"
+            },
             "x": 160,
-            "y": 672,
-            "scaleY": 0.5,
-            "isFilled": true,
-            "fillColor": "#000"
-        },
-        {
-            "type": "Triangle",
-            "id": "da45ed88-82e6-418a-bdeb-2b7183901bcc",
-            "label": "triangle_2",
-            "components": [],
-            "x": 272,
-            "y": 672,
-            "scaleY": 0.5,
-            "isFilled": true,
-            "fillColor": "#000"
-        },
-        {
-            "type": "Rectangle",
-            "id": "0488c7af-5fd2-4820-b9c4-dab58b8f3939",
-            "label": "rectangle_1",
-            "components": [],
-            "y": 704,
-            "originX": 0,
-            "originY": 0,
-            "isFilled": true,
-            "fillColor": "#000",
-            "width": 320,
-            "height": 700
+            "y": 1024
         }
     ],
     "plainObjects": [],
@@ -140,10 +105,7 @@
             "id": "28b9c4aa-18f6-43f7-8768-ff6cea2fc08c",
             "label": "transition",
             "objectIds": [
-                "f73954ba-dd8e-4e28-a3de-85459eec6191",
-                "0488c7af-5fd2-4820-b9c4-dab58b8f3939",
-                "87a5a5e5-35cc-4cce-80e2-8fe48bdfb8f1",
-                "da45ed88-82e6-418a-bdeb-2b7183901bcc"
+                "e9baa801-0145-4dd4-b020-4f3a3700d940"
             ]
         }
     ]

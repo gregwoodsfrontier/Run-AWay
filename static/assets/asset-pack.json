@@ -250,6 +250,11 @@
                 "key": "cave-test-tileset-1"
             },
             {
+                "url": "assets/Transitions/Dithered Triangles.png",
+                "type": "image",
+                "key": "Dithered Triangles"
+            },
+            {
                 "url": "assets/ui-assets/Energy Item Gold.png",
                 "type": "image",
                 "key": "Energy Item Gold"

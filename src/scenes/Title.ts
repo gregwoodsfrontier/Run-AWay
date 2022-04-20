@@ -37,32 +37,11 @@ export default class Title extends Phaser.Scene {
 		// about_Button
 		const about_Button = this.add.image(160, 223, "About Button");
 
-		// triangle_1
-		const triangle_1 = this.add.triangle(48, 672, 0, 128, 64, 0, 128, 128);
-		triangle_1.scaleY = 0.5;
-		triangle_1.isFilled = true;
-		triangle_1.fillColor = 0;
-
-		// triangle
-		const triangle = this.add.triangle(160, 672, 0, 128, 64, 0, 128, 128);
-		triangle.scaleY = 0.5;
-		triangle.isFilled = true;
-		triangle.fillColor = 0;
-
-		// triangle_2
-		const triangle_2 = this.add.triangle(272, 672, 0, 128, 64, 0, 128, 128);
-		triangle_2.scaleY = 0.5;
-		triangle_2.isFilled = true;
-		triangle_2.fillColor = 0;
-
-		// rectangle_1
-		const rectangle_1 = this.add.rectangle(0, 704, 320, 700);
-		rectangle_1.setOrigin(0, 0);
-		rectangle_1.isFilled = true;
-		rectangle_1.fillColor = 0;
+		// dithered_Triangles
+		const dithered_Triangles = this.add.image(160, 1024, "Dithered Triangles");
 
 		// lists
-		const transition = [triangle_1, rectangle_1, triangle, triangle_2];
+		const transition = [dithered_Triangles];
 
 		// start_Button (components)
 		new Button(start_Button);
@@ -88,7 +67,7 @@ export default class Title extends Phaser.Scene {
 	private start_Button!: Phaser.GameObjects.Image;
 	private volume_Button!: Phaser.GameObjects.Image;
 	private about_Button!: Phaser.GameObjects.Image;
-	private transition!: Array<Phaser.GameObjects.Triangle|Phaser.GameObjects.Rectangle>;
+	private transition!: Phaser.GameObjects.Image[];
 
 	/* START-USER-CODE */
 	private endScale = 1.2
