@@ -110,11 +110,6 @@
                 "key": "FufuSuperDino"
             },
             {
-                "url": "assets/gamedevjs.PNG",
-                "type": "image",
-                "key": "gamedevjs"
-            },
-            {
                 "url": "assets/ui-assets/GunButton.png",
                 "type": "image",
                 "key": "GunButton"

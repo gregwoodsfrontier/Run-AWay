@@ -1322,7 +1322,7 @@
             "hideOnComplete": true
         },
         {
-            "key": "psd-deployraw-break-interact",
+            "key": "psd-deploy",
             "type": "frame",
             "frames": [
                 {

@@ -19,7 +19,7 @@ export default class SelectionSquare extends UserComponent {
 
 		/* START-USER-CTR-CODE */
 		// Write your code here.
-		
+		this.dir = 0
 		
 		/* END-USER-CTR-CODE */
 	}
@@ -31,19 +31,40 @@ export default class SelectionSquare extends UserComponent {
 	private gameObject: Phaser.GameObjects.Sprite;
 
 	/* START-USER-CODE */
-	private selectSquare!: Phaser.GameObjects.Rectangle
+	private selectSquare!: Phaser.GameObjects.Zone
+	private dir: number
 
 	// Write your code here.
 	start()
 	{
 		const {scene, x, y} = this.gameObject
-		this.selectSquare = scene.add.rectangle(x, y, 32, 32, 0xff0000, 0).setDepth(1000)
-		this.selectSquare.setStrokeStyle(2, 0xff0000)
+		// this.selectSquare = scene.add.rectangle(x, y, 32, 32, 0xff0000, 0).setDepth(1000)
+		this.selectSquare = scene.add.zone(x, y, 32, 32).setDepth(1000)
+		scene.physics.world.enable(this.selectSquare);
+		(this.selectSquare.body as Phaser.Physics.Arcade.Body).setAllowGravity(false);
+		(this.selectSquare.body as Phaser.Physics.Arcade.Body).moves = false;
+		// this.selectSquare.setStrokeStyle(2, 0xff0000)
 
-		this.gameObject.scene.events.on('selection-sq', this.updateSelectionSquare, this)
+		// this.gameObject.scene.events.on('selection-sq', this.updateSelectionSquare, this)
 	}
 
-	private updateSelectionSquare(dir: number, distance: number = 70)
+	getSelectionSquare()
+	{
+		return this.selectSquare
+	}
+
+	setDir(dir: number)
+	{
+		this.dir = dir
+	}
+
+	update()
+	{
+		this.updateSelectionSquare(this.dir)
+	}
+
+
+	private updateSelectionSquare(dir: number, distance: number = 50)
 	{
 		if(!this.selectSquare)
 		{

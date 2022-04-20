@@ -34,7 +34,7 @@ export default class Title extends Phaser.Scene {
 		startGame.setStyle({ "fontSize": "32px" });
 
 		// start_Anim1
-		const start_Anim1 = this.add.sprite(160, 320, "Start Anim1");
+		const start_Anim1 = this.add.sprite(160, 320, "Start-Anim-1");
 
 		// logo_v2
 		const logo_v2 = this.add.image(160, 142, "Logo v2");

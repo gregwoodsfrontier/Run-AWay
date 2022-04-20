@@ -39,6 +39,19 @@
             "originY": 0.5,
             "text": "0%",
             "fontSize": "30px"
+        },
+        {
+            "type": "Image",
+            "id": "16d1c0cb-510e-429a-8110-318cde604993",
+            "label": "gamedevjs",
+            "components": [],
+            "texture": {
+                "key": "gamedevjs"
+            },
+            "x": 239,
+            "y": 231,
+            "scaleX": 0.5663740786333126,
+            "scaleY": 0.5663740786333126
         }
     ],
     "plainObjects": [],

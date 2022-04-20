@@ -68,7 +68,7 @@
             "FollowTarget.target": "player",
             "FollowTarget.deadRangeX": 35,
             "x": 112,
-            "y": 560
+            "y": -96
         },
         {
             "type": "Image",
@@ -108,6 +108,20 @@
             },
             "x": 160,
             "y": 240
+        },
+        {
+            "prefabId": "169b350d-b922-409d-8da8-e86ab037d35d",
+            "id": "153829a0-41b6-4338-8c99-7dd1eaeb3ede",
+            "unlock": [
+                "x",
+                "y"
+            ],
+            "label": "PSDRobot",
+            "useGameObjectName": true,
+            "scope": "CLASS",
+            "components": [],
+            "x": -64,
+            "y": 256
         }
     ],
     "plainObjects": [

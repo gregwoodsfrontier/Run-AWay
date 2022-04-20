@@ -31,6 +31,11 @@ export default class Preload extends Phaser.Scene {
 		progress.text = "0%";
 		progress.setStyle({ "fontSize": "30px" });
 
+		// gamedevjs
+		const gamedevjs = this.add.image(239, 231, "gamedevjs");
+		gamedevjs.scaleX = 0.5663740786333126;
+		gamedevjs.scaleY = 0.5663740786333126;
+
 		// progress (components)
 		new PreloadText(progress);
 

@@ -37,7 +37,8 @@ export default class PSDComp extends UserComponent {
 			onUpdate: this.onEquipWalkUpdate
 		})
 		.addState(PSD_STATE.DEPLOY, {
-			onEnter: this.onDeployEnter
+			onEnter: this.onDeployEnter,
+			onExit: this.onDeployExit
 		})
 		.setState(PSD_STATE.EQIUP_IDLE)
 
@@ -189,6 +190,13 @@ export default class PSDComp extends UserComponent {
 	{
 		// hide the PSD
 		this.sprite.setVisible(false)
+		// emit event to Level to deploy PSD
+		this.gameObject.scene.events.emit('deploy-PSD')
+	}
+
+	private onDeployExit()
+	{
+		this.gameObject.scene.events.emit('takeback-PSD')
 	}
 
 	/* END-USER-CODE */

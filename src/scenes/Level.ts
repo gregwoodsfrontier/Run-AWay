@@ -7,13 +7,14 @@ import TileMapLayerPhysics from "../components/TileMapLayerPhysics";
 import Player from "../prefabs/Player";
 import Enemy from "../prefabs/Enemy";
 import FollowTarget from "../components/FollowTarget";
+import PSD from "../prefabs/PSD";
 /* START-USER-IMPORTS */
 import DepthSortY from "../components/DepthSortY";
 import { ILevelData } from "../types/scenes";
 import { DIRECTION } from "../types/direction";
-import Physics from "../components/Physics";
 import Bullet from "../prefabs/Bullet";
 import JustMovement from "../components/JustMovement";
+import SelectionSquare from "../components/SelectionSquare";
 /* END-USER-IMPORTS */
 
 export default class Level extends Phaser.Scene {
@@ -23,6 +24,7 @@ export default class Level extends Phaser.Scene {
 
 		/* START-USER-CTR-CODE */
 		// Write your code here.
+		
 		/* END-USER-CTR-CODE */
 	}
 
@@ -47,7 +49,7 @@ export default class Level extends Phaser.Scene {
 		this.add.existing(player);
 
 		// enemy_3
-		const enemy_3 = new Enemy(this, 112, 560);
+		const enemy_3 = new Enemy(this, 112, -96);
 		this.add.existing(enemy_3);
 
 		// silver
@@ -58,6 +60,11 @@ export default class Level extends Phaser.Scene {
 
 		// gold
 		const gold = this.add.image(160, 240, "raw-break-interact", 16);
+
+		// PSDRobot
+		const pSDRobot = new PSD(this, -64, 256);
+		this.add.existing(pSDRobot);
+		pSDRobot.name = "PSDRobot";
 
 		// lists
 		const enemyTeam = [enemy_3];
@@ -78,6 +85,7 @@ export default class Level extends Phaser.Scene {
 		this.silver = silver;
 		this.copper = copper;
 		this.gold = gold;
+		this.pSDRobot = pSDRobot;
 		this.cave_test_map_1 = cave_test_map_1;
 		this.cave_test_map_2 = cave_test_map_2;
 		this.enemyTeam = enemyTeam;
@@ -93,6 +101,7 @@ export default class Level extends Phaser.Scene {
 	private silver!: Phaser.GameObjects.Image;
 	private copper!: Phaser.GameObjects.Image;
 	private gold!: Phaser.GameObjects.Image;
+	private pSDRobot!: PSD;
 	private enemyTeam!: Enemy[];
 	private silverList!: Array<any>;
 	private bulletList!: Array<any>;
@@ -104,6 +113,7 @@ export default class Level extends Phaser.Scene {
 	// Write your code here
 	bulletGroup!: Phaser.GameObjects.Group
 	lastfired = 0
+	#destination!: SelectionSquare
 
 	create(data: ILevelData) {
 
@@ -121,15 +131,76 @@ export default class Level extends Phaser.Scene {
 		this.physics.add.collider(this.enemyTeam, this.wall_2)
 		this.physics.add.collider(this.bulletGroup, this.wall_2, this.handleBulletWallCollision, undefined, this)
 
+		this.#destination = SelectionSquare.getComponent(this.player)
+
 		this.events.on('create-bullet', this.handleBulletUpdate, this)
+		this.events.on('deploy-PSD', this.deployPSD, this)
+		this.events.on('takeback-PSD', this.takeBackPSD, this)
 	}
 
 	update(time: number, delta: number)
 	{
 		this.handleDepthSort()
-
+		this.showSelectionSquare()
 		// this.handleBulletUpdate(time)
 	}
+
+	showSelectionSquare()
+	{
+		if(!this.#destination)
+		{
+			console.error(`selection square is undefined`)
+			return
+		}
+		const square = this.#destination.getSelectionSquare()
+		const body = square.body as Phaser.Physics.Arcade.Body
+		body.debugBodyColor = body.touching.none ? 0x00ffff : 0xffff00;
+	}
+
+	private deployPSD()
+	{
+		const destination = SelectionSquare.getComponent(this.player)
+		if(!destination)
+		{
+			console.error(`selection square is undefined`)
+			return
+		}
+
+		const {x, y} = destination.getSelectionSquare()
+		this.pSDRobot.spawn(x, y).play('psd-deploy', true)
+	}
+
+	private takeBackPSD()
+	{
+		if(!this.checkSelectionPSDOverlap())
+		{
+			return
+		}
+
+		this.pSDRobot.playReverse('psd-deploy', true)
+		this.pSDRobot.once(Phaser.Animations.Events.ANIMATION_COMPLETE, () => {
+			this.time.delayedCall(300, () => {
+				this.pSDRobot.despawn()
+				this.player.emit('player-recover-psd')
+			})
+		})
+		return
+	}
+
+	private checkSelectionPSDOverlap()
+	{
+		if(!this.#destination)
+		{
+			console.error(`selection square is undefined`)
+			return
+		}
+
+		const checkRect = this.#destination.getSelectionSquare().getBounds()
+		const PSDRect = this.pSDRobot.getBounds()
+
+		return Phaser.Geom.Intersects.RectangleToRectangle(checkRect, PSDRect)
+	}
+
 
 	private handleBulletUpdate(dir: number)
 	{

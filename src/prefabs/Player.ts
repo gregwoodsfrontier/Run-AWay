@@ -102,8 +102,8 @@ export default class Player extends Phaser.GameObjects.Sprite {
 
 
 		this.handleStateSwitching()
-
 		this.handleShooting()
+		this.handlePSDDeploy()
 	}
 
 	Update(dt: number)
@@ -113,7 +113,27 @@ export default class Player extends Phaser.GameObjects.Sprite {
 		this.playerAimComp.stateMachine.update(dt)
 		this.playerPSD.stateMachine.update(dt)
 
-		this.scene.events.emit('selection-sq', this.direction, 50)
+		const selectSquareComp = SelectionSquare.getComponent(this)
+		selectSquareComp.setDir(this.direction)
+		// this.scene.events.emit('selection-sq', this.direction, 50)
+	}
+
+	private handlePSDDeploy()
+	{
+		this.playerKeyboard.executeCKeyJustDown = () => {
+			if(this.playerPSD.stateMachine.isCurrentState(PSD_STATE.DEPLOY))
+			{
+				//TODO: check if the PSD robot overlap with square
+				// this.playerPSD.stateMachine.setState(PSD_STATE.EQIUP_IDLE)
+				this.scene.events.emit('takeback-PSD')
+				return
+			}
+
+			this.playerPSD.stateMachine.setState(PSD_STATE.DEPLOY)
+			this.once('player-recover-psd', () => {
+				this.playerPSD.stateMachine.setState(PSD_STATE.EQIUP_IDLE)
+			}, this)
+		}
 	}
 
 	private handleShooting()
@@ -243,8 +263,11 @@ export default class Player extends Phaser.GameObjects.Sprite {
 		{
 			this.stateMachine.setState(PLAYER_STATE.WALK)
 
-			this.playerPSD.setFacingDir(dir)
-			this.playerPSD.stateMachine.setState(PSD_STATE.EQUIP_WALK)
+			if(!this.playerPSD.stateMachine.isCurrentState(PSD_STATE.DEPLOY))
+			{
+				this.playerPSD.setFacingDir(dir)
+				this.playerPSD.stateMachine.setState(PSD_STATE.EQUIP_WALK)
+			}
 			return
 		}
 
