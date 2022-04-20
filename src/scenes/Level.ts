@@ -138,19 +138,31 @@ export default class Level extends Phaser.Scene {
 
 		this.#destination = SelectionSquare.getComponent(this.player)
 
+		// this.playStartLevelAnims()
+
 		this.events.on('create-bullet', this.handleBulletUpdate, this)
 		this.events.on('deploy-PSD', this.deployPSD, this)
 		this.events.on('takeback-PSD', this.takeBackPSD, this)
+		this.start_level.on('animationcomplete', () => {
+			this.player.setVisible(true)
+		}, this)
+		
+		this.playStartLevelAnims()
 	}
 
 	update(time: number, delta: number)
 	{
 		this.handleDepthSort()
 		this.showSelectionSquare()
-		// this.handleBulletUpdate(time)
 	}
 
-	showSelectionSquare()
+	private playStartLevelAnims()
+	{
+		this.player.setVisible(false)
+		this.start_level.play('start-level-short')
+	}
+
+	private showSelectionSquare()
 	{
 		if(!this.#destination)
 		{

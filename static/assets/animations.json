@@ -1272,8 +1272,7 @@
                 }
             ],
             "frameRate": 9,
-            "skipMissedFrames": true,
-            "hideOnComplete": true
+            "skipMissedFrames": true
         },
         {
             "key": "psd-deploy",
@@ -1403,8 +1402,7 @@
                 }
             ],
             "frameRate": 9,
-            "skipMissedFrames": true,
-            "hideOnComplete": true
+            "skipMissedFrames": true
         },
         {
             "key": "meat",
@@ -2565,8 +2563,7 @@
                 }
             ],
             "frameRate": 12,
-            "skipMissedFrames": true,
-            "hideOnComplete": true
+            "skipMissedFrames": true
         },
         {
             "key": "boss-back-attack",
