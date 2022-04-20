@@ -134,9 +134,6 @@ export default class AimComp {
 				}
 			}
 		}
-
-		this.gameObject.scene.events.emit('create-bullet', this.facingDir)
-
 	}
 
 	private displayAimMode()
