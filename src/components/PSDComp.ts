@@ -187,6 +187,7 @@ export default class PSDComp extends UserComponent {
 
 	private onDeployEnter()
 	{
+		// hide the PSD
 		this.sprite.setVisible(false)
 	}
 

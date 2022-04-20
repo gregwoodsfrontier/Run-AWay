@@ -166,6 +166,13 @@ export default class Player extends Phaser.GameObjects.Sprite {
 			this.playerHold.stateMachine.setState(HOLD_COMP_STATE.IDLE)
 			this.stateMachine.setState(PLAYER_STATE.HOLD_IDLE)
 
+			// block input from deploy state
+			if(!this.playerPSD.stateMachine.isCurrentState(PSD_STATE.DEPLOY))
+			{
+				this.playerPSD.setAimState(false)
+				this.playerPSD.stateMachine.setState(PSD_STATE.EQIUP_IDLE)
+			}
+
 			this.playerPSD.setAimState(false)
 			this.playerPSD.stateMachine.setState(PSD_STATE.EQIUP_IDLE)
 		}
@@ -195,8 +202,11 @@ export default class Player extends Phaser.GameObjects.Sprite {
 				this.playerHold.stateMachine.setState(HOLD_COMP_STATE.IDLE)
 			}
 
-			this.playerPSD.setFacingDir(this.direction)
-			this.playerPSD.stateMachine.setState(PSD_STATE.EQIUP_IDLE)
+			if(!this.playerPSD.stateMachine.isCurrentState(PSD_STATE.DEPLOY))
+			{
+				this.playerPSD.setFacingDir(this.direction)
+				this.playerPSD.stateMachine.setState(PSD_STATE.EQIUP_IDLE)
+			}
 		}
 
 		// space should be toggling the raise gun logic
@@ -241,8 +251,12 @@ export default class Player extends Phaser.GameObjects.Sprite {
 		this.stateMachine.setState(PLAYER_STATE.HOLD_WALK)
 		this.playerHold.stateMachine.setState(HOLD_COMP_STATE.WALK)
 
-		this.playerPSD.setFacingDir(dir)
-		this.playerPSD.stateMachine.setState(PSD_STATE.EQUIP_WALK)
+		if(!this.playerPSD.stateMachine.isCurrentState(PSD_STATE.DEPLOY))
+		{
+			this.playerPSD.setFacingDir(dir)
+			this.playerPSD.stateMachine.setState(PSD_STATE.EQUIP_WALK)
+		}
+		
 	}
 
 	private handleAimStateMovement(dir: number)
