@@ -37,6 +37,186 @@
                 "key": "back-gunonly-4"
             },
             {
+                "url": "assets/boss/boss-back-attack-1.png",
+                "type": "image",
+                "key": "boss-back-attack-1"
+            },
+            {
+                "url": "assets/boss/boss-back-attack-2.png",
+                "type": "image",
+                "key": "boss-back-attack-2"
+            },
+            {
+                "url": "assets/boss/boss-back-attack-3.png",
+                "type": "image",
+                "key": "boss-back-attack-3"
+            },
+            {
+                "url": "assets/boss/boss-back-attack-4.png",
+                "type": "image",
+                "key": "boss-back-attack-4"
+            },
+            {
+                "url": "assets/boss/boss-back-idle-1.png",
+                "type": "image",
+                "key": "boss-back-idle-1"
+            },
+            {
+                "url": "assets/boss/boss-back-walk-1.png",
+                "type": "image",
+                "key": "boss-back-walk-1"
+            },
+            {
+                "url": "assets/boss/boss-back-walk-2.png",
+                "type": "image",
+                "key": "boss-back-walk-2"
+            },
+            {
+                "url": "assets/boss/boss-back-walk-3.png",
+                "type": "image",
+                "key": "boss-back-walk-3"
+            },
+            {
+                "url": "assets/boss/boss-back-walk-4.png",
+                "type": "image",
+                "key": "boss-back-walk-4"
+            },
+            {
+                "url": "assets/boss/boss-front-attack-1.png",
+                "type": "image",
+                "key": "boss-front-attack-1"
+            },
+            {
+                "url": "assets/boss/boss-front-attack-2.png",
+                "type": "image",
+                "key": "boss-front-attack-2"
+            },
+            {
+                "url": "assets/boss/boss-front-attack-3.png",
+                "type": "image",
+                "key": "boss-front-attack-3"
+            },
+            {
+                "url": "assets/boss/boss-front-attack-4.png",
+                "type": "image",
+                "key": "boss-front-attack-4"
+            },
+            {
+                "url": "assets/boss/boss-front-idle-1.png",
+                "type": "image",
+                "key": "boss-front-idle-1"
+            },
+            {
+                "url": "assets/boss/boss-front-walk-1.png",
+                "type": "image",
+                "key": "boss-front-walk-1"
+            },
+            {
+                "url": "assets/boss/boss-front-walk-2.png",
+                "type": "image",
+                "key": "boss-front-walk-2"
+            },
+            {
+                "url": "assets/boss/boss-front-walk-3.png",
+                "type": "image",
+                "key": "boss-front-walk-3"
+            },
+            {
+                "url": "assets/boss/boss-front-walk-4.png",
+                "type": "image",
+                "key": "boss-front-walk-4"
+            },
+            {
+                "url": "assets/boss/boss-left-attack-1.png",
+                "type": "image",
+                "key": "boss-left-attack-1"
+            },
+            {
+                "url": "assets/boss/boss-left-attack-2.png",
+                "type": "image",
+                "key": "boss-left-attack-2"
+            },
+            {
+                "url": "assets/boss/boss-left-attack-3.png",
+                "type": "image",
+                "key": "boss-left-attack-3"
+            },
+            {
+                "url": "assets/boss/boss-left-attack-4.png",
+                "type": "image",
+                "key": "boss-left-attack-4"
+            },
+            {
+                "url": "assets/boss/boss-left-idle-1.png",
+                "type": "image",
+                "key": "boss-left-idle-1"
+            },
+            {
+                "url": "assets/boss/boss-left-walk-1.png",
+                "type": "image",
+                "key": "boss-left-walk-1"
+            },
+            {
+                "url": "assets/boss/boss-left-walk-2.png",
+                "type": "image",
+                "key": "boss-left-walk-2"
+            },
+            {
+                "url": "assets/boss/boss-left-walk-3.png",
+                "type": "image",
+                "key": "boss-left-walk-3"
+            },
+            {
+                "url": "assets/boss/boss-left-walk-4.png",
+                "type": "image",
+                "key": "boss-left-walk-4"
+            },
+            {
+                "url": "assets/boss/boss-right-attack-1.png",
+                "type": "image",
+                "key": "boss-right-attack-1"
+            },
+            {
+                "url": "assets/boss/boss-right-attack-2.png",
+                "type": "image",
+                "key": "boss-right-attack-2"
+            },
+            {
+                "url": "assets/boss/boss-right-attack-3.png",
+                "type": "image",
+                "key": "boss-right-attack-3"
+            },
+            {
+                "url": "assets/boss/boss-right-attack-4.png",
+                "type": "image",
+                "key": "boss-right-attack-4"
+            },
+            {
+                "url": "assets/boss/boss-right-idle-1.png",
+                "type": "image",
+                "key": "boss-right-idle-1"
+            },
+            {
+                "url": "assets/boss/boss-right-walk-1.png",
+                "type": "image",
+                "key": "boss-right-walk-1"
+            },
+            {
+                "url": "assets/boss/boss-right-walk-2.png",
+                "type": "image",
+                "key": "boss-right-walk-2"
+            },
+            {
+                "url": "assets/boss/boss-right-walk-3.png",
+                "type": "image",
+                "key": "boss-right-walk-3"
+            },
+            {
+                "url": "assets/boss/boss-right-walk-4.png",
+                "type": "image",
+                "key": "boss-right-walk-4"
+            },
+            {
                 "url": "assets/ui-assets/Bottom Pannel.png",
                 "type": "image",
                 "key": "Bottom Pannel"

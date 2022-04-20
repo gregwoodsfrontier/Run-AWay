@@ -2637,6 +2637,238 @@
             "frameRate": 12,
             "skipMissedFrames": true,
             "hideOnComplete": true
+        },
+        {
+            "key": "boss-back-attack",
+            "type": "frame",
+            "frames": [
+                {
+                    "key": "boss-back-attack-1",
+                    "duration": 0,
+                    "keyframe": false
+                },
+                {
+                    "key": "boss-back-attack-2",
+                    "duration": 0,
+                    "keyframe": false
+                },
+                {
+                    "key": "boss-back-attack-3",
+                    "duration": 0,
+                    "keyframe": false
+                },
+                {
+                    "key": "boss-back-attack-4",
+                    "duration": 0,
+                    "keyframe": false
+                }
+            ],
+            "frameRate": 12,
+            "skipMissedFrames": true,
+            "repeat": -1
+        },
+        {
+            "key": "boss-back-walk",
+            "type": "frame",
+            "frames": [
+                {
+                    "key": "boss-back-walk-1",
+                    "duration": 0,
+                    "keyframe": false
+                },
+                {
+                    "key": "boss-back-walk-2",
+                    "duration": 0,
+                    "keyframe": false
+                },
+                {
+                    "key": "boss-back-walk-3",
+                    "duration": 0,
+                    "keyframe": false
+                },
+                {
+                    "key": "boss-back-walk-4",
+                    "duration": 0,
+                    "keyframe": false
+                }
+            ],
+            "frameRate": 12,
+            "skipMissedFrames": true,
+            "repeat": -1
+        },
+        {
+            "key": "boss-front-attack",
+            "type": "frame",
+            "frames": [
+                {
+                    "key": "boss-front-attack-1",
+                    "duration": 0,
+                    "keyframe": false
+                },
+                {
+                    "key": "boss-front-attack-2",
+                    "duration": 0,
+                    "keyframe": false
+                },
+                {
+                    "key": "boss-front-attack-3",
+                    "duration": 0,
+                    "keyframe": false
+                },
+                {
+                    "key": "boss-front-attack-4",
+                    "duration": 0,
+                    "keyframe": false
+                }
+            ],
+            "frameRate": 12,
+            "skipMissedFrames": true,
+            "repeat": -1
+        },
+        {
+            "key": "boss-front-walk",
+            "type": "frame",
+            "frames": [
+                {
+                    "key": "boss-front-walk-1",
+                    "duration": 0,
+                    "keyframe": false
+                },
+                {
+                    "key": "boss-front-walk-2",
+                    "duration": 0,
+                    "keyframe": false
+                },
+                {
+                    "key": "boss-front-walk-3",
+                    "duration": 0,
+                    "keyframe": false
+                },
+                {
+                    "key": "boss-front-walk-4",
+                    "duration": 0,
+                    "keyframe": false
+                }
+            ],
+            "frameRate": 12,
+            "skipMissedFrames": true,
+            "repeat": -1
+        },
+        {
+            "key": "boss-left-attack",
+            "type": "frame",
+            "frames": [
+                {
+                    "key": "boss-left-attack-1",
+                    "duration": 0,
+                    "keyframe": false
+                },
+                {
+                    "key": "boss-left-attack-2",
+                    "duration": 0,
+                    "keyframe": false
+                },
+                {
+                    "key": "boss-left-attack-3",
+                    "duration": 0,
+                    "keyframe": false
+                },
+                {
+                    "key": "boss-left-attack-4",
+                    "duration": 0,
+                    "keyframe": false
+                }
+            ],
+            "frameRate": 12,
+            "skipMissedFrames": true,
+            "repeat": -1
+        },
+        {
+            "key": "boss-left-walk",
+            "type": "frame",
+            "frames": [
+                {
+                    "key": "boss-left-walk-1",
+                    "duration": 0,
+                    "keyframe": false
+                },
+                {
+                    "key": "boss-left-walk-2",
+                    "duration": 0,
+                    "keyframe": false
+                },
+                {
+                    "key": "boss-left-walk-3",
+                    "duration": 0,
+                    "keyframe": false
+                },
+                {
+                    "key": "boss-left-walk-4",
+                    "duration": 0,
+                    "keyframe": false
+                }
+            ],
+            "frameRate": 12,
+            "skipMissedFrames": true,
+            "repeat": -1
+        },
+        {
+            "key": "boss-right-attack",
+            "type": "frame",
+            "frames": [
+                {
+                    "key": "boss-right-attack-1",
+                    "duration": 0,
+                    "keyframe": false
+                },
+                {
+                    "key": "boss-right-attack-2",
+                    "duration": 0,
+                    "keyframe": false
+                },
+                {
+                    "key": "boss-right-attack-3",
+                    "duration": 0,
+                    "keyframe": false
+                },
+                {
+                    "key": "boss-right-attack-4",
+                    "duration": 0,
+                    "keyframe": false
+                }
+            ],
+            "frameRate": 12,
+            "skipMissedFrames": true,
+            "repeat": -1
+        },
+        {
+            "key": "boss-right-walk",
+            "type": "frame",
+            "frames": [
+                {
+                    "key": "boss-right-walk-1",
+                    "duration": 0,
+                    "keyframe": false
+                },
+                {
+                    "key": "boss-right-walk-2",
+                    "duration": 0,
+                    "keyframe": false
+                },
+                {
+                    "key": "boss-right-walk-3",
+                    "duration": 0,
+                    "keyframe": false
+                },
+                {
+                    "key": "boss-right-walk-4",
+                    "duration": 0,
+                    "keyframe": false
+                }
+            ],
+            "frameRate": 12,
+            "skipMissedFrames": true,
+            "repeat": -1
         }
     ],
     "globalTimeScale": 1,
