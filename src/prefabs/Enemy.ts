@@ -51,18 +51,17 @@ export default class Enemy extends Phaser.GameObjects.Sprite {
 		this.disableSlapBox()
 
 		this.stateMachine = new StateMachine(this, 'enemy')
-		this.stateMachine.addState('idle', {
+		this.stateMachine.addState(ENEMY_STATE_KEYS.IDLE, {
 			onEnter: this.onIdleEnter
 		})
-		.addState('walk', {
+		.addState(ENEMY_STATE_KEYS.WALK, {
 			onEnter: this.onWalkEnter,
 			onUpdate: this.onWalkUpdate
 		})
-		.addState('attack', {
-			onEnter: this.onAttackEnter,
-			onUpdate: this.onAttackUpdate
+		.addState(ENEMY_STATE_KEYS.ATTACK, {
+			onEnter: this.onAttackEnter
 		})
-		.setState('idle')
+		.setState(ENEMY_STATE_KEYS.IDLE)
 
 		// create events only for this enemy instance
 		this.on('move', this.moveTheUnit)
@@ -285,24 +284,10 @@ export default class Enemy extends Phaser.GameObjects.Sprite {
 
 		this.on(Phaser.Animations.Events.ANIMATION_UPDATE, startHit)
 
-		/* this.once(Phaser.Animations.Events.ANIMATION_STOP + `swarm-${dirName}-attack`, () => {
+		this.scene.time.delayedCall(1000, () => {
 			this.stateMachine.setState(ENEMY_STATE_KEYS.IDLE)
-
-			
-		}) */
-
-		/* this.scene.time.delayedCall(2000, () => {
-			this.slapHitBox.setPosition(0, 0)
-		}) */
+		})
 	}
-	
-	private onAttackUpdate()
-	{
-		
-
-	}
-
-	
 	
 
 	/* END-USER-CODE */
