@@ -37,6 +37,33 @@ export default class Title extends Phaser.Scene {
 		// about_Button
 		const about_Button = this.add.image(160, 223, "About Button");
 
+		// triangle_1
+		const triangle_1 = this.add.triangle(48, 672, 0, 128, 64, 0, 128, 128);
+		triangle_1.scaleY = 0.5;
+		triangle_1.isFilled = true;
+		triangle_1.fillColor = 0;
+
+		// triangle
+		const triangle = this.add.triangle(160, 672, 0, 128, 64, 0, 128, 128);
+		triangle.scaleY = 0.5;
+		triangle.isFilled = true;
+		triangle.fillColor = 0;
+
+		// triangle_2
+		const triangle_2 = this.add.triangle(272, 672, 0, 128, 64, 0, 128, 128);
+		triangle_2.scaleY = 0.5;
+		triangle_2.isFilled = true;
+		triangle_2.fillColor = 0;
+
+		// rectangle_1
+		const rectangle_1 = this.add.rectangle(160, 768, 128, 128);
+		rectangle_1.scaleX = 2.7585779134229176;
+		rectangle_1.isFilled = true;
+		rectangle_1.fillColor = 0;
+
+		// lists
+		const transition = [triangle_1, rectangle_1, triangle, triangle_2];
+
 		// start_Button (components)
 		new Button(start_Button);
 
@@ -47,17 +74,21 @@ export default class Title extends Phaser.Scene {
 		new Button(about_Button);
 
 		this.start_Anim1 = start_Anim1;
+		this.logo_v2 = logo_v2;
 		this.start_Button = start_Button;
 		this.volume_Button = volume_Button;
 		this.about_Button = about_Button;
+		this.transition = transition;
 
 		this.events.emit("scene-awake");
 	}
 
 	private start_Anim1!: Phaser.GameObjects.Sprite;
+	private logo_v2!: Phaser.GameObjects.Image;
 	private start_Button!: Phaser.GameObjects.Image;
 	private volume_Button!: Phaser.GameObjects.Image;
 	private about_Button!: Phaser.GameObjects.Image;
+	private transition!: Array<Phaser.GameObjects.Triangle|Phaser.GameObjects.Rectangle>;
 
 	/* START-USER-CODE */
 	private endScale = 1.2
@@ -69,7 +100,8 @@ export default class Title extends Phaser.Scene {
 		this.editorCreate();
 
 		Button.getComponent(this.start_Button).handlePointerUp = () => {
-			this.startNewGame()
+			this.hideUIElement()
+			// this.startNewGame()
 		}
 
 		const buttons = [
@@ -87,6 +119,24 @@ export default class Title extends Phaser.Scene {
 				this.scaleDown(button)
 			}
 		})
+
+		this.events.once('element-finished-tween', this.startTitleAnims, this)
+		this.start_Anim1.once(Phaser.Animations.Events.ANIMATION_COMPLETE, this.handleAnimsEnd,this)
+	}
+
+	private handleAnimsEnd()
+	{
+		console.log('handle anims end')
+	}
+
+	private startTitleAnims()
+	{
+		if(!this.start_Anim1)
+		{
+			return
+		}
+
+		this.start_Anim1.play('start-anim', true)
 	}
 
 	private scaleDown(button: Phaser.GameObjects.Image)
@@ -113,6 +163,31 @@ export default class Title extends Phaser.Scene {
 				button.setScale(scalin)
 			}
 		})
+	}
+
+	private hideUIElement()
+	{
+		const elements = [
+			this.logo_v2,
+			this.start_Button,
+			this.about_Button,
+			this.volume_Button
+		]
+
+		elements.forEach(e => {
+			const alphaTween = this.tweens.addCounter({
+				duration: 1000,
+				from: 1,
+				to: 0,
+				onUpdate: () => {
+					const value = alphaTween.getValue()
+					e.setAlpha(value)
+				}
+			})
+		})
+
+		console.log(`tween finished`)
+		this.events.emit('element-finished-tween')
 	}
 
 	private startNewGame()
