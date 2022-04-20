@@ -13,41 +13,6 @@
     },
     "displayList": [
         {
-            "type": "Image",
-            "id": "2435ed4f-a212-49fc-9792-9761badaec27",
-            "label": "image",
-            "components": [],
-            "texture": {
-                "key": "gamedevjs"
-            },
-            "x": -177,
-            "y": 162
-        },
-        {
-            "type": "Text",
-            "id": "026d54dc-c980-4bf4-93c5-79d3ef868702",
-            "label": "text",
-            "components": [],
-            "x": -177,
-            "y": 300,
-            "originX": 0.5,
-            "originY": 0.5,
-            "text": "Gamedev JS Game Jam\n2022",
-            "align": "center",
-            "fontFamily": "Arial",
-            "fontSize": "2em"
-        },
-        {
-            "type": "Text",
-            "id": "ab183599-7d52-42f8-8867-4b36fef63410",
-            "label": "startGame",
-            "components": [],
-            "x": -283,
-            "y": 396,
-            "text": "Start Game!",
-            "fontSize": "32px"
-        },
-        {
             "type": "Sprite",
             "id": "7dc355bc-af57-4918-b8eb-f9a0d1e05868",
             "label": "start_Anim1",
