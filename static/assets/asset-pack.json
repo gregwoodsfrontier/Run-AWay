@@ -562,496 +562,6 @@
                 "key": "Sanity Point"
             },
             {
-                "url": "assets/Start Anim/Start Anim1.png",
-                "type": "image",
-                "key": "Start Anim1"
-            },
-            {
-                "url": "assets/Start Anim/Start Anim10.png",
-                "type": "image",
-                "key": "Start Anim10"
-            },
-            {
-                "url": "assets/Start Anim/Start Anim11.png",
-                "type": "image",
-                "key": "Start Anim11"
-            },
-            {
-                "url": "assets/Start Anim/Start Anim12.png",
-                "type": "image",
-                "key": "Start Anim12"
-            },
-            {
-                "url": "assets/Start Anim/Start Anim13.png",
-                "type": "image",
-                "key": "Start Anim13"
-            },
-            {
-                "url": "assets/Start Anim/Start Anim14.png",
-                "type": "image",
-                "key": "Start Anim14"
-            },
-            {
-                "url": "assets/Start Anim/Start Anim15.png",
-                "type": "image",
-                "key": "Start Anim15"
-            },
-            {
-                "url": "assets/Start Anim/Start Anim16.png",
-                "type": "image",
-                "key": "Start Anim16"
-            },
-            {
-                "url": "assets/Start Anim/Start Anim17.png",
-                "type": "image",
-                "key": "Start Anim17"
-            },
-            {
-                "url": "assets/Start Anim/Start Anim18.png",
-                "type": "image",
-                "key": "Start Anim18"
-            },
-            {
-                "url": "assets/Start Anim/Start Anim19.png",
-                "type": "image",
-                "key": "Start Anim19"
-            },
-            {
-                "url": "assets/Start Anim/Start Anim2.png",
-                "type": "image",
-                "key": "Start Anim2"
-            },
-            {
-                "url": "assets/Start Anim/Start Anim20.png",
-                "type": "image",
-                "key": "Start Anim20"
-            },
-            {
-                "url": "assets/Start Anim/Start Anim21.png",
-                "type": "image",
-                "key": "Start Anim21"
-            },
-            {
-                "url": "assets/Start Anim/Start Anim22.png",
-                "type": "image",
-                "key": "Start Anim22"
-            },
-            {
-                "url": "assets/Start Anim/Start Anim23.png",
-                "type": "image",
-                "key": "Start Anim23"
-            },
-            {
-                "url": "assets/Start Anim/Start Anim24.png",
-                "type": "image",
-                "key": "Start Anim24"
-            },
-            {
-                "url": "assets/Start Anim/Start Anim25.png",
-                "type": "image",
-                "key": "Start Anim25"
-            },
-            {
-                "url": "assets/Start Anim/Start Anim26.png",
-                "type": "image",
-                "key": "Start Anim26"
-            },
-            {
-                "url": "assets/Start Anim/Start Anim27.png",
-                "type": "image",
-                "key": "Start Anim27"
-            },
-            {
-                "url": "assets/Start Anim/Start Anim28.png",
-                "type": "image",
-                "key": "Start Anim28"
-            },
-            {
-                "url": "assets/Start Anim/Start Anim29.png",
-                "type": "image",
-                "key": "Start Anim29"
-            },
-            {
-                "url": "assets/Start Anim/Start Anim3.png",
-                "type": "image",
-                "key": "Start Anim3"
-            },
-            {
-                "url": "assets/Start Anim/Start Anim30.png",
-                "type": "image",
-                "key": "Start Anim30"
-            },
-            {
-                "url": "assets/Start Anim/Start Anim31.png",
-                "type": "image",
-                "key": "Start Anim31"
-            },
-            {
-                "url": "assets/Start Anim/Start Anim32.png",
-                "type": "image",
-                "key": "Start Anim32"
-            },
-            {
-                "url": "assets/Start Anim/Start Anim33.png",
-                "type": "image",
-                "key": "Start Anim33"
-            },
-            {
-                "url": "assets/Start Anim/Start Anim34.png",
-                "type": "image",
-                "key": "Start Anim34"
-            },
-            {
-                "url": "assets/Start Anim/Start Anim35.png",
-                "type": "image",
-                "key": "Start Anim35"
-            },
-            {
-                "url": "assets/Start Anim/Start Anim36.png",
-                "type": "image",
-                "key": "Start Anim36"
-            },
-            {
-                "url": "assets/Start Anim/Start Anim37.png",
-                "type": "image",
-                "key": "Start Anim37"
-            },
-            {
-                "url": "assets/Start Anim/Start Anim38.png",
-                "type": "image",
-                "key": "Start Anim38"
-            },
-            {
-                "url": "assets/Start Anim/Start Anim39.png",
-                "type": "image",
-                "key": "Start Anim39"
-            },
-            {
-                "url": "assets/Start Anim/Start Anim4.png",
-                "type": "image",
-                "key": "Start Anim4"
-            },
-            {
-                "url": "assets/Start Anim/Start Anim40.png",
-                "type": "image",
-                "key": "Start Anim40"
-            },
-            {
-                "url": "assets/Start Anim/Start Anim41.png",
-                "type": "image",
-                "key": "Start Anim41"
-            },
-            {
-                "url": "assets/Start Anim/Start Anim42.png",
-                "type": "image",
-                "key": "Start Anim42"
-            },
-            {
-                "url": "assets/Start Anim/Start Anim43.png",
-                "type": "image",
-                "key": "Start Anim43"
-            },
-            {
-                "url": "assets/Start Anim/Start Anim44.png",
-                "type": "image",
-                "key": "Start Anim44"
-            },
-            {
-                "url": "assets/Start Anim/Start Anim45.png",
-                "type": "image",
-                "key": "Start Anim45"
-            },
-            {
-                "url": "assets/Start Anim/Start Anim46.png",
-                "type": "image",
-                "key": "Start Anim46"
-            },
-            {
-                "url": "assets/Start Anim/Start Anim47.png",
-                "type": "image",
-                "key": "Start Anim47"
-            },
-            {
-                "url": "assets/Start Anim/Start Anim48.png",
-                "type": "image",
-                "key": "Start Anim48"
-            },
-            {
-                "url": "assets/Start Anim/Start Anim49.png",
-                "type": "image",
-                "key": "Start Anim49"
-            },
-            {
-                "url": "assets/Start Anim/Start Anim5.png",
-                "type": "image",
-                "key": "Start Anim5"
-            },
-            {
-                "url": "assets/Start Anim/Start Anim50.png",
-                "type": "image",
-                "key": "Start Anim50"
-            },
-            {
-                "url": "assets/Start Anim/Start Anim51.png",
-                "type": "image",
-                "key": "Start Anim51"
-            },
-            {
-                "url": "assets/Start Anim/Start Anim52.png",
-                "type": "image",
-                "key": "Start Anim52"
-            },
-            {
-                "url": "assets/Start Anim/Start Anim53.png",
-                "type": "image",
-                "key": "Start Anim53"
-            },
-            {
-                "url": "assets/Start Anim/Start Anim54.png",
-                "type": "image",
-                "key": "Start Anim54"
-            },
-            {
-                "url": "assets/Start Anim/Start Anim55.png",
-                "type": "image",
-                "key": "Start Anim55"
-            },
-            {
-                "url": "assets/Start Anim/Start Anim56.png",
-                "type": "image",
-                "key": "Start Anim56"
-            },
-            {
-                "url": "assets/Start Anim/Start Anim57.png",
-                "type": "image",
-                "key": "Start Anim57"
-            },
-            {
-                "url": "assets/Start Anim/Start Anim58.png",
-                "type": "image",
-                "key": "Start Anim58"
-            },
-            {
-                "url": "assets/Start Anim/Start Anim59.png",
-                "type": "image",
-                "key": "Start Anim59"
-            },
-            {
-                "url": "assets/Start Anim/Start Anim6.png",
-                "type": "image",
-                "key": "Start Anim6"
-            },
-            {
-                "url": "assets/Start Anim/Start Anim60.png",
-                "type": "image",
-                "key": "Start Anim60"
-            },
-            {
-                "url": "assets/Start Anim/Start Anim61.png",
-                "type": "image",
-                "key": "Start Anim61"
-            },
-            {
-                "url": "assets/Start Anim/Start Anim62.png",
-                "type": "image",
-                "key": "Start Anim62"
-            },
-            {
-                "url": "assets/Start Anim/Start Anim63.png",
-                "type": "image",
-                "key": "Start Anim63"
-            },
-            {
-                "url": "assets/Start Anim/Start Anim64.png",
-                "type": "image",
-                "key": "Start Anim64"
-            },
-            {
-                "url": "assets/Start Anim/Start Anim65.png",
-                "type": "image",
-                "key": "Start Anim65"
-            },
-            {
-                "url": "assets/Start Anim/Start Anim66.png",
-                "type": "image",
-                "key": "Start Anim66"
-            },
-            {
-                "url": "assets/Start Anim/Start Anim67.png",
-                "type": "image",
-                "key": "Start Anim67"
-            },
-            {
-                "url": "assets/Start Anim/Start Anim68.png",
-                "type": "image",
-                "key": "Start Anim68"
-            },
-            {
-                "url": "assets/Start Anim/Start Anim69.png",
-                "type": "image",
-                "key": "Start Anim69"
-            },
-            {
-                "url": "assets/Start Anim/Start Anim7.png",
-                "type": "image",
-                "key": "Start Anim7"
-            },
-            {
-                "url": "assets/Start Anim/Start Anim70.png",
-                "type": "image",
-                "key": "Start Anim70"
-            },
-            {
-                "url": "assets/Start Anim/Start Anim71.png",
-                "type": "image",
-                "key": "Start Anim71"
-            },
-            {
-                "url": "assets/Start Anim/Start Anim72.png",
-                "type": "image",
-                "key": "Start Anim72"
-            },
-            {
-                "url": "assets/Start Anim/Start Anim73.png",
-                "type": "image",
-                "key": "Start Anim73"
-            },
-            {
-                "url": "assets/Start Anim/Start Anim74.png",
-                "type": "image",
-                "key": "Start Anim74"
-            },
-            {
-                "url": "assets/Start Anim/Start Anim75.png",
-                "type": "image",
-                "key": "Start Anim75"
-            },
-            {
-                "url": "assets/Start Anim/Start Anim76.png",
-                "type": "image",
-                "key": "Start Anim76"
-            },
-            {
-                "url": "assets/Start Anim/Start Anim77.png",
-                "type": "image",
-                "key": "Start Anim77"
-            },
-            {
-                "url": "assets/Start Anim/Start Anim78.png",
-                "type": "image",
-                "key": "Start Anim78"
-            },
-            {
-                "url": "assets/Start Anim/Start Anim79.png",
-                "type": "image",
-                "key": "Start Anim79"
-            },
-            {
-                "url": "assets/Start Anim/Start Anim8.png",
-                "type": "image",
-                "key": "Start Anim8"
-            },
-            {
-                "url": "assets/Start Anim/Start Anim80.png",
-                "type": "image",
-                "key": "Start Anim80"
-            },
-            {
-                "url": "assets/Start Anim/Start Anim81.png",
-                "type": "image",
-                "key": "Start Anim81"
-            },
-            {
-                "url": "assets/Start Anim/Start Anim82.png",
-                "type": "image",
-                "key": "Start Anim82"
-            },
-            {
-                "url": "assets/Start Anim/Start Anim83.png",
-                "type": "image",
-                "key": "Start Anim83"
-            },
-            {
-                "url": "assets/Start Anim/Start Anim84.png",
-                "type": "image",
-                "key": "Start Anim84"
-            },
-            {
-                "url": "assets/Start Anim/Start Anim85.png",
-                "type": "image",
-                "key": "Start Anim85"
-            },
-            {
-                "url": "assets/Start Anim/Start Anim86.png",
-                "type": "image",
-                "key": "Start Anim86"
-            },
-            {
-                "url": "assets/Start Anim/Start Anim87.png",
-                "type": "image",
-                "key": "Start Anim87"
-            },
-            {
-                "url": "assets/Start Anim/Start Anim88.png",
-                "type": "image",
-                "key": "Start Anim88"
-            },
-            {
-                "url": "assets/Start Anim/Start Anim89.png",
-                "type": "image",
-                "key": "Start Anim89"
-            },
-            {
-                "url": "assets/Start Anim/Start Anim9.png",
-                "type": "image",
-                "key": "Start Anim9"
-            },
-            {
-                "url": "assets/Start Anim/Start Anim90.png",
-                "type": "image",
-                "key": "Start Anim90"
-            },
-            {
-                "url": "assets/Start Anim/Start Anim91.png",
-                "type": "image",
-                "key": "Start Anim91"
-            },
-            {
-                "url": "assets/Start Anim/Start Anim92.png",
-                "type": "image",
-                "key": "Start Anim92"
-            },
-            {
-                "url": "assets/Start Anim/Start Anim93.png",
-                "type": "image",
-                "key": "Start Anim93"
-            },
-            {
-                "url": "assets/Start Anim/Start Anim94.png",
-                "type": "image",
-                "key": "Start Anim94"
-            },
-            {
-                "url": "assets/Start Anim/Start Anim95.png",
-                "type": "image",
-                "key": "Start Anim95"
-            },
-            {
-                "url": "assets/Start Anim/Start Anim96.png",
-                "type": "image",
-                "key": "Start Anim96"
-            },
-            {
-                "url": "assets/Start Anim/Start Anim97.png",
-                "type": "image",
-                "key": "Start Anim97"
-            },
-            {
-                "url": "assets/Start Anim/Start Anim98.png",
-                "type": "image",
-                "key": "Start Anim98"
-            },
-            {
                 "url": "assets/ui-assets/Start Button.png",
                 "type": "image",
                 "key": "Start Button"
@@ -1060,6 +570,911 @@
                 "url": "assets/ui-assets/Start Button Pressed.png",
                 "type": "image",
                 "key": "Start Button Pressed"
+            },
+            {
+                "url": "assets/Start Anim/Start-Anim-1.png",
+                "type": "image",
+                "key": "Start-Anim-1"
+            },
+            {
+                "url": "assets/Start Anim/Start-Anim-10.png",
+                "type": "image",
+                "key": "Start-Anim-10"
+            },
+            {
+                "url": "assets/Start Anim/Start-Anim-11.png",
+                "type": "image",
+                "key": "Start-Anim-11"
+            },
+            {
+                "url": "assets/Start Anim/Start-Anim-12.png",
+                "type": "image",
+                "key": "Start-Anim-12"
+            },
+            {
+                "url": "assets/Start Anim/Start-Anim-13.png",
+                "type": "image",
+                "key": "Start-Anim-13"
+            },
+            {
+                "url": "assets/Start Anim/Start-Anim-14.png",
+                "type": "image",
+                "key": "Start-Anim-14"
+            },
+            {
+                "url": "assets/Start Anim/Start-Anim-15.png",
+                "type": "image",
+                "key": "Start-Anim-15"
+            },
+            {
+                "url": "assets/Start Anim/Start-Anim-16.png",
+                "type": "image",
+                "key": "Start-Anim-16"
+            },
+            {
+                "url": "assets/Start Anim/Start-Anim-17.png",
+                "type": "image",
+                "key": "Start-Anim-17"
+            },
+            {
+                "url": "assets/Start Anim/Start-Anim-18.png",
+                "type": "image",
+                "key": "Start-Anim-18"
+            },
+            {
+                "url": "assets/Start Anim/Start-Anim-19.png",
+                "type": "image",
+                "key": "Start-Anim-19"
+            },
+            {
+                "url": "assets/Start Anim/Start-Anim-2.png",
+                "type": "image",
+                "key": "Start-Anim-2"
+            },
+            {
+                "url": "assets/Start Anim/Start-Anim-20.png",
+                "type": "image",
+                "key": "Start-Anim-20"
+            },
+            {
+                "url": "assets/Start Anim/Start-Anim-21.png",
+                "type": "image",
+                "key": "Start-Anim-21"
+            },
+            {
+                "url": "assets/Start Anim/Start-Anim-22.png",
+                "type": "image",
+                "key": "Start-Anim-22"
+            },
+            {
+                "url": "assets/Start Anim/Start-Anim-23.png",
+                "type": "image",
+                "key": "Start-Anim-23"
+            },
+            {
+                "url": "assets/Start Anim/Start-Anim-24.png",
+                "type": "image",
+                "key": "Start-Anim-24"
+            },
+            {
+                "url": "assets/Start Anim/Start-Anim-25.png",
+                "type": "image",
+                "key": "Start-Anim-25"
+            },
+            {
+                "url": "assets/Start Anim/Start-Anim-26.png",
+                "type": "image",
+                "key": "Start-Anim-26"
+            },
+            {
+                "url": "assets/Start Anim/Start-Anim-27.png",
+                "type": "image",
+                "key": "Start-Anim-27"
+            },
+            {
+                "url": "assets/Start Anim/Start-Anim-28.png",
+                "type": "image",
+                "key": "Start-Anim-28"
+            },
+            {
+                "url": "assets/Start Anim/Start-Anim-29.png",
+                "type": "image",
+                "key": "Start-Anim-29"
+            },
+            {
+                "url": "assets/Start Anim/Start-Anim-3.png",
+                "type": "image",
+                "key": "Start-Anim-3"
+            },
+            {
+                "url": "assets/Start Anim/Start-Anim-30.png",
+                "type": "image",
+                "key": "Start-Anim-30"
+            },
+            {
+                "url": "assets/Start Anim/Start-Anim-31.png",
+                "type": "image",
+                "key": "Start-Anim-31"
+            },
+            {
+                "url": "assets/Start Anim/Start-Anim-32.png",
+                "type": "image",
+                "key": "Start-Anim-32"
+            },
+            {
+                "url": "assets/Start Anim/Start-Anim-33.png",
+                "type": "image",
+                "key": "Start-Anim-33"
+            },
+            {
+                "url": "assets/Start Anim/Start-Anim-34.png",
+                "type": "image",
+                "key": "Start-Anim-34"
+            },
+            {
+                "url": "assets/Start Anim/Start-Anim-35.png",
+                "type": "image",
+                "key": "Start-Anim-35"
+            },
+            {
+                "url": "assets/Start Anim/Start-Anim-36.png",
+                "type": "image",
+                "key": "Start-Anim-36"
+            },
+            {
+                "url": "assets/Start Anim/Start-Anim-37.png",
+                "type": "image",
+                "key": "Start-Anim-37"
+            },
+            {
+                "url": "assets/Start Anim/Start-Anim-38.png",
+                "type": "image",
+                "key": "Start-Anim-38"
+            },
+            {
+                "url": "assets/Start Anim/Start-Anim-39.png",
+                "type": "image",
+                "key": "Start-Anim-39"
+            },
+            {
+                "url": "assets/Start Anim/Start-Anim-4.png",
+                "type": "image",
+                "key": "Start-Anim-4"
+            },
+            {
+                "url": "assets/Start Anim/Start-Anim-40.png",
+                "type": "image",
+                "key": "Start-Anim-40"
+            },
+            {
+                "url": "assets/Start Anim/Start-Anim-41.png",
+                "type": "image",
+                "key": "Start-Anim-41"
+            },
+            {
+                "url": "assets/Start Anim/Start-Anim-42.png",
+                "type": "image",
+                "key": "Start-Anim-42"
+            },
+            {
+                "url": "assets/Start Anim/Start-Anim-43.png",
+                "type": "image",
+                "key": "Start-Anim-43"
+            },
+            {
+                "url": "assets/Start Anim/Start-Anim-44.png",
+                "type": "image",
+                "key": "Start-Anim-44"
+            },
+            {
+                "url": "assets/Start Anim/Start-Anim-45.png",
+                "type": "image",
+                "key": "Start-Anim-45"
+            },
+            {
+                "url": "assets/Start Anim/Start-Anim-46.png",
+                "type": "image",
+                "key": "Start-Anim-46"
+            },
+            {
+                "url": "assets/Start Anim/Start-Anim-47.png",
+                "type": "image",
+                "key": "Start-Anim-47"
+            },
+            {
+                "url": "assets/Start Anim/Start-Anim-48.png",
+                "type": "image",
+                "key": "Start-Anim-48"
+            },
+            {
+                "url": "assets/Start Anim/Start-Anim-49.png",
+                "type": "image",
+                "key": "Start-Anim-49"
+            },
+            {
+                "url": "assets/Start Anim/Start-Anim-5.png",
+                "type": "image",
+                "key": "Start-Anim-5"
+            },
+            {
+                "url": "assets/Start Anim/Start-Anim-50.png",
+                "type": "image",
+                "key": "Start-Anim-50"
+            },
+            {
+                "url": "assets/Start Anim/Start-Anim-51.png",
+                "type": "image",
+                "key": "Start-Anim-51"
+            },
+            {
+                "url": "assets/Start Anim/Start-Anim-52.png",
+                "type": "image",
+                "key": "Start-Anim-52"
+            },
+            {
+                "url": "assets/Start Anim/Start-Anim-53.png",
+                "type": "image",
+                "key": "Start-Anim-53"
+            },
+            {
+                "url": "assets/Start Anim/Start-Anim-54.png",
+                "type": "image",
+                "key": "Start-Anim-54"
+            },
+            {
+                "url": "assets/Start Anim/Start-Anim-55.png",
+                "type": "image",
+                "key": "Start-Anim-55"
+            },
+            {
+                "url": "assets/Start Anim/Start-Anim-56.png",
+                "type": "image",
+                "key": "Start-Anim-56"
+            },
+            {
+                "url": "assets/Start Anim/Start-Anim-57.png",
+                "type": "image",
+                "key": "Start-Anim-57"
+            },
+            {
+                "url": "assets/Start Anim/Start-Anim-58.png",
+                "type": "image",
+                "key": "Start-Anim-58"
+            },
+            {
+                "url": "assets/Start Anim/Start-Anim-59.png",
+                "type": "image",
+                "key": "Start-Anim-59"
+            },
+            {
+                "url": "assets/Start Anim/Start-Anim-6.png",
+                "type": "image",
+                "key": "Start-Anim-6"
+            },
+            {
+                "url": "assets/Start Anim/Start-Anim-60.png",
+                "type": "image",
+                "key": "Start-Anim-60"
+            },
+            {
+                "url": "assets/Start Anim/Start-Anim-61.png",
+                "type": "image",
+                "key": "Start-Anim-61"
+            },
+            {
+                "url": "assets/Start Anim/Start-Anim-62.png",
+                "type": "image",
+                "key": "Start-Anim-62"
+            },
+            {
+                "url": "assets/Start Anim/Start-Anim-63.png",
+                "type": "image",
+                "key": "Start-Anim-63"
+            },
+            {
+                "url": "assets/Start Anim/Start-Anim-64.png",
+                "type": "image",
+                "key": "Start-Anim-64"
+            },
+            {
+                "url": "assets/Start Anim/Start-Anim-65.png",
+                "type": "image",
+                "key": "Start-Anim-65"
+            },
+            {
+                "url": "assets/Start Anim/Start-Anim-66.png",
+                "type": "image",
+                "key": "Start-Anim-66"
+            },
+            {
+                "url": "assets/Start Anim/Start-Anim-67.png",
+                "type": "image",
+                "key": "Start-Anim-67"
+            },
+            {
+                "url": "assets/Start Anim/Start-Anim-68.png",
+                "type": "image",
+                "key": "Start-Anim-68"
+            },
+            {
+                "url": "assets/Start Anim/Start-Anim-69.png",
+                "type": "image",
+                "key": "Start-Anim-69"
+            },
+            {
+                "url": "assets/Start Anim/Start-Anim-7.png",
+                "type": "image",
+                "key": "Start-Anim-7"
+            },
+            {
+                "url": "assets/Start Anim/Start-Anim-70.png",
+                "type": "image",
+                "key": "Start-Anim-70"
+            },
+            {
+                "url": "assets/Start Anim/Start-Anim-71.png",
+                "type": "image",
+                "key": "Start-Anim-71"
+            },
+            {
+                "url": "assets/Start Anim/Start-Anim-72.png",
+                "type": "image",
+                "key": "Start-Anim-72"
+            },
+            {
+                "url": "assets/Start Anim/Start-Anim-73.png",
+                "type": "image",
+                "key": "Start-Anim-73"
+            },
+            {
+                "url": "assets/Start Anim/Start-Anim-74.png",
+                "type": "image",
+                "key": "Start-Anim-74"
+            },
+            {
+                "url": "assets/Start Anim/Start-Anim-75.png",
+                "type": "image",
+                "key": "Start-Anim-75"
+            },
+            {
+                "url": "assets/Start Anim/Start-Anim-76.png",
+                "type": "image",
+                "key": "Start-Anim-76"
+            },
+            {
+                "url": "assets/Start Anim/Start-Anim-77.png",
+                "type": "image",
+                "key": "Start-Anim-77"
+            },
+            {
+                "url": "assets/Start Anim/Start-Anim-78.png",
+                "type": "image",
+                "key": "Start-Anim-78"
+            },
+            {
+                "url": "assets/Start Anim/Start-Anim-79.png",
+                "type": "image",
+                "key": "Start-Anim-79"
+            },
+            {
+                "url": "assets/Start Anim/Start-Anim-8.png",
+                "type": "image",
+                "key": "Start-Anim-8"
+            },
+            {
+                "url": "assets/Start Anim/Start-Anim-80.png",
+                "type": "image",
+                "key": "Start-Anim-80"
+            },
+            {
+                "url": "assets/Start Anim/Start-Anim-81.png",
+                "type": "image",
+                "key": "Start-Anim-81"
+            },
+            {
+                "url": "assets/Start Anim/Start-Anim-82.png",
+                "type": "image",
+                "key": "Start-Anim-82"
+            },
+            {
+                "url": "assets/Start Anim/Start-Anim-83.png",
+                "type": "image",
+                "key": "Start-Anim-83"
+            },
+            {
+                "url": "assets/Start Anim/Start-Anim-84.png",
+                "type": "image",
+                "key": "Start-Anim-84"
+            },
+            {
+                "url": "assets/Start Anim/Start-Anim-85.png",
+                "type": "image",
+                "key": "Start-Anim-85"
+            },
+            {
+                "url": "assets/Start Anim/Start-Anim-86.png",
+                "type": "image",
+                "key": "Start-Anim-86"
+            },
+            {
+                "url": "assets/Start Anim/Start-Anim-87.png",
+                "type": "image",
+                "key": "Start-Anim-87"
+            },
+            {
+                "url": "assets/Start Anim/Start-Anim-88.png",
+                "type": "image",
+                "key": "Start-Anim-88"
+            },
+            {
+                "url": "assets/Start Anim/Start-Anim-89.png",
+                "type": "image",
+                "key": "Start-Anim-89"
+            },
+            {
+                "url": "assets/Start Anim/Start-Anim-9.png",
+                "type": "image",
+                "key": "Start-Anim-9"
+            },
+            {
+                "url": "assets/Start Anim/Start-Anim-90.png",
+                "type": "image",
+                "key": "Start-Anim-90"
+            },
+            {
+                "url": "assets/Start Anim/Start-Anim-91.png",
+                "type": "image",
+                "key": "Start-Anim-91"
+            },
+            {
+                "url": "assets/Start Anim/Start-Anim-92.png",
+                "type": "image",
+                "key": "Start-Anim-92"
+            },
+            {
+                "url": "assets/Start Anim/Start-Anim-93.png",
+                "type": "image",
+                "key": "Start-Anim-93"
+            },
+            {
+                "url": "assets/Start Anim/Start-Anim-94.png",
+                "type": "image",
+                "key": "Start-Anim-94"
+            },
+            {
+                "url": "assets/Start Anim/Start-Anim-95.png",
+                "type": "image",
+                "key": "Start-Anim-95"
+            },
+            {
+                "url": "assets/Start Anim/Start-Anim-96.png",
+                "type": "image",
+                "key": "Start-Anim-96"
+            },
+            {
+                "url": "assets/Start Anim/Start-Anim-97.png",
+                "type": "image",
+                "key": "Start-Anim-97"
+            },
+            {
+                "url": "assets/Start Anim/Start-Anim-98.png",
+                "type": "image",
+                "key": "Start-Anim-98"
+            },
+            {
+                "url": "assets/Start level Anim/Start-Level-Anim-1.png",
+                "type": "image",
+                "key": "Start-Level-Anim-1"
+            },
+            {
+                "url": "assets/Start level Anim/Start-Level-Anim-10.png",
+                "type": "image",
+                "key": "Start-Level-Anim-10"
+            },
+            {
+                "url": "assets/Start level Anim/Start-Level-Anim-11.png",
+                "type": "image",
+                "key": "Start-Level-Anim-11"
+            },
+            {
+                "url": "assets/Start level Anim/Start-Level-Anim-12.png",
+                "type": "image",
+                "key": "Start-Level-Anim-12"
+            },
+            {
+                "url": "assets/Start level Anim/Start-Level-Anim-13.png",
+                "type": "image",
+                "key": "Start-Level-Anim-13"
+            },
+            {
+                "url": "assets/Start level Anim/Start-Level-Anim-14.png",
+                "type": "image",
+                "key": "Start-Level-Anim-14"
+            },
+            {
+                "url": "assets/Start level Anim/Start-Level-Anim-15.png",
+                "type": "image",
+                "key": "Start-Level-Anim-15"
+            },
+            {
+                "url": "assets/Start level Anim/Start-Level-Anim-16.png",
+                "type": "image",
+                "key": "Start-Level-Anim-16"
+            },
+            {
+                "url": "assets/Start level Anim/Start-Level-Anim-17.png",
+                "type": "image",
+                "key": "Start-Level-Anim-17"
+            },
+            {
+                "url": "assets/Start level Anim/Start-Level-Anim-18.png",
+                "type": "image",
+                "key": "Start-Level-Anim-18"
+            },
+            {
+                "url": "assets/Start level Anim/Start-Level-Anim-19.png",
+                "type": "image",
+                "key": "Start-Level-Anim-19"
+            },
+            {
+                "url": "assets/Start level Anim/Start-Level-Anim-2.png",
+                "type": "image",
+                "key": "Start-Level-Anim-2"
+            },
+            {
+                "url": "assets/Start level Anim/Start-Level-Anim-20.png",
+                "type": "image",
+                "key": "Start-Level-Anim-20"
+            },
+            {
+                "url": "assets/Start level Anim/Start-Level-Anim-21.png",
+                "type": "image",
+                "key": "Start-Level-Anim-21"
+            },
+            {
+                "url": "assets/Start level Anim/Start-Level-Anim-22.png",
+                "type": "image",
+                "key": "Start-Level-Anim-22"
+            },
+            {
+                "url": "assets/Start level Anim/Start-Level-Anim-23.png",
+                "type": "image",
+                "key": "Start-Level-Anim-23"
+            },
+            {
+                "url": "assets/Start level Anim/Start-Level-Anim-24.png",
+                "type": "image",
+                "key": "Start-Level-Anim-24"
+            },
+            {
+                "url": "assets/Start level Anim/Start-Level-Anim-25.png",
+                "type": "image",
+                "key": "Start-Level-Anim-25"
+            },
+            {
+                "url": "assets/Start level Anim/Start-Level-Anim-26.png",
+                "type": "image",
+                "key": "Start-Level-Anim-26"
+            },
+            {
+                "url": "assets/Start level Anim/Start-Level-Anim-27.png",
+                "type": "image",
+                "key": "Start-Level-Anim-27"
+            },
+            {
+                "url": "assets/Start level Anim/Start-Level-Anim-28.png",
+                "type": "image",
+                "key": "Start-Level-Anim-28"
+            },
+            {
+                "url": "assets/Start level Anim/Start-Level-Anim-29.png",
+                "type": "image",
+                "key": "Start-Level-Anim-29"
+            },
+            {
+                "url": "assets/Start level Anim/Start-Level-Anim-3.png",
+                "type": "image",
+                "key": "Start-Level-Anim-3"
+            },
+            {
+                "url": "assets/Start level Anim/Start-Level-Anim-30.png",
+                "type": "image",
+                "key": "Start-Level-Anim-30"
+            },
+            {
+                "url": "assets/Start level Anim/Start-Level-Anim-31.png",
+                "type": "image",
+                "key": "Start-Level-Anim-31"
+            },
+            {
+                "url": "assets/Start level Anim/Start-Level-Anim-32.png",
+                "type": "image",
+                "key": "Start-Level-Anim-32"
+            },
+            {
+                "url": "assets/Start level Anim/Start-Level-Anim-33.png",
+                "type": "image",
+                "key": "Start-Level-Anim-33"
+            },
+            {
+                "url": "assets/Start level Anim/Start-Level-Anim-34.png",
+                "type": "image",
+                "key": "Start-Level-Anim-34"
+            },
+            {
+                "url": "assets/Start level Anim/Start-Level-Anim-35.png",
+                "type": "image",
+                "key": "Start-Level-Anim-35"
+            },
+            {
+                "url": "assets/Start level Anim/Start-Level-Anim-36.png",
+                "type": "image",
+                "key": "Start-Level-Anim-36"
+            },
+            {
+                "url": "assets/Start level Anim/Start-Level-Anim-37.png",
+                "type": "image",
+                "key": "Start-Level-Anim-37"
+            },
+            {
+                "url": "assets/Start level Anim/Start-Level-Anim-38.png",
+                "type": "image",
+                "key": "Start-Level-Anim-38"
+            },
+            {
+                "url": "assets/Start level Anim/Start-Level-Anim-39.png",
+                "type": "image",
+                "key": "Start-Level-Anim-39"
+            },
+            {
+                "url": "assets/Start level Anim/Start-Level-Anim-4.png",
+                "type": "image",
+                "key": "Start-Level-Anim-4"
+            },
+            {
+                "url": "assets/Start level Anim/Start-Level-Anim-40.png",
+                "type": "image",
+                "key": "Start-Level-Anim-40"
+            },
+            {
+                "url": "assets/Start level Anim/Start-Level-Anim-41.png",
+                "type": "image",
+                "key": "Start-Level-Anim-41"
+            },
+            {
+                "url": "assets/Start level Anim/Start-Level-Anim-42.png",
+                "type": "image",
+                "key": "Start-Level-Anim-42"
+            },
+            {
+                "url": "assets/Start level Anim/Start-Level-Anim-43.png",
+                "type": "image",
+                "key": "Start-Level-Anim-43"
+            },
+            {
+                "url": "assets/Start level Anim/Start-Level-Anim-44.png",
+                "type": "image",
+                "key": "Start-Level-Anim-44"
+            },
+            {
+                "url": "assets/Start level Anim/Start-Level-Anim-45.png",
+                "type": "image",
+                "key": "Start-Level-Anim-45"
+            },
+            {
+                "url": "assets/Start level Anim/Start-Level-Anim-46.png",
+                "type": "image",
+                "key": "Start-Level-Anim-46"
+            },
+            {
+                "url": "assets/Start level Anim/Start-Level-Anim-47.png",
+                "type": "image",
+                "key": "Start-Level-Anim-47"
+            },
+            {
+                "url": "assets/Start level Anim/Start-Level-Anim-48.png",
+                "type": "image",
+                "key": "Start-Level-Anim-48"
+            },
+            {
+                "url": "assets/Start level Anim/Start-Level-Anim-49.png",
+                "type": "image",
+                "key": "Start-Level-Anim-49"
+            },
+            {
+                "url": "assets/Start level Anim/Start-Level-Anim-5.png",
+                "type": "image",
+                "key": "Start-Level-Anim-5"
+            },
+            {
+                "url": "assets/Start level Anim/Start-Level-Anim-50.png",
+                "type": "image",
+                "key": "Start-Level-Anim-50"
+            },
+            {
+                "url": "assets/Start level Anim/Start-Level-Anim-51.png",
+                "type": "image",
+                "key": "Start-Level-Anim-51"
+            },
+            {
+                "url": "assets/Start level Anim/Start-Level-Anim-52.png",
+                "type": "image",
+                "key": "Start-Level-Anim-52"
+            },
+            {
+                "url": "assets/Start level Anim/Start-Level-Anim-53.png",
+                "type": "image",
+                "key": "Start-Level-Anim-53"
+            },
+            {
+                "url": "assets/Start level Anim/Start-Level-Anim-54.png",
+                "type": "image",
+                "key": "Start-Level-Anim-54"
+            },
+            {
+                "url": "assets/Start level Anim/Start-Level-Anim-55.png",
+                "type": "image",
+                "key": "Start-Level-Anim-55"
+            },
+            {
+                "url": "assets/Start level Anim/Start-Level-Anim-56.png",
+                "type": "image",
+                "key": "Start-Level-Anim-56"
+            },
+            {
+                "url": "assets/Start level Anim/Start-Level-Anim-57.png",
+                "type": "image",
+                "key": "Start-Level-Anim-57"
+            },
+            {
+                "url": "assets/Start level Anim/Start-Level-Anim-58.png",
+                "type": "image",
+                "key": "Start-Level-Anim-58"
+            },
+            {
+                "url": "assets/Start level Anim/Start-Level-Anim-59.png",
+                "type": "image",
+                "key": "Start-Level-Anim-59"
+            },
+            {
+                "url": "assets/Start level Anim/Start-Level-Anim-6.png",
+                "type": "image",
+                "key": "Start-Level-Anim-6"
+            },
+            {
+                "url": "assets/Start level Anim/Start-Level-Anim-60.png",
+                "type": "image",
+                "key": "Start-Level-Anim-60"
+            },
+            {
+                "url": "assets/Start level Anim/Start-Level-Anim-61.png",
+                "type": "image",
+                "key": "Start-Level-Anim-61"
+            },
+            {
+                "url": "assets/Start level Anim/Start-Level-Anim-62.png",
+                "type": "image",
+                "key": "Start-Level-Anim-62"
+            },
+            {
+                "url": "assets/Start level Anim/Start-Level-Anim-63.png",
+                "type": "image",
+                "key": "Start-Level-Anim-63"
+            },
+            {
+                "url": "assets/Start level Anim/Start-Level-Anim-64.png",
+                "type": "image",
+                "key": "Start-Level-Anim-64"
+            },
+            {
+                "url": "assets/Start level Anim/Start-Level-Anim-65.png",
+                "type": "image",
+                "key": "Start-Level-Anim-65"
+            },
+            {
+                "url": "assets/Start level Anim/Start-Level-Anim-66.png",
+                "type": "image",
+                "key": "Start-Level-Anim-66"
+            },
+            {
+                "url": "assets/Start level Anim/Start-Level-Anim-67.png",
+                "type": "image",
+                "key": "Start-Level-Anim-67"
+            },
+            {
+                "url": "assets/Start level Anim/Start-Level-Anim-68.png",
+                "type": "image",
+                "key": "Start-Level-Anim-68"
+            },
+            {
+                "url": "assets/Start level Anim/Start-Level-Anim-69.png",
+                "type": "image",
+                "key": "Start-Level-Anim-69"
+            },
+            {
+                "url": "assets/Start level Anim/Start-Level-Anim-7.png",
+                "type": "image",
+                "key": "Start-Level-Anim-7"
+            },
+            {
+                "url": "assets/Start level Anim/Start-Level-Anim-70.png",
+                "type": "image",
+                "key": "Start-Level-Anim-70"
+            },
+            {
+                "url": "assets/Start level Anim/Start-Level-Anim-71.png",
+                "type": "image",
+                "key": "Start-Level-Anim-71"
+            },
+            {
+                "url": "assets/Start level Anim/Start-Level-Anim-72.png",
+                "type": "image",
+                "key": "Start-Level-Anim-72"
+            },
+            {
+                "url": "assets/Start level Anim/Start-Level-Anim-73.png",
+                "type": "image",
+                "key": "Start-Level-Anim-73"
+            },
+            {
+                "url": "assets/Start level Anim/Start-Level-Anim-74.png",
+                "type": "image",
+                "key": "Start-Level-Anim-74"
+            },
+            {
+                "url": "assets/Start level Anim/Start-Level-Anim-75.png",
+                "type": "image",
+                "key": "Start-Level-Anim-75"
+            },
+            {
+                "url": "assets/Start level Anim/Start-Level-Anim-76.png",
+                "type": "image",
+                "key": "Start-Level-Anim-76"
+            },
+            {
+                "url": "assets/Start level Anim/Start-Level-Anim-77.png",
+                "type": "image",
+                "key": "Start-Level-Anim-77"
+            },
+            {
+                "url": "assets/Start level Anim/Start-Level-Anim-78.png",
+                "type": "image",
+                "key": "Start-Level-Anim-78"
+            },
+            {
+                "url": "assets/Start level Anim/Start-Level-Anim-79.png",
+                "type": "image",
+                "key": "Start-Level-Anim-79"
+            },
+            {
+                "url": "assets/Start level Anim/Start-Level-Anim-8.png",
+                "type": "image",
+                "key": "Start-Level-Anim-8"
+            },
+            {
+                "url": "assets/Start level Anim/Start-Level-Anim-80.png",
+                "type": "image",
+                "key": "Start-Level-Anim-80"
+            },
+            {
+                "url": "assets/Start level Anim/Start-Level-Anim-81.png",
+                "type": "image",
+                "key": "Start-Level-Anim-81"
+            },
+            {
+                "url": "assets/Start level Anim/Start-Level-Anim-82.png",
+                "type": "image",
+                "key": "Start-Level-Anim-82"
+            },
+            {
+                "url": "assets/Start level Anim/Start-Level-Anim-83.png",
+                "type": "image",
+                "key": "Start-Level-Anim-83"
+            },
+            {
+                "url": "assets/Start level Anim/Start-Level-Anim-9.png",
+                "type": "image",
+                "key": "Start-Level-Anim-9"
             },
             {
                 "url": "assets/ui-assets/Status Red Overlay.png",

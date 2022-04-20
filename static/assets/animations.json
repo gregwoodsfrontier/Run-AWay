@@ -1715,6 +1715,928 @@
             "frameRate": 24,
             "skipMissedFrames": true,
             "repeat": -1
+        },
+        {
+            "key": "start-anim",
+            "type": "frame",
+            "frames": [
+                {
+                    "key": "Start-Anim-1",
+                    "duration": 0,
+                    "keyframe": false
+                },
+                {
+                    "key": "Start-Anim-2",
+                    "duration": 0,
+                    "keyframe": false
+                },
+                {
+                    "key": "Start-Anim-3",
+                    "duration": 0,
+                    "keyframe": false
+                },
+                {
+                    "key": "Start-Anim-4",
+                    "duration": 0,
+                    "keyframe": false
+                },
+                {
+                    "key": "Start-Anim-5",
+                    "duration": 0,
+                    "keyframe": false
+                },
+                {
+                    "key": "Start-Anim-6",
+                    "duration": 0,
+                    "keyframe": false
+                },
+                {
+                    "key": "Start-Anim-7",
+                    "duration": 0,
+                    "keyframe": false
+                },
+                {
+                    "key": "Start-Anim-8",
+                    "duration": 0,
+                    "keyframe": false
+                },
+                {
+                    "key": "Start-Anim-9",
+                    "duration": 0,
+                    "keyframe": false
+                },
+                {
+                    "key": "Start-Anim-10",
+                    "duration": 0,
+                    "keyframe": false
+                },
+                {
+                    "key": "Start-Anim-11",
+                    "duration": 0,
+                    "keyframe": false
+                },
+                {
+                    "key": "Start-Anim-12",
+                    "duration": 0,
+                    "keyframe": false
+                },
+                {
+                    "key": "Start-Anim-13",
+                    "duration": 0,
+                    "keyframe": false
+                },
+                {
+                    "key": "Start-Anim-14",
+                    "duration": 0,
+                    "keyframe": false
+                },
+                {
+                    "key": "Start-Anim-15",
+                    "duration": 0,
+                    "keyframe": false
+                },
+                {
+                    "key": "Start-Anim-16",
+                    "duration": 0,
+                    "keyframe": false
+                },
+                {
+                    "key": "Start-Anim-17",
+                    "duration": 0,
+                    "keyframe": false
+                },
+                {
+                    "key": "Start-Anim-18",
+                    "duration": 0,
+                    "keyframe": false
+                },
+                {
+                    "key": "Start-Anim-19",
+                    "duration": 0,
+                    "keyframe": false
+                },
+                {
+                    "key": "Start-Anim-20",
+                    "duration": 0,
+                    "keyframe": false
+                },
+                {
+                    "key": "Start-Anim-21",
+                    "duration": 0,
+                    "keyframe": false
+                },
+                {
+                    "key": "Start-Anim-22",
+                    "duration": 0,
+                    "keyframe": false
+                },
+                {
+                    "key": "Start-Anim-23",
+                    "duration": 0,
+                    "keyframe": false
+                },
+                {
+                    "key": "Start-Anim-24",
+                    "duration": 0,
+                    "keyframe": false
+                },
+                {
+                    "key": "Start-Anim-25",
+                    "duration": 0,
+                    "keyframe": false
+                },
+                {
+                    "key": "Start-Anim-26",
+                    "duration": 0,
+                    "keyframe": false
+                },
+                {
+                    "key": "Start-Anim-27",
+                    "duration": 0,
+                    "keyframe": false
+                },
+                {
+                    "key": "Start-Anim-28",
+                    "duration": 0,
+                    "keyframe": false
+                },
+                {
+                    "key": "Start-Anim-29",
+                    "duration": 0,
+                    "keyframe": false
+                },
+                {
+                    "key": "Start-Anim-30",
+                    "duration": 0,
+                    "keyframe": false
+                },
+                {
+                    "key": "Start-Anim-31",
+                    "duration": 0,
+                    "keyframe": false
+                },
+                {
+                    "key": "Start-Anim-32",
+                    "duration": 0,
+                    "keyframe": false
+                },
+                {
+                    "key": "Start-Anim-33",
+                    "duration": 0,
+                    "keyframe": false
+                },
+                {
+                    "key": "Start-Anim-34",
+                    "duration": 0,
+                    "keyframe": false
+                },
+                {
+                    "key": "Start-Anim-35",
+                    "duration": 0,
+                    "keyframe": false
+                },
+                {
+                    "key": "Start-Anim-36",
+                    "duration": 0,
+                    "keyframe": false
+                },
+                {
+                    "key": "Start-Anim-37",
+                    "duration": 0,
+                    "keyframe": false
+                },
+                {
+                    "key": "Start-Anim-38",
+                    "duration": 0,
+                    "keyframe": false
+                },
+                {
+                    "key": "Start-Anim-39",
+                    "duration": 0,
+                    "keyframe": false
+                },
+                {
+                    "key": "Start-Anim-40",
+                    "duration": 0,
+                    "keyframe": false
+                },
+                {
+                    "key": "Start-Anim-41",
+                    "duration": 0,
+                    "keyframe": false
+                },
+                {
+                    "key": "Start-Anim-42",
+                    "duration": 0,
+                    "keyframe": false
+                },
+                {
+                    "key": "Start-Anim-43",
+                    "duration": 0,
+                    "keyframe": false
+                },
+                {
+                    "key": "Start-Anim-44",
+                    "duration": 0,
+                    "keyframe": false
+                },
+                {
+                    "key": "Start-Anim-45",
+                    "duration": 0,
+                    "keyframe": false
+                },
+                {
+                    "key": "Start-Anim-46",
+                    "duration": 0,
+                    "keyframe": false
+                },
+                {
+                    "key": "Start-Anim-47",
+                    "duration": 0,
+                    "keyframe": false
+                },
+                {
+                    "key": "Start-Anim-48",
+                    "duration": 0,
+                    "keyframe": false
+                },
+                {
+                    "key": "Start-Anim-49",
+                    "duration": 0,
+                    "keyframe": false
+                },
+                {
+                    "key": "Start-Anim-50",
+                    "duration": 0,
+                    "keyframe": false
+                },
+                {
+                    "key": "Start-Anim-51",
+                    "duration": 0,
+                    "keyframe": false
+                },
+                {
+                    "key": "Start-Anim-52",
+                    "duration": 0,
+                    "keyframe": false
+                },
+                {
+                    "key": "Start-Anim-53",
+                    "duration": 0,
+                    "keyframe": false
+                },
+                {
+                    "key": "Start-Anim-54",
+                    "duration": 0,
+                    "keyframe": false
+                },
+                {
+                    "key": "Start-Anim-55",
+                    "duration": 0,
+                    "keyframe": false
+                },
+                {
+                    "key": "Start-Anim-56",
+                    "duration": 0,
+                    "keyframe": false
+                },
+                {
+                    "key": "Start-Anim-57",
+                    "duration": 0,
+                    "keyframe": false
+                },
+                {
+                    "key": "Start-Anim-58",
+                    "duration": 0,
+                    "keyframe": false
+                },
+                {
+                    "key": "Start-Anim-59",
+                    "duration": 0,
+                    "keyframe": false
+                },
+                {
+                    "key": "Start-Anim-60",
+                    "duration": 0,
+                    "keyframe": false
+                },
+                {
+                    "key": "Start-Anim-61",
+                    "duration": 0,
+                    "keyframe": false
+                },
+                {
+                    "key": "Start-Anim-62",
+                    "duration": 0,
+                    "keyframe": false
+                },
+                {
+                    "key": "Start-Anim-63",
+                    "duration": 0,
+                    "keyframe": false
+                },
+                {
+                    "key": "Start-Anim-64",
+                    "duration": 0,
+                    "keyframe": false
+                },
+                {
+                    "key": "Start-Anim-65",
+                    "duration": 0,
+                    "keyframe": false
+                },
+                {
+                    "key": "Start-Anim-66",
+                    "duration": 0,
+                    "keyframe": false
+                },
+                {
+                    "key": "Start-Anim-67",
+                    "duration": 0,
+                    "keyframe": false
+                },
+                {
+                    "key": "Start-Anim-68",
+                    "duration": 0,
+                    "keyframe": false
+                },
+                {
+                    "key": "Start-Anim-69",
+                    "duration": 0,
+                    "keyframe": false
+                },
+                {
+                    "key": "Start-Anim-70",
+                    "duration": 0,
+                    "keyframe": false
+                },
+                {
+                    "key": "Start-Anim-71",
+                    "duration": 0,
+                    "keyframe": false
+                },
+                {
+                    "key": "Start-Anim-72",
+                    "duration": 0,
+                    "keyframe": false
+                },
+                {
+                    "key": "Start-Anim-73",
+                    "duration": 0,
+                    "keyframe": false
+                },
+                {
+                    "key": "Start-Anim-74",
+                    "duration": 0,
+                    "keyframe": false
+                },
+                {
+                    "key": "Start-Anim-75",
+                    "duration": 0,
+                    "keyframe": false
+                },
+                {
+                    "key": "Start-Anim-76",
+                    "duration": 0,
+                    "keyframe": false
+                },
+                {
+                    "key": "Start-Anim-77",
+                    "duration": 0,
+                    "keyframe": false
+                },
+                {
+                    "key": "Start-Anim-78",
+                    "duration": 0,
+                    "keyframe": false
+                },
+                {
+                    "key": "Start-Anim-79",
+                    "duration": 0,
+                    "keyframe": false
+                },
+                {
+                    "key": "Start-Anim-80",
+                    "duration": 0,
+                    "keyframe": false
+                },
+                {
+                    "key": "Start-Anim-81",
+                    "duration": 0,
+                    "keyframe": false
+                },
+                {
+                    "key": "Start-Anim-82",
+                    "duration": 0,
+                    "keyframe": false
+                },
+                {
+                    "key": "Start-Anim-83",
+                    "duration": 0,
+                    "keyframe": false
+                },
+                {
+                    "key": "Start-Anim-84",
+                    "duration": 0,
+                    "keyframe": false
+                },
+                {
+                    "key": "Start-Anim-85",
+                    "duration": 0,
+                    "keyframe": false
+                },
+                {
+                    "key": "Start-Anim-86",
+                    "duration": 0,
+                    "keyframe": false
+                },
+                {
+                    "key": "Start-Anim-87",
+                    "duration": 0,
+                    "keyframe": false
+                },
+                {
+                    "key": "Start-Anim-88",
+                    "duration": 0,
+                    "keyframe": false
+                },
+                {
+                    "key": "Start-Anim-89",
+                    "duration": 0,
+                    "keyframe": false
+                },
+                {
+                    "key": "Start-Anim-90",
+                    "duration": 0,
+                    "keyframe": false
+                },
+                {
+                    "key": "Start-Anim-91",
+                    "duration": 0,
+                    "keyframe": false
+                },
+                {
+                    "key": "Start-Anim-92",
+                    "duration": 0,
+                    "keyframe": false
+                },
+                {
+                    "key": "Start-Anim-93",
+                    "duration": 0,
+                    "keyframe": false
+                },
+                {
+                    "key": "Start-Anim-94",
+                    "duration": 0,
+                    "keyframe": false
+                },
+                {
+                    "key": "Start-Anim-95",
+                    "duration": 0,
+                    "keyframe": false
+                },
+                {
+                    "key": "Start-Anim-96",
+                    "duration": 0,
+                    "keyframe": false
+                },
+                {
+                    "key": "Start-Anim-97",
+                    "duration": 0,
+                    "keyframe": false
+                },
+                {
+                    "key": "Start-Anim-98",
+                    "duration": 0,
+                    "keyframe": false
+                }
+            ],
+            "frameRate": 12,
+            "skipMissedFrames": true
+        },
+        {
+            "key": "start-level",
+            "type": "frame",
+            "frames": [
+                {
+                    "key": "Start-Level-Anim-1",
+                    "duration": 0,
+                    "keyframe": false
+                },
+                {
+                    "key": "Start-Level-Anim-2",
+                    "duration": 0,
+                    "keyframe": false
+                },
+                {
+                    "key": "Start-Level-Anim-3",
+                    "duration": 0,
+                    "keyframe": false
+                },
+                {
+                    "key": "Start-Level-Anim-4",
+                    "duration": 0,
+                    "keyframe": false
+                },
+                {
+                    "key": "Start-Level-Anim-5",
+                    "duration": 0,
+                    "keyframe": false
+                },
+                {
+                    "key": "Start-Level-Anim-6",
+                    "duration": 0,
+                    "keyframe": false
+                },
+                {
+                    "key": "Start-Level-Anim-7",
+                    "duration": 0,
+                    "keyframe": false
+                },
+                {
+                    "key": "Start-Level-Anim-8",
+                    "duration": 0,
+                    "keyframe": false
+                },
+                {
+                    "key": "Start-Level-Anim-9",
+                    "duration": 0,
+                    "keyframe": false
+                },
+                {
+                    "key": "Start-Level-Anim-10",
+                    "duration": 0,
+                    "keyframe": false
+                },
+                {
+                    "key": "Start-Level-Anim-11",
+                    "duration": 0,
+                    "keyframe": false
+                },
+                {
+                    "key": "Start-Level-Anim-12",
+                    "duration": 0,
+                    "keyframe": false
+                },
+                {
+                    "key": "Start-Level-Anim-13",
+                    "duration": 0,
+                    "keyframe": false
+                },
+                {
+                    "key": "Start-Level-Anim-14",
+                    "duration": 0,
+                    "keyframe": false
+                },
+                {
+                    "key": "Start-Level-Anim-15",
+                    "duration": 0,
+                    "keyframe": false
+                },
+                {
+                    "key": "Start-Level-Anim-16",
+                    "duration": 0,
+                    "keyframe": false
+                },
+                {
+                    "key": "Start-Level-Anim-17",
+                    "duration": 0,
+                    "keyframe": false
+                },
+                {
+                    "key": "Start-Level-Anim-18",
+                    "duration": 0,
+                    "keyframe": false
+                },
+                {
+                    "key": "Start-Level-Anim-19",
+                    "duration": 0,
+                    "keyframe": false
+                },
+                {
+                    "key": "Start-Level-Anim-20",
+                    "duration": 0,
+                    "keyframe": false
+                },
+                {
+                    "key": "Start-Level-Anim-21",
+                    "duration": 0,
+                    "keyframe": false
+                },
+                {
+                    "key": "Start-Level-Anim-22",
+                    "duration": 0,
+                    "keyframe": false
+                },
+                {
+                    "key": "Start-Level-Anim-23",
+                    "duration": 0,
+                    "keyframe": false
+                },
+                {
+                    "key": "Start-Level-Anim-24",
+                    "duration": 0,
+                    "keyframe": false
+                },
+                {
+                    "key": "Start-Level-Anim-25",
+                    "duration": 0,
+                    "keyframe": false
+                },
+                {
+                    "key": "Start-Level-Anim-26",
+                    "duration": 0,
+                    "keyframe": false
+                },
+                {
+                    "key": "Start-Level-Anim-27",
+                    "duration": 0,
+                    "keyframe": false
+                },
+                {
+                    "key": "Start-Level-Anim-28",
+                    "duration": 0,
+                    "keyframe": false
+                },
+                {
+                    "key": "Start-Level-Anim-29",
+                    "duration": 0,
+                    "keyframe": false
+                },
+                {
+                    "key": "Start-Level-Anim-30",
+                    "duration": 0,
+                    "keyframe": false
+                },
+                {
+                    "key": "Start-Level-Anim-31",
+                    "duration": 0,
+                    "keyframe": false
+                },
+                {
+                    "key": "Start-Level-Anim-32",
+                    "duration": 0,
+                    "keyframe": false
+                },
+                {
+                    "key": "Start-Level-Anim-33",
+                    "duration": 0,
+                    "keyframe": false
+                },
+                {
+                    "key": "Start-Level-Anim-34",
+                    "duration": 0,
+                    "keyframe": false
+                },
+                {
+                    "key": "Start-Level-Anim-35",
+                    "duration": 0,
+                    "keyframe": false
+                },
+                {
+                    "key": "Start-Level-Anim-36",
+                    "duration": 0,
+                    "keyframe": false
+                },
+                {
+                    "key": "Start-Level-Anim-37",
+                    "duration": 0,
+                    "keyframe": false
+                },
+                {
+                    "key": "Start-Level-Anim-38",
+                    "duration": 0,
+                    "keyframe": false
+                },
+                {
+                    "key": "Start-Level-Anim-39",
+                    "duration": 0,
+                    "keyframe": false
+                },
+                {
+                    "key": "Start-Level-Anim-40",
+                    "duration": 0,
+                    "keyframe": false
+                },
+                {
+                    "key": "Start-Level-Anim-41",
+                    "duration": 0,
+                    "keyframe": false
+                },
+                {
+                    "key": "Start-Level-Anim-42",
+                    "duration": 0,
+                    "keyframe": false
+                },
+                {
+                    "key": "Start-Level-Anim-43",
+                    "duration": 0,
+                    "keyframe": false
+                },
+                {
+                    "key": "Start-Level-Anim-44",
+                    "duration": 0,
+                    "keyframe": false
+                },
+                {
+                    "key": "Start-Level-Anim-45",
+                    "duration": 0,
+                    "keyframe": false
+                },
+                {
+                    "key": "Start-Level-Anim-46",
+                    "duration": 0,
+                    "keyframe": false
+                },
+                {
+                    "key": "Start-Level-Anim-47",
+                    "duration": 0,
+                    "keyframe": false
+                },
+                {
+                    "key": "Start-Level-Anim-48",
+                    "duration": 0,
+                    "keyframe": false
+                },
+                {
+                    "key": "Start-Level-Anim-49",
+                    "duration": 0,
+                    "keyframe": false
+                },
+                {
+                    "key": "Start-Level-Anim-50",
+                    "duration": 0,
+                    "keyframe": false
+                },
+                {
+                    "key": "Start-Level-Anim-51",
+                    "duration": 0,
+                    "keyframe": false
+                },
+                {
+                    "key": "Start-Level-Anim-52",
+                    "duration": 0,
+                    "keyframe": false
+                },
+                {
+                    "key": "Start-Level-Anim-53",
+                    "duration": 0,
+                    "keyframe": false
+                },
+                {
+                    "key": "Start-Level-Anim-54",
+                    "duration": 0,
+                    "keyframe": false
+                },
+                {
+                    "key": "Start-Level-Anim-55",
+                    "duration": 0,
+                    "keyframe": false
+                },
+                {
+                    "key": "Start-Level-Anim-56",
+                    "duration": 0,
+                    "keyframe": false
+                },
+                {
+                    "key": "Start-Level-Anim-57",
+                    "duration": 0,
+                    "keyframe": false
+                },
+                {
+                    "key": "Start-Level-Anim-58",
+                    "duration": 0,
+                    "keyframe": false
+                },
+                {
+                    "key": "Start-Level-Anim-59",
+                    "duration": 0,
+                    "keyframe": false
+                },
+                {
+                    "key": "Start-Level-Anim-60",
+                    "duration": 0,
+                    "keyframe": false
+                },
+                {
+                    "key": "Start-Level-Anim-61",
+                    "duration": 0,
+                    "keyframe": false
+                },
+                {
+                    "key": "Start-Level-Anim-62",
+                    "duration": 0,
+                    "keyframe": false
+                },
+                {
+                    "key": "Start-Level-Anim-63",
+                    "duration": 0,
+                    "keyframe": false
+                },
+                {
+                    "key": "Start-Level-Anim-64",
+                    "duration": 0,
+                    "keyframe": false
+                },
+                {
+                    "key": "Start-Level-Anim-65",
+                    "duration": 0,
+                    "keyframe": false
+                },
+                {
+                    "key": "Start-Level-Anim-66",
+                    "duration": 0,
+                    "keyframe": false
+                },
+                {
+                    "key": "Start-Level-Anim-67",
+                    "duration": 0,
+                    "keyframe": false
+                },
+                {
+                    "key": "Start-Level-Anim-68",
+                    "duration": 0,
+                    "keyframe": false
+                },
+                {
+                    "key": "Start-Level-Anim-69",
+                    "duration": 0,
+                    "keyframe": false
+                },
+                {
+                    "key": "Start-Level-Anim-70",
+                    "duration": 0,
+                    "keyframe": false
+                },
+                {
+                    "key": "Start-Level-Anim-71",
+                    "duration": 0,
+                    "keyframe": false
+                },
+                {
+                    "key": "Start-Level-Anim-72",
+                    "duration": 0,
+                    "keyframe": false
+                },
+                {
+                    "key": "Start-Level-Anim-73",
+                    "duration": 0,
+                    "keyframe": false
+                },
+                {
+                    "key": "Start-Level-Anim-74",
+                    "duration": 0,
+                    "keyframe": false
+                },
+                {
+                    "key": "Start-Level-Anim-75",
+                    "duration": 0,
+                    "keyframe": false
+                },
+                {
+                    "key": "Start-Level-Anim-76",
+                    "duration": 0,
+                    "keyframe": false
+                },
+                {
+                    "key": "Start-Level-Anim-77",
+                    "duration": 0,
+                    "keyframe": false
+                },
+                {
+                    "key": "Start-Level-Anim-78",
+                    "duration": 0,
+                    "keyframe": false
+                },
+                {
+                    "key": "Start-Level-Anim-79",
+                    "duration": 0,
+                    "keyframe": false
+                },
+                {
+                    "key": "Start-Level-Anim-80",
+                    "duration": 0,
+                    "keyframe": false
+                },
+                {
+                    "key": "Start-Level-Anim-81",
+                    "duration": 0,
+                    "keyframe": false
+                },
+                {
+                    "key": "Start-Level-Anim-82",
+                    "duration": 0,
+                    "keyframe": false
+                },
+                {
+                    "key": "Start-Level-Anim-83",
+                    "duration": 0,
+                    "keyframe": false
+                }
+            ],
+            "frameRate": 12,
+            "skipMissedFrames": true,
+            "hideOnComplete": true
         }
     ],
     "globalTimeScale": 1,
