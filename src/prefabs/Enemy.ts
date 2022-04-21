@@ -84,6 +84,11 @@ export default class Enemy extends Phaser.GameObjects.Sprite {
 		this.stateMachine.update(dt)
 	}
 
+	getSlapHitBox()
+	{
+		return this.slapHitBox
+	}
+
 	private disableSlapBox()
 	{
 		this.slapHitBox.setPosition(0, 0)

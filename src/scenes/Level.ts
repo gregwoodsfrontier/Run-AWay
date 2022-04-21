@@ -51,7 +51,7 @@ export default class Level extends Phaser.Scene {
 		this.add.existing(player);
 
 		// enemy_3
-		const enemy_3 = new Enemy(this, 112, -96);
+		const enemy_3 = new Enemy(this, 176, -96);
 		this.add.existing(enemy_3);
 
 		// pSDRobot
@@ -71,6 +71,7 @@ export default class Level extends Phaser.Scene {
 		// enemy_3 (components)
 		const enemy_3FollowTarget = FollowTarget.getComponent(enemy_3);
 		enemy_3FollowTarget.target = pSDRobot;
+		enemy_3FollowTarget.range = 200;
 		enemy_3FollowTarget.deadRangeX = 35;
 
 		this.floor_2 = floor_2;
@@ -127,6 +128,7 @@ export default class Level extends Phaser.Scene {
 		this.events.on('create-bullet', this.handleBulletUpdate, this)
 		this.events.on('deploy-PSD', this.deployPSD, this)
 		this.events.on('takeback-PSD', this.takeBackPSD, this)
+		this.events.on('gen-psd-field', this.addColliderEnemyOuterField, this)
 		this.start_level.on('animationcomplete', this.onStartLevelAnimsComplete, this)
 
 		this.playStartLevelAnims()
@@ -136,6 +138,17 @@ export default class Level extends Phaser.Scene {
 	{
 		this.handleDepthSort()
 		this.showSelectionSquare()
+	}
+
+	private addColliderEnemyOuterField()
+	{
+		console.log('add collider enemy outer field')
+		if(!this.pSDRobot.outerField)
+		{
+			return
+		}
+		console.log('after return')
+		this.physics.add.collider(this.enemyTeam, this.pSDRobot.outerField.getAll())
 	}
 
 	private onStartLevelAnimsComplete()

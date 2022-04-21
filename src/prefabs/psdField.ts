@@ -205,10 +205,16 @@ export default class psdField extends Phaser.GameObjects.Container {
 					continue
 				}
 
-				this.add(this.scene.physics.add.image( -32*(lv-0.5) + a*32, -32*(lv-0.5) + b*32, sprKey, index ))
+				const img = this.scene.physics.add.image( -32*(lv-0.5) + a*32, -32*(lv-0.5) + b*32, sprKey, index )
+				img.setPushable(false)
+				this.add(img)
+				
 			}
 		}
 		this.scene.add.existing(this)
+		this.scene.physics.add.existing(this, true)
+		
+		this.scene.events.emit('gen-psd-field')
 	}
 
 	/* END-USER-CODE */

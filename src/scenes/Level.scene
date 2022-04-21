@@ -62,14 +62,16 @@
                 "x",
                 "y",
                 "FollowTarget.target",
-                "FollowTarget.deadRangeX"
+                "FollowTarget.deadRangeX",
+                "FollowTarget.range"
             ],
             "label": "enemy_3",
             "scope": "CLASS",
             "components": [],
             "FollowTarget.target": "pSDRobot",
+            "FollowTarget.range": 200,
             "FollowTarget.deadRangeX": 35,
-            "x": 112,
+            "x": 176,
             "y": -96
         },
         {
