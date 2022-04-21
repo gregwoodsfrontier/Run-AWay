@@ -320,6 +320,291 @@
                 "key": "Health Point"
             },
             {
+                "url": "assets/idle title anim/idle-title-Anim-01.png",
+                "type": "image",
+                "key": "idle-title-Anim-01"
+            },
+            {
+                "url": "assets/idle title anim/idle-title-Anim-02.png",
+                "type": "image",
+                "key": "idle-title-Anim-02"
+            },
+            {
+                "url": "assets/idle title anim/idle-title-Anim-03.png",
+                "type": "image",
+                "key": "idle-title-Anim-03"
+            },
+            {
+                "url": "assets/idle title anim/idle-title-Anim-04.png",
+                "type": "image",
+                "key": "idle-title-Anim-04"
+            },
+            {
+                "url": "assets/idle title anim/idle-title-Anim-05.png",
+                "type": "image",
+                "key": "idle-title-Anim-05"
+            },
+            {
+                "url": "assets/idle title anim/idle-title-Anim-06.png",
+                "type": "image",
+                "key": "idle-title-Anim-06"
+            },
+            {
+                "url": "assets/idle title anim/idle-title-Anim-07.png",
+                "type": "image",
+                "key": "idle-title-Anim-07"
+            },
+            {
+                "url": "assets/idle title anim/idle-title-Anim-08.png",
+                "type": "image",
+                "key": "idle-title-Anim-08"
+            },
+            {
+                "url": "assets/idle title anim/idle-title-Anim-09.png",
+                "type": "image",
+                "key": "idle-title-Anim-09"
+            },
+            {
+                "url": "assets/idle title anim/idle-title-Anim-10.png",
+                "type": "image",
+                "key": "idle-title-Anim-10"
+            },
+            {
+                "url": "assets/idle title anim/idle-title-Anim-11.png",
+                "type": "image",
+                "key": "idle-title-Anim-11"
+            },
+            {
+                "url": "assets/idle title anim/idle-title-Anim-12.png",
+                "type": "image",
+                "key": "idle-title-Anim-12"
+            },
+            {
+                "url": "assets/idle title anim/idle-title-Anim-13.png",
+                "type": "image",
+                "key": "idle-title-Anim-13"
+            },
+            {
+                "url": "assets/idle title anim/idle-title-Anim-14.png",
+                "type": "image",
+                "key": "idle-title-Anim-14"
+            },
+            {
+                "url": "assets/idle title anim/idle-title-Anim-15.png",
+                "type": "image",
+                "key": "idle-title-Anim-15"
+            },
+            {
+                "url": "assets/idle title anim/idle-title-Anim-16.png",
+                "type": "image",
+                "key": "idle-title-Anim-16"
+            },
+            {
+                "url": "assets/idle title anim/idle-title-Anim-17.png",
+                "type": "image",
+                "key": "idle-title-Anim-17"
+            },
+            {
+                "url": "assets/idle title anim/idle-title-Anim-18.png",
+                "type": "image",
+                "key": "idle-title-Anim-18"
+            },
+            {
+                "url": "assets/idle title anim/idle-title-Anim-19.png",
+                "type": "image",
+                "key": "idle-title-Anim-19"
+            },
+            {
+                "url": "assets/idle title anim/idle-title-Anim-20.png",
+                "type": "image",
+                "key": "idle-title-Anim-20"
+            },
+            {
+                "url": "assets/idle title anim/idle-title-Anim-21.png",
+                "type": "image",
+                "key": "idle-title-Anim-21"
+            },
+            {
+                "url": "assets/idle title anim/idle-title-Anim-22.png",
+                "type": "image",
+                "key": "idle-title-Anim-22"
+            },
+            {
+                "url": "assets/idle title anim/idle-title-Anim-23.png",
+                "type": "image",
+                "key": "idle-title-Anim-23"
+            },
+            {
+                "url": "assets/idle title anim/idle-title-Anim-24.png",
+                "type": "image",
+                "key": "idle-title-Anim-24"
+            },
+            {
+                "url": "assets/idle title anim/idle-title-Anim-25.png",
+                "type": "image",
+                "key": "idle-title-Anim-25"
+            },
+            {
+                "url": "assets/idle title anim/idle-title-Anim-26.png",
+                "type": "image",
+                "key": "idle-title-Anim-26"
+            },
+            {
+                "url": "assets/idle title anim/idle-title-Anim-27.png",
+                "type": "image",
+                "key": "idle-title-Anim-27"
+            },
+            {
+                "url": "assets/idle title anim/idle-title-Anim-28.png",
+                "type": "image",
+                "key": "idle-title-Anim-28"
+            },
+            {
+                "url": "assets/idle title anim/idle-title-Anim-29.png",
+                "type": "image",
+                "key": "idle-title-Anim-29"
+            },
+            {
+                "url": "assets/idle title anim/idle-title-Anim-30.png",
+                "type": "image",
+                "key": "idle-title-Anim-30"
+            },
+            {
+                "url": "assets/idle title anim/idle-title-Anim-31.png",
+                "type": "image",
+                "key": "idle-title-Anim-31"
+            },
+            {
+                "url": "assets/idle title anim/idle-title-Anim-32.png",
+                "type": "image",
+                "key": "idle-title-Anim-32"
+            },
+            {
+                "url": "assets/idle title anim/idle-title-Anim-33.png",
+                "type": "image",
+                "key": "idle-title-Anim-33"
+            },
+            {
+                "url": "assets/idle title anim/idle-title-Anim-34.png",
+                "type": "image",
+                "key": "idle-title-Anim-34"
+            },
+            {
+                "url": "assets/idle title anim/idle-title-Anim-35.png",
+                "type": "image",
+                "key": "idle-title-Anim-35"
+            },
+            {
+                "url": "assets/idle title anim/idle-title-Anim-36.png",
+                "type": "image",
+                "key": "idle-title-Anim-36"
+            },
+            {
+                "url": "assets/idle title anim/idle-title-Anim-37.png",
+                "type": "image",
+                "key": "idle-title-Anim-37"
+            },
+            {
+                "url": "assets/idle title anim/idle-title-Anim-38.png",
+                "type": "image",
+                "key": "idle-title-Anim-38"
+            },
+            {
+                "url": "assets/idle title anim/idle-title-Anim-39.png",
+                "type": "image",
+                "key": "idle-title-Anim-39"
+            },
+            {
+                "url": "assets/idle title anim/idle-title-Anim-40.png",
+                "type": "image",
+                "key": "idle-title-Anim-40"
+            },
+            {
+                "url": "assets/idle title anim/idle-title-Anim-41.png",
+                "type": "image",
+                "key": "idle-title-Anim-41"
+            },
+            {
+                "url": "assets/idle title anim/idle-title-Anim-42.png",
+                "type": "image",
+                "key": "idle-title-Anim-42"
+            },
+            {
+                "url": "assets/idle title anim/idle-title-Anim-43.png",
+                "type": "image",
+                "key": "idle-title-Anim-43"
+            },
+            {
+                "url": "assets/idle title anim/idle-title-Anim-44.png",
+                "type": "image",
+                "key": "idle-title-Anim-44"
+            },
+            {
+                "url": "assets/idle title anim/idle-title-Anim-45.png",
+                "type": "image",
+                "key": "idle-title-Anim-45"
+            },
+            {
+                "url": "assets/idle title anim/idle-title-Anim-46.png",
+                "type": "image",
+                "key": "idle-title-Anim-46"
+            },
+            {
+                "url": "assets/idle title anim/idle-title-Anim-47.png",
+                "type": "image",
+                "key": "idle-title-Anim-47"
+            },
+            {
+                "url": "assets/idle title anim/idle-title-Anim-48.png",
+                "type": "image",
+                "key": "idle-title-Anim-48"
+            },
+            {
+                "url": "assets/idle title anim/idle-title-Anim-49.png",
+                "type": "image",
+                "key": "idle-title-Anim-49"
+            },
+            {
+                "url": "assets/idle title anim/idle-title-Anim-50.png",
+                "type": "image",
+                "key": "idle-title-Anim-50"
+            },
+            {
+                "url": "assets/idle title anim/idle-title-Anim-51.png",
+                "type": "image",
+                "key": "idle-title-Anim-51"
+            },
+            {
+                "url": "assets/idle title anim/idle-title-Anim-52.png",
+                "type": "image",
+                "key": "idle-title-Anim-52"
+            },
+            {
+                "url": "assets/idle title anim/idle-title-Anim-53.png",
+                "type": "image",
+                "key": "idle-title-Anim-53"
+            },
+            {
+                "url": "assets/idle title anim/idle-title-Anim-54.png",
+                "type": "image",
+                "key": "idle-title-Anim-54"
+            },
+            {
+                "url": "assets/idle title anim/idle-title-Anim-55.png",
+                "type": "image",
+                "key": "idle-title-Anim-55"
+            },
+            {
+                "url": "assets/idle title anim/idle-title-Anim-56.png",
+                "type": "image",
+                "key": "idle-title-Anim-56"
+            },
+            {
+                "url": "assets/idle title anim/idle-title-Anim-57.png",
+                "type": "image",
+                "key": "idle-title-Anim-57"
+            },
+            {
                 "url": "assets/Large Boss/largeboss-back-attack-1.png",
                 "type": "image",
                 "key": "largeboss-back-attack-1"

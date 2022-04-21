@@ -3225,6 +3225,300 @@
             "frameRate": 9,
             "skipMissedFrames": true,
             "hideOnComplete": true
+        },
+        {
+            "key": "start-anim-idle",
+            "type": "frame",
+            "frames": [
+                {
+                    "key": "idle-title-Anim-01",
+                    "duration": 0,
+                    "keyframe": false
+                },
+                {
+                    "key": "idle-title-Anim-02",
+                    "duration": 0,
+                    "keyframe": false
+                },
+                {
+                    "key": "idle-title-Anim-03",
+                    "duration": 0,
+                    "keyframe": false
+                },
+                {
+                    "key": "idle-title-Anim-04",
+                    "duration": 0,
+                    "keyframe": false
+                },
+                {
+                    "key": "idle-title-Anim-05",
+                    "duration": 0,
+                    "keyframe": false
+                },
+                {
+                    "key": "idle-title-Anim-06",
+                    "duration": 0,
+                    "keyframe": false
+                },
+                {
+                    "key": "idle-title-Anim-07",
+                    "duration": 0,
+                    "keyframe": false
+                },
+                {
+                    "key": "idle-title-Anim-08",
+                    "duration": 0,
+                    "keyframe": false
+                },
+                {
+                    "key": "idle-title-Anim-09",
+                    "duration": 0,
+                    "keyframe": false
+                },
+                {
+                    "key": "idle-title-Anim-10",
+                    "duration": 0,
+                    "keyframe": false
+                },
+                {
+                    "key": "idle-title-Anim-11",
+                    "duration": 0,
+                    "keyframe": false
+                },
+                {
+                    "key": "idle-title-Anim-12",
+                    "duration": 0,
+                    "keyframe": false
+                },
+                {
+                    "key": "idle-title-Anim-13",
+                    "duration": 0,
+                    "keyframe": false
+                },
+                {
+                    "key": "idle-title-Anim-14",
+                    "duration": 0,
+                    "keyframe": false
+                },
+                {
+                    "key": "idle-title-Anim-15",
+                    "duration": 0,
+                    "keyframe": false
+                },
+                {
+                    "key": "idle-title-Anim-16",
+                    "duration": 0,
+                    "keyframe": false
+                },
+                {
+                    "key": "idle-title-Anim-17",
+                    "duration": 0,
+                    "keyframe": false
+                },
+                {
+                    "key": "idle-title-Anim-18",
+                    "duration": 0,
+                    "keyframe": false
+                },
+                {
+                    "key": "idle-title-Anim-19",
+                    "duration": 0,
+                    "keyframe": false
+                },
+                {
+                    "key": "idle-title-Anim-20",
+                    "duration": 0,
+                    "keyframe": false
+                },
+                {
+                    "key": "idle-title-Anim-21",
+                    "duration": 0,
+                    "keyframe": false
+                },
+                {
+                    "key": "idle-title-Anim-22",
+                    "duration": 0,
+                    "keyframe": false
+                },
+                {
+                    "key": "idle-title-Anim-23",
+                    "duration": 0,
+                    "keyframe": false
+                },
+                {
+                    "key": "idle-title-Anim-24",
+                    "duration": 0,
+                    "keyframe": false
+                },
+                {
+                    "key": "idle-title-Anim-25",
+                    "duration": 0,
+                    "keyframe": false
+                },
+                {
+                    "key": "idle-title-Anim-26",
+                    "duration": 0,
+                    "keyframe": false
+                },
+                {
+                    "key": "idle-title-Anim-27",
+                    "duration": 0,
+                    "keyframe": false
+                },
+                {
+                    "key": "idle-title-Anim-28",
+                    "duration": 0,
+                    "keyframe": false
+                },
+                {
+                    "key": "idle-title-Anim-29",
+                    "duration": 0,
+                    "keyframe": false
+                },
+                {
+                    "key": "idle-title-Anim-30",
+                    "duration": 0,
+                    "keyframe": false
+                },
+                {
+                    "key": "idle-title-Anim-31",
+                    "duration": 0,
+                    "keyframe": false
+                },
+                {
+                    "key": "idle-title-Anim-32",
+                    "duration": 0,
+                    "keyframe": false
+                },
+                {
+                    "key": "idle-title-Anim-33",
+                    "duration": 0,
+                    "keyframe": false
+                },
+                {
+                    "key": "idle-title-Anim-34",
+                    "duration": 0,
+                    "keyframe": false
+                },
+                {
+                    "key": "idle-title-Anim-35",
+                    "duration": 0,
+                    "keyframe": false
+                },
+                {
+                    "key": "idle-title-Anim-36",
+                    "duration": 0,
+                    "keyframe": false
+                },
+                {
+                    "key": "idle-title-Anim-37",
+                    "duration": 0,
+                    "keyframe": false
+                },
+                {
+                    "key": "idle-title-Anim-38",
+                    "duration": 0,
+                    "keyframe": false
+                },
+                {
+                    "key": "idle-title-Anim-39",
+                    "duration": 0,
+                    "keyframe": false
+                },
+                {
+                    "key": "idle-title-Anim-40",
+                    "duration": 0,
+                    "keyframe": false
+                },
+                {
+                    "key": "idle-title-Anim-41",
+                    "duration": 0,
+                    "keyframe": false
+                },
+                {
+                    "key": "idle-title-Anim-42",
+                    "duration": 0,
+                    "keyframe": false
+                },
+                {
+                    "key": "idle-title-Anim-43",
+                    "duration": 0,
+                    "keyframe": false
+                },
+                {
+                    "key": "idle-title-Anim-44",
+                    "duration": 0,
+                    "keyframe": false
+                },
+                {
+                    "key": "idle-title-Anim-45",
+                    "duration": 0,
+                    "keyframe": false
+                },
+                {
+                    "key": "idle-title-Anim-46",
+                    "duration": 0,
+                    "keyframe": false
+                },
+                {
+                    "key": "idle-title-Anim-47",
+                    "duration": 0,
+                    "keyframe": false
+                },
+                {
+                    "key": "idle-title-Anim-48",
+                    "duration": 0,
+                    "keyframe": false
+                },
+                {
+                    "key": "idle-title-Anim-49",
+                    "duration": 0,
+                    "keyframe": false
+                },
+                {
+                    "key": "idle-title-Anim-50",
+                    "duration": 0,
+                    "keyframe": false
+                },
+                {
+                    "key": "idle-title-Anim-51",
+                    "duration": 0,
+                    "keyframe": false
+                },
+                {
+                    "key": "idle-title-Anim-52",
+                    "duration": 0,
+                    "keyframe": false
+                },
+                {
+                    "key": "idle-title-Anim-53",
+                    "duration": 0,
+                    "keyframe": false
+                },
+                {
+                    "key": "idle-title-Anim-54",
+                    "duration": 0,
+                    "keyframe": false
+                },
+                {
+                    "key": "idle-title-Anim-55",
+                    "duration": 0,
+                    "keyframe": false
+                },
+                {
+                    "key": "idle-title-Anim-56",
+                    "duration": 0,
+                    "keyframe": false
+                },
+                {
+                    "key": "idle-title-Anim-57",
+                    "duration": 0,
+                    "keyframe": false
+                }
+            ],
+            "frameRate": 12,
+            "skipMissedFrames": true,
+            "repeat": -1
         }
     ],
     "globalTimeScale": 1,

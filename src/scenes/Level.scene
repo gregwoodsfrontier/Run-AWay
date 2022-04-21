@@ -72,45 +72,6 @@
             "y": -96
         },
         {
-            "type": "Image",
-            "id": "bd46be85-dfbd-4dc1-a8be-03c7eaf88279",
-            "label": "silver",
-            "scope": "CLASS",
-            "components": [],
-            "texture": {
-                "key": "raw-break-interact",
-                "frame": 0
-            },
-            "x": 96,
-            "y": 304
-        },
-        {
-            "type": "Image",
-            "id": "87a09f64-ee88-460a-be9b-ed2eb03eb28e",
-            "label": "copper",
-            "scope": "CLASS",
-            "components": [],
-            "texture": {
-                "key": "raw-break-interact",
-                "frame": 8
-            },
-            "x": 224,
-            "y": 304
-        },
-        {
-            "type": "Image",
-            "id": "bd8d5ef9-744d-42fd-a1ef-deb7b92f67ef",
-            "label": "gold",
-            "scope": "CLASS",
-            "components": [],
-            "texture": {
-                "key": "raw-break-interact",
-                "frame": 16
-            },
-            "x": 160,
-            "y": 240
-        },
-        {
             "prefabId": "169b350d-b922-409d-8da8-e86ab037d35d",
             "id": "153829a0-41b6-4338-8c99-7dd1eaeb3ede",
             "unlock": [

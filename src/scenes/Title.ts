@@ -104,6 +104,8 @@ export default class Title extends Phaser.Scene {
 			this.time.delayedCall(500, this.startNewGame, undefined, this)
 		}, this)
 		this.start_Anim1.once(Phaser.Animations.Events.ANIMATION_COMPLETE, this.handleAnimsEnd,this)
+
+		this.start_Anim1.play('start-anim-idle')
 	}
 
 	private handleAnimsEnd()

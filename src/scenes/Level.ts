@@ -53,15 +53,6 @@ export default class Level extends Phaser.Scene {
 		const enemy_3 = new Enemy(this, 112, -96);
 		this.add.existing(enemy_3);
 
-		// silver
-		const silver = this.add.image(96, 304, "raw-break-interact", 0);
-
-		// copper
-		const copper = this.add.image(224, 304, "raw-break-interact", 8);
-
-		// gold
-		const gold = this.add.image(160, 240, "raw-break-interact", 16);
-
 		// PSDRobot
 		const pSDRobot = new PSD(this, -64, 256);
 		this.add.existing(pSDRobot);
@@ -86,9 +77,6 @@ export default class Level extends Phaser.Scene {
 		this.floor_2 = floor_2;
 		this.wall_2 = wall_2;
 		this.player = player;
-		this.silver = silver;
-		this.copper = copper;
-		this.gold = gold;
 		this.pSDRobot = pSDRobot;
 		this.start_level = start_level;
 		this.cave_test_map_1 = cave_test_map_1;
@@ -103,9 +91,6 @@ export default class Level extends Phaser.Scene {
 	private floor_2!: Phaser.Tilemaps.TilemapLayer;
 	private wall_2!: Phaser.Tilemaps.TilemapLayer;
 	public player!: Player;
-	private silver!: Phaser.GameObjects.Image;
-	private copper!: Phaser.GameObjects.Image;
-	private gold!: Phaser.GameObjects.Image;
 	private pSDRobot!: PSD;
 	private start_level!: Phaser.GameObjects.Sprite;
 	private enemyTeam!: Enemy[];
@@ -146,7 +131,7 @@ export default class Level extends Phaser.Scene {
 		this.events.on('deploy-PSD', this.deployPSD, this)
 		this.events.on('takeback-PSD', this.takeBackPSD, this)
 		this.start_level.on('animationcomplete', this.onStartLevelAnimsComplete, this)
-		
+
 		this.playStartLevelAnims()
 	}
 
