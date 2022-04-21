@@ -104,6 +104,87 @@ export default class psdField extends Phaser.GameObjects.Container {
 	/* START-USER-CODE */
 
 	// Write your code here.
+	makeNextLevel(lv: number)
+	{
+		/**
+		 * 	Lv 2
+		 *  [TL]-[T]x3-[TR]
+		 * 	[L]-      -[R]
+		 * 	 x3-      - x3
+		 *  [BL]-[B]x3-[BR]
+		 */
+		if(lv < 2)
+		{
+			return
+		}
+
+		const {scene} = this
+		const lim = lv * 2 + 1
+		const sprKey = "PSDField"
+		for(let a = 0; a < lim; a++)
+		{
+			for(let b = 0; b < lim; b++)
+			{
+				let index = -1
+				if(a === 0)
+				{
+					if(b === 0)
+					{
+						// top - left
+						index = 0
+					}
+					else if(b === lim - 1)
+					{
+						// bot - left
+						index = 12
+					}
+					else
+					{
+						// left
+						index = 4
+					}
+				}
+				else if(a === lim - 1)
+				{
+					if(b === 0)
+					{
+						console.log('reach')
+						// top - right
+						index = 3
+					}
+					else if(b === lim - 1)
+					{
+						// bot - right
+						index = 15
+					}
+					else
+					{
+						index = 7
+					}
+				}
+				else
+				{
+					if(b === 0)
+					{
+						// top
+						index = 1
+					}
+					else if(b === lim - 1)
+					{
+						// bot
+						index = 13
+					}
+				}
+
+				if(index < 0)
+				{
+					continue
+				}
+
+				this.add(this.scene.add.image( -32*(lv-0.5) + a*32, -32*(lv-0.5) + b*32, sprKey, index ))
+			}
+		}
+	}
 
 	/* END-USER-CODE */
 }

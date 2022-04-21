@@ -182,10 +182,10 @@ export default class Level extends Phaser.Scene {
 
 		const {x, y} = destination.getSelectionSquare()
 		this.pSDRobot.spawn(x, y).play('psd-deploy', true)
-		this.makeField(this.pSDRobot.x, this.pSDRobot.y)
+		this.makeField(this.pSDRobot.x, this.pSDRobot.y, 3)
 	}
 
-	private makeField(x: number, y: number, lv = 1)
+	private makeField(x: number, y: number, lv = 2)
 	{
 		// const field = this.add.image(x -16, y -16, "PSDField", 5)
 		/* const field = this.add.container(x, y, [
@@ -193,7 +193,7 @@ export default class Level extends Phaser.Scene {
 
 		]) */
 		const field = new psdField(this, x - 16, y - 16)
-		// this.add.existing(field)
+		field.makeNextLevel(lv)
 		
 		/* const count = this.tweens.addCounter({
 			from: 0,
