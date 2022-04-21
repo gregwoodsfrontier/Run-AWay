@@ -64,6 +64,12 @@ export default class Block extends Phaser.GameObjects.Sprite {
 				physIcs.height =32;
 				physIcs.width =32;
 				break;
+				case("BBorder"):
+				this.setTexture("Borders" ,41)
+				this.setScale(0.5);
+				physIcs.height =32;
+				physIcs.width =32;
+				break;
 				case("BLBorder"):
 				this.setTexture("Borders" ,40)
 				this.setScale(0.5);
@@ -79,14 +85,15 @@ export default class Block extends Phaser.GameObjects.Sprite {
 		}
 	}
 	else{
-		this.setTexture("Floor" , 88)
+		this.setTexture("Borders" ,33)
+		this.setScale(0.5);
 	}
 	
 		/* END-USER-CTR-CODE */
 	
 	}
 
-	public onCopperhit(obj1?:Phaser.GameObjects.Sprite , obj2? :Phaser.GameObjects.Sprite){
+	public onHit(obj1?:Phaser.GameObjects.Sprite , obj2? :Phaser.GameObjects.Sprite){
 		//once player collide with it
 		//changes frame name to int
 		objframe = parseInt(obj2?.frame.name)
@@ -108,7 +115,6 @@ export default class Block extends Phaser.GameObjects.Sprite {
 		else if(obj2?.texture.key != "Borders"){
 			obj2?.setTexture(obj2.texture.key , objframe)
 		}
-	
 	}
 
 	/* START-USER-CODE */

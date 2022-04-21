@@ -150,7 +150,7 @@ export default class Level extends Phaser.Scene {
 		this.physics.add.collider(this.player, this.enemyTeam)
 		this.physics.add.collider(this.enemyTeam, this.enemyTeam)
 		this.physics.add.collider(this.enemyTeam, this.wall_1)
-		this.physics.add.collider(this.player , this.block_1 ,block.onCopperhit)
+		this.physics.add.collider(this.player , this.block_1 ,block.onHit)
 		
 	}
 

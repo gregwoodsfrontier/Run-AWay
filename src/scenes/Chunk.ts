@@ -7,6 +7,7 @@ import TileMapLayerPhysics from "../components/TileMapLayerPhysics";
 import Player from "../prefabs/Player";
 import Block from "../prefabs/Block";
 import FollowTarget from "../components/FollowTarget";
+import TileGen from "../manager/TileGen";
 /* START-USER-IMPORTS */
 import KeyboardInput from "../components/KeyboardInput";
 import JustMovement from "../components/JustMovement";
@@ -28,30 +29,41 @@ export default class Chunk extends Phaser.Scene {
 
 		// cave_test_map_1
 
-		// player
-		const player = new Player(this, 193, 446);
-		this.add.existing(player);
-
-		// block_1
+		// blocks
 		//important to set the frame to check it in the callback
 		/*9const block3 = new Block(this, 170, 180,"SilverBlock" ) ;
 		const block1 = new Block(this, 170, 208,"CopperBlock" ) ;
 		const block2 = new Block(this, 170, 208,"GoldBlock" ) ;
 		const normalblock = new Block(this, 130, 250,"NormalBlock" ) ;
 		const floorr = new Block(this, 170, 240,"RBorder" ) ;
-		const block_1 = [block1,block2,block3, floorr , normalblock]
-		for(var x =0; x<block_1.length; x++){
-			this.add.existing(block_1[x])
+		const blocks = [block1,block2,block3, floorr , normalblock]
+		for(var x =0; x<blocks.length; x++){
+			this.add.existing(blocks[x])
 		}*/
 
+		var blocks: Block[] = TileGen.GenerateWorld(this);
+
+		// add blocks to world
+		for(var i = 0; i < blocks.length; i++)
+		{
+			this.add.existing(blocks[i]);
+		}
+
+		this.blocks = blocks;
+
+		// player
+		const player = new Player(this, 193, 446);
+		this.add.existing(player);
 		this.player = player;
-		//this.block_1 = block_1;
+
+		const block = new Block(this);
+		this.physics.add.collider(player, this.blocks, block.onHit);
 
 		this.events.emit("scene-awake");
 	}
 
 	public player!: Player;
-	private block_1!: Block;
+	private blocks!: Block;
 
 
 	/* START-USER-CODE */
@@ -104,7 +116,6 @@ export default class Chunk extends Phaser.Scene {
 			playerMove.stayStill()
 			playerAnims.playIdleFromWalk()
 		}
-		const block = new Block(this);
 		
 	}
 
