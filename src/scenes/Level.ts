@@ -17,6 +17,8 @@ import JustMovement from "../components/JustMovement";
 import SelectionSquare from "../components/SelectionSquare";
 import KeyboardInput from "../components/KeyboardInput";
 import psdField from "../prefabs/psdField";
+import PSDComp from "../components/PSDComp";
+import { PSD_STATE } from "../types/PSD";
 /* END-USER-IMPORTS */
 
 export default class Level extends Phaser.Scene {
@@ -51,7 +53,7 @@ export default class Level extends Phaser.Scene {
 		this.add.existing(player);
 
 		// enemyA
-		const enemyA = new Enemy(this, 96, 528);
+		const enemyA = new Enemy(this, 96, 416);
 		this.add.existing(enemyA);
 
 		// pSDRobot
@@ -63,15 +65,15 @@ export default class Level extends Phaser.Scene {
 		const start_level = this.add.sprite(144, 160, "Start-Level-Anim-Short-20");
 
 		// enemyA_1
-		const enemyA_1 = new Enemy(this, 144, 480);
+		const enemyA_1 = new Enemy(this, 144, 368);
 		this.add.existing(enemyA_1);
 
 		// enemyA_2
-		const enemyA_2 = new Enemy(this, 192, 528);
+		const enemyA_2 = new Enemy(this, 192, 416);
 		this.add.existing(enemyA_2);
 
 		// enemyA_3
-		const enemyA_3 = new Enemy(this, 240, 480);
+		const enemyA_3 = new Enemy(this, 240, 368);
 		this.add.existing(enemyA_3);
 
 		// lists
@@ -159,13 +161,15 @@ export default class Level extends Phaser.Scene {
 
 		this.#destination = SelectionSquare.getComponent(this.player)
 
-		// this.playStartLevelAnims()
-
 		this.events.on('create-bullet', this.handleBulletUpdate, this)
 		this.events.on('deploy-PSD', this.deployPSD, this)
 		this.events.on('takeback-PSD', this.takeBackPSD, this)
 		this.events.on('gen-psd-field', this.addColliderEnemyField, this)
 		this.start_level.on('animationcomplete', this.onStartLevelAnimsComplete, this)
+
+		this.enemyTeam.forEach(e => {
+			FollowTarget.getComponent(e).deactivate()
+		})
 
 		this.playStartLevelAnims()
 	}
@@ -204,6 +208,9 @@ export default class Level extends Phaser.Scene {
 			return
 		}
 		input.setActive(true)
+		this.enemyTeam.forEach(e => {
+			FollowTarget.getComponent(e).activate()
+		})
 	}
 
 	private handleBulletSwarm(a: Phaser.Types.Physics.Arcade.GameObjectWithBody, b: Phaser.Types.Physics.Arcade.GameObjectWithBody)
@@ -240,6 +247,14 @@ export default class Level extends Phaser.Scene {
 		}
 
 		const {x, y} = destination.getSelectionSquare()
+		if(this.cave_test_map_2.hasTileAtWorldXY(x, y, this.cameras.main, this.wall_2))
+		{
+			// revert psd comp state back to idle
+			// PSDComp.getComponent(this.player).stateMachine.setState(PSD_STATE.EQIUP_IDLE)
+			this.player.setPSDCompState(PSD_STATE.EQIUP_IDLE)
+			return
+		}
+		console.log('psd spawn')
 		this.pSDRobot.spawn(x, y)
 		this.pSDRobot.deploy()
 		// this.makeField(this.pSDRobot.x, this.pSDRobot.y, 3)
@@ -254,7 +269,9 @@ export default class Level extends Phaser.Scene {
 
 		this.pSDRobot.returnToPlayer()
 		this.player.emit('player-recover-psd')
-		this.enemyTeam.forEach(e => FollowTarget.getComponent(e).activate())
+		this.enemyTeam.forEach(e => {
+			FollowTarget.getComponent(e).activate()
+		})
 	}
 
 	private checkSelectionPSDOverlap()

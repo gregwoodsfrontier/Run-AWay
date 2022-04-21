@@ -81,11 +81,13 @@ export default class Enemy extends Phaser.GameObjects.Sprite {
 	private stateMachine: StateMachine
 	private enemyAnimation: AnimationV2
 	private enemyMovement: JustMovement
-	private direction = DIRECTION.FRONT
+	private direction = DIRECTION.BACK
 	private slapHitBox: Phaser.Types.Physics.Arcade.ImageWithDynamicBody
 
 	start()
 	{
+		// this.moveTheUnit(DIRECTION.BACK)
+		this.stayStill()
 		this.setEnemyPush(false)
 	}
 
@@ -116,8 +118,7 @@ export default class Enemy extends Phaser.GameObjects.Sprite {
 
 	private disableSlapBox()
 	{
-		this.slapHitBox.setPosition(0, 0)
-
+		this.slapHitBox.setPosition(-100, 0)
 		this.slapHitBox.body.enable = false
 		this.scene.physics.world.remove(this.slapHitBox.body)
 	}

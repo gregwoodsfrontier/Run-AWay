@@ -118,6 +118,18 @@ export default class Player extends Phaser.GameObjects.Sprite {
 		// this.scene.events.emit('selection-sq', this.direction, 50)
 	}
 
+	setPSDCompState(state: string)
+	{
+		/* if(state != PSD_STATE.EQIUP_IDLE ||
+			state != PSD_STATE.EQUIP_WALK ||
+			state != PSD_STATE.DEPLOY
+		)
+		{
+			return
+		} */
+		this.playerPSD.stateMachine.setState(state)
+	}
+
 	private handlePSDDeploy()
 	{
 		this.playerKeyboard.executeCKeyJustDown = () => {

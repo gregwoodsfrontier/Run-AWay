@@ -51,6 +51,7 @@ export default class FollowTarget extends UserComponent {
 
 		if(!this.checkWithinRange())
 		{
+			// this.gameObject.emit('move', DIRECTION.BACK)
 			this.gameObject.emit('stay-still')
 			return
 		}

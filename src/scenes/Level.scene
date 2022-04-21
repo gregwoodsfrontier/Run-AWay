@@ -72,7 +72,7 @@
             "FollowTarget.range": 200,
             "FollowTarget.deadRangeX": 35,
             "x": 96,
-            "y": 528
+            "y": 416
         },
         {
             "prefabId": "169b350d-b922-409d-8da8-e86ab037d35d",
@@ -117,7 +117,7 @@
             "FollowTarget.range": 300,
             "FollowTarget.deadRangeX": 35,
             "x": 144,
-            "y": 480
+            "y": 368
         },
         {
             "prefabId": "408d4d35-1d26-4f5e-9315-9d890dbf9ae0",
@@ -136,7 +136,7 @@
             "FollowTarget.range": 300,
             "FollowTarget.deadRangeX": 35,
             "x": 192,
-            "y": 528
+            "y": 416
         },
         {
             "prefabId": "408d4d35-1d26-4f5e-9315-9d890dbf9ae0",
@@ -155,7 +155,7 @@
             "FollowTarget.range": 300,
             "FollowTarget.deadRangeX": 35,
             "x": 240,
-            "y": 480
+            "y": 368
         }
     ],
     "plainObjects": [
