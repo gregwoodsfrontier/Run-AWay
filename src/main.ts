@@ -36,7 +36,7 @@ const game = new Phaser.Game({
         default: 'arcade',
         arcade: {
             gravity: { y: 0 },
-            debug: true
+            debug: process.env.NODE_ENV === "development"
         }
     },
     scene: [Boot, Preload, Bootstrap, Title, PauseMenu, Level, UI, Explainer]

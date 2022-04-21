@@ -191,7 +191,8 @@
             ],
             "frameRate": 12,
             "skipMissedFrames": true,
-            "repeatDelay": 60
+            "repeat": -1,
+            "repeatDelay": 100
         },
         {
             "key": "swarm-left-attack",
@@ -220,7 +221,8 @@
             ],
             "frameRate": 12,
             "skipMissedFrames": true,
-            "repeatDelay": 60
+            "repeat": -1,
+            "repeatDelay": 100
         },
         {
             "key": "swarm-front-attack",
@@ -249,7 +251,8 @@
             ],
             "frameRate": 12,
             "skipMissedFrames": true,
-            "repeatDelay": 60
+            "repeat": -1,
+            "repeatDelay": 100
         },
         {
             "key": "swarm-back-attack",
@@ -278,7 +281,8 @@
             ],
             "frameRate": 12,
             "skipMissedFrames": true,
-            "repeatDelay": 60
+            "repeat": -1,
+            "repeatDelay": 100
         },
         {
             "key": "player-front-walk-gun",

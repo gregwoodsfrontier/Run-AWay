@@ -11,7 +11,7 @@ import AnimationV2 from "../components/AnimationV2";
 import JustMovement from "../components/JustMovement";
 /* START-USER-IMPORTS */
 import StateMachine from "../stateMachine";
-import { ENEMY_STATE_KEYS } from "../types/enemyStateKeys";
+import { ENEMY_STATE_KEYS as ENEMY_STATE } from "../types/enemyStateKeys";
 import { DIRECTION, getDirectionName } from "../types/direction";
 /* END-USER-IMPORTS */
 
@@ -35,6 +35,8 @@ export default class Enemy extends Phaser.GameObjects.Sprite {
 
 		/* START-USER-CTR-CODE */
 		// Write your code here.
+		
+
 		scene.events.on(Phaser.Scenes.Events.UPDATE, this.update, this);
 
 		this.enemyAnimation = AnimationV2.getComponent(this)
@@ -50,22 +52,23 @@ export default class Enemy extends Phaser.GameObjects.Sprite {
 		this.disableSlapBox()
 
 		this.stateMachine = new StateMachine(this, 'enemy')
-		this.stateMachine.addState(ENEMY_STATE_KEYS.IDLE, {
+		this.stateMachine.addState(ENEMY_STATE.IDLE, {
 			onEnter: this.onIdleEnter
 		})
-		.addState(ENEMY_STATE_KEYS.WALK, {
+		.addState(ENEMY_STATE.WALK, {
 			onEnter: this.onWalkEnter,
 			onUpdate: this.onWalkUpdate
 		})
-		.addState(ENEMY_STATE_KEYS.ATTACK, {
+		.addState(ENEMY_STATE.ATTACK, {
 			onEnter: this.onAttackEnter
 		})
-		.setState(ENEMY_STATE_KEYS.IDLE)
+		.setState(ENEMY_STATE.IDLE)
 
 		// create events only for this enemy instance
 		this.on('move', this.moveTheUnit)
 		this.on('stay-still', this.stayStill)
-		this.on('attack', this.initAttack)
+		// this.on('attack', this.enrage)
+
 		/* END-USER-CTR-CODE */
 	}
 
@@ -88,6 +91,11 @@ export default class Enemy extends Phaser.GameObjects.Sprite {
 	getSlapHitBox()
 	{
 		return this.slapHitBox
+	}
+
+	enrage()
+	{
+		this.stateMachine.setState(ENEMY_STATE.ATTACK)
 	}
 
 	private disableSlapBox()
@@ -119,18 +127,13 @@ export default class Enemy extends Phaser.GameObjects.Sprite {
 
 	private stayStill()
 	{
-		this.stateMachine.setState(ENEMY_STATE_KEYS.IDLE)
+		this.stateMachine.setState(ENEMY_STATE.IDLE)
 	}
 
 	private moveTheUnit(dir: number)
 	{
 		this.direction = dir
-		this.stateMachine.setState(ENEMY_STATE_KEYS.WALK)
-	}
-
-	private initAttack()
-	{
-		this.stateMachine.setState(ENEMY_STATE_KEYS.ATTACK)
+		this.stateMachine.setState(ENEMY_STATE.WALK)
 	}
 
 	private setSlapHitBox(dir: number)
@@ -290,9 +293,9 @@ export default class Enemy extends Phaser.GameObjects.Sprite {
 
 		this.on(Phaser.Animations.Events.ANIMATION_UPDATE, startHit)
 
-		this.scene.time.delayedCall(1000, () => {
-			this.stateMachine.setState(ENEMY_STATE_KEYS.IDLE)
-		})
+		/* this.scene.time.delayedCall(1000, () => {
+			this.stateMachine.setState(ENEMY_STATE.IDLE)
+		}) */
 	}
 
 	spawn(x: number, y: number)
