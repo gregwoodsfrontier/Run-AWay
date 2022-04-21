@@ -257,6 +257,33 @@
             "baseClass": "UserComponent",
             "gameObjectType": "Phaser.GameObjects.Image",
             "properties": []
+        },
+        {
+            "name": "HPComp",
+            "baseClass": "",
+            "gameObjectType": "Phaser.GameObjects.Sprite",
+            "properties": [
+                {
+                    "name": "maxVal",
+                    "label": "maxVal",
+                    "tooltip": "maxVal",
+                    "defValue": 100,
+                    "customDefinition": false,
+                    "type": {
+                        "id": "number"
+                    }
+                },
+                {
+                    "name": "currVal",
+                    "label": "currVal",
+                    "tooltip": "currVal",
+                    "defValue": 100,
+                    "customDefinition": false,
+                    "type": {
+                        "id": "number"
+                    }
+                }
+            ]
         }
     ],
     "meta": {
