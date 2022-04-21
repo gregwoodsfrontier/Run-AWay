@@ -31,7 +31,7 @@
             "FollowTarget.range": 130,
             "JustMovement.speed": 90,
             "texture": {
-                "key": "swarm-front-walk-1"
+                "key": "swarm-back-walk-1"
             }
         }
     ],

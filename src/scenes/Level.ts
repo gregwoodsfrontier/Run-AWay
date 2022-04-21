@@ -50,36 +50,69 @@ export default class Level extends Phaser.Scene {
 		const player = new Player(this, 160, 160);
 		this.add.existing(player);
 
-		// enemy_3
-		const enemy_3 = new Enemy(this, 176, -96);
-		this.add.existing(enemy_3);
+		// enemyA
+		const enemyA = new Enemy(this, 96, 528);
+		this.add.existing(enemyA);
 
 		// pSDRobot
-		const pSDRobot = new PSD(this, -64, 256);
+		const pSDRobot = new PSD(this, -200, 0);
 		this.add.existing(pSDRobot);
 		pSDRobot.name = "pSDRobot";
 
 		// start_level
 		const start_level = this.add.sprite(144, 160, "Start-Level-Anim-Short-20");
 
+		// enemyA_1
+		const enemyA_1 = new Enemy(this, 144, 480);
+		this.add.existing(enemyA_1);
+
+		// enemyA_2
+		const enemyA_2 = new Enemy(this, 192, 528);
+		this.add.existing(enemyA_2);
+
+		// enemyA_3
+		const enemyA_3 = new Enemy(this, 240, 480);
+		this.add.existing(enemyA_3);
+
 		// lists
-		const enemyTeam = [enemy_3];
+		const enemyTeam = [enemyA_3, enemyA_1, enemyA_2, enemyA];
 
 		// wall_2 (components)
 		new TileMapLayerPhysics(wall_2);
 
-		// enemy_3 (components)
-		const enemy_3FollowTarget = FollowTarget.getComponent(enemy_3);
-		enemy_3FollowTarget.target = pSDRobot;
-		enemy_3FollowTarget.range = 200;
-		enemy_3FollowTarget.deadRangeX = 35;
+		// enemyA (components)
+		const enemyAFollowTarget = FollowTarget.getComponent(enemyA);
+		enemyAFollowTarget.target = pSDRobot;
+		enemyAFollowTarget.range = 200;
+		enemyAFollowTarget.deadRangeX = 35;
+
+		// enemyA_1 (components)
+		const enemyA_1FollowTarget = FollowTarget.getComponent(enemyA_1);
+		enemyA_1FollowTarget.target = pSDRobot;
+		enemyA_1FollowTarget.range = 300;
+		enemyA_1FollowTarget.deadRangeX = 35;
+
+		// enemyA_2 (components)
+		const enemyA_2FollowTarget = FollowTarget.getComponent(enemyA_2);
+		enemyA_2FollowTarget.target = pSDRobot;
+		enemyA_2FollowTarget.range = 300;
+		enemyA_2FollowTarget.deadRangeX = 35;
+
+		// enemyA_3 (components)
+		const enemyA_3FollowTarget = FollowTarget.getComponent(enemyA_3);
+		enemyA_3FollowTarget.target = pSDRobot;
+		enemyA_3FollowTarget.range = 300;
+		enemyA_3FollowTarget.deadRangeX = 35;
 
 		this.floor_2 = floor_2;
 		this.wall_2 = wall_2;
 		this.player = player;
-		this.enemy_3 = enemy_3;
+		this.enemyA = enemyA;
 		this.pSDRobot = pSDRobot;
 		this.start_level = start_level;
+		this.enemyA_1 = enemyA_1;
+		this.enemyA_2 = enemyA_2;
+		this.enemyA_3 = enemyA_3;
 		this.cave_test_map_1 = cave_test_map_1;
 		this.cave_test_map_2 = cave_test_map_2;
 		this.enemyTeam = enemyTeam;
@@ -90,9 +123,12 @@ export default class Level extends Phaser.Scene {
 	private floor_2!: Phaser.Tilemaps.TilemapLayer;
 	private wall_2!: Phaser.Tilemaps.TilemapLayer;
 	public player!: Player;
-	private enemy_3!: Enemy;
+	private enemyA!: Enemy;
 	private pSDRobot!: PSD;
 	private start_level!: Phaser.GameObjects.Sprite;
+	private enemyA_1!: Enemy;
+	private enemyA_2!: Enemy;
+	private enemyA_3!: Enemy;
 	private enemyTeam!: Enemy[];
 
 	/* START-USER-CODE */
@@ -150,6 +186,7 @@ export default class Level extends Phaser.Scene {
 		this.physics.add.collider(this.enemyTeam, this.pSDRobot.innerField.getAll(), this.enrageEnemy)
 	}
 
+	//@ts-ignore
 	private enrageEnemy(enemy, field)
 	{
 		const e = enemy as Enemy

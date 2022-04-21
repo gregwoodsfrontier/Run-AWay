@@ -18,7 +18,7 @@ import { DIRECTION, getDirectionName } from "../types/direction";
 export default class Enemy extends Phaser.GameObjects.Sprite {
 
 	constructor(scene: Phaser.Scene, x?: number, y?: number, texture?: string, frame?: number | string) {
-		super(scene, x ?? 0, y ?? 0, texture || "swarm-front-walk-1", frame);
+		super(scene, x ?? 0, y ?? 0, texture || "swarm-back-walk-1", frame);
 
 		// this (components)
 		const thisPhysics = new Physics(this);
@@ -35,7 +35,7 @@ export default class Enemy extends Phaser.GameObjects.Sprite {
 
 		/* START-USER-CTR-CODE */
 		// Write your code here.
-		
+		// this.setPushable(false)
 
 		scene.events.on(Phaser.Scenes.Events.UPDATE, this.update, this);
 
@@ -65,6 +65,7 @@ export default class Enemy extends Phaser.GameObjects.Sprite {
 		.setState(ENEMY_STATE.IDLE)
 
 		// create events only for this enemy instance
+		this.scene.events.once(Phaser.Scenes.Events.UPDATE, this.start, this)
 		this.on('move', this.moveTheUnit)
 		this.on('stay-still', this.stayStill)
 		// this.on('attack', this.enrage)
@@ -82,6 +83,21 @@ export default class Enemy extends Phaser.GameObjects.Sprite {
 	private enemyMovement: JustMovement
 	private direction = DIRECTION.FRONT
 	private slapHitBox: Phaser.Types.Physics.Arcade.ImageWithDynamicBody
+
+	start()
+	{
+		this.setEnemyPush(false)
+	}
+
+	private setEnemyPush(boo: boolean)
+	{
+		const body = this.body as Phaser.Physics.Arcade.Body
+		if(!body)
+		{
+			return
+		}
+		body.pushable = boo
+	}
 
 	update(dt: number)
 	{
