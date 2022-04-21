@@ -65,8 +65,9 @@
                 "FollowTarget.deadRangeX"
             ],
             "label": "enemy_3",
+            "scope": "CLASS",
             "components": [],
-            "FollowTarget.target": "player",
+            "FollowTarget.target": "pSDRobot",
             "FollowTarget.deadRangeX": 35,
             "x": 112,
             "y": -96
@@ -78,7 +79,7 @@
                 "x",
                 "y"
             ],
-            "label": "PSDRobot",
+            "label": "pSDRobot",
             "useGameObjectName": true,
             "scope": "CLASS",
             "components": [],

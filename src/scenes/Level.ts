@@ -54,10 +54,10 @@ export default class Level extends Phaser.Scene {
 		const enemy_3 = new Enemy(this, 112, -96);
 		this.add.existing(enemy_3);
 
-		// PSDRobot
+		// pSDRobot
 		const pSDRobot = new PSD(this, -64, 256);
 		this.add.existing(pSDRobot);
-		pSDRobot.name = "PSDRobot";
+		pSDRobot.name = "pSDRobot";
 
 		// start_level
 		const start_level = this.add.sprite(144, 160, "Start-Level-Anim-Short-20");
@@ -70,12 +70,13 @@ export default class Level extends Phaser.Scene {
 
 		// enemy_3 (components)
 		const enemy_3FollowTarget = FollowTarget.getComponent(enemy_3);
-		enemy_3FollowTarget.target = player;
+		enemy_3FollowTarget.target = pSDRobot;
 		enemy_3FollowTarget.deadRangeX = 35;
 
 		this.floor_2 = floor_2;
 		this.wall_2 = wall_2;
 		this.player = player;
+		this.enemy_3 = enemy_3;
 		this.pSDRobot = pSDRobot;
 		this.start_level = start_level;
 		this.cave_test_map_1 = cave_test_map_1;
@@ -88,6 +89,7 @@ export default class Level extends Phaser.Scene {
 	private floor_2!: Phaser.Tilemaps.TilemapLayer;
 	private wall_2!: Phaser.Tilemaps.TilemapLayer;
 	public player!: Player;
+	private enemy_3!: Enemy;
 	private pSDRobot!: PSD;
 	private start_level!: Phaser.GameObjects.Sprite;
 	private enemyTeam!: Enemy[];
@@ -194,7 +196,7 @@ export default class Level extends Phaser.Scene {
 		]) */
 		const field = new psdField(this, x - 16, y - 16)
 		field.makeNextLevel(lv)
-		
+
 		/* const count = this.tweens.addCounter({
 			from: 0,
 			to: 1,
