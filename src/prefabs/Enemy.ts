@@ -288,6 +288,35 @@ export default class Enemy extends Phaser.GameObjects.Sprite {
 			this.stateMachine.setState(ENEMY_STATE_KEYS.IDLE)
 		})
 	}
+
+	spawn(x: number, y: number)
+	{
+		this.setActive(true)
+		this.setVisible(true)
+		this.setPosition(x, y, 2000)
+		this.scene.physics.add.existing(this)
+
+		const body = this.body as Phaser.Physics.Arcade.Body
+		body.enable = true
+		this.scene.physics.world.add(body)
+
+		return this
+	}
+
+	despawn()
+	{
+		this.setActive(false)
+		this.setVisible(false)
+		this.setPosition(-1000, -500, -2000)
+		const body = this.body as Phaser.Physics.Arcade.Body
+		if(!body)
+		{
+			return
+		}
+
+		body.enable = false
+		this.scene.physics.world.remove(body)
+	}
 	
 
 	/* END-USER-CODE */

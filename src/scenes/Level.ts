@@ -16,6 +16,7 @@ import Bullet from "../prefabs/Bullet";
 import JustMovement from "../components/JustMovement";
 import SelectionSquare from "../components/SelectionSquare";
 import KeyboardInput from "../components/KeyboardInput";
+import psdField from "../prefabs/psdField";
 /* END-USER-IMPORTS */
 
 export default class Level extends Phaser.Scene {
@@ -63,8 +64,6 @@ export default class Level extends Phaser.Scene {
 
 		// lists
 		const enemyTeam = [enemy_3];
-		const silverList: Array<any> = [];
-		const bulletList: Array<any> = [];
 
 		// wall_2 (components)
 		new TileMapLayerPhysics(wall_2);
@@ -82,8 +81,6 @@ export default class Level extends Phaser.Scene {
 		this.cave_test_map_1 = cave_test_map_1;
 		this.cave_test_map_2 = cave_test_map_2;
 		this.enemyTeam = enemyTeam;
-		this.silverList = silverList;
-		this.bulletList = bulletList;
 
 		this.events.emit("scene-awake");
 	}
@@ -94,8 +91,6 @@ export default class Level extends Phaser.Scene {
 	private pSDRobot!: PSD;
 	private start_level!: Phaser.GameObjects.Sprite;
 	private enemyTeam!: Enemy[];
-	private silverList!: Array<any>;
-	private bulletList!: Array<any>;
 
 	/* START-USER-CODE */
 	public platformer_fun!: Phaser.Tilemaps.Tilemap
@@ -187,6 +182,27 @@ export default class Level extends Phaser.Scene {
 
 		const {x, y} = destination.getSelectionSquare()
 		this.pSDRobot.spawn(x, y).play('psd-deploy', true)
+		this.makeField(this.pSDRobot.x, this.pSDRobot.y)
+	}
+
+	private makeField(x: number, y: number, lv = 1)
+	{
+		// const field = this.add.image(x -16, y -16, "PSDField", 5)
+		/* const field = this.add.container(x, y, [
+			this.add.image(-32, -32, "PSDField", 5),
+
+		]) */
+		const field = new psdField(this, x - 16, y - 16)
+		// this.add.existing(field)
+		
+		/* const count = this.tweens.addCounter({
+			from: 0,
+			to: 1,
+			duration: 800,
+			onUpdate: () => {
+				field.setAlpha(count.getValue())
+			}
+		}) */
 	}
 
 	private takeBackPSD()
@@ -252,32 +268,6 @@ export default class Level extends Phaser.Scene {
 	{
 		const bullet = b as Bullet
 		bullet.despawn()
-	}
-
-	private createBullet(dir: number)
-	{
-		if(!this.player)
-		{
-			return
-		}
-
-		const {x, y} = this.player
-		let bullet = this.bulletList.find(b => b.active === false)
-
-		// const bullet = new Bullet(this, x, y)
-
-		if(!bullet)
-		{
-			bullet = new Bullet(this, x, y)
-			this.physics.add.existing(bullet)
-			this.bulletList.push(bullet)
-			this.setBulletRotationAndVel(bullet, dir)
-
-			return
-		}
-
-		bullet.spawn(x, y)
-		this.setBulletRotationAndVel(bullet, dir)
 	}
 
 	private setBulletRotationAndVel(bul: Bullet, dir: number)

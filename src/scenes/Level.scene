@@ -137,14 +137,6 @@
             "objectIds": [
                 "63f44b6a-316d-4ac2-9257-71741dcfd6ba"
             ]
-        },
-        {
-            "id": "5d525c7c-af17-4006-926c-ce78ede55616",
-            "label": "silverList"
-        },
-        {
-            "id": "975bfebc-cb90-40a9-80ec-b238df8344aa",
-            "label": "bulletList"
         }
     ]
 }
