@@ -128,7 +128,7 @@ export default class Level extends Phaser.Scene {
 		this.events.on('create-bullet', this.handleBulletUpdate, this)
 		this.events.on('deploy-PSD', this.deployPSD, this)
 		this.events.on('takeback-PSD', this.takeBackPSD, this)
-		this.events.on('gen-psd-field', this.addColliderEnemyOuterField, this)
+		this.events.on('gen-psd-field', this.addColliderEnemyField, this)
 		this.start_level.on('animationcomplete', this.onStartLevelAnimsComplete, this)
 
 		this.playStartLevelAnims()
@@ -140,15 +140,22 @@ export default class Level extends Phaser.Scene {
 		this.showSelectionSquare()
 	}
 
-	private addColliderEnemyOuterField()
+	private addColliderEnemyField()
 	{
-		console.log('add collider enemy outer field')
-		if(!this.pSDRobot.outerField)
+		if(!this.pSDRobot.outerField || !this.pSDRobot.innerField)
 		{
 			return
 		}
-		console.log('after return')
-		this.physics.add.collider(this.enemyTeam, this.pSDRobot.outerField.getAll())
+		this.physics.add.collider(this.enemyTeam, this.pSDRobot.outerField.getAll(), this.enrageEnemy)
+		this.physics.add.collider(this.enemyTeam, this.pSDRobot.innerField.getAll(), this.enrageEnemy)
+	}
+
+	private enrageEnemy(enemy, field)
+	{
+		const e = enemy as Enemy
+		const follow = FollowTarget.getComponent(e)
+		follow.deactivate()
+		e.enrage()
 	}
 
 	private onStartLevelAnimsComplete()
@@ -210,6 +217,7 @@ export default class Level extends Phaser.Scene {
 
 		this.pSDRobot.returnToPlayer()
 		this.player.emit('player-recover-psd')
+		this.enemyTeam.forEach(e => FollowTarget.getComponent(e).activate())
 	}
 
 	private checkSelectionPSDOverlap()
