@@ -1,0 +1,154 @@
+{
+    "id": "bcf182de-a476-4747-8395-624adbe6c2ca",
+    "sceneType": "PREFAB",
+    "settings": {
+        "snapEnabled": true,
+        "exportClass": true,
+        "autoImport": true,
+        "preloadMethodName": "",
+        "preloadPackFiles": [],
+        "createMethodName": "",
+        "compilerOutputLanguage": "TYPE_SCRIPT",
+        "borderWidth": 320,
+        "borderHeight": 640
+    },
+    "displayList": [
+        {
+            "type": "Container",
+            "id": "240c0dd0-5f1f-4739-8ef8-7243f6e94532",
+            "label": "container_1",
+            "components": [],
+            "x": -16,
+            "y": -16,
+            "list": [
+                {
+                    "type": "Image",
+                    "id": "5ab74957-4844-4e93-abca-a2b0fc68b830",
+                    "label": "top-left",
+                    "scope": "CLASS",
+                    "components": [
+                        "Physics"
+                    ],
+                    "texture": {
+                        "key": "PSDField",
+                        "frame": 5
+                    },
+                    "x": -16,
+                    "y": -16
+                },
+                {
+                    "type": "Image",
+                    "id": "1511a7b4-7ada-479d-a193-166804859bde",
+                    "label": "top-right",
+                    "scope": "CLASS",
+                    "components": [
+                        "Physics"
+                    ],
+                    "texture": {
+                        "key": "PSDField",
+                        "frame": 6
+                    },
+                    "x": 48,
+                    "y": -16
+                },
+                {
+                    "type": "Image",
+                    "id": "b42e8adc-bd61-4375-9907-3d08c3c52bb6",
+                    "label": "bot-left",
+                    "scope": "CLASS",
+                    "components": [
+                        "Physics"
+                    ],
+                    "texture": {
+                        "key": "PSDField",
+                        "frame": 9
+                    },
+                    "x": -16,
+                    "y": 48
+                },
+                {
+                    "type": "Image",
+                    "id": "34a46362-fbd7-4527-ace7-bca19415122c",
+                    "label": "bot-right",
+                    "scope": "CLASS",
+                    "components": [
+                        "Physics"
+                    ],
+                    "texture": {
+                        "key": "PSDField",
+                        "frame": 10
+                    },
+                    "x": 48,
+                    "y": 48
+                },
+                {
+                    "type": "Image",
+                    "id": "202b055a-012c-4fd3-91ab-06c733c13be1",
+                    "label": "top",
+                    "scope": "CLASS",
+                    "components": [
+                        "Physics"
+                    ],
+                    "texture": {
+                        "key": "PSDField",
+                        "frame": 1
+                    },
+                    "x": 16,
+                    "y": -16
+                },
+                {
+                    "type": "Image",
+                    "id": "4499c7c1-4ff3-489f-a318-434ccbde1a6c",
+                    "label": "left",
+                    "scope": "CLASS",
+                    "components": [
+                        "Physics"
+                    ],
+                    "texture": {
+                        "key": "PSDField",
+                        "frame": 4
+                    },
+                    "x": -16,
+                    "y": 16
+                },
+                {
+                    "type": "Image",
+                    "id": "7ec48a31-d1ed-4a20-ad39-142c5af07dbf",
+                    "label": "right",
+                    "scope": "CLASS",
+                    "components": [
+                        "Physics"
+                    ],
+                    "texture": {
+                        "key": "PSDField",
+                        "frame": 7
+                    },
+                    "x": 48,
+                    "y": 16
+                },
+                {
+                    "type": "Image",
+                    "id": "b3bf4a04-65b9-42cd-b4b9-6e5cdc2e5334",
+                    "label": "bot",
+                    "scope": "CLASS",
+                    "components": [
+                        "Physics"
+                    ],
+                    "texture": {
+                        "key": "PSDField",
+                        "frame": 13
+                    },
+                    "x": 16,
+                    "y": 48
+                }
+            ]
+        }
+    ],
+    "plainObjects": [],
+    "meta": {
+        "app": "Phaser Editor 2D - Scene Editor",
+        "url": "https://phasereditor2d.com",
+        "contentType": "phasereditor2d.core.scene.SceneContentType",
+        "version": 3
+    }
+}

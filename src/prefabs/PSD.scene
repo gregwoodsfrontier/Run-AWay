@@ -18,7 +18,10 @@
             "label": "PSD",
             "useGameObjectName": true,
             "scope": "CLASS",
-            "components": [],
+            "components": [
+                "Physics"
+            ],
+            "Physics.static": true,
             "texture": {
                 "key": "raw-break-interact",
                 "frame": 68
@@ -37,6 +40,16 @@
             "name": "HP",
             "label": "HP",
             "tooltip": "HP",
+            "defValue": 100,
+            "customDefinition": false,
+            "type": {
+                "id": "number"
+            }
+        },
+        {
+            "name": "energy",
+            "label": "energy",
+            "tooltip": "energy",
             "defValue": 100,
             "customDefinition": false,
             "type": {

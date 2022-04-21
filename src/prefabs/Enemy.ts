@@ -9,17 +9,16 @@ import DepthSortY from "../components/DepthSortY";
 import FollowTarget from "../components/FollowTarget";
 import AnimationV2 from "../components/AnimationV2";
 import JustMovement from "../components/JustMovement";
-
 /* START-USER-IMPORTS */
 import StateMachine from "../stateMachine";
-import { ENEMY_STATE_KEYS } from "../types/enemyStateKeys";
+import { ENEMY_STATE_KEYS as ENEMY_STATE } from "../types/enemyStateKeys";
 import { DIRECTION, getDirectionName } from "../types/direction";
 /* END-USER-IMPORTS */
 
 export default class Enemy extends Phaser.GameObjects.Sprite {
 
 	constructor(scene: Phaser.Scene, x?: number, y?: number, texture?: string, frame?: number | string) {
-		super(scene, x ?? 0, y ?? 0, texture || "swarm-front-walk-1", frame);
+		super(scene, x ?? 0, y ?? 0, texture || "swarm-back-walk-1", frame);
 
 		// this (components)
 		const thisPhysics = new Physics(this);
@@ -36,6 +35,8 @@ export default class Enemy extends Phaser.GameObjects.Sprite {
 
 		/* START-USER-CTR-CODE */
 		// Write your code here.
+		// this.setPushable(false)
+
 		scene.events.on(Phaser.Scenes.Events.UPDATE, this.update, this);
 
 		this.enemyAnimation = AnimationV2.getComponent(this)
@@ -51,24 +52,28 @@ export default class Enemy extends Phaser.GameObjects.Sprite {
 		this.disableSlapBox()
 
 		this.stateMachine = new StateMachine(this, 'enemy')
-		this.stateMachine.addState(ENEMY_STATE_KEYS.IDLE, {
+		this.stateMachine.addState(ENEMY_STATE.IDLE, {
 			onEnter: this.onIdleEnter
 		})
-		.addState(ENEMY_STATE_KEYS.WALK, {
+		.addState(ENEMY_STATE.WALK, {
 			onEnter: this.onWalkEnter,
 			onUpdate: this.onWalkUpdate
 		})
-		.addState(ENEMY_STATE_KEYS.ATTACK, {
+		.addState(ENEMY_STATE.ATTACK, {
 			onEnter: this.onAttackEnter
 		})
-		.setState(ENEMY_STATE_KEYS.IDLE)
+		.setState(ENEMY_STATE.IDLE)
 
 		// create events only for this enemy instance
+		this.scene.events.once(Phaser.Scenes.Events.UPDATE, this.start, this)
 		this.on('move', this.moveTheUnit)
 		this.on('stay-still', this.stayStill)
-		this.on('attack', this.initAttack)
+		// this.on('attack', this.enrage)
+
 		/* END-USER-CTR-CODE */
 	}
+
+	public HP: number = 100;
 
 	/* START-USER-CODE */
 
@@ -76,18 +81,44 @@ export default class Enemy extends Phaser.GameObjects.Sprite {
 	private stateMachine: StateMachine
 	private enemyAnimation: AnimationV2
 	private enemyMovement: JustMovement
-	private direction = DIRECTION.FRONT
+	private direction = DIRECTION.BACK
 	private slapHitBox: Phaser.Types.Physics.Arcade.ImageWithDynamicBody
+
+	start()
+	{
+		// this.moveTheUnit(DIRECTION.BACK)
+		this.stayStill()
+		this.setEnemyPush(false)
+	}
+
+	private setEnemyPush(boo: boolean)
+	{
+		const body = this.body as Phaser.Physics.Arcade.Body
+		if(!body)
+		{
+			return
+		}
+		body.pushable = boo
+	}
 
 	update(dt: number)
 	{
 		this.stateMachine.update(dt)
 	}
 
+	getSlapHitBox()
+	{
+		return this.slapHitBox
+	}
+
+	enrage()
+	{
+		this.stateMachine.setState(ENEMY_STATE.ATTACK)
+	}
+
 	private disableSlapBox()
 	{
-		this.slapHitBox.setPosition(0, 0)
-
+		this.slapHitBox.setPosition(-100, 0)
 		this.slapHitBox.body.enable = false
 		this.scene.physics.world.remove(this.slapHitBox.body)
 	}
@@ -108,23 +139,18 @@ export default class Enemy extends Phaser.GameObjects.Sprite {
 			this.slapHitBox.body.width, 
 			this.slapHitBox.body.height
 		)
-		
+
 	}
 
 	private stayStill()
 	{
-		this.stateMachine.setState(ENEMY_STATE_KEYS.IDLE)
+		this.stateMachine.setState(ENEMY_STATE.IDLE)
 	}
 
 	private moveTheUnit(dir: number)
 	{
 		this.direction = dir
-		this.stateMachine.setState(ENEMY_STATE_KEYS.WALK)
-	}
-
-	private initAttack()
-	{
-		this.stateMachine.setState(ENEMY_STATE_KEYS.ATTACK)
+		this.stateMachine.setState(ENEMY_STATE.WALK)
 	}
 
 	private setSlapHitBox(dir: number)
@@ -213,7 +239,7 @@ export default class Enemy extends Phaser.GameObjects.Sprite {
 	{
 		this.disableSlapBox()
 	}
-	
+
 	private onWalkUpdate()
 	{
 		const dirName = getDirectionName(this.direction)
@@ -252,11 +278,11 @@ export default class Enemy extends Phaser.GameObjects.Sprite {
 			state: 'walk'
 		})
 	}
-	
+
 	private onAttackEnter()
 	{
 		const dirName = getDirectionName(this.direction)
-		
+
 		if(!dirName)
 		{
 			console.warn('direction should be defined')
@@ -272,7 +298,7 @@ export default class Enemy extends Phaser.GameObjects.Sprite {
 		})
 
 		const startHit = () => {
-			
+
 			this.off(Phaser.Animations.Events.ANIMATION_UPDATE, startHit)
 
 			this.setSlapHitBox(this.direction)
@@ -284,11 +310,49 @@ export default class Enemy extends Phaser.GameObjects.Sprite {
 
 		this.on(Phaser.Animations.Events.ANIMATION_UPDATE, startHit)
 
-		this.scene.time.delayedCall(1000, () => {
-			this.stateMachine.setState(ENEMY_STATE_KEYS.IDLE)
-		})
+		/* this.scene.time.delayedCall(1000, () => {
+			this.stateMachine.setState(ENEMY_STATE.IDLE)
+		}) */
 	}
-	
+
+	spawn(x: number, y: number)
+	{
+		this.setActive(true)
+		this.setVisible(true)
+		this.setPosition(x, y, 2000)
+		this.scene.physics.add.existing(this)
+
+		const body = this.body as Phaser.Physics.Arcade.Body
+		body.enable = true
+		this.scene.physics.world.add(body)
+
+		return this
+	}
+
+	despawn()
+	{
+		this.setActive(false)
+		this.setVisible(false)
+		this.setPosition(-1000, -500, -2000)
+		const body = this.body as Phaser.Physics.Arcade.Body
+		if(!body)
+		{
+			return
+		}
+
+		body.enable = false
+		this.scene.physics.world.remove(body)
+	}
+
+	damage(points: number)
+	{
+		this.HP = Phaser.Math.Clamp(this.HP - points, 0, 200)
+	}
+
+	heal(points: number)
+	{
+		this.HP = Phaser.Math.Clamp(this.HP + points, 0, 200)
+	}
 
 	/* END-USER-CODE */
 }

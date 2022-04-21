@@ -35,10 +35,15 @@ export default class FollowTarget extends UserComponent {
 	public deadRangeY: number = 60;
 
 	/* START-USER-CODE */
-
+	public active = true
 	// Write your code here.
 	update()
 	{
+		if(!this.active)
+		{
+			return
+		}
+
 		if(!this.checkRequireComps())
 		{
 			return
@@ -46,11 +51,22 @@ export default class FollowTarget extends UserComponent {
 
 		if(!this.checkWithinRange())
 		{
+			// this.gameObject.emit('move', DIRECTION.BACK)
 			this.gameObject.emit('stay-still')
 			return
 		}
 
 		this.moveToTarget()
+	}
+
+	deactivate()
+	{
+		this.active = false
+	}
+
+	activate()
+	{
+		this.active = true
 	}
 
 	moveToTarget()

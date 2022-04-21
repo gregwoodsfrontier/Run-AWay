@@ -31,7 +31,7 @@
             "FollowTarget.range": 130,
             "JustMovement.speed": 90,
             "texture": {
-                "key": "swarm-front-walk-1"
+                "key": "swarm-back-walk-1"
             }
         }
     ],
@@ -41,5 +41,17 @@
         "url": "https://phasereditor2d.com",
         "contentType": "phasereditor2d.core.scene.SceneContentType",
         "version": 3
-    }
+    },
+    "prefabProperties": [
+        {
+            "name": "HP",
+            "label": "HP",
+            "tooltip": "HP",
+            "defValue": 100,
+            "customDefinition": false,
+            "type": {
+                "id": "number"
+            }
+        }
+    ]
 }

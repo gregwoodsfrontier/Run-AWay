@@ -9,6 +9,7 @@
     "editor-remote": "phasereditor2d-launcher -project . -disable-open-browser -public -port 1959"
   },
   "devDependencies": {
+    "@types/node": "^17.0.25",
     "phaser-asset-pack-hashing": "^1.0.5",
     "typescript": "^4.4.4",
     "vite": "^2.7.2"
@@ -16,7 +17,6 @@
   "dependencies": {
     "mobx": "^6.5.0",
     "phaser": "^3.55.2",
-    "phaser3-rex-plugins": "^1.1.68",
     "phasereditor2d-launcher": "^3.31.2"
   }
 }

@@ -62,14 +62,17 @@
                 "x",
                 "y",
                 "FollowTarget.target",
-                "FollowTarget.deadRangeX"
+                "FollowTarget.deadRangeX",
+                "FollowTarget.range"
             ],
-            "label": "enemy_3",
+            "label": "enemyA",
+            "scope": "CLASS",
             "components": [],
-            "FollowTarget.target": "player",
+            "FollowTarget.target": "pSDRobot",
+            "FollowTarget.range": 200,
             "FollowTarget.deadRangeX": 35,
-            "x": 112,
-            "y": -96
+            "x": 96,
+            "y": 416
         },
         {
             "prefabId": "169b350d-b922-409d-8da8-e86ab037d35d",
@@ -78,12 +81,12 @@
                 "x",
                 "y"
             ],
-            "label": "PSDRobot",
+            "label": "pSDRobot",
             "useGameObjectName": true,
             "scope": "CLASS",
             "components": [],
-            "x": -64,
-            "y": 256
+            "x": -200,
+            "y": 0
         },
         {
             "type": "Sprite",
@@ -96,6 +99,63 @@
             },
             "x": 144,
             "y": 160
+        },
+        {
+            "prefabId": "408d4d35-1d26-4f5e-9315-9d890dbf9ae0",
+            "id": "f5505805-41b9-4cf4-92f0-d56db8aa842b",
+            "unlock": [
+                "x",
+                "y",
+                "FollowTarget.target",
+                "FollowTarget.deadRangeX",
+                "FollowTarget.range"
+            ],
+            "label": "enemyA_1",
+            "scope": "CLASS",
+            "components": [],
+            "FollowTarget.target": "pSDRobot",
+            "FollowTarget.range": 300,
+            "FollowTarget.deadRangeX": 35,
+            "x": 144,
+            "y": 368
+        },
+        {
+            "prefabId": "408d4d35-1d26-4f5e-9315-9d890dbf9ae0",
+            "id": "6d31fe54-61d3-48a0-b373-07276b87bc0a",
+            "unlock": [
+                "x",
+                "y",
+                "FollowTarget.target",
+                "FollowTarget.deadRangeX",
+                "FollowTarget.range"
+            ],
+            "label": "enemyA_2",
+            "scope": "CLASS",
+            "components": [],
+            "FollowTarget.target": "pSDRobot",
+            "FollowTarget.range": 300,
+            "FollowTarget.deadRangeX": 35,
+            "x": 192,
+            "y": 416
+        },
+        {
+            "prefabId": "408d4d35-1d26-4f5e-9315-9d890dbf9ae0",
+            "id": "4947998b-80fa-480b-9916-4d99b5aa4047",
+            "unlock": [
+                "x",
+                "y",
+                "FollowTarget.target",
+                "FollowTarget.deadRangeX",
+                "FollowTarget.range"
+            ],
+            "label": "enemyA_3",
+            "scope": "CLASS",
+            "components": [],
+            "FollowTarget.target": "pSDRobot",
+            "FollowTarget.range": 300,
+            "FollowTarget.deadRangeX": 35,
+            "x": 240,
+            "y": 368
         }
     ],
     "plainObjects": [
@@ -135,16 +195,11 @@
             "id": "97ea1992-d8cd-43db-92a5-734f0b5c68b4",
             "label": "enemyTeam",
             "objectIds": [
+                "4947998b-80fa-480b-9916-4d99b5aa4047",
+                "f5505805-41b9-4cf4-92f0-d56db8aa842b",
+                "6d31fe54-61d3-48a0-b373-07276b87bc0a",
                 "63f44b6a-316d-4ac2-9257-71741dcfd6ba"
             ]
-        },
-        {
-            "id": "5d525c7c-af17-4006-926c-ce78ede55616",
-            "label": "silverList"
-        },
-        {
-            "id": "975bfebc-cb90-40a9-80ec-b238df8344aa",
-            "label": "bulletList"
         }
     ]
 }
