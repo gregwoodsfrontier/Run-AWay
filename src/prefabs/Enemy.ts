@@ -9,7 +9,6 @@ import DepthSortY from "../components/DepthSortY";
 import FollowTarget from "../components/FollowTarget";
 import AnimationV2 from "../components/AnimationV2";
 import JustMovement from "../components/JustMovement";
-
 /* START-USER-IMPORTS */
 import StateMachine from "../stateMachine";
 import { ENEMY_STATE_KEYS } from "../types/enemyStateKeys";
@@ -70,6 +69,8 @@ export default class Enemy extends Phaser.GameObjects.Sprite {
 		/* END-USER-CTR-CODE */
 	}
 
+	public HP: number = 100;
+
 	/* START-USER-CODE */
 
 	// Write your code here.
@@ -113,7 +114,7 @@ export default class Enemy extends Phaser.GameObjects.Sprite {
 			this.slapHitBox.body.width, 
 			this.slapHitBox.body.height
 		)
-		
+
 	}
 
 	private stayStill()
@@ -218,7 +219,7 @@ export default class Enemy extends Phaser.GameObjects.Sprite {
 	{
 		this.disableSlapBox()
 	}
-	
+
 	private onWalkUpdate()
 	{
 		const dirName = getDirectionName(this.direction)
@@ -257,11 +258,11 @@ export default class Enemy extends Phaser.GameObjects.Sprite {
 			state: 'walk'
 		})
 	}
-	
+
 	private onAttackEnter()
 	{
 		const dirName = getDirectionName(this.direction)
-		
+
 		if(!dirName)
 		{
 			console.warn('direction should be defined')
@@ -277,7 +278,7 @@ export default class Enemy extends Phaser.GameObjects.Sprite {
 		})
 
 		const startHit = () => {
-			
+
 			this.off(Phaser.Animations.Events.ANIMATION_UPDATE, startHit)
 
 			this.setSlapHitBox(this.direction)
@@ -322,7 +323,16 @@ export default class Enemy extends Phaser.GameObjects.Sprite {
 		body.enable = false
 		this.scene.physics.world.remove(body)
 	}
-	
+
+	damage(points: number)
+	{
+		this.HP = Phaser.Math.Clamp(this.HP - points, 0, 200)
+	}
+
+	heal(points: number)
+	{
+		this.HP = Phaser.Math.Clamp(this.HP + points, 0, 200)
+	}
 
 	/* END-USER-CODE */
 }
