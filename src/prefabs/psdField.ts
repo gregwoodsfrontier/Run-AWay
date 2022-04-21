@@ -46,36 +46,28 @@ export default class psdField extends Phaser.GameObjects.Container {
 		this.add(bot);
 
 		// top_left (components)
-		const top_leftPhysics = new Physics(top_left);
-		top_leftPhysics.static = true;
+		new Physics(top_left);
 
 		// top_right (components)
-		const top_rightPhysics = new Physics(top_right);
-		top_rightPhysics.static = true;
+		new Physics(top_right);
 
 		// bot_left (components)
-		const bot_leftPhysics = new Physics(bot_left);
-		bot_leftPhysics.static = true;
+		new Physics(bot_left);
 
 		// bot_right (components)
-		const bot_rightPhysics = new Physics(bot_right);
-		bot_rightPhysics.static = true;
+		new Physics(bot_right);
 
 		// top (components)
-		const topPhysics = new Physics(top);
-		topPhysics.static = true;
+		new Physics(top);
 
 		// left (components)
-		const leftPhysics = new Physics(left);
-		leftPhysics.static = true;
+		new Physics(left);
 
 		// right (components)
-		const rightPhysics = new Physics(right);
-		rightPhysics.static = true;
+		new Physics(right);
 
 		// bot (components)
-		const botPhysics = new Physics(bot);
-		botPhysics.static = true;
+		new Physics(bot);
 
 		this.top_left = top_left;
 		this.top_right = top_right;
@@ -205,15 +197,15 @@ export default class psdField extends Phaser.GameObjects.Container {
 					continue
 				}
 
-				const img = this.scene.physics.add.image( -32*(lv-0.5) + a*32, -32*(lv-0.5) + b*32, sprKey, index )
+				const img = scene.physics.add.image( -32*(lv-0.5) + a*32, -32*(lv-0.5) + b*32, sprKey, index )
 				img.setPushable(false)
 				this.add(img)
-				
+
 			}
 		}
-		this.scene.add.existing(this)
-		this.scene.physics.add.existing(this, true)
-		
+		scene.add.existing(this)
+		// this.scene.physics.add.existing(this, true)
+
 		this.scene.events.emit('gen-psd-field')
 	}
 
