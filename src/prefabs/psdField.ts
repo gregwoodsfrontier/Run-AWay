@@ -89,6 +89,8 @@ export default class psdField extends Phaser.GameObjects.Container {
 		/* START-USER-CTR-CODE */
 		// Write your code here.
 		scene.add.existing(this)
+
+		this.scene.events.once(Phaser.Scenes.Events.UPDATE, this.start, this)
 		/* END-USER-CTR-CODE */
 	}
 
@@ -104,6 +106,27 @@ export default class psdField extends Phaser.GameObjects.Container {
 	/* START-USER-CODE */
 
 	// Write your code here.
+	start()
+	{
+		const images = [
+			this.top,
+			this.left,
+			this.right,
+			this.bot,
+			this.top_left,
+			this.top_right,
+			this.bot_left,
+			this.bot_right
+		]
+
+		images.forEach(e => e.setVisible(false))
+	}
+
+	clearField()
+	{
+		this.removeAll(true)
+	}
+
 	makeNextLevel(lv: number)
 	{
 		/**
@@ -113,14 +136,16 @@ export default class psdField extends Phaser.GameObjects.Container {
 		 * 	 x3-      - x3
 		 *  [BL]-[B]x3-[BR]
 		 */
-		if(lv < 2)
+		/* if(lv < 2)
 		{
 			return
-		}
+		} */
 
 		const {scene} = this
 		const lim = lv * 2 + 1
 		const sprKey = "PSDField"
+		this.removeAll()
+
 		for(let a = 0; a < lim; a++)
 		{
 			for(let b = 0; b < lim; b++)
@@ -148,7 +173,6 @@ export default class psdField extends Phaser.GameObjects.Container {
 				{
 					if(b === 0)
 					{
-						console.log('reach')
 						// top - right
 						index = 3
 					}
@@ -181,9 +205,10 @@ export default class psdField extends Phaser.GameObjects.Container {
 					continue
 				}
 
-				this.add(this.scene.add.image( -32*(lv-0.5) + a*32, -32*(lv-0.5) + b*32, sprKey, index ))
+				this.add(this.scene.physics.add.image( -32*(lv-0.5) + a*32, -32*(lv-0.5) + b*32, sprKey, index ))
 			}
 		}
+		this.scene.add.existing(this)
 	}
 
 	/* END-USER-CODE */

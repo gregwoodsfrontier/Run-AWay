@@ -7,6 +7,7 @@ import Phaser from "phaser";
 import Physics from "../components/Physics";
 /* START-USER-IMPORTS */
 import StateMachine from "../stateMachine";
+import psdField from "./psdField";
 enum PSD_STATE {
 	BACKPACK = 'backpack',
 	DEPLOY = 'deploy'
@@ -41,27 +42,47 @@ export default class PSD extends Phaser.GameObjects.Sprite {
 	public energy: number = 100;
 
 	/* START-USER-CODE */
-	private stateMachine: StateMachine
+	public stateMachine: StateMachine
+	public innerField?: psdField
+	public outerField?: psdField
 	// Write your code here.
+	public deploy()
+	{
+		this.stateMachine.setState(PSD_STATE.DEPLOY)
+	}
+
+	public returnToPlayer()
+	{
+		this.stateMachine.setState(PSD_STATE.BACKPACK)
+	}
+
 	private onBackpackEnter()
 	{
+		this.once(Phaser.Animations.Events.ANIMATION_COMPLETE, this.despawn, this)
 		this.playReverse('psd-deploy', true)
-		this.once(Phaser.Animations.Events.ANIMATION_COMPLETE + 'psd-deploy', () => {
-			this.scene.time.delayedCall(300, () => {
-				this.despawn()
-			})
-		})
+		this.clearAllField()
+		
 	}
 
 	private onDeployEnter()
 	{
 		this.spawn(this.x, this.y).play('psd-deploy', true)
-		this.createPSDField()
+		this.generateField()
 	}
 
-	private createPSDField()
+	private clearAllField()
 	{
+		this.innerField?.clearField()
+		this.outerField?.clearField()
+	}
 
+	private generateField()
+	{
+		this.innerField = new psdField(this.scene, this.x - 16, this.y - 16)
+		this.innerField.makeNextLevel(1)
+
+		this.outerField = new psdField(this.scene, this.x - 16, this.y - 16)
+		this.outerField.makeNextLevel(3)
 	}
 
 	spawn(x: number, y: number)
