@@ -1538,7 +1538,8 @@
                 }
             ],
             "frameRate": 9,
-            "skipMissedFrames": true
+            "skipMissedFrames": true,
+            "repeat" : 0
         },
         {
             "key": "trap-poison-mistraw-break-interact",
@@ -1558,7 +1559,8 @@
                 }
             ],
             "frameRate": 9,
-            "skipMissedFrames": true
+            "skipMissedFrames": true,
+            "repeat": 0
         },
         {
             "key": "bppsd-left-idle-none",
@@ -3519,6 +3521,21 @@
             "frameRate": 12,
             "skipMissedFrames": true,
             "repeat": -1
+        },
+        {
+            "key": "trap-poison-idle",
+            "type": "frame",
+            "frames": [
+                {
+                    "key": "raw-break-interact",
+                    "frame": 104,
+                    "duration": 0,
+                    "keyframe": false
+                }
+            ],
+            "frameRate": 9,
+            "skipMissedFrames": true,
+            "repeat": 0
         }
     ],
     "globalTimeScale": 1,
