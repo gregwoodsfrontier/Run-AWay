@@ -16,6 +16,7 @@
             "type": "Image",
             "id": "3b9481f2-b3a7-4257-86da-e8014a94eefc",
             "label": "uI_Explainer",
+            "scope": "CLASS",
             "components": [
                 "Button"
             ],

@@ -49,6 +49,11 @@ export default class Bootstrap extends Phaser.Scene {
 		eventsCenter.on(SCENE_SWITCH_EVENTS.TO_EXPLAINER, this.goToExplainer, this)
 		eventsCenter.on(SCENE_SWITCH_EVENTS.RESUME_FROM_EXPLAIN, this.resumeFromExplainer, this)
 		
+		if(process.env.NODE_ENV === "development")
+		{
+			this.createNewGame()
+		}
+
 		this.startTitleScene()
 	}
 

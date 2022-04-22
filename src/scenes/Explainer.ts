@@ -5,6 +5,8 @@
 
 import Phaser from "phaser";
 import Button from "../components/Button";
+import eventsCenter from "../EventsCenter";
+import { SCENE_SWITCH_EVENTS } from "../types/scenes";
 /* START-USER-IMPORTS */
 /* END-USER-IMPORTS */
 
@@ -26,8 +28,12 @@ export default class Explainer extends Phaser.Scene {
 		// uI_Explainer (components)
 		new Button(uI_Explainer);
 
+		this.uI_Explainer = uI_Explainer;
+
 		this.events.emit("scene-awake");
 	}
+
+	private uI_Explainer!: Phaser.GameObjects.Image;
 
 	/* START-USER-CODE */
 
@@ -36,6 +42,10 @@ export default class Explainer extends Phaser.Scene {
 	create() {
 
 		this.editorCreate();
+
+		Button.getComponent(this.uI_Explainer).handlePointerUp = () => {
+			eventsCenter.emit(SCENE_SWITCH_EVENTS.RESUME_FROM_EXPLAIN)
+		}
 	}
 
 	/* END-USER-CODE */

@@ -80,15 +80,15 @@ export default class SelectionSquare extends UserComponent {
 				break
 			}
 			case DIRECTION.BACK: {
-				this.selectSquare.setPosition(x, y - distance)
+				this.selectSquare.setPosition(x, y - 0.8 * distance)
 				break
 			}
 			case DIRECTION.LEFT: {
-				this.selectSquare.setPosition(x - distance, y)
+				this.selectSquare.setPosition(x - 0.7*distance, y + 16)
 				break
 			}
 			case DIRECTION.RIGHT: {
-				this.selectSquare.setPosition(x + distance, y)
+				this.selectSquare.setPosition(x + 0.7*distance, y + 16)
 				break
 			}
 		}

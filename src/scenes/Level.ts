@@ -16,6 +16,8 @@ import JustMovement from "../components/JustMovement";
 import SelectionSquare from "../components/SelectionSquare";
 import KeyboardInput from "../components/KeyboardInput";
 import { PSD_STATE } from "../types/PSD";
+import eventsCenter from "../EventsCenter";
+import { SCENE_SWITCH_EVENTS } from "../types/scenes";
 /* END-USER-IMPORTS */
 
 export default class Level extends Phaser.Scene {
@@ -162,13 +164,17 @@ export default class Level extends Phaser.Scene {
 
 		if(process.env.NODE_ENV !== "development")
 		{
-			this.start_level.once('animationcomplete', this.onStartLevelAnimsComplete, this)
+			this.start_level.once('animationcomplete', () => {
+				this.events.once('resume', this.onStartLevelAnimsComplete, this)
+				eventsCenter.emit(SCENE_SWITCH_EVENTS.TO_EXPLAINER)
+			}, this)
 			this.enemyTeam.forEach(e => {
 				FollowTarget.getComponent(e).deactivate()
 			})
 	
 			this.player.setVisible(false)
 			this.playStartLevelAnims()
+			
 		}
 		
 		// bypass if environment is in development
@@ -203,7 +209,11 @@ export default class Level extends Phaser.Scene {
 
 	private onStartLevelAnimsComplete()
 	{
-		this.player.setVisible(true)
+		if(this.player)
+		{
+			this.player.setVisible(true)
+		}
+		
 		const input = KeyboardInput.getComponent(this.player)
 		if(!input)
 		{
