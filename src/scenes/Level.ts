@@ -159,14 +159,21 @@ export default class Level extends Phaser.Scene {
 		this.events.on('deploy-PSD', this.deployPSD, this)
 		this.events.on('takeback-PSD', this.takeBackPSD, this)
 		this.events.on('gen-psd-field', this.addColliderEnemyField, this)
-		this.start_level.once('animationcomplete', this.onStartLevelAnimsComplete, this)
 
-		this.enemyTeam.forEach(e => {
-			FollowTarget.getComponent(e).deactivate()
-		})
-
-		this.player.setVisible(false)
-		this.playStartLevelAnims()
+		if(process.env.NODE_ENV !== "development")
+		{
+			this.start_level.once('animationcomplete', this.onStartLevelAnimsComplete, this)
+			this.enemyTeam.forEach(e => {
+				FollowTarget.getComponent(e).deactivate()
+			})
+	
+			this.player.setVisible(false)
+			this.playStartLevelAnims()
+		}
+		
+		// bypass if environment is in development
+		this.start_level.setVisible(false).setActive(false)
+		this.onStartLevelAnimsComplete()
 	}
 
 	update(time: number, delta: number)
