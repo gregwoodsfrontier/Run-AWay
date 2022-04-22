@@ -210,13 +210,8 @@ export default class UI extends Phaser.Scene {
 		this.redStatus.sort((a, b) => a.y - b.y)
 
 		//test inpiut
-		const testInput = KeyboardInput.getComponent(this.bottom_Panel)
-		testInput.setActive(true)
-		testInput.executeWKeyJustDown = this.testInventory
-		testInput.executeAKeyJustDown = this.testHealth
-		testInput.executeSKeyJustDown = this.testEnergy
-		testInput.executeDKeyJustDown = this.testSanity
-
+		// this.testInputActive()
+		
 		//menuButton events
 		this.setMenuButtonResponse()
 		
@@ -232,6 +227,16 @@ export default class UI extends Phaser.Scene {
 			this.showPSDStatus()
 			this.showGunStatus()
 		})
+	}
+
+	private testInputActive()
+	{
+		const testInput = KeyboardInput.getComponent(this.bottom_Panel)
+		testInput.setActive(true)
+		testInput.executeWKeyJustDown = this.testInventory
+		testInput.executeAKeyJustDown = this.testHealth
+		testInput.executeSKeyJustDown = this.testEnergy
+		testInput.executeDKeyJustDown = this.testSanity
 	}
 
 	private setMenuButtonResponse()
