@@ -37,6 +37,11 @@
                 "key": "back-gunonly-4"
             },
             {
+                "url": "assets/Boss Level/Boss Level Layout.json",
+                "type": "tilemapTiledJSON",
+                "key": "Boss Level Layout"
+            },
+            {
                 "url": "assets/boss/boss-back-attack-1.png",
                 "type": "image",
                 "key": "boss-back-attack-1"

@@ -1,0 +1,33 @@
+{
+    "id": "fd446f6a-14eb-49f0-960d-8a841e03796c",
+    "sceneType": "SCENE",
+    "settings": {
+        "exportClass": true,
+        "autoImport": true,
+        "preloadPackFiles": [],
+        "createMethodName": "editorCreate",
+        "sceneKey": "Boss",
+        "compilerOutputLanguage": "TYPE_SCRIPT",
+        "borderWidth": 320,
+        "borderHeight": 640
+    },
+    "displayList": [
+        {
+            "type": "Text",
+            "id": "2362af5e-9dd4-4f89-8dbd-7dc38bf9b9d1",
+            "label": "bossTest",
+            "components": [],
+            "x": 23,
+            "y": 130,
+            "text": "BOSS SCENE",
+            "fontSize": "48px"
+        }
+    ],
+    "plainObjects": [],
+    "meta": {
+        "app": "Phaser Editor 2D - Scene Editor",
+        "url": "https://phasereditor2d.com",
+        "contentType": "phasereditor2d.core.scene.SceneContentType",
+        "version": 3
+    }
+}
