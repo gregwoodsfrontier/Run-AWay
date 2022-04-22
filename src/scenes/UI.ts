@@ -16,6 +16,23 @@ enum POINTS_TYPE {
 	SANITY
 }
 
+enum ITEM_TYPE {
+	COPPER,
+	SILVER,
+	GOLD
+}
+
+interface IPOSITION {
+	X: number,
+	Y: number
+}
+
+const INVENTORY_POS: IPOSITION[] = [
+	{X: 22, Y: 554.5}, {X: 58, Y: 554.5}, {X: 94, Y: 554.5},
+	{X: 22, Y: 585.5}, {X: 58, Y: 585.5}, {X: 94, Y: 585.5},
+	{X: 22, Y: 616.5}, {X: 58, Y: 616.5}, {X: 94, Y: 616.5}
+]
+
 /* END-USER-IMPORTS */
 
 export default class UI extends Phaser.Scene {
@@ -136,21 +153,13 @@ export default class UI extends Phaser.Scene {
 		const status_Red_Overlay_2 = this.add.image(294, 612.5, "Status Red Overlay");
 
 		// gunButton
-		this.add.image(156, 601, "GunButton");
+		const gunButton = this.add.image(156, 601, "GunButton");
 
 		// pSDButton
 		this.add.image(156, 556, "PSDButton");
 
 		// pSD_Button_Red
-		this.add.image(155, 555, "PSD Button Red");
-
-		// hideGun_overlay
-		const hideGun_overlay = this.add.rectangle(122, 583, 128, 128);
-		hideGun_overlay.scaleX = 0.5079123410920019;
-		hideGun_overlay.scaleY = 0.2850074030646159;
-		hideGun_overlay.setOrigin(0, 0);
-		hideGun_overlay.alpha = 0.5;
-		hideGun_overlay.isFilled = true;
+		const pSD_Button_Red = this.add.image(155, 555, "PSD Button Red");
 
 		// lists
 		const sanityPoints = [sanity_Point_9, sanity_Point_8, sanity_Point_7, sanity_Point_6, sanity_Point_5, sanity_Point_4, sanity_Point_3, sanity_Point_2, sanity_Point_1, sanity_Point];
@@ -165,7 +174,8 @@ export default class UI extends Phaser.Scene {
 		new KeyboardInput(bottom_Panel);
 
 		this.bottom_Panel = bottom_Panel;
-		this.hideGun_overlay = hideGun_overlay;
+		this.gunButton = gunButton;
+		this.pSD_Button_Red = pSD_Button_Red;
 		this.sanityPoints = sanityPoints;
 		this.energyPoints = energyPoints;
 		this.healthPoints = healthPoints;
@@ -175,13 +185,15 @@ export default class UI extends Phaser.Scene {
 	}
 
 	private bottom_Panel!: Phaser.GameObjects.Sprite;
-	private hideGun_overlay!: Phaser.GameObjects.Rectangle;
+	private gunButton!: Phaser.GameObjects.Image;
+	private pSD_Button_Red!: Phaser.GameObjects.Image;
 	private sanityPoints!: Phaser.GameObjects.Image[];
 	private energyPoints!: Phaser.GameObjects.Image[];
 	private healthPoints!: Phaser.GameObjects.Image[];
 	private redStatus!: Phaser.GameObjects.Image[];
 
 	/* START-USER-CODE */
+	private itemList: Phaser.GameObjects.Image[] = []
 
 	// Write your code here
 
@@ -191,26 +203,144 @@ export default class UI extends Phaser.Scene {
 		this.sanityPoints.sort((a, b) => b.x - a.x)
 		this.energyPoints.sort((a, b) => b.x - a.x)
 		this.healthPoints.sort((a, b) => b.x - a.x)
+		this.redStatus.sort((a, b) => a.y - b.y)
 
 		//test inpiut
 		const testInput = KeyboardInput.getComponent(this.bottom_Panel)
 		testInput.setActive(true)
-		testInput.executeAKeyJustDown = () => {
-			GameState.hp = Phaser.Math.Clamp(GameState.hp - 10, 0, 100)
-		}
-		testInput.executeSKeyJustDown = () => {
-			GameState.energy = Phaser.Math.Clamp(GameState.energy - 10, 0, 100)
-		}
-		testInput.executeDKeyJustDown = () => {
-			GameState.sanity = Phaser.Math.Clamp(GameState.sanity - 10, 0, 100)
-		}
+		testInput.executeWKeyJustDown = this.testInventory
+		testInput.executeAKeyJustDown = this.testHealth
+		testInput.executeSKeyJustDown = this.testEnergy
+		testInput.executeDKeyJustDown = this.testSanity
 
 		// update points
 		autorun(() => {
 			this.showPoints(POINTS_TYPE.ENERGY)
 			this.showPoints(POINTS_TYPE.HEALTH)
 			this.showPoints(POINTS_TYPE.SANITY)
+			this.showInventory()
+			this.showRedStatus(POINTS_TYPE.ENERGY)
+			this.showRedStatus(POINTS_TYPE.HEALTH)
+			this.showRedStatus(POINTS_TYPE.SANITY)
+			this.showPSDStatus()
+			this.showGunStatus()
 		})
+	}
+
+	private showPSDStatus()
+	{
+		if(!GameState.isPSDDeployed)
+		{
+			this.pSD_Button_Red.setVisible(true)
+			return
+		}
+
+		this.pSD_Button_Red.setVisible(false)
+	}
+
+	private showGunStatus()
+	{
+		if(!GameState.isGunDeployed)
+		{
+			this.gunButton.setTexture('GunButton-off')
+			return
+		}
+
+		this.gunButton.setTexture('GunButton')
+	}
+
+	private showRedStatus(n: number)
+	{
+		let numsToCheck = GameState.energy
+		let numsLimit = 30
+
+		switch (n) {
+			case POINTS_TYPE.ENERGY: {
+				numsToCheck = GameState.energy
+				numsLimit = 30
+				break
+			}
+			case POINTS_TYPE.HEALTH: {
+				numsToCheck = GameState.hp
+				numsLimit = 30
+				break
+			}
+			case POINTS_TYPE.SANITY: {
+				numsToCheck = GameState.sanity
+				numsLimit = 30
+				break
+			}
+			default: {
+				console.error('no such type exists')
+				return
+			}
+		}
+
+		if(numsToCheck < numsLimit)
+		{
+			this.redStatus[n].setVisible(true)
+		}
+		else
+		{
+			this.redStatus[n].setVisible(false)
+		}
+	}
+
+	private testHealth = () => {
+		GameState.hp = GameState.hp - 10 > 0 ? GameState.hp - 10 : 100
+	}
+
+	private testEnergy = () => {
+		GameState.energy = GameState.energy - 10 > 0 ? GameState.energy - 10 : 100
+	}
+
+	private testSanity = () => {
+		GameState.sanity = GameState.sanity - 10 > 0 ? GameState.sanity - 10 : 100
+	}
+
+	private testInventory = () => {
+		if(GameState.inventory.length > 8){ 
+			GameState.inventory.length = 0
+			return 
+		}
+		GameState.inventory.push(Phaser.Math.Between(0, 2))
+	}
+
+	private showInventory()
+	{
+		// clear the item list sprite first
+		this.itemList.forEach(e => {
+			e.destroy()
+		})
+
+		GameState.inventory.forEach((val, idx) => {
+			const itemSprite = this.getItemSpriteName(val)
+			if(!itemSprite)
+			{
+				return
+			}
+			const itemToShow = this.add.image(
+				INVENTORY_POS[idx].X,
+				INVENTORY_POS[idx].Y,
+				itemSprite
+			)
+			this.itemList.push(itemToShow)
+		})
+	}
+
+	private getItemSpriteName(n: number)
+	{
+		switch (n) {
+			case ITEM_TYPE.COPPER: {
+				return 'copper item'
+			}
+			case ITEM_TYPE.SILVER: {
+				return 'silver item'
+			}
+			case ITEM_TYPE.GOLD: {
+				return 'gold item'
+			}
+		}
 	}
 
 	private showPoints(type: number)

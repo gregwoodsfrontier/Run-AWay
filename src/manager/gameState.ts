@@ -4,7 +4,7 @@ class GameStateManager {
     hp = 100
     sanity = 100
     energy = 100
-    inventory = []
+    inventory: number[] = []
     isPSDDeployed = false
     isGunDeployed = false
 

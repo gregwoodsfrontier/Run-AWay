@@ -408,6 +408,7 @@
             "type": "Image",
             "id": "9a329c46-66eb-4b0d-9686-38ca111f0fcc",
             "label": "gunButton",
+            "scope": "CLASS",
             "components": [],
             "texture": {
                 "key": "GunButton"
@@ -430,29 +431,13 @@
             "type": "Image",
             "id": "6b83dd54-46c1-4235-ad89-8b84f06c82d0",
             "label": "pSD_Button_Red",
+            "scope": "CLASS",
             "components": [],
             "texture": {
                 "key": "PSD Button Red"
             },
             "x": 155,
             "y": 555
-        },
-        {
-            "type": "Rectangle",
-            "id": "fc721e0b-5fb8-4f5b-9d3e-abbaed35335a",
-            "label": "hideGun_overlay",
-            "scope": "CLASS",
-            "components": [],
-            "x": 122,
-            "y": 583,
-            "scaleX": 0.5079123410920019,
-            "scaleY": 0.2850074030646159,
-            "originX": 0,
-            "originY": 0,
-            "alpha": 0.5,
-            "isFilled": true,
-            "width": 128,
-            "height": 128
         }
     ],
     "plainObjects": [],

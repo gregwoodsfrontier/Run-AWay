@@ -11,6 +11,7 @@ import { HOLD_ITEM } from "../types/holdItem";
 import JustMovement from "./JustMovement";
 import Physics from "./Physics";
 import { HOLD_COMP_STATE } from "../types/holdCompState";
+import { GameState } from "../manager/gameState";
 /* END-USER-IMPORTS */
 
 export default class HoldComp {
@@ -112,12 +113,14 @@ export default class HoldComp {
 	private onEmptyEnter()
 	{
 		this.hand = HOLD_ITEM.NONE
+		GameState.isGunDeployed = false
 		this.disableGun()
 	}
 
 	private onHoldIdleEnter()
 	{
 		this.hand = HOLD_ITEM.GUN
+		GameState.isGunDeployed = true
 
 		const dirName = getDirectionName(this.direction)
 
@@ -146,6 +149,8 @@ export default class HoldComp {
 
 	private onHoldWalkUpdate()
 	{
+		GameState.isGunDeployed = true
+		
 		if(!this.gObjMovement)
 		{
 			console.error('just movement comp is not present on game object.')
