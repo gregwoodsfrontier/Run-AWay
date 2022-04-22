@@ -59,6 +59,7 @@ export default class Block extends Phaser.GameObjects.Sprite {
 				case("LBorder"):
 					this.setTexture("Borders" ,32)
 					this.setScale(0.5);
+					this.setSize(16, 32);
 					physIcs.height =32;
 					physIcs.width =32;
 					break;

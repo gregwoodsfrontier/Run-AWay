@@ -14,6 +14,7 @@ import KeyboardInput from "../components/KeyboardInput";
 import JustMovement from "../components/JustMovement";
 import AnimationV2 from "../components/AnimationV2";
 import DepthSortY from "../components/DepthSortY";
+import rnd from "../drand/random";
 /* END-USER-IMPORTS */
 
 export default class Chunk extends Phaser.Scene {
