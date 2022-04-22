@@ -3,36 +3,40 @@
 
 /* START OF COMPILED CODE */
 
+/* START-USER-IMPORTS */
 import Phaser from "phaser";
 import Physics from "../components/Physics";
-/* START-USER-IMPORTS */
 /* END-USER-IMPORTS */
+
+//Variables
 let SilverHealth = 4;
 let CopperHealth = 12;
 let GoldHealth = 20;
 let NormalHealth = 28;
-var objframe = 0;
+let objframe = 0;
+//
+
 export default class Block extends Phaser.GameObjects.Sprite {
+
 	constructor(scene: Phaser.Scene,  x?: number, y?: number, texture?: string, frame?: number | string ) {
 		super(scene, x ?? 0, y ?? 0, texture , frame ?? 0 );
 
 		/* START-USER-CTR-CODE */
-		// Write your code here.
 		if(texture != "Floor"){
 			const physIcs = new Physics(this);
 			physIcs.static = true;
 			switch(texture){
 				case("SilverBlock"):
-					this.setTexture("SilverBlock" , 3)
+					this.setTexture("raw-break-interact" , 3)
 					break;
 				case("CopperBlock"):
-					this.setTexture("CopperBlock" , 10)
+					this.setTexture("raw-break-interact" , 10)
 					break;
 				case("GoldBlock"):
-					this.setTexture("GoldBlock" , 17)
+					this.setTexture("raw-break-interact" , 17)
 					break;
 				case("NormalBlock"):
-					this.setTexture("NormalBlock" , 26)
+					this.setTexture("raw-break-interact" , 26)
 					break;
 				case("ULBorder"):
 					this.setTexture("Borders" ,24)
@@ -90,6 +94,8 @@ export default class Block extends Phaser.GameObjects.Sprite {
 	}
 	
 		/* END-USER-CTR-CODE */
+
+	/* START-USER-CODE */
 	
 	}
 
@@ -98,17 +104,18 @@ export default class Block extends Phaser.GameObjects.Sprite {
 		//changes frame name to int
 		objframe = parseInt(obj2?.frame.name)
 		objframe++;
+
 		//checks if the object's frame has reached the limit
-		if(obj2?.texture.key == "SilverBlock" && objframe>SilverHealth){
+		if(objframe <6 && objframe>SilverHealth){
 			obj2.destroy();
 		}
-		else if(obj2?.texture.key == "CopperBlock" && objframe>CopperHealth){
+		else if(objframe < 14 && objframe>CopperHealth){
 			obj2.destroy();
 		}
-		else if(obj2?.texture.key == "GoldBlock" && objframe>GoldHealth){
+		else if(objframe <22 && objframe>GoldHealth){
 			obj2.destroy();
 		}
-		else if(obj2?.texture.key == "NormalBlock" && objframe>NormalHealth){
+		else if(objframe < 30 && objframe>NormalHealth){
 			obj2.destroy();
 		}
 		//apply texture to the block
@@ -117,9 +124,7 @@ export default class Block extends Phaser.GameObjects.Sprite {
 		}
 	}
 
-	/* START-USER-CODE */
 
-	// Write your code here.
 
 	/* END-USER-CODE */
 }

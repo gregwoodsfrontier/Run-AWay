@@ -8,6 +8,7 @@ import Player from "../prefabs/Player";
 import Block from "../prefabs/Block";
 import FollowTarget from "../components/FollowTarget";
 import TileGen from "../manager/TileGen";
+import BlockOptimizer from "../manager/BlockOptimization";
 /* START-USER-IMPORTS */
 import KeyboardInput from "../components/KeyboardInput";
 import JustMovement from "../components/JustMovement";
@@ -41,6 +42,7 @@ export default class Chunk extends Phaser.Scene {
 			this.add.existing(blocks[x])
 		}*/
 
+		// generate world and get tiles
 		var blocks: Block[] = TileGen.GenerateWorld(this);
 
 		// add blocks to world
@@ -49,6 +51,7 @@ export default class Chunk extends Phaser.Scene {
 			this.add.existing(blocks[i]);
 		}
 
+		// apply blocks to this.blocks
 		this.blocks = blocks;
 
 		// player
@@ -58,6 +61,19 @@ export default class Chunk extends Phaser.Scene {
 
 		const block = new Block(this);
 		this.physics.add.collider(player, this.blocks, block.onHit);
+
+		// create an optimization function that specifically targets the newly targetted player and blocks list
+		var optimize = function(scene: Phaser.Scene)
+		{
+			// hide the tiles that arent near the player
+			BlockOptimizer.HideIrrelevant(scene.blocks, scene.player.x, scene.player.y);
+
+			// repeat this function after 2.5 seconds
+			setTimeout(optimize, 2500, scene);
+		}
+
+		// begin optimization loop
+		optimize(this);
 
 		this.events.emit("scene-awake");
 	}
