@@ -5,6 +5,8 @@
 
 import Phaser from "phaser";
 import Button from "../components/Button";
+import eventsCenter from "../EventsCenter";
+import { SCENE_SWITCH_EVENTS } from "../types/scenes";
 /* START-USER-IMPORTS */
 /* END-USER-IMPORTS */
 
@@ -80,7 +82,6 @@ export default class Title extends Phaser.Scene {
 
 		Button.getComponent(this.start_Button).handlePointerUp = () => {
 			this.hideUIElement()
-			// this.startNewGame()
 		}
 
 		const buttons = [
@@ -188,9 +189,10 @@ export default class Title extends Phaser.Scene {
 
 	private startNewGame()
 	{
-		this.scene.stop('Title')
-		this.scene.launch('Level')
-		this.scene.launch('UI')
+		eventsCenter.emit(SCENE_SWITCH_EVENTS.TO_GAME)
+		// this.scene.stop('Title')
+		// this.scene.launch('Level')
+		// this.scene.launch('UI')
 	}
 
 	/* END-USER-CODE */

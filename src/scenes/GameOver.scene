@@ -1,29 +1,27 @@
 {
-    "id": "a4ec640b-04c0-48dd-8b78-24b53aa07316",
+    "id": "70b29b51-2e5f-4524-80c4-af45403c5ea3",
     "sceneType": "SCENE",
     "settings": {
         "exportClass": true,
         "autoImport": true,
         "preloadPackFiles": [],
         "createMethodName": "editorCreate",
-        "sceneKey": "Explainer",
+        "sceneKey": "GameOver",
         "compilerOutputLanguage": "TYPE_SCRIPT",
         "borderWidth": 320,
         "borderHeight": 640
     },
     "displayList": [
         {
-            "type": "Image",
-            "id": "3b9481f2-b3a7-4257-86da-e8014a94eefc",
-            "label": "uI_Explainer",
-            "components": [
-                "Button"
-            ],
-            "texture": {
-                "key": "UI-Explainer-window"
-            },
-            "x": 160,
-            "y": 320
+            "type": "Text",
+            "id": "00ef978d-4a1f-4f22-a06e-a97592ce33fc",
+            "label": "gameover",
+            "scope": "CLASS",
+            "components": [],
+            "x": 30,
+            "y": 145,
+            "text": "Game Over",
+            "fontSize": "48px"
         }
     ],
     "plainObjects": [],

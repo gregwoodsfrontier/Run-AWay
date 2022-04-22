@@ -5,7 +5,7 @@
 
 import Phaser from "phaser";
 import eventsCenter from "../EventsCenter";
-import { IGameOverSceneData, ILevelData, SCENE_SWITCH_EVENTS } from "../types/scenes";
+import { SCENE_SWITCH_EVENTS } from "../types/scenes";
 /* START-USER-IMPORTS */
 /* END-USER-IMPORTS */
 
@@ -43,22 +43,34 @@ export default class Bootstrap extends Phaser.Scene {
 		this.editorCreate();
 
 		eventsCenter.on(SCENE_SWITCH_EVENTS.TO_PAUSE, this.switchToPauseMenu, this)
+		eventsCenter.on(SCENE_SWITCH_EVENTS.TO_GAME, this.createNewGame, this)
 		eventsCenter.on(SCENE_SWITCH_EVENTS.RESUME_GAME, this.resumeGame, this)
-		// this.startTitleScene()
-		this.createNewGame()
+		eventsCenter.on(SCENE_SWITCH_EVENTS.TO_GAMEOVER, this.handleGameOver, this)
+		eventsCenter.on(SCENE_SWITCH_EVENTS.TO_EXPLAINER, this.goToExplainer, this)
+		eventsCenter.on(SCENE_SWITCH_EVENTS.RESUME_FROM_EXPLAIN, this.resumeFromExplainer, this)
+		
+		this.startTitleScene()
+	}
+
+	private goToExplainer()
+	{
+		this.scene.pause("Level")
+		this.scene.pause("UI")
+		this.scene.launch("Explainer").bringToTop("Explainer")
+	}
+
+	private resumeFromExplainer()
+	{
+		this.scene.stop("Explainer")
+		this.scene.resume("Level")
+		this.scene.resume("UI")
 	}
 
 	private switchToPauseMenu()
 	{
 		this.scene.pause("Level")
 		this.scene.pause("UI")
-		// this.scene.stop("Level")
-		// this.scene.stop("UI")
 		this.scene.launch("Pause").bringToTop("Pause")
-		this.scene.manager.dump()
-		this.time.delayedCall(1000, () => {
-			this.scene.manager.dump()
-		})
 	}
 
 	private resumeGame()
@@ -76,34 +88,15 @@ export default class Bootstrap extends Phaser.Scene {
 	private createNewGame()
 	{
 		this.scene.stop("Title")
-		/* this.scene.launch("Level", {
-			onGameOver: this.handleGameOver,
-			onPauseMenu: this.handlePause
-		}) */
 		this.scene.launch("Level")
 		this.scene.launch("UI")
-	}
-
-	private handlePause()
-	{
-		this.scene.pause("Level")
-		this.scene.launch("Pause", {
-			onResumeGame: this.handleGameFromPause
-		})
-	}
-
-	private handleGameFromPause()
-	{
-		this.scene.stop("Pause")
-		this.scene.resume("Level")
 	}
 
 	private handleGameOver()
 	{
 		this.scene.stop('Level')
 		this.scene.stop('UI')
-
-		this.scene.launch('Gameover')
+		this.scene.launch('GameOver')
 	}
 
 	/* END-USER-CODE */

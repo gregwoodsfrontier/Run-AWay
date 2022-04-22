@@ -10,14 +10,11 @@ import FollowTarget from "../components/FollowTarget";
 import PSD from "../prefabs/PSD";
 /* START-USER-IMPORTS */
 import DepthSortY from "../components/DepthSortY";
-import { ILevelData } from "../types/scenes";
 import { DIRECTION } from "../types/direction";
 import Bullet from "../prefabs/Bullet";
 import JustMovement from "../components/JustMovement";
 import SelectionSquare from "../components/SelectionSquare";
 import KeyboardInput from "../components/KeyboardInput";
-import psdField from "../prefabs/psdField";
-import PSDComp from "../components/PSDComp";
 import { PSD_STATE } from "../types/PSD";
 /* END-USER-IMPORTS */
 
