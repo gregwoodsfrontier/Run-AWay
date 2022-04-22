@@ -142,13 +142,15 @@ export default class Level extends Phaser.Scene {
 	lastfired = 0
 	#destination!: SelectionSquare
 
-	create(data: ILevelData) {
+	create() {
 
 		this.editorCreate();
 
 		this.player.play('player-front-idle')
 		this.floor_2.depth = this.wall_2.y * 2
 		this.wall_2.depth = this.wall_2.y * 2
+
+		console.log(this.wall_2.depth)
 
 		this.initObjectPool()
 

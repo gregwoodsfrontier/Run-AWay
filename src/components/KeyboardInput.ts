@@ -195,14 +195,10 @@ export default class KeyboardInput extends UserComponent {
 	}
 
 	executeUp()
-	{
-		console.log('up is input')
-	}
+	{}
 
 	executeDown()
-	{
-		console.log('down is input')
-	}
+	{}
 
 	executeSpace()
 	{

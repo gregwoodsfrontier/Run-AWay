@@ -52,9 +52,13 @@ export default class Bootstrap extends Phaser.Scene {
 	{
 		this.scene.pause("Level")
 		this.scene.pause("UI")
-		console.log('pause maybe satrt')
-		this.scene.launch("Pause")
+		// this.scene.stop("Level")
+		// this.scene.stop("UI")
+		this.scene.launch("Pause").bringToTop("Pause")
 		this.scene.manager.dump()
+		this.time.delayedCall(1000, () => {
+			this.scene.manager.dump()
+		})
 	}
 
 	private resumeGame()
