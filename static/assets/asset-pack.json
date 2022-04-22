@@ -255,6 +255,11 @@
                 "key": "cave-test-tileset-1"
             },
             {
+                "url": "assets/ui-assets/copper item.png",
+                "type": "image",
+                "key": "copper item"
+            },
+            {
                 "url": "assets/Transitions/Dithered Triangles.png",
                 "type": "image",
                 "key": "Dithered Triangles"
@@ -300,9 +305,19 @@
                 "key": "FufuSuperDino"
             },
             {
+                "url": "assets/ui-assets/gold item.png",
+                "type": "image",
+                "key": "gold item"
+            },
+            {
                 "url": "assets/ui-assets/GunButton.png",
                 "type": "image",
                 "key": "GunButton"
+            },
+            {
+                "url": "assets/ui-assets/GunButton-off.png",
+                "type": "image",
+                "key": "GunButton-off"
             },
             {
                 "url": "assets/ui-assets/Health Item Copper.png",
@@ -1205,6 +1220,11 @@
                 "url": "assets/ui-assets/Sanity Point.png",
                 "type": "image",
                 "key": "Sanity Point"
+            },
+            {
+                "url": "assets/ui-assets/silver item.png",
+                "type": "image",
+                "key": "silver item"
             },
             {
                 "url": "assets/ui-assets/Start Button.png",
