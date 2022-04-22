@@ -23,65 +23,65 @@ export default class Block extends Phaser.GameObjects.Sprite {
 			physIcs.static = true;
 			switch(texture){
 				case("SilverBlock"):
-				this.setTexture("SilverBlock" , 3)
-				break;
+					this.setTexture("SilverBlock" , 3)
+					break;
 				case("CopperBlock"):
-				this.setTexture("CopperBlock" , 10)
-				break;
+					this.setTexture("CopperBlock" , 10)
+					break;
 				case("GoldBlock"):
-				this.setTexture("GoldBlock" , 17)
-				break;
+					this.setTexture("GoldBlock" , 17)
+					break;
 				case("NormalBlock"):
-				this.setTexture("NormalBlock" , 26)
-				break;
+					this.setTexture("NormalBlock" , 26)
+					break;
 				case("ULBorder"):
-				this.setTexture("Borders" ,24)
-				this.setScale(0.5);
-				physIcs.height =32;
-				physIcs.width =32;
-				break;
+					this.setTexture("Borders" ,24)
+					this.setScale(0.5);
+					physIcs.height =32;
+					physIcs.width =32;
+					break;
 				case("UBorder"):
-				this.setTexture("Borders" ,25)
-				this.setScale(0.5);
-				physIcs.height =32;
-				physIcs.width =32;
-				break;
+					this.setTexture("Borders" ,25)
+					this.setScale(0.5);
+					physIcs.height =32;
+					physIcs.width =32;
+					break;
 				case("URBorder"):
-				this.setTexture("Borders" ,26)
-				this.setScale(0.5);
-				physIcs.height =32;
-				physIcs.width =32;
-				break;
+					this.setTexture("Borders" ,26)
+					this.setScale(0.5);
+					physIcs.height =32;
+					physIcs.width =32;
+					break;
 				case("LBorder"):
-				this.setTexture("Borders" ,32)
-				this.setScale(0.5);
-				physIcs.height =32;
-				physIcs.width =32;
-				break;
+					this.setTexture("Borders" ,32)
+					this.setScale(0.5);
+					physIcs.height =32;
+					physIcs.width =32;
+					break;
 				case("RBorder"):
-				this.setTexture("Borders" ,34)
-				this.setScale(0.5);
-				physIcs.height =32;
-				physIcs.width =32;
-				break;
+					this.setTexture("Borders" ,34)
+					this.setScale(0.5);
+					physIcs.height =32;
+					physIcs.width =32;
+					break;
 				case("BBorder"):
-				this.setTexture("Borders" ,41)
-				this.setScale(0.5);
-				physIcs.height =32;
-				physIcs.width =32;
-				break;
+					this.setTexture("Borders" ,41)
+					this.setScale(0.5);
+					physIcs.height =32;
+					physIcs.width =32;
+					break;
 				case("BLBorder"):
-				this.setTexture("Borders" ,40)
-				this.setScale(0.5);
-				physIcs.height =32;
-				physIcs.width =32;
-				break;
+					this.setTexture("Borders" ,40)
+					this.setScale(0.5);
+					physIcs.height =32;
+					physIcs.width =32;
+					break;
 				case("BRBorder"):
-				this.setTexture("Borders" ,42)
-				this.setScale(0.5);
-				physIcs.height =32;
-				physIcs.width =32;
-				break;
+					this.setTexture("Borders" ,42)
+					this.setScale(0.5);
+					physIcs.height =32;
+					physIcs.width =32;
+					break;
 		}
 	}
 	else{
