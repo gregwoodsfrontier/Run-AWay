@@ -55,6 +55,11 @@
                 "key": "BOSS LEVEL v1"
             },
             {
+                "url": "assets/Boss Trap v1.png",
+                "type": "image",
+                "key": "Boss Trap v1"
+            },
+            {
                 "url": "assets/boss/boss-back-attack-1.png",
                 "type": "image",
                 "key": "boss-back-attack-1"
