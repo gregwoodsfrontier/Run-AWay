@@ -18,7 +18,9 @@
             "type": "Image",
             "id": "50952ab8-da32-40a9-9449-68ff3501853f",
             "label": "menu_Button",
-            "components": [],
+            "components": [
+                "Button"
+            ],
             "texture": {
                 "key": "Menu Button"
             },
@@ -26,10 +28,13 @@
             "y": 32
         },
         {
-            "type": "Image",
+            "type": "Sprite",
             "id": "d0549796-44a7-4287-ac22-5c3df5e48353",
-            "label": "bottom_Pannel",
-            "components": [],
+            "label": "bottom_Panel",
+            "scope": "CLASS",
+            "components": [
+                "KeyboardInput"
+            ],
             "texture": {
                 "key": "Bottom Pannel"
             },
@@ -433,30 +438,6 @@
             "y": 555
         },
         {
-            "type": "Image",
-            "id": "45ae2ddb-9807-4d3f-b225-744a106b1140",
-            "label": "item_1",
-            "scope": "CLASS",
-            "components": [],
-            "texture": {
-                "key": "Energy Item Ore"
-            },
-            "x": 22,
-            "y": 554.5
-        },
-        {
-            "type": "Image",
-            "id": "5d91b679-9514-431f-95ec-b4bdcae509b8",
-            "label": "item_2",
-            "scope": "CLASS",
-            "components": [],
-            "texture": {
-                "key": "Energy Item Ore"
-            },
-            "x": 58,
-            "y": 554.5
-        },
-        {
             "type": "Rectangle",
             "id": "fc721e0b-5fb8-4f5b-9d3e-abbaed35335a",
             "label": "hideGun_overlay",
@@ -528,6 +509,15 @@
                 "e6287591-3506-451f-a8d1-fb59b9fd2e05",
                 "da45c618-488a-4eb6-887c-4f4eddc78491",
                 "0b33a5be-1f13-4b23-b8dd-ae1cfdc9bcd5"
+            ]
+        },
+        {
+            "id": "6f6586c5-a806-4f2b-adc2-e4a052bfb7a4",
+            "label": "redStatus",
+            "objectIds": [
+                "ed2990e9-3622-4bd9-a0d6-f54a25922aad",
+                "5a0164eb-2909-4128-ac69-fece1220469a",
+                "fd88a61d-fc82-41cf-b70e-784666571292"
             ]
         }
     ]

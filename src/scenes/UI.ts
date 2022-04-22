@@ -4,16 +4,19 @@
 /* START OF COMPILED CODE */
 
 import Phaser from "phaser";
+import Button from "../components/Button";
+import KeyboardInput from "../components/KeyboardInput";
 /* START-USER-IMPORTS */
 import { autorun } from "mobx";
 import { GameState } from "../manager/gameState";
-/* END-USER-IMPORTS */
 
 enum POINTS_TYPE {
 	HEALTH,
 	ENERGY,
 	SANITY
 }
+
+/* END-USER-IMPORTS */
 
 export default class UI extends Phaser.Scene {
 
@@ -28,10 +31,10 @@ export default class UI extends Phaser.Scene {
 	editorCreate(): void {
 
 		// menu_Button
-		this.add.image(288, 32, "Menu Button");
+		const menu_Button = this.add.image(288, 32, "Menu Button");
 
-		// bottom_Pannel
-		this.add.image(160, 584.5, "Bottom Pannel");
+		// bottom_Panel
+		const bottom_Panel = this.add.sprite(160, 584.5, "Bottom Pannel");
 
 		// health_Point
 		const health_Point = this.add.image(276, 557, "Health Point");
@@ -124,13 +127,13 @@ export default class UI extends Phaser.Scene {
 		const sanity_Point_9 = this.add.image(222, 613, "Sanity Point");
 
 		// status_Red_Overlay
-		this.add.image(294, 556.5, "Status Red Overlay");
+		const status_Red_Overlay = this.add.image(294, 556.5, "Status Red Overlay");
 
 		// status_Red_Overlay_1
-		this.add.image(294, 584.5, "Status Red Overlay");
+		const status_Red_Overlay_1 = this.add.image(294, 584.5, "Status Red Overlay");
 
 		// status_Red_Overlay_2
-		this.add.image(294, 612.5, "Status Red Overlay");
+		const status_Red_Overlay_2 = this.add.image(294, 612.5, "Status Red Overlay");
 
 		// gunButton
 		this.add.image(156, 601, "GunButton");
@@ -140,12 +143,6 @@ export default class UI extends Phaser.Scene {
 
 		// pSD_Button_Red
 		this.add.image(155, 555, "PSD Button Red");
-
-		// item_1
-		const item_1 = this.add.image(22, 554.5, "Energy Item Ore");
-
-		// item_2
-		const item_2 = this.add.image(58, 554.5, "Energy Item Ore");
 
 		// hideGun_overlay
 		const hideGun_overlay = this.add.rectangle(122, 583, 128, 128);
@@ -159,23 +156,30 @@ export default class UI extends Phaser.Scene {
 		const sanityPoints = [sanity_Point_9, sanity_Point_8, sanity_Point_7, sanity_Point_6, sanity_Point_5, sanity_Point_4, sanity_Point_3, sanity_Point_2, sanity_Point_1, sanity_Point];
 		const energyPoints = [energy_Point_9, energy_Point_8, energy_Point_7, energy_Point_6, energy_Point_5, energy_Point_4, energy_Point_3, energy_Point_2, energy_Point_1, energy_Point];
 		const healthPoints = [health_Point, health_Point_9, health_Point_8, health_Point_7, health_Point_6, health_Point_5, health_Point_4, health_Point_3, health_Point_2, health_Point_1];
+		const redStatus = [status_Red_Overlay_2, status_Red_Overlay_1, status_Red_Overlay];
 
-		this.item_1 = item_1;
-		this.item_2 = item_2;
+		// menu_Button (components)
+		new Button(menu_Button);
+
+		// bottom_Panel (components)
+		new KeyboardInput(bottom_Panel);
+
+		this.bottom_Panel = bottom_Panel;
 		this.hideGun_overlay = hideGun_overlay;
 		this.sanityPoints = sanityPoints;
 		this.energyPoints = energyPoints;
 		this.healthPoints = healthPoints;
+		this.redStatus = redStatus;
 
 		this.events.emit("scene-awake");
 	}
 
-	private item_1!: Phaser.GameObjects.Image;
-	private item_2!: Phaser.GameObjects.Image;
+	private bottom_Panel!: Phaser.GameObjects.Sprite;
 	private hideGun_overlay!: Phaser.GameObjects.Rectangle;
 	private sanityPoints!: Phaser.GameObjects.Image[];
 	private energyPoints!: Phaser.GameObjects.Image[];
 	private healthPoints!: Phaser.GameObjects.Image[];
+	private redStatus!: Phaser.GameObjects.Image[];
 
 	/* START-USER-CODE */
 
@@ -187,6 +191,19 @@ export default class UI extends Phaser.Scene {
 		this.sanityPoints.sort((a, b) => b.x - a.x)
 		this.energyPoints.sort((a, b) => b.x - a.x)
 		this.healthPoints.sort((a, b) => b.x - a.x)
+
+		//test inpiut
+		const testInput = KeyboardInput.getComponent(this.bottom_Panel)
+		testInput.setActive(true)
+		testInput.executeAKeyJustDown = () => {
+			GameState.hp = Phaser.Math.Clamp(GameState.hp - 10, 0, 100)
+		}
+		testInput.executeSKeyJustDown = () => {
+			GameState.energy = Phaser.Math.Clamp(GameState.energy - 10, 0, 100)
+		}
+		testInput.executeDKeyJustDown = () => {
+			GameState.sanity = Phaser.Math.Clamp(GameState.sanity - 10, 0, 100)
+		}
 
 		// update points
 		autorun(() => {
@@ -203,17 +220,17 @@ export default class UI extends Phaser.Scene {
 		switch(type)
 		{
 			case POINTS_TYPE.ENERGY: {
-				lastpt = Math.ceil(GameState.power)
+				lastpt = Math.ceil(GameState.energy/10)
 				arr = this.energyPoints
 				break
 			}
 			case POINTS_TYPE.HEALTH: {
-				lastpt = Math.ceil(GameState.hp)
+				lastpt = Math.ceil(GameState.hp/10)
 				arr = this.healthPoints
 				break
 			}
 			case POINTS_TYPE.SANITY: {
-				lastpt = Math.ceil(GameState.sanity)
+				lastpt = Math.ceil(GameState.sanity/10)
 				arr = this.sanityPoints
 				break
 			}
