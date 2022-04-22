@@ -26,7 +26,7 @@ export default class TileGen
         var world = new World();
 
         // generate world and get list of tiles
-        var t = world.CreateWorld(Math.round(Math.random()*999));
+        var t = world.CreateWorld(Math.round(Math.random()*200)); // seed is in between 0 and 200 since the range for chunks is 20-40
 
         // iterate through list of tiles generated and add them to list of block objects
         for(var i = 0; i < t.length; i++)

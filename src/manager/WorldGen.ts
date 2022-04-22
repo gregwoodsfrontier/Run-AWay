@@ -30,7 +30,18 @@ export default class World
         var tiles = new Array();
 
         // gets amount of chunks by reducing the 3 digit seed to a decimal, then multiplying by 100 and rounding off any leftover decimal numbers
-        var chunkAmount = Math.round((seed/999)*100);
+        // minimum chunks = 20
+        // maximum chunks = 40
+        // this means that seed must be maximum 200
+
+        // clamp seed to 200 if it's larger than 200
+        if(seed > 200)
+        {
+            seed = 200;
+        }
+        // now get the actual chunk amount
+        var chunkAmount = 20 + Math.round((seed/999)*100);
+
 
         // generate starter chunk
         tiles.push.apply(tiles, this.CreateChunk(chunkAmount, 'start'));
@@ -43,11 +54,12 @@ export default class World
                 'empty', 'empty',
                 'semi-empty', 'semi-empty', 'semi-empty',
                 'blocked', 'blocked',
-                'trap',
+                //'trap',
             ];
 
             // add a random chunk chosen from the "options" list
-            tiles.push.apply(tiles, this.CreateChunk(chunkAmount-i, options[Math.round(Math.random()*options.length)]));
+            tiles.push.apply(tiles, this.CreateChunk(chunkAmount-i, options[Math.round(Math.random()*(options.length-1))]));
+            console.log('chunk generated');
         }
 
         // return array of tiles
