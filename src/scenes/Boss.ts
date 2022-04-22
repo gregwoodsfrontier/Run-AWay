@@ -4,6 +4,7 @@
 /* START OF COMPILED CODE */
 
 import Phaser from "phaser";
+import Player from "../prefabs/Player";
 /* START-USER-IMPORTS */
 /* END-USER-IMPORTS */
 
@@ -19,13 +20,30 @@ export default class Boss extends Phaser.Scene {
 
 	editorCreate(): void {
 
-		// bossTest
-		const bossTest = this.add.text(23, 130, "", {});
-		bossTest.text = "BOSS SCENE";
-		bossTest.setStyle({ "fontSize": "48px" });
+		// boss_Level
+		const boss_Level = this.add.tilemap("Boss Level");
+		boss_Level.addTilesetImage("Boss Tileset", "BOSS LEVEL v1");
+
+		// floor_1
+		boss_Level.createLayer("Floor", ["Boss Tileset"], 0, 0);
+
+		// walls_1
+		boss_Level.createLayer("Walls", ["Boss Tileset"], 0, 0);
+
+		// player
+		const player = new Player(this, 80, 576);
+		this.add.existing(player);
+
+		// start_level_anim
+		this.add.image(64, 576, "Start-Level-Anim-Short-20");
+
+		this.player = player;
+		this.boss_Level = boss_Level;
 
 		this.events.emit("scene-awake");
 	}
+
+	private player!: Player;
 
 	/* START-USER-CODE */
 

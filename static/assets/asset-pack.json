@@ -37,9 +37,22 @@
                 "key": "back-gunonly-4"
             },
             {
-                "url": "assets/Boss Level/Boss Level Layout.json",
+                "url": "assets/Boss Level/Boss Level.json",
                 "type": "tilemapTiledJSON",
-                "key": "Boss Level Layout"
+                "key": "Boss Level"
+            },
+            {
+                "url": "assets/Boss Level/BOSS LEVEL v1.png",
+                "frameConfig": {
+                    "frameWidth": 32,
+                    "frameHeight": 32,
+                    "startFrame": 0,
+                    "endFrame": -1,
+                    "spacing": 0,
+                    "margin": 0
+                },
+                "type": "spritesheet",
+                "key": "BOSS LEVEL v1"
             },
             {
                 "url": "assets/boss/boss-back-attack-1.png",

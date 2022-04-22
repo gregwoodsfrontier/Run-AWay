@@ -2,6 +2,7 @@
     "id": "fd446f6a-14eb-49f0-960d-8a841e03796c",
     "sceneType": "SCENE",
     "settings": {
+        "snapEnabled": true,
         "exportClass": true,
         "autoImport": true,
         "preloadPackFiles": [],
@@ -13,17 +14,67 @@
     },
     "displayList": [
         {
-            "type": "Text",
-            "id": "2362af5e-9dd4-4f89-8dbd-7dc38bf9b9d1",
-            "label": "bossTest",
+            "type": "TilemapLayer",
+            "id": "51701648-e8cb-496f-af49-a0f45f47109a",
+            "label": "floor_1",
             "components": [],
-            "x": 23,
-            "y": 130,
-            "text": "BOSS SCENE",
-            "fontSize": "48px"
+            "tilemapId": "c8356b80-9f22-4552-a444-5267febbc6ad",
+            "layerName": "Floor",
+            "tilesets": [
+                "Boss Tileset"
+            ]
+        },
+        {
+            "type": "TilemapLayer",
+            "id": "0aeea478-e37c-4577-b50f-3dee90d9dc8e",
+            "label": "walls_1",
+            "components": [],
+            "tilemapId": "c8356b80-9f22-4552-a444-5267febbc6ad",
+            "layerName": "Walls",
+            "tilesets": [
+                "Boss Tileset"
+            ]
+        },
+        {
+            "prefabId": "e0ddcad0-6688-4c91-8511-b98aa83b6507",
+            "id": "e7f10e8c-7eba-49fc-821d-bd140478c298",
+            "unlock": [
+                "x",
+                "y"
+            ],
+            "label": "player",
+            "scope": "CLASS",
+            "components": [],
+            "x": 80,
+            "y": 576,
+            "nestedPrefabs": []
+        },
+        {
+            "type": "Image",
+            "id": "6545add6-6887-4eb2-876f-02863571ae4f",
+            "label": "start_level_anim",
+            "components": [],
+            "texture": {
+                "key": "Start-Level-Anim-Short-20"
+            },
+            "x": 64,
+            "y": 576
         }
     ],
-    "plainObjects": [],
+    "plainObjects": [
+        {
+            "id": "c8356b80-9f22-4552-a444-5267febbc6ad",
+            "type": "Tilemap",
+            "label": "boss_Level",
+            "key": "Boss Level",
+            "tilesets": [
+                {
+                    "name": "Boss Tileset",
+                    "imageKey": "BOSS LEVEL v1"
+                }
+            ]
+        }
+    ],
     "meta": {
         "app": "Phaser Editor 2D - Scene Editor",
         "url": "https://phasereditor2d.com",
