@@ -1,27 +1,27 @@
 {
-    "id": "57d8a10b-f4c7-4c0f-9397-cde30c2a5293",
-    "sceneType": "PREFAB",
+    "id": "70b29b51-2e5f-4524-80c4-af45403c5ea3",
+    "sceneType": "SCENE",
     "settings": {
         "exportClass": true,
         "autoImport": true,
-        "preloadMethodName": "",
         "preloadPackFiles": [],
-        "createMethodName": "",
+        "createMethodName": "editorCreate",
+        "sceneKey": "GameOver",
         "compilerOutputLanguage": "TYPE_SCRIPT",
         "borderWidth": 320,
         "borderHeight": 640
     },
     "displayList": [
         {
-            "type": "Sprite",
-            "id": "7a6205a2-9d93-4d26-ad92-921d501ed925",
-            "label": "block_1",
+            "type": "Text",
+            "id": "00ef978d-4a1f-4f22-a06e-a97592ce33fc",
+            "label": "gameover",
             "scope": "CLASS",
             "components": [],
-            "texture": {
-                "key": "temp-break-interact",
-                "frame": 0
-            }
+            "x": 30,
+            "y": 145,
+            "text": "Game Over",
+            "fontSize": "48px"
         }
     ],
     "plainObjects": [],

@@ -4,14 +4,13 @@
 /* START OF COMPILED CODE */
 
 import Phaser from "phaser";
-import Button from "../components/Button";
 /* START-USER-IMPORTS */
 /* END-USER-IMPORTS */
 
-export default class Explainer extends Phaser.Scene {
+export default class GameOver extends Phaser.Scene {
 
 	constructor() {
-		super("Explainer");
+		super("GameOver");
 
 		/* START-USER-CTR-CODE */
 		// Write your code here.
@@ -20,14 +19,17 @@ export default class Explainer extends Phaser.Scene {
 
 	editorCreate(): void {
 
-		// uI_Explainer
-		const uI_Explainer = this.add.image(160, 320, "UI-Explainer-window");
+		// gameover
+		const gameover = this.add.text(30, 145, "", {});
+		gameover.text = "Game Over";
+		gameover.setStyle({ "fontSize": "48px" });
 
-		// uI_Explainer (components)
-		new Button(uI_Explainer);
+		this.gameover = gameover;
 
 		this.events.emit("scene-awake");
 	}
+
+	private gameover!: Phaser.GameObjects.Text;
 
 	/* START-USER-CODE */
 

@@ -1,8 +1,47 @@
-export default class GameStateManager {
+import { makeAutoObservable } from "mobx"
+
+class GameStateManager {
     hp = 100
     sanity = 100
-    power = 100
-    gold = 0
-    ore = 0
-    copper = 0
+    energy = 100
+    inventory: number[] = []
+    isPSDDeployed = false
+    isGunDeployed = false
+
+    constructor()
+    {
+        makeAutoObservable(this)
+    }
+
+    setHealth(n: number)
+    {
+        this.hp = n
+    }
+
+    setEnergy(n: number)
+    {
+        this.energy = n
+    }
+
+    setSanity(n: number)
+    {
+        this.sanity = n
+    }
+    
+    setInventory(arr: number[])
+    {
+        this.inventory = arr
+    }
+
+    setPSDDeploy(b: boolean)
+    {
+        this.isPSDDeployed = b
+    }
+
+    setGunDeploy(b: boolean)
+    {
+        this.isGunDeployed = b
+    }
 }
+
+export const GameState = new GameStateManager

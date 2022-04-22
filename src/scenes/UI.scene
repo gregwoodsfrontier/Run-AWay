@@ -18,7 +18,10 @@
             "type": "Image",
             "id": "50952ab8-da32-40a9-9449-68ff3501853f",
             "label": "menu_Button",
-            "components": [],
+            "scope": "CLASS",
+            "components": [
+                "Button"
+            ],
             "texture": {
                 "key": "Menu Button"
             },
@@ -26,10 +29,13 @@
             "y": 32
         },
         {
-            "type": "Image",
+            "type": "Sprite",
             "id": "d0549796-44a7-4287-ac22-5c3df5e48353",
-            "label": "bottom_Pannel",
-            "components": [],
+            "label": "bottom_Panel",
+            "scope": "CLASS",
+            "components": [
+                "KeyboardInput"
+            ],
             "texture": {
                 "key": "Bottom Pannel"
             },
@@ -375,7 +381,7 @@
                 "key": "Status Red Overlay"
             },
             "x": 294,
-            "y": 557
+            "y": 556.5
         },
         {
             "type": "Image",
@@ -386,7 +392,7 @@
                 "key": "Status Red Overlay"
             },
             "x": 294,
-            "y": 585
+            "y": 584.5
         },
         {
             "type": "Image",
@@ -397,12 +403,13 @@
                 "key": "Status Red Overlay"
             },
             "x": 294,
-            "y": 613
+            "y": 612.5
         },
         {
             "type": "Image",
             "id": "9a329c46-66eb-4b0d-9686-38ca111f0fcc",
             "label": "gunButton",
+            "scope": "CLASS",
             "components": [],
             "texture": {
                 "key": "GunButton"
@@ -420,6 +427,18 @@
             },
             "x": 156,
             "y": 556
+        },
+        {
+            "type": "Image",
+            "id": "6b83dd54-46c1-4235-ad89-8b84f06c82d0",
+            "label": "pSD_Button_Red",
+            "scope": "CLASS",
+            "components": [],
+            "texture": {
+                "key": "PSD Button Red"
+            },
+            "x": 155,
+            "y": 555
         }
     ],
     "plainObjects": [],
@@ -428,5 +447,64 @@
         "url": "https://phasereditor2d.com",
         "contentType": "phasereditor2d.core.scene.SceneContentType",
         "version": 3
-    }
+    },
+    "lists": [
+        {
+            "id": "00ce4b79-a5fe-46bb-bcda-29745891a887",
+            "label": "sanityPoints",
+            "objectIds": [
+                "7e7d49e4-cea8-4688-93db-d0e5b5cfdb98",
+                "e72a6866-e56d-4cda-a5e4-586073ef26eb",
+                "fab06b6e-8255-47e5-b9fd-8d54575e02c0",
+                "73419dca-195d-4e99-8afe-63999b821b82",
+                "e8330480-0166-4de3-b612-6f1e795d504b",
+                "67ba08c4-430b-4e49-954e-0184b6499d2a",
+                "18f6dd6a-3f6f-4b8c-a043-21fe747f4e47",
+                "5b8b6354-1394-457c-b7a5-4af715b81d00",
+                "38b8f47e-e902-4c0a-8fa5-99ded9a42756",
+                "819310ab-695e-4223-9230-e9aad35ff90b"
+            ]
+        },
+        {
+            "id": "c3d1f5ab-9040-47aa-b97e-124b7d47529b",
+            "label": "energyPoints",
+            "objectIds": [
+                "491151be-969b-4e6c-90ba-6675c172da81",
+                "5b62e87f-c1a5-47fc-b579-1e20fe0fe57e",
+                "c8fc0963-b32e-4cdf-a0e3-c29f06394206",
+                "8b5145f5-7ac3-46b9-891e-3c6449d3cecc",
+                "cd298977-c128-4e72-a990-19c77dc53553",
+                "ee544275-001e-4006-9043-fa4f36c0588a",
+                "c811f214-6609-4a22-9bbe-229c6f05f7b9",
+                "06c89f21-c641-43ad-8c48-22a2a7f9e4b4",
+                "9c9e7138-4786-4d3c-8a7b-63becd34c671",
+                "80be9438-b752-46eb-a788-a3358a1ecd09"
+            ]
+        },
+        {
+            "id": "1c36cf4a-d991-457e-8a52-633a944a5ced",
+            "label": "healthPoints",
+            "objectIds": [
+                "dd317e74-7eb0-461d-8a32-7965581e1882",
+                "ecc36ce1-7fff-4d56-9056-024f468a5055",
+                "0573c495-39ae-49c2-a41e-45fb67adbe44",
+                "e692fb12-0cf7-478e-9ab0-ec8d5914daf8",
+                "b19a6a83-31fe-4efa-8cb3-c88bd4e9cbaa",
+                "4eeb488c-9c1c-4985-8bc0-f8dd7f111df2",
+                "bef71095-3e5d-44c1-9180-d2215528f6f5",
+                "e6287591-3506-451f-a8d1-fb59b9fd2e05",
+                "da45c618-488a-4eb6-887c-4f4eddc78491",
+                "0b33a5be-1f13-4b23-b8dd-ae1cfdc9bcd5"
+            ]
+        },
+        {
+            "id": "6f6586c5-a806-4f2b-adc2-e4a052bfb7a4",
+            "label": "redStatus",
+            "objectIds": [
+                "ed2990e9-3622-4bd9-a0d6-f54a25922aad",
+                "5a0164eb-2909-4128-ac69-fece1220469a",
+                "fd88a61d-fc82-41cf-b70e-784666571292"
+            ]
+        }
+    ]
 }

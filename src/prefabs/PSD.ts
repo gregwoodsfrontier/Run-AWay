@@ -5,6 +5,7 @@
 
 import Phaser from "phaser";
 import Physics from "../components/Physics";
+import { GameState } from "../manager/gameState";
 /* START-USER-IMPORTS */
 import StateMachine from "../stateMachine";
 import psdField from "./psdField";
@@ -58,14 +59,15 @@ export default class PSD extends Phaser.GameObjects.Sprite {
 
 	private onBackpackEnter()
 	{
+		GameState.setPSDDeploy(false)
 		this.once(Phaser.Animations.Events.ANIMATION_COMPLETE, this.despawn, this)
 		this.playReverse('psd-deploy', true)
 		this.clearAllField()
-		
 	}
 
 	private onDeployEnter()
 	{
+		GameState.setPSDDeploy(true)
 		this.spawn(this.x, this.y).play('psd-deploy', true)
 		this.generateField()
 	}

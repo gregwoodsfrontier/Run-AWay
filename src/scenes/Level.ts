@@ -10,14 +10,11 @@ import FollowTarget from "../components/FollowTarget";
 import PSD from "../prefabs/PSD";
 /* START-USER-IMPORTS */
 import DepthSortY from "../components/DepthSortY";
-import { ILevelData } from "../types/scenes";
 import { DIRECTION } from "../types/direction";
 import Bullet from "../prefabs/Bullet";
 import JustMovement from "../components/JustMovement";
 import SelectionSquare from "../components/SelectionSquare";
 import KeyboardInput from "../components/KeyboardInput";
-import psdField from "../prefabs/psdField";
-import PSDComp from "../components/PSDComp";
 import { PSD_STATE } from "../types/PSD";
 /* END-USER-IMPORTS */
 
@@ -33,10 +30,6 @@ export default class Level extends Phaser.Scene {
 	}
 
 	editorCreate(): void {
-
-		// cave_test_map_1
-		const cave_test_map_1 = this.add.tilemap("cave-test-map-1");
-		cave_test_map_1.addTilesetImage("Gamdev jam cate tiles test 1", "cave-test-tileset-1");
 
 		// cave_test_map_2
 		const cave_test_map_2 = this.add.tilemap("cave-test-map-2");
@@ -115,7 +108,6 @@ export default class Level extends Phaser.Scene {
 		this.enemyA_1 = enemyA_1;
 		this.enemyA_2 = enemyA_2;
 		this.enemyA_3 = enemyA_3;
-		this.cave_test_map_1 = cave_test_map_1;
 		this.cave_test_map_2 = cave_test_map_2;
 		this.enemyTeam = enemyTeam;
 
@@ -142,13 +134,15 @@ export default class Level extends Phaser.Scene {
 	lastfired = 0
 	#destination!: SelectionSquare
 
-	create(data: ILevelData) {
+	create() {
 
 		this.editorCreate();
 
 		this.player.play('player-front-idle')
 		this.floor_2.depth = this.wall_2.y * 2
 		this.wall_2.depth = this.wall_2.y * 2
+
+		console.log(this.wall_2.depth)
 
 		this.initObjectPool()
 
@@ -165,13 +159,21 @@ export default class Level extends Phaser.Scene {
 		this.events.on('deploy-PSD', this.deployPSD, this)
 		this.events.on('takeback-PSD', this.takeBackPSD, this)
 		this.events.on('gen-psd-field', this.addColliderEnemyField, this)
-		this.start_level.on('animationcomplete', this.onStartLevelAnimsComplete, this)
 
-		this.enemyTeam.forEach(e => {
-			FollowTarget.getComponent(e).deactivate()
-		})
-
-		this.playStartLevelAnims()
+		if(process.env.NODE_ENV !== "development")
+		{
+			this.start_level.once('animationcomplete', this.onStartLevelAnimsComplete, this)
+			this.enemyTeam.forEach(e => {
+				FollowTarget.getComponent(e).deactivate()
+			})
+	
+			this.player.setVisible(false)
+			this.playStartLevelAnims()
+		}
+		
+		// bypass if environment is in development
+		this.start_level.setVisible(false).setActive(false)
+		this.onStartLevelAnimsComplete()
 	}
 
 	update(time: number, delta: number)

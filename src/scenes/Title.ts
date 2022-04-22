@@ -5,6 +5,8 @@
 
 import Phaser from "phaser";
 import Button from "../components/Button";
+import eventsCenter from "../EventsCenter";
+import { SCENE_SWITCH_EVENTS } from "../types/scenes";
 /* START-USER-IMPORTS */
 /* END-USER-IMPORTS */
 
@@ -79,8 +81,28 @@ export default class Title extends Phaser.Scene {
 		this.editorCreate();
 
 		Button.getComponent(this.start_Button).handlePointerUp = () => {
+			this.start_Button.setTexture("Start Button")
 			this.hideUIElement()
-			// this.startNewGame()
+		}
+
+		Button.getComponent(this.about_Button).handlePointerUp = () => {
+			this.about_Button.setTexture("About Button")
+		}
+
+		Button.getComponent(this.volume_Button).handlePointerUp = () => {
+			this.volume_Button.setTexture("Volume Button")
+		}
+
+		Button.getComponent(this.start_Button).handlePointerDown = () => {
+			this.start_Button.setTexture("Start Button Pressed")
+		}
+
+		Button.getComponent(this.about_Button).handlePointerDown = () => {
+			this.about_Button.setTexture("About Button Pressed")
+		}
+
+		Button.getComponent(this.volume_Button).handlePointerDown = () => {
+			this.volume_Button.setTexture("Volume Button Pressed")
 		}
 
 		const buttons = [
@@ -90,11 +112,14 @@ export default class Title extends Phaser.Scene {
 		]
 
 		buttons.forEach(button => {
+			button.setData("idle", button.texture.key)
 			const comp = Button.getComponent(button)
 			comp.handlePointerOver = () => {
 				this.scaleUp(button)
 			}
 			comp.handlePointerOut = () => {
+				const idleTexture = button.getData("idle")
+				button.setTexture(idleTexture)
 				this.scaleDown(button)
 			}
 		})
@@ -188,9 +213,10 @@ export default class Title extends Phaser.Scene {
 
 	private startNewGame()
 	{
-		this.scene.stop('Title')
-		this.scene.launch('Level')
-		this.scene.launch('UI')
+		eventsCenter.emit(SCENE_SWITCH_EVENTS.TO_GAME)
+		// this.scene.stop('Title')
+		// this.scene.launch('Level')
+		// this.scene.launch('UI')
 	}
 
 	/* END-USER-CODE */
