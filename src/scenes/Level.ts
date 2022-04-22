@@ -31,10 +31,6 @@ export default class Level extends Phaser.Scene {
 
 	editorCreate(): void {
 
-		// cave_test_map_1
-		const cave_test_map_1 = this.add.tilemap("cave-test-map-1");
-		cave_test_map_1.addTilesetImage("Gamdev jam cate tiles test 1", "cave-test-tileset-1");
-
 		// cave_test_map_2
 		const cave_test_map_2 = this.add.tilemap("cave-test-map-2");
 		cave_test_map_2.addTilesetImage("gamedevjs-cave-tileset-1", "cave-test-tileset-1");
@@ -112,7 +108,6 @@ export default class Level extends Phaser.Scene {
 		this.enemyA_1 = enemyA_1;
 		this.enemyA_2 = enemyA_2;
 		this.enemyA_3 = enemyA_3;
-		this.cave_test_map_1 = cave_test_map_1;
 		this.cave_test_map_2 = cave_test_map_2;
 		this.enemyTeam = enemyTeam;
 
@@ -164,12 +159,13 @@ export default class Level extends Phaser.Scene {
 		this.events.on('deploy-PSD', this.deployPSD, this)
 		this.events.on('takeback-PSD', this.takeBackPSD, this)
 		this.events.on('gen-psd-field', this.addColliderEnemyField, this)
-		this.start_level.on('animationcomplete', this.onStartLevelAnimsComplete, this)
+		this.start_level.once('animationcomplete', this.onStartLevelAnimsComplete, this)
 
 		this.enemyTeam.forEach(e => {
 			FollowTarget.getComponent(e).deactivate()
 		})
 
+		this.player.setVisible(false)
 		this.playStartLevelAnims()
 	}
 

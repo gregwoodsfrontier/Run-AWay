@@ -160,18 +160,6 @@
     ],
     "plainObjects": [
         {
-            "id": "fd3e5dbc-cd6f-447a-9b6b-34fee3410aaa",
-            "type": "Tilemap",
-            "label": "cave_test_map_1",
-            "key": "cave-test-map-1",
-            "tilesets": [
-                {
-                    "name": "Gamdev jam cate tiles test 1",
-                    "imageKey": "cave-test-tileset-1"
-                }
-            ]
-        },
-        {
             "id": "354c610f-cbd2-46f3-be19-7277b4220f55",
             "type": "Tilemap",
             "label": "cave_test_map_2",

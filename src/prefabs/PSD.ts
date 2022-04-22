@@ -59,7 +59,7 @@ export default class PSD extends Phaser.GameObjects.Sprite {
 
 	private onBackpackEnter()
 	{
-		GameState.isPSDDeployed = false
+		GameState.setPSDDeploy(false)
 		this.once(Phaser.Animations.Events.ANIMATION_COMPLETE, this.despawn, this)
 		this.playReverse('psd-deploy', true)
 		this.clearAllField()
@@ -67,7 +67,7 @@ export default class PSD extends Phaser.GameObjects.Sprite {
 
 	private onDeployEnter()
 	{
-		GameState.isPSDDeployed = true
+		GameState.setPSDDeploy(true)
 		this.spawn(this.x, this.y).play('psd-deploy', true)
 		this.generateField()
 	}

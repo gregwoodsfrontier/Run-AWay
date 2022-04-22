@@ -12,6 +12,36 @@ class GameStateManager {
     {
         makeAutoObservable(this)
     }
+
+    setHealth(n: number)
+    {
+        this.hp = n
+    }
+
+    setEnergy(n: number)
+    {
+        this.energy = n
+    }
+
+    setSanity(n: number)
+    {
+        this.sanity = n
+    }
+    
+    setInventory(arr: number[])
+    {
+        this.inventory = arr
+    }
+
+    setPSDDeploy(b: boolean)
+    {
+        this.isPSDDeployed = b
+    }
+
+    setGunDeploy(b: boolean)
+    {
+        this.isGunDeployed = b
+    }
 }
 
 export const GameState = new GameStateManager

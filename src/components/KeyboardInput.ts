@@ -171,7 +171,7 @@ export default class KeyboardInput extends UserComponent {
 	executeSKeyJustDown(){}
 	executeDKeyJustDown(){}
 
-	executeCKeyJustDown(){ console.log(`c key just down`) }
+	executeCKeyJustDown(){}
 	executeCKeyJustUp(){}
 	executeXKeyDown(){}
 	executeXKeyUp(){}
@@ -185,14 +185,10 @@ export default class KeyboardInput extends UserComponent {
 	executeKeyUp(){}
 
 	executeLeft()
-	{
-		console.log('left is input')
-	}
+	{}
 
 	executeRight()
-	{
-		console.log('right is input')
-	}
+	{}
 
 	executeUp()
 	{}
@@ -201,14 +197,10 @@ export default class KeyboardInput extends UserComponent {
 	{}
 
 	executeSpace()
-	{
-		console.log('space is input')
-	}
+	{}
 
 	executeShift()
-	{
-		console.log('shift is input')
-	}
+	{}
 
 	/* END-USER-CODE */
 }

@@ -3,7 +3,7 @@
 
 /* START OF COMPILED CODE */
 
-import Phaser from "phaser";
+import Phaser, { Game } from "phaser";
 import Button from "../components/Button";
 import KeyboardInput from "../components/KeyboardInput";
 /* START-USER-IMPORTS */
@@ -314,15 +314,15 @@ export default class UI extends Phaser.Scene {
 	}
 
 	private testHealth = () => {
-		GameState.hp = GameState.hp - 10 > 0 ? GameState.hp - 10 : 100
+		GameState.setHealth(GameState.hp - 10 > 0 ? GameState.hp - 10 : 100)
 	}
 
 	private testEnergy = () => {
-		GameState.energy = GameState.energy - 10 > 0 ? GameState.energy - 10 : 100
+		GameState.setEnergy(GameState.energy - 10 > 0 ? GameState.energy - 10 : 100)
 	}
 
 	private testSanity = () => {
-		GameState.sanity = GameState.sanity - 10 > 0 ? GameState.sanity - 10 : 100
+		GameState.setSanity(GameState.sanity - 10 > 0 ? GameState.sanity - 10 : 100)
 	}
 
 	private testInventory = () => {
@@ -330,7 +330,9 @@ export default class UI extends Phaser.Scene {
 			GameState.inventory.length = 0
 			return 
 		}
-		GameState.inventory.push(Phaser.Math.Between(0, 2))
+		const arr = GameState.inventory
+		arr.push(Phaser.Math.Between(0, 2))
+		GameState.setInventory(arr)
 	}
 
 	private showInventory()
@@ -368,6 +370,7 @@ export default class UI extends Phaser.Scene {
 				return 'gold item'
 			}
 		}
+		return undefined
 	}
 
 	private showPoints(type: number)

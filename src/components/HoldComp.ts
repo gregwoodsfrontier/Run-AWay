@@ -113,14 +113,14 @@ export default class HoldComp {
 	private onEmptyEnter()
 	{
 		this.hand = HOLD_ITEM.NONE
-		GameState.isGunDeployed = false
+		GameState.setGunDeploy(false)
 		this.disableGun()
 	}
 
 	private onHoldIdleEnter()
 	{
 		this.hand = HOLD_ITEM.GUN
-		GameState.isGunDeployed = true
+		GameState.setGunDeploy(true)
 
 		const dirName = getDirectionName(this.direction)
 
@@ -149,8 +149,7 @@ export default class HoldComp {
 
 	private onHoldWalkUpdate()
 	{
-		GameState.isGunDeployed = true
-		
+		GameState.setGunDeploy(true)
 		if(!this.gObjMovement)
 		{
 			console.error('just movement comp is not present on game object.')
