@@ -18,6 +18,7 @@
             "type": "Image",
             "id": "50952ab8-da32-40a9-9449-68ff3501853f",
             "label": "menu_Button",
+            "scope": "CLASS",
             "components": [
                 "Button"
             ],

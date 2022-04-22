@@ -4,7 +4,8 @@
 /* START OF COMPILED CODE */
 
 import Phaser from "phaser";
-import { IGameOverSceneData, ILevelData } from "../types/scenes";
+import eventsCenter from "../EventsCenter";
+import { IGameOverSceneData, ILevelData, SCENE_SWITCH_EVENTS } from "../types/scenes";
 /* START-USER-IMPORTS */
 /* END-USER-IMPORTS */
 
@@ -40,8 +41,27 @@ export default class Bootstrap extends Phaser.Scene {
 	create() {
 
 		this.editorCreate();
+
+		eventsCenter.on(SCENE_SWITCH_EVENTS.TO_PAUSE, this.switchToPauseMenu, this)
+		eventsCenter.on(SCENE_SWITCH_EVENTS.RESUME_GAME, this.resumeGame, this)
 		// this.startTitleScene()
 		this.createNewGame()
+	}
+
+	private switchToPauseMenu()
+	{
+		this.scene.pause("Level")
+		this.scene.pause("UI")
+		console.log('pause maybe satrt')
+		this.scene.launch("Pause")
+		this.scene.manager.dump()
+	}
+
+	private resumeGame()
+	{
+		this.scene.stop("Pause")
+		this.scene.resume("Level")
+		this.scene.resume("UI")
 	}
 
 	private startTitleScene()

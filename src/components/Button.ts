@@ -34,11 +34,13 @@ export default class Button extends UserComponent {
 	{
 		this.gameObject.setInteractive()
 		this.gameObject.on('pointerup', this.handlePointerUp, this)
+		this.gameObject.on('pointerdown', this.handlePointerDown, this)
 		this.gameObject.on('pointerover', this.handlePointerOver, this)
 		this.gameObject.on('pointerout', this.handlePointerOut, this)
 	}
 
 	handlePointerUp(){}
+	handlePointerDown(){}
 	handlePointerOver(){}
 	handlePointerOut(){}
 

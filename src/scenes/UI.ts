@@ -9,6 +9,8 @@ import KeyboardInput from "../components/KeyboardInput";
 /* START-USER-IMPORTS */
 import { autorun } from "mobx";
 import { GameState } from "../manager/gameState";
+import eventsCenter from "../EventsCenter";
+import { SCENE_SWITCH_EVENTS } from "../types/scenes";
 
 enum POINTS_TYPE {
 	HEALTH,
@@ -173,6 +175,7 @@ export default class UI extends Phaser.Scene {
 		// bottom_Panel (components)
 		new KeyboardInput(bottom_Panel);
 
+		this.menu_Button = menu_Button;
 		this.bottom_Panel = bottom_Panel;
 		this.gunButton = gunButton;
 		this.pSD_Button_Red = pSD_Button_Red;
@@ -184,6 +187,7 @@ export default class UI extends Phaser.Scene {
 		this.events.emit("scene-awake");
 	}
 
+	private menu_Button!: Phaser.GameObjects.Image;
 	private bottom_Panel!: Phaser.GameObjects.Sprite;
 	private gunButton!: Phaser.GameObjects.Image;
 	private pSD_Button_Red!: Phaser.GameObjects.Image;
@@ -213,6 +217,9 @@ export default class UI extends Phaser.Scene {
 		testInput.executeSKeyJustDown = this.testEnergy
 		testInput.executeDKeyJustDown = this.testSanity
 
+		//menuButton events
+		this.setMenuButtonResponse()
+		
 		// update points
 		autorun(() => {
 			this.showPoints(POINTS_TYPE.ENERGY)
@@ -225,6 +232,26 @@ export default class UI extends Phaser.Scene {
 			this.showPSDStatus()
 			this.showGunStatus()
 		})
+	}
+
+	private setMenuButtonResponse()
+	{
+		const menuButtonComp = Button.getComponent(this.menu_Button)
+		menuButtonComp.handlePointerOut = () => {
+			this.menu_Button.setTexture('Menu Button')
+			this.menu_Button.clearTint()
+		}
+		menuButtonComp.handlePointerOver = () => {
+			this.menu_Button.setTint(0x00ffff)
+		}
+		menuButtonComp.handlePointerDown = () => {
+			this.menu_Button.setTexture('Menu Button Pressed')
+		}
+		menuButtonComp.handlePointerUp = () => {
+			this.menu_Button.setTexture('Menu Button')
+			// set events to switch to Pause Menu
+			eventsCenter.emit(SCENE_SWITCH_EVENTS.TO_PAUSE)
+		}
 	}
 
 	private showPSDStatus()
