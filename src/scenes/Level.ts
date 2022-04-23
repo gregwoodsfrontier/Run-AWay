@@ -154,6 +154,8 @@ export default class Level extends Phaser.Scene {
 		this.floor_1.depth = this.wall_1.y * 2
 		this.wall_1.depth = this.wall_1.y * 2
 
+		this.wall_1.setCollisionByProperty({collides: true})
+
 		this.initObjectPool()
 
 		this.physics.add.collider(this.player, this.wall_1);
@@ -162,6 +164,7 @@ export default class Level extends Phaser.Scene {
 		this.physics.add.collider(this.enemyTeam, this.wall_1)
 		this.physics.add.collider(this.bulletGroup, this.wall_1, this.handleBulletWallCollision, undefined, this)
 		this.physics.add.overlap(this.bulletGroup, this.enemyTeam, this.handleBulletSwarm, undefined, this)
+
 
 		this.#destination = SelectionSquare.getComponent(this.player)
 
@@ -277,7 +280,9 @@ export default class Level extends Phaser.Scene {
 	private handleBulletSwarm(a: Phaser.Types.Physics.Arcade.GameObjectWithBody, b: Phaser.Types.Physics.Arcade.GameObjectWithBody)
 	{
 		const bullet = a as Bullet
+		const enemy = b as Enemy
 		bullet.despawn()
+		enemy.despawn()
 	}
 
 	private playStartLevelAnims()
