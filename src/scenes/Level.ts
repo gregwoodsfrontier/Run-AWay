@@ -19,6 +19,7 @@ import eventsCenter from "../EventsCenter";
 import { SCENE_SWITCH_EVENTS } from "../types/scenes";
 import { ENEMY_STATE_KEYS } from "../types/enemyStateKeys";
 import psdField from "../prefabs/psdField";
+import Block from "../prefabs/Block";
 /* END-USER-IMPORTS */
 
 export default class Level extends Phaser.Scene {

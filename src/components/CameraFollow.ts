@@ -32,7 +32,7 @@ export default class CameraFollow extends UserComponent {
 	{
 		const { scene } = this.gameObject
 		scene.cameras.main.startFollow(this.gameObject, true)
-		scene.cameras.main.setBounds(0, 640 - 1600, 320, 1600, true)
+		scene.cameras.main.setBounds(0, 0, 320, 640*99, true)
 	}
 
 	/* update(){

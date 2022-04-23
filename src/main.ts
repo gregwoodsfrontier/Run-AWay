@@ -7,6 +7,8 @@ import Title from "./scenes/Title";
 import PauseMenu from "./scenes/PauseMenu";
 import Explainer from "./scenes/Explainer";
 import Boss from "./scenes/Boss";
+import Chunk from "./scenes/Chunk";
+import rnd from "./drand/random";
 
 class Boot extends Phaser.Scene {
 
@@ -25,6 +27,21 @@ class Boot extends Phaser.Scene {
     }
 }
 
+// use drand generation to create a seed with 3 digits
+
+var seed = await rnd(); // create round number with Drand
+
+console.log(`Raw Drand Randomness returned: ${seed}`); // print randomness before being changed into 3 digit seed
+
+seed = seed.replace(/\D/g,''); // remove all non-numeric characters
+seed = seed.slice(0, 3); // pick out first 3 characters
+seed = parseInt(seed); // convert back to number
+export {seed} // export the seed for access from other files
+
+console.log(`New seed: ${seed}`); // return processed seed
+
+// finished, seed has been created!
+
 const game = new Phaser.Game({
     width: 320,
     height: 640,
@@ -42,7 +59,7 @@ const game = new Phaser.Game({
     },
     scene: [
         Boot, Preload, Bootstrap, 
-        Title, PauseMenu, Level, 
+        Title, PauseMenu, Level, Chunk,
         UI, Explainer, Boss
     ]
 });

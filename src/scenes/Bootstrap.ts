@@ -93,8 +93,9 @@ export default class Bootstrap extends Phaser.Scene {
 	private createNewGame()
 	{
 		this.scene.stop("Title")
-		this.scene.launch("Level")
-		this.scene.launch("UI")
+		this.scene.launch("Chunk")
+		// this.scene.launch("Level")
+		// this.scene.launch("UI")
 	}
 
 	private handleGameOver()
