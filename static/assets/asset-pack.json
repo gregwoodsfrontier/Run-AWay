@@ -55,6 +55,11 @@
                 "key": "BOSS LEVEL v1"
             },
             {
+                "url": "assets/Boss Trap/boss trap reference 1.png",
+                "type": "image",
+                "key": "boss trap reference 1"
+            },
+            {
                 "url": "assets/Boss Trap v1.png",
                 "type": "image",
                 "key": "Boss Trap v1"
@@ -195,6 +200,116 @@
                 "key": "boss-left-walk-4"
             },
             {
+                "url": "assets/Boss Level/Boss Level Door Anim/BOSS-LEVEL-DOOR-ANIM-01.png",
+                "type": "image",
+                "key": "BOSS-LEVEL-DOOR-ANIM-01"
+            },
+            {
+                "url": "assets/Boss Level/Boss Level Door Anim/BOSS-LEVEL-DOOR-ANIM-02.png",
+                "type": "image",
+                "key": "BOSS-LEVEL-DOOR-ANIM-02"
+            },
+            {
+                "url": "assets/Boss Level/Boss Level Door Anim/BOSS-LEVEL-DOOR-ANIM-03.png",
+                "type": "image",
+                "key": "BOSS-LEVEL-DOOR-ANIM-03"
+            },
+            {
+                "url": "assets/Boss Level/Boss Level Door Anim/BOSS-LEVEL-DOOR-ANIM-04.png",
+                "type": "image",
+                "key": "BOSS-LEVEL-DOOR-ANIM-04"
+            },
+            {
+                "url": "assets/Boss Level/Boss Level Door Anim/BOSS-LEVEL-DOOR-ANIM-05.png",
+                "type": "image",
+                "key": "BOSS-LEVEL-DOOR-ANIM-05"
+            },
+            {
+                "url": "assets/Boss Level/Boss Level Door Anim/BOSS-LEVEL-DOOR-ANIM-06.png",
+                "type": "image",
+                "key": "BOSS-LEVEL-DOOR-ANIM-06"
+            },
+            {
+                "url": "assets/Boss Level/Boss Level Door Anim/BOSS-LEVEL-DOOR-ANIM-07.png",
+                "type": "image",
+                "key": "BOSS-LEVEL-DOOR-ANIM-07"
+            },
+            {
+                "url": "assets/Boss Level/Boss Level Door Anim/BOSS-LEVEL-DOOR-ANIM-08.png",
+                "type": "image",
+                "key": "BOSS-LEVEL-DOOR-ANIM-08"
+            },
+            {
+                "url": "assets/Boss Level/Boss Level Door Anim/BOSS-LEVEL-DOOR-ANIM-09.png",
+                "type": "image",
+                "key": "BOSS-LEVEL-DOOR-ANIM-09"
+            },
+            {
+                "url": "assets/Boss Level/Boss Level Door Anim/BOSS-LEVEL-DOOR-ANIM-10.png",
+                "type": "image",
+                "key": "BOSS-LEVEL-DOOR-ANIM-10"
+            },
+            {
+                "url": "assets/Boss Level/Boss Level Door Anim/BOSS-LEVEL-DOOR-ANIM-11.png",
+                "type": "image",
+                "key": "BOSS-LEVEL-DOOR-ANIM-11"
+            },
+            {
+                "url": "assets/Boss Level/Boss Level Door Anim/BOSS-LEVEL-DOOR-ANIM-12.png",
+                "type": "image",
+                "key": "BOSS-LEVEL-DOOR-ANIM-12"
+            },
+            {
+                "url": "assets/Boss Level/Boss Level Door Anim/BOSS-LEVEL-DOOR-ANIM-13.png",
+                "type": "image",
+                "key": "BOSS-LEVEL-DOOR-ANIM-13"
+            },
+            {
+                "url": "assets/Boss Level/Boss Level Door Anim/BOSS-LEVEL-DOOR-ANIM-14.png",
+                "type": "image",
+                "key": "BOSS-LEVEL-DOOR-ANIM-14"
+            },
+            {
+                "url": "assets/Boss Level/Boss Level Door Anim/BOSS-LEVEL-DOOR-ANIM-15.png",
+                "type": "image",
+                "key": "BOSS-LEVEL-DOOR-ANIM-15"
+            },
+            {
+                "url": "assets/Boss Level/Boss Level Door Anim/BOSS-LEVEL-DOOR-ANIM-16.png",
+                "type": "image",
+                "key": "BOSS-LEVEL-DOOR-ANIM-16"
+            },
+            {
+                "url": "assets/Boss Level/Boss Level Door Anim/BOSS-LEVEL-DOOR-ANIM-17.png",
+                "type": "image",
+                "key": "BOSS-LEVEL-DOOR-ANIM-17"
+            },
+            {
+                "url": "assets/Boss Level/Boss Level Door Anim/BOSS-LEVEL-DOOR-ANIM-18.png",
+                "type": "image",
+                "key": "BOSS-LEVEL-DOOR-ANIM-18"
+            },
+            {
+                "url": "assets/Boss Level/Boss Level Door Anim/BOSS-LEVEL-DOOR-ANIM-19.png",
+                "type": "image",
+                "key": "BOSS-LEVEL-DOOR-ANIM-19"
+            },
+            {
+                "url": "assets/Boss Level/Boss Level Door Anim/BOSS-LEVEL-DOOR-ANIM-20.png",
+                "type": "image",
+                "key": "BOSS-LEVEL-DOOR-ANIM-20"
+            },
+            {
+                "url": "assets/Boss Level/Boss Level Door Anim/BOSS-LEVEL-DOOR-ANIM-21.png",
+                "type": "image",
+                "key": "BOSS-LEVEL-DOOR-ANIM-21"
+            },
+            {
+                "url": "assets/Boss Level/Boss Level Door Anim/BOSS-LEVEL-DOOR-ANIM-22.png",
+                "type": "image",
+                "key": "BOSS-LEVEL-DOOR-ANIM-22"
+            },
+            {
                 "url": "assets/boss/boss-right-attack-1.png",
                 "type": "image",
                 "key": "boss-right-attack-1"
@@ -238,6 +353,41 @@
                 "url": "assets/boss/boss-right-walk-4.png",
                 "type": "image",
                 "key": "boss-right-walk-4"
+            },
+            {
+                "url": "assets/Boss Trap/BossTrap-1.png",
+                "type": "image",
+                "key": "BossTrap-1"
+            },
+            {
+                "url": "assets/Boss Trap/BossTrap-2.png",
+                "type": "image",
+                "key": "BossTrap-2"
+            },
+            {
+                "url": "assets/Boss Trap/BossTrap-3.png",
+                "type": "image",
+                "key": "BossTrap-3"
+            },
+            {
+                "url": "assets/Boss Trap/BossTrap-4.png",
+                "type": "image",
+                "key": "BossTrap-4"
+            },
+            {
+                "url": "assets/Boss Trap/BossTrap-5.png",
+                "type": "image",
+                "key": "BossTrap-5"
+            },
+            {
+                "url": "assets/Boss Trap/BossTrap-Projectile-1.png",
+                "type": "image",
+                "key": "BossTrap-Projectile-1"
+            },
+            {
+                "url": "assets/Boss Trap/BossTrap-Projectile-2.png",
+                "type": "image",
+                "key": "BossTrap-Projectile-2"
             },
             {
                 "url": "assets/ui-assets/Bottom Pannel.png",
