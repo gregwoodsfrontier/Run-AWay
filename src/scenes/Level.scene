@@ -1,5 +1,5 @@
 {
-    "id": "b685c081-ee5f-4b67-b583-415922c9e2c4",
+    "id": "b4710d76-2dd1-4839-bcf7-aa476d851dbc",
     "sceneType": "SCENE",
     "settings": {
         "exportClass": true,
@@ -52,19 +52,6 @@
             "components": [],
             "x": 193,
             "y": 446
-        },
-        {
-            "prefabId": "57d8a10b-f4c7-4c0f-9397-cde30c2a5293",
-            "id": "d61ec7a6-70e8-4927-99d3-f5f1e147c447",
-            "unlock": [
-                "x",
-                "y"
-            ],
-            "label": "block_1",
-            "scope": "CLASS",
-            "components": [],
-            "x": 130,
-            "y": 208
         },
         {
             "prefabId": "408d4d35-1d26-4f5e-9315-9d890dbf9ae0",

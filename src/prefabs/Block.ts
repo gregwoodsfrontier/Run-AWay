@@ -103,6 +103,11 @@ export default class Block extends Phaser.GameObjects.Sprite {
 	public onHit(obj1?:Phaser.GameObjects.Sprite , obj2? :Phaser.GameObjects.Sprite){
 		//once player collide with it
 		//changes frame name to int
+		if(!obj2)
+		{
+			return
+		}
+
 		objframe = parseInt(obj2?.frame.name)
 		objframe++;
 

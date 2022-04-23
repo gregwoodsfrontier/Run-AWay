@@ -5,7 +5,6 @@
 import Phaser from "phaser";
 import TileMapLayerPhysics from "../components/TileMapLayerPhysics";
 import Player from "../prefabs/Player";
-import Block from "../prefabs/Block";
 import Enemy from "../prefabs/Enemy";
 import FollowTarget from "../components/FollowTarget";
 /* START-USER-IMPORTS */
@@ -42,19 +41,6 @@ export default class Level extends Phaser.Scene {
 		const player = new Player(this, 193, 446);
 		this.add.existing(player);
 
-		// block_1
-		//important to set the frame to check it in the callback
-		const block3 = new Block(this, 170, 180,"SilverBlock" ) ;
-		const block1 = new Block(this, 170, 208,"CopperBlock" ) ;
-		const block2 = new Block(this, 170, 208,"GoldBlock" ) ;
-		const normalblock = new Block(this, 130, 250,"NormalBlock" ) ;
-		const floorr = new Block(this, 170, 240,"RBorder" ) ;
-		const block_1 = [block1,block2,block3, floorr , normalblock]
-		for(var x =0; x<block_1.length; x++){
-			this.add.existing(block_1[x])
-		}
-
-
 		// enemy_3
 		const enemy_3 = new Enemy(this, 119, 445);
 		this.add.existing(enemy_3);
@@ -81,7 +67,6 @@ export default class Level extends Phaser.Scene {
 		this.floor_1 = floor_1;
 		this.wall_1 = wall_1;
 		this.player = player;
-		this.block_1 = block_1;
 		this.cave_test_map_1 = cave_test_map_1;
 		this.enemyTeam = enemyTeam;
 
@@ -91,7 +76,6 @@ export default class Level extends Phaser.Scene {
 	private floor_1!: Phaser.Tilemaps.TilemapLayer;
 	private wall_1!: Phaser.Tilemaps.TilemapLayer;
 	public player!: Player;
-	private block_1!: Block;
 	private enemyTeam!: Enemy[];
 
 	/* START-USER-CODE */
@@ -105,6 +89,25 @@ export default class Level extends Phaser.Scene {
 		this.floor_1.depth = -1000
 		this.wall_1.depth = -1000
 
+		this.handlePlayerInput()
+
+		const block = new Block(this);
+
+		this.physics.add.collider(this.player, this.wall_1);
+		this.physics.add.collider(this.player, this.enemyTeam)
+		this.physics.add.collider(this.enemyTeam, this.enemyTeam)
+		this.physics.add.collider(this.enemyTeam, this.wall_1)
+		// this.physics.add.collider(this.player , this.block_1 , this.handleBlockCollision)
+
+	}
+
+	update()
+	{
+		this.handleDepthSort()
+	}
+
+	private handlePlayerInput()
+	{
 		const playerKeyboardInput = KeyboardInput.getComponent(this.player)
 		const playerMove = JustMovement.getComponent(this.player)
 		const playerAnims = AnimationV2.getComponent(this.player)
@@ -145,18 +148,12 @@ export default class Level extends Phaser.Scene {
 			playerMove.stayStill()
 			playerAnims.playIdleFromWalk()
 		}
-		const block = new Block(this);
-		this.physics.add.collider(this.player, this.wall_1);
-		this.physics.add.collider(this.player, this.enemyTeam)
-		this.physics.add.collider(this.enemyTeam, this.enemyTeam)
-		this.physics.add.collider(this.enemyTeam, this.wall_1)
-		this.physics.add.collider(this.player , this.block_1 ,block.onHit)
-		
+
 	}
 
-	update()
+	private handleBlockCollision()
 	{
-		this.handleDepthSort()
+
 	}
 
 	private layerDebug(layer: Phaser.Tilemaps.TilemapLayer)
