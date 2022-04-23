@@ -1164,6 +1164,11 @@
                 "key": "PSDButton"
             },
             {
+                "url": "assets/ui-assets/PSDButton-off.png",
+                "type": "image",
+                "key": "PSDButton-off"
+            },
+            {
                 "url": "assets/PSDField.png",
                 "frameConfig": {
                     "frameWidth": 32,

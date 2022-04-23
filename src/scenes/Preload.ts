@@ -51,6 +51,7 @@ export default class Preload extends Phaser.Scene {
 		this.editorCreate();
 
 		this.load.pack("asset-pack", "assets/asset-pack.json");
+		this.load.pack("audio-asset-pack", "assets/audio-asset-pack.json")
 
 		this.load.on(Phaser.Loader.Events.COMPLETE, () => this.scene.start("Bootstrap"));
 	}

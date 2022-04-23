@@ -1,0 +1,104 @@
+{
+    "section1": {
+        "files": [
+            {
+                "url": [
+                    "assets/AUDIO/SFX/buzzhumm.wav"
+                ],
+                "type": "audio",
+                "key": "buzzhumm"
+            },
+            {
+                "url": [
+                    "assets/AUDIO/SFX/buzztone1.wav"
+                ],
+                "type": "audio",
+                "key": "buzztone1"
+            },
+            {
+                "url": [
+                    "assets/AUDIO/SFX/explosion.wav"
+                ],
+                "type": "audio",
+                "key": "explosion"
+            },
+            {
+                "url": [
+                    "assets/AUDIO/SFX/FallLand.wav"
+                ],
+                "type": "audio",
+                "key": "FallLand"
+            },
+            {
+                "url": [
+                    "assets/AUDIO/SFX/Footsteps.wav"
+                ],
+                "type": "audio",
+                "key": "Footsteps"
+            },
+            {
+                "url": [
+                    "assets/AUDIO/SFX/hitHurt.wav"
+                ],
+                "type": "audio",
+                "key": "hitHurt"
+            },
+            {
+                "url": [
+                    "assets/AUDIO/SFX/laserShoot.wav"
+                ],
+                "type": "audio",
+                "key": "laserShoot"
+            },
+            {
+                "url": [
+                    "assets/AUDIO/SFX/MachineBreak.wav"
+                ],
+                "type": "audio",
+                "key": "MachineBreak"
+            },
+            {
+                "url": [
+                    "assets/AUDIO/SFX/MachineExplode.wav"
+                ],
+                "type": "audio",
+                "key": "MachineExplode"
+            },
+            {
+                "url": [
+                    "assets/AUDIO/SFX/MachineExplode2.wav"
+                ],
+                "type": "audio",
+                "key": "MachineExplode2"
+            },
+            {
+                "url": [
+                    "assets/AUDIO/SFX/menuMove.wav"
+                ],
+                "type": "audio",
+                "key": "menuMove"
+            },
+            {
+                "url": [
+                    "assets/AUDIO/SFX/menuSelected.wav"
+                ],
+                "type": "audio",
+                "key": "menuSelected"
+            },
+            {
+                "url": [
+                    "assets/AUDIO/SFX/rockBreak.wav"
+                ],
+                "type": "audio",
+                "key": "rockBreak"
+            }
+        ]
+    },
+    "meta": {
+        "app": "Phaser Editor 2D - Asset Pack Editor",
+        "contentType": "phasereditor2d.pack.core.AssetContentType",
+        "url": "https://phasereditor2d.com",
+        "version": 2,
+        "showAllFilesInBlocks": false
+    }
+}
