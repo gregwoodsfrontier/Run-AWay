@@ -74,6 +74,7 @@ export default class Enemy extends Phaser.GameObjects.Sprite {
 	}
 
 	public HP: number = 100;
+	public attack: number = 2;
 
 	/* START-USER-CODE */
 
@@ -114,6 +115,11 @@ export default class Enemy extends Phaser.GameObjects.Sprite {
 	enrage()
 	{
 		this.stateMachine.setState(ENEMY_STATE.ATTACK)
+	}
+
+	checkState(state: string)
+	{
+		return this.stateMachine.isCurrentState(state)
 	}
 
 	private disableSlapBox()
@@ -310,9 +316,14 @@ export default class Enemy extends Phaser.GameObjects.Sprite {
 
 		this.on(Phaser.Animations.Events.ANIMATION_UPDATE, startHit)
 
-		/* this.scene.time.delayedCall(1000, () => {
-			this.stateMachine.setState(ENEMY_STATE.IDLE)
+		/* this.scene.time.delayedCall(500, () => {
+			this.stateMachine.setState(ENEMY_STATE.WALK)
 		}) */
+	}
+
+	setSMState(state: string)
+	{
+		this.stateMachine.setState(state)
 	}
 
 	spawn(x: number, y: number)

@@ -3,9 +3,14 @@
 
 /* START OF COMPILED CODE */
 
+import { SAT } from "matter";
 import Phaser from "phaser";
 import Physics from "../components/Physics";
 /* START-USER-IMPORTS */
+enum STATE {
+	IDLE,
+	DAMAGED
+}
 /* END-USER-IMPORTS */
 
 export default class psdField extends Phaser.GameObjects.Container {
@@ -83,6 +88,9 @@ export default class psdField extends Phaser.GameObjects.Container {
 		scene.add.existing(this)
 
 		this.scene.events.once(Phaser.Scenes.Events.UPDATE, this.start, this)
+		this.scene.events.on(Phaser.Scenes.Events.UPDATE, this.update, this)
+
+		this.state = STATE.IDLE
 		/* END-USER-CTR-CODE */
 	}
 
@@ -96,6 +104,19 @@ export default class psdField extends Phaser.GameObjects.Container {
 	private bot: Phaser.GameObjects.Image;
 
 	/* START-USER-CODE */
+	private status = [
+		{
+			lv: 1,
+			hitPoint: 30
+		},
+		{
+			lv: 2,
+			hitPoint: 70
+		}
+	]
+
+	private currLv = 1
+	private currHP = 30
 
 	// Write your code here.
 	start()
@@ -114,9 +135,54 @@ export default class psdField extends Phaser.GameObjects.Container {
 		images.forEach(e => e.setVisible(false))
 	}
 
+	update()
+	{
+		this.checkZeroHealth()
+	}
+
 	clearField()
 	{
 		this.removeAll(true)
+	}
+
+	private checkZeroHealth()
+	{
+		if(this.currHP > 0)
+		{
+			return
+		}
+
+		this.clearField()
+	}
+
+	private setProps(lv: number)
+	{
+		if(lv < 2 && lv > 0)
+		{
+			this.currHP = this.status[0].hitPoint
+			this.currLv = this.status[0].lv
+		}
+		else
+		{
+			this.currHP = this.status[1].hitPoint
+			this.currLv = this.status[1].lv
+		}
+	}
+
+	damage(n: number)
+	{
+		if(this.state === STATE.DAMAGED)
+		{
+			return
+		}
+
+		this.currHP = Phaser.Math.Clamp(this.currHP - n, 0, 70)
+		console.log(`psd field hp: ${this.currHP}`)
+		this.state = STATE.DAMAGED
+
+		this.scene.time.delayedCall(500, () => {
+			this.state = STATE.IDLE
+		})
 	}
 
 	makeNextLevel(lv: number)
@@ -127,11 +193,9 @@ export default class psdField extends Phaser.GameObjects.Container {
 		 * 	[L]-      -[R]
 		 * 	 x3-      - x3
 		 *  [BL]-[B]x3-[BR]
-		 */
-		/* if(lv < 2)
-		{
-			return
-		} */
+		*/
+
+		this.setProps(lv)
 
 		const {scene} = this
 		const lim = lv * 2 + 1

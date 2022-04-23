@@ -18,6 +18,8 @@ import KeyboardInput from "../components/KeyboardInput";
 import { PSD_STATE } from "../types/PSD";
 import eventsCenter from "../EventsCenter";
 import { SCENE_SWITCH_EVENTS } from "../types/scenes";
+import { ENEMY_STATE_KEYS } from "../types/enemyStateKeys";
+import psdField from "../prefabs/psdField";
 /* END-USER-IMPORTS */
 
 export default class Level extends Phaser.Scene {
@@ -144,8 +146,6 @@ export default class Level extends Phaser.Scene {
 		this.floor_2.depth = this.wall_2.y * 2
 		this.wall_2.depth = this.wall_2.y * 2
 
-		console.log(this.wall_2.depth)
-
 		this.initObjectPool()
 
 		this.physics.add.collider(this.player, this.wall_2);
@@ -194,8 +194,58 @@ export default class Level extends Phaser.Scene {
 		{
 			return
 		}
-		this.physics.add.collider(this.enemyTeam, this.pSDRobot.outerField.getAll(), this.enrageEnemy)
-		this.physics.add.collider(this.enemyTeam, this.pSDRobot.innerField.getAll(), this.enrageEnemy)
+		this.physics.add.collider(this.enemyTeam, this.pSDRobot.outerField.getAll(), this.handleEnemyFieldCollides, undefined, this)
+		this.physics.add.collider(this.enemyTeam, this.pSDRobot.innerField.getAll(), this.handleEnemyFieldCollides, undefined, this)
+	}
+
+	//@ts-ignore
+	private handleEnemyFieldCollides(e, f)
+	{
+		// enemy enrages
+		const enemy = e as Enemy
+		const field = f as Phaser.Physics.Arcade.Image
+		const fieldCon = field.parentContainer as psdField
+		const follow = FollowTarget.getComponent(enemy)
+		follow.deactivate()
+		enemy.enrage()
+
+		let ty = 4
+		const t = this.tweens.create({
+			targets: enemy,
+			duration: 100,
+			onStart: () => {
+				enemy.setSMState(ENEMY_STATE_KEYS.IDLE)
+				const b = enemy.body as Phaser.Physics.Arcade.Body
+				b.setVelocity(ty)
+			},
+			onComplete: () => {
+				enemy.setSMState(ENEMY_STATE_KEYS.WALK)
+			}
+		})
+
+
+		fieldCon.damage(enemy.attack)
+		this.time.delayedCall(500, () => {
+			if(field.y < enemy.y)
+			{
+				ty = 4
+				t.play()
+			}
+			else if(field.y > enemy.y)
+			{
+				ty = -4
+				t.play()
+			}
+		})
+		
+
+		/* if(enemy.checkState(ENEMY_STATE_KEYS.ATTACK))
+		{
+			// field.damage(2)
+			console.log(fieldCon)
+			// field.parentContainer.
+			this.scene.stop("Level")
+		} */
 	}
 
 	//@ts-ignore
