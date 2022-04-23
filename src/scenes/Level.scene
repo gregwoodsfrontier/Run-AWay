@@ -67,7 +67,7 @@
             "scope": "CLASS",
             "components": [],
             "FollowTarget.target": "pSDRobot",
-            "FollowTarget.range": 200,
+            "FollowTarget.range": 300,
             "FollowTarget.deadRangeX": 35,
             "x": 80,
             "y": 416

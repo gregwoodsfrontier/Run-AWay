@@ -82,7 +82,7 @@ export default class Level extends Phaser.Scene {
 		// enemyA (components)
 		const enemyAFollowTarget = FollowTarget.getComponent(enemyA);
 		enemyAFollowTarget.target = pSDRobot;
-		enemyAFollowTarget.range = 200;
+		enemyAFollowTarget.range = 300;
 		enemyAFollowTarget.deadRangeX = 35;
 
 		// enemyA_1 (components)
@@ -159,7 +159,7 @@ export default class Level extends Phaser.Scene {
 		this.initObjectPool()
 
 		this.physics.add.collider(this.player, this.wall_1);
-		this.physics.add.collider(this.player, this.enemyTeam)
+		// this.physics.add.collider(this.player, this.enemyTeam)
 		this.physics.add.collider(this.enemyTeam, this.enemyTeam)
 		this.physics.add.collider(this.enemyTeam, this.wall_1)
 		this.physics.add.collider(this.bulletGroup, this.wall_1, this.handleBulletWallCollision, undefined, this)
@@ -191,12 +191,37 @@ export default class Level extends Phaser.Scene {
 		// bypass if environment is in development
 		this.start_level.setVisible(false).setActive(false)
 		this.onStartLevelAnimsComplete()
+		this.time.addEvent({
+			repeat: 3,
+			delay: 1000,
+			callback: this.createMoreSwarm,
+			callbackScope: this,
+		})
 	}
 
 	update(time: number, delta: number)
 	{
 		this.handleDepthSort()
 		this.showSelectionSquare()
+	}
+
+	/**
+	 * Spawns more swarm that goes
+	 */
+	private createMoreSwarm()
+	{
+		const spawnX = [80, 128, 160, 192, 240]
+		const spawnY = 416
+		for(let i = 0; i < spawnX.length; i++)
+		{
+			const enemy = new Enemy(this, spawnX[i], spawnY)
+			this.add.existing(enemy)
+			const follow = FollowTarget.getComponent(enemy);
+			follow.range = 300
+			follow.deadRangeX = 35
+			this.enemyTeam.push(enemy)
+		}
+		console.log(this.enemyTeam)
 	}
 
 	private addColliderEnemyField()

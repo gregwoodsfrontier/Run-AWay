@@ -11,7 +11,7 @@ import AnimationV2 from "../components/AnimationV2";
 import JustMovement from "../components/JustMovement";
 /* START-USER-IMPORTS */
 import StateMachine from "../stateMachine";
-import { ENEMY_STATE_KEYS as ENEMY_STATE } from "../types/enemyStateKeys";
+import { ENEMY_STATE_KEYS as ENEMY_STATE, ENEMY_STATE_KEYS } from "../types/enemyStateKeys";
 import { DIRECTION, getDirectionName } from "../types/direction";
 /* END-USER-IMPORTS */
 
@@ -62,7 +62,9 @@ export default class Enemy extends Phaser.GameObjects.Sprite {
 		.addState(ENEMY_STATE.ATTACK, {
 			onEnter: this.onAttackEnter
 		})
-		.setState(ENEMY_STATE.IDLE)
+		// .setState(ENEMY_STATE.IDLE)
+		.setState(ENEMY_STATE.WALK)
+		this.direction = DIRECTION.BACK
 
 		// create events only for this enemy instance
 		this.scene.events.once(Phaser.Scenes.Events.UPDATE, this.start, this)
@@ -88,7 +90,7 @@ export default class Enemy extends Phaser.GameObjects.Sprite {
 	start()
 	{
 		// this.moveTheUnit(DIRECTION.BACK)
-		this.stayStill()
+		// this.stayStill()
 		this.setEnemyPush(false)
 	}
 
