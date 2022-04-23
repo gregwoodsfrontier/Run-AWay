@@ -80,11 +80,24 @@ export default class PSD extends Phaser.GameObjects.Sprite {
 
 	private generateField()
 	{
-		this.innerField = new psdField(this.scene, this.x - 16, this.y - 16)
-		this.innerField.makeNextLevel(1)
-
-		this.outerField = new psdField(this.scene, this.x - 16, this.y - 16)
-		this.outerField.makeNextLevel(3)
+		if(GameState.energy < 10)
+		{
+			console.error('you dont have energy for PSD')
+		}
+		else if(GameState.energy < 70)
+		{
+			console.error('can only deploy inner field')
+			this.innerField = new psdField(this.scene, this.x - 16, this.y - 16)
+			this.innerField.makeNextLevel(1)
+			return
+		}
+		else
+		{
+			this.innerField = new psdField(this.scene, this.x - 16, this.y - 16)
+			this.innerField.makeNextLevel(1)
+			this.outerField = new psdField(this.scene, this.x - 16, this.y - 16)
+			this.outerField.makeNextLevel(3)
+		}
 	}
 
 	spawn(x: number, y: number)

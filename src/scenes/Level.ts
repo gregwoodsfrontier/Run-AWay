@@ -237,15 +237,6 @@ export default class Level extends Phaser.Scene {
 				t.play()
 			}
 		})
-		
-
-		/* if(enemy.checkState(ENEMY_STATE_KEYS.ATTACK))
-		{
-			// field.damage(2)
-			console.log(fieldCon)
-			// field.parentContainer.
-			this.scene.stop("Level")
-		} */
 	}
 
 	//@ts-ignore
@@ -312,14 +303,12 @@ export default class Level extends Phaser.Scene {
 		if(this.cave_test_map_2.hasTileAtWorldXY(x, y, this.cameras.main, this.wall_2))
 		{
 			// revert psd comp state back to idle
-			// PSDComp.getComponent(this.player).stateMachine.setState(PSD_STATE.EQIUP_IDLE)
 			this.player.setPSDCompState(PSD_STATE.EQIUP_IDLE)
 			return
 		}
 		console.log('psd spawn')
 		this.pSDRobot.spawn(x, y)
 		this.pSDRobot.deploy()
-		// this.makeField(this.pSDRobot.x, this.pSDRobot.y, 3)
 	}
 
 	private takeBackPSD()

@@ -13,6 +13,11 @@ class GameStateManager {
         makeAutoObservable(this)
     }
 
+    changeEnergyBy(n: number)
+    {
+        Phaser.Math.Clamp(this.energy += n, 0, 100)
+    }
+
     setHealth(n: number)
     {
         this.hp = n

@@ -6,6 +6,7 @@
 import { SAT } from "matter";
 import Phaser from "phaser";
 import Physics from "../components/Physics";
+import { GameState } from "../manager/gameState";
 /* START-USER-IMPORTS */
 enum STATE {
 	IDLE,
@@ -177,7 +178,7 @@ export default class psdField extends Phaser.GameObjects.Container {
 		}
 
 		this.currHP = Phaser.Math.Clamp(this.currHP - n, 0, 70)
-		console.log(`psd field hp: ${this.currHP}`)
+		GameState.changeEnergyBy(-n)
 		this.state = STATE.DAMAGED
 
 		this.scene.time.delayedCall(500, () => {
