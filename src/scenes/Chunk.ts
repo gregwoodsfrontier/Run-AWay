@@ -43,56 +43,56 @@ export default class Chunk extends Phaser.Scene {
 			this.add.existing(blocks[x])
 		}*/
 
-		// generate world and get tiles
-		var blocks: Block[] = TileGen.GenerateWorld(this);
-
-		// add blocks to world
-		for(var i = 0; i < blocks.length; i++)
-		{
-			this.add.existing(blocks[i]);
-		}
-
-		// apply blocks to this.blocks
-		this.blocks = blocks;
+		
 
 		// player
 		const player = new Player(this, 193, 446);
 		this.add.existing(player);
 		this.player = player;
 
-		const block = new Block(this);
-		this.physics.add.collider(player, this.blocks, block.onHit);
+		// const block = new Block(this);
 
-		// create an optimization function that specifically targets the newly targetted player and blocks list
-		var optimize = function(scene: Phaser.Scene)
-		{
-			// hide the tiles that arent near the player
-			BlockOptimizer.HideIrrelevant(scene.blocks, scene.player.x, scene.player.y);
-
-			// repeat this function after 2.5 seconds
-			setTimeout(optimize, 2500, scene);
-		}
-
-		// begin optimization loop
-		optimize(this);
+		
 
 		this.events.emit("scene-awake");
 	}
 
 	public player!: Player;
-	private blocks!: Block;
+	
 
 
 	/* START-USER-CODE */
 	public platformer_fun!: Phaser.Tilemaps.Tilemap
 	// Write your code here
+	private blocks!: Block[];
 
 	create() {
 
 		this.editorCreate();
 		this.player.play('player-front-idle')
 
+		this.startWorldGen()
 
+		this.handlePlayerInput()
+
+		this.time.addEvent({
+			delay: 2500,
+			callback: this.optimize,
+			callbackScope: this
+		})
+
+		
+		this.physics.add.collider(this.player, this.blocks, this.handleBlockCollision);
+		
+	}
+
+	update()
+	{
+		this.handleDepthSort()
+	}
+
+	private handlePlayerInput()
+	{
 		const playerKeyboardInput = KeyboardInput.getComponent(this.player)
 		const playerMove = JustMovement.getComponent(this.player)
 		const playerAnims = AnimationV2.getComponent(this.player)
@@ -133,13 +133,50 @@ export default class Chunk extends Phaser.Scene {
 			playerMove.stayStill()
 			playerAnims.playIdleFromWalk()
 		}
-		
+
 	}
 
-	update()
+	private startWorldGen()
 	{
-		this.handleDepthSort()
+		// generate world and get tiles
+		const blocks: Block[] = TileGen.GenerateWorld(this);
+
+		// add blocks to world
+		for(let i = 0; i < blocks.length; i++)
+		{
+			this.add.existing(blocks[i]);
+		}
+
+		// apply blocks to this.blocks
+		this.blocks = blocks;
 	}
+
+	optimize()
+	{
+		BlockOptimizer.HideIrrelevant(this.blocks, this.player.x, this.player.y);
+
+		// repeat this function after 2.5 seconds
+		// this.time.delayedCall(2500, this.optimize, undefined, this)
+	}
+
+	private handleBlockCollision(
+		a: Phaser.Types.Physics.Arcade.GameObjectWithBody, 
+		b: Phaser.Types.Physics.Arcade.GameObjectWithBody
+	)
+	{
+		const block = b as Block
+		if(block.texture.key === "Borders")
+		{
+			return
+		}
+		else if(block.texture.key === "raw-break-interact")
+		{
+			console.log('this is a mine')
+		}
+
+		console.log(block.texture)
+	}
+
 
 	private layerDebug(layer: Phaser.Tilemaps.TilemapLayer)
 	{
