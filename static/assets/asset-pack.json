@@ -27,6 +27,19 @@
                 "key": "back-gunonly-4"
             },
             {
+                "url": "assets/Borders.png",
+                "frameConfig": {
+                    "frameWidth": 64,
+                    "frameHeight": 64,
+                    "startFrame": 0,
+                    "endFrame": -1,
+                    "spacing": 0,
+                    "margin": 0
+                },
+                "type": "spritesheet",
+                "key": "Borders"
+            },
+            {
                 "url": "assets/cave-test-map-1.json",
                 "type": "tilemapTiledJSON",
                 "key": "cave-test-map-1"
@@ -647,81 +660,6 @@
                 "url": "assets/tempboss/tempboss-right-walk-4.png",
                 "type": "image",
                 "key": "tempboss-right-walk-4"
-            },
-            {
-                "url": "assets/raw-break-interact.png",
-                "frameConfig": {
-                    "frameWidth": 32,
-                    "frameHeight": 32,
-                    "startFrame": 0,
-                    "endFrame": 4,
-                    "spacing": 0,
-                    "margin": 0
-                },
-                "type": "spritesheet",
-                "key": "SilverBlock"
-            },
-            {
-                "url": "assets/raw-break-interact.png",
-                "frameConfig": {
-                    "frameWidth": 32,
-                    "frameHeight": 32,
-                    "startFrame": 8,
-                    "endFrame": 12,
-                    "spacing": 0,
-                    "margin": 0
-                },
-                "type": "spritesheet",
-                "key": "CopperBlock"
-            },{
-                "url": "assets/raw-break-interact.png",
-                "frameConfig": {
-                    "frameWidth": 32,
-                    "frameHeight": 32,
-                    "startFrame": 16,
-                    "endFrame": 20,
-                    "spacing": 0,
-                    "margin": 0
-                },
-                "type": "spritesheet",
-                "key": "GoldBlock"
-            },{
-                "url": "assets/raw-break-interact.png",
-                "frameConfig": {
-                    "frameWidth": 32,
-                    "frameHeight": 32,
-                    "startFrame": 24,
-                    "endFrame": 28,
-                    "spacing": 0,
-                    "margin": 0
-                },
-                "type": "spritesheet",
-                "key": "NormalBlock"
-            },{
-                "url": "assets/raw-break-interact.png",
-                "frameConfig": {
-                    "frameWidth": 32,
-                    "frameHeight": 32,
-                    "startFrame": 88,
-                    "endFrame": 88,
-                    "spacing": 0,
-                    "margin": 0
-                },
-                "type": "spritesheet",
-                "key": "Floor"
-            },
-            {
-                "url": "assets/Borders.png",
-                "frameConfig": {
-                    "frameWidth": 64,
-                    "frameHeight": 64,
-                    "startFrame": 0,
-                    "endFrame": -1,
-                    "spacing": 0,
-                    "margin": 0
-                },
-                "type": "spritesheet",
-                "key": "Borders"
             }
         ]
     },
