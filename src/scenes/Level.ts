@@ -3,7 +3,6 @@
 /* START OF COMPILED CODE */
 
 import Phaser from "phaser";
-import TileMapLayerPhysics from "../components/TileMapLayerPhysics";
 import Player from "../prefabs/Player";
 import Enemy from "../prefabs/Enemy";
 import FollowTarget from "../components/FollowTarget";
@@ -39,18 +38,18 @@ export default class Level extends Phaser.Scene {
 		const cave_test_map_2 = this.add.tilemap("cave-test-map-2");
 		cave_test_map_2.addTilesetImage("gamedevjs-cave-tileset-1", "cave-test-tileset-1");
 
-		// floor_2
-		const floor_2 = cave_test_map_2.createLayer("floor", ["gamedevjs-cave-tileset-1"], 0, -960);
+		// floor_1
+		const floor_1 = cave_test_map_2.createLayer("floor", ["gamedevjs-cave-tileset-1"], 0, -960);
 
-		// wall_2
-		const wall_2 = cave_test_map_2.createLayer("wall", ["gamedevjs-cave-tileset-1"], 0, -960);
+		// wall_1
+		const wall_1 = cave_test_map_2.createLayer("wall", ["gamedevjs-cave-tileset-1"], 0, -960);
 
 		// player
 		const player = new Player(this, 160, 160);
 		this.add.existing(player);
 
 		// enemyA
-		const enemyA = new Enemy(this, 96, 416);
+		const enemyA = new Enemy(this, 80, 416);
 		this.add.existing(enemyA);
 
 		// pSDRobot
@@ -62,7 +61,7 @@ export default class Level extends Phaser.Scene {
 		const start_level = this.add.sprite(144, 160, "Start-Level-Anim-Short-20");
 
 		// enemyA_1
-		const enemyA_1 = new Enemy(this, 144, 368);
+		const enemyA_1 = new Enemy(this, 128, 416);
 		this.add.existing(enemyA_1);
 
 		// enemyA_2
@@ -70,14 +69,15 @@ export default class Level extends Phaser.Scene {
 		this.add.existing(enemyA_2);
 
 		// enemyA_3
-		const enemyA_3 = new Enemy(this, 240, 368);
+		const enemyA_3 = new Enemy(this, 240, 416);
 		this.add.existing(enemyA_3);
 
-		// lists
-		const enemyTeam = [enemyA_3, enemyA_1, enemyA_2, enemyA];
+		// enemyA_4
+		const enemyA_4 = new Enemy(this, 160, 416);
+		this.add.existing(enemyA_4);
 
-		// wall_2 (components)
-		new TileMapLayerPhysics(wall_2);
+		// lists
+		const enemyTeam = [enemyA_3, enemyA_1, enemyA_2, enemyA, enemyA_4];
 
 		// enemyA (components)
 		const enemyAFollowTarget = FollowTarget.getComponent(enemyA);
@@ -103,8 +103,14 @@ export default class Level extends Phaser.Scene {
 		enemyA_3FollowTarget.range = 300;
 		enemyA_3FollowTarget.deadRangeX = 35;
 
-		this.floor_2 = floor_2;
-		this.wall_2 = wall_2;
+		// enemyA_4 (components)
+		const enemyA_4FollowTarget = FollowTarget.getComponent(enemyA_4);
+		enemyA_4FollowTarget.target = pSDRobot;
+		enemyA_4FollowTarget.range = 300;
+		enemyA_4FollowTarget.deadRangeX = 35;
+
+		this.floor_1 = floor_1;
+		this.wall_1 = wall_1;
 		this.player = player;
 		this.enemyA = enemyA;
 		this.pSDRobot = pSDRobot;
@@ -112,14 +118,15 @@ export default class Level extends Phaser.Scene {
 		this.enemyA_1 = enemyA_1;
 		this.enemyA_2 = enemyA_2;
 		this.enemyA_3 = enemyA_3;
+		this.enemyA_4 = enemyA_4;
 		this.cave_test_map_2 = cave_test_map_2;
 		this.enemyTeam = enemyTeam;
 
 		this.events.emit("scene-awake");
 	}
 
-	private floor_2!: Phaser.Tilemaps.TilemapLayer;
-	private wall_2!: Phaser.Tilemaps.TilemapLayer;
+	private floor_1!: Phaser.Tilemaps.TilemapLayer;
+	private wall_1!: Phaser.Tilemaps.TilemapLayer;
 	public player!: Player;
 	private enemyA!: Enemy;
 	private pSDRobot!: PSD;
@@ -127,6 +134,7 @@ export default class Level extends Phaser.Scene {
 	private enemyA_1!: Enemy;
 	private enemyA_2!: Enemy;
 	private enemyA_3!: Enemy;
+	private enemyA_4!: Enemy;
 	private enemyTeam!: Enemy[];
 
 	/* START-USER-CODE */
@@ -143,16 +151,16 @@ export default class Level extends Phaser.Scene {
 		this.editorCreate();
 
 		this.player.play('player-front-idle')
-		this.floor_2.depth = this.wall_2.y * 2
-		this.wall_2.depth = this.wall_2.y * 2
+		this.floor_1.depth = this.wall_1.y * 2
+		this.wall_1.depth = this.wall_1.y * 2
 
 		this.initObjectPool()
 
-		this.physics.add.collider(this.player, this.wall_2);
+		this.physics.add.collider(this.player, this.wall_1);
 		this.physics.add.collider(this.player, this.enemyTeam)
 		this.physics.add.collider(this.enemyTeam, this.enemyTeam)
-		this.physics.add.collider(this.enemyTeam, this.wall_2)
-		this.physics.add.collider(this.bulletGroup, this.wall_2, this.handleBulletWallCollision, undefined, this)
+		this.physics.add.collider(this.enemyTeam, this.wall_1)
+		this.physics.add.collider(this.bulletGroup, this.wall_1, this.handleBulletWallCollision, undefined, this)
 		this.physics.add.overlap(this.bulletGroup, this.enemyTeam, this.handleBulletSwarm, undefined, this)
 
 		this.#destination = SelectionSquare.getComponent(this.player)
@@ -171,12 +179,12 @@ export default class Level extends Phaser.Scene {
 			this.enemyTeam.forEach(e => {
 				FollowTarget.getComponent(e).deactivate()
 			})
-	
+
 			this.player.setVisible(false)
 			this.playStartLevelAnims()
-			
+
 		}
-		
+
 		// bypass if environment is in development
 		this.start_level.setVisible(false).setActive(false)
 		this.onStartLevelAnimsComplete()
@@ -254,7 +262,7 @@ export default class Level extends Phaser.Scene {
 		{
 			this.player.setVisible(true)
 		}
-		
+
 		const input = KeyboardInput.getComponent(this.player)
 		if(!input)
 		{
@@ -300,7 +308,7 @@ export default class Level extends Phaser.Scene {
 		}
 
 		const {x, y} = destination.getSelectionSquare()
-		if(this.cave_test_map_2.hasTileAtWorldXY(x, y, this.cameras.main, this.wall_2))
+		if(this.cave_test_map_2.hasTileAtWorldXY(x, y, this.cameras.main, this.wall_1))
 		{
 			// revert psd comp state back to idle
 			this.player.setPSDCompState(PSD_STATE.EQIUP_IDLE)

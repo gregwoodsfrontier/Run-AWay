@@ -27,11 +27,6 @@
                 "key": "back-gunonly-4"
             },
             {
-                "url": "assets/cave-test-map-1.json",
-                "type": "tilemapTiledJSON",
-                "key": "cave-test-map-1"
-            },
-            {
                 "url": "assets/cave-test-map-2.json",
                 "type": "tilemapTiledJSON",
                 "key": "cave-test-map-2"

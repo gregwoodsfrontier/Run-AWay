@@ -15,12 +15,12 @@
     "displayList": [
         {
             "type": "TilemapLayer",
-            "id": "562d17d3-800a-4161-bf7a-a5b1cda5e407",
-            "label": "floor_2",
+            "id": "3cb32ef7-9d34-4243-b050-f51e961d2b80",
+            "label": "floor_1",
             "scope": "CLASS",
             "components": [],
             "y": -960,
-            "tilemapId": "354c610f-cbd2-46f3-be19-7277b4220f55",
+            "tilemapId": "2666579a-03f9-49f7-8b2e-dd9cd7ef8c88",
             "layerName": "floor",
             "tilesets": [
                 "gamedevjs-cave-tileset-1"
@@ -28,14 +28,12 @@
         },
         {
             "type": "TilemapLayer",
-            "id": "0f721626-ca84-4b46-9e0b-dd30d3f46c21",
-            "label": "wall_2",
+            "id": "65d66230-55e4-487b-9960-a35c714369d2",
+            "label": "wall_1",
             "scope": "CLASS",
-            "components": [
-                "TileMapLayerPhysics"
-            ],
+            "components": [],
             "y": -960,
-            "tilemapId": "354c610f-cbd2-46f3-be19-7277b4220f55",
+            "tilemapId": "2666579a-03f9-49f7-8b2e-dd9cd7ef8c88",
             "layerName": "wall",
             "tilesets": [
                 "gamedevjs-cave-tileset-1"
@@ -71,7 +69,7 @@
             "FollowTarget.target": "pSDRobot",
             "FollowTarget.range": 200,
             "FollowTarget.deadRangeX": 35,
-            "x": 96,
+            "x": 80,
             "y": 416
         },
         {
@@ -116,8 +114,8 @@
             "FollowTarget.target": "pSDRobot",
             "FollowTarget.range": 300,
             "FollowTarget.deadRangeX": 35,
-            "x": 144,
-            "y": 368
+            "x": 128,
+            "y": 416
         },
         {
             "prefabId": "408d4d35-1d26-4f5e-9315-9d890dbf9ae0",
@@ -155,12 +153,31 @@
             "FollowTarget.range": 300,
             "FollowTarget.deadRangeX": 35,
             "x": 240,
-            "y": 368
+            "y": 416
+        },
+        {
+            "prefabId": "408d4d35-1d26-4f5e-9315-9d890dbf9ae0",
+            "id": "10a23fd5-8a34-41bc-ab35-d99d3e640335",
+            "unlock": [
+                "x",
+                "y",
+                "FollowTarget.target",
+                "FollowTarget.deadRangeX",
+                "FollowTarget.range"
+            ],
+            "label": "enemyA_4",
+            "scope": "CLASS",
+            "components": [],
+            "FollowTarget.target": "pSDRobot",
+            "FollowTarget.range": 300,
+            "FollowTarget.deadRangeX": 35,
+            "x": 160,
+            "y": 416
         }
     ],
     "plainObjects": [
         {
-            "id": "354c610f-cbd2-46f3-be19-7277b4220f55",
+            "id": "2666579a-03f9-49f7-8b2e-dd9cd7ef8c88",
             "type": "Tilemap",
             "label": "cave_test_map_2",
             "key": "cave-test-map-2",
@@ -186,7 +203,8 @@
                 "4947998b-80fa-480b-9916-4d99b5aa4047",
                 "f5505805-41b9-4cf4-92f0-d56db8aa842b",
                 "6d31fe54-61d3-48a0-b373-07276b87bc0a",
-                "63f44b6a-316d-4ac2-9257-71741dcfd6ba"
+                "63f44b6a-316d-4ac2-9257-71741dcfd6ba",
+                "10a23fd5-8a34-41bc-ab35-d99d3e640335"
             ]
         }
     ]
