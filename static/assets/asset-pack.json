@@ -660,6 +660,19 @@
                 "url": "assets/tempboss/tempboss-right-walk-4.png",
                 "type": "image",
                 "key": "tempboss-right-walk-4"
+            },
+            {
+                "url": "assets/floor.png",
+                "frameConfig": {
+                    "frameWidth": 32,
+                    "frameHeight": 32,
+                    "startFrame": 0,
+                    "endFrame": -1,
+                    "spacing": 0,
+                    "margin": 0
+                },
+                "type": "spritesheet",
+                "key": "Floor"
             }
         ]
     },
