@@ -1,0 +1,148 @@
+{
+    "section1": {
+        "files": [
+            {
+                "url": "assets/IN GAME MENU/70per-Black-BG.png",
+                "type": "image",
+                "key": "70per-Black-BG"
+            },
+            {
+                "url": "assets/IN GAME MENU/Back-Button.png",
+                "type": "image",
+                "key": "Back-Button"
+            },
+            {
+                "url": "assets/IN GAME MENU/Back-Button-Selected.png",
+                "type": "image",
+                "key": "Back-Button-Selected"
+            },
+            {
+                "url": "assets/IN GAME MENU/FullSlider.png",
+                "type": "image",
+                "key": "FullSlider"
+            },
+            {
+                "url": "assets/IN GAME MENU/MainMenu-Button.png",
+                "type": "image",
+                "key": "MainMenu-Button"
+            },
+            {
+                "url": "assets/IN GAME MENU/MainMenu-Button-Selected.png",
+                "type": "image",
+                "key": "MainMenu-Button-Selected"
+            },
+            {
+                "url": "assets/IN GAME MENU/Music-Button.png",
+                "type": "image",
+                "key": "Music-Button"
+            },
+            {
+                "url": "assets/IN GAME MENU/Music-Button-Selected.png",
+                "type": "image",
+                "key": "Music-Button-Selected"
+            },
+            {
+                "url": "assets/IN GAME MENU/NewGame-Button.png",
+                "type": "image",
+                "key": "NewGame-Button"
+            },
+            {
+                "url": "assets/IN GAME MENU/NewGame-Button-Selected.png",
+                "type": "image",
+                "key": "NewGame-Button-Selected"
+            },
+            {
+                "url": "assets/IN GAME MENU/Pause Menu Ref.png",
+                "type": "image",
+                "key": "Pause Menu Ref"
+            },
+            {
+                "url": "assets/IN GAME MENU/Pause-Menu-BG.png",
+                "type": "image",
+                "key": "Pause-Menu-BG"
+            },
+            {
+                "url": "assets/IN GAME MENU/Resume-Button.png",
+                "type": "image",
+                "key": "Resume-Button"
+            },
+            {
+                "url": "assets/IN GAME MENU/Resume-Button-Selected.png",
+                "type": "image",
+                "key": "Resume-Button-Selected"
+            },
+            {
+                "url": "assets/IN GAME MENU/Rules Page Ref.png",
+                "type": "image",
+                "key": "Rules Page Ref"
+            },
+            {
+                "url": "assets/IN GAME MENU/Rules-Button.png",
+                "type": "image",
+                "key": "Rules-Button"
+            },
+            {
+                "url": "assets/IN GAME MENU/Rules-Button-Selected.png",
+                "type": "image",
+                "key": "Rules-Button-Selected"
+            },
+            {
+                "url": "assets/IN GAME MENU/Rules-Page.png",
+                "type": "image",
+                "key": "Rules-Page"
+            },
+            {
+                "url": "assets/IN GAME MENU/SFX-Button.png",
+                "type": "image",
+                "key": "SFX-Button"
+            },
+            {
+                "url": "assets/IN GAME MENU/SFX-Button-Selected.png",
+                "type": "image",
+                "key": "SFX-Button-Selected"
+            },
+            {
+                "url": "assets/IN GAME MENU/Slider-Button.png",
+                "type": "image",
+                "key": "Slider-Button"
+            },
+            {
+                "url": "assets/IN GAME MENU/Slider-Down-Button.png",
+                "type": "image",
+                "key": "Slider-Down-Button"
+            },
+            {
+                "url": "assets/IN GAME MENU/Slider-Down-Button-Selected.png",
+                "type": "image",
+                "key": "Slider-Down-Button-Selected"
+            },
+            {
+                "url": "assets/IN GAME MENU/Slider-Up-Button.png",
+                "type": "image",
+                "key": "Slider-Up-Button"
+            },
+            {
+                "url": "assets/IN GAME MENU/Slider-Up-Button-Selected.png",
+                "type": "image",
+                "key": "Slider-Up-Button-Selected"
+            },
+            {
+                "url": "assets/IN GAME MENU/SliderBar.png",
+                "type": "image",
+                "key": "SliderBar"
+            },
+            {
+                "url": "assets/IN GAME MENU/Solid-Black-BG.png",
+                "type": "image",
+                "key": "Solid-Black-BG"
+            }
+        ]
+    },
+    "meta": {
+        "app": "Phaser Editor 2D - Asset Pack Editor",
+        "contentType": "phasereditor2d.pack.core.AssetContentType",
+        "url": "https://phasereditor2d.com",
+        "version": 2,
+        "showAllFilesInBlocks": false
+    }
+}
