@@ -242,37 +242,38 @@ export default class World
                 for(let xpos = 0; xpos < 10; xpos++)
                 {
                     // now iterate through y position (index of column)
-                    for(let ypos = 0; ypos < 20; ypos++)
+                    // here the chunk is one tile smaller and all blocks are moved down one tile to leave space for the 64x64 door/tunnel to the boss level
+                    for(let ypos = 0; ypos < 19; ypos++)
                     {
                         if(xpos == 0 && ypos == 0)
                         {
-                            tiles.push(new tile(xpos*32, ypos*32+y*640, 32, 32, 'border-top-left'));
+                            tiles.push(new tile(xpos*32, 32+ypos*32+y*640, 32, 32, 'border-top-left'));
                         }
                         else if(xpos == 9 && ypos == 0)
                         {
-                            tiles.push(new tile(xpos*32, ypos*32+y*640, 32, 32, 'border-top-right'));
+                            tiles.push(new tile(xpos*32, 32+ypos*32+y*640, 32, 32, 'border-top-right'));
                         }
-                        // door tile, 64x32, VERY IMPORTANT
+                        // door tile, 64x64, VERY IMPORTANT
                         else if(xpos == 4 && ypos == 0)
                         {
                             // first create a floor tile in case the sprite has transparent bits so it looks fine
-                            tiles.push(new tile(xpos*32, ypos*32+y*640, 32, 32, 'floor'));
+                            tiles.push(new tile(xpos*32, 32+ypos*32+y*640, 32, 32, 'floor'));
                         }
                         else if(ypos == 0 && xpos != 5)
                         {
-                            tiles.push(new tile(xpos*32, ypos*32+y*640, 32, 32, 'border-top'));
+                            tiles.push(new tile(xpos*32, 32+ypos*32+y*640, 32, 32, 'border-top'));
                         }
                         else if(xpos == 0)
                         {
-                            tiles.push(new tile(xpos*32, ypos*32+y*640, 32, 32, 'border-left'));
+                            tiles.push(new tile(xpos*32, 32+ypos*32+y*640, 32, 32, 'border-left'));
                         }
                         else if(xpos == 9)
                         {
-                            tiles.push(new tile(xpos*32, ypos*32+y*640, 32, 32, 'border-right'));
+                            tiles.push(new tile(xpos*32, 32+ypos*32+y*640, 32, 32, 'border-right'));
                         }
                         else
                         {
-                            tiles.push(new tile(xpos*32, ypos*32+y*640, 32, 32, 'floor'));
+                            tiles.push(new tile(xpos*32, 32+ypos*32+y*640, 32, 32, 'floor'));
                         }
                     }
                 }
