@@ -2,6 +2,11 @@
     "section1": {
         "files": [
             {
+                "url": "assets/IN GAME MENU/About.png",
+                "type": "image",
+                "key": "About"
+            },
+            {
                 "url": "assets/animations.json",
                 "type": "animation",
                 "key": "animations"
