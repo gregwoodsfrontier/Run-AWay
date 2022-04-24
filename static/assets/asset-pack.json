@@ -380,6 +380,21 @@
                 "key": "Logo v2"
             },
             {
+                "url": "assets/IN GAME MENU/MainMenu-Button-Red.png",
+                "type": "image",
+                "key": "MainMenu-Button-Red"
+            },
+            {
+                "url": "assets/IN GAME MENU/MainMenu-Button-Red-Selected.png",
+                "type": "image",
+                "key": "MainMenu-Button-Red-Selected"
+            },
+            {
+                "url": "assets/IN GAME MENU/Menu-BG.png",
+                "type": "image",
+                "key": "Menu-BG"
+            },
+            {
                 "url": "assets/PCProjectile.png",
                 "type": "image",
                 "key": "PCProjectile"
