@@ -18,6 +18,16 @@ class GameStateManager {
         Phaser.Math.Clamp(this.energy += n, 0, 100)
     }
 
+    changeHealthBy(n: number)
+    {
+        Phaser.Math.Clamp(this.hp += n, 0, 100)
+    }
+
+    changeSanityBy(n: number)
+    {
+        Phaser.Math.Clamp(this.sanity += n, 0, 100)
+    }
+
     setHealth(n: number)
     {
         this.hp = n

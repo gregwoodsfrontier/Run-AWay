@@ -86,7 +86,7 @@ export default class Enemy extends Phaser.GameObjects.Sprite {
 
 	start()
 	{
-		this.moveTheUnit(DIRECTION.BACK)
+		this.moveTheUnit(DIRECTION.FRONT)
 		// this.stayStill()
 		this.setEnemyPush(false)
 	}
@@ -255,6 +255,9 @@ export default class Enemy extends Phaser.GameObjects.Sprite {
 
 		body.enable = false
 		this.scene.physics.world.remove(body)
+
+		const detect = DetectionBoxes.getComponent(this)
+		detect.removeZones()
 	}
 
 	damage(points: number)

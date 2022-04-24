@@ -22,6 +22,7 @@ import { SCENE_SWITCH_EVENTS } from "../types/scenes";
 import { ENEMY_STATE_KEYS } from "../types/enemyStateKeys";
 import psdField from "../prefabs/psdField";
 import DetectionBoxes from "../components/DetectionBoxes";
+import { GameState } from "../manager/gameState";
 /* END-USER-IMPORTS */
 
 export default class Level extends Phaser.Scene {
@@ -52,7 +53,7 @@ export default class Level extends Phaser.Scene {
 		this.add.existing(player);
 
 		// enemyA
-		const enemyA = new Enemy(this, 160, 352);
+		const enemyA = new Enemy(this, 160, -32);
 		this.add.existing(enemyA);
 
 		// pSDRobot
@@ -64,23 +65,23 @@ export default class Level extends Phaser.Scene {
 		const start_level = this.add.sprite(144, 160, "Start-Level-Anim-Short-20");
 
 		// rock_1
-		const rock_1 = new Rock(this, 64, 272);
+		const rock_1 = new Rock(this, 64, 80);
 		this.add.existing(rock_1);
 
 		// rock
-		const rock = new Rock(this, 160, 240);
+		const rock = new Rock(this, 160, 112);
 		this.add.existing(rock);
 
 		// rock_2
-		const rock_2 = new Rock(this, 128, 272);
+		const rock_2 = new Rock(this, 128, 80);
 		this.add.existing(rock_2);
 
 		// rock_3
-		const rock_3 = new Rock(this, 96, 272);
+		const rock_3 = new Rock(this, 96, 80);
 		this.add.existing(rock_3);
 
 		// rock_4
-		const rock_4 = new Rock(this, 192, 240);
+		const rock_4 = new Rock(this, 192, 112);
 		this.add.existing(rock_4);
 
 		// lists
@@ -144,14 +145,13 @@ export default class Level extends Phaser.Scene {
 		this.initObjectPool()
 
 		this.physics.add.collider(this.player, this.wall_1);
-		// this.physics.add.collider(this.player, this.enemyTeam)
-		this.physics.add.collider(this.enemyTeam, this.enemyTeam)
+		this.physics.add.collider(this.player, this.enemyTeam, this.handlePlayerSwarm, undefined, this)
+		//@ts-ignore
+		// this.physics.add.collider(this.enemyTeam)
 		this.physics.add.collider(this.enemyTeam, this.wall_1)
 		this.physics.add.collider(this.bulletGroup, this.wall_1, this.handleBulletWallCollision, undefined, this)
 		this.physics.add.overlap(this.bulletGroup, this.enemyTeam, this.handleBulletSwarm, undefined, this)
 		this.physics.add.collider(this.enemyTeam, this.obstacles)
-		// this.setDetectOverlap(this.enemyTeam[0])
-
 		this.#destination = SelectionSquare.getComponent(this.player)
 
 		this.events.on('create-bullet', this.handleBulletUpdate, this)
@@ -177,18 +177,17 @@ export default class Level extends Phaser.Scene {
 		// bypass if environment is in development
 		this.start_level.setVisible(false).setActive(false)
 		this.onStartLevelAnimsComplete()
-		/* this.time.addEvent({
-			repeat: 3,
+		this.time.addEvent({
+			repeat: 0,
 			delay: 1000,
 			callback: this.createMoreSwarm,
 			callbackScope: this,
-		}) */
+		})
 	}
 
 	update(time: number, delta: number)
 	{
 		this.handleDepthSort()
-		// this.showSelectionSquare()
 	}
 
 	getCollidingBlocks()
@@ -200,39 +199,11 @@ export default class Level extends Phaser.Scene {
 		}
 	}
 
-	private setDetectOverlap(enemy: Enemy)
+	private handlePlayerSwarm(p: any, e: any)
 	{
-		const zones = DetectionBoxes.getComponent(enemy).getDetectionZones()
-		const upzone = zones[DIRECTION.BACK]
-		const leftzone = zones[DIRECTION.LEFT]
-		const rightzone = zones[DIRECTION.RIGHT]
-		// only set up zone overlap
-		this.physics.add.overlap(upzone, this.obstacles, () => {
-			const checkLeft = this.wall_1.hasTileAtWorldXY(leftzone.getBounds().left, leftzone.getBounds().centerY)
-			const checkRight =  this.wall_1.hasTileAtWorldXY(rightzone.getBounds().right, rightzone.getBounds().centerY)
-			if(checkLeft)
-			{
-				enemy.emit('move', DIRECTION.RIGHT)
-			}
-			else if(checkRight)
-			{
-				enemy.emit('move', DIRECTION.LEFT)
-			}
-			else
-			{
-				const choice = [DIRECTION.LEFT, DIRECTION.RIGHT]
-				const choose = choice[Phaser.Math.Between(0, 1)]
-				enemy.emit('move', choose)
-			}
-
-			this.time.delayedCall(600, () => {
-				enemy.emit('move', DIRECTION.BACK)
-			})
-		},
-		() => {
-			return enemy.direction === DIRECTION.BACK
-		},
-		this)
+		const enemy = e as Enemy
+		GameState.changeHealthBy(-10)
+		enemy.despawn()
 	}
 
 	/**
@@ -240,8 +211,8 @@ export default class Level extends Phaser.Scene {
 	 */
 	private createMoreSwarm()
 	{
-		const spawnX = [80, 128, 160, 192, 240]
-		const spawnY = 416
+		const spawnX = [80, 128, 160, 192]
+		const spawnY = 0
 		for(let i = 0; i < spawnX.length; i++)
 		{
 			const enemy = new Enemy(this, spawnX[i], spawnY)
@@ -251,7 +222,6 @@ export default class Level extends Phaser.Scene {
 			follow.deadRangeX = 35
 			this.enemyTeam.push(enemy)
 		}
-		console.log(this.enemyTeam)
 	}
 
 	private addColliderEnemyField()

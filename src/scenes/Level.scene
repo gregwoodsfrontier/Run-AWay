@@ -72,7 +72,7 @@
             "FollowTarget.range": 100,
             "FollowTarget.deadRangeX": 35,
             "x": 160,
-            "y": 352
+            "y": -32
         },
         {
             "prefabId": "169b350d-b922-409d-8da8-e86ab037d35d",
@@ -111,7 +111,7 @@
             "scope": "CLASS",
             "components": [],
             "x": 64,
-            "y": 272
+            "y": 80
         },
         {
             "prefabId": "792be592-4edd-40b5-9eaa-2c4b650603a0",
@@ -124,7 +124,7 @@
             "scope": "CLASS",
             "components": [],
             "x": 160,
-            "y": 240
+            "y": 112
         },
         {
             "prefabId": "792be592-4edd-40b5-9eaa-2c4b650603a0",
@@ -136,7 +136,7 @@
             "label": "rock_2",
             "components": [],
             "x": 128,
-            "y": 272
+            "y": 80
         },
         {
             "prefabId": "792be592-4edd-40b5-9eaa-2c4b650603a0",
@@ -148,7 +148,7 @@
             "label": "rock_3",
             "components": [],
             "x": 96,
-            "y": 272
+            "y": 80
         },
         {
             "prefabId": "792be592-4edd-40b5-9eaa-2c4b650603a0",
@@ -160,7 +160,7 @@
             "label": "rock_4",
             "components": [],
             "x": 192,
-            "y": 240
+            "y": 112
         }
     ],
     "plainObjects": [

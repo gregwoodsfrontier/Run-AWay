@@ -54,8 +54,14 @@ export default class DetectionBoxes extends UserComponent {
 	{
 		this.collideBlocks = (this.scene.scene.get("Level") as Level).getCollidingBlocks()
 		
-		const en = this.collideBlocks.group[0]
-		this.setDetectOverlap(en)
+		this.updateOverlap()
+	}
+
+	updateOverlap()
+	{
+		this.collideBlocks.group.forEach(enemy => {
+			this.setDetectOverlap(enemy)
+		})
 	}
 
 	update()
@@ -77,10 +83,13 @@ export default class DetectionBoxes extends UserComponent {
 		const upzone = zones[DIRECTION.BACK]
 		const leftzone = zones[DIRECTION.LEFT]
 		const rightzone = zones[DIRECTION.RIGHT]
+		const downzone = zones[DIRECTION.FRONT]
 		const obs = this.collideBlocks.rocks
 		const wall = this.collideBlocks.wall
+		// const enGroup = this.collideBlocks.group
 		const checkLeft = wall.hasTileAtWorldXY(leftzone.getBounds().left, leftzone.getBounds().centerY)
 		const checkRight =  wall.hasTileAtWorldXY(rightzone.getBounds().right, rightzone.getBounds().centerY)
+		
 		// set up zone overlap
 		this.scene.physics.add.overlap(upzone, obs, () => {
 			
@@ -92,12 +101,42 @@ export default class DetectionBoxes extends UserComponent {
 			{
 				enemy.emit('move', DIRECTION.LEFT)
 			}
+			else
+			{
+				Phaser.Math.Between(0, 1) === 0 ? enemy.emit('move', DIRECTION.LEFT) : enemy.emit('move', DIRECTION.RIGHT)
+			}
+
 			this.scene.time.delayedCall(600, () => {
 				enemy.emit('move', DIRECTION.BACK)
 			})
 		},
 		() => {
 			return enemy.direction === DIRECTION.BACK
+		},
+		this)
+
+		// set down zone overlap
+		this.scene.physics.add.overlap(downzone, obs, () => {
+			
+			if(checkLeft || this.checkLeftRock())
+			{
+				enemy.emit('move', DIRECTION.RIGHT)
+			}
+			else if(checkRight || this.checkRightRock())
+			{
+				enemy.emit('move', DIRECTION.LEFT)
+			}
+			else
+			{
+				Phaser.Math.Between(0, 1) === 0 ? enemy.emit('move', DIRECTION.LEFT) : enemy.emit('move', DIRECTION.RIGHT)
+			}
+
+			this.scene.time.delayedCall(600, () => {
+				enemy.emit('move', DIRECTION.FRONT)
+			})
+		},
+		() => {
+			return enemy.direction === DIRECTION.FRONT
 		},
 		this)
 	}
@@ -107,6 +146,7 @@ export default class DetectionBoxes extends UserComponent {
 		const leftzone = this.detectZones[DIRECTION.LEFT]
 		const closeRock =  this.grabClosetRock()
 		let checkLeftRock = false
+		if(!leftzone.body){return false}
 		for(let i = 0; i < closeRock.length; i++)
 		{
 			checkLeftRock = this.scene.physics.world.intersects(
@@ -124,6 +164,7 @@ export default class DetectionBoxes extends UserComponent {
 		const rightzone = this.detectZones[DIRECTION.RIGHT]
 		const closeRock =  this.grabClosetRock()
 		let checkRock = false
+		if(!rightzone.body){return false}
 		for(let i = 0; i < closeRock.length; i++)
 		{
 			checkRock = this.scene.physics.world.intersects(
@@ -151,6 +192,11 @@ export default class DetectionBoxes extends UserComponent {
 		})
 	}
 
+	removeZones()
+	{
+		this.detectZones.forEach(zone => zone.destroy())
+	}
+
 	private createZones()
 	{
 		const { scene, x, y } = this.gameObject
@@ -169,7 +215,7 @@ export default class DetectionBoxes extends UserComponent {
 		const right = scene.add.zone(x + 16 + hei/2 + dx, y, hei, wid)
 
 		const arr = [ up, left, down, right ]
-		arr.forEach(e => {
+		arr.forEach((e, idx) => {
 			this.scene.physics.add.existing(e)
 		})
 

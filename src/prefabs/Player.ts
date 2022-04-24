@@ -100,7 +100,8 @@ export default class Player extends Phaser.GameObjects.Sprite {
 		this.playerHold.stateMachine.setState(HOLD_COMP_STATE.EMPTY)
 		this.playerAimComp.stateMachine.setState(AIM_STATE.EMPTY)
 
-
+		const body = this.body as Phaser.Physics.Arcade.Body
+		body.pushable = false
 		this.handleStateSwitching()
 		this.handleShooting()
 		this.handlePSDDeploy()
