@@ -23,10 +23,16 @@ export default class About extends Phaser.Scene {
 		this.add.image(160, 320, "About");
 
 		// back_Button
-		this.add.image(51, 83, "Back-Button");
+		this.add.image(51, 61, "Back-Button");
 
 		// back_Button_Selected
-		this.add.image(51, 83, "Back-Button-Selected");
+		this.add.image(51, 61, "Back-Button-Selected");
+
+		// view_Collection
+		this.add.image(160, 366, "View Collection");
+
+		// view_Collection_Pressed
+		this.add.image(160, 366, "View Collection Pressed");
 
 		this.events.emit("scene-awake");
 	}

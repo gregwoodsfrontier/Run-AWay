@@ -337,6 +337,16 @@
                 "key": "UI-Explainer-window"
             },
             {
+                "url": "assets/IN GAME MENU/View Collection.png",
+                "type": "image",
+                "key": "View Collection"
+            },
+            {
+                "url": "assets/IN GAME MENU/View Collection Pressed.png",
+                "type": "image",
+                "key": "View Collection Pressed"
+            },
+            {
                 "url": "assets/ui-assets/Volume Button.png",
                 "type": "image",
                 "key": "Volume Button"

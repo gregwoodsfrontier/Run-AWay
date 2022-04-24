@@ -32,7 +32,7 @@
                 "key": "Back-Button"
             },
             "x": 51,
-            "y": 83
+            "y": 61
         },
         {
             "type": "Image",
@@ -43,7 +43,29 @@
                 "key": "Back-Button-Selected"
             },
             "x": 51,
-            "y": 83
+            "y": 61
+        },
+        {
+            "type": "Image",
+            "id": "99087c63-f8a8-4abc-9594-4067a1dabb09",
+            "label": "view_Collection",
+            "components": [],
+            "texture": {
+                "key": "View Collection"
+            },
+            "x": 160,
+            "y": 366
+        },
+        {
+            "type": "Image",
+            "id": "1d00d7b7-965b-41de-a1d6-78ddc4026c89",
+            "label": "view_Collection_Pressed",
+            "components": [],
+            "texture": {
+                "key": "View Collection Pressed"
+            },
+            "x": 160,
+            "y": 366
         }
     ],
     "plainObjects": [],
