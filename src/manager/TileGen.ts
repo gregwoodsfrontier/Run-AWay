@@ -28,7 +28,7 @@ export default class TileGen
         var world = new World();
 
         // generate world and get list of tiles
-        var t = world.CreateWorld(Math.round(seed)); // seed is in between 0 and 200 since the range for chunks is 20-40
+        var t = world.CreateWorld(Math.round(seed));
 
         // iterate through list of tiles generated and add them to list of block objects
         for(var i = 0; i < t.length; i++)
@@ -78,6 +78,18 @@ export default class TileGen
 
                     case 'border-bottom-left':
                         blocks.push(this.Create(t[i].x, t[i].y, 'BLBorder', 0, scene));
+                        break;
+                
+                    case 'border-top':
+                        blocks.push(this.Create(t[i].x, t[i].y, 'UBorder', 0, scene));
+                        break;
+
+                    case 'border-top-right':
+                        blocks.push(this.Create(t[i].x, t[i].y, 'URBorder', 0, scene));
+                        break;
+
+                    case 'border-top-left':
+                        blocks.push(this.Create(t[i].x, t[i].y, 'ULBorder', 0, scene));
                         break;
                 }
             }

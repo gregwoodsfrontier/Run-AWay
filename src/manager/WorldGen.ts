@@ -46,6 +46,9 @@ export default class World
         // generate starter chunk
         tiles.push.apply(tiles, this.CreateChunk(chunkAmount, 'start'));
 
+        // generate end chunk
+        tiles.push.apply(tiles, this.CreateChunk(0, 'end'));
+
         // run this loop based on the amount of chunks created, which is seed/999 = decimal so we multiply by 100 and round to even number
         for(var i = 1; i < chunkAmount; i++)
         {
@@ -217,6 +220,47 @@ export default class World
                         else if(ypos == 19)
                         {
                             tiles.push(new tile(xpos*32, ypos*32+y*640, 32, 32, 'border-bottom'));
+                        }
+                        else if(xpos == 0)
+                        {
+                            tiles.push(new tile(xpos*32, ypos*32+y*640, 32, 32, 'border-left'));
+                        }
+                        else if(xpos == 9)
+                        {
+                            tiles.push(new tile(xpos*32, ypos*32+y*640, 32, 32, 'border-right'));
+                        }
+                        else
+                        {
+                            tiles.push(new tile(xpos*32, ypos*32+y*640, 32, 32, 'floor'));
+                        }
+                    }
+                }
+                break;
+
+            case 'end': // start is an empty chunk with an unbreakable border at the top, and a door leading to boss level
+                // first iterate through x position (index of row)
+                for(let xpos = 0; xpos < 10; xpos++)
+                {
+                    // now iterate through y position (index of column)
+                    for(let ypos = 0; ypos < 20; ypos++)
+                    {
+                        if(xpos == 0 && ypos == 0)
+                        {
+                            tiles.push(new tile(xpos*32, ypos*32+y*640, 32, 32, 'border-top-left'));
+                        }
+                        else if(xpos == 9 && ypos == 0)
+                        {
+                            tiles.push(new tile(xpos*32, ypos*32+y*640, 32, 32, 'border-top-right'));
+                        }
+                        // door tile, 64x32, VERY IMPORTANT
+                        else if(xpos == 4 && ypos == 0)
+                        {
+                            // first create a floor tile in case the sprite has transparent bits so it looks fine
+                            tiles.push(new tile(xpos*32, ypos*32+y*640, 32, 32, 'floor'));
+                        }
+                        else if(ypos == 0 && xpos != 5)
+                        {
+                            tiles.push(new tile(xpos*32, ypos*32+y*640, 32, 32, 'border-top'));
                         }
                         else if(xpos == 0)
                         {
