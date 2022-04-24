@@ -3,6 +3,7 @@
 /* START OF COMPILED CODE */
 
 import Phaser from "phaser";
+import TileMapLayerPhysics from "../components/TileMapLayerPhysics";
 import Player from "../prefabs/Player";
 import Enemy from "../prefabs/Enemy";
 import FollowTarget from "../components/FollowTarget";
@@ -79,6 +80,9 @@ export default class Level extends Phaser.Scene {
 		// lists
 		const enemyTeam = [enemyA_3, enemyA_1, enemyA_2, enemyA, enemyA_4];
 
+		// wall_1 (components)
+		new TileMapLayerPhysics(wall_1);
+
 		// enemyA (components)
 		const enemyAFollowTarget = FollowTarget.getComponent(enemyA);
 		enemyAFollowTarget.target = pSDRobot;
@@ -154,7 +158,7 @@ export default class Level extends Phaser.Scene {
 		this.floor_1.depth = this.wall_1.y * 2
 		this.wall_1.depth = this.wall_1.y * 2
 
-		this.wall_1.setCollisionByProperty({collides: true})
+		// this.wall_1.setCollisionByProperty({collides: true})
 
 		this.initObjectPool()
 

@@ -31,7 +31,9 @@
             "id": "65d66230-55e4-487b-9960-a35c714369d2",
             "label": "wall_1",
             "scope": "CLASS",
-            "components": [],
+            "components": [
+                "TileMapLayerPhysics"
+            ],
             "y": -960,
             "tilemapId": "2666579a-03f9-49f7-8b2e-dd9cd7ef8c88",
             "layerName": "wall",
