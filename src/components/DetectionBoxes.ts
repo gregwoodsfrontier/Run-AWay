@@ -191,33 +191,7 @@ export default class DetectionBoxes extends UserComponent {
 
 	removeZones()
 	{
-		// this.detectZones.forEach(zone => zone.destroy())
 		this.contain.getAll().forEach(zone => zone.destroy())
-	}
-
-	private createZones()
-	{
-		const { scene, x, y } = this.gameObject
-		const wid = 32
-		const hei = 8
-		const dx = 5
-		const dy = 5
-
-		// make up detect box
-		const up = scene.add.zone(x, y - 16 - hei/2 - dy, wid, hei)
-		// make down detect box
-		const down = scene.add.zone(x, y + 32 + hei/2 + dy, wid, hei)
-		// make left detect box
-		const left = scene.add.zone(x - 16 - hei/2 - dx, y , hei, wid)
-		// make right detect box
-		const right = scene.add.zone(x + 16 + hei/2 + dx, y, hei, wid)
-
-		const arr = [ up, left, down, right ]
-		arr.forEach((e, idx) => {
-			this.scene.physics.add.existing(e)
-		})
-
-		return arr
 	}
 
 	private createZoneContainer()
