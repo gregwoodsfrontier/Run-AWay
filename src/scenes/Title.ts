@@ -4,9 +4,6 @@
 /* START OF COMPILED CODE */
 
 import Phaser from "phaser";
-import Button from "../components/Button";
-import eventsCenter from "../EventsCenter";
-import { SCENE_SWITCH_EVENTS } from "../types/scenes";
 /* START-USER-IMPORTS */
 /* END-USER-IMPORTS */
 
@@ -33,11 +30,8 @@ export default class Title extends Phaser.Scene {
 		// start_Button
 		const start_Button = this.add.image(160, 191, "Start Button");
 
-		// volume_Button
-		const volume_Button = this.add.image(160, 255, "Volume Button");
-
 		// about_Button
-		const about_Button = this.add.image(160, 223, "About Button");
+		const about_Button = this.add.image(160, 239, "About Button");
 
 		// dithered_Triangles
 		const dithered_Triangles = this.add.image(160, 1024, "Dithered Triangles");
@@ -45,19 +39,9 @@ export default class Title extends Phaser.Scene {
 		// lists
 		const transition = [dithered_Triangles];
 
-		// start_Button (components)
-		new Button(start_Button);
-
-		// volume_Button (components)
-		new Button(volume_Button);
-
-		// about_Button (components)
-		new Button(about_Button);
-
 		this.start_Anim1 = start_Anim1;
 		this.logo_v2 = logo_v2;
 		this.start_Button = start_Button;
-		this.volume_Button = volume_Button;
 		this.about_Button = about_Button;
 		this.transition = transition;
 
@@ -67,7 +51,6 @@ export default class Title extends Phaser.Scene {
 	private start_Anim1!: Phaser.GameObjects.Sprite;
 	private logo_v2!: Phaser.GameObjects.Image;
 	private start_Button!: Phaser.GameObjects.Image;
-	private volume_Button!: Phaser.GameObjects.Image;
 	private about_Button!: Phaser.GameObjects.Image;
 	private transition!: Phaser.GameObjects.Image[];
 
