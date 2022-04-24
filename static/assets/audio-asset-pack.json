@@ -3,6 +3,13 @@
         "files": [
             {
                 "url": [
+                    "assets/AUDIO/MUSIC/Boss_Fight_v3.wav"
+                ],
+                "type": "audio",
+                "key": "Boss_Fight_v3"
+            },
+            {
+                "url": [
                     "assets/AUDIO/SFX/BossTrap.wav"
                 ],
                 "type": "audio",
