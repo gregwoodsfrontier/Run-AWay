@@ -77,6 +77,13 @@
                 ],
                 "type": "audio",
                 "key": "Start-Anim-SFX"
+            },
+            {
+                "url": [
+                    "assets/AUDIO/SFX/TargetHit.wav"
+                ],
+                "type": "audio",
+                "key": "TargetHit"
             }
         ]
     },
