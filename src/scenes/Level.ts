@@ -177,12 +177,12 @@ export default class Level extends Phaser.Scene {
 		// bypass if environment is in development
 		this.start_level.setVisible(false).setActive(false)
 		this.onStartLevelAnimsComplete()
-		this.time.addEvent({
+		/* this.time.addEvent({
 			repeat: 0,
 			delay: 1000,
 			callback: this.createMoreSwarm,
 			callbackScope: this,
-		})
+		}) */
 	}
 
 	update(time: number, delta: number)

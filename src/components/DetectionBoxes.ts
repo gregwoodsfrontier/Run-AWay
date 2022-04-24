@@ -28,8 +28,9 @@ export default class DetectionBoxes extends UserComponent {
 
 		/* START-USER-CTR-CODE */
 		// Write your code here.
-		this.detectZones = this.createZones()
-		
+		// this.detectZones = this.createZones()
+		this.contain = this.createZoneContainer()
+		console.log(this.contain)
 		
 		/* END-USER-CTR-CODE */
 	}
@@ -44,6 +45,7 @@ export default class DetectionBoxes extends UserComponent {
 	// Write your code here.
 	private detectZones!: Phaser.GameObjects.Zone[]
 	private collideBlocks!: IBlocks
+	private contain: Phaser.GameObjects.Container
 
 	getDetectionZones()
 	{
@@ -66,7 +68,17 @@ export default class DetectionBoxes extends UserComponent {
 
 	update()
 	{
-		this.detectZones.forEach(e => {
+		/* this.detectZones.forEach(e => {
+			const body = e.body as Phaser.Physics.Arcade.Body
+			if(!body)
+			{
+				return
+			}
+			const currVel = this.gameObject.body.velocity
+			body.setVelocity(currVel.x, currVel.y)
+		}) */
+
+		this.contain.getAll().forEach(e => {
 			const body = e.body as Phaser.Physics.Arcade.Body
 			if(!body)
 			{
@@ -80,10 +92,16 @@ export default class DetectionBoxes extends UserComponent {
 	private setDetectOverlap(enemy: Enemy)
 	{
 		const zones = DetectionBoxes.getComponent(enemy).getDetectionZones()
-		const upzone = zones[DIRECTION.BACK]
+		/* const upzone = zones[DIRECTION.BACK]
 		const leftzone = zones[DIRECTION.LEFT]
 		const rightzone = zones[DIRECTION.RIGHT]
-		const downzone = zones[DIRECTION.FRONT]
+		const downzone = zones[DIRECTION.FRONT] */
+
+		const upzone = this.contain.getAll()[DIRECTION.BACK] as Phaser.GameObjects.Zone
+		const downzone = this.contain.getAll()[DIRECTION.FRONT] as Phaser.GameObjects.Zone
+		const leftzone = this.contain.getAll()[DIRECTION.LEFT] as Phaser.GameObjects.Zone
+		const rightzone = this.contain.getAll()[DIRECTION.RIGHT] as Phaser.GameObjects.Zone
+
 		const obs = this.collideBlocks.rocks
 		const wall = this.collideBlocks.wall
 		// const enGroup = this.collideBlocks.group
@@ -143,7 +161,7 @@ export default class DetectionBoxes extends UserComponent {
 
 	private checkLeftRock()
 	{
-		const leftzone = this.detectZones[DIRECTION.LEFT]
+		const leftzone = this.contain.getAll()[DIRECTION.LEFT] as Phaser.GameObjects.Zone
 		const closeRock =  this.grabClosetRock()
 		let checkLeftRock = false
 		if(!leftzone.body){return false}
@@ -161,7 +179,7 @@ export default class DetectionBoxes extends UserComponent {
 
 	private checkRightRock()
 	{
-		const rightzone = this.detectZones[DIRECTION.RIGHT]
+		const rightzone = this.contain.getAll()[DIRECTION.RIGHT] as Phaser.GameObjects.Zone
 		const closeRock =  this.grabClosetRock()
 		let checkRock = false
 		if(!rightzone.body){return false}
@@ -179,10 +197,15 @@ export default class DetectionBoxes extends UserComponent {
 
 	private grabClosetRock()
 	{
-		const upBound = this.detectZones[DIRECTION.BACK].getBounds().top - 32
-		const downBound = this.detectZones[DIRECTION.FRONT].getBounds().bottom + 32
-		const leftBound = this.detectZones[DIRECTION.LEFT].getBounds().left - 32
-		const rightBound = this.detectZones[DIRECTION.RIGHT].getBounds().right + 32
+		const upzone = this.contain.getAll()[DIRECTION.BACK] as Phaser.GameObjects.Zone
+		const downzone = this.contain.getAll()[DIRECTION.FRONT] as Phaser.GameObjects.Zone
+		const leftzone = this.contain.getAll()[DIRECTION.LEFT] as Phaser.GameObjects.Zone
+		const rightzone = this.contain.getAll()[DIRECTION.RIGHT] as Phaser.GameObjects.Zone
+
+		const upBound = upzone.getBounds().top - 32
+		const downBound = downzone.getBounds().bottom + 32
+		const leftBound = leftzone.getBounds().left - 32
+		const rightBound = rightzone.getBounds().right + 32
 
 		return this.collideBlocks.rocks.filter(v => {
 			return v.x > leftBound &&
@@ -220,6 +243,36 @@ export default class DetectionBoxes extends UserComponent {
 		})
 
 		return arr
+	}
+
+	private createZoneContainer()
+	{
+		const { scene } = this.gameObject
+		const wid = 32
+		const hei = 8
+		const dx = 5
+		const dy = 5
+		const x = 0
+		const y = 0
+
+		const c = this.scene.add.container(this.gameObject.x, this.gameObject.y)
+
+		// make up detect box
+		const up = scene.add.zone(x, y - 16 - hei/2 - dy, wid, hei)
+		// make down detect box
+		const down = scene.add.zone(x, y + 32 + hei/2 + dy, wid, hei)
+		// make left detect box
+		const left = scene.add.zone(x - 16 - hei/2 - dx, y , hei, wid)
+		// make right detect box
+		const right = scene.add.zone(x + 16 + hei/2 + dx, y, hei, wid)
+
+		const arr = [ up, left, down, right ]
+		arr.forEach((e, idx) => {
+			this.scene.physics.add.existing(e)
+			c.add(e)
+		})
+
+		return c
 	}
 
 	/* END-USER-CODE */
