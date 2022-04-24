@@ -53,7 +53,7 @@ export default class Level extends Phaser.Scene {
 		this.add.existing(player);
 
 		// enemyA
-		const enemyA = new Enemy(this, 160, -32);
+		const enemyA = new Enemy(this, 96, 384);
 		this.add.existing(enemyA);
 
 		// pSDRobot
@@ -147,11 +147,12 @@ export default class Level extends Phaser.Scene {
 		this.physics.add.collider(this.player, this.wall_1);
 		this.physics.add.collider(this.player, this.enemyTeam, this.handlePlayerSwarm, undefined, this)
 		//@ts-ignore
-		this.physics.add.collider(this.enemyTeam)
+		this.physics.add.collider(this.enemyTeam, this.enemyTeam)
 		this.physics.add.collider(this.enemyTeam, this.wall_1)
 		this.physics.add.collider(this.bulletGroup, this.wall_1, this.handleBulletWallCollision, undefined, this)
 		this.physics.add.overlap(this.bulletGroup, this.enemyTeam, this.handleBulletSwarm, undefined, this)
 		this.physics.add.collider(this.enemyTeam, this.obstacles)
+		this.physics.add.collider(this.bulletGroup, this.obstacles, this.handleBulletRock)
 		this.#destination = SelectionSquare.getComponent(this.player)
 
 		this.events.on('create-bullet', this.handleBulletUpdate, this)
@@ -177,12 +178,9 @@ export default class Level extends Phaser.Scene {
 		// bypass if environment is in development
 		this.start_level.setVisible(false).setActive(false)
 		this.onStartLevelAnimsComplete()
-		this.time.addEvent({
-			repeat: 0,
-			delay: 1000,
-			callback: this.createMoreSwarm,
-			callbackScope: this,
-		})
+
+		this.SwarmGenerator(80, 384, 5, 3000, 0)
+		this.SwarmGenerator(192, 384, 5, 3000, 1500)
 	}
 
 	update(time: number, delta: number)
@@ -199,6 +197,30 @@ export default class Level extends Phaser.Scene {
 		}
 	}
 
+	private handleBulletRock(a, b)
+	{
+		const bullet = a as Bullet
+		const rock = b as Rock
+
+		bullet.despawn()
+		rock.destroy()
+	}
+
+	/**
+	 * Spawn a up-going swarm per x, y
+	 */
+	private SwarmGenerator(x: number, y: number, Repeat: number, Delay: number, StartAt: number = 0)
+	{
+		return this.time.addEvent({
+			repeat: Repeat,
+			delay: Delay,
+			startAt: StartAt,
+			callback: this.createSingleSwarm,
+			callbackScope: this,
+			args: [x, y]
+		})
+	}
+
 	private handlePlayerSwarm(p: any, e: any)
 	{
 		const enemy = e as Enemy
@@ -206,6 +228,17 @@ export default class Level extends Phaser.Scene {
 		enemy.despawn()
 	}
 
+	private createSingleSwarm(x: number, y: number)
+	{
+		const enemy = new Enemy(this, x, y)
+		this.add.existing(enemy)
+		this.enemyTeam.push(enemy)
+		const follow = FollowTarget.getComponent(enemy);
+		follow.setTarget(this.player)
+		follow.range = 300
+		follow.deadRangeX = 20
+		
+	}
 	/**
 	 * Spawns more swarm that goes
 	 */

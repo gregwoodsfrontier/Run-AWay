@@ -86,7 +86,7 @@ export default class Enemy extends Phaser.GameObjects.Sprite {
 
 	start()
 	{
-		this.moveTheUnit(DIRECTION.FRONT)
+		this.moveTheUnit(DIRECTION.BACK)
 		// this.stayStill()
 		this.setEnemyPush(false)
 	}
@@ -104,6 +104,12 @@ export default class Enemy extends Phaser.GameObjects.Sprite {
 	update(dt: number)
 	{
 		this.stateMachine.update(dt)
+		
+		if(this.y < -1000)
+		{
+			// this.despawn()
+			this.destoryAndDetach()
+		}
 	}
 
 	enrage()
@@ -258,6 +264,13 @@ export default class Enemy extends Phaser.GameObjects.Sprite {
 
 		const detect = DetectionBoxes.getComponent(this)
 		detect.removeZones()
+	}
+	
+	destoryAndDetach()
+	{
+		const detect = DetectionBoxes.getComponent(this)
+		detect.removeZones()
+		this.destroy()
 	}
 
 	damage(points: number)

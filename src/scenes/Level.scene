@@ -71,8 +71,8 @@
             "FollowTarget.target": "player",
             "FollowTarget.range": 100,
             "FollowTarget.deadRangeX": 35,
-            "x": 160,
-            "y": -32
+            "x": 96,
+            "y": 384
         },
         {
             "prefabId": "169b350d-b922-409d-8da8-e86ab037d35d",
