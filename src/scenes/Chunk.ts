@@ -15,6 +15,7 @@ import JustMovement from "../components/JustMovement";
 import AnimationV2 from "../components/AnimationV2";
 import DepthSortY from "../components/DepthSortY";
 import rnd from "../drand/random";
+import EndTunnel from "../prefabs/EndTunnel";
 /* END-USER-IMPORTS */
 
 export default class Chunk extends Phaser.Scene {
@@ -65,6 +66,8 @@ export default class Chunk extends Phaser.Scene {
 	public platformer_fun!: Phaser.Tilemaps.Tilemap
 	// Write your code here
 	private blocks!: Block[];
+
+	private tunnel!: EndTunnel;
 
 	create() {
 
@@ -147,6 +150,8 @@ export default class Chunk extends Phaser.Scene {
 		{
 			this.add.existing(blocks[i]);
 		}
+
+		this.add.existing(this.tunnel);
 
 		// apply blocks to this.blocks
 		this.blocks = blocks;

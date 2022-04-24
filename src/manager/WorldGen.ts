@@ -258,6 +258,9 @@ export default class World
                         {
                             // first create a floor tile in case the sprite has transparent bits so it looks fine
                             tiles.push(new tile(xpos*32, 32+ypos*32+y*640, 32, 32, 'floor'));
+
+                            // create tunnel/door one tile above'
+                            tiles.push(new tile(32+xpos*32, ypos*32+y*640+32, 64, 64, 'tunnel'));
                         }
                         else if(ypos == 0 && xpos != 5)
                         {

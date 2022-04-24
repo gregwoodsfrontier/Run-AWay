@@ -4,6 +4,9 @@ import Phaser from "phaser"
 // import block prefab
 import Block from "../prefabs/Block"
 
+// import tunnel prefab
+import EndTunnel from "../prefabs/EndTunnel";
+
 // import world generation algorithm
 import World from "./WorldGen";
 
@@ -93,6 +96,11 @@ export default class TileGen
                         break;
                 }
             }
+            else if(t[i].tag == 'tunnel')
+            {
+                // create scene's tunnel object (i know this isn't the best design lol) also the scene must have a "tunnel" object
+                scene.tunnel = new EndTunnel(scene, t[i].x, t[i].y);
+            }
         }
 
         // apply them in layers so they don't overlap, like so blocks don't appear under floor tiles
@@ -103,7 +111,7 @@ export default class TileGen
         // add block tiles on top
         tiles.push.apply(tiles, blocks);
 
-        // return list of tile/block objects
+        // return list of tile/block objects, and tile
         return tiles;
     }
 
