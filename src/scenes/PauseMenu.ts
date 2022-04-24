@@ -4,7 +4,6 @@
 /* START OF COMPILED CODE */
 
 import Phaser from "phaser";
-import Button from "../components/Button";
 /* START-USER-IMPORTS */
 /* END-USER-IMPORTS */
 
@@ -20,60 +19,90 @@ export default class PauseMenu extends Phaser.Scene {
 
 	editorCreate(): void {
 
-		// menu_Background
-		const menu_Background = this.add.image(160, 319, "Menu Background");
+		// 70per_Black_BG
+		this.add.image(160, 320, "70per-Black-BG");
 
-		// start_Button
-		const start_Button = this.add.image(160, 255, "Start Button");
+		// pause_Menu_Ref
+		const pause_Menu_Ref = this.add.image(160, 320, "Pause_Menu_Ref");
+		pause_Menu_Ref.visible = false;
 
-		// restart_Button
-		const restart_Button = this.add.image(160, 287, "Restart Button");
+		// pause_Menu_BG
+		this.add.image(160, 209, "Pause-Menu-BG");
 
-		// volume_Button
-		const volume_Button = this.add.image(160, 319, "Volume Button");
+		// music_Button
+		this.add.image(76, 292, "Music-Button");
 
-		// about_Button
-		const about_Button = this.add.image(160, 383, "About Button");
+		// sFX_Button
+		this.add.image(69, 323, "SFX-Button");
 
-		// mainMenuButton
-		const mainMenuButton = this.add.image(160, 351, "MainMenuButton");
+		// rules_Button
+		this.add.image(78, 213, "Rules-Button");
 
-		// lists
-		const buttonList = [mainMenuButton, about_Button, volume_Button, restart_Button, start_Button];
+		// mainMenu_Button
+		this.add.image(90, 181, "MainMenu-Button");
 
-		// start_Button (components)
-		new Button(start_Button);
+		// newGame_Button
+		this.add.image(88, 151, "NewGame-Button");
 
-		// restart_Button (components)
-		new Button(restart_Button);
+		// resume_Button
+		this.add.image(83, 121, "Resume-Button");
 
-		// volume_Button (components)
-		new Button(volume_Button);
+		// sliderBar
+		this.add.image(188, 292, "SliderBar");
 
-		// about_Button (components)
-		new Button(about_Button);
+		// slider_Down_Button_Selected
+		this.add.image(116, 292, "Slider-Down-Button-Selected");
 
-		// mainMenuButton (components)
-		new Button(mainMenuButton);
+		// slider_Up_Button_Selected
+		this.add.image(260, 292, "Slider-Up-Button-Selected");
 
-		this.menu_Background = menu_Background;
-		this.start_Button = start_Button;
-		this.restart_Button = restart_Button;
-		this.volume_Button = volume_Button;
-		this.about_Button = about_Button;
-		this.mainMenuButton = mainMenuButton;
-		this.buttonList = buttonList;
+		// slider_Button
+		this.add.image(130, 292, "Slider-Button");
+
+		// slider_Up_Button_Selected_1
+		this.add.image(260, 323, "Slider-Up-Button-Selected");
+
+		// slider_Down_Button_Selected_1
+		this.add.image(116, 323, "Slider-Down-Button-Selected");
+
+		// sliderBar_1
+		this.add.image(188, 323, "SliderBar");
+
+		// slider_Button_1
+		this.add.image(130, 323, "Slider-Button");
+
+		// mainMenu_Button_Selected
+		this.add.image(90, 181, "MainMenu-Button-Selected");
+
+		// music_Button_Selected
+		this.add.image(76, 292, "Music-Button-Selected");
+
+		// sFX_Button_Selected
+		this.add.image(69, 323, "SFX-Button-Selected");
+
+		// slider_Up_Button
+		this.add.image(260, 292, "Slider-Up-Button");
+
+		// slider_Up_Button_1
+		this.add.image(260, 323, "Slider-Up-Button");
+
+		// slider_Down_Button
+		this.add.image(116, 292, "Slider-Down-Button");
+
+		// slider_Down_Button_1
+		this.add.image(116, 323, "Slider-Down-Button");
+
+		// resume_Button_Selected
+		this.add.image(83, 121, "Resume-Button-Selected");
+
+		// rules_Button_Selected
+		this.add.image(78, 213, "Rules-Button-Selected");
+
+		// newGame_Button_Selected
+		this.add.image(88, 151, "NewGame-Button-Selected");
 
 		this.events.emit("scene-awake");
 	}
-
-	private menu_Background!: Phaser.GameObjects.Image;
-	private start_Button!: Phaser.GameObjects.Image;
-	private restart_Button!: Phaser.GameObjects.Image;
-	private volume_Button!: Phaser.GameObjects.Image;
-	private about_Button!: Phaser.GameObjects.Image;
-	private mainMenuButton!: Phaser.GameObjects.Image;
-	private buttonList!: Phaser.GameObjects.Image[];
 
 	/* START-USER-CODE */
 
@@ -82,11 +111,6 @@ export default class PauseMenu extends Phaser.Scene {
 	create() {
 
 		this.editorCreate();
-		
-		this.buttonList.forEach(e => {
-			e.setVisible(true)
-			console.log(e)
-		})
 	}
 
 	private resumeGame()
