@@ -42,22 +42,22 @@ export default class TileGen
                 floors.push(this.Create(t[i].x, t[i].y, 'Floor', 0, scene));
             }
             // gold
-            else if(t[i].tag.slice(0, 4) == 'gold')
+            else if(t[i].tag == 'gold')
             {
                 blocks.push(this.Create(t[i].x, t[i].y, 'GoldBlock', Math.round(Math.random()*3), scene));
             }
             // silver
-            else if(t[i].tag.slice(0, 6) == 'silver')
+            else if(t[i].tag == 'silver')
             {
                 blocks.push(this.Create(t[i].x, t[i].y, 'SilverBlock', Math.round(Math.random()*3), scene));
             }
-            else if(t[i].tag.slice(0, 6) == 'copper')
+            else if(t[i].tag == 'copper')
             {
                 blocks.push(this.Create(t[i].x, t[i].y, 'CopperBlock', Math.round(Math.random()*3), scene));
             }
-            else if(t[i].tag.slice(0, 6) == 'normal')
+            else if(t[i].tag == 'normal')
             {
-                blocks.push(this.Create(t[i].x, t[i].y, 'NormalBlock', Math.round(Math.random()*3), scene));
+                blocks.push(this.Create(t[i].x, t[i].y, 'NormalBlock', Math.round(Math.random()*4), scene)); // 5th variation for normal blocks
             }
             else if(t[i].tag.slice(0, 6) == 'border')
             {

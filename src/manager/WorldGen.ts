@@ -520,89 +520,22 @@ export default class World
         let copperPercent = 25;
         let normalPercent = 50;
 
-        // 4 different variations for every type of block
-        let variation = Math.random(); // 0 - 1
-
         // make block based on type probability
         if(type <= goldPercent) // gold
         {
-            if(variation <= 0.25)
-            {
-                t.tag = 'gold1';
-            }
-            else if(variation >= 0.25 && variation < 0.5)
-            {
-                t.tag = 'gold2';
-            }
-            else if(variation >= 0.5 && variation < 0.75)
-            {
-                t.tag = 'gold3';
-            }
-            else if(variation >= 0.75)
-            {
-                t.tag = 'gold4';
-            }
+            t.tag = 'gold';
         }
         else if(type >= goldPercent && type <= silverPercent+goldPercent)
         {
-            if(variation <= 0.25)
-            {
-                t.tag = 'silver1';
-            }
-            else if(variation >= 0.25 && variation < 0.5)
-            {
-                t.tag = 'silver2';
-            }
-            else if(variation >= 0.5 && variation < 0.75)
-            {
-                t.tag = 'silver3';
-            }
-            else if(variation >= 0.75)
-            {
-                t.tag = 'silver4';
-            }
+            t.tag = 'silver';
         }
         else if(type >= silverPercent+goldPercent && type <= copperPercent+silverPercent+goldPercent)
         {
-            if(variation <= 0.25)
-            {
-                t.tag = 'copper1';
-            }
-            else if(variation >= 0.25 && variation < 0.5)
-            {
-                t.tag = 'copper2';
-            }
-            else if(variation >= 0.5 && variation < 0.75)
-            {
-                t.tag = 'copper3';
-            }
-            else if(variation >= 0.75)
-            {
-                t.tag = 'copper4';
-            }
+            t.tag = 'copper';
         }
         else if(type >= normalPercent)
         {
-            if(variation <= 0.25)
-            {
-                t.tag = 'normal1';
-            }
-            else if(variation >= 0.25 && variation < 0.5)
-            {
-                t.tag = 'normal2';
-            }
-            else if(variation >= 0.5 && variation < 0.75)
-            {
-                t.tag = 'normal3';
-            }
-            else if(variation >= 0.75 && variation < 0.9)
-            {
-                t.tag = 'normal4';
-            }
-            else if(variation >= 0.9) // normal blocks have a 5th variation, 10% chance of spawning
-            {
-                t.tag = 'normal5'; 
-            }
+            t.tag = 'normal';
         }
 
         // return generated wall tile
