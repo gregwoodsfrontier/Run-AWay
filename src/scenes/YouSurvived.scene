@@ -64,6 +64,7 @@
             "type": "Image",
             "id": "111de761-80c5-4ad5-a78b-4436fdf25a58",
             "label": "mainMenu_Button_Red",
+            "scope": "CLASS",
             "components": [],
             "texture": {
                 "key": "MainMenu-Button-Red"
@@ -75,6 +76,7 @@
             "type": "Image",
             "id": "13780842-941a-4e2c-946d-c8ab07463b0b",
             "label": "mainMenu_Button_Red_Selected",
+            "scope": "CLASS",
             "components": [],
             "texture": {
                 "key": "MainMenu-Button-Red-Selected"
@@ -86,6 +88,7 @@
             "type": "Image",
             "id": "c1af0876-e0fd-45da-a146-322f83f1b22a",
             "label": "newGame_Button_Red",
+            "scope": "CLASS",
             "components": [],
             "texture": {
                 "key": "NewGame-Button-Red"
@@ -97,6 +100,7 @@
             "type": "Image",
             "id": "d5764eef-2ece-451a-a2e3-5670725c677b",
             "label": "newGame_Button_Red_Selected",
+            "scope": "CLASS",
             "components": [],
             "texture": {
                 "key": "NewGame-Button-Red-Selected"

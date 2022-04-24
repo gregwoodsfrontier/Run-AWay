@@ -36,19 +36,29 @@ export default class YouSurvived extends Phaser.Scene {
 		youSurvived.scaleY = 3.5937905673970443;
 
 		// mainMenu_Button_Red
-		this.add.image(160, 386, "MainMenu-Button-Red");
+		const mainMenu_Button_Red = this.add.image(160, 386, "MainMenu-Button-Red");
 
 		// mainMenu_Button_Red_Selected
-		this.add.image(160, 386, "MainMenu-Button-Red-Selected");
+		const mainMenu_Button_Red_Selected = this.add.image(160, 386, "MainMenu-Button-Red-Selected");
 
 		// newGame_Button_Red
-		this.add.image(160, 420, "NewGame-Button-Red");
+		const newGame_Button_Red = this.add.image(160, 420, "NewGame-Button-Red");
 
 		// newGame_Button_Red_Selected
-		this.add.image(160, 419, "NewGame-Button-Red-Selected");
+		const newGame_Button_Red_Selected = this.add.image(160, 419, "NewGame-Button-Red-Selected");
+
+		this.mainMenu_Button_Red = mainMenu_Button_Red;
+		this.mainMenu_Button_Red_Selected = mainMenu_Button_Red_Selected;
+		this.newGame_Button_Red = newGame_Button_Red;
+		this.newGame_Button_Red_Selected = newGame_Button_Red_Selected;
 
 		this.events.emit("scene-awake");
 	}
+
+	private mainMenu_Button_Red!: Phaser.GameObjects.Image;
+	private mainMenu_Button_Red_Selected!: Phaser.GameObjects.Image;
+	private newGame_Button_Red!: Phaser.GameObjects.Image;
+	private newGame_Button_Red_Selected!: Phaser.GameObjects.Image;
 
 	/* START-USER-CODE */
 

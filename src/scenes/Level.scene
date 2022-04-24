@@ -110,8 +110,8 @@
             "label": "rock_1",
             "scope": "CLASS",
             "components": [],
-            "x": 64,
-            "y": 80
+            "x": 80,
+            "y": 0
         },
         {
             "prefabId": "792be592-4edd-40b5-9eaa-2c4b650603a0",
@@ -123,8 +123,8 @@
             "label": "rock",
             "scope": "CLASS",
             "components": [],
-            "x": 160,
-            "y": 112
+            "x": 176,
+            "y": 0
         },
         {
             "prefabId": "792be592-4edd-40b5-9eaa-2c4b650603a0",
@@ -135,8 +135,8 @@
             ],
             "label": "rock_2",
             "components": [],
-            "x": 128,
-            "y": 80
+            "x": 144,
+            "y": 0
         },
         {
             "prefabId": "792be592-4edd-40b5-9eaa-2c4b650603a0",
@@ -147,8 +147,8 @@
             ],
             "label": "rock_3",
             "components": [],
-            "x": 96,
-            "y": 80
+            "x": 112,
+            "y": 0
         },
         {
             "prefabId": "792be592-4edd-40b5-9eaa-2c4b650603a0",
@@ -159,8 +159,8 @@
             ],
             "label": "rock_4",
             "components": [],
-            "x": 192,
-            "y": 112
+            "x": 208,
+            "y": 0
         }
     ],
     "plainObjects": [
