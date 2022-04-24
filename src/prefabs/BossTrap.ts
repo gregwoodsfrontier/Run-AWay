@@ -15,10 +15,12 @@ export default class BossTrap extends Phaser.GameObjects.Sprite {
 
 	constructor(scene: Phaser.Scene, x?: number, y?: number, texture?: string, frame?: number | string) {
 		super(scene, x ?? 0, y ?? 0, texture || "BossTrap-1", frame ?? 0);
+        
         //Static Body
         this.scene.physics.add.existing(this,true)
         this.StartTimer()
     }
+
     StartTimer(){
         //Set Timer to 20 seconds to strt deploying
         this.timer = this.scene.time.addEvent({
@@ -32,7 +34,10 @@ export default class BossTrap extends Phaser.GameObjects.Sprite {
     Deploy(){
         //Deploys it and set timer of acitvasion to 5 seconds
         if(Deploy){
+
         this.play("boss-trap-on")
+        this.scene.sound.play("BossTrap")
+
         this.on(Phaser.Animations.Events.ANIMATION_UPDATE , (texture: Phaser.Textures.Texture)=>{
             if(this.texture.key == "BossTrap-5"){
             this.timer.delay = 5000;
@@ -84,4 +89,9 @@ export default class BossTrap extends Phaser.GameObjects.Sprite {
             this.scene.physics.add.existing(Beams[i] , true)
         }
     }
+
+    /*BulletHit(){
+        //destroys upon bullet collision
+        this.destroy();
+    }*/
 }
