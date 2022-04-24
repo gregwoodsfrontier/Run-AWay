@@ -22,7 +22,8 @@
                 "DepthSortY",
                 "FollowTarget",
                 "AnimationV2",
-                "JustMovement"
+                "JustMovement",
+                "DetectionBoxes"
             ],
             "Physics.width": 32,
             "Physics.height": 40,

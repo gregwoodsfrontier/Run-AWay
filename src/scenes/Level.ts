@@ -8,6 +8,7 @@ import Player from "../prefabs/Player";
 import Enemy from "../prefabs/Enemy";
 import FollowTarget from "../components/FollowTarget";
 import PSD from "../prefabs/PSD";
+import Rock from "../prefabs/Rock";
 /* START-USER-IMPORTS */
 import DepthSortY from "../components/DepthSortY";
 import { DIRECTION } from "../types/direction";
@@ -20,6 +21,7 @@ import eventsCenter from "../EventsCenter";
 import { SCENE_SWITCH_EVENTS } from "../types/scenes";
 import { ENEMY_STATE_KEYS } from "../types/enemyStateKeys";
 import psdField from "../prefabs/psdField";
+import DetectionBoxes from "../components/DetectionBoxes";
 /* END-USER-IMPORTS */
 
 export default class Level extends Phaser.Scene {
@@ -50,7 +52,7 @@ export default class Level extends Phaser.Scene {
 		this.add.existing(player);
 
 		// enemyA
-		const enemyA = new Enemy(this, 80, 416);
+		const enemyA = new Enemy(this, 160, 352);
 		this.add.existing(enemyA);
 
 		// pSDRobot
@@ -61,57 +63,38 @@ export default class Level extends Phaser.Scene {
 		// start_level
 		const start_level = this.add.sprite(144, 160, "Start-Level-Anim-Short-20");
 
-		// enemyA_1
-		const enemyA_1 = new Enemy(this, 128, 416);
-		this.add.existing(enemyA_1);
+		// rock_1
+		const rock_1 = new Rock(this, 64, 272);
+		this.add.existing(rock_1);
 
-		// enemyA_2
-		const enemyA_2 = new Enemy(this, 192, 416);
-		this.add.existing(enemyA_2);
+		// rock
+		const rock = new Rock(this, 160, 240);
+		this.add.existing(rock);
 
-		// enemyA_3
-		const enemyA_3 = new Enemy(this, 240, 416);
-		this.add.existing(enemyA_3);
+		// rock_2
+		const rock_2 = new Rock(this, 128, 272);
+		this.add.existing(rock_2);
 
-		// enemyA_4
-		const enemyA_4 = new Enemy(this, 160, 416);
-		this.add.existing(enemyA_4);
+		// rock_3
+		const rock_3 = new Rock(this, 96, 272);
+		this.add.existing(rock_3);
+
+		// rock_4
+		const rock_4 = new Rock(this, 192, 240);
+		this.add.existing(rock_4);
 
 		// lists
-		const enemyTeam = [enemyA_3, enemyA_1, enemyA_2, enemyA, enemyA_4];
+		const enemyTeam = [enemyA];
+		const obstacles = [rock_1, rock_3, rock_2, rock, rock_4];
 
 		// wall_1 (components)
 		new TileMapLayerPhysics(wall_1);
 
 		// enemyA (components)
 		const enemyAFollowTarget = FollowTarget.getComponent(enemyA);
-		enemyAFollowTarget.target = pSDRobot;
-		enemyAFollowTarget.range = 300;
+		enemyAFollowTarget.target = player;
+		enemyAFollowTarget.range = 100;
 		enemyAFollowTarget.deadRangeX = 35;
-
-		// enemyA_1 (components)
-		const enemyA_1FollowTarget = FollowTarget.getComponent(enemyA_1);
-		enemyA_1FollowTarget.target = pSDRobot;
-		enemyA_1FollowTarget.range = 300;
-		enemyA_1FollowTarget.deadRangeX = 35;
-
-		// enemyA_2 (components)
-		const enemyA_2FollowTarget = FollowTarget.getComponent(enemyA_2);
-		enemyA_2FollowTarget.target = pSDRobot;
-		enemyA_2FollowTarget.range = 300;
-		enemyA_2FollowTarget.deadRangeX = 35;
-
-		// enemyA_3 (components)
-		const enemyA_3FollowTarget = FollowTarget.getComponent(enemyA_3);
-		enemyA_3FollowTarget.target = pSDRobot;
-		enemyA_3FollowTarget.range = 300;
-		enemyA_3FollowTarget.deadRangeX = 35;
-
-		// enemyA_4 (components)
-		const enemyA_4FollowTarget = FollowTarget.getComponent(enemyA_4);
-		enemyA_4FollowTarget.target = pSDRobot;
-		enemyA_4FollowTarget.range = 300;
-		enemyA_4FollowTarget.deadRangeX = 35;
 
 		this.floor_1 = floor_1;
 		this.wall_1 = wall_1;
@@ -119,12 +102,11 @@ export default class Level extends Phaser.Scene {
 		this.enemyA = enemyA;
 		this.pSDRobot = pSDRobot;
 		this.start_level = start_level;
-		this.enemyA_1 = enemyA_1;
-		this.enemyA_2 = enemyA_2;
-		this.enemyA_3 = enemyA_3;
-		this.enemyA_4 = enemyA_4;
+		this.rock_1 = rock_1;
+		this.rock = rock;
 		this.cave_test_map_2 = cave_test_map_2;
 		this.enemyTeam = enemyTeam;
+		this.obstacles = obstacles;
 
 		this.events.emit("scene-awake");
 	}
@@ -135,11 +117,10 @@ export default class Level extends Phaser.Scene {
 	private enemyA!: Enemy;
 	private pSDRobot!: PSD;
 	private start_level!: Phaser.GameObjects.Sprite;
-	private enemyA_1!: Enemy;
-	private enemyA_2!: Enemy;
-	private enemyA_3!: Enemy;
-	private enemyA_4!: Enemy;
+	private rock_1!: Rock;
+	private rock!: Rock;
 	private enemyTeam!: Enemy[];
+	private obstacles!: Rock[];
 
 	/* START-USER-CODE */
 	public platformer_fun!: Phaser.Tilemaps.Tilemap
@@ -168,7 +149,8 @@ export default class Level extends Phaser.Scene {
 		this.physics.add.collider(this.enemyTeam, this.wall_1)
 		this.physics.add.collider(this.bulletGroup, this.wall_1, this.handleBulletWallCollision, undefined, this)
 		this.physics.add.overlap(this.bulletGroup, this.enemyTeam, this.handleBulletSwarm, undefined, this)
-
+		this.physics.add.collider(this.enemyTeam, this.obstacles)
+		// this.setDetectOverlap(this.enemyTeam[0])
 
 		this.#destination = SelectionSquare.getComponent(this.player)
 
@@ -195,18 +177,62 @@ export default class Level extends Phaser.Scene {
 		// bypass if environment is in development
 		this.start_level.setVisible(false).setActive(false)
 		this.onStartLevelAnimsComplete()
-		this.time.addEvent({
+		/* this.time.addEvent({
 			repeat: 3,
 			delay: 1000,
 			callback: this.createMoreSwarm,
 			callbackScope: this,
-		})
+		}) */
 	}
 
 	update(time: number, delta: number)
 	{
 		this.handleDepthSort()
-		this.showSelectionSquare()
+		// this.showSelectionSquare()
+	}
+
+	getCollidingBlocks()
+	{
+		return {
+			wall: this.wall_1,
+			rocks: this.obstacles,
+			group: this.enemyTeam
+		}
+	}
+
+	private setDetectOverlap(enemy: Enemy)
+	{
+		const zones = DetectionBoxes.getComponent(enemy).getDetectionZones()
+		const upzone = zones[DIRECTION.BACK]
+		const leftzone = zones[DIRECTION.LEFT]
+		const rightzone = zones[DIRECTION.RIGHT]
+		// only set up zone overlap
+		this.physics.add.overlap(upzone, this.obstacles, () => {
+			const checkLeft = this.wall_1.hasTileAtWorldXY(leftzone.getBounds().left, leftzone.getBounds().centerY)
+			const checkRight =  this.wall_1.hasTileAtWorldXY(rightzone.getBounds().right, rightzone.getBounds().centerY)
+			if(checkLeft)
+			{
+				enemy.emit('move', DIRECTION.RIGHT)
+			}
+			else if(checkRight)
+			{
+				enemy.emit('move', DIRECTION.LEFT)
+			}
+			else
+			{
+				const choice = [DIRECTION.LEFT, DIRECTION.RIGHT]
+				const choose = choice[Phaser.Math.Between(0, 1)]
+				enemy.emit('move', choose)
+			}
+
+			this.time.delayedCall(600, () => {
+				enemy.emit('move', DIRECTION.BACK)
+			})
+		},
+		() => {
+			return enemy.direction === DIRECTION.BACK
+		},
+		this)
 	}
 
 	/**
@@ -318,18 +344,6 @@ export default class Level extends Phaser.Scene {
 	{
 		this.player.setVisible(false)
 		this.start_level.play('start-level-short')
-	}
-
-	private showSelectionSquare()
-	{
-		if(!this.#destination)
-		{
-			console.error(`selection square is undefined`)
-			return
-		}
-		const square = this.#destination.getSelectionSquare()
-		const body = square.body as Phaser.Physics.Arcade.Body
-		body.debugBodyColor = body.touching.none ? 0x00ffff : 0xffff00;
 	}
 
 	private deployPSD()

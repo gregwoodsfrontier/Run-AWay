@@ -284,6 +284,12 @@
                     }
                 }
             ]
+        },
+        {
+            "name": "DetectionBoxes",
+            "baseClass": "UserComponent",
+            "gameObjectType": "Phaser.GameObjects.Sprite",
+            "properties": []
         }
     ],
     "meta": {

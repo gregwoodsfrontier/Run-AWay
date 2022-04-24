@@ -9,6 +9,7 @@ import DepthSortY from "../components/DepthSortY";
 import FollowTarget from "../components/FollowTarget";
 import AnimationV2 from "../components/AnimationV2";
 import JustMovement from "../components/JustMovement";
+import DetectionBoxes from "../components/DetectionBoxes";
 /* START-USER-IMPORTS */
 import StateMachine from "../stateMachine";
 import { ENEMY_STATE_KEYS } from "../types/enemyStateKeys";
@@ -32,6 +33,7 @@ export default class Enemy extends Phaser.GameObjects.Sprite {
 		new AnimationV2(this);
 		const thisJustMovement = new JustMovement(this);
 		thisJustMovement.speed = 90;
+		new DetectionBoxes(this);
 
 		/* START-USER-CTR-CODE */
 		// Write your code here.
@@ -80,11 +82,11 @@ export default class Enemy extends Phaser.GameObjects.Sprite {
 	private stateMachine: StateMachine
 	private enemyAnimation: AnimationV2
 	private enemyMovement: JustMovement
-	private direction = DIRECTION.BACK
+	public direction = DIRECTION.BACK
 
 	start()
 	{
-		// this.moveTheUnit(DIRECTION.BACK)
+		this.moveTheUnit(DIRECTION.BACK)
 		// this.stayStill()
 		this.setEnemyPush(false)
 	}
@@ -146,8 +148,8 @@ export default class Enemy extends Phaser.GameObjects.Sprite {
 
 	private onWalkEnter()
 	{
-		
-		
+
+
 	}
 
 	private onWalkUpdate()

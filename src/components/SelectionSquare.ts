@@ -39,7 +39,7 @@ export default class SelectionSquare extends UserComponent {
 	{
 		const {scene, x, y} = this.gameObject
 		// this.selectSquare = scene.add.rectangle(x, y, 32, 32, 0xff0000, 0).setDepth(1000)
-		this.selectSquare = scene.add.zone(x, y, 32, 32).setDepth(1000)
+		this.selectSquare = scene.add.zone(x, y, 32, 32)
 		scene.physics.world.enable(this.selectSquare);
 		(this.selectSquare.body as Phaser.Physics.Arcade.Body).setAllowGravity(false);
 		(this.selectSquare.body as Phaser.Physics.Arcade.Body).moves = false;
@@ -60,7 +60,14 @@ export default class SelectionSquare extends UserComponent {
 
 	update()
 	{
+		this.showSquare()
 		this.updateSelectionSquare(this.dir)
+	}
+
+	private showSquare()
+	{
+		const body = this.selectSquare.body as Phaser.Physics.Arcade.Body
+		body.debugBodyColor = body.touching.none ? 0x00ffff : 0xffff00;
 	}
 
 
