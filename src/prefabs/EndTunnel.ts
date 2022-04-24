@@ -14,6 +14,7 @@ export default class EndTunnel extends Phaser.GameObjects.Image {
 
 		/* START-USER-CTR-CODE */
 		// Write your code here.
+		// this.setTexture("your Texture")
 		/* END-USER-CTR-CODE */
 	}
 
