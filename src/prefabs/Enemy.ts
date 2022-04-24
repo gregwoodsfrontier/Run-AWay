@@ -11,7 +11,7 @@ import AnimationV2 from "../components/AnimationV2";
 import JustMovement from "../components/JustMovement";
 /* START-USER-IMPORTS */
 import StateMachine from "../stateMachine";
-import { ENEMY_STATE_KEYS as ENEMY_STATE, ENEMY_STATE_KEYS } from "../types/enemyStateKeys";
+import { ENEMY_STATE_KEYS } from "../types/enemyStateKeys";
 import { DIRECTION, getDirectionName } from "../types/direction";
 /* END-USER-IMPORTS */
 
@@ -47,23 +47,19 @@ export default class Enemy extends Phaser.GameObjects.Sprite {
 			state: 'idle'
 		})
 
-		this.slapHitBox = this.scene.add.rectangle(0, 0, 32, 64, 0xffffff, 0)  as unknown as Phaser.Types.Physics.Arcade.ImageWithDynamicBody
-		this.scene.physics.add.existing(this.slapHitBox)
-		this.disableSlapBox()
-
 		this.stateMachine = new StateMachine(this, 'enemy')
-		this.stateMachine.addState(ENEMY_STATE.IDLE, {
+		this.stateMachine.addState(ENEMY_STATE_KEYS.IDLE, {
 			onEnter: this.onIdleEnter
 		})
-		.addState(ENEMY_STATE.WALK, {
+		.addState(ENEMY_STATE_KEYS.WALK, {
 			onEnter: this.onWalkEnter,
 			onUpdate: this.onWalkUpdate
 		})
-		.addState(ENEMY_STATE.ATTACK, {
+		.addState(ENEMY_STATE_KEYS.ATTACK, {
 			onEnter: this.onAttackEnter
 		})
 		// .setState(ENEMY_STATE.IDLE)
-		.setState(ENEMY_STATE.WALK)
+		.setState(ENEMY_STATE_KEYS.WALK)
 		this.direction = DIRECTION.BACK
 
 		// create events only for this enemy instance
@@ -85,7 +81,6 @@ export default class Enemy extends Phaser.GameObjects.Sprite {
 	private enemyAnimation: AnimationV2
 	private enemyMovement: JustMovement
 	private direction = DIRECTION.BACK
-	private slapHitBox: Phaser.Types.Physics.Arcade.ImageWithDynamicBody
 
 	start()
 	{
@@ -109,14 +104,9 @@ export default class Enemy extends Phaser.GameObjects.Sprite {
 		this.stateMachine.update(dt)
 	}
 
-	getSlapHitBox()
-	{
-		return this.slapHitBox
-	}
-
 	enrage()
 	{
-		this.stateMachine.setState(ENEMY_STATE.ATTACK)
+		this.stateMachine.setState(ENEMY_STATE_KEYS.ATTACK)
 	}
 
 	checkState(state: string)
@@ -124,108 +114,19 @@ export default class Enemy extends Phaser.GameObjects.Sprite {
 		return this.stateMachine.isCurrentState(state)
 	}
 
-	private disableSlapBox()
-	{
-		this.slapHitBox.setPosition(-100, 0)
-		this.slapHitBox.body.enable = false
-		this.scene.physics.world.remove(this.slapHitBox.body)
-	}
-
-	private enableSlapBox()
-	{
-		this.slapHitBox.body.enable = true
-		this.scene.physics.world.add(this.slapHitBox.body)
-	}
-
-	private debugSlapHitBox()
-	{
-		const graphics = this.scene.add.graphics()
-		graphics.lineStyle(5, 0x00ffff)
-		graphics.strokeRect(
-			this.slapHitBox.body.x, 
-			this.slapHitBox.body.y, 
-			this.slapHitBox.body.width, 
-			this.slapHitBox.body.height
-		)
-
-	}
-
 	private stayStill()
 	{
-		this.stateMachine.setState(ENEMY_STATE.IDLE)
+		this.stateMachine.setState(ENEMY_STATE_KEYS.IDLE)
 	}
 
 	private moveTheUnit(dir: number)
 	{
 		this.direction = dir
-		this.stateMachine.setState(ENEMY_STATE.WALK)
-	}
-
-	private setSlapHitBox(dir: number)
-	{
-		const boxMargin = 10
-		const boxWidth = 32
-		const boxHeight = 15
-		const physics = Physics.getComponent(this)
-
-		switch (dir) {
-			case DIRECTION.BACK: {
-				this.slapHitBox.setPosition(
-					this.x, 
-					this.y - boxMargin - boxHeight)
-				this.slapHitBox.body.setSize(
-					boxWidth,
-					boxHeight
-				)
-				break
-			}
-
-			case DIRECTION.FRONT: {
-				const body = this.body as Phaser.Physics.Arcade.Body
-
-				this.slapHitBox.setPosition(
-					this.x, 
-					this.y + body.height + boxMargin
-				)
-				this.slapHitBox.body.setSize(
-					boxWidth,
-					boxHeight
-				)
-				break
-			}
-
-			case DIRECTION.RIGHT: {
-				const body = this.body as Phaser.Physics.Arcade.Body
-
-				this.slapHitBox.setPosition(
-					this.x + physics.offsetX/2 + body.width/2 + boxMargin,
-					this.y + physics.offsetY/2
-				)
-				this.slapHitBox.body.setSize(
-					boxHeight,
-					boxWidth
-				)
-				break
-			}
-
-			case DIRECTION.LEFT: {
-				this.slapHitBox.setPosition(
-					this.x - physics.offsetX/2 - boxMargin - boxHeight,
-					this.y + physics.offsetY/2
-				)
-				this.slapHitBox.body.setSize(
-					boxHeight,
-					boxWidth
-				)
-				break
-			}
-		}
+		this.stateMachine.setState(ENEMY_STATE_KEYS.WALK)
 	}
 
 	private onIdleEnter()
 	{
-		this.disableSlapBox()
-
 		const dirName = getDirectionName(this.direction)
 
 		if(!dirName)
@@ -245,7 +146,8 @@ export default class Enemy extends Phaser.GameObjects.Sprite {
 
 	private onWalkEnter()
 	{
-		this.disableSlapBox()
+		
+		
 	}
 
 	private onWalkUpdate()
@@ -308,10 +210,6 @@ export default class Enemy extends Phaser.GameObjects.Sprite {
 		const startHit = () => {
 
 			this.off(Phaser.Animations.Events.ANIMATION_UPDATE, startHit)
-
-			this.setSlapHitBox(this.direction)
-
-			this.enableSlapBox()
 
 			// this.debugSlapHitBox()
 		}
