@@ -14,7 +14,7 @@ export default class GasTrap extends Phaser.GameObjects.Sprite {
 
 	constructor(scene: Phaser.Scene, x?: number, y?: number, texture?: string, frame?: number | string) {
 		super(scene, x ?? 0, y ?? 0, texture || "raw-break-interact", frame ?? 104);
-
+        this.scene.physics.add.existing(this , true)
         this.StartTimer()
     }
     StartTimer(){
@@ -37,9 +37,12 @@ export default class GasTrap extends Phaser.GameObjects.Sprite {
             if(TimeCount == 0) {
 
                 this.play("trap-poison")
-
+                this.scene.sound.play("GasTrap")
+                
                 this.on(Phaser.Animations.Events.ANIMATION_UPDATE , (frame: Phaser.Animations.AnimationFrame)=>{
-                    
+                    if(frame.index < 107){
+                        return
+                    }
                     if(TimeCount > 0){
                     return
                     }   
@@ -79,6 +82,11 @@ export default class GasTrap extends Phaser.GameObjects.Sprite {
         }
         
     }
+
+    /* BulletCollision(){
+        //destroys when hitting by bullet
+        this.destroy();
+    }*/
    
 
 }
