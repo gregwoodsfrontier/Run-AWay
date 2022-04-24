@@ -28,9 +28,7 @@ export default class DetectionBoxes extends UserComponent {
 
 		/* START-USER-CTR-CODE */
 		// Write your code here.
-		// this.detectZones = this.createZones()
 		this.contain = this.createZoneContainer()
-		console.log(this.contain)
 		
 		/* END-USER-CTR-CODE */
 	}
@@ -68,35 +66,11 @@ export default class DetectionBoxes extends UserComponent {
 
 	update()
 	{
-		/* this.detectZones.forEach(e => {
-			const body = e.body as Phaser.Physics.Arcade.Body
-			if(!body)
-			{
-				return
-			}
-			const currVel = this.gameObject.body.velocity
-			body.setVelocity(currVel.x, currVel.y)
-		}) */
-
-		this.contain.getAll().forEach(e => {
-			const body = e.body as Phaser.Physics.Arcade.Body
-			if(!body)
-			{
-				return
-			}
-			const currVel = this.gameObject.body.velocity
-			body.setVelocity(currVel.x, currVel.y)
-		})
+		this.contain.setPosition(this.gameObject.x, this.gameObject.y)
 	}
 
 	private setDetectOverlap(enemy: Enemy)
 	{
-		const zones = DetectionBoxes.getComponent(enemy).getDetectionZones()
-		/* const upzone = zones[DIRECTION.BACK]
-		const leftzone = zones[DIRECTION.LEFT]
-		const rightzone = zones[DIRECTION.RIGHT]
-		const downzone = zones[DIRECTION.FRONT] */
-
 		const upzone = this.contain.getAll()[DIRECTION.BACK] as Phaser.GameObjects.Zone
 		const downzone = this.contain.getAll()[DIRECTION.FRONT] as Phaser.GameObjects.Zone
 		const leftzone = this.contain.getAll()[DIRECTION.LEFT] as Phaser.GameObjects.Zone
@@ -217,7 +191,8 @@ export default class DetectionBoxes extends UserComponent {
 
 	removeZones()
 	{
-		this.detectZones.forEach(zone => zone.destroy())
+		// this.detectZones.forEach(zone => zone.destroy())
+		this.contain.getAll().forEach(zone => zone.destroy())
 	}
 
 	private createZones()

@@ -147,7 +147,7 @@ export default class Level extends Phaser.Scene {
 		this.physics.add.collider(this.player, this.wall_1);
 		this.physics.add.collider(this.player, this.enemyTeam, this.handlePlayerSwarm, undefined, this)
 		//@ts-ignore
-		// this.physics.add.collider(this.enemyTeam)
+		this.physics.add.collider(this.enemyTeam)
 		this.physics.add.collider(this.enemyTeam, this.wall_1)
 		this.physics.add.collider(this.bulletGroup, this.wall_1, this.handleBulletWallCollision, undefined, this)
 		this.physics.add.overlap(this.bulletGroup, this.enemyTeam, this.handleBulletSwarm, undefined, this)
@@ -177,12 +177,12 @@ export default class Level extends Phaser.Scene {
 		// bypass if environment is in development
 		this.start_level.setVisible(false).setActive(false)
 		this.onStartLevelAnimsComplete()
-		/* this.time.addEvent({
+		this.time.addEvent({
 			repeat: 0,
 			delay: 1000,
 			callback: this.createMoreSwarm,
 			callbackScope: this,
-		}) */
+		})
 	}
 
 	update(time: number, delta: number)
