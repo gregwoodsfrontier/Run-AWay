@@ -90,8 +90,7 @@ export default class Block extends Phaser.GameObjects.Sprite {
 		}
 	}
 	else{
-		this.setTexture("Borders" ,33)
-		this.setScale(0.5);
+		this.setTexture("Floor" ,Phaser.Math.Between(0,5))
 	}
 	
 		/* END-USER-CTR-CODE */

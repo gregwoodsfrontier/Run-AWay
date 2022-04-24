@@ -81,14 +81,15 @@ export default class Chunk extends Phaser.Scene {
 			callbackScope: this
 		})
 
-		
-		this.physics.add.collider(this.player, this.blocks, this.handleBlockCollision);
+		const block = new Block(this);
+		this.physics.add.collider(this.player, this.blocks, block.onHit);
 		
 	}
 
 	update()
 	{
-		this.handleDepthSort()
+		this.handleDepthSort();
+		this.optimize();
 	}
 
 	private handlePlayerInput()
@@ -156,7 +157,7 @@ export default class Chunk extends Phaser.Scene {
 		BlockOptimizer.HideIrrelevant(this.blocks, this.player.x, this.player.y);
 
 		// repeat this function after 2.5 seconds
-		// this.time.delayedCall(2500, this.optimize, undefined, this)
+		//this.time.delayedCall(2500, this.optimize, undefined, this)
 	}
 
 	private handleBlockCollision(
