@@ -48,10 +48,13 @@ export default class Bootstrap extends Phaser.Scene {
 		eventsCenter.on(SCENE_SWITCH_EVENTS.TO_GAMEOVER, this.handleGameOver, this)
 		eventsCenter.on(SCENE_SWITCH_EVENTS.TO_EXPLAINER, this.goToExplainer, this)
 		eventsCenter.on(SCENE_SWITCH_EVENTS.RESUME_FROM_EXPLAIN, this.resumeFromExplainer, this)
-		
+		eventsCenter.on(SCENE_SWITCH_EVENTS.GO_GAMEOVER, this.goToGameOver, this)
+		eventsCenter.on(SCENE_SWITCH_EVENTS.GO_YOUSURVIVED, this.goToYouSurvived, this)
+
 		if(process.env.NODE_ENV === "development")
 		{
-			this.createNewGame()
+			// this.createNewGame()
+			this.startTitleScene()
 		}
 
 		this.startTitleScene()
@@ -62,6 +65,20 @@ export default class Bootstrap extends Phaser.Scene {
 		this.scene.pause("Level")
 		this.scene.pause("UI")
 		this.scene.launch("Explainer").bringToTop("Explainer")
+	}
+
+	private goToGameOver(currentScene: string)
+	{
+		this.scene.stop("UI")
+		this.scene.stop(currentScene)
+		this.scene.launch("GameOver")
+	}
+
+	private goToYouSurvived(currentScene: string)
+	{
+		this.scene.stop("UI")
+		this.scene.stop(currentScene)
+		this.scene.launch("YouSurvived")
 	}
 
 	private resumeFromExplainer()

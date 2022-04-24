@@ -7,6 +7,8 @@ import Title from "./scenes/Title";
 import PauseMenu from "./scenes/PauseMenu";
 import Explainer from "./scenes/Explainer";
 import Boss from "./scenes/Boss";
+import YouSurvived from "./scenes/YouSurvived"
+import GameOver from "./scenes/GameOver"
 
 class Boot extends Phaser.Scene {
 
@@ -43,7 +45,7 @@ const game = new Phaser.Game({
     scene: [
         Boot, Preload, Bootstrap, 
         Title, PauseMenu, Level, 
-        UI, Explainer, Boss
+        UI, Explainer, Boss, YouSurvived, GameOver
     ]
 });
 

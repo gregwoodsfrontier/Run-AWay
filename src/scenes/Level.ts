@@ -65,23 +65,23 @@ export default class Level extends Phaser.Scene {
 		const start_level = this.add.sprite(144, 160, "Start-Level-Anim-Short-20");
 
 		// rock_1
-		const rock_1 = new Rock(this, 64, 80);
+		const rock_1 = new Rock(this, 80, 0);
 		this.add.existing(rock_1);
 
 		// rock
-		const rock = new Rock(this, 160, 112);
+		const rock = new Rock(this, 176, 0);
 		this.add.existing(rock);
 
 		// rock_2
-		const rock_2 = new Rock(this, 128, 80);
+		const rock_2 = new Rock(this, 144, 0);
 		this.add.existing(rock_2);
 
 		// rock_3
-		const rock_3 = new Rock(this, 96, 80);
+		const rock_3 = new Rock(this, 112, 0);
 		this.add.existing(rock_3);
 
 		// rock_4
-		const rock_4 = new Rock(this, 192, 112);
+		const rock_4 = new Rock(this, 208, 0);
 		this.add.existing(rock_4);
 
 		// lists
@@ -237,7 +237,7 @@ export default class Level extends Phaser.Scene {
 		follow.setTarget(this.player)
 		follow.range = 300
 		follow.deadRangeX = 20
-		
+
 	}
 	/**
 	 * Spawns more swarm that goes
