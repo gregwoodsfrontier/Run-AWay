@@ -3,6 +3,13 @@
         "files": [
             {
                 "url": [
+                    "assets/AUDIO/SFX/BossTrap.wav"
+                ],
+                "type": "audio",
+                "key": "BossTrap"
+            },
+            {
+                "url": [
                     "assets/AUDIO/SFX/CollectMineral.wav"
                 ],
                 "type": "audio",
