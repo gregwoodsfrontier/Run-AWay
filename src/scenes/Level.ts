@@ -161,7 +161,7 @@ export default class Level extends Phaser.Scene {
 		this.physics.add.collider(this.bulletGroup, this.wall_1, this.handleBulletWallCollision, undefined, this)
 		this.physics.add.overlap(this.bulletGroup, this.enemyTeam, this.handleBulletSwarm, undefined, this)
 		this.physics.add.collider(this.enemyTeam, this.obstacles)
-		this.physics.add.collider(this.bulletGroup, this.obstacles, this.handleBulletRock)
+		this.physics.add.collider(this.bulletGroup, this.obstacles, this.handleBulletRocks, this.checkBulletRocks)
 		this.physics.add.collider(this.player, this.obstacles, this.handlePlayerRocks)
 		
 		this.#destination = SelectionSquare.getComponent(this.player)
@@ -208,7 +208,7 @@ export default class Level extends Phaser.Scene {
 		}
 	}
 
-	private handlePlayerRocks(p: 	Phaser.Types.Physics.Arcade.GameObjectWithBody, r: 	Phaser.Types.Physics.Arcade.GameObjectWithBody)
+	private handlePlayerRocks(p: Phaser.Types.Physics.Arcade.GameObjectWithBody, r: Phaser.Types.Physics.Arcade.GameObjectWithBody)
 	{
 		const player = p as Player
 		const rocks = r as Rock
@@ -219,8 +219,16 @@ export default class Level extends Phaser.Scene {
 
 		rocks.beingPickedUp()
 	}
+
 	//@ts-ignore
-	private handleBulletRock(a, b)
+	private checkBulletRocks(a, b)
+	{
+		const rock = b as Rock
+		return !rock.isPickable
+	}
+
+	//@ts-ignore
+	private handleBulletRocks(a, b)
 	{
 		const bullet = a as Bullet
 		const rock = b as Rock

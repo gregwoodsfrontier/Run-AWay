@@ -4,8 +4,8 @@
 
 import Phaser from "phaser";
 import Physics from "../components/Physics";
-import KeyboardInput from "../components/KeyboardInput";
 import JustMovement from "../components/JustMovement";
+import KeyboardInput from "../components/KeyboardInput";
 import DepthSortY from "../components/DepthSortY";
 import AnimationV2 from "../components/AnimationV2";
 import CameraFollow from "../components/CameraFollow";
@@ -29,18 +29,20 @@ export default class Player extends Phaser.GameObjects.Sprite {
 
 		// this (components)
 		const thisPhysics = new Physics(this);
-		thisPhysics.width = 32;
+		thisPhysics.width = 28;
 		thisPhysics.height = 40;
-		thisPhysics.offsetX = 16;
+		thisPhysics.offsetX = 18;
 		thisPhysics.offsetY = 26;
-		new KeyboardInput(this);
 		const thisJustMovement = new JustMovement(this);
-		thisJustMovement.speed = 150;
+		thisJustMovement.speed = 155;
+		new KeyboardInput(this);
 		new DepthSortY(this);
 		new AnimationV2(this);
 		new CameraFollow(this);
 		new HoldComp(this);
-		new AimComp(this);
+		const thisAimComp = new AimComp(this);
+		thisAimComp.facingDir = 2;
+		thisAimComp.movingDir = 2;
 		new PSDComp(this);
 		new SelectionSquare(this);
 
@@ -292,7 +294,7 @@ export default class Player extends Phaser.GameObjects.Sprite {
 			this.playerPSD.setFacingDir(dir)
 			this.playerPSD.stateMachine.setState(PSD_STATE.EQUIP_WALK)
 		}
-		
+
 	}
 
 	private handleAimStateMovement(dir: number)
