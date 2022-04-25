@@ -17,6 +17,8 @@ export default class Block extends Phaser.GameObjects.Image {
 		/* END-USER-CTR-CODE */
 	}
 
+	public rawType: number = 0;
+
 	/* START-USER-CODE */
 
 	// Write your code here.
