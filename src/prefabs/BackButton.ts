@@ -45,7 +45,7 @@ export default class BackButton extends Phaser.GameObjects.Image {
 		buttonComp.handlePointerUp = () => {
 			this.setTexture("Back-Button")
 			// this.scene.time.delayedCall(1000, this.goToTitle)
-			this.goToNewGame()
+			this.resumeToNewGame()
 		}
 		buttonComp.handlePointerDown = () => {
 			this.setTexture("Back-Button-Selected")
@@ -86,9 +86,9 @@ export default class BackButton extends Phaser.GameObjects.Image {
 		})
 	}
 
-	private goToNewGame()
+	private resumeToNewGame()
 	{
-		eventsCenter.emit(SCENE_SWITCH_EVENTS.BACK_TO_GAME, this.currScene)
+		eventsCenter.emit(SCENE_SWITCH_EVENTS.RESUME_FROM_EXPLAIN)
 	}
 	/* END-USER-CODE */
 }

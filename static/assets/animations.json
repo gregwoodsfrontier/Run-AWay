@@ -2789,7 +2789,8 @@
                 }
             ],
             "frameRate": 12,
-            "skipMissedFrames": true
+            "skipMissedFrames": true,
+            "hideOnComplete": true
         },
         {
             "key": "start-anim-idle",
