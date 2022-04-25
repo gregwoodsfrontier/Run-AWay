@@ -4,8 +4,9 @@ import { RAW_TYPE } from "../types/raw";
 
 /* START OF COMPILED CODE */
 
-import Phaser from "phaser";
+import Phaser, { Game } from "phaser";
 import Physics from "../components/Physics";
+import { GameState } from "../manager/gameState";
 /* START-USER-IMPORTS */
 /* END-USER-IMPORTS */
 
@@ -21,7 +22,7 @@ export default class Rock extends Phaser.GameObjects.Sprite {
 		/* START-USER-CTR-CODE */
 		// Write your code here.
 		this.scene.events.once(Phaser.Scenes.Events.UPDATE, this.start, this)
-		this.scene.events.on(Phaser.Scenes.Events.UPDATE, this.sceneUpdate, this)
+		// this.scene.events.on(Phaser.Scenes.Events.UPDATE, this.sceneUpdate, this)
 		/* END-USER-CTR-CODE */
 	}
 
@@ -35,6 +36,11 @@ export default class Rock extends Phaser.GameObjects.Sprite {
 		copper: 4,
 		silver: 8,
 		gold: 10
+	}
+	public limit = {
+		copper: [3, 2, 1],
+		silver: [6, 4, 2],
+		gold: [7, 4, 1]
 	}
 	public healMet = {
 		copper: {
@@ -62,19 +68,12 @@ export default class Rock extends Phaser.GameObjects.Sprite {
 		this.startRockAnims()
 	}
 
-	sceneUpdate()
-	{
-		// console.log('rock update')
-		this.updateRockState()
-		this.updatePickableState()
-	}
-
 	private startRockAnims()
 	{
 		switch(this.rawType)
 		{
 			case RAW_TYPE.EMPTY: {
-				this.play('emptyrock-break', true)
+				this.play('empty-break', true)
 				this.anims.stop()
 				break
 			}
@@ -95,6 +94,32 @@ export default class Rock extends Phaser.GameObjects.Sprite {
 			}
 			
 		}
+	}
+
+	beingPickedUp()
+	{
+		switch(this.rawType) {
+			case RAW_TYPE.COPPER: {
+				GameState.changeHealthBy(this.healMet.copper.addHealth)
+				GameState.changeEnergyBy(this.healMet.copper.addEnergy)
+				GameState.changeSanityBy(this.healMet.copper.addSanity)
+				break
+			}
+			case RAW_TYPE.SILVER: {
+				GameState.changeHealthBy(this.healMet.silver.addHealth)
+				GameState.changeEnergyBy(this.healMet.silver.addEnergy)
+				GameState.changeSanityBy(this.healMet.silver.addSanity)
+				break
+			}
+			case RAW_TYPE.GOLD: {
+				GameState.changeHealthBy(this.healMet.gold.addHealth)
+				GameState.changeEnergyBy(this.healMet.gold.addEnergy)
+				GameState.changeSanityBy(this.healMet.gold.addSanity)
+				break
+			}
+		}
+		// destroy the rock or despawn
+		this.destroy()
 	}
 
 	setCurrHP(n: number)
@@ -125,7 +150,7 @@ export default class Rock extends Phaser.GameObjects.Sprite {
 
 	damage(dmg: number)
 	{
-		this.currHP = Phaser.Math.Clamp(this.currHP - dmg, 0, 9)
+		this.currHP = Phaser.Math.Clamp(this.currHP - dmg, -1, 9)
 		this.updateRockState()
 	}
 
@@ -138,27 +163,28 @@ export default class Rock extends Phaser.GameObjects.Sprite {
 		this.rawType = n
 	}
 
-	private switchFrame(startHP: number, startFrame: number, delta: number)
+	private switchFrame(startHP: number, delta: number)
 	{
-		if(this.currHP > startHP - 1 * delta)
+		if(this.currHP === startHP - 1 * delta)
 		{
-			this.setFrame(startFrame)
+			this.anims.nextFrame()
 		}
-		else if(this.currHP > startHP - 2 * delta)
+		else if(this.currHP === startHP - 2 * delta)
 		{
-			this.setFrame(startFrame - 1)
+			this.anims.nextFrame()
 		}
-		else if(this.currHP > startHP - 3 * delta)
+		else if(this.currHP === startHP - 3 * delta)
 		{
-			this.setFrame(startFrame - 2)
+			this.anims.nextFrame()
 		}
-		else if(this.currHP > 0)
+		else if(this.currHP === 0)
 		{
-			this.setFrame(startFrame - 3)
+			this.anims.nextFrame()
+			this.updatePickableState()
 		}
 		else
 		{
-			this.setFrame(startFrame - 4)
+			return
 		}
 	}
 
@@ -194,22 +220,19 @@ export default class Rock extends Phaser.GameObjects.Sprite {
 	{
 		switch(this.rawType) {
 			case RAW_TYPE.EMPTY: {
-				// this.switchFrame(this.maxHP.empty, 24, 1)
+				this.switchFrame(this.maxHP.empty, 1)
 				break
 			}
 			case RAW_TYPE.COPPER: {
-				// this.switchFrame(this.maxHP.copper, 8, 1)
-				// this.isPickable = true
+				this.switchFrame(this.maxHP.copper, 1)
 				break
 			}
 			case RAW_TYPE.SILVER: {
-				// this.switchFrame(this.maxHP.silver, 0, 2)
-				// this.isPickable = true
+				this.switchFrame(this.maxHP.silver, 2)
 				break
 			}
 			case RAW_TYPE.GOLD: {
-				// this.switchFrame(this.maxHP.gold, 16, 3)
-				// this.isPickable = true
+				this.switchFrame(this.maxHP.gold, 3)
 				break
 			}
 			default: {

@@ -1317,44 +1317,6 @@
             "skipMissedFrames": true
         },
         {
-            "key": "emptyrock-break",
-            "type": "frame",
-            "frames": [
-                {
-                    "key": "raw-break-interact",
-                    "frame": 24,
-                    "duration": 0,
-                    "keyframe": false
-                },
-                {
-                    "key": "raw-break-interact",
-                    "frame": 25,
-                    "duration": 0,
-                    "keyframe": false
-                },
-                {
-                    "key": "raw-break-interact",
-                    "frame": 26,
-                    "duration": 0,
-                    "keyframe": false
-                },
-                {
-                    "key": "raw-break-interact",
-                    "frame": 27,
-                    "duration": 0,
-                    "keyframe": false
-                },
-                {
-                    "key": "raw-break-interact",
-                    "frame": 28,
-                    "duration": 0,
-                    "keyframe": false
-                }
-            ],
-            "frameRate": 2,
-            "skipMissedFrames": true
-        },
-        {
             "key": "rock-block",
             "type": "frame",
             "frames": [
@@ -2799,21 +2761,25 @@
             "frames": [
                 {
                     "key": "largeboss-back-attack-1",
+                    "frame": 0,
                     "duration": 0,
                     "keyframe": false
                 },
                 {
                     "key": "largeboss-back-attack-2",
+                    "frame": 0,
                     "duration": 0,
                     "keyframe": false
                 },
                 {
                     "key": "largeboss-back-attack-3",
+                    "frame": 0,
                     "duration": 0,
                     "keyframe": false
                 },
                 {
                     "key": "largeboss-back-attack-4",
+                    "frame": 0,
                     "duration": 0,
                     "keyframe": false
                 }
@@ -2827,21 +2793,25 @@
             "frames": [
                 {
                     "key": "largeboss-back-walk-1",
+                    "frame": 0,
                     "duration": 0,
                     "keyframe": false
                 },
                 {
                     "key": "largeboss-back-walk-2",
+                    "frame": 0,
                     "duration": 0,
                     "keyframe": false
                 },
                 {
                     "key": "largeboss-back-walk-3",
+                    "frame": 0,
                     "duration": 0,
                     "keyframe": false
                 },
                 {
                     "key": "largeboss-back-walk-4",
+                    "frame": 0,
                     "duration": 0,
                     "keyframe": false
                 }
@@ -2855,21 +2825,25 @@
             "frames": [
                 {
                     "key": "largeboss-front-attack-1",
+                    "frame": 0,
                     "duration": 0,
                     "keyframe": false
                 },
                 {
                     "key": "largeboss-front-attack-2",
+                    "frame": 0,
                     "duration": 0,
                     "keyframe": false
                 },
                 {
                     "key": "largeboss-front-attack-3",
+                    "frame": 0,
                     "duration": 0,
                     "keyframe": false
                 },
                 {
                     "key": "largeboss-front-attack-4",
+                    "frame": 0,
                     "duration": 0,
                     "keyframe": false
                 }
@@ -2883,21 +2857,25 @@
             "frames": [
                 {
                     "key": "largeboss-front-walk-1",
+                    "frame": 0,
                     "duration": 0,
                     "keyframe": false
                 },
                 {
                     "key": "largeboss-front-walk-2",
+                    "frame": 0,
                     "duration": 0,
                     "keyframe": false
                 },
                 {
                     "key": "largeboss-front-walk-3",
+                    "frame": 0,
                     "duration": 0,
                     "keyframe": false
                 },
                 {
                     "key": "largeboss-front-walk-4",
+                    "frame": 0,
                     "duration": 0,
                     "keyframe": false
                 }
@@ -2911,21 +2889,25 @@
             "frames": [
                 {
                     "key": "largeboss-left-attack-1",
+                    "frame": 0,
                     "duration": 0,
                     "keyframe": false
                 },
                 {
                     "key": "largeboss-left-attack-2",
+                    "frame": 0,
                     "duration": 0,
                     "keyframe": false
                 },
                 {
                     "key": "largeboss-left-attack-3",
+                    "frame": 0,
                     "duration": 0,
                     "keyframe": false
                 },
                 {
                     "key": "largeboss-left-attack-4",
+                    "frame": 0,
                     "duration": 0,
                     "keyframe": false
                 }
@@ -2939,21 +2921,25 @@
             "frames": [
                 {
                     "key": "largeboss-left-walk-1",
+                    "frame": 0,
                     "duration": 0,
                     "keyframe": false
                 },
                 {
                     "key": "largeboss-left-walk-2",
+                    "frame": 0,
                     "duration": 0,
                     "keyframe": false
                 },
                 {
                     "key": "largeboss-left-walk-3",
+                    "frame": 0,
                     "duration": 0,
                     "keyframe": false
                 },
                 {
                     "key": "largeboss-left-walk-4",
+                    "frame": 0,
                     "duration": 0,
                     "keyframe": false
                 }
@@ -2967,21 +2953,25 @@
             "frames": [
                 {
                     "key": "largeboss-right-attack-1",
+                    "frame": 0,
                     "duration": 0,
                     "keyframe": false
                 },
                 {
                     "key": "largeboss-right-attack-2",
+                    "frame": 0,
                     "duration": 0,
                     "keyframe": false
                 },
                 {
                     "key": "largeboss-right-attack-3",
+                    "frame": 0,
                     "duration": 0,
                     "keyframe": false
                 },
                 {
                     "key": "largeboss-right-attack-4",
+                    "frame": 0,
                     "duration": 0,
                     "keyframe": false
                 }
@@ -2995,21 +2985,25 @@
             "frames": [
                 {
                     "key": "largeboss-right-walk-1",
+                    "frame": 0,
                     "duration": 0,
                     "keyframe": false
                 },
                 {
                     "key": "largeboss-right-walk-2",
+                    "frame": 0,
                     "duration": 0,
                     "keyframe": false
                 },
                 {
                     "key": "largeboss-right-walk-3",
+                    "frame": 0,
                     "duration": 0,
                     "keyframe": false
                 },
                 {
                     "key": "largeboss-right-walk-4",
+                    "frame": 0,
                     "duration": 0,
                     "keyframe": false
                 }
@@ -3023,6 +3017,7 @@
             "frames": [
                 {
                     "key": "largeboss-back-idle-",
+                    "frame": 0,
                     "duration": 0,
                     "keyframe": false
                 }
@@ -3036,6 +3031,7 @@
             "frames": [
                 {
                     "key": "largeboss-front-idle-",
+                    "frame": 0,
                     "duration": 0,
                     "keyframe": false
                 }
@@ -3049,6 +3045,7 @@
             "frames": [
                 {
                     "key": "largeboss-left-idle-",
+                    "frame": 0,
                     "duration": 0,
                     "keyframe": false
                 }
@@ -3062,6 +3059,7 @@
             "frames": [
                 {
                     "key": "largeboss-right-idle-",
+                    "frame": 0,
                     "duration": 0,
                     "keyframe": false
                 }
@@ -3675,6 +3673,60 @@
             ],
             "frameRate": 9,
             "skipMissedFrames": true
+        },
+        {
+            "key": "empty-break-4",
+            "type": "frame",
+            "frames": [
+                {
+                    "key": "raw-break-interact",
+                    "frame": 24,
+                    "duration": 0,
+                    "keyframe": false
+                }
+            ],
+            "frameRate": 24,
+            "skipMissedFrames": true,
+            "repeat": -1
+        },
+        {
+            "key": "empty-break",
+            "type": "frame",
+            "frames": [
+                {
+                    "key": "raw-break-interact",
+                    "frame": 24,
+                    "duration": 0,
+                    "keyframe": false
+                },
+                {
+                    "key": "raw-break-interact",
+                    "frame": 25,
+                    "duration": 0,
+                    "keyframe": false
+                },
+                {
+                    "key": "raw-break-interact",
+                    "frame": 26,
+                    "duration": 0,
+                    "keyframe": false
+                },
+                {
+                    "key": "raw-break-interact",
+                    "frame": 27,
+                    "duration": 0,
+                    "keyframe": false
+                },
+                {
+                    "key": "raw-break-interact",
+                    "frame": 28,
+                    "duration": 0,
+                    "keyframe": false
+                }
+            ],
+            "frameRate": 24,
+            "skipMissedFrames": true,
+            "repeat": -1
         }
     ],
     "globalTimeScale": 1,

@@ -162,6 +162,8 @@ export default class Level extends Phaser.Scene {
 		this.physics.add.overlap(this.bulletGroup, this.enemyTeam, this.handleBulletSwarm, undefined, this)
 		this.physics.add.collider(this.enemyTeam, this.obstacles)
 		this.physics.add.collider(this.bulletGroup, this.obstacles, this.handleBulletRock)
+		this.physics.add.collider(this.player, this.obstacles, this.handlePlayerRocks)
+		
 		this.#destination = SelectionSquare.getComponent(this.player)
 
 		this.events.on('create-bullet', this.handleBulletUpdate, this)
@@ -206,6 +208,17 @@ export default class Level extends Phaser.Scene {
 		}
 	}
 
+	private handlePlayerRocks(p: 	Phaser.Types.Physics.Arcade.GameObjectWithBody, r: 	Phaser.Types.Physics.Arcade.GameObjectWithBody)
+	{
+		const player = p as Player
+		const rocks = r as Rock
+		if(!rocks.isPickable)
+		{
+			return
+		}
+
+		rocks.beingPickedUp()
+	}
 	//@ts-ignore
 	private handleBulletRock(a, b)
 	{
@@ -217,7 +230,11 @@ export default class Level extends Phaser.Scene {
 		rock.damage(1)
 		console.log(`rock type: ${rock.rawType}`)
 		console.log(`rock hp: ${rock.currHP}`)
-		console.log('rock frame', rock.texture.get().sourceIndex)
+		console.log('rock frame', rock.anims.currentAnim.key)
+		if(rock.isPickable)
+		{
+			console.log(`this rock is pickable`)
+		}
 		// rock.destroy()
 	}
 
