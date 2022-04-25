@@ -1,0 +1,47 @@
+{
+    "id": "802f7a34-82e6-4a9b-b8cb-65ac3e880440",
+    "sceneType": "PREFAB",
+    "settings": {
+        "exportClass": true,
+        "autoImport": true,
+        "preloadMethodName": "",
+        "preloadPackFiles": [],
+        "createMethodName": "",
+        "compilerOutputLanguage": "TYPE_SCRIPT",
+        "borderWidth": 320,
+        "borderHeight": 640
+    },
+    "displayList": [
+        {
+            "type": "Image",
+            "id": "5c084818-927e-4411-8809-e5b666139d33",
+            "label": "newGame_Button_Red",
+            "scope": "CLASS",
+            "components": [
+                "Button"
+            ],
+            "texture": {
+                "key": "NewGame-Button-Red"
+            }
+        }
+    ],
+    "plainObjects": [],
+    "meta": {
+        "app": "Phaser Editor 2D - Scene Editor",
+        "url": "https://phasereditor2d.com",
+        "contentType": "phasereditor2d.core.scene.SceneContentType",
+        "version": 3
+    },
+    "prefabProperties": [
+        {
+            "name": "currentScene",
+            "label": "currentScene",
+            "tooltip": "currentScene",
+            "defValue": "GameOver",
+            "customDefinition": false,
+            "type": {
+                "id": "string"
+            }
+        }
+    ]
+}

@@ -4,6 +4,8 @@
 /* START OF COMPILED CODE */
 
 import Phaser from "phaser";
+import MainMenuButton from "../prefabs/MainMenuButton";
+import NewGameButton from "../prefabs/NewGameButton";
 /* START-USER-IMPORTS */
 /* END-USER-IMPORTS */
 
@@ -18,6 +20,12 @@ export default class YouSurvived extends Phaser.Scene {
 	}
 
 	editorCreate(): void {
+
+		// mainMenu_Button_Red_Selected
+		const mainMenu_Button_Red_Selected = this.add.image(160, 386, "MainMenu-Button-Red-Selected");
+
+		// newGame_Button_Red_Selected
+		const newGame_Button_Red_Selected = this.add.image(160, 419, "NewGame-Button-Red-Selected");
 
 		// 70per_Black_BG
 		this.add.image(160, 320, "70per-Black-BG");
@@ -36,29 +44,25 @@ export default class YouSurvived extends Phaser.Scene {
 		youSurvived.scaleY = 3.5937905673970443;
 
 		// mainMenu_Button_Red
-		const mainMenu_Button_Red = this.add.image(160, 386, "MainMenu-Button-Red");
-
-		// mainMenu_Button_Red_Selected
-		const mainMenu_Button_Red_Selected = this.add.image(160, 386, "MainMenu-Button-Red-Selected");
+		const mainMenu_Button_Red = new MainMenuButton(this, 160, 386);
+		this.add.existing(mainMenu_Button_Red);
 
 		// newGame_Button_Red
-		const newGame_Button_Red = this.add.image(160, 420, "NewGame-Button-Red");
+		const newGame_Button_Red = new NewGameButton(this, 160, 420);
+		this.add.existing(newGame_Button_Red);
 
-		// newGame_Button_Red_Selected
-		const newGame_Button_Red_Selected = this.add.image(160, 419, "NewGame-Button-Red-Selected");
-
-		this.mainMenu_Button_Red = mainMenu_Button_Red;
 		this.mainMenu_Button_Red_Selected = mainMenu_Button_Red_Selected;
-		this.newGame_Button_Red = newGame_Button_Red;
 		this.newGame_Button_Red_Selected = newGame_Button_Red_Selected;
+		this.mainMenu_Button_Red = mainMenu_Button_Red;
+		this.newGame_Button_Red = newGame_Button_Red;
 
 		this.events.emit("scene-awake");
 	}
 
-	private mainMenu_Button_Red!: Phaser.GameObjects.Image;
 	private mainMenu_Button_Red_Selected!: Phaser.GameObjects.Image;
-	private newGame_Button_Red!: Phaser.GameObjects.Image;
 	private newGame_Button_Red_Selected!: Phaser.GameObjects.Image;
+	private mainMenu_Button_Red!: MainMenuButton;
+	private newGame_Button_Red!: NewGameButton;
 
 	/* START-USER-CODE */
 

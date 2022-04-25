@@ -51,15 +51,30 @@ export default class Bootstrap extends Phaser.Scene {
 		eventsCenter.on(SCENE_SWITCH_EVENTS.GO_GAMEOVER, this.goToGameOver, this)
 		eventsCenter.on(SCENE_SWITCH_EVENTS.GO_YOUSURVIVED, this.goToYouSurvived, this)
 		eventsCenter.on(SCENE_SWITCH_EVENTS.TO_CHUNKS, this.toChunks, this)
+		eventsCenter.on(SCENE_SWITCH_EVENTS.TO_TITLE, this.goToTitle, this)
+		eventsCenter.on(SCENE_SWITCH_EVENTS.BACK_TO_GAME, this.backToGame, this)
 
 		if(process.env.NODE_ENV === "development")
 		{
-			this.createNewGame()
+			// this.createNewGame()
 			// this.startTitleScene()
+			this.scene.launch("GameOver")
 			return
 		}
 
 		this.startTitleScene()
+	}
+	
+	private goToTitle(key: string)
+	{
+		this.scene.stop(key)
+		this.scene.launch("Title")
+	}
+
+	private backToGame(key: string)
+	{
+		this.scene.stop(key)
+		this.createNewGame()
 	}
 
 	private toChunks(key: string)
