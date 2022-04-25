@@ -10,7 +10,7 @@ import Phaser from "phaser";
 export default class EndTunnel extends Phaser.GameObjects.Image {
 
 	constructor(scene: Phaser.Scene, x?: number, y?: number, texture?: string, frame?: number | string) {
-		super(scene, x ?? 0, y ?? 0, texture || "placeHolderTunnel", frame ?? 0);
+		super(scene, x ?? 0, y ?? 0, texture || "placeHolderTunnel", frame);
 
 		/* START-USER-CTR-CODE */
 		// Write your code here.
