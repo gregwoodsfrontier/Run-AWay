@@ -135,7 +135,7 @@ export default class Level extends Phaser.Scene {
 
 		this.editorCreate();
 
-		this.cameras.main.startFollow(this.player)
+		// this.cameras.main.startFollow(this.player)
 
 		this.player.play('player-front-idle')
 		this.floor_1.depth = this.wall_1.y * 2
