@@ -8,13 +8,16 @@ import Rock from "../prefabs/Rock";
 /* START-USER-IMPORTS */
 import KeyboardInput from "../components/KeyboardInput";
 import JustMovement from "../components/JustMovement";
-import AnimationV2 from "../components/AnimationV2";
+import { SCENE_SWITCH_EVENTS } from "../types/scenes";
 import DepthSortY from "../components/DepthSortY";
 import TileGen from "../manager/TileGen";
 import BlockOptimizer from "../manager/BlockOptimization";
 import EndTunnel from "../prefabs/EndTunnel";
 import { seed } from "../main";
+import Bullet from "../prefabs/Bullet";
 import Block from "../prefabs/Block";
+import eventsCenter from "../EventsCenter";
+import { DIRECTION } from "../types/direction";
 /* END-USER-IMPORTS */
 
 export default class Chunk extends Phaser.Scene {
@@ -56,6 +59,10 @@ export default class Chunk extends Phaser.Scene {
 
 	private tunnel!: EndTunnel;
 
+	bulletGroup!: Phaser.GameObjects.Group
+
+	lastfired = 0
+
 	create() {
 
 		this.editorCreate();
@@ -68,13 +75,22 @@ export default class Chunk extends Phaser.Scene {
 		// this code moves the player down to the beginning of the level (bottom left corner)
 		this.player.x = 48;
 		this.player.y = 640*(20+Math.round(((seed/3)/999)*100))+640-this.player.height;
+		
+		this.initObjectPool()
 
 		// enable player input
         const input = KeyboardInput.getComponent(this.player)
         input.setActive(true)
 
 		const block = new Block(this);
-		this.physics.add.collider(this.player, this.blocks, block.onHit);
+		
+		//Bullet event
+		this.events.on('create-bullet', this.handleBulletUpdate, this)
+
+		//collision
+		this.physics.add.collider(this.player, this.blocks, block.onPlayerHit);
+		this.physics.add.collider(this.bulletGroup, this.blocks, this.onBulletHit);
+		this.physics.add.collider(this.player, this.tunnel , this.switchtoBossScene);
 
 	}
 
@@ -150,6 +166,79 @@ export default class Chunk extends Phaser.Scene {
 
 			child.setDepth(child.y)
 		})
+	}
+
+	//Bullet
+
+
+	private handleBulletUpdate(dir: number)
+	{
+		const bullet = this.bulletGroup.get();
+
+		const delay = 500
+
+		if(bullet && this.time.now > this.lastfired)
+		{
+			bullet.fire(this.player.x, this.player.y)
+
+			this.setBulletRotationAndVel(bullet, dir)
+			// console.log('bullet', bullet.x, bullet.y)
+
+			this.lastfired = this.time.now + delay
+		}
+	}
+
+	private initObjectPool()
+	{
+		this.bulletGroup = this.add.group({
+			classType: Bullet,
+			maxSize: 50,
+			runChildUpdate: true
+		})
+	}
+	private setBulletRotationAndVel(bul: Bullet, dir: number)
+	{
+		const bulMovement = JustMovement.getComponent(bul)
+		if(!bulMovement){ return }
+
+		switch(dir)
+		{
+			case DIRECTION.LEFT: {
+				bul.angle = 0
+				bulMovement.moveLeft()
+				break
+			}
+
+			case DIRECTION.RIGHT: {
+				bul.angle = 180
+				bulMovement.moveRight()
+				break
+			}
+
+			case DIRECTION.BACK: {
+				bul.angle = 90
+				bulMovement.moveUp()
+				break
+			}
+
+			case DIRECTION.FRONT: {
+				bul.angle = 270
+				bulMovement.moveDown()
+				break
+			}
+		}
+	}
+
+	onBulletHit(a?,b?){
+		const bullet = a as Bullet;
+		bullet.despawn()
+		const block = b as Block;
+		block.onBulletHit(bullet , block)
+	}
+
+	//Switchesto boss Scene
+	switchtoBossScene(){
+		eventsCenter.emit(SCENE_SWITCH_EVENTS.TO_BOSS )
 	}
 
 	/* END-USER-CODE */
