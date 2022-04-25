@@ -66,6 +66,11 @@ export default class Rock extends Phaser.GameObjects.Sprite {
 
 	start()
 	{
+		this.initRock()
+	}
+
+	initRock()
+	{
 		this.setCurrHP(this.rawType)
 		this.startRockAnims()
 	}
