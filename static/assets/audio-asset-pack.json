@@ -3,6 +3,13 @@
         "files": [
             {
                 "url": [
+                    "assets/AUDIO/MUSIC/Ambient_Intro_Track_v3.wav"
+                ],
+                "type": "audio",
+                "key": "Ambient_Intro_Track_v3"
+            },
+            {
+                "url": [
                     "assets/AUDIO/MUSIC/Boss_Fight_v3.wav"
                 ],
                 "type": "audio",
@@ -52,6 +59,34 @@
             },
             {
                 "url": [
+                    "assets/AUDIO/SFX/FX_-_Energy_Field_Fade_Out.wav"
+                ],
+                "type": "audio",
+                "key": "Energy_Field_Fade_Out"
+            },
+            {
+                "url": [
+                    "assets/AUDIO/SFX/FX_-_Energy_Field_Loop.wav"
+                ],
+                "type": "audio",
+                "key": "Energy_Field_Loop"
+            },
+            {
+                "url": [
+                    "assets/AUDIO/SFX/FX_-_Energy_Field_Start.wav"
+                ],
+                "type": "audio",
+                "key": "Energy_Field_Start"
+            },
+            {
+                "url": [
+                    "assets/AUDIO/MUSIC/Gameplay_Track_1.wav"
+                ],
+                "type": "audio",
+                "key": "Gameplay_Track_1"
+            },
+            {
+                "url": [
                     "assets/AUDIO/SFX/GasTrap.wav"
                 ],
                 "type": "audio",
@@ -66,10 +101,10 @@
             },
             {
                 "url": [
-                    "assets/AUDIO/SFX/MenuMove.wav"
+                    "assets/AUDIO/SFX/menuMove.wav"
                 ],
                 "type": "audio",
-                "key": "MenuMove"
+                "key": "menuMove"
             },
             {
                 "url": [
