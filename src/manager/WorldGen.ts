@@ -46,6 +46,9 @@ export default class World
         // generate starter chunk
         tiles.push.apply(tiles, this.CreateChunk(chunkAmount, 'start'));
 
+        // generate end chunk
+        tiles.push.apply(tiles, this.CreateChunk(0, 'end'));
+
         // run this loop based on the amount of chunks created, which is seed/999 = decimal so we multiply by 100 and round to even number
         for(var i = 1; i < chunkAmount; i++)
         {
@@ -229,6 +232,51 @@ export default class World
                         else
                         {
                             tiles.push(new tile(xpos*32, ypos*32+y*640, 32, 32, 'floor'));
+                        }
+                    }
+                }
+                break;
+
+            case 'end': // start is an empty chunk with an unbreakable border at the top, and a door leading to boss level
+                // first iterate through x position (index of row)
+                for(let xpos = 0; xpos < 10; xpos++)
+                {
+                    // now iterate through y position (index of column)
+                    // here the chunk is one tile smaller and all blocks are moved down one tile to leave space for the 64x64 door/tunnel to the boss level
+                    for(let ypos = 0; ypos < 19; ypos++)
+                    {
+                        if(xpos == 0 && ypos == 0)
+                        {
+                            tiles.push(new tile(xpos*32, 32+ypos*32+y*640, 32, 32, 'border-top-left'));
+                        }
+                        else if(xpos == 9 && ypos == 0)
+                        {
+                            tiles.push(new tile(xpos*32, 32+ypos*32+y*640, 32, 32, 'border-top-right'));
+                        }
+                        // door tile, 64x64, VERY IMPORTANT
+                        else if(xpos == 4 && ypos == 0)
+                        {
+                            // first create a floor tile in case the sprite has transparent bits so it looks fine
+                            tiles.push(new tile(xpos*32, 32+ypos*32+y*640, 32, 32, 'floor'));
+
+                            // create tunnel/door one tile above'
+                            tiles.push(new tile(32+xpos*32, ypos*32+y*640+32, 64, 64, 'tunnel'));
+                        }
+                        else if(ypos == 0 && xpos != 5)
+                        {
+                            tiles.push(new tile(xpos*32, 32+ypos*32+y*640, 32, 32, 'border-top'));
+                        }
+                        else if(xpos == 0)
+                        {
+                            tiles.push(new tile(xpos*32, 32+ypos*32+y*640, 32, 32, 'border-left'));
+                        }
+                        else if(xpos == 9)
+                        {
+                            tiles.push(new tile(xpos*32, 32+ypos*32+y*640, 32, 32, 'border-right'));
+                        }
+                        else
+                        {
+                            tiles.push(new tile(xpos*32, 32+ypos*32+y*640, 32, 32, 'floor'));
                         }
                     }
                 }
@@ -472,89 +520,22 @@ export default class World
         let copperPercent = 25;
         let normalPercent = 50;
 
-        // 4 different variations for every type of block
-        let variation = Math.random(); // 0 - 1
-
         // make block based on type probability
         if(type <= goldPercent) // gold
         {
-            if(variation <= 0.25)
-            {
-                t.tag = 'gold1';
-            }
-            else if(variation >= 0.25 && variation < 0.5)
-            {
-                t.tag = 'gold2';
-            }
-            else if(variation >= 0.5 && variation < 0.75)
-            {
-                t.tag = 'gold3';
-            }
-            else if(variation >= 0.75)
-            {
-                t.tag = 'gold4';
-            }
+            t.tag = 'gold';
         }
         else if(type >= goldPercent && type <= silverPercent+goldPercent)
         {
-            if(variation <= 0.25)
-            {
-                t.tag = 'silver1';
-            }
-            else if(variation >= 0.25 && variation < 0.5)
-            {
-                t.tag = 'silver2';
-            }
-            else if(variation >= 0.5 && variation < 0.75)
-            {
-                t.tag = 'silver3';
-            }
-            else if(variation >= 0.75)
-            {
-                t.tag = 'silver4';
-            }
+            t.tag = 'silver';
         }
         else if(type >= silverPercent+goldPercent && type <= copperPercent+silverPercent+goldPercent)
         {
-            if(variation <= 0.25)
-            {
-                t.tag = 'copper1';
-            }
-            else if(variation >= 0.25 && variation < 0.5)
-            {
-                t.tag = 'copper2';
-            }
-            else if(variation >= 0.5 && variation < 0.75)
-            {
-                t.tag = 'copper3';
-            }
-            else if(variation >= 0.75)
-            {
-                t.tag = 'copper4';
-            }
+            t.tag = 'copper';
         }
         else if(type >= normalPercent)
         {
-            if(variation <= 0.25)
-            {
-                t.tag = 'normal1';
-            }
-            else if(variation >= 0.25 && variation < 0.5)
-            {
-                t.tag = 'normal2';
-            }
-            else if(variation >= 0.5 && variation < 0.75)
-            {
-                t.tag = 'normal3';
-            }
-            else if(variation >= 0.75 && variation < 0.9)
-            {
-                t.tag = 'normal4';
-            }
-            else if(variation >= 0.9) // normal blocks have a 5th variation, 10% chance of spawning
-            {
-                t.tag = 'normal5'; 
-            }
+            t.tag = 'normal';
         }
 
         // return generated wall tile

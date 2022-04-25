@@ -14,7 +14,8 @@ import KeyboardInput from "../components/KeyboardInput";
 import JustMovement from "../components/JustMovement";
 import AnimationV2 from "../components/AnimationV2";
 import DepthSortY from "../components/DepthSortY";
-import rnd from "../drand/random";
+import EndTunnel from "../prefabs/EndTunnel";
+import { seed } from "../main";
 /* END-USER-IMPORTS */
 
 export default class Chunk extends Phaser.Scene {
@@ -66,6 +67,8 @@ export default class Chunk extends Phaser.Scene {
 	// Write your code here
 	private blocks!: Block[];
 
+	private tunnel!: EndTunnel;
+
 	create() {
 
 		this.editorCreate();
@@ -75,20 +78,19 @@ export default class Chunk extends Phaser.Scene {
 
 		this.handlePlayerInput()
 
-		this.time.addEvent({
-			delay: 2500,
-			callback: this.optimize,
-			callbackScope: this
-		})
+		// this code moves the player down to the beginning of the level (bottom left corner)
+		this.player.x = 48;
+		this.player.y = 640*(20+Math.round(((seed/3)/999)*100))+640-this.player.height;
 
-		
-		this.physics.add.collider(this.player, this.blocks, this.handleBlockCollision);
+		const block = new Block(this);
+		this.physics.add.collider(this.player, this.blocks, block.onHit);
 		
 	}
 
 	update()
 	{
-		this.handleDepthSort()
+		this.handleDepthSort();
+		this.optimize();
 	}
 
 	private handlePlayerInput()
@@ -147,6 +149,8 @@ export default class Chunk extends Phaser.Scene {
 			this.add.existing(blocks[i]);
 		}
 
+		this.add.existing(this.tunnel);
+
 		// apply blocks to this.blocks
 		this.blocks = blocks;
 	}
@@ -156,7 +160,7 @@ export default class Chunk extends Phaser.Scene {
 		BlockOptimizer.HideIrrelevant(this.blocks, this.player.x, this.player.y);
 
 		// repeat this function after 2.5 seconds
-		// this.time.delayedCall(2500, this.optimize, undefined, this)
+		//this.time.delayedCall(2500, this.optimize, undefined, this)
 	}
 
 	private handleBlockCollision(

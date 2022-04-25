@@ -41,57 +41,61 @@ export default class Block extends Phaser.GameObjects.Sprite {
 				case("ULBorder"):
 					this.setTexture("Borders" ,24)
 					this.setScale(0.5);
-					physIcs.height =32;
-					physIcs.width =32;
+					physIcs.height =14;
+					physIcs.width =14;
 					break;
 				case("UBorder"):
 					this.setTexture("Borders" ,25)
 					this.setScale(0.5);
-					physIcs.height =32;
+					physIcs.height =14;
 					physIcs.width =32;
 					break;
 				case("URBorder"):
 					this.setTexture("Borders" ,26)
 					this.setScale(0.5);
-					physIcs.height =32;
-					physIcs.width =32;
+					physIcs.height =14;
+					physIcs.width =14;
+					physIcs.offsetX =18;
 					break;
 				case("LBorder"):
 					this.setTexture("Borders" ,32)
 					this.setScale(0.5);
-					this.setSize(16, 32);
 					physIcs.height =32;
-					physIcs.width =32;
+					physIcs.width =14;
 					break;
 				case("RBorder"):
 					this.setTexture("Borders" ,34)
 					this.setScale(0.5);
 					physIcs.height =32;
-					physIcs.width =32;
+					physIcs.width =14;
+					physIcs.offsetX=18;
 					break;
 				case("BBorder"):
 					this.setTexture("Borders" ,41)
 					this.setScale(0.5);
-					physIcs.height =32;
+					physIcs.height =14;
 					physIcs.width =32;
+					physIcs.offsetY=18;
 					break;
 				case("BLBorder"):
 					this.setTexture("Borders" ,40)
 					this.setScale(0.5);
-					physIcs.height =32;
-					physIcs.width =32;
+					physIcs.height =14;
+					physIcs.width =14;
+					physIcs.offsetY=18;
 					break;
 				case("BRBorder"):
 					this.setTexture("Borders" ,42)
 					this.setScale(0.5);
-					physIcs.height =32;
-					physIcs.width =32;
+					physIcs.height =14;
+					physIcs.width =14;
+					physIcs.offsetX=18;
+					physIcs.offsetY=18;
 					break;
 		}
 	}
 	else{
-		this.setTexture("Borders" ,33)
-		this.setScale(0.5);
+		this.setTexture("Floor" ,Phaser.Math.Between(0,5))
 	}
 	
 		/* END-USER-CTR-CODE */

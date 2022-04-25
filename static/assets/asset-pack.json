@@ -518,6 +518,11 @@
                 "key": "PCProjectile32"
             },
             {
+                "url": "assets/placeHolderTunnel.png",
+                "type": "image",
+                "key": "placeHolderTunnel"
+            },
+            {
                 "url": "assets/playerOnly/front-walk-gun/playerHoldGun-20.png",
                 "type": "image",
                 "key": "playerHoldGun-20"
