@@ -69,6 +69,10 @@ export default class Chunk extends Phaser.Scene {
 		this.player.x = 48;
 		this.player.y = 640*(20+Math.round(((seed/3)/999)*100))+640-this.player.height;
 
+		// enable player input
+        const input = KeyboardInput.getComponent(this.player)
+        input.setActive(true)
+
 		const block = new Block(this);
 		this.physics.add.collider(this.player, this.blocks, block.onHit);
 
