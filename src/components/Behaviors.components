@@ -294,12 +294,12 @@
         {
             "name": "ZoneComp",
             "baseClass": "UserComponent",
-            "gameObjectType": "Phaser.GameObjects.Sprite",
+            "gameObjectType": "Phaser.GameObjects.Image",
             "properties": [
                 {
-                    "name": "x",
+                    "name": "LocX",
                     "label": "LocX",
-                    "tooltip": "x",
+                    "tooltip": "LocX",
                     "defValue": 0,
                     "customDefinition": false,
                     "type": {

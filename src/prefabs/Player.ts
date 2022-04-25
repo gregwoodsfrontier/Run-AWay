@@ -20,10 +20,7 @@ import { DIRECTION, getDirectionName } from "../types/direction";
 import { HOLD_COMP_STATE } from "../types/holdCompState";
 import { AIM_STATE } from "../types/aimCompState";
 import { PSD_STATE } from "../types/PSD";
-
-const LIGHT_BROWN = 0x694f62
-const DARK_BROWN = 0x4e3848
-
+import { DARK_BROWN } from "../types/colors";
 /* END-USER-IMPORTS */
 
 export default class Player extends Phaser.GameObjects.Sprite {
@@ -123,7 +120,7 @@ export default class Player extends Phaser.GameObjects.Sprite {
 		selectSquareComp.setDir(this.direction)
 
 		// ensure the player tint and speed unless in mud
-		this.outMudCondition()
+		// this.outMudCondition()
 		// this.scene.events.emit('selection-sq', this.direction, 50)
 	}
 
@@ -141,9 +138,11 @@ export default class Player extends Phaser.GameObjects.Sprite {
 
 	inMudCondition()
 	{
-		this.setTint(this.mudcolor)
+		console.log('in mud con')
+		// this.setTint(this.mudcolor)
+		this.setTint(0xff0000)
 		const move = JustMovement.getComponent(this)
-		move.speed = 155 * 0.75
+		move.speed = 155 * 0.5
 	}
 
 	outMudCondition()

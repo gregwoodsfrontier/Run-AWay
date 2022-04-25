@@ -24,6 +24,8 @@ import { ENEMY_STATE_KEYS } from "../types/enemyStateKeys";
 import psdField from "../prefabs/psdField";
 import DetectionBoxes from "../components/DetectionBoxes";
 import { GameState } from "../manager/gameState";
+import { DARK_BROWN } from "../types/colors";
+import ZoneComp from "../components/ZoneComp";
 /* END-USER-IMPORTS */
 
 export default class Level extends Phaser.Scene {
@@ -85,13 +87,42 @@ export default class Level extends Phaser.Scene {
 		const rock_4 = new Rock(this, 208, 0);
 		this.add.existing(rock_4);
 
-		// raw_break_interact88
-		const raw_break_interact88 = new MudTrap(this, 149, 51);
-		this.add.existing(raw_break_interact88);
+		// mud_1
+		const mud_1 = new MudTrap(this, 96, 64);
+		this.add.existing(mud_1);
+
+		// mud
+		const mud = new MudTrap(this, 128, 64);
+		this.add.existing(mud);
+
+		// mud_2
+		const mud_2 = new MudTrap(this, 160, 64);
+		this.add.existing(mud_2);
+
+		// mud_3
+		const mud_3 = new MudTrap(this, 192, 64);
+		this.add.existing(mud_3);
+
+		// mud_4
+		const mud_4 = new MudTrap(this, 192, 96);
+		this.add.existing(mud_4);
+
+		// mud_5
+		const mud_5 = new MudTrap(this, 160, 96);
+		this.add.existing(mud_5);
+
+		// mud_6
+		const mud_6 = new MudTrap(this, 128, 96);
+		this.add.existing(mud_6);
+
+		// mud_7
+		const mud_7 = new MudTrap(this, 96, 96);
+		this.add.existing(mud_7);
 
 		// lists
 		const enemyTeam = [enemyA];
 		const obstacles = [rock_1, rock_3, rock_2, rock, rock_4];
+		const mudList = [mud_1, mud_7, mud_6, mud_5, mud_4, mud_3, mud_2, mud];
 
 		// wall_1 (components)
 		new TileMapLayerPhysics(wall_1);
@@ -113,6 +144,7 @@ export default class Level extends Phaser.Scene {
 		this.cave_test_map_2 = cave_test_map_2;
 		this.enemyTeam = enemyTeam;
 		this.obstacles = obstacles;
+		this.mudList = mudList;
 
 		this.events.emit("scene-awake");
 	}
@@ -127,6 +159,7 @@ export default class Level extends Phaser.Scene {
 	private rock!: Rock;
 	private enemyTeam!: Enemy[];
 	private obstacles!: Rock[];
+	private mudList!: MudTrap[];
 
 	/* START-USER-CODE */
 	public platformer_fun!: Phaser.Tilemaps.Tilemap
@@ -158,6 +191,8 @@ export default class Level extends Phaser.Scene {
 		this.physics.add.overlap(this.bulletGroup, this.enemyTeam, this.handleBulletSwarm, undefined, this)
 		this.physics.add.collider(this.enemyTeam, this.obstacles)
 		this.physics.add.collider(this.bulletGroup, this.obstacles, this.handleBulletRock)
+		// this.physics.add.overlap(this.player, this.mudList, this.handlePlayerMud)
+		
 		this.#destination = SelectionSquare.getComponent(this.player)
 
 		this.events.on('create-bullet', this.handleBulletUpdate, this)
@@ -184,13 +219,29 @@ export default class Level extends Phaser.Scene {
 		this.start_level.setVisible(false).setActive(false)
 		this.onStartLevelAnimsComplete()
 
-		this.SwarmGenerator(80, 384, 5, 3000, 0)
-		this.SwarmGenerator(192, 384, 5, 3000, 1500)
+		// this.SwarmGenerator(80, 384, 5, 3000, 0)
+		// this.SwarmGenerator(192, 384, 5, 3000, 1500)
 	}
 
 	update(time: number, delta: number)
 	{
 		this.handleDepthSort()
+		
+	}
+
+	//@ts-ignore
+	private handlePlayerMud(p, m)
+	{
+		const player = p as Player
+		const pBody = player.body as Phaser.Physics.Arcade.Body
+		if(!pBody)
+		{
+			return
+		}
+
+		console.log('player is in mud')
+		// player.inMudCondition()
+
 	}
 
 	getCollidingBlocks()

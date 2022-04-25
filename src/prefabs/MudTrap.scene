@@ -16,7 +16,13 @@
             "type": "Image",
             "id": "917f17f6-6703-479d-adb8-c0c4ad45b8b7",
             "label": "raw_break_interact88",
-            "components": [],
+            "components": [
+                "ZoneComp",
+                "Physics"
+            ],
+            "ZoneComp.width": 25,
+            "ZoneComp.height": 25,
+            "Physics.static": true,
             "texture": {
                 "key": "raw-break-interact",
                 "frame": 88
