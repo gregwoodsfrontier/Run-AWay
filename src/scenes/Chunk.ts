@@ -3,10 +3,8 @@
 /* START OF COMPILED CODE */
 
 import Phaser from "phaser";
-import TileMapLayerPhysics from "../components/TileMapLayerPhysics";
 import Player from "../prefabs/Player";
 import Block from "../prefabs/Block";
-import FollowTarget from "../components/FollowTarget";
 import TileGen from "../manager/TileGen";
 import BlockOptimizer from "../manager/BlockOptimization";
 /* START-USER-IMPORTS */
