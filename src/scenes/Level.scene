@@ -161,6 +161,102 @@
             "components": [],
             "x": 208,
             "y": 0
+        },
+        {
+            "prefabId": "d454bc29-6665-42e0-86fe-c314e9667790",
+            "id": "86dd934c-bc18-4ca0-9327-8c718e0d93d5",
+            "unlock": [
+                "x",
+                "y"
+            ],
+            "label": "mud_1",
+            "components": [],
+            "x": 96,
+            "y": 64
+        },
+        {
+            "prefabId": "d454bc29-6665-42e0-86fe-c314e9667790",
+            "id": "099a4665-61fc-4ef8-a04c-8755b9089130",
+            "unlock": [
+                "x",
+                "y"
+            ],
+            "label": "mud",
+            "components": [],
+            "x": 128,
+            "y": 64
+        },
+        {
+            "prefabId": "d454bc29-6665-42e0-86fe-c314e9667790",
+            "id": "78ff9f08-dd11-4cfa-860e-198349467d03",
+            "unlock": [
+                "x",
+                "y"
+            ],
+            "label": "mud_2",
+            "components": [],
+            "x": 160,
+            "y": 64
+        },
+        {
+            "prefabId": "d454bc29-6665-42e0-86fe-c314e9667790",
+            "id": "bb105433-6876-4fe7-9375-499c6745d7a8",
+            "unlock": [
+                "x",
+                "y"
+            ],
+            "label": "mud_3",
+            "components": [],
+            "x": 192,
+            "y": 64
+        },
+        {
+            "prefabId": "d454bc29-6665-42e0-86fe-c314e9667790",
+            "id": "88629ef6-7b08-41aa-9b77-6810b70a8448",
+            "unlock": [
+                "x",
+                "y"
+            ],
+            "label": "mud_4",
+            "components": [],
+            "x": 192,
+            "y": 96
+        },
+        {
+            "prefabId": "d454bc29-6665-42e0-86fe-c314e9667790",
+            "id": "f5950b41-511d-4173-905c-373d1393f039",
+            "unlock": [
+                "x",
+                "y"
+            ],
+            "label": "mud_5",
+            "components": [],
+            "x": 160,
+            "y": 96
+        },
+        {
+            "prefabId": "d454bc29-6665-42e0-86fe-c314e9667790",
+            "id": "fe4cec42-4eff-483e-bead-67ae5cad2fa6",
+            "unlock": [
+                "x",
+                "y"
+            ],
+            "label": "mud_6",
+            "components": [],
+            "x": 128,
+            "y": 96
+        },
+        {
+            "prefabId": "d454bc29-6665-42e0-86fe-c314e9667790",
+            "id": "ddb68ff6-79d3-4f33-bff5-e6c07f2ef655",
+            "unlock": [
+                "x",
+                "y"
+            ],
+            "label": "mud_7",
+            "components": [],
+            "x": 96,
+            "y": 96
         }
     ],
     "plainObjects": [
@@ -200,6 +296,20 @@
                 "2fc1ecd1-3404-4190-b8a6-9c0c3481f48b",
                 "e3c424a0-c940-4986-af4a-451588ec5d24",
                 "0488a1e6-4396-4268-895f-4b50e5af7c9a"
+            ]
+        },
+        {
+            "id": "6faba206-00fc-490e-a4f1-14ef3f3afd33",
+            "label": "mudList",
+            "objectIds": [
+                "86dd934c-bc18-4ca0-9327-8c718e0d93d5",
+                "ddb68ff6-79d3-4f33-bff5-e6c07f2ef655",
+                "fe4cec42-4eff-483e-bead-67ae5cad2fa6",
+                "f5950b41-511d-4173-905c-373d1393f039",
+                "88629ef6-7b08-41aa-9b77-6810b70a8448",
+                "bb105433-6876-4fe7-9375-499c6745d7a8",
+                "78ff9f08-dd11-4cfa-860e-198349467d03",
+                "099a4665-61fc-4ef8-a04c-8755b9089130"
             ]
         }
     ]

@@ -29,7 +29,7 @@ export default class DetectionBoxes extends UserComponent {
 		/* START-USER-CTR-CODE */
 		// Write your code here.
 		this.contain = this.createZoneContainer()
-		
+
 		/* END-USER-CTR-CODE */
 	}
 
@@ -53,7 +53,7 @@ export default class DetectionBoxes extends UserComponent {
 	start()
 	{
 		this.collideBlocks = (this.scene.scene.get("Level") as Level).getCollidingBlocks()
-		
+
 		this.updateOverlap()
 	}
 
@@ -81,10 +81,10 @@ export default class DetectionBoxes extends UserComponent {
 		// const enGroup = this.collideBlocks.group
 		const checkLeft = wall.hasTileAtWorldXY(leftzone.getBounds().left, leftzone.getBounds().centerY)
 		const checkRight =  wall.hasTileAtWorldXY(rightzone.getBounds().right, rightzone.getBounds().centerY)
-		
+
 		// set up zone overlap
 		this.scene.physics.add.overlap(upzone, obs, () => {
-			
+
 			if(checkLeft || this.checkLeftRock())
 			{
 				enemy.emit('move', DIRECTION.RIGHT)
@@ -109,7 +109,7 @@ export default class DetectionBoxes extends UserComponent {
 
 		// set down zone overlap
 		this.scene.physics.add.overlap(downzone, obs, () => {
-			
+
 			if(checkLeft || this.checkLeftRock())
 			{
 				enemy.emit('move', DIRECTION.RIGHT)

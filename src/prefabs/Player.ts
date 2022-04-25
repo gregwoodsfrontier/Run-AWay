@@ -20,6 +20,7 @@ import { DIRECTION, getDirectionName } from "../types/direction";
 import { HOLD_COMP_STATE } from "../types/holdCompState";
 import { AIM_STATE } from "../types/aimCompState";
 import { PSD_STATE } from "../types/PSD";
+import { DARK_BROWN } from "../types/colors";
 /* END-USER-IMPORTS */
 
 export default class Player extends Phaser.GameObjects.Sprite {
@@ -93,6 +94,7 @@ export default class Player extends Phaser.GameObjects.Sprite {
 	private flipSwitch = false
 	//@ts-ignore
 	private direction: number
+	private mudcolor = DARK_BROWN
 
 	start()
 	{
@@ -116,6 +118,9 @@ export default class Player extends Phaser.GameObjects.Sprite {
 
 		const selectSquareComp = SelectionSquare.getComponent(this)
 		selectSquareComp.setDir(this.direction)
+
+		// ensure the player tint and speed unless in mud
+		// this.outMudCondition()
 		// this.scene.events.emit('selection-sq', this.direction, 50)
 	}
 
@@ -129,6 +134,22 @@ export default class Player extends Phaser.GameObjects.Sprite {
 			return
 		} */
 		this.playerPSD.stateMachine.setState(state)
+	}
+
+	inMudCondition()
+	{
+		console.log('in mud con')
+		// this.setTint(this.mudcolor)
+		this.setTint(0xff0000)
+		const move = JustMovement.getComponent(this)
+		move.speed = 155 * 0.5
+	}
+
+	outMudCondition()
+	{
+		this.clearTint()
+		const move = JustMovement.getComponent(this)
+		move.speed = 155
 	}
 
 	private handlePSDDeploy()

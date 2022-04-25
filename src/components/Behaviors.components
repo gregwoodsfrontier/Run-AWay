@@ -290,6 +290,53 @@
             "baseClass": "UserComponent",
             "gameObjectType": "Phaser.GameObjects.Sprite",
             "properties": []
+        },
+        {
+            "name": "ZoneComp",
+            "baseClass": "UserComponent",
+            "gameObjectType": "Phaser.GameObjects.Image",
+            "properties": [
+                {
+                    "name": "LocX",
+                    "label": "LocX",
+                    "tooltip": "LocX",
+                    "defValue": 0,
+                    "customDefinition": false,
+                    "type": {
+                        "id": "number"
+                    }
+                },
+                {
+                    "name": "LocY",
+                    "label": "LocY",
+                    "tooltip": "LocY",
+                    "defValue": 0,
+                    "customDefinition": false,
+                    "type": {
+                        "id": "number"
+                    }
+                },
+                {
+                    "name": "width",
+                    "label": "width",
+                    "tooltip": "width",
+                    "defValue": 32,
+                    "customDefinition": false,
+                    "type": {
+                        "id": "number"
+                    }
+                },
+                {
+                    "name": "height",
+                    "label": "height",
+                    "tooltip": "height",
+                    "defValue": 32,
+                    "customDefinition": false,
+                    "type": {
+                        "id": "number"
+                    }
+                }
+            ]
         }
     ],
     "meta": {
