@@ -16,8 +16,10 @@ export default class Bullet extends Phaser.GameObjects.Sprite {
 
 		// this (components)
 		const thisPhysics = new Physics(this);
-		thisPhysics.width = 32;
-		thisPhysics.height = 32;
+		thisPhysics.width = 16;
+		thisPhysics.height = 16;
+		thisPhysics.offsetX = 8;
+		thisPhysics.offsetY = 8;
 		const thisJustMovement = new JustMovement(this);
 		thisJustMovement.speed = 380;
 

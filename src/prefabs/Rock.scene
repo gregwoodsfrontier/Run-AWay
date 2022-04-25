@@ -44,6 +44,16 @@
             "type": {
                 "id": "boolean"
             }
+        },
+        {
+            "name": "rawType",
+            "label": "rawType",
+            "tooltip": "rawType",
+            "defValue": 0,
+            "customDefinition": false,
+            "type": {
+                "id": "number"
+            }
         }
     ]
 }

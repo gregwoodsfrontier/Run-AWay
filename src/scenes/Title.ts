@@ -72,7 +72,6 @@ export default class Title extends Phaser.Scene {
 	create() {
 
 		this.editorCreate();
-		console.log(this.scene.key)
 
 		Button.getComponent(this.start_Button).handlePointerUp = () => {
 			this.start_Button.setTexture("Start Button")

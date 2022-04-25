@@ -21,7 +21,7 @@ import eventsCenter from "../EventsCenter";
 import { SCENE_SWITCH_EVENTS } from "../types/scenes";
 import { ENEMY_STATE_KEYS } from "../types/enemyStateKeys";
 import psdField from "../prefabs/psdField";
-import DetectionBoxes from "../components/DetectionBoxes";
+// import DetectionBoxes from "../components/DetectionBoxes";
 import { GameState } from "../manager/gameState";
 /* END-USER-IMPORTS */
 
@@ -96,6 +96,15 @@ export default class Level extends Phaser.Scene {
 		enemyAFollowTarget.target = player;
 		enemyAFollowTarget.range = 100;
 		enemyAFollowTarget.deadRangeX = 35;
+
+		// rock (prefab fields)
+		rock.rawType = 3;
+
+		// rock_2 (prefab fields)
+		rock_2.rawType = 2;
+
+		// rock_3 (prefab fields)
+		rock_3.rawType = 1;
 
 		this.floor_1 = floor_1;
 		this.wall_1 = wall_1;
@@ -179,8 +188,8 @@ export default class Level extends Phaser.Scene {
 		this.start_level.setVisible(false).setActive(false)
 		this.onStartLevelAnimsComplete()
 
-		this.SwarmGenerator(80, 384, 5, 3000, 0)
-		this.SwarmGenerator(192, 384, 5, 3000, 1500)
+		// this.SwarmGenerator(80, 384, 5, 3000, 0)
+		// this.SwarmGenerator(192, 384, 5, 3000, 1500)
 	}
 
 	update(time: number, delta: number)
@@ -197,13 +206,19 @@ export default class Level extends Phaser.Scene {
 		}
 	}
 
+	//@ts-ignore
 	private handleBulletRock(a, b)
 	{
 		const bullet = a as Bullet
 		const rock = b as Rock
 
 		bullet.despawn()
-		rock.destroy()
+		
+		rock.damage(1)
+		console.log(`rock type: ${rock.rawType}`)
+		console.log(`rock hp: ${rock.currHP}`)
+		console.log('rock frame', rock.texture.get().sourceIndex)
+		// rock.destroy()
 	}
 
 	/**
@@ -365,7 +380,7 @@ export default class Level extends Phaser.Scene {
 			this.player.setPSDCompState(PSD_STATE.EQIUP_IDLE)
 			return
 		}
-		console.log('psd spawn')
+		
 		this.pSDRobot.spawn(x, y)
 		this.pSDRobot.deploy()
 	}

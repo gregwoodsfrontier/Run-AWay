@@ -118,10 +118,12 @@
             "id": "e3c424a0-c940-4986-af4a-451588ec5d24",
             "unlock": [
                 "x",
-                "y"
+                "y",
+                "rawType"
             ],
             "label": "rock",
             "scope": "CLASS",
+            "rawType": 3,
             "components": [],
             "x": 176,
             "y": 0
@@ -131,9 +133,11 @@
             "id": "2fc1ecd1-3404-4190-b8a6-9c0c3481f48b",
             "unlock": [
                 "x",
-                "y"
+                "y",
+                "rawType"
             ],
             "label": "rock_2",
+            "rawType": 2,
             "components": [],
             "x": 144,
             "y": 0
@@ -143,9 +147,11 @@
             "id": "981f2479-76dc-44fe-a421-49c9b0b19ed1",
             "unlock": [
                 "x",
-                "y"
+                "y",
+                "rawType"
             ],
             "label": "rock_3",
+            "rawType": 1,
             "components": [],
             "x": 112,
             "y": 0

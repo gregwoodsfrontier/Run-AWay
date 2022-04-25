@@ -55,6 +55,7 @@ export default class Bootstrap extends Phaser.Scene {
 		{
 			this.createNewGame()
 			// this.startTitleScene()
+			return
 		}
 
 		this.startTitleScene()
