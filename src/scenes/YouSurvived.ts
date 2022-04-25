@@ -21,12 +21,6 @@ export default class YouSurvived extends Phaser.Scene {
 
 	editorCreate(): void {
 
-		// mainMenu_Button_Red_Selected
-		const mainMenu_Button_Red_Selected = this.add.image(160, 386, "MainMenu-Button-Red-Selected");
-
-		// newGame_Button_Red_Selected
-		const newGame_Button_Red_Selected = this.add.image(160, 419, "NewGame-Button-Red-Selected");
-
 		// 70per_Black_BG
 		this.add.image(160, 320, "70per-Black-BG");
 
@@ -51,16 +45,18 @@ export default class YouSurvived extends Phaser.Scene {
 		const newGame_Button_Red = new NewGameButton(this, 160, 420);
 		this.add.existing(newGame_Button_Red);
 
-		this.mainMenu_Button_Red_Selected = mainMenu_Button_Red_Selected;
-		this.newGame_Button_Red_Selected = newGame_Button_Red_Selected;
+		// mainMenu_Button_Red (prefab fields)
+		mainMenu_Button_Red.currentScene = "YouSurvived";
+
+		// newGame_Button_Red (prefab fields)
+		newGame_Button_Red.currentScene = "YouSurvived";
+
 		this.mainMenu_Button_Red = mainMenu_Button_Red;
 		this.newGame_Button_Red = newGame_Button_Red;
 
 		this.events.emit("scene-awake");
 	}
 
-	private mainMenu_Button_Red_Selected!: Phaser.GameObjects.Image;
-	private newGame_Button_Red_Selected!: Phaser.GameObjects.Image;
 	private mainMenu_Button_Red!: MainMenuButton;
 	private newGame_Button_Red!: NewGameButton;
 
@@ -71,6 +67,8 @@ export default class YouSurvived extends Phaser.Scene {
 	create() {
 
 		this.editorCreate();
+		this.mainMenu_Button_Red.start()
+		this.newGame_Button_Red.start()
 	}
 
 	/* END-USER-CODE */

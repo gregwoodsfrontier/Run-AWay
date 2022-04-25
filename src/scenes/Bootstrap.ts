@@ -4,9 +4,10 @@
 /* START OF COMPILED CODE */
 
 import Phaser from "phaser";
+
+/* START-USER-IMPORTS */
 import eventsCenter from "../EventsCenter";
 import { SCENE_SWITCH_EVENTS } from "../types/scenes";
-/* START-USER-IMPORTS */
 /* END-USER-IMPORTS */
 
 // TODO: Bootstrap should be handling all the scene transition but since
@@ -58,7 +59,8 @@ export default class Bootstrap extends Phaser.Scene {
 		{
 			// this.createNewGame()
 			// this.startTitleScene()
-			this.scene.launch("GameOver")
+			// this.scene.launch("GameOver")
+			this.scene.launch("YouSurvived")
 			return
 		}
 

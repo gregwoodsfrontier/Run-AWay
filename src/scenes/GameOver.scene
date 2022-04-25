@@ -14,30 +14,6 @@
     "displayList": [
         {
             "type": "Image",
-            "id": "7b04194a-dcda-47c0-a79a-b339f84d4718",
-            "label": "newGame_Button_Red_Selected",
-            "scope": "CLASS",
-            "components": [],
-            "texture": {
-                "key": "NewGame-Button-Red-Selected"
-            },
-            "x": 160,
-            "y": 480
-        },
-        {
-            "type": "Image",
-            "id": "4388112a-76b4-4833-881f-eaf522504fe7",
-            "label": "mainMenu_Button_Red_Selected",
-            "scope": "CLASS",
-            "components": [],
-            "texture": {
-                "key": "MainMenu-Button-Red-Selected"
-            },
-            "x": 160,
-            "y": 448
-        },
-        {
-            "type": "Image",
             "id": "6b9d8212-4e53-4cb5-ab5e-5d863501458f",
             "label": "dithered_Triangles",
             "components": [],

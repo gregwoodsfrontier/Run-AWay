@@ -21,12 +21,6 @@ export default class GameOver extends Phaser.Scene {
 
 	editorCreate(): void {
 
-		// newGame_Button_Red_Selected
-		const newGame_Button_Red_Selected = this.add.image(160, 480, "NewGame-Button-Red-Selected");
-
-		// mainMenu_Button_Red_Selected
-		const mainMenu_Button_Red_Selected = this.add.image(160, 448, "MainMenu-Button-Red-Selected");
-
 		// dithered_Triangles
 		this.add.image(160, 316, "Dithered Triangles");
 
@@ -43,8 +37,6 @@ export default class GameOver extends Phaser.Scene {
 		const newGame_Button_Red = new NewGameButton(this, 160, 480);
 		this.add.existing(newGame_Button_Red);
 
-		this.newGame_Button_Red_Selected = newGame_Button_Red_Selected;
-		this.mainMenu_Button_Red_Selected = mainMenu_Button_Red_Selected;
 		this.gameOverLogo = gameOverLogo;
 		this.mainMenu_Button_Red = mainMenu_Button_Red;
 		this.newGame_Button_Red = newGame_Button_Red;
@@ -52,8 +44,6 @@ export default class GameOver extends Phaser.Scene {
 		this.events.emit("scene-awake");
 	}
 
-	private newGame_Button_Red_Selected!: Phaser.GameObjects.Image;
-	private mainMenu_Button_Red_Selected!: Phaser.GameObjects.Image;
 	private gameOverLogo!: Phaser.GameObjects.Sprite;
 	private mainMenu_Button_Red!: MainMenuButton;
 	private newGame_Button_Red!: NewGameButton;
