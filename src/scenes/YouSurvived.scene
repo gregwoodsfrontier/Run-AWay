@@ -1,0 +1,119 @@
+{
+    "id": "9a2055dd-2d18-4089-ab98-6f5d8d8362ee",
+    "sceneType": "SCENE",
+    "settings": {
+        "exportClass": true,
+        "autoImport": true,
+        "preloadPackFiles": [],
+        "createMethodName": "editorCreate",
+        "sceneKey": "YouSurvived",
+        "compilerOutputLanguage": "TYPE_SCRIPT",
+        "borderWidth": 320,
+        "borderHeight": 640
+    },
+    "displayList": [
+        {
+            "type": "Image",
+            "id": "6927dda9-31e1-4aac-b2f3-22394ee782ba",
+            "label": "70per_Black_BG",
+            "components": [],
+            "texture": {
+                "key": "70per-Black-BG"
+            },
+            "x": 160,
+            "y": 320
+        },
+        {
+            "type": "Image",
+            "id": "7433e8ec-424e-468c-b262-345c441f4a34",
+            "label": "byTeam",
+            "components": [],
+            "texture": {
+                "key": "ByTeam"
+            },
+            "x": 65,
+            "y": 562
+        },
+        {
+            "type": "Image",
+            "id": "0477ac45-d8c8-485c-b203-bf125654f176",
+            "label": "logo_v2",
+            "components": [],
+            "texture": {
+                "key": "Logo v2"
+            },
+            "x": 160,
+            "y": 320,
+            "scaleX": 0.885327816705385,
+            "scaleY": 0.885327816705385
+        },
+        {
+            "type": "Image",
+            "id": "b272cad8-9106-4dbc-87fa-db85e141eac5",
+            "label": "youSurvived",
+            "components": [],
+            "texture": {
+                "key": "YouSurvived"
+            },
+            "x": 160,
+            "y": 180,
+            "scaleX": 3.5937905673970443,
+            "scaleY": 3.5937905673970443
+        },
+        {
+            "type": "Image",
+            "id": "111de761-80c5-4ad5-a78b-4436fdf25a58",
+            "label": "mainMenu_Button_Red",
+            "scope": "CLASS",
+            "components": [],
+            "texture": {
+                "key": "MainMenu-Button-Red"
+            },
+            "x": 160,
+            "y": 386
+        },
+        {
+            "type": "Image",
+            "id": "13780842-941a-4e2c-946d-c8ab07463b0b",
+            "label": "mainMenu_Button_Red_Selected",
+            "scope": "CLASS",
+            "components": [],
+            "texture": {
+                "key": "MainMenu-Button-Red-Selected"
+            },
+            "x": 160,
+            "y": 386
+        },
+        {
+            "type": "Image",
+            "id": "c1af0876-e0fd-45da-a146-322f83f1b22a",
+            "label": "newGame_Button_Red",
+            "scope": "CLASS",
+            "components": [],
+            "texture": {
+                "key": "NewGame-Button-Red"
+            },
+            "x": 160,
+            "y": 420
+        },
+        {
+            "type": "Image",
+            "id": "d5764eef-2ece-451a-a2e3-5670725c677b",
+            "label": "newGame_Button_Red_Selected",
+            "scope": "CLASS",
+            "components": [],
+            "texture": {
+                "key": "NewGame-Button-Red-Selected"
+            },
+            "x": 160,
+            "y": 419
+        }
+    ],
+    "plainObjects": [],
+    "meta": {
+        "app": "Phaser Editor 2D - Scene Editor",
+        "url": "https://phasereditor2d.com",
+        "contentType": "phasereditor2d.core.scene.SceneContentType",
+        "version": 3
+    }
+}

@@ -1,0 +1,78 @@
+{
+    "id": "7a7221ea-5e55-45f1-94ef-2c6aa54807c4",
+    "sceneType": "SCENE",
+    "settings": {
+        "exportClass": true,
+        "autoImport": true,
+        "preloadPackFiles": [],
+        "createMethodName": "editorCreate",
+        "sceneKey": "About",
+        "compilerOutputLanguage": "TYPE_SCRIPT",
+        "borderWidth": 320,
+        "borderHeight": 640
+    },
+    "displayList": [
+        {
+            "type": "Image",
+            "id": "a10b84c1-e6f3-43e9-a83d-1009cd9ca6fc",
+            "label": "about",
+            "components": [],
+            "texture": {
+                "key": "About"
+            },
+            "x": 160,
+            "y": 320
+        },
+        {
+            "type": "Image",
+            "id": "cd69849c-cae9-49fa-8056-50cadebbbb2e",
+            "label": "back_Button",
+            "components": [],
+            "texture": {
+                "key": "Back-Button"
+            },
+            "x": 51,
+            "y": 61
+        },
+        {
+            "type": "Image",
+            "id": "69e278e4-e760-400d-afdc-2e6dd1f201d5",
+            "label": "back_Button_Selected",
+            "components": [],
+            "texture": {
+                "key": "Back-Button-Selected"
+            },
+            "x": 51,
+            "y": 61
+        },
+        {
+            "type": "Image",
+            "id": "99087c63-f8a8-4abc-9594-4067a1dabb09",
+            "label": "view_Collection",
+            "components": [],
+            "texture": {
+                "key": "View Collection"
+            },
+            "x": 160,
+            "y": 366
+        },
+        {
+            "type": "Image",
+            "id": "1d00d7b7-965b-41de-a1d6-78ddc4026c89",
+            "label": "view_Collection_Pressed",
+            "components": [],
+            "texture": {
+                "key": "View Collection Pressed"
+            },
+            "x": 160,
+            "y": 366
+        }
+    ],
+    "plainObjects": [],
+    "meta": {
+        "app": "Phaser Editor 2D - Scene Editor",
+        "url": "https://phasereditor2d.com",
+        "contentType": "phasereditor2d.core.scene.SceneContentType",
+        "version": 3
+    }
+}

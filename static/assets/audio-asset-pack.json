@@ -3,31 +3,45 @@
         "files": [
             {
                 "url": [
-                    "assets/AUDIO/SFX/buzzhumm.wav"
+                    "assets/AUDIO/MUSIC/Boss_Fight_v3.wav"
                 ],
                 "type": "audio",
-                "key": "buzzhumm"
+                "key": "Boss_Fight_v3"
             },
             {
                 "url": [
-                    "assets/AUDIO/SFX/buzztone1.wav"
+                    "assets/AUDIO/SFX/BossTrap.wav"
                 ],
                 "type": "audio",
-                "key": "buzztone1"
+                "key": "BossTrap"
             },
             {
                 "url": [
-                    "assets/AUDIO/SFX/explosion.wav"
+                    "assets/AUDIO/SFX/CollectMineral.wav"
                 ],
                 "type": "audio",
-                "key": "explosion"
+                "key": "CollectMineral"
             },
             {
                 "url": [
-                    "assets/AUDIO/SFX/FallLand.wav"
+                    "assets/AUDIO/SFX/DeployPSD.wav"
                 ],
                 "type": "audio",
-                "key": "FallLand"
+                "key": "DeployPSD"
+            },
+            {
+                "url": [
+                    "assets/AUDIO/SFX/EnemyFootsteps.wav"
+                ],
+                "type": "audio",
+                "key": "EnemyFootsteps"
+            },
+            {
+                "url": [
+                    "assets/AUDIO/SFX/EnemyShoot.wav"
+                ],
+                "type": "audio",
+                "key": "EnemyShoot"
             },
             {
                 "url": [
@@ -38,59 +52,52 @@
             },
             {
                 "url": [
-                    "assets/AUDIO/SFX/hitHurt.wav"
+                    "assets/AUDIO/SFX/GasTrap.wav"
                 ],
                 "type": "audio",
-                "key": "hitHurt"
+                "key": "GasTrap"
             },
             {
                 "url": [
-                    "assets/AUDIO/SFX/laserShoot.wav"
+                    "assets/AUDIO/SFX/LaserGun.wav"
                 ],
                 "type": "audio",
-                "key": "laserShoot"
+                "key": "LaserGun"
             },
             {
                 "url": [
-                    "assets/AUDIO/SFX/MachineBreak.wav"
+                    "assets/AUDIO/SFX/MenuMove.wav"
                 ],
                 "type": "audio",
-                "key": "MachineBreak"
+                "key": "MenuMove"
             },
             {
                 "url": [
-                    "assets/AUDIO/SFX/MachineExplode.wav"
+                    "assets/AUDIO/SFX/MenuSelect.wav"
                 ],
                 "type": "audio",
-                "key": "MachineExplode"
+                "key": "MenuSelect"
             },
             {
                 "url": [
-                    "assets/AUDIO/SFX/MachineExplode2.wav"
+                    "assets/AUDIO/SFX/ProxyTrap.wav"
                 ],
                 "type": "audio",
-                "key": "MachineExplode2"
+                "key": "ProxyTrap"
             },
             {
                 "url": [
-                    "assets/AUDIO/SFX/menuMove.wav"
+                    "assets/AUDIO/SFX/Start-Anim-SFX.wav"
                 ],
                 "type": "audio",
-                "key": "menuMove"
+                "key": "Start-Anim-SFX"
             },
             {
                 "url": [
-                    "assets/AUDIO/SFX/menuSelected.wav"
+                    "assets/AUDIO/SFX/TargetHit.wav"
                 ],
                 "type": "audio",
-                "key": "menuSelected"
-            },
-            {
-                "url": [
-                    "assets/AUDIO/SFX/rockBreak.wav"
-                ],
-                "type": "audio",
-                "key": "rockBreak"
+                "key": "TargetHit"
             }
         ]
     },

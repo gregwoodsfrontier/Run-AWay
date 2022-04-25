@@ -19,17 +19,38 @@ export default class GameOver extends Phaser.Scene {
 
 	editorCreate(): void {
 
-		// gameover
-		const gameover = this.add.text(30, 145, "", {});
-		gameover.text = "Game Over";
-		gameover.setStyle({ "fontSize": "48px" });
+		// dithered_Triangles
+		this.add.image(160, 316, "Dithered Triangles");
 
-		this.gameover = gameover;
+		// gameOver_Anim_13
+		const gameOver_Anim_13 = this.add.image(160, 320, "GameOver-Anim-13");
+		gameOver_Anim_13.scaleX = 2.06047846236235;
+		gameOver_Anim_13.scaleY = 2.06047846236235;
+
+		// mainMenu_Button_Red
+		const mainMenu_Button_Red = this.add.image(160, 448, "MainMenu-Button-Red");
+
+		// mainMenu_Button_Red_Selected
+		const mainMenu_Button_Red_Selected = this.add.image(160, 448, "MainMenu-Button-Red-Selected");
+
+		// newGame_Button_Red
+		const newGame_Button_Red = this.add.image(160, 480, "NewGame-Button-Red");
+
+		// newGame_Button_Red_Selected
+		const newGame_Button_Red_Selected = this.add.image(160, 480, "NewGame-Button-Red-Selected");
+
+		this.mainMenu_Button_Red = mainMenu_Button_Red;
+		this.mainMenu_Button_Red_Selected = mainMenu_Button_Red_Selected;
+		this.newGame_Button_Red = newGame_Button_Red;
+		this.newGame_Button_Red_Selected = newGame_Button_Red_Selected;
 
 		this.events.emit("scene-awake");
 	}
 
-	private gameover!: Phaser.GameObjects.Text;
+	private mainMenu_Button_Red!: Phaser.GameObjects.Image;
+	private mainMenu_Button_Red_Selected!: Phaser.GameObjects.Image;
+	private newGame_Button_Red!: Phaser.GameObjects.Image;
+	private newGame_Button_Red_Selected!: Phaser.GameObjects.Image;
 
 	/* START-USER-CODE */
 

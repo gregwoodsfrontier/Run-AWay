@@ -2,6 +2,11 @@
     "section1": {
         "files": [
             {
+                "url": "assets/IN GAME MENU/About.png",
+                "type": "image",
+                "key": "About"
+            },
+            {
                 "url": "assets/animations.json",
                 "type": "animation",
                 "key": "animations"
@@ -27,6 +32,11 @@
                 "key": "back-gunonly-4"
             },
             {
+                "url": "assets/END GAME/YouSurvived/ByTeam.png",
+                "type": "image",
+                "key": "ByTeam"
+            },
+            {
                 "url": "assets/cave-test-map-2.json",
                 "type": "tilemapTiledJSON",
                 "key": "cave-test-map-2"
@@ -43,6 +53,11 @@
                 },
                 "type": "spritesheet",
                 "key": "cave-test-tileset-1"
+            },
+            {
+                "url": "assets/Transitions/Dithered Triangles.png",
+                "type": "image",
+                "key": "Dithered Triangles"
             },
             {
                 "url": "assets/gunOnly/front-gunonly/front-gunonly-1.png",
@@ -68,6 +83,71 @@
                 "url": "assets/FufuSuperDino.png",
                 "type": "image",
                 "key": "FufuSuperDino"
+            },
+            {
+                "url": "assets/END GAME/GAME OVER/GameOver-Anim-1.png",
+                "type": "image",
+                "key": "GameOver-Anim-1"
+            },
+            {
+                "url": "assets/END GAME/GAME OVER/GameOver-Anim-10.png",
+                "type": "image",
+                "key": "GameOver-Anim-10"
+            },
+            {
+                "url": "assets/END GAME/GAME OVER/GameOver-Anim-11.png",
+                "type": "image",
+                "key": "GameOver-Anim-11"
+            },
+            {
+                "url": "assets/END GAME/GAME OVER/GameOver-Anim-12.png",
+                "type": "image",
+                "key": "GameOver-Anim-12"
+            },
+            {
+                "url": "assets/END GAME/GAME OVER/GameOver-Anim-13.png",
+                "type": "image",
+                "key": "GameOver-Anim-13"
+            },
+            {
+                "url": "assets/END GAME/GAME OVER/GameOver-Anim-2.png",
+                "type": "image",
+                "key": "GameOver-Anim-2"
+            },
+            {
+                "url": "assets/END GAME/GAME OVER/GameOver-Anim-3.png",
+                "type": "image",
+                "key": "GameOver-Anim-3"
+            },
+            {
+                "url": "assets/END GAME/GAME OVER/GameOver-Anim-4.png",
+                "type": "image",
+                "key": "GameOver-Anim-4"
+            },
+            {
+                "url": "assets/END GAME/GAME OVER/GameOver-Anim-5.png",
+                "type": "image",
+                "key": "GameOver-Anim-5"
+            },
+            {
+                "url": "assets/END GAME/GAME OVER/GameOver-Anim-6.png",
+                "type": "image",
+                "key": "GameOver-Anim-6"
+            },
+            {
+                "url": "assets/END GAME/GAME OVER/GameOver-Anim-7.png",
+                "type": "image",
+                "key": "GameOver-Anim-7"
+            },
+            {
+                "url": "assets/END GAME/GAME OVER/GameOver-Anim-8.png",
+                "type": "image",
+                "key": "GameOver-Anim-8"
+            },
+            {
+                "url": "assets/END GAME/GAME OVER/GameOver-Anim-9.png",
+                "type": "image",
+                "key": "GameOver-Anim-9"
             },
             {
                 "url": "assets/idle title anim/idle-title-Anim-01.png",
@@ -378,6 +458,46 @@
                 "url": "assets/Logo v2.png",
                 "type": "image",
                 "key": "Logo v2"
+            },
+            {
+                "url": "assets/IN GAME MENU/MainMenu-Button-Red.png",
+                "type": "image",
+                "key": "MainMenu-Button-Red"
+            },
+            {
+                "url": "assets/END GAME/GAME OVER/MainMenu-Button-Red.png",
+                "type": "image",
+                "key": "MainMenu-Button-Red_1"
+            },
+            {
+                "url": "assets/IN GAME MENU/MainMenu-Button-Red-Selected.png",
+                "type": "image",
+                "key": "MainMenu-Button-Red-Selected"
+            },
+            {
+                "url": "assets/END GAME/GAME OVER/MainMenu-Button-Red-Selected.png",
+                "type": "image",
+                "key": "MainMenu-Button-Red-Selected_1"
+            },
+            {
+                "url": "assets/IN GAME MENU/Menu-BG.png",
+                "type": "image",
+                "key": "Menu-BG"
+            },
+            {
+                "url": "assets/END GAME/GAME OVER/NewGame-Button-Red.png",
+                "type": "image",
+                "key": "NewGame-Button-Red"
+            },
+            {
+                "url": "assets/END GAME/GAME OVER/NewGame-Button-Red-Selected.png",
+                "type": "image",
+                "key": "NewGame-Button-Red-Selected"
+            },
+            {
+                "url": "assets/END GAME/YouSurvived/Orange-BG.png",
+                "type": "image",
+                "key": "Orange-BG"
             },
             {
                 "url": "assets/PCProjectile.png",
@@ -1870,6 +1990,11 @@
                 "url": "assets/swarm/swarm-right-walk-4.png",
                 "type": "image",
                 "key": "swarm-right-walk-4"
+            },
+            {
+                "url": "assets/END GAME/YouSurvived/YouSurvived.png",
+                "type": "image",
+                "key": "YouSurvived"
             }
         ]
     },

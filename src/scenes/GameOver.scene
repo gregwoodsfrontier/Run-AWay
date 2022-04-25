@@ -1,5 +1,5 @@
 {
-    "id": "70b29b51-2e5f-4524-80c4-af45403c5ea3",
+    "id": "f342d2a6-e55c-4a84-9166-97f41bec69de",
     "sceneType": "SCENE",
     "settings": {
         "exportClass": true,
@@ -13,15 +13,76 @@
     },
     "displayList": [
         {
-            "type": "Text",
-            "id": "00ef978d-4a1f-4f22-a06e-a97592ce33fc",
-            "label": "gameover",
+            "type": "Image",
+            "id": "6b9d8212-4e53-4cb5-ab5e-5d863501458f",
+            "label": "dithered_Triangles",
+            "components": [],
+            "texture": {
+                "key": "Dithered Triangles"
+            },
+            "x": 160,
+            "y": 316
+        },
+        {
+            "type": "Image",
+            "id": "9c2663d6-a7ec-4441-b902-6f9d5bc94b5c",
+            "label": "gameOver_Anim_13",
+            "components": [],
+            "texture": {
+                "key": "GameOver-Anim-13"
+            },
+            "x": 160,
+            "y": 320,
+            "scaleX": 2.06047846236235,
+            "scaleY": 2.06047846236235
+        },
+        {
+            "type": "Image",
+            "id": "1d907991-5c09-4bee-a466-4c44703a2559",
+            "label": "mainMenu_Button_Red",
             "scope": "CLASS",
             "components": [],
-            "x": 30,
-            "y": 145,
-            "text": "Game Over",
-            "fontSize": "48px"
+            "texture": {
+                "key": "MainMenu-Button-Red"
+            },
+            "x": 160,
+            "y": 448
+        },
+        {
+            "type": "Image",
+            "id": "4388112a-76b4-4833-881f-eaf522504fe7",
+            "label": "mainMenu_Button_Red_Selected",
+            "scope": "CLASS",
+            "components": [],
+            "texture": {
+                "key": "MainMenu-Button-Red-Selected"
+            },
+            "x": 160,
+            "y": 448
+        },
+        {
+            "type": "Image",
+            "id": "a3590ab7-31e8-49aa-b5f3-74bded091a1d",
+            "label": "newGame_Button_Red",
+            "scope": "CLASS",
+            "components": [],
+            "texture": {
+                "key": "NewGame-Button-Red"
+            },
+            "x": 160,
+            "y": 480
+        },
+        {
+            "type": "Image",
+            "id": "7b04194a-dcda-47c0-a79a-b339f84d4718",
+            "label": "newGame_Button_Red_Selected",
+            "scope": "CLASS",
+            "components": [],
+            "texture": {
+                "key": "NewGame-Button-Red-Selected"
+            },
+            "x": 160,
+            "y": 480
         }
     ],
     "plainObjects": [],

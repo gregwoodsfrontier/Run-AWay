@@ -31,7 +31,9 @@
             "id": "65d66230-55e4-487b-9960-a35c714369d2",
             "label": "wall_1",
             "scope": "CLASS",
-            "components": [],
+            "components": [
+                "TileMapLayerPhysics"
+            ],
             "y": -960,
             "tilemapId": "2666579a-03f9-49f7-8b2e-dd9cd7ef8c88",
             "layerName": "wall",
@@ -66,11 +68,11 @@
             "label": "enemyA",
             "scope": "CLASS",
             "components": [],
-            "FollowTarget.target": "pSDRobot",
-            "FollowTarget.range": 300,
+            "FollowTarget.target": "player",
+            "FollowTarget.range": 100,
             "FollowTarget.deadRangeX": 35,
-            "x": 80,
-            "y": 416
+            "x": 96,
+            "y": 384
         },
         {
             "prefabId": "169b350d-b922-409d-8da8-e86ab037d35d",
@@ -99,80 +101,66 @@
             "y": 160
         },
         {
-            "prefabId": "408d4d35-1d26-4f5e-9315-9d890dbf9ae0",
-            "id": "f5505805-41b9-4cf4-92f0-d56db8aa842b",
+            "prefabId": "792be592-4edd-40b5-9eaa-2c4b650603a0",
+            "id": "c955acd6-0c66-4048-abda-45868cc57180",
             "unlock": [
                 "x",
-                "y",
-                "FollowTarget.target",
-                "FollowTarget.deadRangeX",
-                "FollowTarget.range"
+                "y"
             ],
-            "label": "enemyA_1",
+            "label": "rock_1",
             "scope": "CLASS",
             "components": [],
-            "FollowTarget.target": "pSDRobot",
-            "FollowTarget.range": 300,
-            "FollowTarget.deadRangeX": 35,
-            "x": 128,
-            "y": 416
+            "x": 80,
+            "y": 0
         },
         {
-            "prefabId": "408d4d35-1d26-4f5e-9315-9d890dbf9ae0",
-            "id": "6d31fe54-61d3-48a0-b373-07276b87bc0a",
+            "prefabId": "792be592-4edd-40b5-9eaa-2c4b650603a0",
+            "id": "e3c424a0-c940-4986-af4a-451588ec5d24",
             "unlock": [
                 "x",
-                "y",
-                "FollowTarget.target",
-                "FollowTarget.deadRangeX",
-                "FollowTarget.range"
+                "y"
             ],
-            "label": "enemyA_2",
+            "label": "rock",
             "scope": "CLASS",
             "components": [],
-            "FollowTarget.target": "pSDRobot",
-            "FollowTarget.range": 300,
-            "FollowTarget.deadRangeX": 35,
-            "x": 192,
-            "y": 416
+            "x": 176,
+            "y": 0
         },
         {
-            "prefabId": "408d4d35-1d26-4f5e-9315-9d890dbf9ae0",
-            "id": "4947998b-80fa-480b-9916-4d99b5aa4047",
+            "prefabId": "792be592-4edd-40b5-9eaa-2c4b650603a0",
+            "id": "2fc1ecd1-3404-4190-b8a6-9c0c3481f48b",
             "unlock": [
                 "x",
-                "y",
-                "FollowTarget.target",
-                "FollowTarget.deadRangeX",
-                "FollowTarget.range"
+                "y"
             ],
-            "label": "enemyA_3",
-            "scope": "CLASS",
+            "label": "rock_2",
             "components": [],
-            "FollowTarget.target": "pSDRobot",
-            "FollowTarget.range": 300,
-            "FollowTarget.deadRangeX": 35,
-            "x": 240,
-            "y": 416
+            "x": 144,
+            "y": 0
         },
         {
-            "prefabId": "408d4d35-1d26-4f5e-9315-9d890dbf9ae0",
-            "id": "10a23fd5-8a34-41bc-ab35-d99d3e640335",
+            "prefabId": "792be592-4edd-40b5-9eaa-2c4b650603a0",
+            "id": "981f2479-76dc-44fe-a421-49c9b0b19ed1",
             "unlock": [
                 "x",
-                "y",
-                "FollowTarget.target",
-                "FollowTarget.deadRangeX",
-                "FollowTarget.range"
+                "y"
             ],
-            "label": "enemyA_4",
-            "scope": "CLASS",
+            "label": "rock_3",
             "components": [],
-            "FollowTarget.target": "pSDRobot",
-            "FollowTarget.range": 300,
-            "FollowTarget.deadRangeX": 35,
-            "x": 160,
-            "y": 416
+            "x": 112,
+            "y": 0
+        },
+        {
+            "prefabId": "792be592-4edd-40b5-9eaa-2c4b650603a0",
+            "id": "0488a1e6-4396-4268-895f-4b50e5af7c9a",
+            "unlock": [
+                "x",
+                "y"
+            ],
+            "label": "rock_4",
+            "components": [],
+            "x": 208,
+            "y": 0
         }
     ],
     "plainObjects": [
@@ -200,11 +188,18 @@
             "id": "97ea1992-d8cd-43db-92a5-734f0b5c68b4",
             "label": "enemyTeam",
             "objectIds": [
-                "4947998b-80fa-480b-9916-4d99b5aa4047",
-                "f5505805-41b9-4cf4-92f0-d56db8aa842b",
-                "6d31fe54-61d3-48a0-b373-07276b87bc0a",
-                "63f44b6a-316d-4ac2-9257-71741dcfd6ba",
-                "10a23fd5-8a34-41bc-ab35-d99d3e640335"
+                "63f44b6a-316d-4ac2-9257-71741dcfd6ba"
+            ]
+        },
+        {
+            "id": "a77fbce9-1d9a-496f-82ee-b4084ce64224",
+            "label": "obstacles",
+            "objectIds": [
+                "c955acd6-0c66-4048-abda-45868cc57180",
+                "981f2479-76dc-44fe-a421-49c9b0b19ed1",
+                "2fc1ecd1-3404-4190-b8a6-9c0c3481f48b",
+                "e3c424a0-c940-4986-af4a-451588ec5d24",
+                "0488a1e6-4396-4268-895f-4b50e5af7c9a"
             ]
         }
     ]

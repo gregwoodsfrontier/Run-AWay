@@ -5,9 +5,10 @@
 
 import Phaser from "phaser";
 import Button from "../components/Button";
+/* START-USER-IMPORTS */
+import Button from "../components/Button";
 import eventsCenter from "../EventsCenter";
 import { SCENE_SWITCH_EVENTS } from "../types/scenes";
-/* START-USER-IMPORTS */
 /* END-USER-IMPORTS */
 
 export default class Title extends Phaser.Scene {
@@ -33,11 +34,8 @@ export default class Title extends Phaser.Scene {
 		// start_Button
 		const start_Button = this.add.image(160, 191, "Start Button");
 
-		// volume_Button
-		const volume_Button = this.add.image(160, 255, "Volume Button");
-
 		// about_Button
-		const about_Button = this.add.image(160, 223, "About Button");
+		const about_Button = this.add.image(160, 239, "About Button");
 
 		// dithered_Triangles
 		const dithered_Triangles = this.add.image(160, 1024, "Dithered Triangles");
@@ -48,16 +46,12 @@ export default class Title extends Phaser.Scene {
 		// start_Button (components)
 		new Button(start_Button);
 
-		// volume_Button (components)
-		new Button(volume_Button);
-
 		// about_Button (components)
 		new Button(about_Button);
 
 		this.start_Anim1 = start_Anim1;
 		this.logo_v2 = logo_v2;
 		this.start_Button = start_Button;
-		this.volume_Button = volume_Button;
 		this.about_Button = about_Button;
 		this.transition = transition;
 
@@ -67,7 +61,6 @@ export default class Title extends Phaser.Scene {
 	private start_Anim1!: Phaser.GameObjects.Sprite;
 	private logo_v2!: Phaser.GameObjects.Image;
 	private start_Button!: Phaser.GameObjects.Image;
-	private volume_Button!: Phaser.GameObjects.Image;
 	private about_Button!: Phaser.GameObjects.Image;
 	private transition!: Phaser.GameObjects.Image[];
 
@@ -79,6 +72,7 @@ export default class Title extends Phaser.Scene {
 	create() {
 
 		this.editorCreate();
+		console.log(this.scene.key)
 
 		Button.getComponent(this.start_Button).handlePointerUp = () => {
 			this.start_Button.setTexture("Start Button")
@@ -89,10 +83,6 @@ export default class Title extends Phaser.Scene {
 			this.about_Button.setTexture("About Button")
 		}
 
-		Button.getComponent(this.volume_Button).handlePointerUp = () => {
-			this.volume_Button.setTexture("Volume Button")
-		}
-
 		Button.getComponent(this.start_Button).handlePointerDown = () => {
 			this.start_Button.setTexture("Start Button Pressed")
 		}
@@ -101,13 +91,8 @@ export default class Title extends Phaser.Scene {
 			this.about_Button.setTexture("About Button Pressed")
 		}
 
-		Button.getComponent(this.volume_Button).handlePointerDown = () => {
-			this.volume_Button.setTexture("Volume Button Pressed")
-		}
-
 		const buttons = [
 			this.start_Button,
-			this.volume_Button,
 			this.about_Button
 		]
 
@@ -192,8 +177,7 @@ export default class Title extends Phaser.Scene {
 		const elements = [
 			this.logo_v2,
 			this.start_Button,
-			this.about_Button,
-			this.volume_Button
+			this.about_Button
 		]
 
 		elements.forEach(e => {
@@ -214,9 +198,6 @@ export default class Title extends Phaser.Scene {
 	private startNewGame()
 	{
 		eventsCenter.emit(SCENE_SWITCH_EVENTS.TO_GAME)
-		// this.scene.stop('Title')
-		// this.scene.launch('Level')
-		// this.scene.launch('UI')
 	}
 
 	/* END-USER-CODE */
