@@ -27,5 +27,6 @@ export enum SCENE_SWITCH_EVENTS {
     TO_EXPLAINER = 'to-explainer',
     RESUME_FROM_EXPLAIN = 'resume-from-explain',
     GO_GAMEOVER = 'go-gameover',
-    GO_YOUSURVIVED = 'go-yousurvived'
+    GO_YOUSURVIVED = 'go-yousurvived',
+    TO_CHUNKS = 'to-chunks'
 }

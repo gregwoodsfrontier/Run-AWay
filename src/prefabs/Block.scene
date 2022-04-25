@@ -1,5 +1,5 @@
 {
-    "id": "792be592-4edd-40b5-9eaa-2c4b650603a0",
+    "id": "eea777dd-7929-4a73-9cd1-021e34059641",
     "sceneType": "PREFAB",
     "settings": {
         "exportClass": true,
@@ -13,15 +13,10 @@
     },
     "displayList": [
         {
-            "type": "Sprite",
-            "id": "9e45a84a-e942-402d-a245-d479ae8d5848",
-            "label": "rock_1",
-            "scope": "CLASS",
-            "components": [
-                "Physics",
-                "DepthSortY"
-            ],
-            "Physics.static": true,
+            "type": "Image",
+            "id": "869a236a-baea-49d5-93a2-df771eef2cf3",
+            "label": "raw_break_interact0",
+            "components": [],
             "texture": {
                 "key": "raw-break-interact",
                 "frame": 0
@@ -36,16 +31,6 @@
         "version": 3
     },
     "prefabProperties": [
-        {
-            "name": "isPickable",
-            "label": "isPickable",
-            "tooltip": "isPickable",
-            "defValue": false,
-            "customDefinition": false,
-            "type": {
-                "id": "boolean"
-            }
-        },
         {
             "name": "rawType",
             "label": "rawType",

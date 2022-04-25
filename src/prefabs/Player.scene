@@ -13,38 +13,31 @@
     },
     "displayList": [
         {
-            "type": "Container",
+            "type": "Sprite",
             "id": "14c39eb9-c1a6-44a6-b835-1047b510aeee",
             "label": "container_1",
-            "components": [],
-            "list": [
-                {
-                    "type": "Sprite",
-                    "id": "dfafffa1-0788-4a93-8e3e-b6ff9cbe7d13",
-                    "label": "player",
-                    "scope": "PUBLIC",
-                    "components": [
-                        "Physics",
-                        "KeyboardInput",
-                        "JustMovement",
-                        "DepthSortY",
-                        "AnimationV2",
-                        "CameraFollow",
-                        "HoldComp",
-                        "AimComp",
-                        "PSDComp",
-                        "SelectionSquare"
-                    ],
-                    "Physics.width": 32,
-                    "Physics.height": 40,
-                    "Physics.offsetX": 16,
-                    "Physics.offsetY": 26,
-                    "JustMovement.speed": 150,
-                    "texture": {
-                        "key": "playerOnly-4"
-                    }
-                }
-            ]
+            "components": [
+                "Physics",
+                "JustMovement",
+                "KeyboardInput",
+                "DepthSortY",
+                "AnimationV2",
+                "CameraFollow",
+                "HoldComp",
+                "AimComp",
+                "PSDComp",
+                "SelectionSquare"
+            ],
+            "Physics.width": 28,
+            "Physics.height": 28,
+            "Physics.offsetX": 18,
+            "Physics.offsetY": 26,
+            "JustMovement.speed": 155,
+            "AimComp.facingDir": 2,
+            "AimComp.movingDir": 2,
+            "texture": {
+                "key": "playerOnly-4"
+            }
         }
     ],
     "plainObjects": [],

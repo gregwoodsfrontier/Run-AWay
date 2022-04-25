@@ -21,8 +21,10 @@
                 "Physics",
                 "JustMovement"
             ],
-            "Physics.width": 32,
-            "Physics.height": 32,
+            "Physics.width": 16,
+            "Physics.height": 16,
+            "Physics.offsetX": 8,
+            "Physics.offsetY": 8,
             "JustMovement.speed": 380,
             "texture": {
                 "key": "PCProjectile32",

@@ -2111,6 +2111,93 @@
             "frameRate": 24,
             "skipMissedFrames": true,
             "repeat": -1
+        },
+        {
+            "key": "boss-trap-on",
+            "type": "frame",
+            "frames": [
+                {
+                    "key": "BossTrap-1",
+                    "duration": 0,
+                    "keyframe": false
+                },
+                {
+                    "key": "BossTrap-2",
+                    "duration": 0,
+                    "keyframe": false
+                },
+                {
+                    "key": "BossTrap-3",
+                    "duration": 0,
+                    "keyframe": false
+                },
+                {
+                    "key": "BossTrap-4",
+                    "duration": 0,
+                    "keyframe": false
+                },
+                {
+                    "key": "BossTrap-5",
+                    "duration": 0,
+                    "keyframe": false
+                }
+            ],
+            "frameRate": 9,
+            "skipMissedFrames": true
+        },
+        {
+            "key": "empty-break-4",
+            "type": "frame",
+            "frames": [
+                {
+                    "key": "raw-break-interact",
+                    "frame": 24,
+                    "duration": 0,
+                    "keyframe": false
+                }
+            ],
+            "frameRate": 24,
+            "skipMissedFrames": true,
+            "repeat": -1
+        },
+        {
+            "key": "empty-break",
+            "type": "frame",
+            "frames": [
+                {
+                    "key": "raw-break-interact",
+                    "frame": 24,
+                    "duration": 0,
+                    "keyframe": false
+                },
+                {
+                    "key": "raw-break-interact",
+                    "frame": 25,
+                    "duration": 0,
+                    "keyframe": false
+                },
+                {
+                    "key": "raw-break-interact",
+                    "frame": 26,
+                    "duration": 0,
+                    "keyframe": false
+                },
+                {
+                    "key": "raw-break-interact",
+                    "frame": 27,
+                    "duration": 0,
+                    "keyframe": false
+                },
+                {
+                    "key": "raw-break-interact",
+                    "frame": 28,
+                    "duration": 0,
+                    "keyframe": false
+                }
+            ],
+            "frameRate": 24,
+            "skipMissedFrames": true,
+            "repeat": -1
         }
     ],
     "globalTimeScale": 1,
