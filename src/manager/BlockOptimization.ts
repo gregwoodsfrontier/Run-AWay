@@ -13,7 +13,7 @@ export default class BlockOptimizer
         // y up another chunk
         y -= 640;
 
-        // width and height
+        // width and height@
         var width = 320; // width of chunk
         var height = 1920; // height of chunk * 3
 

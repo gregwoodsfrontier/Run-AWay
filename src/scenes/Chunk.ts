@@ -10,6 +10,8 @@ import KeyboardInput from "../components/KeyboardInput";
 import JustMovement from "../components/JustMovement";
 import AnimationV2 from "../components/AnimationV2";
 import DepthSortY from "../components/DepthSortY";
+import TileGen from "../manager/TileGen";
+import BlockOptimizer from "../manager/BlockOptimization";
 import EndTunnel from "../prefabs/EndTunnel";
 import { seed } from "../main";
 import Block from "../prefabs/Block";
@@ -61,8 +63,6 @@ export default class Chunk extends Phaser.Scene {
 
 		this.startWorldGen()
 
-		this.handlePlayerInput()
-
 		// this code moves the player down to the beginning of the level (bottom left corner)
 		this.player.x = 48;
 		this.player.y = 640*(20+Math.round(((seed/3)/999)*100))+640-this.player.height;
@@ -76,51 +76,6 @@ export default class Chunk extends Phaser.Scene {
 	{
 		this.handleDepthSort();
 		this.optimize();
-	}
-
-	private handlePlayerInput()
-	{
-		const playerKeyboardInput = KeyboardInput.getComponent(this.player)
-		const playerMove = JustMovement.getComponent(this.player)
-		const playerAnims = AnimationV2.getComponent(this.player)
-
-		playerKeyboardInput.executeLeft = () => {
-			playerMove.moveLeft()
-			playerAnims.playAnims({
-				character: 'player',
-				direction: 'left',
-				state: 'walk'
-			})
-		}
-		playerKeyboardInput.executeRight = () => {
-			playerMove.moveRight()
-			playerAnims.playAnims({
-				character: 'player',
-				direction: 'right',
-				state: 'walk'
-			})
-		}
-		playerKeyboardInput.executeUp = () => {
-			playerMove.moveUp()
-			playerAnims.playAnims({
-				character: 'player',
-				direction: 'back',
-				state: 'walk'
-			})
-		}
-		playerKeyboardInput.executeDown = () => {
-			playerMove.moveDown()
-			playerAnims.playAnims({
-				character: 'player',
-				direction: 'front',
-				state: 'walk'
-			})
-		}
-		playerKeyboardInput.executeKeyUp = () => {
-			playerMove.stayStill()
-			playerAnims.playIdleFromWalk()
-		}
-
 	}
 
 	private startWorldGen()
