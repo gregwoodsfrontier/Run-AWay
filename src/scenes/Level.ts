@@ -87,42 +87,6 @@ export default class Level extends Phaser.Scene {
 		const rock_4 = new Rock(this, 208, 0);
 		this.add.existing(rock_4);
 
-		// mud_1
-		const mud_1 = new MudTrap(this, 96, 64);
-		this.add.existing(mud_1);
-
-		// mud
-		const mud = new MudTrap(this, 128, 64);
-		this.add.existing(mud);
-
-		// mud_2
-		const mud_2 = new MudTrap(this, 160, 64);
-		this.add.existing(mud_2);
-
-		// mud_3
-		const mud_3 = new MudTrap(this, 192, 64);
-		this.add.existing(mud_3);
-
-		// mud_4
-		const mud_4 = new MudTrap(this, 192, 96);
-		this.add.existing(mud_4);
-
-		// mud_5
-		const mud_5 = new MudTrap(this, 160, 96);
-		this.add.existing(mud_5);
-
-		// mud_6
-		const mud_6 = new MudTrap(this, 128, 96);
-		this.add.existing(mud_6);
-
-		// mud_7
-		const mud_7 = new MudTrap(this, 96, 96);
-		this.add.existing(mud_7);
-
-		// lists
-		const enemyTeam = [enemyA];
-		const obstacles = [rock_1, rock_3, rock_2, rock, rock_4];
-		const mudList = [mud_1, mud_7, mud_6, mud_5, mud_4, mud_3, mud_2, mud];
 		// rock_5
 		const rock_5 = new Rock(this, 80, -32);
 		this.add.existing(rock_5);
@@ -401,7 +365,7 @@ export default class Level extends Phaser.Scene {
 		this.cave_test_map_2 = cave_test_map_2;
 		this.enemyTeam = enemyTeam;
 		this.obstacles = obstacles;
-		this.mudList = mudList;
+		// this.mudList = mudList;
 
 		this.events.emit("scene-awake");
 	}
