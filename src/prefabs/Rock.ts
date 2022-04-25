@@ -4,10 +4,11 @@ import { RAW_TYPE } from "../types/raw";
 
 /* START OF COMPILED CODE */
 
-import Phaser, { Game } from "phaser";
+import Phaser from "phaser";
 import Physics from "../components/Physics";
-import { GameState } from "../manager/gameState";
+import DepthSortY from "../components/DepthSortY";
 /* START-USER-IMPORTS */
+import { GameState } from "../manager/gameState";
 /* END-USER-IMPORTS */
 
 export default class Rock extends Phaser.GameObjects.Sprite {
@@ -18,6 +19,7 @@ export default class Rock extends Phaser.GameObjects.Sprite {
 		// this (components)
 		const thisPhysics = new Physics(this);
 		thisPhysics.static = true;
+		new DepthSortY(this);
 
 		/* START-USER-CTR-CODE */
 		// Write your code here.
@@ -68,7 +70,7 @@ export default class Rock extends Phaser.GameObjects.Sprite {
 		this.startRockAnims()
 	}
 
-	private startRockAnims()
+	startRockAnims()
 	{
 		switch(this.rawType)
 		{
@@ -92,7 +94,7 @@ export default class Rock extends Phaser.GameObjects.Sprite {
 				this.anims.stop()
 				break
 			}
-			
+
 		}
 	}
 
@@ -204,7 +206,7 @@ export default class Rock extends Phaser.GameObjects.Sprite {
 				this.checkPickIfZeroHP()
 				break
 			}
-			
+
 		}
 	}
 

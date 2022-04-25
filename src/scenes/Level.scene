@@ -406,7 +406,7 @@
             "rawType": 1,
             "components": [],
             "x": 80,
-            "y": -576
+            "y": -592
         },
         {
             "prefabId": "792be592-4edd-40b5-9eaa-2c4b650603a0",
@@ -544,7 +544,7 @@
             "rawType": 2,
             "components": [],
             "x": 112,
-            "y": -544
+            "y": -560
         },
         {
             "prefabId": "792be592-4edd-40b5-9eaa-2c4b650603a0",
@@ -558,7 +558,7 @@
             "rawType": 1,
             "components": [],
             "x": 176,
-            "y": -544
+            "y": -560
         },
         {
             "prefabId": "792be592-4edd-40b5-9eaa-2c4b650603a0",
@@ -600,7 +600,7 @@
             "rawType": 1,
             "components": [],
             "x": 112,
-            "y": -576
+            "y": -592
         },
         {
             "prefabId": "792be592-4edd-40b5-9eaa-2c4b650603a0",
@@ -614,7 +614,7 @@
             "rawType": 1,
             "components": [],
             "x": 144,
-            "y": -576
+            "y": -592
         },
         {
             "prefabId": "792be592-4edd-40b5-9eaa-2c4b650603a0",
@@ -628,7 +628,7 @@
             "rawType": 2,
             "components": [],
             "x": 176,
-            "y": -576
+            "y": -592
         },
         {
             "prefabId": "792be592-4edd-40b5-9eaa-2c4b650603a0",
@@ -640,7 +640,36 @@
             "label": "rock_38",
             "components": [],
             "x": 208,
-            "y": -576
+            "y": -592
+        },
+        {
+            "type": "Rectangle",
+            "id": "9faa6694-65b6-4ee0-af7f-963b2509a434",
+            "label": "rectangle_1",
+            "components": [],
+            "x": 64,
+            "y": -608,
+            "originX": 0,
+            "originY": 1,
+            "alpha": 0,
+            "isFilled": true,
+            "width": 192,
+            "height": 192
+        },
+        {
+            "type": "Rectangle",
+            "id": "33a9c4d1-6577-4dfa-b0a0-a06d8c231ba2",
+            "label": "exitZone",
+            "scope": "CLASS",
+            "components": [],
+            "x": 64,
+            "y": -944,
+            "originX": 0,
+            "originY": 1,
+            "alpha": 0.1,
+            "isFilled": true,
+            "width": 192,
+            "height": 32
         }
     ],
     "plainObjects": [

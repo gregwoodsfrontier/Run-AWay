@@ -18,7 +18,8 @@
             "label": "rock_1",
             "scope": "CLASS",
             "components": [
-                "Physics"
+                "Physics",
+                "DepthSortY"
             ],
             "Physics.static": true,
             "texture": {

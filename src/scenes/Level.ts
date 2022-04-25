@@ -149,7 +149,7 @@ export default class Level extends Phaser.Scene {
 		this.add.existing(rock_20);
 
 		// rock_21
-		const rock_21 = new Rock(this, 80, -576);
+		const rock_21 = new Rock(this, 80, -592);
 		this.add.existing(rock_21);
 
 		// rock_22
@@ -189,11 +189,11 @@ export default class Level extends Phaser.Scene {
 		this.add.existing(rock_30);
 
 		// rock_31
-		const rock_31 = new Rock(this, 112, -544);
+		const rock_31 = new Rock(this, 112, -560);
 		this.add.existing(rock_31);
 
 		// rock_32
-		const rock_32 = new Rock(this, 176, -544);
+		const rock_32 = new Rock(this, 176, -560);
 		this.add.existing(rock_32);
 
 		// rock_33
@@ -205,20 +205,32 @@ export default class Level extends Phaser.Scene {
 		this.add.existing(rock_34);
 
 		// rock_35
-		const rock_35 = new Rock(this, 112, -576);
+		const rock_35 = new Rock(this, 112, -592);
 		this.add.existing(rock_35);
 
 		// rock_36
-		const rock_36 = new Rock(this, 144, -576);
+		const rock_36 = new Rock(this, 144, -592);
 		this.add.existing(rock_36);
 
 		// rock_37
-		const rock_37 = new Rock(this, 176, -576);
+		const rock_37 = new Rock(this, 176, -592);
 		this.add.existing(rock_37);
 
 		// rock_38
-		const rock_38 = new Rock(this, 208, -576);
+		const rock_38 = new Rock(this, 208, -592);
 		this.add.existing(rock_38);
+
+		// rectangle_1
+		const rectangle_1 = this.add.rectangle(64, -608, 192, 192);
+		rectangle_1.setOrigin(0, 1);
+		rectangle_1.alpha = 0;
+		rectangle_1.isFilled = true;
+
+		// exitZone
+		const exitZone = this.add.rectangle(64, -944, 192, 32);
+		exitZone.setOrigin(0, 1);
+		exitZone.alpha = 0.1;
+		exitZone.isFilled = true;
 
 		// lists
 		const enemyTeam = [enemyA];
@@ -346,6 +358,7 @@ export default class Level extends Phaser.Scene {
 		this.rock_21 = rock_21;
 		this.rock_22 = rock_22;
 		this.rock_27 = rock_27;
+		this.exitZone = exitZone;
 		this.cave_test_map_2 = cave_test_map_2;
 		this.enemyTeam = enemyTeam;
 		this.obstacles = obstacles;
@@ -370,6 +383,7 @@ export default class Level extends Phaser.Scene {
 	private rock_21!: Rock;
 	private rock_22!: Rock;
 	private rock_27!: Rock;
+	private exitZone!: Phaser.GameObjects.Rectangle;
 	private enemyTeam!: Enemy[];
 	private obstacles!: Rock[];
 
@@ -404,6 +418,9 @@ export default class Level extends Phaser.Scene {
 		this.physics.add.collider(this.enemyTeam, this.obstacles)
 		this.physics.add.collider(this.bulletGroup, this.obstacles, this.handleBulletRocks, this.checkBulletRocks)
 		this.physics.add.collider(this.player, this.obstacles, this.handlePlayerRocks)
+		
+		this.physics.add.existing(this.exitZone, true)
+		this.physics.add.collider(this.player, this.exitZone, this.goToChunks)
 
 		this.#destination = SelectionSquare.getComponent(this.player)
 
@@ -431,8 +448,9 @@ export default class Level extends Phaser.Scene {
 		this.start_level.setVisible(false).setActive(false)
 		this.onStartLevelAnimsComplete()
 
-		// this.SwarmGenerator(80, 384, 5, 3000, 0)
-		// this.SwarmGenerator(192, 384, 5, 3000, 1500)
+		this.SwarmGenerator(80, 384, 5, 3000, 0)
+		this.SwarmGenerator(192, 384, 5, 3000, 1500)
+		this.RocksPropagator(80, -624, 9)
 	}
 
 	update(time: number, delta: number)
@@ -447,6 +465,44 @@ export default class Level extends Phaser.Scene {
 			rocks: this.obstacles,
 			group: this.enemyTeam
 		}
+	}
+
+	private goToChunks()
+	{
+		// console.log('scene key', this.scene.key)
+		eventsCenter.emit(SCENE_SWITCH_EVENTS.TO_CHUNKS, "Level")
+	}
+
+	private RocksPropagator(startx: number, starty: number, endY: number)
+	{
+		const distX = 32
+		const distY = 32
+		for(let i = 0; i < 6; i++)
+		{
+			for(let j = 0; j < endY; j++)
+			{
+				if(j % 2 === 0 && i % 2 === 0)
+				{
+					this.createRock(startx + distX * i, starty - distY * j)
+				}
+				else if(j % 2 === 1 && i % 2 === 1)
+				{
+					this.createRock(startx + distX * i, starty - distY * j)
+				}
+			}
+		}
+	}
+
+	private createRock(x: number, y: number)
+	{
+		const r = new Rock(this, x, y)
+		this.add.existing(r)
+		r.rawType = Phaser.Math.Between(1, 3)
+		r.setCurrHP(r.rawType)
+		r.startRockAnims()
+		this.obstacles.push(r)
+
+		// return r
 	}
 
 	private handlePlayerRocks(p: Phaser.Types.Physics.Arcade.GameObjectWithBody, r: Phaser.Types.Physics.Arcade.GameObjectWithBody)
@@ -477,13 +533,7 @@ export default class Level extends Phaser.Scene {
 		bullet.despawn()
 
 		rock.damage(1)
-		console.log(`rock type: ${rock.rawType}`)
-		console.log(`rock hp: ${rock.currHP}`)
-		console.log('rock frame', rock.anims.currentAnim.key)
-		if(rock.isPickable)
-		{
-			console.log(`this rock is pickable`)
-		}
+
 		// rock.destroy()
 	}
 
