@@ -28,11 +28,11 @@ export default class CameraFollow extends UserComponent {
 	private gameObject: Phaser.GameObjects.Sprite;
 
 	/* START-USER-CODE */
-	awake()
+	start()
 	{
 		const { scene } = this.gameObject
 		scene.cameras.main.startFollow(this.gameObject, true)
-		scene.cameras.main.setBounds(0, 0, 320, 640*99, true)
+		scene.cameras.main.setBounds(0, -1000, 320, 5000)
 	}
 
 	/* update(){

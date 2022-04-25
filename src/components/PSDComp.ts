@@ -55,7 +55,7 @@ export default class PSDComp extends UserComponent {
 
 	/* START-USER-CODE */
 	public stateMachine: StateMachine;
-	private sprite: Phaser.Physics.Arcade.Sprite;
+	public sprite: Phaser.Physics.Arcade.Sprite;
 	private facingDir = DIRECTION.BACK
 	private isHold = false
 	private isAimMode = false

@@ -55,6 +55,7 @@ export default class Bootstrap extends Phaser.Scene {
 		{
 			this.createNewGame()
 			// this.startTitleScene()
+			return
 		}
 
 		this.startTitleScene()
@@ -110,8 +111,8 @@ export default class Bootstrap extends Phaser.Scene {
 	private createNewGame()
 	{
 		// this.scene.stop("Title")
-		this.scene.launch("Chunk")
-		// this.scene.launch("Level")
+		// this.scene.launch("Chunk")
+		this.scene.launch("Level")
 		this.scene.launch("UI")
 	}
 

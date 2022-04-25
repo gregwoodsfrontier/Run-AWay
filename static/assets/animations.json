@@ -122,21 +122,25 @@
             "frames": [
                 {
                     "key": "tempboss-back-walk-1",
+                    "frame": 0,
                     "duration": 0,
                     "keyframe": false
                 },
                 {
                     "key": "tempboss-back-walk-2",
+                    "frame": 0,
                     "duration": 0,
                     "keyframe": false
                 },
                 {
                     "key": "tempboss-back-walk-3",
+                    "frame": 0,
                     "duration": 0,
                     "keyframe": false
                 },
                 {
                     "key": "tempboss-back-walk-4",
+                    "frame": 0,
                     "duration": 0,
                     "keyframe": false
                 }
@@ -151,21 +155,25 @@
             "frames": [
                 {
                     "key": "tempboss-front-walk-1",
+                    "frame": 0,
                     "duration": 0,
                     "keyframe": false
                 },
                 {
                     "key": "tempboss-front-walk-2",
+                    "frame": 0,
                     "duration": 0,
                     "keyframe": false
                 },
                 {
                     "key": "tempboss-front-walk-3",
+                    "frame": 0,
                     "duration": 0,
                     "keyframe": false
                 },
                 {
                     "key": "tempboss-front-walk-4",
+                    "frame": 0,
                     "duration": 0,
                     "keyframe": false
                 }
@@ -180,21 +188,25 @@
             "frames": [
                 {
                     "key": "tempboss-left-walk-1",
+                    "frame": 0,
                     "duration": 0,
                     "keyframe": false
                 },
                 {
                     "key": "tempboss-left-walk-2",
+                    "frame": 0,
                     "duration": 0,
                     "keyframe": false
                 },
                 {
                     "key": "tempboss-left-walk-3",
+                    "frame": 0,
                     "duration": 0,
                     "keyframe": false
                 },
                 {
                     "key": "tempboss-left-walk-4",
+                    "frame": 0,
                     "duration": 0,
                     "keyframe": false
                 }
@@ -209,21 +221,25 @@
             "frames": [
                 {
                     "key": "tempboss-right-walk-1",
+                    "frame": 0,
                     "duration": 0,
                     "keyframe": false
                 },
                 {
                     "key": "tempboss-right-walk-2",
+                    "frame": 0,
                     "duration": 0,
                     "keyframe": false
                 },
                 {
                     "key": "tempboss-right-walk-3",
+                    "frame": 0,
                     "duration": 0,
                     "keyframe": false
                 },
                 {
                     "key": "tempboss-right-walk-4",
+                    "frame": 0,
                     "duration": 0,
                     "keyframe": false
                 }
@@ -294,6 +310,7 @@
             "frames": [
                 {
                     "key": "tempboss-front-walk-1",
+                    "frame": 0,
                     "duration": 0,
                     "keyframe": false
                 }
@@ -308,6 +325,7 @@
             "frames": [
                 {
                     "key": "tempboss-back-walk-1",
+                    "frame": 0,
                     "duration": 0,
                     "keyframe": false
                 }
@@ -322,6 +340,7 @@
             "frames": [
                 {
                     "key": "tempboss-left-walk-1",
+                    "frame": 0,
                     "duration": 0,
                     "keyframe": false
                 }
@@ -336,6 +355,7 @@
             "frames": [
                 {
                     "key": "tempboss-right-walk-1",
+                    "frame": 0,
                     "duration": 0,
                     "keyframe": false
                 }
@@ -1498,7 +1518,7 @@
             "hideOnComplete": true
         },
         {
-            "key": "psd-deployraw-break-interact",
+            "key": "psd-deploy",
             "type": "frame",
             "frames": [
                 {
@@ -1536,7 +1556,7 @@
             "skipMissedFrames": true
         },
         {
-            "key": "emptyrock-break",
+            "key": "empty-break",
             "type": "frame",
             "frames": [
                 {
@@ -1769,7 +1789,7 @@
             "skipMissedFrames": true
         },
         {
-            "key": "trap-poison-mistraw-break-interact",
+            "key": "trap-poison-mist",
             "type": "frame",
             "frames": [
                 {
@@ -2001,6 +2021,96 @@
             ],
             "frameRate": 9,
             "skipMissedFrames": true
+        },
+        {
+            "key": "bppsd-left-idle-none",
+            "type": "frame",
+            "frames": [
+                {
+                    "key": "playerPSDeq",
+                    "frame": 1,
+                    "duration": 0,
+                    "keyframe": false
+                }
+            ],
+            "frameRate": 24,
+            "skipMissedFrames": true,
+            "repeat": -1
+        },
+        {
+            "key": "bppsd-right-idle-none",
+            "type": "frame",
+            "frames": [
+                {
+                    "key": "playerPSDeq",
+                    "frame": 2,
+                    "duration": 0,
+                    "keyframe": false
+                }
+            ],
+            "frameRate": 24,
+            "skipMissedFrames": true,
+            "repeat": -1
+        },
+        {
+            "key": "bppsd-back-idle-none",
+            "type": "frame",
+            "frames": [
+                {
+                    "key": "playerPSDeq",
+                    "frame": 3,
+                    "duration": 0,
+                    "keyframe": false
+                }
+            ],
+            "frameRate": 24,
+            "skipMissedFrames": true,
+            "repeat": -1
+        },
+        {
+            "key": "bppsd-left-idle-hold",
+            "type": "frame",
+            "frames": [
+                {
+                    "key": "playerPSDeq",
+                    "frame": 24,
+                    "duration": 0,
+                    "keyframe": false
+                }
+            ],
+            "frameRate": 24,
+            "skipMissedFrames": true,
+            "repeat": -1
+        },
+        {
+            "key": "bppsd-right-idle-hold",
+            "type": "frame",
+            "frames": [
+                {
+                    "key": "playerPSDeq",
+                    "frame": 28,
+                    "duration": 0,
+                    "keyframe": false
+                }
+            ],
+            "frameRate": 24,
+            "skipMissedFrames": true,
+            "repeat": -1
+        },
+        {
+            "key": "bppsd-back-idle-hold",
+            "type": "frame",
+            "frames": [
+                {
+                    "key": "playerPSDeq",
+                    "frame": 32,
+                    "duration": 0,
+                    "keyframe": false
+                }
+            ],
+            "frameRate": 24,
+            "skipMissedFrames": true,
+            "repeat": -1
         }
     ],
     "globalTimeScale": 1,
