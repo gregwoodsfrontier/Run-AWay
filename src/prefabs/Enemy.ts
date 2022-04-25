@@ -174,6 +174,12 @@ export default class Enemy extends Phaser.GameObjects.Sprite {
 			return
 		}
 
+		if(!this.enemyAnimation || !this.enemyMovement)
+		{
+			console.error("either animation comp or movement comp is undefined")
+			return
+		}
+
 		switch (this.direction) {
 			case DIRECTION.BACK: {
 				this.enemyMovement.moveUp()
@@ -196,11 +202,24 @@ export default class Enemy extends Phaser.GameObjects.Sprite {
 			}
 		}
 
-		this.enemyAnimation.playAnims({
+		/* this.enemyAnimation.playAnims({
 			character: 'swarm',
 			direction: dirName,
 			state: 'walk'
-		})
+		}) */
+
+		if(!this)
+		{
+			return
+		}
+
+		// console.log(`swarm-${dirName}-walk`)
+		/* try {
+			this.play(`swarm-${dirName}-walk`, true)
+		} catch (err) {
+			console.error(err)
+		} */
+		// this.play(`swarm-${dirName}-walk`, true)
 	}
 
 	private onAttackEnter()
@@ -256,6 +275,7 @@ export default class Enemy extends Phaser.GameObjects.Sprite {
 
 	despawn()
 	{
+		this.stayStill()
 		this.setActive(false)
 		this.setVisible(false)
 		this.setPosition(-1000, -500, -2000)

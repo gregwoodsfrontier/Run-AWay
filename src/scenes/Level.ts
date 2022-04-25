@@ -9,7 +9,6 @@ import Enemy from "../prefabs/Enemy";
 import FollowTarget from "../components/FollowTarget";
 import PSD from "../prefabs/PSD";
 import Rock from "../prefabs/Rock";
-import MudTrap from "../prefabs/MudTrap";
 /* START-USER-IMPORTS */
 import DepthSortY from "../components/DepthSortY";
 import { DIRECTION } from "../types/direction";
@@ -56,7 +55,7 @@ export default class Level extends Phaser.Scene {
 		this.add.existing(player);
 
 		// enemyA
-		const enemyA = new Enemy(this, 96, 384);
+		const enemyA = new Enemy(this, -80, 384);
 		this.add.existing(enemyA);
 
 		// pSDRobot
@@ -238,6 +237,7 @@ export default class Level extends Phaser.Scene {
 		// lists
 		const enemyTeam = [enemyA];
 		const obstacles = [rock_38, rock_37, rock_36, rock_35, rock_34, rock_33, rock_32, rock_31, rock_30, rock_29, rock_26, rock_28, rock_27, rock_25, rock_24, rock_23, rock_22, rock_21, rock_20, rock_19, rock_18, rock_17, rock_16, rock_15, rock_14, rock_13, rock_12, rock_11, rock_10, rock_9, rock_8, rock_7, rock_6, rock_5, rock_4, rock_3, rock_2, rock, rock_1];
+		const mudList: Array<any> = [];
 
 		// wall_1 (components)
 		new TileMapLayerPhysics(wall_1);
@@ -365,7 +365,7 @@ export default class Level extends Phaser.Scene {
 		this.cave_test_map_2 = cave_test_map_2;
 		this.enemyTeam = enemyTeam;
 		this.obstacles = obstacles;
-		// this.mudList = mudList;
+		this.mudList = mudList;
 
 		this.events.emit("scene-awake");
 	}
@@ -390,7 +390,7 @@ export default class Level extends Phaser.Scene {
 	private exitZone!: Phaser.GameObjects.Rectangle;
 	private enemyTeam!: Enemy[];
 	private obstacles!: Rock[];
-	private mudList!: MudTrap[];
+	private mudList!: Array<any>;
 
 	/* START-USER-CODE */
 	public platformer_fun!: Phaser.Tilemaps.Tilemap
@@ -423,7 +423,7 @@ export default class Level extends Phaser.Scene {
 		this.physics.add.collider(this.enemyTeam, this.obstacles)
 		this.physics.add.collider(this.bulletGroup, this.obstacles, this.handleBulletRocks, this.checkBulletRocks)
 		this.physics.add.collider(this.player, this.obstacles, this.handlePlayerRocks)
-		
+
 		this.physics.add.existing(this.exitZone, true)
 		this.physics.add.collider(this.player, this.exitZone, this.goToChunks)
 
@@ -651,10 +651,10 @@ export default class Level extends Phaser.Scene {
 		follow.deactivate()
 		enemy.enrage()
 
-		let ty = 4
+		let ty = 5
 		const t = this.tweens.create({
 			targets: enemy,
-			duration: 100,
+			duration: 200,
 			onStart: () => {
 				enemy.setSMState(ENEMY_STATE_KEYS.IDLE)
 				const b = enemy.body as Phaser.Physics.Arcade.Body
@@ -679,6 +679,7 @@ export default class Level extends Phaser.Scene {
 				t.play()
 			}
 		})
+
 	}
 
 	//@ts-ignore
@@ -709,8 +710,8 @@ export default class Level extends Phaser.Scene {
 			enemy.startMovement()
 		})
 
-		this.SwarmGenerator(80, 384, 10, 3000, 0)
-		this.SwarmGenerator(192, 384, 10, 3000, 1500)
+		this.SwarmGenerator(80, 384, 5, 3000, 0)
+		this.SwarmGenerator(192, 384, 5, 3000, 1500)
 		this.RocksPropagator(80, -624, 9)
 	}
 
@@ -719,7 +720,11 @@ export default class Level extends Phaser.Scene {
 		const bullet = a as Bullet
 		const enemy = b as Enemy
 		bullet.despawn()
-		enemy.despawn()
+		enemy.emit('stay-still')
+		enemy.destoryAndDetach()
+		const idxToDel = this.enemyTeam.findIndex(e => e = enemy)
+		this.enemyTeam.splice(idxToDel, 1)
+		// enemy.despawn()
 	}
 
 	private playStartLevelAnims()

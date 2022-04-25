@@ -43,6 +43,11 @@ export default class Physics extends UserComponent {
 		body.setOffset(this.offsetX, this.offsetY)
 		// body.setCollideWorldBounds()
 	}
+
+	destroy()
+	{
+		delete (this.gameObject as any)["__Physics"]
+	}
 	/* END-USER-CODE */
 }
 
