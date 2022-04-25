@@ -25,9 +25,9 @@
                 "JustMovement",
                 "DetectionBoxes"
             ],
-            "Physics.width": 32,
-            "Physics.height": 40,
-            "Physics.offsetX": 16,
+            "Physics.width": 28,
+            "Physics.height": 28,
+            "Physics.offsetX": 18,
             "Physics.offsetY": 26,
             "FollowTarget.range": 130,
             "JustMovement.speed": 90,

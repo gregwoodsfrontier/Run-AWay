@@ -30,7 +30,7 @@ export default class Player extends Phaser.GameObjects.Sprite {
 		// this (components)
 		const thisPhysics = new Physics(this);
 		thisPhysics.width = 28;
-		thisPhysics.height = 40;
+		thisPhysics.height = 28;
 		thisPhysics.offsetX = 18;
 		thisPhysics.offsetY = 26;
 		const thisJustMovement = new JustMovement(this);

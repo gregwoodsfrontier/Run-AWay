@@ -23,9 +23,9 @@ export default class Enemy extends Phaser.GameObjects.Sprite {
 
 		// this (components)
 		const thisPhysics = new Physics(this);
-		thisPhysics.width = 32;
-		thisPhysics.height = 40;
-		thisPhysics.offsetX = 16;
+		thisPhysics.width = 28;
+		thisPhysics.height = 28;
+		thisPhysics.offsetX = 18;
 		thisPhysics.offsetY = 26;
 		new DepthSortY(this);
 		const thisFollowTarget = new FollowTarget(this);
@@ -104,7 +104,7 @@ export default class Enemy extends Phaser.GameObjects.Sprite {
 	update(dt: number)
 	{
 		this.stateMachine.update(dt)
-		
+
 		if(this.y < -1000)
 		{
 			// this.despawn()
@@ -265,7 +265,7 @@ export default class Enemy extends Phaser.GameObjects.Sprite {
 		const detect = DetectionBoxes.getComponent(this)
 		detect.removeZones()
 	}
-	
+
 	destoryAndDetach()
 	{
 		const detect = DetectionBoxes.getComponent(this)
