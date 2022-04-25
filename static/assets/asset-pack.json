@@ -80,8 +80,8 @@
             {
                 "url": "assets/floor.png",
                 "frameConfig": {
-                    "frameWidth": 64,
-                    "frameHeight": 64,
+                    "frameWidth": 32,
+                    "frameHeight": 32,
                     "startFrame": 0,
                     "endFrame": -1,
                     "spacing": 0,
