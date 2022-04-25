@@ -44,6 +44,7 @@ export default class Explainer extends Phaser.Scene {
 	create() {
 
 		this.editorCreate();
+		this.back_Button.start()
 	}
 
 	/* END-USER-CODE */
