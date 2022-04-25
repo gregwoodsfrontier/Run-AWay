@@ -2113,39 +2113,6 @@
             "repeat": -1
         },
         {
-            "key": "boss-trap-on",
-            "type": "frame",
-            "frames": [
-                {
-                    "key": "BossTrap-1",
-                    "duration": 0,
-                    "keyframe": false
-                },
-                {
-                    "key": "BossTrap-2",
-                    "duration": 0,
-                    "keyframe": false
-                },
-                {
-                    "key": "BossTrap-3",
-                    "duration": 0,
-                    "keyframe": false
-                },
-                {
-                    "key": "BossTrap-4",
-                    "duration": 0,
-                    "keyframe": false
-                },
-                {
-                    "key": "BossTrap-5",
-                    "duration": 0,
-                    "keyframe": false
-                }
-            ],
-            "frameRate": 9,
-            "skipMissedFrames": true
-        },
-        {
             "key": "empty-break-4",
             "type": "frame",
             "frames": [
@@ -2161,43 +2128,77 @@
             "repeat": -1
         },
         {
-            "key": "empty-break",
+            "key": "gameover-logo",
             "type": "frame",
             "frames": [
                 {
-                    "key": "raw-break-interact",
-                    "frame": 24,
+                    "key": "GameOver-Anim-1",
                     "duration": 0,
                     "keyframe": false
                 },
                 {
-                    "key": "raw-break-interact",
-                    "frame": 25,
+                    "key": "GameOver-Anim-2",
                     "duration": 0,
                     "keyframe": false
                 },
                 {
-                    "key": "raw-break-interact",
-                    "frame": 26,
+                    "key": "GameOver-Anim-3",
                     "duration": 0,
                     "keyframe": false
                 },
                 {
-                    "key": "raw-break-interact",
-                    "frame": 27,
+                    "key": "GameOver-Anim-4",
                     "duration": 0,
                     "keyframe": false
                 },
                 {
-                    "key": "raw-break-interact",
-                    "frame": 28,
+                    "key": "GameOver-Anim-5",
+                    "duration": 0,
+                    "keyframe": false
+                },
+                {
+                    "key": "GameOver-Anim-6",
+                    "duration": 0,
+                    "keyframe": false
+                },
+                {
+                    "key": "GameOver-Anim-7",
+                    "duration": 0,
+                    "keyframe": false
+                },
+                {
+                    "key": "GameOver-Anim-8",
+                    "duration": 0,
+                    "keyframe": false
+                },
+                {
+                    "key": "GameOver-Anim-9",
+                    "duration": 0,
+                    "keyframe": false
+                },
+                {
+                    "key": "GameOver-Anim-10",
+                    "duration": 0,
+                    "keyframe": false
+                },
+                {
+                    "key": "GameOver-Anim-11",
+                    "duration": 0,
+                    "keyframe": false
+                },
+                {
+                    "key": "GameOver-Anim-12",
+                    "duration": 0,
+                    "keyframe": false
+                },
+                {
+                    "key": "GameOver-Anim-13",
                     "duration": 0,
                     "keyframe": false
                 }
             ],
-            "frameRate": 24,
-            "skipMissedFrames": true,
-            "repeat": -1
+            "frameRate": 9,
+            "skipMissedFrames": true
         }
     ],
     "globalTimeScale": 1,

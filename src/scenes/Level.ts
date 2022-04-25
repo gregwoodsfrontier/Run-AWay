@@ -447,6 +447,8 @@ export default class Level extends Phaser.Scene {
 			this.player.setVisible(false)
 			this.playStartLevelAnims()
 
+			// swarm and rock propagator are in onStartLevelAnimsComplete
+			return
 		}
 
 		// bypass if environment is in development
@@ -461,7 +463,15 @@ export default class Level extends Phaser.Scene {
 	update(time: number, delta: number)
 	{
 		this.handleDepthSort()
-		
+		this.checkForGameOver()
+	}
+
+	private checkForGameOver()
+	{
+		if(GameState.hp < 1 || GameState.sanity < 1)
+		{
+			eventsCenter.emit(SCENE_SWITCH_EVENTS.GO_GAMEOVER, "Level")
+		}
 	}
 
 	//@ts-ignore
@@ -685,6 +695,10 @@ export default class Level extends Phaser.Scene {
 		this.enemyTeam.forEach(e => {
 			FollowTarget.getComponent(e).activate()
 		})
+
+		this.SwarmGenerator(80, 384, 10, 3000, 0)
+		this.SwarmGenerator(192, 384, 10, 3000, 1500)
+		this.RocksPropagator(80, -624, 9)
 	}
 
 	private handleBulletSwarm(a: Phaser.Types.Physics.Arcade.GameObjectWithBody, b: Phaser.Types.Physics.Arcade.GameObjectWithBody)
