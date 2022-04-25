@@ -58,9 +58,7 @@ export default class Bootstrap extends Phaser.Scene {
 		if(process.env.NODE_ENV === "development")
 		{
 			// this.createNewGame()
-			// this.startTitleScene()
-			// this.scene.launch("GameOver")
-			this.scene.launch("YouSurvived")
+			this.startTitleScene()
 			return
 		}
 

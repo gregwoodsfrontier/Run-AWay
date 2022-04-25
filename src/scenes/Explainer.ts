@@ -4,6 +4,7 @@
 /* START OF COMPILED CODE */
 
 import Phaser from "phaser";
+import BackButton from "../prefabs/BackButton";
 /* START-USER-IMPORTS */
 /* END-USER-IMPORTS */
 
@@ -26,10 +27,15 @@ export default class Explainer extends Phaser.Scene {
 		this.add.image(160, 320, "Rules-Page");
 
 		// back_Button
-		this.add.image(51, 83, "Back-Button");
+		const back_Button = new BackButton(this, 51, 83);
+		this.add.existing(back_Button);
+
+		this.back_Button = back_Button;
 
 		this.events.emit("scene-awake");
 	}
+
+	private back_Button!: BackButton;
 
 	/* START-USER-CODE */
 

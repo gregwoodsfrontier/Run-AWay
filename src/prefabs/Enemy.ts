@@ -61,7 +61,7 @@ export default class Enemy extends Phaser.GameObjects.Sprite {
 			onEnter: this.onAttackEnter
 		})
 		// .setState(ENEMY_STATE.IDLE)
-		.setState(ENEMY_STATE_KEYS.WALK)
+		.setState(ENEMY_STATE_KEYS.IDLE)
 		this.direction = DIRECTION.BACK
 
 		// create events only for this enemy instance
@@ -86,9 +86,15 @@ export default class Enemy extends Phaser.GameObjects.Sprite {
 
 	start()
 	{
-		this.moveTheUnit(DIRECTION.BACK)
+		// this.moveTheUnit(DIRECTION.BACK)
 		// this.stayStill()
 		this.setEnemyPush(false)
+	}
+
+	startMovement()
+	{
+		this.direction =DIRECTION.BACK
+		this.stateMachine.setState(ENEMY_STATE_KEYS.WALK)
 	}
 
 	private setEnemyPush(boo: boolean)

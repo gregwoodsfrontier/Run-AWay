@@ -61,7 +61,7 @@ export default class Chunk extends Phaser.Scene {
 
 		this.startWorldGen()
 
-		this.handlePlayerInput()
+		// this.handlePlayerInput()
 
 		// this code moves the player down to the beginning of the level (bottom left corner)
 		this.player.x = 48;

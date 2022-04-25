@@ -35,13 +35,15 @@
             "y": 320
         },
         {
-            "type": "Image",
+            "prefabId": "0c404821-dad6-4850-9c69-38740db22f04",
             "id": "bc64b5e1-bdf2-4536-81c4-6dfbf8b816fd",
+            "unlock": [
+                "x",
+                "y"
+            ],
             "label": "back_Button",
+            "scope": "CLASS",
             "components": [],
-            "texture": {
-                "key": "Back-Button"
-            },
             "x": 51,
             "y": 83
         }
