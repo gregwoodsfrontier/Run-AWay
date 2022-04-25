@@ -70,7 +70,7 @@
             "FollowTarget.target": "player",
             "FollowTarget.range": 100,
             "FollowTarget.deadRangeX": 35,
-            "x": 96,
+            "x": -80,
             "y": 384
         },
         {

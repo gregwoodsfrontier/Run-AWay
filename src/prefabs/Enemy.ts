@@ -214,11 +214,11 @@ export default class Enemy extends Phaser.GameObjects.Sprite {
 		}
 
 		// console.log(`swarm-${dirName}-walk`)
-		try {
+		/* try {
 			this.play(`swarm-${dirName}-walk`, true)
 		} catch (err) {
 			console.error(err)
-		}
+		} */
 		// this.play(`swarm-${dirName}-walk`, true)
 	}
 
@@ -275,6 +275,7 @@ export default class Enemy extends Phaser.GameObjects.Sprite {
 
 	despawn()
 	{
+		this.stayStill()
 		this.setActive(false)
 		this.setVisible(false)
 		this.setPosition(-1000, -500, -2000)
