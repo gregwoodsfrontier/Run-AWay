@@ -1968,6 +1968,39 @@
             ],
             "frameRate": 9,
             "skipMissedFrames": true
+        },
+        {
+            "key": "boss-trap-off",
+            "type": "frame",
+            "frames": [
+                {
+                    "key": "BossTrap-5",
+                    "duration": 0,
+                    "keyframe": false
+                },
+                {
+                    "key": "BossTrap-4",
+                    "duration": 0,
+                    "keyframe": false
+                },
+                {
+                    "key": "BossTrap-3",
+                    "duration": 0,
+                    "keyframe": false
+                },
+                {
+                    "key": "BossTrap-2",
+                    "duration": 0,
+                    "keyframe": false
+                },
+                {
+                    "key": "BossTrap-1",
+                    "duration": 0,
+                    "keyframe": false
+                }
+            ],
+            "frameRate": 9,
+            "skipMissedFrames": true
         }
     ],
     "globalTimeScale": 1,
