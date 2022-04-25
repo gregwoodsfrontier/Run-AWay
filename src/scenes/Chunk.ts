@@ -4,9 +4,7 @@
 
 import Phaser from "phaser";
 import Player from "../prefabs/Player";
-import Block from "../prefabs/Block";
-import TileGen from "../manager/TileGen";
-import BlockOptimizer from "../manager/BlockOptimization";
+import Rock from "../prefabs/Rock";
 /* START-USER-IMPORTS */
 import KeyboardInput from "../components/KeyboardInput";
 import JustMovement from "../components/JustMovement";
@@ -14,6 +12,7 @@ import AnimationV2 from "../components/AnimationV2";
 import DepthSortY from "../components/DepthSortY";
 import EndTunnel from "../prefabs/EndTunnel";
 import { seed } from "../main";
+import Block from "../prefabs/Block";
 /* END-USER-IMPORTS */
 
 export default class Chunk extends Phaser.Scene {
@@ -28,37 +27,25 @@ export default class Chunk extends Phaser.Scene {
 
 	editorCreate(): void {
 
-		// cave_test_map_1
-
-		// blocks
-		//important to set the frame to check it in the callback
-		/*9const block3 = new Block(this, 170, 180,"SilverBlock" ) ;
-		const block1 = new Block(this, 170, 208,"CopperBlock" ) ;
-		const block2 = new Block(this, 170, 208,"GoldBlock" ) ;
-		const normalblock = new Block(this, 130, 250,"NormalBlock" ) ;
-		const floorr = new Block(this, 170, 240,"RBorder" ) ;
-		const blocks = [block1,block2,block3, floorr , normalblock]
-		for(var x =0; x<blocks.length; x++){
-			this.add.existing(blocks[x])
-		}*/
-
-		
-
 		// player
-		const player = new Player(this, 193, 446);
+		const player = new Player(this, 148, 474);
 		this.add.existing(player);
+
+		// rock
+		const rock = new Rock(this, 368, 480);
+		this.add.existing(rock);
+
+		// lists
+		const obstacles = [rock];
+
 		this.player = player;
-
-		// const block = new Block(this);
-
-		
+		this.obstacles = obstacles;
 
 		this.events.emit("scene-awake");
 	}
 
 	public player!: Player;
-	
-
+	private obstacles!: Rock[];
 
 	/* START-USER-CODE */
 	public platformer_fun!: Phaser.Tilemaps.Tilemap
@@ -82,7 +69,7 @@ export default class Chunk extends Phaser.Scene {
 
 		const block = new Block(this);
 		this.physics.add.collider(this.player, this.blocks, block.onHit);
-		
+
 	}
 
 	update()

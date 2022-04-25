@@ -2,6 +2,7 @@
     "id": "b685c081-ee5f-4b67-b583-415922c9e2c4",
     "sceneType": "SCENE",
     "settings": {
+        "snapEnabled": true,
         "exportClass": true,
         "autoImport": true,
         "preloadPackFiles": [],
@@ -13,34 +14,6 @@
     },
     "displayList": [
         {
-            "type": "TilemapLayer",
-            "id": "1edc09cf-1d5b-49df-ae2b-9d0b10c8b0be",
-            "label": "floor_1",
-            "scope": "CLASS",
-            "components": [],
-            "y": -960,
-            "tilemapId": "fd3e5dbc-cd6f-447a-9b6b-34fee3410aaa",
-            "layerName": "floor",
-            "tilesets": [
-                "Gamdev jam cate tiles test 1"
-            ]
-        },
-        {
-            "type": "TilemapLayer",
-            "id": "9840a633-38ec-464c-aa28-8785b97ca8f5",
-            "label": "wall_1",
-            "scope": "CLASS",
-            "components": [
-                "TileMapLayerPhysics"
-            ],
-            "y": -960,
-            "tilemapId": "fd3e5dbc-cd6f-447a-9b6b-34fee3410aaa",
-            "layerName": "wall",
-            "tilesets": [
-                "Gamdev jam cate tiles test 1"
-            ]
-        },
-        {
             "prefabId": "e0ddcad0-6688-4c91-8511-b98aa83b6507",
             "id": "42b95460-e481-4d5a-a546-36ecd30eebd5",
             "unlock": [
@@ -50,67 +23,23 @@
             "label": "player",
             "scope": "PUBLIC",
             "components": [],
-            "x": 193,
-            "y": 446
+            "x": 148,
+            "y": 474
         },
         {
-            "prefabId": "57d8a10b-f4c7-4c0f-9397-cde30c2a5293",
-            "id": "d61ec7a6-70e8-4927-99d3-f5f1e147c447",
+            "prefabId": "792be592-4edd-40b5-9eaa-2c4b650603a0",
+            "id": "7a30c4dc-1f81-478b-a94d-d16653e2d79d",
             "unlock": [
                 "x",
                 "y"
             ],
-            "label": "block_1",
-            "scope": "CLASS",
+            "label": "rock",
             "components": [],
-            "x": 130,
-            "y": 208
-        },
-        {
-            "prefabId": "408d4d35-1d26-4f5e-9315-9d890dbf9ae0",
-            "id": "63f44b6a-316d-4ac2-9257-71741dcfd6ba",
-            "unlock": [
-                "x",
-                "y",
-                "FollowTarget.target",
-                "FollowTarget.deadRangeX"
-            ],
-            "label": "enemy_3",
-            "components": [],
-            "FollowTarget.target": "player",
-            "FollowTarget.deadRangeX": 35,
-            "x": 119,
-            "y": 445
-        },
-        {
-            "prefabId": "408d4d35-1d26-4f5e-9315-9d890dbf9ae0",
-            "id": "8002ba82-0b4c-44d4-a61b-e2e237664d68",
-            "unlock": [
-                "x",
-                "y",
-                "FollowTarget.target"
-            ],
-            "label": "enemy_2",
-            "components": [],
-            "FollowTarget.target": "player",
-            "x": 197,
-            "y": 126
+            "x": 368,
+            "y": 480
         }
     ],
-    "plainObjects": [
-        {
-            "id": "fd3e5dbc-cd6f-447a-9b6b-34fee3410aaa",
-            "type": "Tilemap",
-            "label": "cave_test_map_1",
-            "key": "cave-test-map-1",
-            "tilesets": [
-                {
-                    "name": "Gamdev jam cate tiles test 1",
-                    "imageKey": "cave-test-tileset-1"
-                }
-            ]
-        }
-    ],
+    "plainObjects": [],
     "meta": {
         "app": "Phaser Editor 2D - Scene Editor",
         "url": "https://phasereditor2d.com",
@@ -119,11 +48,10 @@
     },
     "lists": [
         {
-            "id": "97ea1992-d8cd-43db-92a5-734f0b5c68b4",
-            "label": "enemyTeam",
+            "id": "09bb5e6b-17f3-445f-b8dd-5e7543e2ea4b",
+            "label": "obstacles",
             "objectIds": [
-                "8002ba82-0b4c-44d4-a61b-e2e237664d68",
-                "63f44b6a-316d-4ac2-9257-71741dcfd6ba"
+                "7a30c4dc-1f81-478b-a94d-d16653e2d79d"
             ]
         }
     ]
