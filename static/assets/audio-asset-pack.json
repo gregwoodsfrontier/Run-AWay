@@ -52,13 +52,6 @@
             },
             {
                 "url": [
-                    "assets/AUDIO/SFX/Footsteps.wav"
-                ],
-                "type": "audio",
-                "key": "Footsteps"
-            },
-            {
-                "url": [
                     "assets/AUDIO/SFX/FX_-_Energy_Field_Fade_Out.wav"
                 ],
                 "type": "audio",
@@ -80,6 +73,13 @@
             },
             {
                 "url": [
+                    "assets/AUDIO/SFX/Footsteps.wav"
+                ],
+                "type": "audio",
+                "key": "Footsteps"
+            },
+            {
+                "url": [
                     "assets/AUDIO/MUSIC/Gameplay_Track_1.wav"
                 ],
                 "type": "audio",
@@ -98,6 +98,13 @@
                 ],
                 "type": "audio",
                 "key": "LaserGun"
+            },
+            {
+                "url": [
+                    "assets/AUDIO/SFX/LaserGunEquip.wav"
+                ],
+                "type": "audio",
+                "key": "LaserGunEquip"
             },
             {
                 "url": [
