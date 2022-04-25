@@ -9,6 +9,7 @@ import Enemy from "../prefabs/Enemy";
 import FollowTarget from "../components/FollowTarget";
 import PSD from "../prefabs/PSD";
 import Rock from "../prefabs/Rock";
+import MudTrap from "../prefabs/MudTrap";
 /* START-USER-IMPORTS */
 import DepthSortY from "../components/DepthSortY";
 import { DIRECTION } from "../types/direction";
@@ -83,6 +84,10 @@ export default class Level extends Phaser.Scene {
 		// rock_4
 		const rock_4 = new Rock(this, 208, 0);
 		this.add.existing(rock_4);
+
+		// raw_break_interact88
+		const raw_break_interact88 = new MudTrap(this, 149, 51);
+		this.add.existing(raw_break_interact88);
 
 		// lists
 		const enemyTeam = [enemyA];

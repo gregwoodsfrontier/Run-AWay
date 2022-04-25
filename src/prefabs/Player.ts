@@ -121,6 +121,9 @@ export default class Player extends Phaser.GameObjects.Sprite {
 
 		const selectSquareComp = SelectionSquare.getComponent(this)
 		selectSquareComp.setDir(this.direction)
+
+		// ensure the player tint and speed unless in mud
+		this.outMudCondition()
 		// this.scene.events.emit('selection-sq', this.direction, 50)
 	}
 

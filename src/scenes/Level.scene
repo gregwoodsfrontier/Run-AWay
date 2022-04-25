@@ -161,6 +161,18 @@
             "components": [],
             "x": 208,
             "y": 0
+        },
+        {
+            "prefabId": "d454bc29-6665-42e0-86fe-c314e9667790",
+            "id": "86dd934c-bc18-4ca0-9327-8c718e0d93d5",
+            "unlock": [
+                "x",
+                "y"
+            ],
+            "label": "raw_break_interact88",
+            "components": [],
+            "x": 149,
+            "y": 51
         }
     ],
     "plainObjects": [
