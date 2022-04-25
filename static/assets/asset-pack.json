@@ -32,6 +32,19 @@
                 "key": "back-gunonly-4"
             },
             {
+                "url": "assets/Borders.png",
+                "frameConfig": {
+                    "frameWidth": 32,
+                    "frameHeight": 32,
+                    "startFrame": 0,
+                    "endFrame": -1,
+                    "spacing": 0,
+                    "margin": 0
+                },
+                "type": "spritesheet",
+                "key": "Borders"
+            },
+            {
                 "url": "assets/END GAME/YouSurvived/ByTeam.png",
                 "type": "image",
                 "key": "ByTeam"
@@ -58,6 +71,16 @@
                 "url": "assets/Transitions/Dithered Triangles.png",
                 "type": "image",
                 "key": "Dithered Triangles"
+            },
+            {
+                "url": "assets/EndTunnel.png",
+                "type": "image",
+                "key": "EndTunnel"
+            },
+            {
+                "url": "assets/floor.png",
+                "type": "image",
+                "key": "floor"
             },
             {
                 "url": "assets/gunOnly/front-gunonly/front-gunonly-1.png",

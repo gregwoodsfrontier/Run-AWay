@@ -135,7 +135,7 @@ export default class Bootstrap extends Phaser.Scene {
 	{
 		// this.scene.stop("Title")
 		// this.scene.launch("Chunk")
-		this.scene.launch("Level")
+		this.scene.launch("Chunk")
 		this.scene.launch("UI")
 	}
 
