@@ -16,7 +16,7 @@ import SelectionSquare from "../components/SelectionSquare";
 import KeyboardInput from "../components/KeyboardInput";
 import { PSD_STATE } from "../types/PSD";
 import eventsCenter from "../EventsCenter";
-import { SCENE_SWITCH_EVENTS } from "../types/scenes";
+import { AUDIO_PLAY_EVENTS, SCENE_SWITCH_EVENTS } from "../types/scenes";
 import { ENEMY_STATE_KEYS } from "../types/enemyStateKeys";
 import psdField from "../prefabs/psdField";
 // import DetectionBoxes from "../components/DetectionBoxes";
@@ -391,11 +391,21 @@ export default class Level extends Phaser.Scene {
 	lastfired = 0
 	#destination!: SelectionSquare
 
+	gamePlayTrack!: Phaser.Sound.BaseSound
+	deployPSDTrack!: Phaser.Sound.BaseSound
+	fieldStartTrack!: Phaser.Sound.BaseSound
+	fieldLoopTrack!: Phaser.Sound.BaseSound
+	fieldFadeTrack!: Phaser.Sound.BaseSound
+	collectMineral!: Phaser.Sound.BaseSound
+
+
 	create() {
 
 		this.editorCreate();
+		// this.loadSoundAssets()
 		// eventcenter emit to tell Bootstrap which scene is active now
 		eventsCenter.emit(SCENE_SWITCH_EVENTS.UPDATE_ACTIVE, "Level")
+		eventsCenter.emit(AUDIO_PLAY_EVENTS.GAMEPLAY)
 
 		this.player.play('player-front-idle')
 		this.floor_1.depth = this.wall_1.y * 2
@@ -473,6 +483,7 @@ export default class Level extends Phaser.Scene {
 	{
 		if(GameState.hp < 1 || GameState.sanity < 1)
 		{
+			this.sound.stopAll()
 			eventsCenter.emit(SCENE_SWITCH_EVENTS.GO_GAMEOVER, "Level")
 		}
 	}
@@ -589,7 +600,7 @@ export default class Level extends Phaser.Scene {
 	private handlePlayerSwarm(p: any, e: any)
 	{
 		const enemy = e as Enemy
-		GameState.changeHealthBy(-10)
+		GameState.changeHealthBy(-5)
 		enemy.despawn()
 	}
 

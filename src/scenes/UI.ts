@@ -10,7 +10,7 @@ import KeyboardInput from "../components/KeyboardInput";
 import { autorun } from "mobx";
 import { GameState } from "../manager/gameState";
 import eventsCenter from "../EventsCenter";
-import { SCENE_SWITCH_EVENTS } from "../types/scenes";
+import { SCENE_SWITCH_EVENTS, AUDIO_PLAY_EVENTS } from "../types/scenes";
 
 enum POINTS_TYPE {
 	HEALTH,
@@ -250,6 +250,7 @@ export default class UI extends Phaser.Scene {
 			this.menu_Button.setTint(0x00ffff)
 		}
 		menuButtonComp.handlePointerDown = () => {
+			eventsCenter.emit(AUDIO_PLAY_EVENTS.MENUSELECT)
 			this.menu_Button.setTexture('Menu Button Pressed')
 		}
 		menuButtonComp.handlePointerUp = () => {

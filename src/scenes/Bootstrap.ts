@@ -7,7 +7,25 @@ import Phaser from "phaser";
 
 /* START-USER-IMPORTS */
 import eventsCenter from "../EventsCenter";
-import { SCENE_SWITCH_EVENTS } from "../types/scenes";
+import { AUDIO_PLAY_EVENTS, SCENE_SWITCH_EVENTS } from "../types/scenes";
+enum GAME_AUDIO {
+	GAMEPLAY,
+	DEPLOYPSD,
+	FIELD_FADEOUT,
+	FIELD_LOOP,
+	FIELD_START,
+	COLLECT,
+	MENU_SELECT
+}
+const AUDIOKEYS = [
+	'Gameplay_Track_1',
+	'DeployPSD',
+	'Energy_Field_Fade_Out',
+	'Energy_Field_Loop',
+	'Energy_Field_Start',
+	'CollectMineral',
+	'MenuSelect'
+]
 /* END-USER-IMPORTS */
 
 
@@ -36,7 +54,7 @@ export default class Bootstrap extends Phaser.Scene {
 
 	/* START-USER-CODE */
 	private activeGame = ""
-
+	private allAudio = [] as Phaser.Sound.BaseSound[]
 	// Write your code here
 
 	create() {
@@ -60,13 +78,51 @@ export default class Bootstrap extends Phaser.Scene {
 		eventsCenter.on(SCENE_SWITCH_EVENTS.PAUSE_TO_TITLE, this.pauseToTitle, this)
 		eventsCenter.on(SCENE_SWITCH_EVENTS.PAUSE_TO_RESTART, this.pauseToRestart, this)
 
-		if(process.env.NODE_ENV === "development")
+		/* if(process.env.NODE_ENV === "development")
 		{
 			this.createNewGame()
 			return
-		}
+		} */
+
+		this.loadSoundAssets()
+		this.defineAudioEvents()
 
 		this.startTitleScene()
+	}
+
+	private defineAudioEvents()
+	{
+		eventsCenter.on(AUDIO_PLAY_EVENTS.GAMEPLAY, () => {
+			this.allAudio[GAME_AUDIO.GAMEPLAY].play()
+		}, this)
+
+		eventsCenter.on(AUDIO_PLAY_EVENTS.GAMEPLAY_STOP, () => {
+			if(this.allAudio[GAME_AUDIO.GAMEPLAY].isPlaying)
+			{
+				this.allAudio[GAME_AUDIO.GAMEPLAY].stop()
+			}
+		}, this)
+
+		eventsCenter.on(AUDIO_PLAY_EVENTS.MENUSELECT, () => {
+			this.allAudio[GAME_AUDIO.MENU_SELECT].play()
+		})
+	}
+
+	private loadSoundAssets()
+	{
+		AUDIOKEYS.forEach((key, idx) => {
+			if(idx === GAME_AUDIO.FIELD_LOOP)
+			{
+				this.allAudio[idx] = this.sound.add(key, {
+					loop: true,
+					volume: 1
+				})
+			}
+			else
+			{
+				this.allAudio[idx] = this.sound.add(key)
+			}
+		})
 	}
 
 	private updateActiveScene(key: string)
@@ -157,6 +213,7 @@ export default class Bootstrap extends Phaser.Scene {
 
 		if(this.scene.isPaused(this.activeGame))
 		{
+			this.sound.resumeAll()
 			this.scene.resume(this.activeGame)
 		}
 		

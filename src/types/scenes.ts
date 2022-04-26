@@ -37,3 +37,14 @@ export enum SCENE_SWITCH_EVENTS {
     PAUSE_TO_RESTART = 'pause-to-restart',
     PAUSE_TO_EXPLAINER = 'pause-to-explain'
 }
+
+export enum AUDIO_PLAY_EVENTS {
+    GAMEPLAY = 'audio-gameplay',
+    GAMEPLAY_STOP = 'audio-gameplay-stop',
+    DEPLOY = 'audio-deploy',
+    FIELD_FADE = 'audio-field-fade',
+    FIELD_LOOP = 'audio-field-loop',
+    FIELD_START = 'audio-field-start',
+    COLLECT = 'audio-collect',
+    MENUSELECT = 'audio-menu-select'
+}

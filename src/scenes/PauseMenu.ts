@@ -8,7 +8,7 @@ import Button from "../components/Button";
 import ButtonScaleComp from "../components/ButtonScaleComp";
 /* START-USER-IMPORTS */
 import eventsCenter from "../EventsCenter";
-import { SCENE_SWITCH_EVENTS } from "../types/scenes";
+import { AUDIO_PLAY_EVENTS, SCENE_SWITCH_EVENTS } from "../types/scenes";
 
 interface IButtonBehaviorArgs {
 	button: Phaser.GameObjects.Image,
@@ -167,7 +167,10 @@ export default class PauseMenu extends Phaser.Scene {
 	create() {
 
 		this.editorCreate();
-		this.explainer.setDepth(10000)
+		this.time.delayedCall(500, () => {
+			this.sound.pauseAll()
+		}, undefined, this)
+		
 		// this.setMainBehavior()
 		this.setCustomBehavior({
 			button: this.mainMenuButton,
@@ -242,6 +245,7 @@ export default class PauseMenu extends Phaser.Scene {
 			button.setTexture(upTexture)
 		}
 		buttonComp.handlePointerDown = () => {
+			eventsCenter.emit(AUDIO_PLAY_EVENTS.MENUSELECT)
 			button.setTexture(downTexture)
 		}
 		buttonComp.handlePointerUp = () => {

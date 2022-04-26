@@ -6,9 +6,8 @@
 import Phaser from "phaser";
 import Button from "../components/Button";
 /* START-USER-IMPORTS */
-import Button from "../components/Button";
 import eventsCenter from "../EventsCenter";
-import { SCENE_SWITCH_EVENTS } from "../types/scenes";
+import { SCENE_SWITCH_EVENTS, AUDIO_PLAY_EVENTS } from "../types/scenes";
 /* END-USER-IMPORTS */
 
 export default class Title extends Phaser.Scene {
@@ -66,16 +65,25 @@ export default class Title extends Phaser.Scene {
 
 	/* START-USER-CODE */
 	private endScale = 1.2
-
+	private introTrack!: Phaser.Sound.BaseSound
+	private startAnimSFX!: Phaser.Sound.BaseSound
 	// Write your code here
 
 	create() {
 
 		this.editorCreate();
 
+		this.introTrack = this.sound.add('Ambient_Intro_Track_v3', {
+			loop: true
+		})
+		this.startAnimSFX = this.sound.add('Start-Anim-SFX')
+		
+		this.introTrack.play()
+
 		Button.getComponent(this.start_Button).handlePointerUp = () => {
 			this.start_Button.setTexture("Start Button")
 			this.hideUIElement()
+			this.introTrack.stop()
 		}
 
 		Button.getComponent(this.about_Button).handlePointerUp = () => {
@@ -83,10 +91,12 @@ export default class Title extends Phaser.Scene {
 		}
 
 		Button.getComponent(this.start_Button).handlePointerDown = () => {
+			eventsCenter.emit(AUDIO_PLAY_EVENTS.MENUSELECT)
 			this.start_Button.setTexture("Start Button Pressed")
 		}
 
 		Button.getComponent(this.about_Button).handlePointerDown = () => {
+			eventsCenter.emit(AUDIO_PLAY_EVENTS.MENUSELECT)
 			this.about_Button.setTexture("About Button Pressed")
 		}
 
@@ -143,6 +153,7 @@ export default class Title extends Phaser.Scene {
 		}
 
 		this.start_Anim1.play('start-anim', true)
+		this.startAnimSFX.play()
 	}
 
 	private scaleDown(button: Phaser.GameObjects.Image)
@@ -196,6 +207,7 @@ export default class Title extends Phaser.Scene {
 
 	private startNewGame()
 	{
+		this.startAnimSFX.stop()
 		eventsCenter.emit(SCENE_SWITCH_EVENTS.TO_GAME)
 	}
 
