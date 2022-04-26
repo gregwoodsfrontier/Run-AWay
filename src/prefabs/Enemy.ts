@@ -8,7 +8,6 @@ import Physics from "../components/Physics";
 import DepthSortY from "../components/DepthSortY";
 import AnimationV2 from "../components/AnimationV2";
 import JustMovement from "../components/JustMovement";
-import DetectionBoxes from "../components/DetectionBoxes";
 import FollowTarget from "../components/FollowTarget";
 /* START-USER-IMPORTS */
 import StateMachine from "../stateMachine";
@@ -33,7 +32,6 @@ export default class Enemy extends Phaser.GameObjects.Sprite {
 		new AnimationV2(this);
 		const thisJustMovement = new JustMovement(this);
 		thisJustMovement.speed = 90;
-		new DetectionBoxes(this);
 		const thisFollowTarget = new FollowTarget(this);
 		thisFollowTarget.range = 300;
 		thisFollowTarget.deadRangeX = 20;
@@ -308,14 +306,14 @@ export default class Enemy extends Phaser.GameObjects.Sprite {
 		body.enable = false
 		this.scene.physics.world.remove(body)
 
-		const detect = DetectionBoxes.getComponent(this)
-		detect.removeZones()
+		// const detect = DetectionBoxes.getComponent(this)
+		// detect.removeZones()
 	}
 
 	destoryAndDetach()
 	{
-		const detect = DetectionBoxes.getComponent(this)
-		detect.removeZones()
+		// const detect = DetectionBoxes.getComponent(this)
+		// detect.removeZones()
 		this.destroy()
 	}
 

@@ -22,7 +22,6 @@
                 "DepthSortY",
                 "AnimationV2",
                 "JustMovement",
-                "DetectionBoxes",
                 "FollowTarget"
             ],
             "Physics.width": 28,
