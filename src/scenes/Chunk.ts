@@ -21,6 +21,8 @@ import { SCENE_SWITCH_EVENTS } from "../types/scenes";
 import { DIRECTION } from "../types/direction";
 import MudTrap from "../prefabs/MudTrap";
 import { time } from "console";
+import Blasts from "../prefabs/Blasts";
+import BlastsTrap from "../prefabs/BlastsTrap";
 
 //Variables
 let inMud = false;
@@ -87,6 +89,10 @@ export default class Chunk extends Phaser.Scene {
 		// this code moves the player down to the beginning of the level (bottom left corner)
 		this.player.x = 48;
 		this.player.y = 640*(20+Math.round(((seed/6)/999)*100))+640-this.player.height;
+		/*const testblast = new BlastsTrap(this, this.player.x +1 , this.player.y -1000)
+		testblast.player = this.player
+		testblast.Blocks = this.blocks
+		this.add.existing(testblast)*/
 		
 		this.initObjectPool()
 
@@ -94,16 +100,18 @@ export default class Chunk extends Phaser.Scene {
         const input = KeyboardInput.getComponent(this.player)
         input.setActive(true)
 
-		const block = new Block(this);
+		const block = new Block(this)
+		const blasts = new BlastsTrap(this);
+		//const blaststrap = new BlastsTrap(this)
 		
 		//Bullet event
 		this.events.on('create-bullet', this.handleBulletUpdate, this)
-
 
 		//collision
 			// Bullet Collision
 		this.physics.add.collider(this.bulletGroup, this.blocks, this.onBulletBlockHit);
 		this.physics.add.collider(this.bulletGroup, this.mud, this.onBulletMudHit);
+		this.physics.add.collider(this.bulletGroup, this.proxymines, this.DestroyBlast);
 			//Player collision
 		this.physics.add.collider(this.player, this.blocks, block.onPlayerHit);
 		this.physics.add.collider(this.player, this.mud, () =>{this.onPlayerMud()});
@@ -128,6 +136,8 @@ export default class Chunk extends Phaser.Scene {
 			this.add.existing(blocks[i]);
 		}
 
+		this.blocks = blocks;
+
 		for(let i = 0; i < this.mud.length; i++)
 		{
 			this.add.existing(this.mud[i]);
@@ -136,12 +146,14 @@ export default class Chunk extends Phaser.Scene {
 		for(let i = 0; i < this.proxymines.length; i++)
 		{
 			this.add.existing(this.proxymines[i]);
+			this.proxymines[i].player = this.player;
+			this.proxymines[i].walls = this.blocks;
 		}
 
 		this.add.existing(this.tunnel);
 
 		// apply blocks to this.blocks
-		this.blocks = blocks;
+		
 	}
 
 	optimize()
@@ -280,6 +292,15 @@ export default class Chunk extends Phaser.Scene {
 			}
 		});
 	}
+
+	DestroyBlast(a , b){
+		const bullet = a as Bullet;
+		bullet.despawn()
+		const blast = b as BlastsTrap
+		blast.timer.destroy()
+		blast.destroy()
+	}
+
 
 
 	//_____________________________________________________________________

@@ -4,6 +4,7 @@
 /* START OF COMPILED CODE */
 
 import Phaser from "phaser";
+import Physics from "../components/Physics";
 /* START-USER-IMPORTS */
 /* END-USER-IMPORTS */
 
@@ -19,9 +20,6 @@ export default class Blasts extends Phaser.GameObjects.Sprite {
 		/* END-USER-CTR-CODE */
 	}
 
-	DestroyBlasts(obj1?:Phaser.GameObjects.Sprite , obj2? :Phaser.GameObjects.Sprite){
-		obj1.destroy();
-	}
 	DamagePlayer(obj1?:Phaser.GameObjects.Sprite , obj2? :Phaser.GameObjects.Sprite){
 		//set the player's damage
 	}
