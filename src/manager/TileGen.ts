@@ -36,6 +36,7 @@ export default class TileGen
 
         // generate world and get list of tiles
         const tempSeed = Phaser.Math.Between(100, 999)
+        scene.events.emit('send-seed', tempSeed)
 
         var t = world.CreateWorld(Math.round(tempSeed));
 
