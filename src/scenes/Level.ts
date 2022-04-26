@@ -577,6 +577,7 @@ export default class Level extends Phaser.Scene {
 
 		bullet.despawn()
 
+		eventsCenter.emit(AUDIO_PLAY_EVENTS.TARGET_HIT)
 		rock.damage(1)
 
 		// rock.destroy()
