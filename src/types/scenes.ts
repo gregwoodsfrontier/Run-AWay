@@ -20,6 +20,7 @@ export interface ITitleData
 }
 
 export enum SCENE_SWITCH_EVENTS {
+    UPDATE_ACTIVE = 'update-active',
     TO_PAUSE = 'to-pause',
     TO_GAME = 'to-game',
     RESUME_GAME = 'resume-game',
@@ -31,5 +32,8 @@ export enum SCENE_SWITCH_EVENTS {
     TO_CHUNKS = 'to-chunks',
     TO_TITLE = 'to-title',
     BACK_TO_GAME = 'back-to-game',
-    TO_BOSS = 'to-boss'
+    TO_BOSS = 'to-boss',
+    PAUSE_TO_TITLE = 'pause-to-title',
+    PAUSE_TO_RESTART = 'pause-to-restart',
+    PAUSE_TO_EXPLAINER = 'pause-to-explain'
 }

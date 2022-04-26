@@ -404,6 +404,8 @@ export default class Level extends Phaser.Scene {
 	create() {
 
 		this.editorCreate();
+		// eventcenter emit to tell Bootstrap which scene is active now
+		eventsCenter.emit(SCENE_SWITCH_EVENTS.UPDATE_ACTIVE, "Level")
 
 		this.player.play('player-front-idle')
 		this.floor_1.depth = this.wall_1.y * 2

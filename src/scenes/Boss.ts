@@ -6,6 +6,8 @@
 import Phaser from "phaser";
 import Player from "../prefabs/Player";
 /* START-USER-IMPORTS */
+import eventsCenter from "../EventsCenter";
+import { SCENE_SWITCH_EVENTS } from "../types/scenes";
 /* END-USER-IMPORTS */
 
 export default class Boss extends Phaser.Scene {
@@ -52,6 +54,7 @@ export default class Boss extends Phaser.Scene {
 	create() {
 
 		this.editorCreate();
+		eventsCenter.emit(SCENE_SWITCH_EVENTS.UPDATE_ACTIVE, "Boss")
 	}
 
 	/* END-USER-CODE */

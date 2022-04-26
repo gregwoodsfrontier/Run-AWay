@@ -48,72 +48,6 @@
         },
         {
             "type": "Image",
-            "id": "edc7af99-915f-435a-8155-fa442120d4cf",
-            "label": "music_Button",
-            "components": [],
-            "texture": {
-                "key": "Music-Button"
-            },
-            "x": 76,
-            "y": 292
-        },
-        {
-            "type": "Image",
-            "id": "e3686f0a-92ae-49f2-8471-fc89908bfa71",
-            "label": "sFX_Button",
-            "components": [],
-            "texture": {
-                "key": "SFX-Button"
-            },
-            "x": 69,
-            "y": 323
-        },
-        {
-            "type": "Image",
-            "id": "2557a7ca-2aa2-4966-b613-a7878da3d526",
-            "label": "rules_Button",
-            "components": [],
-            "texture": {
-                "key": "Rules-Button"
-            },
-            "x": 78,
-            "y": 213
-        },
-        {
-            "type": "Image",
-            "id": "78b913d4-9012-4c83-90e7-28a8fc3fa466",
-            "label": "mainMenu_Button",
-            "components": [],
-            "texture": {
-                "key": "MainMenu-Button"
-            },
-            "x": 90,
-            "y": 181
-        },
-        {
-            "type": "Image",
-            "id": "a667684b-bdc1-4034-a453-af3803be1e1c",
-            "label": "newGame_Button",
-            "components": [],
-            "texture": {
-                "key": "NewGame-Button"
-            },
-            "x": 88,
-            "y": 151
-        },
-        {
-            "type": "Image",
-            "id": "60f2ad12-0f3a-4f33-a8ed-f70887f00f01",
-            "label": "resume_Button",
-            "components": [],
-            "texture": {
-                "key": "Resume-Button"
-            },
-            "x": 83,
-            "y": 121
-        },
-        {
-            "type": "Image",
             "id": "2563a201-047e-40fb-84fc-83aad18efd57",
             "label": "sliderBar",
             "components": [],
@@ -153,7 +87,7 @@
             "texture": {
                 "key": "Slider-Button"
             },
-            "x": 130,
+            "x": 188,
             "y": 292
         },
         {
@@ -197,14 +131,78 @@
             "texture": {
                 "key": "Slider-Button"
             },
-            "x": 130,
+            "x": 188,
+            "y": 323
+        },
+        {
+            "type": "Image",
+            "id": "e55ab0ce-ee6b-461b-b1f1-9326c2e53b53",
+            "label": "slider_Up_Button_Music",
+            "scope": "CLASS",
+            "components": [
+                "Button",
+                "ButtonScaleComp"
+            ],
+            "texture": {
+                "key": "Slider-Up-Button"
+            },
+            "x": 260,
+            "y": 292
+        },
+        {
+            "type": "Image",
+            "id": "a0033365-26a1-4c6d-a1b6-f7357414a957",
+            "label": "slider_Up_Button_SFX",
+            "scope": "CLASS",
+            "components": [
+                "Button",
+                "ButtonScaleComp"
+            ],
+            "texture": {
+                "key": "Slider-Up-Button"
+            },
+            "x": 260,
+            "y": 323
+        },
+        {
+            "type": "Image",
+            "id": "47a2a73d-9b0d-43d5-90df-85f09a0bd88a",
+            "label": "slider_Down_Button_Music",
+            "scope": "CLASS",
+            "components": [
+                "Button",
+                "ButtonScaleComp"
+            ],
+            "texture": {
+                "key": "Slider-Down-Button"
+            },
+            "x": 116,
+            "y": 292
+        },
+        {
+            "type": "Image",
+            "id": "0b8f26d3-7e0a-4be8-8bd6-a061d232e2a4",
+            "label": "slider_Down_Button_SFX",
+            "scope": "CLASS",
+            "components": [
+                "Button",
+                "ButtonScaleComp"
+            ],
+            "texture": {
+                "key": "Slider-Down-Button"
+            },
+            "x": 116,
             "y": 323
         },
         {
             "type": "Image",
             "id": "2f9af66e-22de-47e4-a367-c81ad7f68c51",
-            "label": "mainMenu_Button_Selected",
-            "components": [],
+            "label": "mainMenuButton",
+            "scope": "CLASS",
+            "components": [
+                "Button",
+                "ButtonScaleComp"
+            ],
             "texture": {
                 "key": "MainMenu-Button-Selected"
             },
@@ -214,7 +212,8 @@
         {
             "type": "Image",
             "id": "9ef33296-da92-4ce5-85ab-fb29f93887b2",
-            "label": "music_Button_Selected",
+            "label": "musicButton",
+            "scope": "CLASS",
             "components": [],
             "texture": {
                 "key": "Music-Button-Selected"
@@ -225,7 +224,8 @@
         {
             "type": "Image",
             "id": "df42eefa-1992-4dcb-a0cd-a260e0382fbe",
-            "label": "sFX_Button_Selected",
+            "label": "sFXButton",
+            "scope": "CLASS",
             "components": [],
             "texture": {
                 "key": "SFX-Button-Selected"
@@ -235,53 +235,13 @@
         },
         {
             "type": "Image",
-            "id": "e55ab0ce-ee6b-461b-b1f1-9326c2e53b53",
-            "label": "slider_Up_Button",
-            "components": [],
-            "texture": {
-                "key": "Slider-Up-Button"
-            },
-            "x": 260,
-            "y": 292
-        },
-        {
-            "type": "Image",
-            "id": "a0033365-26a1-4c6d-a1b6-f7357414a957",
-            "label": "slider_Up_Button_1",
-            "components": [],
-            "texture": {
-                "key": "Slider-Up-Button"
-            },
-            "x": 260,
-            "y": 323
-        },
-        {
-            "type": "Image",
-            "id": "47a2a73d-9b0d-43d5-90df-85f09a0bd88a",
-            "label": "slider_Down_Button",
-            "components": [],
-            "texture": {
-                "key": "Slider-Down-Button"
-            },
-            "x": 116,
-            "y": 292
-        },
-        {
-            "type": "Image",
-            "id": "0b8f26d3-7e0a-4be8-8bd6-a061d232e2a4",
-            "label": "slider_Down_Button_1",
-            "components": [],
-            "texture": {
-                "key": "Slider-Down-Button"
-            },
-            "x": 116,
-            "y": 323
-        },
-        {
-            "type": "Image",
             "id": "e3c1b3f2-08f8-4239-9f6b-11c4861dd889",
-            "label": "resume_Button_Selected",
-            "components": [],
+            "label": "resumeButton",
+            "scope": "CLASS",
+            "components": [
+                "Button",
+                "ButtonScaleComp"
+            ],
             "texture": {
                 "key": "Resume-Button-Selected"
             },
@@ -291,8 +251,12 @@
         {
             "type": "Image",
             "id": "e6522e31-8985-4cbd-886f-a855bb542802",
-            "label": "rules_Button_Selected",
-            "components": [],
+            "label": "rulesButton",
+            "scope": "CLASS",
+            "components": [
+                "Button",
+                "ButtonScaleComp"
+            ],
             "texture": {
                 "key": "Rules-Button-Selected"
             },
@@ -302,13 +266,31 @@
         {
             "type": "Image",
             "id": "af182087-24d9-4c99-aff1-a75b83243740",
-            "label": "newGame_Button_Selected",
-            "components": [],
+            "label": "newGameButton",
+            "scope": "CLASS",
+            "components": [
+                "Button",
+                "ButtonScaleComp"
+            ],
             "texture": {
                 "key": "NewGame-Button-Selected"
             },
             "x": 88,
             "y": 151
+        },
+        {
+            "type": "Image",
+            "id": "78ffdda3-f16f-4c5f-a278-cd86e42e2991",
+            "label": "explainer",
+            "scope": "CLASS",
+            "components": [
+                "Button"
+            ],
+            "texture": {
+                "key": "UI-Explainer-window"
+            },
+            "x": 525,
+            "y": 304
         }
     ],
     "plainObjects": [],
