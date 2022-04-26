@@ -116,6 +116,33 @@ export default class Bootstrap extends Phaser.Scene {
 				this.allAudio[i].play()
 			}, this)
 		}
+
+		const stopEvents = [
+			{
+				event: AUDIO_PLAY_EVENTS.GAMEPLAY_STOP, 
+				sound: GAME_AUDIO.GAMEPLAY
+			},
+			{
+				event: AUDIO_PLAY_EVENTS.PLAYER_FOOT_STOP, 
+				sound: GAME_AUDIO.PLAYER_FOOTSTEPS
+			},
+			{
+				event: AUDIO_PLAY_EVENTS.ENEMY_FOOT_STOP, 
+				sound: GAME_AUDIO.ENEMY_FOOTSTEPS
+			}
+		]
+
+		for(let i = 0; i < stopEvents.length; i++)
+		{
+			const sndidx = stopEvents[i].sound
+
+			eventsCenter.on(stopEvents[i].event, () => {
+				if(this.allAudio[sndidx].isPlaying)
+				{
+					this.allAudio[sndidx].stop()
+				}
+			}, this)
+		}
 		
 		eventsCenter.on(AUDIO_PLAY_EVENTS.GAMEPLAY_STOP, () => {
 			if(this.allAudio[GAME_AUDIO.GAMEPLAY].isPlaying)
@@ -123,6 +150,13 @@ export default class Bootstrap extends Phaser.Scene {
 				this.allAudio[GAME_AUDIO.GAMEPLAY].stop()
 			}
 		}, this)
+
+		eventsCenter.on(AUDIO_PLAY_EVENTS.GAMEPLAY_STOP, () => {
+			if(this.allAudio[GAME_AUDIO.GAMEPLAY].isPlaying)
+			{
+				this.allAudio[GAME_AUDIO.GAMEPLAY].stop()
+			}
+		})
 
 		/* eventsCenter.on(AUDIO_PLAY_EVENTS.GAMEPLAY, () => {
 			this.allAudio[GAME_AUDIO.GAMEPLAY].play()
@@ -146,6 +180,13 @@ export default class Bootstrap extends Phaser.Scene {
 	{
 		AUDIOKEYS.forEach((key, idx) => {
 			if(idx === GAME_AUDIO.FIELD_LOOP)
+			{
+				this.allAudio[idx] = this.sound.add(key, {
+					loop: true,
+					volume: 1
+				})
+			}
+			else if(idx === GAME_AUDIO.PLAYER_FOOTSTEPS)
 			{
 				this.allAudio[idx] = this.sound.add(key, {
 					loop: true,

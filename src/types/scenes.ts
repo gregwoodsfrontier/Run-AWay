@@ -49,5 +49,7 @@ export enum AUDIO_PLAY_EVENTS {
     MENUSELECT = 'audio-menu-select',
     PLAYER_FOOT = 'audio-player-footsteps',
     ENEMY_FOOT = 'audio-enemy-footsteps',
-    TARGET_HIT = 'audio-target-hit'
+    TARGET_HIT = 'audio-target-hit',
+    PLAYER_FOOT_STOP = 'audio-player-footsteps-stop',
+    ENEMY_FOOT_STOP = 'audio-enemy-footsteps-stop',
 }
