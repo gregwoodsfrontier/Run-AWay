@@ -776,6 +776,7 @@ export default class Level extends Phaser.Scene {
 
 		if(bullet && this.time.now > this.lastfired)
 		{
+			eventsCenter.emit(AUDIO_PLAY_EVENTS.LASERGUN)
 			bullet.fire(this.player.x, this.player.y)
 
 			this.setBulletRotationAndVel(bullet, dir)

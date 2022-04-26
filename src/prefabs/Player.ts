@@ -299,6 +299,7 @@ export default class Player extends Phaser.GameObjects.Sprite {
 
 			if(!this.flipSwitch)
 			{
+				eventsCenter.emit(AUDIO_PLAY_EVENTS.LASERGUN_EQUIP)
 				this.updateHoldDir()
 				this.playerHold.stateMachine.setState(HOLD_COMP_STATE.IDLE)
 				this.stateMachine.setState(PLAYER_STATE.HOLD_IDLE)
@@ -307,6 +308,7 @@ export default class Player extends Phaser.GameObjects.Sprite {
 				return
 			}
 
+			eventsCenter.emit(AUDIO_PLAY_EVENTS.LASERGUN_EQUIP)
 			this.playerHold.stateMachine.setState(HOLD_COMP_STATE.EMPTY)
 			this.stateMachine.setState(PLAYER_STATE.IDLE)
 			this.playerPSD.setHoldState(false)
