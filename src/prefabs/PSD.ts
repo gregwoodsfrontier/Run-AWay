@@ -5,9 +5,11 @@
 
 import Phaser from "phaser";
 import Physics from "../components/Physics";
-import { GameState } from "../manager/gameState";
 /* START-USER-IMPORTS */
+import eventsCenter from "../EventsCenter";
+import { GameState } from "../manager/gameState";
 import StateMachine from "../stateMachine";
+import { AUDIO_PLAY_EVENTS } from "../types/scenes";
 import psdField from "./psdField";
 enum PSD_STATE {
 	BACKPACK = 'backpack',
@@ -60,6 +62,7 @@ export default class PSD extends Phaser.GameObjects.Sprite {
 	private onBackpackEnter()
 	{
 		GameState.setPSDDeploy(false)
+		eventsCenter.emit(AUDIO_PLAY_EVENTS.DEPLOY)
 		this.once(Phaser.Animations.Events.ANIMATION_COMPLETE, this.despawn, this)
 		this.playReverse('psd-deploy', true)
 		this.clearAllField()
@@ -68,6 +71,7 @@ export default class PSD extends Phaser.GameObjects.Sprite {
 	private onDeployEnter()
 	{
 		GameState.setPSDDeploy(true)
+		eventsCenter.emit(AUDIO_PLAY_EVENTS.DEPLOY)
 		this.spawn(this.x, this.y).play('psd-deploy', true)
 		this.generateField()
 	}
@@ -87,12 +91,14 @@ export default class PSD extends Phaser.GameObjects.Sprite {
 		else if(GameState.energy < 70)
 		{
 			console.error('can only deploy inner field')
+			eventsCenter.emit(AUDIO_PLAY_EVENTS.FIELD_START)
 			this.innerField = new psdField(this.scene, this.x - 16, this.y - 16)
 			this.innerField.makeNextLevel(1)
 			return
 		}
 		else
 		{
+			eventsCenter.emit(AUDIO_PLAY_EVENTS.FIELD_START)
 			this.innerField = new psdField(this.scene, this.x - 16, this.y - 16)
 			this.innerField.makeNextLevel(1)
 			this.outerField = new psdField(this.scene, this.x - 16, this.y - 16)

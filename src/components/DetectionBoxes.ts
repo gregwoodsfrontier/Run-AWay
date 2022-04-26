@@ -14,7 +14,7 @@ import Rock from "../prefabs/Rock"
 interface IBlocks {
 	wall: Phaser.Tilemaps.TilemapLayer,
 	rocks: Rock[],
-	group: Enemy[]
+	group: Phaser.GameObjects.Group
 }
 /* END-USER-IMPORTS */
 
@@ -59,7 +59,8 @@ export default class DetectionBoxes extends UserComponent {
 
 	updateOverlap()
 	{
-		this.collideBlocks.group.forEach(enemy => {
+		this.collideBlocks.group.getChildren().forEach(e => {
+			const enemy = e as Enemy
 			this.setDetectOverlap(enemy)
 		})
 	}

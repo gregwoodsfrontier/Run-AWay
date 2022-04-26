@@ -6,14 +6,16 @@
 import Phaser from "phaser";
 import Physics from "../components/Physics";
 import DepthSortY from "../components/DepthSortY";
-import FollowTarget from "../components/FollowTarget";
 import AnimationV2 from "../components/AnimationV2";
 import JustMovement from "../components/JustMovement";
 import DetectionBoxes from "../components/DetectionBoxes";
+import FollowTarget from "../components/FollowTarget";
 /* START-USER-IMPORTS */
 import StateMachine from "../stateMachine";
 import { ENEMY_STATE_KEYS } from "../types/enemyStateKeys";
 import { DIRECTION, getDirectionName } from "../types/direction";
+import eventsCenter from "../EventsCenter";
+import { AUDIO_PLAY_EVENTS } from "../types/scenes";
 /* END-USER-IMPORTS */
 
 export default class Enemy extends Phaser.GameObjects.Sprite {
@@ -28,12 +30,13 @@ export default class Enemy extends Phaser.GameObjects.Sprite {
 		thisPhysics.offsetX = 18;
 		thisPhysics.offsetY = 26;
 		new DepthSortY(this);
-		const thisFollowTarget = new FollowTarget(this);
-		thisFollowTarget.range = 130;
 		new AnimationV2(this);
 		const thisJustMovement = new JustMovement(this);
 		thisJustMovement.speed = 90;
 		new DetectionBoxes(this);
+		const thisFollowTarget = new FollowTarget(this);
+		thisFollowTarget.range = 300;
+		thisFollowTarget.deadRangeX = 20;
 
 		/* START-USER-CTR-CODE */
 		// Write your code here.
@@ -55,7 +58,8 @@ export default class Enemy extends Phaser.GameObjects.Sprite {
 		})
 		.addState(ENEMY_STATE_KEYS.WALK, {
 			onEnter: this.onWalkEnter,
-			onUpdate: this.onWalkUpdate
+			onUpdate: this.onWalkUpdate,
+			onExit: this.onWalkExit
 		})
 		.addState(ENEMY_STATE_KEYS.ATTACK, {
 			onEnter: this.onAttackEnter
@@ -93,7 +97,7 @@ export default class Enemy extends Phaser.GameObjects.Sprite {
 
 	startMovement()
 	{
-		this.direction =DIRECTION.BACK
+		this.direction = DIRECTION.BACK
 		this.stateMachine.setState(ENEMY_STATE_KEYS.WALK)
 	}
 
@@ -160,12 +164,8 @@ export default class Enemy extends Phaser.GameObjects.Sprite {
 
 	private onWalkEnter()
 	{
+		eventsCenter.emit(AUDIO_PLAY_EVENTS.ENEMY_FOOT)
 
-
-	}
-
-	private onWalkUpdate()
-	{
 		const dirName = getDirectionName(this.direction)
 
 		if(!dirName)
@@ -174,9 +174,29 @@ export default class Enemy extends Phaser.GameObjects.Sprite {
 			return
 		}
 
-		if(!this.enemyAnimation || !this.enemyMovement)
+		if(!this.enemyAnimation)
 		{
-			console.error("either animation comp or movement comp is undefined")
+			console.error("animation comp is undefined")
+			return
+		}
+
+		this.enemyAnimation.playAnims({
+			character: 'swarm',
+			direction: dirName,
+			state: 'walk'
+		})
+	}
+
+	private onWalkExit()
+	{
+		eventsCenter.emit(AUDIO_PLAY_EVENTS.ENEMY_FOOT_STOP)
+	}
+
+	private onWalkUpdate()
+	{
+		if(!this.enemyMovement)
+		{
+			console.error("movement comp is undefined")
 			return
 		}
 
@@ -208,10 +228,10 @@ export default class Enemy extends Phaser.GameObjects.Sprite {
 			state: 'walk'
 		}) */
 
-		if(!this)
+		/* if(!this)
 		{
 			return
-		}
+		} */
 
 		// console.log(`swarm-${dirName}-walk`)
 		/* try {

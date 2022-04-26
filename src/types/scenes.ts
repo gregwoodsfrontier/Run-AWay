@@ -37,3 +37,28 @@ export enum SCENE_SWITCH_EVENTS {
     PAUSE_TO_RESTART = 'pause-to-restart',
     PAUSE_TO_EXPLAINER = 'pause-to-explain'
 }
+
+export enum AUDIO_PLAY_EVENTS {
+    GAMEPLAY = 'audio-gameplay',
+    GAMEPLAY_STOP = 'audio-gameplay-stop',
+    DEPLOY = 'audio-deploy',
+    FIELD_FADE = 'audio-field-fade',
+    FIELD_LOOP = 'audio-field-loop',
+    FIELD_LOOP_STOP = 'audio-field-loop-stop',
+    FIELD_START = 'audio-field-start',
+    COLLECT = 'audio-collect',
+    MENUSELECT = 'audio-menu-select',
+    PLAYER_FOOT = 'audio-player-footsteps',
+    ENEMY_FOOT = 'audio-enemy-footsteps',
+    TARGET_HIT = 'audio-target-hit',
+    PLAYER_FOOT_STOP = 'audio-player-footsteps-stop',
+    ENEMY_FOOT_STOP = 'audio-enemy-footsteps-stop',
+    BOSSTRAP = 'audio-boss-trap',
+    ENEMY_SHOOT = 'audio-enemy-shoot',
+	GAS_TRAP = 'audio-gas-trap',
+	LASERGUN = 'audio-laser-gun',
+	LASERGUN_EQUIP = 'audio-laser-gun-equip',
+	PROXY_TRAP = 'audio-proxy-trap',
+    BOSS_FIGHT = 'audio-boss-trap',
+    BOSS_FIGHT_STOP = 'audio-boss-trap-stop'
+}

@@ -66,22 +66,6 @@
             "y": 160
         },
         {
-            "prefabId": "408d4d35-1d26-4f5e-9315-9d890dbf9ae0",
-            "id": "63f44b6a-316d-4ac2-9257-71741dcfd6ba",
-            "unlock": [
-                "x",
-                "y",
-                "FollowTarget.target",
-                "FollowTarget.deadRangeX",
-                "FollowTarget.range"
-            ],
-            "label": "enemyA",
-            "scope": "CLASS",
-            "components": [],
-            "x": -80,
-            "y": 384
-        },
-        {
             "prefabId": "169b350d-b922-409d-8da8-e86ab037d35d",
             "id": "153829a0-41b6-4338-8c99-7dd1eaeb3ede",
             "unlock": [
@@ -651,26 +635,12 @@
         },
         {
             "type": "Rectangle",
-            "id": "9faa6694-65b6-4ee0-af7f-963b2509a434",
-            "label": "rectangle_1",
-            "components": [],
-            "x": 64,
-            "y": -608,
-            "originX": 0,
-            "originY": 1,
-            "alpha": 0,
-            "isFilled": true,
-            "width": 192,
-            "height": 192
-        },
-        {
-            "type": "Rectangle",
             "id": "33a9c4d1-6577-4dfa-b0a0-a06d8c231ba2",
             "label": "exitZone",
             "scope": "CLASS",
             "components": [],
             "x": 64,
-            "y": -944,
+            "y": -992,
             "originX": 0,
             "originY": 1,
             "alpha": 0.1,
@@ -700,13 +670,6 @@
         "version": 3
     },
     "lists": [
-        {
-            "id": "97ea1992-d8cd-43db-92a5-734f0b5c68b4",
-            "label": "enemyTeam",
-            "objectIds": [
-                "63f44b6a-316d-4ac2-9257-71741dcfd6ba"
-            ]
-        },
         {
             "id": "a77fbce9-1d9a-496f-82ee-b4084ce64224",
             "label": "obstacles",

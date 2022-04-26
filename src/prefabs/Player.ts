@@ -21,6 +21,8 @@ import { HOLD_COMP_STATE } from "../types/holdCompState";
 import { AIM_STATE } from "../types/aimCompState";
 import { PSD_STATE } from "../types/PSD";
 import { DARK_BROWN } from "../types/colors";
+import eventsCenter from "../EventsCenter";
+import { AUDIO_PLAY_EVENTS } from "../types/scenes";
 /* END-USER-IMPORTS */
 
 export default class Player extends Phaser.GameObjects.Sprite {
@@ -55,15 +57,17 @@ export default class Player extends Phaser.GameObjects.Sprite {
 			onEnter: this.onIdleEnter
 		})
 		.addState(PLAYER_STATE.WALK, {
-			// onEnter: this.onWalkEnter,
-			onUpdate: this.onWalkUpdate
+			onEnter: this.onWalkEnter,
+			onUpdate: this.onWalkUpdate,
+			onExit: this.onWalkExit
 		})
 		.addState(PLAYER_STATE.HOLD_IDLE, {
 			onEnter: this.onHoldIdleEnter
 		})
 		.addState(PLAYER_STATE.HOLD_WALK, {
-			// onEnter: this.onHoldWalkEnter
-			onUpdate: this.onHoldWalkUpdate
+			onEnter: this.onHoldWalkEnter,
+			onUpdate: this.onHoldWalkUpdate,
+			onExit: this.onHoldWalkExit
 		})
 		.addState(PLAYER_STATE.AIM, {
 			onEnter: this.onAimEnter
@@ -126,6 +130,16 @@ export default class Player extends Phaser.GameObjects.Sprite {
 		// this.scene.events.emit('selection-sq', this.direction, 50)
 	}
 
+	private onWalkEnter()
+	{
+		eventsCenter.emit(AUDIO_PLAY_EVENTS.PLAYER_FOOT)
+	}
+
+	private onWalkExit()
+	{
+		eventsCenter.emit(AUDIO_PLAY_EVENTS.PLAYER_FOOT_STOP)
+	}
+
 	setPSDCompState(state: string)
 	{
 		/* if(state != PSD_STATE.EQIUP_IDLE ||
@@ -170,6 +184,16 @@ export default class Player extends Phaser.GameObjects.Sprite {
 				this.playerPSD.stateMachine.setState(PSD_STATE.EQIUP_IDLE)
 			}, this)
 		}
+	}
+
+	private onHoldWalkEnter()
+	{
+		eventsCenter.emit(AUDIO_PLAY_EVENTS.PLAYER_FOOT)
+	}
+
+	private onHoldWalkExit()
+	{
+		eventsCenter.emit(AUDIO_PLAY_EVENTS.PLAYER_FOOT_STOP)
 	}
 
 	private handleShooting()
@@ -275,6 +299,7 @@ export default class Player extends Phaser.GameObjects.Sprite {
 
 			if(!this.flipSwitch)
 			{
+				eventsCenter.emit(AUDIO_PLAY_EVENTS.LASERGUN_EQUIP)
 				this.updateHoldDir()
 				this.playerHold.stateMachine.setState(HOLD_COMP_STATE.IDLE)
 				this.stateMachine.setState(PLAYER_STATE.HOLD_IDLE)
@@ -283,6 +308,7 @@ export default class Player extends Phaser.GameObjects.Sprite {
 				return
 			}
 
+			eventsCenter.emit(AUDIO_PLAY_EVENTS.LASERGUN_EQUIP)
 			this.playerHold.stateMachine.setState(HOLD_COMP_STATE.EMPTY)
 			this.stateMachine.setState(PLAYER_STATE.IDLE)
 			this.playerPSD.setHoldState(false)
