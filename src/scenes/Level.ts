@@ -507,7 +507,7 @@ export default class Level extends Phaser.Scene {
 	private goToChunks()
 	{
 		// console.log('scene key', this.scene.key)
-		eventsCenter.emit(SCENE_SWITCH_EVENTS.TO_CHUNKS, "Level")
+		eventsCenter.emit(SCENE_SWITCH_EVENTS.GO_YOUSURVIVED, "Level")
 	}
 
 	private RocksPropagator(startx: number, starty: number, endY: number)
