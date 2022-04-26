@@ -25,7 +25,7 @@
             "Physics.height": 16,
             "Physics.offsetX": 8,
             "Physics.offsetY": 8,
-            "JustMovement.speed": 380,
+            "JustMovement.speed": 500,
             "texture": {
                 "key": "PCProjectile32",
                 "frame": 0
