@@ -46,7 +46,7 @@ async function genSeed(arg: number)
     return seed as number
 }
 
-await genSeed(seed)
+// await genSeed(seed)
 
 // var seed = await rnd(); // create round number with Drand
 
@@ -55,9 +55,9 @@ await genSeed(seed)
 // seed = seed.replace(/\D/g,''); // remove all non-numeric characters
 // seed = seed.slice(0, 3); // pick out first 3 characters
 // seed = parseInt(seed); // convert back to number
-export {seed} // export the seed for access from other files
-console.log('new seed')
-console.log(seed)
+// export {seed} // export the seed for access from other files
+// console.log('new seed')
+// console.log(seed)
 
 // console.log(`New seed: ${seed}`); // return processed seed
 
