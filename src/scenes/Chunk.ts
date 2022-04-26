@@ -86,7 +86,7 @@ export default class Chunk extends Phaser.Scene {
 
 		// this code moves the player down to the beginning of the level (bottom left corner)
 		this.player.x = 48;
-		this.player.y = 640*(20+Math.round(((seed/3)/999)*100))+640-this.player.height;
+		this.player.y = 640*(20+Math.round(((seed/6)/999)*100))+640-this.player.height;
 		
 		this.initObjectPool()
 
