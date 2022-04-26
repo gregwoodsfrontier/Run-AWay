@@ -13,7 +13,6 @@ import psdField from "../prefabs/psdField";
 /* START-USER-IMPORTS */
 import KeyboardInput from "../components/KeyboardInput";
 import JustMovement from "../components/JustMovement";
-import AnimationV2 from "../components/AnimationV2";
 import DepthSortY from "../components/DepthSortY";
 import TileGen from "../manager/TileGen";
 import BlockOptimizer from "../manager/BlockOptimization";
@@ -100,7 +99,7 @@ export default class Chunk extends Phaser.Scene {
 		// this code moves the player down to the beginning of the level (bottom left corner)
 		//player
 		this.player.x = 48;
-		this.player.y = 640*(20+Math.round(((seed/6)/999)*100))+640-this.player.height;
+		this.player.y = (640*(20+Math.round(((seed/6)/999)*100))+640-this.player.height) -300;
 
 		//PSD
 		const pSDRobot = new PSD(this, -this.player.x, this.player.y);
@@ -109,7 +108,7 @@ export default class Chunk extends Phaser.Scene {
 		this.pSDRobot = pSDRobot;
 		
 		// enemyA
-		const enemyA = new Enemy(this, -80, 384);
+		const enemyA = new Enemy(this, this.player.x +30 , this.player.y + 250);
 		this.add.existing(enemyA);
 
 		//enemyteam
@@ -127,6 +126,16 @@ export default class Chunk extends Phaser.Scene {
 		const block = new Block(this)
 		const blasts = new BlastsTrap(this);
 		//const blaststrap = new BlastsTrap(this)
+
+		this.#destination = SelectionSquare.getComponent(this.player)
+
+		this.enemyTeam.forEach(e => {
+			FollowTarget.getComponent(e).activate()
+			const enemy = e as Enemy
+			enemy.startMovement()
+		})
+		this.SwarmGenerator(80, 384, 5, 3000, 0)
+		this.SwarmGenerator(192, 384, 5, 3000, 1500)
 		
 		//Events
 		this.events.on('create-bullet', this.handleBulletUpdate, this)
@@ -137,7 +146,7 @@ export default class Chunk extends Phaser.Scene {
 
 		//collision
 			// Bullet Collision
-		this.physics.add.collider(this.bulletGroup, this.blocks, this.onBulletBlockHit);
+		this.physics.add.overlap(this.bulletGroup, this.blocks, this.onBulletBlockHit);
 		this.physics.add.collider(this.bulletGroup, this.mud, this.onBulletMudHit);
 		this.physics.add.collider(this.bulletGroup, this.proxymines, this.DestroyBlast);
 		this.physics.add.overlap(this.bulletGroup, this.enemyTeam, this.handleBulletSwarm, undefined, this)
@@ -411,6 +420,17 @@ export default class Chunk extends Phaser.Scene {
 		// enemy.despawn()
 	}
 
+	private SwarmGenerator(x: number, y: number, Repeat: number, Delay: number, StartAt: number = 0)
+	{
+		return this.time.addEvent({
+			repeat: Repeat,
+			delay: Delay,
+			startAt: StartAt,
+			callback: this.createSingleSwarm,
+			callbackScope: this,
+			args: [x, y]
+		})
+	}
 	//EnemyEnd
 	//_____________________________________________________________________
 
@@ -427,8 +447,7 @@ export default class Chunk extends Phaser.Scene {
 		}
 
 		const {x, y} = destination.getSelectionSquare()
-			// revert psd comp state back to idle
-			this.player.setPSDCompState(PSD_STATE.EQIUP_IDLE)
+		
 
 		this.pSDRobot.spawn(x, y)
 		this.pSDRobot.deploy()
@@ -468,8 +487,12 @@ export default class Chunk extends Phaser.Scene {
 	//@ts-ignore
 	onBulletBlockHit(a?,b?){
 		const bullet = a as Bullet;
-		bullet.despawn()
 		const block = b as Block;
+		if(parseInt(block.frame.name) == 4 || parseInt(block.frame.name) == 12 || parseInt(block.frame.name) == 20
+		|| parseInt(block.frame.name) == 28){
+			return
+		}
+		bullet.despawn()
 		block.onBulletHit(bullet , block)
 	}
 	//@ts-ignore
