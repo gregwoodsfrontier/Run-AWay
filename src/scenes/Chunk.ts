@@ -447,7 +447,8 @@ export default class Chunk extends Phaser.Scene {
 		}
 
 		const {x, y} = destination.getSelectionSquare()
-		
+		//this.player.setPSDCompState(PSD_STATE.EQIUP_IDLE)
+
 
 		this.pSDRobot.spawn(x, y)
 		this.pSDRobot.deploy()
