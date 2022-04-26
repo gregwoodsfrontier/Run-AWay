@@ -27,6 +27,7 @@ export default class Block extends Phaser.GameObjects.Sprite {
 		if(texture != "Floor"){
 			const physIcs = new Physics(this);
 			physIcs.static = true;
+			this.physIcs = physIcs;
 			switch(texture){
 				case("SilverBlock"):
 					this.setTexture("raw-break-interact" , 3)
@@ -107,12 +108,11 @@ export default class Block extends Phaser.GameObjects.Sprite {
 	
 }
 
+	private physIcs: Physics;
+
 	public onBulletHit(obj1?:Phaser.GameObjects.Sprite , obj2? :Phaser.GameObjects.Sprite){
 		//once player collide with it
 		//changes frame name to int
-		if(Pickable){
-			return
-		}
 
 		if(!obj2)
 		{
@@ -123,7 +123,6 @@ export default class Block extends Phaser.GameObjects.Sprite {
 		objframe++;
 
 		//checks if the object's frame has reached the limit
-		
 		if(objframe == SilverHealth +1){
 			return;
 		}

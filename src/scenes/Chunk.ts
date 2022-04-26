@@ -5,10 +5,14 @@
 import Phaser from "phaser";
 import Player from "../prefabs/Player";
 import Rock from "../prefabs/Rock";
+import PSD from "../prefabs/PSD";
+import { PSD_STATE } from "../types/PSD";
+import Enemy from "../prefabs/Enemy";
+import { ENEMY_STATE_KEYS } from "../types/enemyStateKeys";
+import psdField from "../prefabs/psdField";
 /* START-USER-IMPORTS */
 import KeyboardInput from "../components/KeyboardInput";
 import JustMovement from "../components/JustMovement";
-import AnimationV2 from "../components/AnimationV2";
 import DepthSortY from "../components/DepthSortY";
 import TileGen from "../manager/TileGen";
 import BlockOptimizer from "../manager/BlockOptimization";
@@ -20,6 +24,14 @@ import eventsCenter from "../EventsCenter";
 import { SCENE_SWITCH_EVENTS } from "../types/scenes";
 import { DIRECTION } from "../types/direction";
 import MudTrap from "../prefabs/MudTrap";
+import { time } from "console";
+import Blasts from "../prefabs/Blasts";
+import BlastsTrap from "../prefabs/BlastsTrap";
+import PSDComp from "../components/PSDComp";
+import SelectionSquare from "../components/SelectionSquare";
+import FollowTarget from "../components/FollowTarget";
+import { GameState } from "../manager/gameState";
+
 /* END-USER-IMPORTS */
 
 export default class Chunk extends Phaser.Scene {
@@ -62,8 +74,13 @@ export default class Chunk extends Phaser.Scene {
 	public mud = new Array();
 	public proxymines = new Array();
 	public poisonclouds = new Array();
+	private pSDRobot!: PSD;
+	#destination!: SelectionSquare
+	private enemyA!: Enemy;
+	private enemyTeam!: Enemy[];
 
 	private tunnel!: EndTunnel;
+	public timer: Phaser.Time.TimerEvent;
 
 	bulletGroup!: Phaser.GameObjects.Group
 
@@ -85,22 +102,66 @@ export default class Chunk extends Phaser.Scene {
 			this.player.x = 48;
 			this.player.y = 640*(20+Math.round(((tempSeed/3)/999)*100))+640-this.player.height;	
 		}, this)
+
+		//PSD
+		const pSDRobot = new PSD(this, -this.player.x, this.player.y);
+		this.add.existing(pSDRobot);
+
+		this.pSDRobot = pSDRobot;
 		
+		// enemyA
+		const enemyA = new Enemy(this, this.player.x +30 , this.player.y + 250);
+		this.add.existing(enemyA);
+
+		//enemyteam
+		const enemyTeam = [enemyA];
+
 		this.initObjectPool()
+
+		this.enemyA = enemyA;
+		this.enemyTeam = enemyTeam;
 
 		// enable player input
         const input = KeyboardInput.getComponent(this.player)
         input.setActive(true)
 
-		const block = new Block(this);
+		const block = new Block(this)
+		const blasts = new BlastsTrap(this);
+		//const blaststrap = new BlastsTrap(this)
+
+		this.#destination = SelectionSquare.getComponent(this.player)
+
+		this.enemyTeam.forEach(e => {
+			FollowTarget.getComponent(e).activate()
+			const enemy = e as Enemy
+			enemy.startMovement()
+		})
+		this.SwarmGenerator(80, 384, 5, 3000, 0)
+		this.SwarmGenerator(192, 384, 5, 3000, 1500)
 		
-		//Bullet event
+		//Events
 		this.events.on('create-bullet', this.handleBulletUpdate, this)
+		this.events.on('deploy-PSD', this.deployPSD, this)
+		this.events.on('takeback-PSD', this.takeBackPSD, this)
+		this.events.on('gen-psd-field', this.addColliderEnemyField, this)
+
 
 		//collision
+			// Bullet Collision
+		this.physics.add.overlap(this.bulletGroup, this.blocks, this.onBulletBlockHit);
+		this.physics.add.collider(this.bulletGroup, this.mud, this.onBulletMudHit);
+		this.physics.add.collider(this.bulletGroup, this.proxymines, this.DestroyBlast);
+		this.physics.add.overlap(this.bulletGroup, this.enemyTeam, this.handleBulletSwarm, undefined, this)
+
+			//Player collision
 		this.physics.add.collider(this.player, this.blocks, block.onPlayerHit);
-		this.physics.add.collider(this.bulletGroup, this.blocks, this.onBulletHit);
+		this.physics.add.collider(this.player, this.mud, () =>{this.onPlayerMud()});
 		this.physics.add.collider(this.player, this.tunnel , this.switchtoBossScene);
+		this.physics.add.collider(this.player, this.enemyTeam, this.handlePlayerSwarm, undefined, this)
+			
+			//Enemy Collision
+		this.physics.add.collider(this.enemyTeam, this.enemyTeam)
+		this.physics.add.collider(this.enemyTeam, this.blocks)
 
 	}
 
@@ -121,6 +182,8 @@ export default class Chunk extends Phaser.Scene {
 			this.add.existing(blocks[i]);
 		}
 
+		this.blocks = blocks;
+
 		for(let i = 0; i < this.mud.length; i++)
 		{
 			this.add.existing(this.mud[i]);
@@ -129,12 +192,14 @@ export default class Chunk extends Phaser.Scene {
 		for(let i = 0; i < this.proxymines.length; i++)
 		{
 			this.add.existing(this.proxymines[i]);
+			this.proxymines[i].player = this.player;
+			this.proxymines[i].walls = this.blocks;
 		}
 
 		this.add.existing(this.tunnel);
 
 		// apply blocks to this.blocks
-		this.blocks = blocks;
+		
 	}
 
 	optimize()
@@ -248,13 +313,220 @@ export default class Chunk extends Phaser.Scene {
 			}
 		}
 	}
+	//Enemy
+	//_____________________________________________________________________
+	private handlePlayerSwarm(p: any, e: any)
+	{
+		const enemy = e as Enemy
+		GameState.changeHealthBy(-10)
+		enemy.despawn()
+	}
+	private createSingleSwarm(x: number, y: number)
+	{
+		const enemy = new Enemy(this, x, y)
+		this.add.existing(enemy)
+		this.enemyTeam.push(enemy)
+		const follow = FollowTarget.getComponent(enemy);
+		follow.setTarget(this.player)
+		follow.range = 300
+		follow.deadRangeX = 20
 
-	onBulletHit(a?,b?){
-		const bullet = a as Bullet;
+	}
+	private createMoreSwarm()
+	{
+		const spawnX = [80, 128, 160, 192]
+		const spawnY = 0
+		for(let i = 0; i < spawnX.length; i++)
+		{
+			const enemy = new Enemy(this, spawnX[i], spawnY)
+			this.add.existing(enemy)
+			const follow = FollowTarget.getComponent(enemy);
+			follow.range = 300
+			follow.deadRangeX = 35
+			this.enemyTeam.push(enemy)
+		}
+	}
+	private addColliderEnemyField()
+	{
+		if(!this.pSDRobot.outerField || !this.pSDRobot.innerField)
+		{
+			return
+		}
+		this.physics.add.collider(this.enemyTeam, this.pSDRobot.outerField.getAll(), this.handleEnemyFieldCollides, undefined, this)
+		this.physics.add.collider(this.enemyTeam, this.pSDRobot.innerField.getAll(), this.handleEnemyFieldCollides, undefined, this)
+	}
+	//@ts-ignore
+	private handleEnemyFieldCollides(e, f)
+	{
+		// enemy enrages
+		const enemy = e as Enemy
+		const field = f as Phaser.Physics.Arcade.Image
+		const fieldCon = field.parentContainer as psdField
+		const follow = FollowTarget.getComponent(enemy)
+		follow.deactivate()
+		enemy.enrage()
+
+		let ty = 5
+		const t = this.tweens.create({
+			targets: enemy,
+			duration: 200,
+			onStart: () => {
+				enemy.setSMState(ENEMY_STATE_KEYS.IDLE)
+				const b = enemy.body as Phaser.Physics.Arcade.Body
+				b.setVelocity(ty)
+			},
+			onComplete: () => {
+				enemy.setSMState(ENEMY_STATE_KEYS.WALK)
+			}
+		})
+		fieldCon.damage(enemy.attack)
+		this.time.delayedCall(500, () => {
+			if(field.y < enemy.y)
+			{
+				ty = 4
+				t.play()
+			}
+			else if(field.y > enemy.y)
+			{
+				ty = -4
+				t.play()
+			}
+		})
+
+	}
+	//@ts-ignore
+	private enrageEnemy(enemy, field)
+	{
+		const e = enemy as Enemy
+		const follow = FollowTarget.getComponent(e)
+		follow.deactivate()
+		e.enrage()
+	}
+
+	private ActivateEnemy(){
+		this.enemyTeam.forEach(e => {
+			FollowTarget.getComponent(e).activate()
+			const enemy = e as Enemy
+			enemy.startMovement()})
+	}
+
+	private handleBulletSwarm(a: Phaser.Types.Physics.Arcade.GameObjectWithBody, b: Phaser.Types.Physics.Arcade.GameObjectWithBody)
+	{
+		const bullet = a as Bullet
+		const enemy = b as Enemy
 		bullet.despawn()
+		enemy.emit('stay-still')
+		enemy.destoryAndDetach()
+		const idxToDel = this.enemyTeam.findIndex(e => e = enemy)
+		this.enemyTeam.splice(idxToDel, 1)
+		// enemy.despawn()
+	}
+
+	private SwarmGenerator(x: number, y: number, Repeat: number, Delay: number, StartAt: number = 0)
+	{
+		return this.time.addEvent({
+			repeat: Repeat,
+			delay: Delay,
+			startAt: StartAt,
+			callback: this.createSingleSwarm,
+			callbackScope: this,
+			args: [x, y]
+		})
+	}
+	//EnemyEnd
+	//_____________________________________________________________________
+
+	//PSD
+	//_____________________________________________________________________
+
+	private deployPSD()
+	{
+		const destination = SelectionSquare.getComponent(this.player)
+		if(!destination)
+		{
+			console.error(`selection square is undefined`)
+			return
+		}
+
+		const {x, y} = destination.getSelectionSquare()
+		//this.player.setPSDCompState(PSD_STATE.EQIUP_IDLE)
+
+
+		this.pSDRobot.spawn(x, y)
+		this.pSDRobot.deploy()
+	}
+
+	private takeBackPSD()
+	{
+		if(!this.checkSelectionPSDOverlap())
+		{
+			return
+		}
+
+		this.pSDRobot.returnToPlayer()
+		this.player.emit('player-recover-psd')
+		this.enemyTeam.forEach(e => {
+			FollowTarget.getComponent(e).activate()
+		})
+	}
+	private checkSelectionPSDOverlap()
+	{
+		if(!this.#destination)
+		{
+			console.error(`selection square is undefined`)
+			return
+		}
+
+		const checkRect = this.#destination.getSelectionSquare().getBounds()
+		const PSDRect = this.pSDRobot.getBounds()
+
+		return Phaser.Geom.Intersects.RectangleToRectangle(checkRect, PSDRect)
+	}
+	//PSD code End
+	//_____________________________________________________________________
+
+	//Collision callbacks
+	//___________________________________________________________________
+	//@ts-ignore
+	onBulletBlockHit(a?,b?){
+		const bullet = a as Bullet;
 		const block = b as Block;
+		if(parseInt(block.frame.name) == 4 || parseInt(block.frame.name) == 12 || parseInt(block.frame.name) == 20
+		|| parseInt(block.frame.name) == 28){
+			return
+		}
+		bullet.despawn()
 		block.onBulletHit(bullet , block)
 	}
+	//@ts-ignore
+	onBulletMudHit(a?,b?){
+		const bullet = a as Bullet;
+		bullet.despawn()
+		const mud = b as MudTrap;
+		mud.destroy();
+	}
+
+	onPlayerMud(){
+		this.player.inMudCondition();
+		this.timer = this.time.addEvent({
+			delay: 5000,                // ms
+			callback: () =>{
+				this.player.outMudCondition();
+			}
+		});
+	}
+	//@ts-ignore
+	DestroyBlast(a , b){
+		const bullet = a as Bullet;
+		bullet.despawn()
+		const blast = b as BlastsTrap
+		blast.timer.destroy()
+		blast.destroy()
+	}
+
+
+
+	//_____________________________________________________________________
 
 	//Switchesto boss Scene
 	switchtoBossScene(){
