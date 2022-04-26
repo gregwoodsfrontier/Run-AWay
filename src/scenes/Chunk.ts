@@ -87,10 +87,6 @@ export default class Chunk extends Phaser.Scene {
 		// this code moves the player down to the beginning of the level (bottom left corner)
 		this.player.x = 48;
 		this.player.y = 640*(20+Math.round(((seed/3)/999)*100))+640-this.player.height;
-
-		const mud2 = new MudTrap(this, this.player.x + 10 , this.player.y - 200);
-		mud2.player = this.player;
-		this.add.existing(mud2)
 		
 		this.initObjectPool()
 
