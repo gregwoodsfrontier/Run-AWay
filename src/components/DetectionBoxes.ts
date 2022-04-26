@@ -141,6 +141,10 @@ export default class DetectionBoxes extends UserComponent {
 		if(!leftzone.body){return false}
 		for(let i = 0; i < closeRock.length; i++)
 		{
+			if(!closeRock[i] || !closeRock[i].body)
+			{
+				continue
+			}
 			checkLeftRock = this.scene.physics.world.intersects(
 				(leftzone.body as Phaser.Physics.Arcade.Body),
 				(closeRock[i].body as Phaser.Physics.Arcade.Body)
