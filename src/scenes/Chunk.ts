@@ -9,6 +9,8 @@ import Rock from "../prefabs/Rock";
 import KeyboardInput from "../components/KeyboardInput";
 import JustMovement from "../components/JustMovement";
 import AnimationV2 from "../components/AnimationV2";
+import eventsCenter from "../EventsCenter";
+import { SCENE_SWITCH_EVENTS } from "../types/scenes";
 import DepthSortY from "../components/DepthSortY";
 import TileGen from "../manager/TileGen";
 import BlockOptimizer from "../manager/BlockOptimization";
@@ -59,6 +61,7 @@ export default class Chunk extends Phaser.Scene {
 	create() {
 
 		this.editorCreate();
+		eventsCenter.emit(SCENE_SWITCH_EVENTS.UPDATE_ACTIVE, "Chunk")
 		this.player.play('player-front-idle')
 
 		this.startWorldGen()

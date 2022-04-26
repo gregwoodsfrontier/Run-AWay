@@ -10,8 +10,7 @@ import eventsCenter from "../EventsCenter";
 import { SCENE_SWITCH_EVENTS } from "../types/scenes";
 /* END-USER-IMPORTS */
 
-// TODO: Bootstrap should be handling all the scene transition but since
-// I could not figure that out yet, it is pasued for now
+
 export default class Bootstrap extends Phaser.Scene {
 
 	constructor() {
@@ -36,12 +35,15 @@ export default class Bootstrap extends Phaser.Scene {
 	}
 
 	/* START-USER-CODE */
+	private activeGame = ""
 
 	// Write your code here
 
 	create() {
 
 		this.editorCreate();
+
+		eventsCenter.on(SCENE_SWITCH_EVENTS.UPDATE_ACTIVE, this.updateActiveScene, this)
 
 		eventsCenter.on(SCENE_SWITCH_EVENTS.TO_PAUSE, this.switchToPauseMenu, this)
 		eventsCenter.on(SCENE_SWITCH_EVENTS.TO_GAME, this.createNewGame, this)
@@ -54,6 +56,9 @@ export default class Bootstrap extends Phaser.Scene {
 		eventsCenter.on(SCENE_SWITCH_EVENTS.TO_CHUNKS, this.toChunks, this)
 		eventsCenter.on(SCENE_SWITCH_EVENTS.TO_TITLE, this.goToTitle, this)
 		eventsCenter.on(SCENE_SWITCH_EVENTS.BACK_TO_GAME, this.backToGame, this)
+		eventsCenter.on(SCENE_SWITCH_EVENTS.PAUSE_TO_TITLE, this.pauseToTitle, this)
+		eventsCenter.on(SCENE_SWITCH_EVENTS.PAUSE_TO_RESTART, this.pauseToRestart, this)
+		
 
 		if(process.env.NODE_ENV === "development")
 		{
@@ -63,6 +68,32 @@ export default class Bootstrap extends Phaser.Scene {
 		}
 
 		this.startTitleScene()
+	}
+
+	private updateActiveScene(key: string)
+	{
+		this.activeGame = key
+		// console.log(`active scene: ${this.activeGame}`)
+	}
+
+	private pauseToRestart()
+	{
+		this.scene.stop("Pause")
+		// this.scene.restart
+	}
+
+	private pauseToTitle()
+	{
+		const sceneToStop = ["UI", "Level", "Chunk", "Boss"]
+		sceneToStop.forEach(key => {
+			if(this.scene.isActive(key))
+			{
+				this.scene.stop(key)
+			}
+		})
+		
+		this.scene.stop("Pause")
+		this.scene.launch("Title").bringToTop("Title")
 	}
 	
 	private goToTitle(key: string)
