@@ -4,6 +4,9 @@ import Phaser from "phaser"
 // import block prefab
 import Block from "../prefabs/Block"
 
+// traps
+import MudTrap from "../prefabs/MudTrap";
+
 // import tunnel prefab
 import EndTunnel from "../prefabs/EndTunnel";
 
@@ -11,6 +14,7 @@ import EndTunnel from "../prefabs/EndTunnel";
 import World from "./WorldGen";
 
 import {seed} from "../main";
+import BlastsTrap from "../prefabs/BlastsTrap";
 
 // class for easy block generation
 export default class TileGen
@@ -96,10 +100,21 @@ export default class TileGen
                         break;
                 }
             }
+            else if(t[i].tag == 'mud')
+            {
+                scene.mud.push(new MudTrap(scene, t[i].x+16, t[i].y+16));
+            }
+            else if(t[i].tag == 'proxy-mine')
+            {
+                scene.proxymines.push(new BlastsTrap(scene, t[i].x+16, t[i].y+16));
+            }
+            else if(t[i].tag == 'poison-cloud')
+            {
+            }
             else if(t[i].tag == 'tunnel')
             {
                 // create scene's tunnel object (i know this isn't the best design lol) also the scene must have a "tunnel" object
-                scene.tunnel = new EndTunnel(scene, t[i].x, t[i].y);
+                scene.tunnel = new EndTunnel(scene, t[i].x, t[i].y-32);
             }
         }
 

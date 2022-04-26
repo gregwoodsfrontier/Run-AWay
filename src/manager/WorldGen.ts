@@ -57,8 +57,17 @@ export default class World
                 'empty', 'empty',
                 'semi-empty', 'semi-empty', 'semi-empty',
                 'blocked', 'blocked',
-                //'trap',
+                'trap',
             ];
+
+            if(i>chunkAmount/2)
+            {
+                this.biome = 3;
+            }
+            else if(i>chunkAmount/3)
+            {
+                this.biome = 2;
+            }
 
             // add a random chunk chosen from the "options" list
             tiles.push.apply(tiles, this.CreateChunk(chunkAmount-i, options[Math.round(Math.random()*(options.length-1))]));

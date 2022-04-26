@@ -19,6 +19,7 @@ import Block from "../prefabs/Block";
 import eventsCenter from "../EventsCenter";
 import { SCENE_SWITCH_EVENTS } from "../types/scenes";
 import { DIRECTION } from "../types/direction";
+import MudTrap from "../prefabs/MudTrap";
 /* END-USER-IMPORTS */
 
 export default class Chunk extends Phaser.Scene {
@@ -57,6 +58,10 @@ export default class Chunk extends Phaser.Scene {
 	public platformer_fun!: Phaser.Tilemaps.Tilemap
 	// Write your code here
 	private blocks!: Block[];
+
+	public mud = new Array();
+	public proxymines = new Array();
+	public poisonclouds = new Array();
 
 	private tunnel!: EndTunnel;
 
@@ -111,6 +116,16 @@ export default class Chunk extends Phaser.Scene {
 		for(let i = 0; i < blocks.length; i++)
 		{
 			this.add.existing(blocks[i]);
+		}
+
+		for(let i = 0; i < this.mud.length; i++)
+		{
+			this.add.existing(this.mud[i]);
+		}
+
+		for(let i = 0; i < this.proxymines.length; i++)
+		{
+			this.add.existing(this.proxymines[i]);
 		}
 
 		this.add.existing(this.tunnel);
