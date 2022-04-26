@@ -3,11 +3,13 @@
 /* START OF COMPILED CODE */
 
 import Phaser from "phaser";
+import TileMapLayerPhysics from "../components/TileMapLayerPhysics";
 import Player from "../prefabs/Player";
-import Enemy from "../prefabs/Enemy";
 import PSD from "../prefabs/PSD";
 import Rock from "../prefabs/Rock";
+import Enemy from "../prefabs/Enemy";
 /* START-USER-IMPORTS */
+import Enemy from "../prefabs/Enemy";
 import DepthSortY from "../components/DepthSortY";
 import { DIRECTION } from "../types/direction";
 import Bullet from "../prefabs/Bullet";
@@ -52,10 +54,6 @@ export default class Level extends Phaser.Scene {
 		// player
 		const player = new Player(this, 160, 160);
 		this.add.existing(player);
-
-		// enemyA
-		const enemyA = new Enemy(this, -80, 384);
-		this.add.existing(enemyA);
 
 		// pSDRobot
 		const pSDRobot = new PSD(this, -200, 0);
@@ -232,10 +230,20 @@ export default class Level extends Phaser.Scene {
 		exitZone.alpha = 0.1;
 		exitZone.isFilled = true;
 
+		// enemy
+		const enemy = new Enemy(this, 80, 396);
+		this.add.existing(enemy);
+
+		// enemy_1
+		const enemy_1 = new Enemy(this, 128, 400);
+		this.add.existing(enemy_1);
+
 		// lists
-		const enemyTeam = [enemyA];
 		const obstacles = [rock_38, rock_37, rock_36, rock_35, rock_34, rock_33, rock_32, rock_31, rock_30, rock_29, rock_26, rock_28, rock_27, rock_25, rock_24, rock_23, rock_22, rock_21, rock_20, rock_19, rock_18, rock_17, rock_16, rock_15, rock_14, rock_13, rock_12, rock_11, rock_10, rock_9, rock_8, rock_7, rock_6, rock_5, rock_4, rock_3, rock_2, rock, rock_1];
 		const mudList: Array<any> = [];
+
+		// wall_1 (components)
+		new TileMapLayerPhysics(wall_1);
 
 		// rock (prefab fields)
 		rock.rawType = 2;
@@ -336,7 +344,6 @@ export default class Level extends Phaser.Scene {
 		this.floor_1 = floor_1;
 		this.wall_1 = wall_1;
 		this.player = player;
-		this.enemyA = enemyA;
 		this.pSDRobot = pSDRobot;
 		this.start_level = start_level;
 		this.rock_1 = rock_1;
@@ -352,7 +359,6 @@ export default class Level extends Phaser.Scene {
 		this.rock_27 = rock_27;
 		this.exitZone = exitZone;
 		this.cave_test_map_2 = cave_test_map_2;
-		this.enemyTeam = enemyTeam;
 		this.obstacles = obstacles;
 		this.mudList = mudList;
 
@@ -362,7 +368,6 @@ export default class Level extends Phaser.Scene {
 	private floor_1!: Phaser.Tilemaps.TilemapLayer;
 	private wall_1!: Phaser.Tilemaps.TilemapLayer;
 	public player!: Player;
-	private enemyA!: Enemy;
 	private pSDRobot!: PSD;
 	private start_level!: Phaser.GameObjects.Sprite;
 	private rock_1!: Rock;
@@ -377,7 +382,6 @@ export default class Level extends Phaser.Scene {
 	private rock_22!: Rock;
 	private rock_27!: Rock;
 	private exitZone!: Phaser.GameObjects.Rectangle;
-	private enemyTeam!: Enemy[];
 	private obstacles!: Rock[];
 	private mudList!: Array<any>;
 
@@ -388,7 +392,7 @@ export default class Level extends Phaser.Scene {
 	// Write your code here
 	bulletGroup!: Phaser.GameObjects.Group
 	enemyGroup!: Phaser.GameObjects.Group
-	
+
 	lastfired = 0
 	#destination!: SelectionSquare
 
@@ -417,13 +421,14 @@ export default class Level extends Phaser.Scene {
 		this.initObjectPool()
 
 		this.physics.add.collider(this.player, this.wall_1);
-		this.physics.add.collider(this.player, this.enemyTeam, this.handlePlayerSwarm, undefined, this)
+		this.physics.add.collider(this.player, this.enemyGroup, this.handlePlayerSwarm, undefined, this)
+
 		//@ts-ignore
-		this.physics.add.collider(this.enemyTeam, this.enemyTeam)
-		this.physics.add.collider(this.enemyTeam, this.wall_1)
+		this.physics.add.collider(this.enemyGroup)
+		this.physics.add.collider(this.enemyGroup, this.wall_1)
+		this.physics.add.collider(this.enemyGroup, this.obstacles)
+		this.physics.add.overlap(this.bulletGroup, this.enemyGroup, this.handleBulletSwarm, undefined, this)
 		this.physics.add.collider(this.bulletGroup, this.wall_1, this.handleBulletWallCollision, undefined, this)
-		this.physics.add.overlap(this.bulletGroup, this.enemyTeam, this.handleBulletSwarm, undefined, this)
-		this.physics.add.collider(this.enemyTeam, this.obstacles)
 		this.physics.add.collider(this.bulletGroup, this.obstacles, this.handleBulletRocks, this.checkBulletRocks)
 		this.physics.add.collider(this.player, this.obstacles, this.handlePlayerRocks)
 
@@ -441,9 +446,6 @@ export default class Level extends Phaser.Scene {
 			this.events.once('resume', this.onStartLevelAnimsComplete, this)
 			eventsCenter.emit(SCENE_SWITCH_EVENTS.TO_EXPLAINER)
 		}, this)
-		this.enemyTeam.forEach(e => {
-			FollowTarget.getComponent(e).deactivate()
-		})
 
 		this.player.setVisible(false)
 		this.playStartLevelAnims()
@@ -509,7 +511,7 @@ export default class Level extends Phaser.Scene {
 		return {
 			wall: this.wall_1,
 			rocks: this.obstacles,
-			group: this.enemyTeam
+			group: this.enemyGroup
 		}
 	}
 
@@ -611,11 +613,16 @@ export default class Level extends Phaser.Scene {
 
 	private createSingleSwarm(x: number, y: number)
 	{
-		const enemy = new Enemy(this, x, y)
-		this.add.existing(enemy)
-		this.enemyTeam.push(enemy)
+		// const enemy = new Enemy(this, x, y)
+		// this.add.existing(enemy)
+		// this.enemyTeam.push(enemy)
+
+		const enemy = this.enemyGroup.get(x, y) as Enemy
+		enemy.startMovement()
+		FollowTarget.getComponent(enemy).setTarget(this.player)
 
 		const follow = FollowTarget.getComponent(enemy);
+		if(!follow){ return }
 		follow.setTarget(this.player)
 		follow.range = 300
 		follow.deadRangeX = 20
@@ -624,20 +631,6 @@ export default class Level extends Phaser.Scene {
 	/**
 	 * Spawns more swarm that goes
 	 */
-	private createMoreSwarm()
-	{
-		const spawnX = [80, 128, 160, 192]
-		const spawnY = 0
-		for(let i = 0; i < spawnX.length; i++)
-		{
-			const enemy = new Enemy(this, spawnX[i], spawnY)
-			this.add.existing(enemy)
-			const follow = FollowTarget.getComponent(enemy);
-			follow.range = 300
-			follow.deadRangeX = 35
-			this.enemyTeam.push(enemy)
-		}
-	}
 
 	private addColliderEnemyField()
 	{
@@ -645,8 +638,8 @@ export default class Level extends Phaser.Scene {
 		{
 			return
 		}
-		this.physics.add.collider(this.enemyTeam, this.pSDRobot.outerField.getAll(), this.handleEnemyFieldCollides, undefined, this)
-		this.physics.add.collider(this.enemyTeam, this.pSDRobot.innerField.getAll(), this.handleEnemyFieldCollides, undefined, this)
+		this.physics.add.collider(this.enemyGroup, this.pSDRobot.outerField.getAll(), this.handleEnemyFieldCollides, undefined, this)
+		this.physics.add.collider(this.enemyGroup, this.pSDRobot.innerField.getAll(), this.handleEnemyFieldCollides, undefined, this)
 	}
 
 	//@ts-ignore
@@ -713,14 +706,12 @@ export default class Level extends Phaser.Scene {
 			return
 		}
 		input.setActive(true)
-		this.enemyTeam.forEach(e => {
-			FollowTarget.getComponent(e).activate()
-			const enemy = e as Enemy
-			enemy.startMovement()
-		})
 
 		this.SwarmGenerator(80, 384, 5, 3000, 0)
-		this.SwarmGenerator(192, 384, 5, 3000, 1500)
+		this.SwarmGenerator(128, 384, 5, 3000, 1500)
+		this.SwarmGenerator(176, 384, 5, 3000, 1000)
+		this.SwarmGenerator(224, 384, 5, 3000,  500)
+
 		this.RocksPropagator(80, -624, 9)
 	}
 
@@ -733,10 +724,8 @@ export default class Level extends Phaser.Scene {
 		eventsCenter.emit(AUDIO_PLAY_EVENTS.TARGET_HIT)
 
 		enemy.emit('stay-still')
-		enemy.destoryAndDetach()
-		const idxToDel = this.enemyTeam.findIndex(e => e = enemy)
-		this.enemyTeam.splice(idxToDel, 1)
-		// enemy.despawn()
+		enemy.despawn()
+
 	}
 
 	private playStartLevelAnims()
@@ -776,9 +765,7 @@ export default class Level extends Phaser.Scene {
 
 		this.pSDRobot.returnToPlayer()
 		this.player.emit('player-recover-psd')
-		this.enemyTeam.forEach(e => {
-			FollowTarget.getComponent(e).activate()
-		})
+
 	}
 
 	private checkSelectionPSDOverlap()

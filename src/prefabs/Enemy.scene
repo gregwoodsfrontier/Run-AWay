@@ -20,17 +20,18 @@
             "components": [
                 "Physics",
                 "DepthSortY",
-                "FollowTarget",
                 "AnimationV2",
                 "JustMovement",
-                "DetectionBoxes"
+                "DetectionBoxes",
+                "FollowTarget"
             ],
             "Physics.width": 28,
             "Physics.height": 28,
             "Physics.offsetX": 18,
             "Physics.offsetY": 26,
-            "FollowTarget.range": 130,
             "JustMovement.speed": 90,
+            "FollowTarget.range": 300,
+            "FollowTarget.deadRangeX": 20,
             "texture": {
                 "key": "swarm-back-walk-1"
             }

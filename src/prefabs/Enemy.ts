@@ -6,10 +6,10 @@
 import Phaser from "phaser";
 import Physics from "../components/Physics";
 import DepthSortY from "../components/DepthSortY";
-import FollowTarget from "../components/FollowTarget";
 import AnimationV2 from "../components/AnimationV2";
 import JustMovement from "../components/JustMovement";
 import DetectionBoxes from "../components/DetectionBoxes";
+import FollowTarget from "../components/FollowTarget";
 /* START-USER-IMPORTS */
 import StateMachine from "../stateMachine";
 import { ENEMY_STATE_KEYS } from "../types/enemyStateKeys";
@@ -30,12 +30,13 @@ export default class Enemy extends Phaser.GameObjects.Sprite {
 		thisPhysics.offsetX = 18;
 		thisPhysics.offsetY = 26;
 		new DepthSortY(this);
-		const thisFollowTarget = new FollowTarget(this);
-		thisFollowTarget.range = 130;
 		new AnimationV2(this);
 		const thisJustMovement = new JustMovement(this);
 		thisJustMovement.speed = 90;
 		new DetectionBoxes(this);
+		const thisFollowTarget = new FollowTarget(this);
+		thisFollowTarget.range = 300;
+		thisFollowTarget.deadRangeX = 20;
 
 		/* START-USER-CTR-CODE */
 		// Write your code here.
@@ -96,7 +97,7 @@ export default class Enemy extends Phaser.GameObjects.Sprite {
 
 	startMovement()
 	{
-		this.direction =DIRECTION.BACK
+		this.direction = DIRECTION.BACK
 		this.stateMachine.setState(ENEMY_STATE_KEYS.WALK)
 	}
 
@@ -173,35 +174,11 @@ export default class Enemy extends Phaser.GameObjects.Sprite {
 			return
 		}
 
-		if(!this.enemyAnimation || !this.enemyMovement)
+		if(!this.enemyAnimation)
 		{
-			console.error("either animation comp or movement comp is undefined")
+			console.error("animation comp is undefined")
 			return
 		}
-
-		switch (this.direction) {
-			case DIRECTION.BACK: {
-				this.enemyMovement.moveUp()
-				break
-			}
-
-			case DIRECTION.FRONT: {
-				this.enemyMovement.moveDown()
-				break
-			}
-
-			case DIRECTION.LEFT: {
-				this.enemyMovement.moveLeft()
-				break
-			}
-
-			case DIRECTION.RIGHT: {
-				this.enemyMovement.moveRight()
-				break
-			}
-		}
-
-		console.warn(`swarm dir: ${dirName}`)
 
 		this.enemyAnimation.playAnims({
 			character: 'swarm',
@@ -217,17 +194,9 @@ export default class Enemy extends Phaser.GameObjects.Sprite {
 
 	private onWalkUpdate()
 	{
-		/* const dirName = getDirectionName(this.direction)
-
-		if(!dirName)
+		if(!this.enemyMovement)
 		{
-			console.warn('direction should be defined')
-			return
-		}
-
-		if(!this.enemyAnimation || !this.enemyMovement)
-		{
-			console.error("either animation comp or movement comp is undefined")
+			console.error("movement comp is undefined")
 			return
 		}
 
@@ -251,7 +220,7 @@ export default class Enemy extends Phaser.GameObjects.Sprite {
 				this.enemyMovement.moveRight()
 				break
 			}
-		} */
+		}
 
 		/* this.enemyAnimation.playAnims({
 			character: 'swarm',
