@@ -111,7 +111,8 @@ export default class Bootstrap extends Phaser.Scene {
 		this.loadSoundAssets()
 		this.defineAudioEvents()
 
-		this.startTitleScene()
+		// this.startTitleScene()
+		this.createNewGame()
 	}
 
 	private defineSceneSwitchEvents()
@@ -138,9 +139,7 @@ export default class Bootstrap extends Phaser.Scene {
 	{
 		for(let i = 0; i < AUDIO_EVENT_KEYS.length; i++)
 		{
-			console.log(AUDIO_EVENT_KEYS[i], 'loaded')
 			eventsCenter.on(AUDIO_EVENT_KEYS[i], () => {
-				console.log(AUDIO_EVENT_KEYS[i], 'receieved')
 				this.allAudio[i].play()
 			}, this)
 		}
@@ -272,7 +271,7 @@ export default class Bootstrap extends Phaser.Scene {
 	private toChunks(key: string)
 	{
 		this.scene.stop(key)
-		this.scene.launch("Chunk")
+		this.scene.launch("Chunk").bringToTop("Chunk")
 		this.scene.launch("UI").bringToTop("UI")
 	}
 

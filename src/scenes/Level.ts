@@ -486,7 +486,6 @@ export default class Level extends Phaser.Scene {
 			return
 		}
 
-		console.log('player is in mud')
 		// player.inMudCondition()
 
 	}
@@ -603,10 +602,19 @@ export default class Level extends Phaser.Scene {
 		// this.enemyTeam.push(enemy)
 
 		const enemy = this.enemyGroup.get(x, y) as Enemy
+		if(!enemy)
+		{
+			return
+		}
+		
+		enemy.setActive(true).setVisible(true)
+		this.physics.add.existing(enemy)
+
 		enemy.startMovement()
 		FollowTarget.getComponent(enemy).setTarget(this.player)
 
 		const follow = FollowTarget.getComponent(enemy);
+		
 		if(!follow){ return }
 		follow.setTarget(this.player)
 		follow.range = 300
@@ -692,10 +700,10 @@ export default class Level extends Phaser.Scene {
 		}
 		input.setActive(true)
 
-		this.SwarmGenerator(80, 384, 5, 3000, 0)
-		this.SwarmGenerator(128, 384, 5, 3000, 1500)
-		this.SwarmGenerator(176, 384, 5, 3000, 1000)
-		this.SwarmGenerator(224, 384, 5, 3000,  500)
+		this.SwarmGenerator(80, 384, 20, 4000, 0)
+		this.SwarmGenerator(128, 384, 20, 4000, 2500)
+		this.SwarmGenerator(176, 384, 20, 4000, 1500)
+		this.SwarmGenerator(224, 384, 20, 4000,  500)
 
 		this.RocksPropagator(80, -624, 9)
 	}
