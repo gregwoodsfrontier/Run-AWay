@@ -22,6 +22,7 @@ export default class DepthSortY {
 		return (gameObject as any)["__DepthSortY"];
 	}
 
+	//@ts-ignore
 	private gameObject: Phaser.GameObjects.Sprite;
 
 	/* START-USER-CODE */
