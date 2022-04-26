@@ -87,7 +87,7 @@
             "texture": {
                 "key": "Slider-Button"
             },
-            "x": 130,
+            "x": 188,
             "y": 292
         },
         {
@@ -131,7 +131,7 @@
             "texture": {
                 "key": "Slider-Button"
             },
-            "x": 130,
+            "x": 188,
             "y": 323
         },
         {
@@ -193,39 +193,6 @@
             },
             "x": 116,
             "y": 323
-        },
-        {
-            "type": "Image",
-            "id": "2557a7ca-2aa2-4966-b613-a7878da3d526",
-            "label": "rules_Button_pressed",
-            "components": [],
-            "texture": {
-                "key": "Rules-Button"
-            },
-            "x": 78,
-            "y": 213
-        },
-        {
-            "type": "Image",
-            "id": "a667684b-bdc1-4034-a453-af3803be1e1c",
-            "label": "newGame_Button_pressed",
-            "components": [],
-            "texture": {
-                "key": "NewGame-Button"
-            },
-            "x": 88,
-            "y": 151
-        },
-        {
-            "type": "Image",
-            "id": "60f2ad12-0f3a-4f33-a8ed-f70887f00f01",
-            "label": "resume_Button_pressed",
-            "components": [],
-            "texture": {
-                "key": "Resume-Button"
-            },
-            "x": 83,
-            "y": 121
         },
         {
             "type": "Image",
@@ -310,6 +277,20 @@
             },
             "x": 88,
             "y": 151
+        },
+        {
+            "type": "Image",
+            "id": "78ffdda3-f16f-4c5f-a278-cd86e42e2991",
+            "label": "explainer",
+            "scope": "CLASS",
+            "components": [
+                "Button"
+            ],
+            "texture": {
+                "key": "UI-Explainer-window"
+            },
+            "x": 525,
+            "y": 304
         }
     ],
     "plainObjects": [],
