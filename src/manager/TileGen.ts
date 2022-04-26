@@ -13,7 +13,7 @@ import EndTunnel from "../prefabs/EndTunnel";
 // import world generation algorithm
 import World from "./WorldGen";
 
-import {seed} from "../main";
+// import {seed} from "../main";
 import BlastsTrap from "../prefabs/BlastsTrap";
 
 // class for easy block generation

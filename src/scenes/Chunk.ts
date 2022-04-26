@@ -17,7 +17,7 @@ import DepthSortY from "../components/DepthSortY";
 import TileGen from "../manager/TileGen";
 import BlockOptimizer from "../manager/BlockOptimization";
 import EndTunnel from "../prefabs/EndTunnel";
-import { seed } from "../main";
+// import { seed } from "../main";
 import Bullet from "../prefabs/Bullet";
 import Block from "../prefabs/Block";
 import eventsCenter from "../EventsCenter";
