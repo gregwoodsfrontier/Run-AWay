@@ -4,6 +4,7 @@
   "scripts": {
     "dev": "vite",
     "build": "tsc && vite build && phaser-asset-pack-hashing -j -r dist",
+    "buildnotsc": "vite build && phaser-asset-pack-hashing -j -r dist",
     "preview": "vite preview",
     "editor": "phasereditor2d-launcher -project . -port 1959",
     "editor-remote": "phasereditor2d-launcher -project . -disable-open-browser -public -port 1959"
