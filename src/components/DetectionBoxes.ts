@@ -59,9 +59,9 @@ export default class DetectionBoxes extends UserComponent {
 
 	updateOverlap()
 	{
-		this.collideBlocks.group.forEach(enemy => {
+		/*this.collideBlocks.group.forEach(enemy => {
 			this.setDetectOverlap(enemy)
-		})
+		})*/
 	}
 
 	update()

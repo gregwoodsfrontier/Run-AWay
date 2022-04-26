@@ -10,7 +10,7 @@ import { GameState } from "../manager/gameState";
 
 export default class BlastsTrap extends Phaser.GameObjects.Sprite {
 
-    public player: Phaser.GameObjects.Sprite;
+    public player?: Phaser.GameObjects.Sprite;
     public timer: Phaser.Time.TimerEvent;
     public walls : Phaser.GameObjects.Sprite;
 
@@ -35,6 +35,7 @@ export default class BlastsTrap extends Phaser.GameObjects.Sprite {
     }
 
   CreateBlasts(){
+      if(!this.player ){return}
       var distanceX = Math.abs(this.player.x) - Math.abs(this.x)
       var distanceY = Math.abs(this.player.y) - Math.abs(this.y)
 

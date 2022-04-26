@@ -5,6 +5,11 @@
 import Phaser from "phaser";
 import Player from "../prefabs/Player";
 import Rock from "../prefabs/Rock";
+import PSD from "../prefabs/PSD";
+import { PSD_STATE } from "../types/PSD";
+import Enemy from "../prefabs/Enemy";
+import { ENEMY_STATE_KEYS } from "../types/enemyStateKeys";
+import psdField from "../prefabs/psdField";
 /* START-USER-IMPORTS */
 import KeyboardInput from "../components/KeyboardInput";
 import JustMovement from "../components/JustMovement";
@@ -23,9 +28,11 @@ import MudTrap from "../prefabs/MudTrap";
 import { time } from "console";
 import Blasts from "../prefabs/Blasts";
 import BlastsTrap from "../prefabs/BlastsTrap";
+import PSDComp from "../components/PSDComp";
+import SelectionSquare from "../components/SelectionSquare";
+import FollowTarget from "../components/FollowTarget";
+import { GameState } from "../manager/gameState";
 
-//Variables
-let inMud = false;
 /* END-USER-IMPORTS */
 
 export default class Chunk extends Phaser.Scene {
@@ -68,6 +75,10 @@ export default class Chunk extends Phaser.Scene {
 	public mud = new Array();
 	public proxymines = new Array();
 	public poisonclouds = new Array();
+	private pSDRobot!: PSD;
+	#destination!: SelectionSquare
+	private enemyA!: Enemy;
+	private enemyTeam!: Enemy[];
 
 	private tunnel!: EndTunnel;
 	public timer: Phaser.Time.TimerEvent;
@@ -87,14 +98,27 @@ export default class Chunk extends Phaser.Scene {
 		// this.handlePlayerInput()
 
 		// this code moves the player down to the beginning of the level (bottom left corner)
+		//player
 		this.player.x = 48;
 		this.player.y = 640*(20+Math.round(((seed/6)/999)*100))+640-this.player.height;
-		/*const testblast = new BlastsTrap(this, this.player.x +1 , this.player.y -1000)
-		testblast.player = this.player
-		testblast.Blocks = this.blocks
-		this.add.existing(testblast)*/
+
+		//PSD
+		const pSDRobot = new PSD(this, -this.player.x, this.player.y);
+		this.add.existing(pSDRobot);
+
+		this.pSDRobot = pSDRobot;
 		
+		// enemyA
+		const enemyA = new Enemy(this, -80, 384);
+		this.add.existing(enemyA);
+
+		//enemyteam
+		const enemyTeam = [enemyA];
+
 		this.initObjectPool()
+
+		this.enemyA = enemyA;
+		this.enemyTeam = enemyTeam;
 
 		// enable player input
         const input = KeyboardInput.getComponent(this.player)
@@ -104,18 +128,29 @@ export default class Chunk extends Phaser.Scene {
 		const blasts = new BlastsTrap(this);
 		//const blaststrap = new BlastsTrap(this)
 		
-		//Bullet event
+		//Events
 		this.events.on('create-bullet', this.handleBulletUpdate, this)
+		this.events.on('deploy-PSD', this.deployPSD, this)
+		this.events.on('takeback-PSD', this.takeBackPSD, this)
+		this.events.on('gen-psd-field', this.addColliderEnemyField, this)
+
 
 		//collision
 			// Bullet Collision
 		this.physics.add.collider(this.bulletGroup, this.blocks, this.onBulletBlockHit);
 		this.physics.add.collider(this.bulletGroup, this.mud, this.onBulletMudHit);
 		this.physics.add.collider(this.bulletGroup, this.proxymines, this.DestroyBlast);
+		this.physics.add.overlap(this.bulletGroup, this.enemyTeam, this.handleBulletSwarm, undefined, this)
+
 			//Player collision
 		this.physics.add.collider(this.player, this.blocks, block.onPlayerHit);
 		this.physics.add.collider(this.player, this.mud, () =>{this.onPlayerMud()});
 		this.physics.add.collider(this.player, this.tunnel , this.switchtoBossScene);
+		this.physics.add.collider(this.player, this.enemyTeam, this.handlePlayerSwarm, undefined, this)
+			
+			//Enemy Collision
+		this.physics.add.collider(this.enemyTeam, this.enemyTeam)
+		this.physics.add.collider(this.enemyTeam, this.blocks)
 
 	}
 
@@ -267,15 +302,177 @@ export default class Chunk extends Phaser.Scene {
 			}
 		}
 	}
+	//Enemy
+	//_____________________________________________________________________
+	private handlePlayerSwarm(p: any, e: any)
+	{
+		const enemy = e as Enemy
+		GameState.changeHealthBy(-10)
+		enemy.despawn()
+	}
+	private createSingleSwarm(x: number, y: number)
+	{
+		const enemy = new Enemy(this, x, y)
+		this.add.existing(enemy)
+		this.enemyTeam.push(enemy)
+		const follow = FollowTarget.getComponent(enemy);
+		follow.setTarget(this.player)
+		follow.range = 300
+		follow.deadRangeX = 20
+
+	}
+	private createMoreSwarm()
+	{
+		const spawnX = [80, 128, 160, 192]
+		const spawnY = 0
+		for(let i = 0; i < spawnX.length; i++)
+		{
+			const enemy = new Enemy(this, spawnX[i], spawnY)
+			this.add.existing(enemy)
+			const follow = FollowTarget.getComponent(enemy);
+			follow.range = 300
+			follow.deadRangeX = 35
+			this.enemyTeam.push(enemy)
+		}
+	}
+	private addColliderEnemyField()
+	{
+		if(!this.pSDRobot.outerField || !this.pSDRobot.innerField)
+		{
+			return
+		}
+		this.physics.add.collider(this.enemyTeam, this.pSDRobot.outerField.getAll(), this.handleEnemyFieldCollides, undefined, this)
+		this.physics.add.collider(this.enemyTeam, this.pSDRobot.innerField.getAll(), this.handleEnemyFieldCollides, undefined, this)
+	}
+	//@ts-ignore
+	private handleEnemyFieldCollides(e, f)
+	{
+		// enemy enrages
+		const enemy = e as Enemy
+		const field = f as Phaser.Physics.Arcade.Image
+		const fieldCon = field.parentContainer as psdField
+		const follow = FollowTarget.getComponent(enemy)
+		follow.deactivate()
+		enemy.enrage()
+
+		let ty = 5
+		const t = this.tweens.create({
+			targets: enemy,
+			duration: 200,
+			onStart: () => {
+				enemy.setSMState(ENEMY_STATE_KEYS.IDLE)
+				const b = enemy.body as Phaser.Physics.Arcade.Body
+				b.setVelocity(ty)
+			},
+			onComplete: () => {
+				enemy.setSMState(ENEMY_STATE_KEYS.WALK)
+			}
+		})
+		fieldCon.damage(enemy.attack)
+		this.time.delayedCall(500, () => {
+			if(field.y < enemy.y)
+			{
+				ty = 4
+				t.play()
+			}
+			else if(field.y > enemy.y)
+			{
+				ty = -4
+				t.play()
+			}
+		})
+
+	}
+	//@ts-ignore
+	private enrageEnemy(enemy, field)
+	{
+		const e = enemy as Enemy
+		const follow = FollowTarget.getComponent(e)
+		follow.deactivate()
+		e.enrage()
+	}
+
+	private ActivateEnemy(){
+		this.enemyTeam.forEach(e => {
+			FollowTarget.getComponent(e).activate()
+			const enemy = e as Enemy
+			enemy.startMovement()})
+	}
+
+	private handleBulletSwarm(a: Phaser.Types.Physics.Arcade.GameObjectWithBody, b: Phaser.Types.Physics.Arcade.GameObjectWithBody)
+	{
+		const bullet = a as Bullet
+		const enemy = b as Enemy
+		bullet.despawn()
+		enemy.emit('stay-still')
+		enemy.destoryAndDetach()
+		const idxToDel = this.enemyTeam.findIndex(e => e = enemy)
+		this.enemyTeam.splice(idxToDel, 1)
+		// enemy.despawn()
+	}
+
+	//EnemyEnd
+	//_____________________________________________________________________
+
+	//PSD
+	//_____________________________________________________________________
+
+	private deployPSD()
+	{
+		const destination = SelectionSquare.getComponent(this.player)
+		if(!destination)
+		{
+			console.error(`selection square is undefined`)
+			return
+		}
+
+		const {x, y} = destination.getSelectionSquare()
+			// revert psd comp state back to idle
+			this.player.setPSDCompState(PSD_STATE.EQIUP_IDLE)
+
+		this.pSDRobot.spawn(x, y)
+		this.pSDRobot.deploy()
+	}
+
+	private takeBackPSD()
+	{
+		if(!this.checkSelectionPSDOverlap())
+		{
+			return
+		}
+
+		this.pSDRobot.returnToPlayer()
+		this.player.emit('player-recover-psd')
+		this.enemyTeam.forEach(e => {
+			FollowTarget.getComponent(e).activate()
+		})
+	}
+	private checkSelectionPSDOverlap()
+	{
+		if(!this.#destination)
+		{
+			console.error(`selection square is undefined`)
+			return
+		}
+
+		const checkRect = this.#destination.getSelectionSquare().getBounds()
+		const PSDRect = this.pSDRobot.getBounds()
+
+		return Phaser.Geom.Intersects.RectangleToRectangle(checkRect, PSDRect)
+	}
+	//PSD code End
+	//_____________________________________________________________________
+
 	//Collision callbacks
 	//___________________________________________________________________
-
+	//@ts-ignore
 	onBulletBlockHit(a?,b?){
 		const bullet = a as Bullet;
 		bullet.despawn()
 		const block = b as Block;
 		block.onBulletHit(bullet , block)
 	}
+	//@ts-ignore
 	onBulletMudHit(a?,b?){
 		const bullet = a as Bullet;
 		bullet.despawn()
@@ -292,7 +489,7 @@ export default class Chunk extends Phaser.Scene {
 			}
 		});
 	}
-
+	//@ts-ignore
 	DestroyBlast(a , b){
 		const bullet = a as Bullet;
 		bullet.despawn()
