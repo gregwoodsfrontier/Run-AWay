@@ -54,11 +54,12 @@ export default class Bootstrap extends Phaser.Scene {
 		eventsCenter.on(SCENE_SWITCH_EVENTS.TO_CHUNKS, this.toChunks, this)
 		eventsCenter.on(SCENE_SWITCH_EVENTS.TO_TITLE, this.goToTitle, this)
 		eventsCenter.on(SCENE_SWITCH_EVENTS.BACK_TO_GAME, this.backToGame, this)
+		eventsCenter.on(SCENE_SWITCH_EVENTS.TO_BOSS , this.gotoBoss , this)
 
 		if(process.env.NODE_ENV === "development")
 		{
+			// this.createNewGame()
 			this.createNewGame()
-			// this.startTitleScene()
 			return
 		}
 
@@ -144,6 +145,11 @@ export default class Bootstrap extends Phaser.Scene {
 		this.scene.stop('Level')
 		this.scene.stop('UI')
 		this.scene.launch('GameOver')
+	}
+
+	private gotoBoss(){
+		this.scene.stop('Chunk')
+		this.scene.launch('Boss')
 	}
 
 	/* END-USER-CODE */

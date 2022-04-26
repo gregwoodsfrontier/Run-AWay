@@ -118,7 +118,7 @@ export default class TileGen
     static Create(x: number, y: number, type: string, iteration: number, scene: Phaser.Scene)
     {
         // create block object
-        var b = new Block(scene, x+8, y+8, type);
+        var b = new Block(scene, x+16, y+16, type);
 
         // change the iteration type of the block
         switch(type)

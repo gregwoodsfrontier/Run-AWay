@@ -6,6 +6,7 @@
 /* START-USER-IMPORTS */
 import Phaser from "phaser";
 import Physics from "../components/Physics";
+import { GameState } from "../manager/gameState";
 /* END-USER-IMPORTS */
 
 //Variables
@@ -14,6 +15,7 @@ let CopperHealth = 12;
 let GoldHealth = 20;
 let NormalHealth = 28;
 let objframe = 0;
+let Pickable = false;
 //
 
 export default class Block extends Phaser.GameObjects.Sprite {
@@ -95,18 +97,23 @@ export default class Block extends Phaser.GameObjects.Sprite {
 		}
 	}
 	else{
-		this.setTexture("cave-test-tileset-1" ,Phaser.Math.Between(0,5))
+		this.setTexture("floor" ,Phaser.Math.Between(0,7))
 	}
 	
 		/* END-USER-CTR-CODE */
 
 	/* START-USER-CODE */
-	
-	}
 
-	public onHit(obj1?:Phaser.GameObjects.Sprite , obj2? :Phaser.GameObjects.Sprite){
+	
+}
+
+	public onBulletHit(obj1?:Phaser.GameObjects.Sprite , obj2? :Phaser.GameObjects.Sprite){
 		//once player collide with it
 		//changes frame name to int
+		if(Pickable){
+			return
+		}
+
 		if(!obj2)
 		{
 			return
@@ -116,22 +123,50 @@ export default class Block extends Phaser.GameObjects.Sprite {
 		objframe++;
 
 		//checks if the object's frame has reached the limit
-		if(objframe <6 && objframe>SilverHealth){
-			obj2.destroy();
+		
+		if(objframe == SilverHealth +1){
+			return;
 		}
-		else if(objframe < 14 && objframe>CopperHealth){
-			obj2.destroy();
+		else if(objframe == CopperHealth +1){
+			return
 		}
-		else if(objframe <22 && objframe>GoldHealth){
-			obj2.destroy();
+		else if(objframe == GoldHealth +1){
+			return
 		}
-		else if(objframe < 30 && objframe>NormalHealth){
-			obj2.destroy();
+		else if(objframe == NormalHealth +1){
+			return
+		}
+		if(obj2?.texture.key != "Borders" && !Pickable){
+			obj2?.setFrame(objframe)
 		}
 		//apply texture to the block
-		else if(obj2?.texture.key != "Borders"){
-			obj2?.setTexture(obj2.texture.key , objframe)
+		 
+	}
+	
+	public onPlayerHit(obj1?:Phaser.GameObjects.Sprite , obj2? :Phaser.GameObjects.Sprite){
+		let currentFrame = parseInt(obj2?.frame.name)
+		if( currentFrame == SilverHealth  ){
+			GameState.changeHealthBy(3)
+			GameState.changeEnergyBy(3)
+			GameState.changeSanityBy(3)
+			obj2?.destroy();
 		}
+		else if(currentFrame == CopperHealth ){
+			GameState.changeHealthBy(1)
+			GameState.changeEnergyBy(1)
+			GameState.changeSanityBy(1)
+			obj2?.destroy()
+		}
+		else if(currentFrame == GoldHealth){
+			GameState.changeHealthBy(5)
+			GameState.changeEnergyBy(5)
+			GameState.changeSanityBy(5)
+			obj2?.destroy()
+		}
+		else if(currentFrame == NormalHealth){
+			obj2?.destroy()
+		}
+
 	}
 
 

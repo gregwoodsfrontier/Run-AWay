@@ -30,5 +30,6 @@ export enum SCENE_SWITCH_EVENTS {
     GO_YOUSURVIVED = 'go-yousurvived',
     TO_CHUNKS = 'to-chunks',
     TO_TITLE = 'to-title',
-    BACK_TO_GAME = 'back-to-game'
+    BACK_TO_GAME = 'back-to-game',
+    TO_BOSS = 'to-boss'
 }
