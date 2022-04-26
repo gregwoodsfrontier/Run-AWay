@@ -35,7 +35,9 @@ export default class TileGen
         var world = new World();
 
         // generate world and get list of tiles
-        var t = world.CreateWorld(Math.round(seed));
+        const tempSeed = Phaser.Math.Between(100, 999)
+
+        var t = world.CreateWorld(Math.round(tempSeed));
 
         // iterate through list of tiles generated and add them to list of block objects
         for(var i = 0; i < t.length; i++)

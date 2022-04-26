@@ -31,18 +31,22 @@ class Boot extends Phaser.Scene {
 
 // use drand generation to create a seed with 3 digits
 
-async function genSeed()
+let seed = 0
+
+async function genSeed(arg: number)
 {
     let seed = await rnd(); // create round number with Drand
     console.log(`Raw Drand Randomness returned: ${seed}`); // print randomness before being changed into 3 digit seed
     seed = seed.replace(/\D/g,''); // remove all non-numeric characters
     seed = seed.slice(0, 3); // pick out first 3 characters
     seed = parseInt(seed); // convert back to number
+    console.log(seed)
+    arg = seed
 
-    return seed
+    return seed as number
 }
 
-const seed  = genSeed()
+await genSeed(seed)
 
 // var seed = await rnd(); // create round number with Drand
 
@@ -52,8 +56,10 @@ const seed  = genSeed()
 // seed = seed.slice(0, 3); // pick out first 3 characters
 // seed = parseInt(seed); // convert back to number
 export {seed} // export the seed for access from other files
+console.log('new seed')
+console.log(seed)
 
-console.log(`New seed: ${seed}`); // return processed seed
+// console.log(`New seed: ${seed}`); // return processed seed
 
 // finished, seed has been created!
 
