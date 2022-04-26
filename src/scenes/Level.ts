@@ -21,8 +21,7 @@ import { ENEMY_STATE_KEYS } from "../types/enemyStateKeys";
 import psdField from "../prefabs/psdField";
 // import DetectionBoxes from "../components/DetectionBoxes";
 import { GameState } from "../manager/gameState";
-import { DARK_BROWN } from "../types/colors";
-import ZoneComp from "../components/ZoneComp";
+import FollowTarget from "../components/FollowTarget";
 /* END-USER-IMPORTS */
 
 export default class Level extends Phaser.Scene {
