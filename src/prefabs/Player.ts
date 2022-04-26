@@ -138,11 +138,11 @@ export default class Player extends Phaser.GameObjects.Sprite {
 		this.playerPSD.stateMachine.setState(state)
 	}
 
-	inMudCondition()
+	public inMudCondition()
 	{
 		console.log('in mud con')
 		// this.setTint(this.mudcolor)
-		this.setTint(0xff0000)
+		this.tint = 0x654321;
 		const move = JustMovement.getComponent(this)
 		move.speed = 155 * 0.5
 	}

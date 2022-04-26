@@ -20,6 +20,10 @@ import eventsCenter from "../EventsCenter";
 import { SCENE_SWITCH_EVENTS } from "../types/scenes";
 import { DIRECTION } from "../types/direction";
 import MudTrap from "../prefabs/MudTrap";
+import { time } from "console";
+
+//Variables
+let inMud = false;
 /* END-USER-IMPORTS */
 
 export default class Chunk extends Phaser.Scene {
@@ -64,6 +68,7 @@ export default class Chunk extends Phaser.Scene {
 	public poisonclouds = new Array();
 
 	private tunnel!: EndTunnel;
+	public timer: Phaser.Time.TimerEvent;
 
 	bulletGroup!: Phaser.GameObjects.Group
 
@@ -82,6 +87,10 @@ export default class Chunk extends Phaser.Scene {
 		// this code moves the player down to the beginning of the level (bottom left corner)
 		this.player.x = 48;
 		this.player.y = 640*(20+Math.round(((seed/3)/999)*100))+640-this.player.height;
+
+		const mud2 = new MudTrap(this, this.player.x + 10 , this.player.y - 200);
+		mud2.player = this.player;
+		this.add.existing(mud2)
 		
 		this.initObjectPool()
 
@@ -94,9 +103,14 @@ export default class Chunk extends Phaser.Scene {
 		//Bullet event
 		this.events.on('create-bullet', this.handleBulletUpdate, this)
 
+
 		//collision
+			// Bullet Collision
+		this.physics.add.collider(this.bulletGroup, this.blocks, this.onBulletBlockHit);
+		this.physics.add.collider(this.bulletGroup, this.mud, this.onBulletMudHit);
+			//Player collision
 		this.physics.add.collider(this.player, this.blocks, block.onPlayerHit);
-		this.physics.add.collider(this.bulletGroup, this.blocks, this.onBulletHit);
+		this.physics.add.collider(this.player, this.mud, () =>{this.onPlayerMud()});
 		this.physics.add.collider(this.player, this.tunnel , this.switchtoBossScene);
 
 	}
@@ -245,13 +259,34 @@ export default class Chunk extends Phaser.Scene {
 			}
 		}
 	}
+	//Collision callbacks
+	//___________________________________________________________________
 
-	onBulletHit(a?,b?){
+	onBulletBlockHit(a?,b?){
 		const bullet = a as Bullet;
 		bullet.despawn()
 		const block = b as Block;
 		block.onBulletHit(bullet , block)
 	}
+	onBulletMudHit(a?,b?){
+		const bullet = a as Bullet;
+		bullet.despawn()
+		const mud = b as MudTrap;
+		mud.destroy();
+	}
+
+	onPlayerMud(){
+		this.player.inMudCondition();
+		this.timer = this.time.addEvent({
+			delay: 5000,                // ms
+			callback: () =>{
+				this.player.outMudCondition();
+			}
+		});
+	}
+
+
+	//_____________________________________________________________________
 
 	//Switchesto boss Scene
 	switchtoBossScene(){

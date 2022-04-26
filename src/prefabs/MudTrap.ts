@@ -6,6 +6,7 @@
 import Phaser from "phaser";
 import ZoneComp from "../components/ZoneComp";
 import Physics from "../components/Physics";
+import { time } from "console";
 /* START-USER-IMPORTS */
 /* END-USER-IMPORTS */
 
