@@ -19,7 +19,6 @@ import eventsCenter from "../EventsCenter";
 import { AUDIO_PLAY_EVENTS, SCENE_SWITCH_EVENTS } from "../types/scenes";
 import { ENEMY_STATE_KEYS } from "../types/enemyStateKeys";
 import psdField from "../prefabs/psdField";
-// import DetectionBoxes from "../components/DetectionBoxes";
 import { GameState } from "../manager/gameState";
 import FollowTarget from "../components/FollowTarget";
 /* END-USER-IMPORTS */
@@ -559,6 +558,7 @@ export default class Level extends Phaser.Scene {
 			return
 		}
 
+		eventsCenter.emit(AUDIO_PLAY_EVENTS.COLLECT)
 		rocks.beingPickedUp()
 	}
 
@@ -601,6 +601,8 @@ export default class Level extends Phaser.Scene {
 	{
 		const enemy = e as Enemy
 		GameState.changeHealthBy(-5)
+
+		eventsCenter.emit(AUDIO_PLAY_EVENTS.TARGET_HIT)
 		enemy.despawn()
 	}
 
@@ -723,6 +725,9 @@ export default class Level extends Phaser.Scene {
 		const bullet = a as Bullet
 		const enemy = b as Enemy
 		bullet.despawn()
+
+		eventsCenter.emit(AUDIO_PLAY_EVENTS.TARGET_HIT)
+
 		enemy.emit('stay-still')
 		enemy.destoryAndDetach()
 		const idxToDel = this.enemyTeam.findIndex(e => e = enemy)
@@ -753,6 +758,7 @@ export default class Level extends Phaser.Scene {
 			return
 		}
 
+		eventsCenter.emit(AUDIO_PLAY_EVENTS.DEPLOY)
 		this.pSDRobot.spawn(x, y)
 		this.pSDRobot.deploy()
 	}

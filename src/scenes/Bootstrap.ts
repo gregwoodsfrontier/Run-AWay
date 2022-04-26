@@ -15,7 +15,10 @@ enum GAME_AUDIO {
 	FIELD_LOOP,
 	FIELD_START,
 	COLLECT,
-	MENU_SELECT
+	MENU_SELECT,
+	PLAYER_FOOTSTEPS,
+	ENEMY_FOOTSTEPS,
+	TARGET_HIT
 }
 const AUDIOKEYS = [
 	'Gameplay_Track_1',
@@ -24,7 +27,22 @@ const AUDIOKEYS = [
 	'Energy_Field_Loop',
 	'Energy_Field_Start',
 	'CollectMineral',
-	'MenuSelect'
+	'MenuSelect',
+	'Footsteps',
+	'EnemyFootsteps',
+	'TargetHit'
+]
+const AUDIO_EVENT_KEYS = [
+	AUDIO_PLAY_EVENTS.GAMEPLAY,
+	AUDIO_PLAY_EVENTS.DEPLOY,
+	AUDIO_PLAY_EVENTS.FIELD_FADE,
+	AUDIO_PLAY_EVENTS.FIELD_LOOP,
+	AUDIO_PLAY_EVENTS.FIELD_START,
+	AUDIO_PLAY_EVENTS.COLLECT,
+	AUDIO_PLAY_EVENTS.MENUSELECT,
+	AUDIO_PLAY_EVENTS.PLAYER_FOOT,
+	AUDIO_PLAY_EVENTS.ENEMY_FOOT,
+	AUDIO_PLAY_EVENTS.TARGET_HIT
 ]
 /* END-USER-IMPORTS */
 
@@ -92,10 +110,13 @@ export default class Bootstrap extends Phaser.Scene {
 
 	private defineAudioEvents()
 	{
-		eventsCenter.on(AUDIO_PLAY_EVENTS.GAMEPLAY, () => {
-			this.allAudio[GAME_AUDIO.GAMEPLAY].play()
-		}, this)
-
+		for(let i = 0; i < AUDIO_EVENT_KEYS.length; i++)
+		{
+			eventsCenter.on(AUDIO_EVENT_KEYS[i], () => {
+				this.allAudio[i].play()
+			}, this)
+		}
+		
 		eventsCenter.on(AUDIO_PLAY_EVENTS.GAMEPLAY_STOP, () => {
 			if(this.allAudio[GAME_AUDIO.GAMEPLAY].isPlaying)
 			{
@@ -103,9 +124,22 @@ export default class Bootstrap extends Phaser.Scene {
 			}
 		}, this)
 
+		/* eventsCenter.on(AUDIO_PLAY_EVENTS.GAMEPLAY, () => {
+			this.allAudio[GAME_AUDIO.GAMEPLAY].play()
+		}, this)
+
 		eventsCenter.on(AUDIO_PLAY_EVENTS.MENUSELECT, () => {
 			this.allAudio[GAME_AUDIO.MENU_SELECT].play()
 		})
+		eventsCenter.on(AUDIO_PLAY_EVENTS.FIELD_START, () => {
+			this.allAudio[GAME_AUDIO.FIELD_START].play()
+		}, this)
+		eventsCenter.on(AUDIO_PLAY_EVENTS.FIELD_LOOP, () => {
+			this.allAudio[GAME_AUDIO.FIELD_LOOP].play()
+		}, this)
+		eventsCenter.on(AUDIO_PLAY_EVENTS.FIELD_FADE, () => {
+			this.allAudio[GAME_AUDIO.FIELD_FADEOUT].play()
+		}, this) */
 	}
 
 	private loadSoundAssets()
