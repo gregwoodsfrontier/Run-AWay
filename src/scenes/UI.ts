@@ -406,6 +406,10 @@ export default class UI extends Phaser.Scene {
 		arr.forEach(e => e.setVisible(false))
 		for(let i = 0; i < lastpt; i++)
 		{
+			if(!arr[i])
+			{
+				continue
+			}
 			arr[i].setVisible(true)
 		}
 	}
