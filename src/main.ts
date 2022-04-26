@@ -33,7 +33,7 @@ class Boot extends Phaser.Scene {
 
 let seed = 0
 
-async function genSeed(arg: number)
+async function genSeed()
 {
     let seed = await rnd(); // create round number with Drand
     console.log(`Raw Drand Randomness returned: ${seed}`); // print randomness before being changed into 3 digit seed
@@ -41,10 +41,15 @@ async function genSeed(arg: number)
     seed = seed.slice(0, 3); // pick out first 3 characters
     seed = parseInt(seed); // convert back to number
     console.log(seed)
-    arg = seed
 
-    return seed as number
+    return seed
 }
+
+(async () => {
+    seed = await genSeed()
+    console.log('seed in async', seed)
+    // export {seed}
+})()
 
 // await genSeed(seed)
 

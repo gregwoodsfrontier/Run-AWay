@@ -33,9 +33,6 @@ export default class Title extends Phaser.Scene {
 		// start_Button
 		const start_Button = this.add.image(160, 191, "Start Button");
 
-		// about_Button
-		const about_Button = this.add.image(160, 239, "About Button");
-
 		// dithered_Triangles
 		const dithered_Triangles = this.add.image(160, 1024, "Dithered Triangles");
 
@@ -45,13 +42,9 @@ export default class Title extends Phaser.Scene {
 		// start_Button (components)
 		new Button(start_Button);
 
-		// about_Button (components)
-		new Button(about_Button);
-
 		this.start_Anim1 = start_Anim1;
 		this.logo_v2 = logo_v2;
 		this.start_Button = start_Button;
-		this.about_Button = about_Button;
 		this.transition = transition;
 
 		this.events.emit("scene-awake");
@@ -60,7 +53,6 @@ export default class Title extends Phaser.Scene {
 	private start_Anim1!: Phaser.GameObjects.Sprite;
 	private logo_v2!: Phaser.GameObjects.Image;
 	private start_Button!: Phaser.GameObjects.Image;
-	private about_Button!: Phaser.GameObjects.Image;
 	private transition!: Phaser.GameObjects.Image[];
 
 	/* START-USER-CODE */
@@ -77,7 +69,7 @@ export default class Title extends Phaser.Scene {
 			loop: true
 		})
 		this.startAnimSFX = this.sound.add('Start-Anim-SFX')
-		
+
 		this.introTrack.play()
 
 		Button.getComponent(this.start_Button).handlePointerUp = () => {

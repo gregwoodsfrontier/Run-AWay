@@ -55,20 +55,6 @@
         },
         {
             "type": "Image",
-            "id": "f0bd7b5d-cd11-47d5-a51b-b8b7fcaf9155",
-            "label": "about_Button",
-            "scope": "CLASS",
-            "components": [
-                "Button"
-            ],
-            "texture": {
-                "key": "About Button"
-            },
-            "x": 160,
-            "y": 239
-        },
-        {
-            "type": "Image",
             "id": "e9baa801-0145-4dd4-b020-4f3a3700d940",
             "label": "dithered_Triangles",
             "components": [],
