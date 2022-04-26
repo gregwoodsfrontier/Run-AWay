@@ -3,10 +3,8 @@
 /* START OF COMPILED CODE */
 
 import Phaser from "phaser";
-import TileMapLayerPhysics from "../components/TileMapLayerPhysics";
 import Player from "../prefabs/Player";
 import Enemy from "../prefabs/Enemy";
-import FollowTarget from "../components/FollowTarget";
 import PSD from "../prefabs/PSD";
 import Rock from "../prefabs/Rock";
 /* START-USER-IMPORTS */
@@ -44,6 +42,9 @@ export default class Level extends Phaser.Scene {
 		const cave_test_map_2 = this.add.tilemap("cave-test-map-2");
 		cave_test_map_2.addTilesetImage("gamedevjs-cave-tileset-1", "cave-test-tileset-1");
 
+		// endTunnel___Wide
+		this.add.image(160, -976, "EndTunnel - Wide");
+
 		// floor_1
 		const floor_1 = cave_test_map_2.createLayer("floor", ["gamedevjs-cave-tileset-1"], 0, -960);
 
@@ -61,7 +62,6 @@ export default class Level extends Phaser.Scene {
 		// pSDRobot
 		const pSDRobot = new PSD(this, -200, 0);
 		this.add.existing(pSDRobot);
-		pSDRobot.name = "pSDRobot";
 
 		// start_level
 		const start_level = this.add.sprite(144, 160, "Start-Level-Anim-Short-20");
@@ -238,15 +238,6 @@ export default class Level extends Phaser.Scene {
 		const enemyTeam = [enemyA];
 		const obstacles = [rock_38, rock_37, rock_36, rock_35, rock_34, rock_33, rock_32, rock_31, rock_30, rock_29, rock_26, rock_28, rock_27, rock_25, rock_24, rock_23, rock_22, rock_21, rock_20, rock_19, rock_18, rock_17, rock_16, rock_15, rock_14, rock_13, rock_12, rock_11, rock_10, rock_9, rock_8, rock_7, rock_6, rock_5, rock_4, rock_3, rock_2, rock, rock_1];
 		const mudList: Array<any> = [];
-
-		// wall_1 (components)
-		new TileMapLayerPhysics(wall_1);
-
-		// enemyA (components)
-		const enemyAFollowTarget = FollowTarget.getComponent(enemyA);
-		enemyAFollowTarget.target = player;
-		enemyAFollowTarget.range = 100;
-		enemyAFollowTarget.deadRangeX = 35;
 
 		// rock (prefab fields)
 		rock.rawType = 2;

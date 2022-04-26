@@ -14,6 +14,17 @@
     },
     "displayList": [
         {
+            "type": "Image",
+            "id": "e2b765f8-af5d-486f-a3be-74d1f5eaa4a3",
+            "label": "endTunnel___Wide",
+            "components": [],
+            "texture": {
+                "key": "EndTunnel - Wide"
+            },
+            "x": 160,
+            "y": -976
+        },
+        {
             "type": "TilemapLayer",
             "id": "3cb32ef7-9d34-4243-b050-f51e961d2b80",
             "label": "floor_1",
@@ -67,9 +78,6 @@
             "label": "enemyA",
             "scope": "CLASS",
             "components": [],
-            "FollowTarget.target": "player",
-            "FollowTarget.range": 100,
-            "FollowTarget.deadRangeX": 35,
             "x": -80,
             "y": 384
         },
@@ -81,7 +89,6 @@
                 "y"
             ],
             "label": "pSDRobot",
-            "useGameObjectName": true,
             "scope": "CLASS",
             "components": [],
             "x": -200,

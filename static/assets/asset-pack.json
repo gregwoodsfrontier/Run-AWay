@@ -78,6 +78,11 @@
                 "key": "EndTunnel"
             },
             {
+                "url": "assets/EndTunnel - Wide.png",
+                "type": "image",
+                "key": "EndTunnel - Wide"
+            },
+            {
                 "url": "assets/floor.png",
                 "frameConfig": {
                     "frameWidth": 32,
