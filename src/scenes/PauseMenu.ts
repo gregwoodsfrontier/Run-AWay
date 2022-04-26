@@ -277,7 +277,7 @@ export default class PauseMenu extends Phaser.Scene {
 
 	private restartCurrentGame()
 	{
-		console.log('restart current game')
+		eventsCenter.emit(SCENE_SWITCH_EVENTS.PAUSE_TO_RESTART)
 	}
 
 	private goBackToTitle()

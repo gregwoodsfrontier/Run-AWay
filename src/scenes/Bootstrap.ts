@@ -79,7 +79,9 @@ export default class Bootstrap extends Phaser.Scene {
 	private pauseToRestart()
 	{
 		this.scene.stop("Pause")
-		// this.scene.restart
+		this.scene.launch(this.activeGame)
+		this.scene.launch("UI")
+
 	}
 
 	private pauseToTitle()
