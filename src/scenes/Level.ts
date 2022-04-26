@@ -7,7 +7,6 @@ import TileMapLayerPhysics from "../components/TileMapLayerPhysics";
 import Player from "../prefabs/Player";
 import PSD from "../prefabs/PSD";
 import Rock from "../prefabs/Rock";
-import Enemy from "../prefabs/Enemy";
 /* START-USER-IMPORTS */
 import Enemy from "../prefabs/Enemy";
 import DepthSortY from "../components/DepthSortY";
@@ -218,25 +217,11 @@ export default class Level extends Phaser.Scene {
 		const rock_38 = new Rock(this, 208, -592);
 		this.add.existing(rock_38);
 
-		// rectangle_1
-		const rectangle_1 = this.add.rectangle(64, -608, 192, 192);
-		rectangle_1.setOrigin(0, 1);
-		rectangle_1.alpha = 0;
-		rectangle_1.isFilled = true;
-
 		// exitZone
-		const exitZone = this.add.rectangle(64, -944, 192, 32);
+		const exitZone = this.add.rectangle(64, -992, 192, 32);
 		exitZone.setOrigin(0, 1);
 		exitZone.alpha = 0.1;
 		exitZone.isFilled = true;
-
-		// enemy
-		const enemy = new Enemy(this, 80, 396);
-		this.add.existing(enemy);
-
-		// enemy_1
-		const enemy_1 = new Enemy(this, 128, 400);
-		this.add.existing(enemy_1);
 
 		// lists
 		const obstacles = [rock_38, rock_37, rock_36, rock_35, rock_34, rock_33, rock_32, rock_31, rock_30, rock_29, rock_26, rock_28, rock_27, rock_25, rock_24, rock_23, rock_22, rock_21, rock_20, rock_19, rock_18, rock_17, rock_16, rock_15, rock_14, rock_13, rock_12, rock_11, rock_10, rock_9, rock_8, rock_7, rock_6, rock_5, rock_4, rock_3, rock_2, rock, rock_1];

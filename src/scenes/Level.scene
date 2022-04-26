@@ -635,56 +635,18 @@
         },
         {
             "type": "Rectangle",
-            "id": "9faa6694-65b6-4ee0-af7f-963b2509a434",
-            "label": "rectangle_1",
-            "components": [],
-            "x": 64,
-            "y": -608,
-            "originX": 0,
-            "originY": 1,
-            "alpha": 0,
-            "isFilled": true,
-            "width": 192,
-            "height": 192
-        },
-        {
-            "type": "Rectangle",
             "id": "33a9c4d1-6577-4dfa-b0a0-a06d8c231ba2",
             "label": "exitZone",
             "scope": "CLASS",
             "components": [],
             "x": 64,
-            "y": -944,
+            "y": -992,
             "originX": 0,
             "originY": 1,
             "alpha": 0.1,
             "isFilled": true,
             "width": 192,
             "height": 32
-        },
-        {
-            "prefabId": "408d4d35-1d26-4f5e-9315-9d890dbf9ae0",
-            "id": "b3000f8f-e161-4bff-a1ce-765051500dda",
-            "unlock": [
-                "x",
-                "y"
-            ],
-            "label": "enemy",
-            "components": [],
-            "x": 80,
-            "y": 396
-        },
-        {
-            "prefabId": "408d4d35-1d26-4f5e-9315-9d890dbf9ae0",
-            "id": "bda56545-e92b-4e9e-8db2-efdbe356ac8c",
-            "unlock": [
-                "x",
-                "y"
-            ],
-            "label": "enemy_1",
-            "components": [],
-            "x": 128,
-            "y": 400
         }
     ],
     "plainObjects": [
