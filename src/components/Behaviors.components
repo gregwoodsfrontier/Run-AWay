@@ -337,6 +337,12 @@
                     }
                 }
             ]
+        },
+        {
+            "name": "ButtonScaleComp",
+            "baseClass": "UserComponent",
+            "gameObjectType": "Phaser.GameObjects.Image",
+            "properties": []
         }
     ],
     "meta": {

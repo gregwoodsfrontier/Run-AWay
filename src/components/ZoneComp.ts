@@ -21,7 +21,7 @@ export default class ZoneComp extends UserComponent {
 		const { scene } = this.gameObject
 		this.zone = scene.add.zone(this.LocX, this.LocY, this.width, this.height)
 		scene.physics.world.enable(this.zone)
-		
+
 		/* END-USER-CTR-CODE */
 	}
 
