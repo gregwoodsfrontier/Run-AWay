@@ -18,7 +18,14 @@ enum GAME_AUDIO {
 	MENU_SELECT,
 	PLAYER_FOOTSTEPS,
 	ENEMY_FOOTSTEPS,
-	TARGET_HIT
+	TARGET_HIT,
+	BOSSTRAP,
+	ENEMY_SHOOT,
+	GAS_TRAP,
+	LASERGUN,
+	LASERGUN_EQUIP,
+	PROXY_TRAP,
+	BOSS_FIGHT
 }
 const AUDIOKEYS = [
 	'Gameplay_Track_1',
@@ -30,7 +37,14 @@ const AUDIOKEYS = [
 	'MenuSelect',
 	'Footsteps',
 	'EnemyFootsteps',
-	'TargetHit'
+	'TargetHit',
+	'BossTrap',
+	'EnemyShoot',
+	'GasTrap',
+	'LaserGun',
+	'LaserGunEquip',
+	'ProxyTrap',
+	'Boss_Fight_v3'
 ]
 const AUDIO_EVENT_KEYS = [
 	AUDIO_PLAY_EVENTS.GAMEPLAY,
@@ -42,7 +56,14 @@ const AUDIO_EVENT_KEYS = [
 	AUDIO_PLAY_EVENTS.MENUSELECT,
 	AUDIO_PLAY_EVENTS.PLAYER_FOOT,
 	AUDIO_PLAY_EVENTS.ENEMY_FOOT,
-	AUDIO_PLAY_EVENTS.TARGET_HIT
+	AUDIO_PLAY_EVENTS.TARGET_HIT,
+	AUDIO_PLAY_EVENTS.BOSSTRAP,
+	AUDIO_PLAY_EVENTS.ENEMY_SHOOT,
+	AUDIO_PLAY_EVENTS.GAS_TRAP,
+	AUDIO_PLAY_EVENTS.LASERGUN,
+	AUDIO_PLAY_EVENTS.LASERGUN_EQUIP,
+	AUDIO_PLAY_EVENTS.PROXY_TRAP,
+	AUDIO_PLAY_EVENTS.BOSS_FIGHT
 ]
 /* END-USER-IMPORTS */
 
@@ -79,8 +100,23 @@ export default class Bootstrap extends Phaser.Scene {
 
 		this.editorCreate();
 
-		eventsCenter.on(SCENE_SWITCH_EVENTS.UPDATE_ACTIVE, this.updateActiveScene, this)
+		this.defineSceneSwitchEvents()
 
+		/* if(process.env.NODE_ENV === "development")
+		{
+			this.createNewGame()
+			return
+		} */
+
+		this.loadSoundAssets()
+		this.defineAudioEvents()
+
+		this.startTitleScene()
+	}
+
+	private defineSceneSwitchEvents()
+	{
+		eventsCenter.on(SCENE_SWITCH_EVENTS.UPDATE_ACTIVE, this.updateActiveScene, this)
 		eventsCenter.on(SCENE_SWITCH_EVENTS.TO_PAUSE, this.switchToPauseMenu, this)
 		eventsCenter.on(SCENE_SWITCH_EVENTS.TO_GAME, this.createNewGame, this)
 		eventsCenter.on(SCENE_SWITCH_EVENTS.RESUME_GAME, this.resumeGame, this)
@@ -96,23 +132,15 @@ export default class Bootstrap extends Phaser.Scene {
 		eventsCenter.on(SCENE_SWITCH_EVENTS.PAUSE_TO_TITLE, this.pauseToTitle, this)
 		eventsCenter.on(SCENE_SWITCH_EVENTS.PAUSE_TO_RESTART, this.pauseToRestart, this)
 
-		/* if(process.env.NODE_ENV === "development")
-		{
-			this.createNewGame()
-			return
-		} */
-
-		this.loadSoundAssets()
-		this.defineAudioEvents()
-
-		this.startTitleScene()
 	}
 
 	private defineAudioEvents()
 	{
 		for(let i = 0; i < AUDIO_EVENT_KEYS.length; i++)
 		{
+			console.log(AUDIO_EVENT_KEYS[i], 'loaded')
 			eventsCenter.on(AUDIO_EVENT_KEYS[i], () => {
+				console.log(AUDIO_EVENT_KEYS[i], 'receieved')
 				this.allAudio[i].play()
 			}, this)
 		}
@@ -129,6 +157,14 @@ export default class Bootstrap extends Phaser.Scene {
 			{
 				event: AUDIO_PLAY_EVENTS.ENEMY_FOOT_STOP, 
 				sound: GAME_AUDIO.ENEMY_FOOTSTEPS
+			},
+			{
+				event: AUDIO_PLAY_EVENTS.FIELD_LOOP_STOP,
+				sound: GAME_AUDIO.FIELD_LOOP
+			},
+			{
+				event: AUDIO_PLAY_EVENTS.BOSS_FIGHT_STOP,
+				sound: GAME_AUDIO.BOSS_FIGHT
 			}
 		]
 
@@ -143,20 +179,6 @@ export default class Bootstrap extends Phaser.Scene {
 				}
 			}, this)
 		}
-		
-		eventsCenter.on(AUDIO_PLAY_EVENTS.GAMEPLAY_STOP, () => {
-			if(this.allAudio[GAME_AUDIO.GAMEPLAY].isPlaying)
-			{
-				this.allAudio[GAME_AUDIO.GAMEPLAY].stop()
-			}
-		}, this)
-
-		eventsCenter.on(AUDIO_PLAY_EVENTS.GAMEPLAY_STOP, () => {
-			if(this.allAudio[GAME_AUDIO.GAMEPLAY].isPlaying)
-			{
-				this.allAudio[GAME_AUDIO.GAMEPLAY].stop()
-			}
-		})
 
 		/* eventsCenter.on(AUDIO_PLAY_EVENTS.GAMEPLAY, () => {
 			this.allAudio[GAME_AUDIO.GAMEPLAY].play()
@@ -187,6 +209,13 @@ export default class Bootstrap extends Phaser.Scene {
 				})
 			}
 			else if(idx === GAME_AUDIO.PLAYER_FOOTSTEPS)
+			{
+				this.allAudio[idx] = this.sound.add(key, {
+					loop: true,
+					volume: 1
+				})
+			}
+			else if(idx === GAME_AUDIO.ENEMY_FOOTSTEPS)
 			{
 				this.allAudio[idx] = this.sound.add(key, {
 					loop: true,

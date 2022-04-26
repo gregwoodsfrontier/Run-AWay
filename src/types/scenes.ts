@@ -44,6 +44,7 @@ export enum AUDIO_PLAY_EVENTS {
     DEPLOY = 'audio-deploy',
     FIELD_FADE = 'audio-field-fade',
     FIELD_LOOP = 'audio-field-loop',
+    FIELD_LOOP_STOP = 'audio-field-loop-stop',
     FIELD_START = 'audio-field-start',
     COLLECT = 'audio-collect',
     MENUSELECT = 'audio-menu-select',
@@ -52,4 +53,12 @@ export enum AUDIO_PLAY_EVENTS {
     TARGET_HIT = 'audio-target-hit',
     PLAYER_FOOT_STOP = 'audio-player-footsteps-stop',
     ENEMY_FOOT_STOP = 'audio-enemy-footsteps-stop',
+    BOSSTRAP = 'audio-boss-trap',
+    ENEMY_SHOOT = 'audio-enemy-shoot',
+	GAS_TRAP = 'audio-gas-trap',
+	LASERGUN = 'audio-laser-gun',
+	LASERGUN_EQUIP = 'audio-laser-gun-equip',
+	PROXY_TRAP = 'audio-proxy-trap',
+    BOSS_FIGHT = 'audio-boss-trap',
+    BOSS_FIGHT_STOP = 'audio-boss-trap-stop'
 }
