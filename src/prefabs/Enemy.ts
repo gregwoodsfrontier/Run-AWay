@@ -14,6 +14,8 @@ import DetectionBoxes from "../components/DetectionBoxes";
 import StateMachine from "../stateMachine";
 import { ENEMY_STATE_KEYS } from "../types/enemyStateKeys";
 import { DIRECTION, getDirectionName } from "../types/direction";
+import eventsCenter from "../EventsCenter";
+import { AUDIO_PLAY_EVENTS } from "../types/scenes";
 /* END-USER-IMPORTS */
 
 export default class Enemy extends Phaser.GameObjects.Sprite {
@@ -55,7 +57,8 @@ export default class Enemy extends Phaser.GameObjects.Sprite {
 		})
 		.addState(ENEMY_STATE_KEYS.WALK, {
 			onEnter: this.onWalkEnter,
-			onUpdate: this.onWalkUpdate
+			onUpdate: this.onWalkUpdate,
+			onExit: this.onWalkExit
 		})
 		.addState(ENEMY_STATE_KEYS.ATTACK, {
 			onEnter: this.onAttackEnter
@@ -160,12 +163,8 @@ export default class Enemy extends Phaser.GameObjects.Sprite {
 
 	private onWalkEnter()
 	{
+		eventsCenter.emit(AUDIO_PLAY_EVENTS.ENEMY_FOOT)
 
-
-	}
-
-	private onWalkUpdate()
-	{
 		const dirName = getDirectionName(this.direction)
 
 		if(!dirName)
@@ -202,16 +201,68 @@ export default class Enemy extends Phaser.GameObjects.Sprite {
 			}
 		}
 
+		console.warn(`swarm dir: ${dirName}`)
+
+		this.enemyAnimation.playAnims({
+			character: 'swarm',
+			direction: dirName,
+			state: 'walk'
+		})
+	}
+
+	private onWalkExit()
+	{
+		eventsCenter.emit(AUDIO_PLAY_EVENTS.ENEMY_FOOT_STOP)
+	}
+
+	private onWalkUpdate()
+	{
+		/* const dirName = getDirectionName(this.direction)
+
+		if(!dirName)
+		{
+			console.warn('direction should be defined')
+			return
+		}
+
+		if(!this.enemyAnimation || !this.enemyMovement)
+		{
+			console.error("either animation comp or movement comp is undefined")
+			return
+		}
+
+		switch (this.direction) {
+			case DIRECTION.BACK: {
+				this.enemyMovement.moveUp()
+				break
+			}
+
+			case DIRECTION.FRONT: {
+				this.enemyMovement.moveDown()
+				break
+			}
+
+			case DIRECTION.LEFT: {
+				this.enemyMovement.moveLeft()
+				break
+			}
+
+			case DIRECTION.RIGHT: {
+				this.enemyMovement.moveRight()
+				break
+			}
+		} */
+
 		/* this.enemyAnimation.playAnims({
 			character: 'swarm',
 			direction: dirName,
 			state: 'walk'
 		}) */
 
-		if(!this)
+		/* if(!this)
 		{
 			return
-		}
+		} */
 
 		// console.log(`swarm-${dirName}-walk`)
 		/* try {

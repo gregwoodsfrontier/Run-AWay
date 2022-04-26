@@ -387,6 +387,8 @@ export default class Level extends Phaser.Scene {
 	cave_test_map_1!: Phaser.Tilemaps.Tilemap
 	// Write your code here
 	bulletGroup!: Phaser.GameObjects.Group
+	enemyGroup!: Phaser.GameObjects.Group
+	
 	lastfired = 0
 	#destination!: SelectionSquare
 
@@ -612,6 +614,7 @@ export default class Level extends Phaser.Scene {
 		const enemy = new Enemy(this, x, y)
 		this.add.existing(enemy)
 		this.enemyTeam.push(enemy)
+
 		const follow = FollowTarget.getComponent(enemy);
 		follow.setTarget(this.player)
 		follow.range = 300
@@ -815,6 +818,12 @@ export default class Level extends Phaser.Scene {
 		this.bulletGroup = this.add.group({
 			classType: Bullet,
 			maxSize: 50,
+			runChildUpdate: true
+		})
+
+		this.enemyGroup = this.add.group({
+			classType: Enemy,
+			maxSize: 100,
 			runChildUpdate: true
 		})
 	}
