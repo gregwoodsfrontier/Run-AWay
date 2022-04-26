@@ -3,6 +3,7 @@
 /* START OF COMPILED CODE */
 
 import Phaser from "phaser";
+import DepthSortY from "../components/DepthSortY";
 import TileMapLayerPhysics from "../components/TileMapLayerPhysics";
 import Player from "../prefabs/Player";
 import PSD from "../prefabs/PSD";
@@ -42,7 +43,7 @@ export default class Level extends Phaser.Scene {
 		cave_test_map_2.addTilesetImage("gamedevjs-cave-tileset-1", "cave-test-tileset-1");
 
 		// endTunnel___Wide
-		this.add.image(160, -976, "EndTunnel - Wide");
+		const endTunnel___Wide = this.add.image(160, -976, "EndTunnel - Wide");
 
 		// floor_1
 		const floor_1 = cave_test_map_2.createLayer("floor", ["gamedevjs-cave-tileset-1"], 0, -960);
@@ -227,6 +228,9 @@ export default class Level extends Phaser.Scene {
 		const obstacles = [rock_38, rock_37, rock_36, rock_35, rock_34, rock_33, rock_32, rock_31, rock_30, rock_29, rock_26, rock_28, rock_27, rock_25, rock_24, rock_23, rock_22, rock_21, rock_20, rock_19, rock_18, rock_17, rock_16, rock_15, rock_14, rock_13, rock_12, rock_11, rock_10, rock_9, rock_8, rock_7, rock_6, rock_5, rock_4, rock_3, rock_2, rock, rock_1];
 		const mudList: Array<any> = [];
 
+		// endTunnel___Wide (components)
+		new DepthSortY(endTunnel___Wide);
+
 		// wall_1 (components)
 		new TileMapLayerPhysics(wall_1);
 
@@ -392,6 +396,7 @@ export default class Level extends Phaser.Scene {
 	create() {
 
 		this.editorCreate();
+		this.exitZone.setDepth(-1000)
 		// this.loadSoundAssets()
 		// eventcenter emit to tell Bootstrap which scene is active now
 		eventsCenter.emit(SCENE_SWITCH_EVENTS.UPDATE_ACTIVE, "Level")
@@ -606,7 +611,7 @@ export default class Level extends Phaser.Scene {
 		{
 			return
 		}
-		
+
 		enemy.setActive(true).setVisible(true)
 		this.physics.add.existing(enemy)
 
@@ -614,7 +619,7 @@ export default class Level extends Phaser.Scene {
 		FollowTarget.getComponent(enemy).setTarget(this.player)
 
 		const follow = FollowTarget.getComponent(enemy);
-		
+
 		if(!follow){ return }
 		follow.setTarget(this.player)
 		follow.range = 300

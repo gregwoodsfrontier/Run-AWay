@@ -17,7 +17,9 @@
             "type": "Image",
             "id": "e2b765f8-af5d-486f-a3be-74d1f5eaa4a3",
             "label": "endTunnel___Wide",
-            "components": [],
+            "components": [
+                "DepthSortY"
+            ],
             "texture": {
                 "key": "EndTunnel - Wide"
             },
