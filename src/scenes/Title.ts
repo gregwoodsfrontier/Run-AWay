@@ -78,23 +78,13 @@ export default class Title extends Phaser.Scene {
 			this.introTrack.stop()
 		}
 
-		Button.getComponent(this.about_Button).handlePointerUp = () => {
-			this.about_Button.setTexture("About Button")
-		}
-
 		Button.getComponent(this.start_Button).handlePointerDown = () => {
 			eventsCenter.emit(AUDIO_PLAY_EVENTS.MENUSELECT)
 			this.start_Button.setTexture("Start Button Pressed")
 		}
 
-		Button.getComponent(this.about_Button).handlePointerDown = () => {
-			eventsCenter.emit(AUDIO_PLAY_EVENTS.MENUSELECT)
-			this.about_Button.setTexture("About Button Pressed")
-		}
-
 		const buttons = [
-			this.start_Button,
-			this.about_Button
+			this.start_Button
 		]
 
 		buttons.forEach(button => {
@@ -178,8 +168,7 @@ export default class Title extends Phaser.Scene {
 	{
 		const elements = [
 			this.logo_v2,
-			this.start_Button,
-			this.about_Button
+			this.start_Button
 		]
 
 		elements.forEach(e => {
