@@ -755,9 +755,9 @@ export default class Level extends Phaser.Scene {
 
 		this.pSDRobot.returnToPlayer()
 		this.player.emit('player-recover-psd')
-		this.enemyTeam.forEach(e => {
+		/* this.enemyTeam.forEach(e => {
 			FollowTarget.getComponent(e).activate()
-		})
+		}) */
 	}
 
 	private checkSelectionPSDOverlap()
