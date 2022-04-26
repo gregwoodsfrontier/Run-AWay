@@ -35,7 +35,9 @@ export default class TileGen
         var world = new World();
 
         // generate world and get list of tiles
-        const tempSeed = Phaser.Math.Between(100, 999)
+        console.log('from registry', scene.game.registry.get('seed'))
+        // const tempSeed = Phaser.Math.Between(100, 999)
+        const tempSeed = scene.game.registry.get('seed')
         scene.events.emit('send-seed', tempSeed)
 
         var t = world.CreateWorld(Math.round(tempSeed));
