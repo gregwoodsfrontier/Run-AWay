@@ -221,7 +221,7 @@ export default class DetectionBoxes extends UserComponent {
 		const right = scene.add.zone(x + 16 + hei/2 + dx, y, hei, wid)
 
 		const arr = [ up, left, down, right ]
-		arr.forEach((e, idx) => {
+		arr.forEach((e) => {
 			this.scene.physics.add.existing(e)
 			c.add(e)
 		})
