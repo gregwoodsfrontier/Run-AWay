@@ -102,17 +102,17 @@ export default class Bootstrap extends Phaser.Scene {
 
 		this.defineSceneSwitchEvents()
 
-		/* if(process.env.NODE_ENV === "development")
-		{
-			this.createNewGame()
-			return
-		} */
-
 		this.loadSoundAssets()
 		this.defineAudioEvents()
 
-		// this.startTitleScene()
-		this.createNewGame()
+		if(process.env.NODE_ENV === "development")
+		{
+			this.createNewGame()
+			return
+		}
+
+		this.startTitleScene()
+		// this.createNewGame()
 	}
 
 	private defineSceneSwitchEvents()
