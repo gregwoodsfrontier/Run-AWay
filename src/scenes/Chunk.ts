@@ -17,6 +17,7 @@ import { seed } from "../main";
 import Bullet from "../prefabs/Bullet";
 import Block from "../prefabs/Block";
 import eventsCenter from "../EventsCenter";
+import { SCENE_SWITCH_EVENTS } from "../types/scenes";
 import { DIRECTION } from "../types/direction";
 /* END-USER-IMPORTS */
 

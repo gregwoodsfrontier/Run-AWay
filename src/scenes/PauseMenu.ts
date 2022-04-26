@@ -222,16 +222,10 @@ export default class PauseMenu extends Phaser.Scene {
 
 	private setExplainerBehavior()
 	{
-		const scaleComp = ButtonScaleComp.getComponent(this.explainer)
+		// const scaleComp = ButtonScaleComp.getComponent(this.explainer)
 		const buttonComp = Button.getComponent(this.explainer)
 		buttonComp.handlePointerUp = () => {
 			this.hideExplainer()
-		}
-		buttonComp.handlePointerOver = () => {
-			scaleComp.scaleUp()
-		}
-		buttonComp.handlePointerOut = () => {
-			scaleComp.scaleDown()
 		}
 	}
 
