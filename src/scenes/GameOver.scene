@@ -42,10 +42,12 @@
             "id": "1d907991-5c09-4bee-a466-4c44703a2559",
             "unlock": [
                 "x",
-                "y"
+                "y",
+                "currentScene"
             ],
             "label": "mainMenu_Button_Red",
             "scope": "CLASS",
+            "currentScene": "GameOver",
             "components": [],
             "x": 160,
             "y": 448
@@ -55,10 +57,12 @@
             "id": "a3590ab7-31e8-49aa-b5f3-74bded091a1d",
             "unlock": [
                 "x",
-                "y"
+                "y",
+                "currentScene"
             ],
             "label": "newGame_Button_Red",
             "scope": "CLASS",
+            "currentScene": "GameOver",
             "components": [],
             "x": 160,
             "y": 480

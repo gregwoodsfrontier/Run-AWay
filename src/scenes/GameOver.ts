@@ -37,6 +37,12 @@ export default class GameOver extends Phaser.Scene {
 		const newGame_Button_Red = new NewGameButton(this, 160, 480);
 		this.add.existing(newGame_Button_Red);
 
+		// mainMenu_Button_Red (prefab fields)
+		mainMenu_Button_Red.currentScene = "GameOver";
+
+		// newGame_Button_Red (prefab fields)
+		newGame_Button_Red.currentScene = "GameOver";
+
 		this.gameOverLogo = gameOverLogo;
 		this.mainMenu_Button_Red = mainMenu_Button_Red;
 		this.newGame_Button_Red = newGame_Button_Red;

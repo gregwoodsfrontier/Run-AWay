@@ -24,9 +24,9 @@
                 "JustMovement",
                 "FollowTarget"
             ],
-            "Physics.width": 28,
+            "Physics.width": 20,
             "Physics.height": 28,
-            "Physics.offsetX": 18,
+            "Physics.offsetX": 22,
             "Physics.offsetY": 26,
             "JustMovement.speed": 90,
             "FollowTarget.range": 300,

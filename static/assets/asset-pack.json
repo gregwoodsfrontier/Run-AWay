@@ -521,6 +521,24 @@
                 "key": "Menu-BG"
             },
             {
+                "url": "assets/mid level/mid level.json",
+                "type": "tilemapTiledJSON",
+                "key": "mid level"
+            },
+            {
+                "url": "assets/mid level/mid level.png",
+                "frameConfig": {
+                    "frameWidth": 32,
+                    "frameHeight": 32,
+                    "startFrame": 0,
+                    "endFrame": -1,
+                    "spacing": 0,
+                    "margin": 0
+                },
+                "type": "spritesheet",
+                "key": "mid level_1"
+            },
+            {
                 "url": "assets/END GAME/GAME OVER/NewGame-Button-Red.png",
                 "type": "image",
                 "key": "NewGame-Button-Red"

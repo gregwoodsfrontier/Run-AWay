@@ -24,9 +24,9 @@ export default class Enemy extends Phaser.GameObjects.Sprite {
 
 		// this (components)
 		const thisPhysics = new Physics(this);
-		thisPhysics.width = 28;
+		thisPhysics.width = 20;
 		thisPhysics.height = 28;
-		thisPhysics.offsetX = 18;
+		thisPhysics.offsetX = 22;
 		thisPhysics.offsetY = 26;
 		new DepthSortY(this);
 		new AnimationV2(this);
