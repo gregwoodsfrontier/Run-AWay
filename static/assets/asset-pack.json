@@ -7,11 +7,6 @@
                 "key": "About"
             },
             {
-                "url": "assets/animations.json",
-                "type": "animation",
-                "key": "animations"
-            },
-            {
                 "url": "assets/gunOnly/back-gunonly/back-gunonly-1.png",
                 "type": "image",
                 "key": "back-gunonly-1"
@@ -48,6 +43,17 @@
                 "url": "assets/END GAME/YouSurvived/ByTeam.png",
                 "type": "image",
                 "key": "ByTeam"
+            },
+            {
+                "url": "assets/cards.png",
+                "type": "image",
+                "key": "cards"
+            },
+            {
+                "atlasURL": "assets/cards.json",
+                "textureURL": "assets/cards.png",
+                "type": "atlas",
+                "key": "cards_1"
             },
             {
                 "url": "assets/cave-test-map-2.json",
@@ -2049,6 +2055,17 @@
                 "url": "assets/swarm/swarm-right-walk-4.png",
                 "type": "image",
                 "key": "swarm-right-walk-4"
+            },
+            {
+                "url": "assets/swarmByTP.png",
+                "type": "image",
+                "key": "swarmByTP"
+            },
+            {
+                "type": "multiatlas",
+                "url": "assets/swarmByTP.json",
+                "path": "assets",
+                "key": "swarmByTP_1"
             },
             {
                 "url": "assets/END GAME/YouSurvived/YouSurvived.png",

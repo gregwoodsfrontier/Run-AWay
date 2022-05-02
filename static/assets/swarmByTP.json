@@ -1,0 +1,692 @@
+{
+	"textures": [
+		{
+			"image": "swarmByTP.png",
+			"format": "RGBA8888",
+			"size": {
+				"w": 805,
+				"h": 55
+			},
+			"scale": 1,
+			"frames": [
+				{
+					"filename": "swarm-left-attack-1.png",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 64,
+						"h": 64
+					},
+					"spriteSourceSize": {
+						"x": 12,
+						"y": 8,
+						"w": 28,
+						"h": 55
+					},
+					"frame": {
+						"x": 0,
+						"y": 0,
+						"w": 28,
+						"h": 55
+					}
+				},
+				{
+					"filename": "swarm-right-attack-1.png",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 64,
+						"h": 64
+					},
+					"spriteSourceSize": {
+						"x": 24,
+						"y": 8,
+						"w": 28,
+						"h": 55
+					},
+					"frame": {
+						"x": 28,
+						"y": 0,
+						"w": 28,
+						"h": 55
+					}
+				},
+				{
+					"filename": "swarm-left-attack-2.png",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 64,
+						"h": 64
+					},
+					"spriteSourceSize": {
+						"x": 9,
+						"y": 10,
+						"w": 55,
+						"h": 53
+					},
+					"frame": {
+						"x": 56,
+						"y": 0,
+						"w": 55,
+						"h": 53
+					}
+				},
+				{
+					"filename": "swarm-back-attack-2.png",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 64,
+						"h": 64
+					},
+					"spriteSourceSize": {
+						"x": 11,
+						"y": 10,
+						"w": 33,
+						"h": 53
+					},
+					"frame": {
+						"x": 111,
+						"y": 0,
+						"w": 33,
+						"h": 53
+					}
+				},
+				{
+					"filename": "swarm-back-attack-4.png",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 64,
+						"h": 64
+					},
+					"spriteSourceSize": {
+						"x": 20,
+						"y": 10,
+						"w": 33,
+						"h": 53
+					},
+					"frame": {
+						"x": 144,
+						"y": 0,
+						"w": 33,
+						"h": 53
+					}
+				},
+				{
+					"filename": "swarm-right-attack-2.png",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 64,
+						"h": 64
+					},
+					"spriteSourceSize": {
+						"x": 23,
+						"y": 10,
+						"w": 32,
+						"h": 53
+					},
+					"frame": {
+						"x": 177,
+						"y": 0,
+						"w": 32,
+						"h": 53
+					}
+				},
+				{
+					"filename": "swarm-front-attack-2.png",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 64,
+						"h": 64
+					},
+					"spriteSourceSize": {
+						"x": 14,
+						"y": 10,
+						"w": 30,
+						"h": 53
+					},
+					"frame": {
+						"x": 209,
+						"y": 0,
+						"w": 30,
+						"h": 53
+					}
+				},
+				{
+					"filename": "swarm-front-attack-4.png",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 64,
+						"h": 64
+					},
+					"spriteSourceSize": {
+						"x": 20,
+						"y": 10,
+						"w": 30,
+						"h": 53
+					},
+					"frame": {
+						"x": 239,
+						"y": 0,
+						"w": 30,
+						"h": 53
+					}
+				},
+				{
+					"filename": "swarm-left-attack-4.png",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 64,
+						"h": 64
+					},
+					"spriteSourceSize": {
+						"x": 14,
+						"y": 10,
+						"w": 26,
+						"h": 53
+					},
+					"frame": {
+						"x": 269,
+						"y": 0,
+						"w": 26,
+						"h": 53
+					}
+				},
+				{
+					"filename": "swarm-left-walk-2.png",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 64,
+						"h": 64
+					},
+					"spriteSourceSize": {
+						"x": 15,
+						"y": 10,
+						"w": 26,
+						"h": 53
+					},
+					"frame": {
+						"x": 295,
+						"y": 0,
+						"w": 26,
+						"h": 53
+					}
+				},
+				{
+					"filename": "swarm-right-attack-4.png",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 64,
+						"h": 64
+					},
+					"spriteSourceSize": {
+						"x": 24,
+						"y": 10,
+						"w": 26,
+						"h": 53
+					},
+					"frame": {
+						"x": 321,
+						"y": 0,
+						"w": 26,
+						"h": 53
+					}
+				},
+				{
+					"filename": "swarm-right-walk-2.png",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 64,
+						"h": 64
+					},
+					"spriteSourceSize": {
+						"x": 23,
+						"y": 10,
+						"w": 26,
+						"h": 53
+					},
+					"frame": {
+						"x": 347,
+						"y": 0,
+						"w": 26,
+						"h": 53
+					}
+				},
+				{
+					"filename": "swarm-left-walk-4.png",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 64,
+						"h": 64
+					},
+					"spriteSourceSize": {
+						"x": 15,
+						"y": 10,
+						"w": 25,
+						"h": 53
+					},
+					"frame": {
+						"x": 373,
+						"y": 0,
+						"w": 25,
+						"h": 53
+					}
+				},
+				{
+					"filename": "swarm-right-walk-4.png",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 64,
+						"h": 64
+					},
+					"spriteSourceSize": {
+						"x": 24,
+						"y": 10,
+						"w": 25,
+						"h": 53
+					},
+					"frame": {
+						"x": 398,
+						"y": 0,
+						"w": 25,
+						"h": 53
+					}
+				},
+				{
+					"filename": "swarm-back-walk-2.png",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 64,
+						"h": 64
+					},
+					"spriteSourceSize": {
+						"x": 20,
+						"y": 10,
+						"w": 24,
+						"h": 53
+					},
+					"frame": {
+						"x": 423,
+						"y": 0,
+						"w": 24,
+						"h": 53
+					}
+				},
+				{
+					"filename": "swarm-back-walk-4.png",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 64,
+						"h": 64
+					},
+					"spriteSourceSize": {
+						"x": 20,
+						"y": 10,
+						"w": 24,
+						"h": 53
+					},
+					"frame": {
+						"x": 447,
+						"y": 0,
+						"w": 24,
+						"h": 53
+					}
+				},
+				{
+					"filename": "swarm-front-walk-2.png",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 64,
+						"h": 64
+					},
+					"spriteSourceSize": {
+						"x": 20,
+						"y": 10,
+						"w": 24,
+						"h": 53
+					},
+					"frame": {
+						"x": 471,
+						"y": 0,
+						"w": 24,
+						"h": 53
+					}
+				},
+				{
+					"filename": "swarm-front-walk-4.png",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 64,
+						"h": 64
+					},
+					"spriteSourceSize": {
+						"x": 20,
+						"y": 10,
+						"w": 24,
+						"h": 53
+					},
+					"frame": {
+						"x": 495,
+						"y": 0,
+						"w": 24,
+						"h": 53
+					}
+				},
+				{
+					"filename": "swarm-back-attack-1.png",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 64,
+						"h": 64
+					},
+					"spriteSourceSize": {
+						"x": 13,
+						"y": 11,
+						"w": 32,
+						"h": 52
+					},
+					"frame": {
+						"x": 519,
+						"y": 0,
+						"w": 32,
+						"h": 52
+					}
+				},
+				{
+					"filename": "swarm-back-attack-3.png",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 64,
+						"h": 64
+					},
+					"spriteSourceSize": {
+						"x": 19,
+						"y": 11,
+						"w": 32,
+						"h": 52
+					},
+					"frame": {
+						"x": 551,
+						"y": 0,
+						"w": 32,
+						"h": 52
+					}
+				},
+				{
+					"filename": "swarm-front-attack-1.png",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 64,
+						"h": 64
+					},
+					"spriteSourceSize": {
+						"x": 13,
+						"y": 11,
+						"w": 32,
+						"h": 52
+					},
+					"frame": {
+						"x": 583,
+						"y": 0,
+						"w": 32,
+						"h": 52
+					}
+				},
+				{
+					"filename": "swarm-front-attack-3.png",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 64,
+						"h": 64
+					},
+					"spriteSourceSize": {
+						"x": 19,
+						"y": 11,
+						"w": 32,
+						"h": 52
+					},
+					"frame": {
+						"x": 615,
+						"y": 0,
+						"w": 32,
+						"h": 52
+					}
+				},
+				{
+					"filename": "swarm-back-walk-1.png",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 64,
+						"h": 64
+					},
+					"spriteSourceSize": {
+						"x": 19,
+						"y": 11,
+						"w": 26,
+						"h": 52
+					},
+					"frame": {
+						"x": 647,
+						"y": 0,
+						"w": 26,
+						"h": 52
+					}
+				},
+				{
+					"filename": "swarm-back-walk-3.png",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 64,
+						"h": 64
+					},
+					"spriteSourceSize": {
+						"x": 19,
+						"y": 11,
+						"w": 26,
+						"h": 52
+					},
+					"frame": {
+						"x": 647,
+						"y": 0,
+						"w": 26,
+						"h": 52
+					}
+				},
+				{
+					"filename": "swarm-front-walk-1.png",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 64,
+						"h": 64
+					},
+					"spriteSourceSize": {
+						"x": 19,
+						"y": 11,
+						"w": 26,
+						"h": 52
+					},
+					"frame": {
+						"x": 673,
+						"y": 0,
+						"w": 26,
+						"h": 52
+					}
+				},
+				{
+					"filename": "swarm-front-walk-3.png",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 64,
+						"h": 64
+					},
+					"spriteSourceSize": {
+						"x": 19,
+						"y": 11,
+						"w": 26,
+						"h": 52
+					},
+					"frame": {
+						"x": 699,
+						"y": 0,
+						"w": 26,
+						"h": 52
+					}
+				},
+				{
+					"filename": "swarm-left-attack-3.png",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 64,
+						"h": 64
+					},
+					"spriteSourceSize": {
+						"x": 18,
+						"y": 11,
+						"w": 22,
+						"h": 52
+					},
+					"frame": {
+						"x": 725,
+						"y": 0,
+						"w": 22,
+						"h": 52
+					}
+				},
+				{
+					"filename": "swarm-right-attack-3.png",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 64,
+						"h": 64
+					},
+					"spriteSourceSize": {
+						"x": 24,
+						"y": 11,
+						"w": 22,
+						"h": 52
+					},
+					"frame": {
+						"x": 747,
+						"y": 0,
+						"w": 22,
+						"h": 52
+					}
+				},
+				{
+					"filename": "swarm-left-walk-1.png",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 64,
+						"h": 64
+					},
+					"spriteSourceSize": {
+						"x": 22,
+						"y": 11,
+						"w": 18,
+						"h": 52
+					},
+					"frame": {
+						"x": 769,
+						"y": 0,
+						"w": 18,
+						"h": 52
+					}
+				},
+				{
+					"filename": "swarm-left-walk-3.png",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 64,
+						"h": 64
+					},
+					"spriteSourceSize": {
+						"x": 22,
+						"y": 11,
+						"w": 18,
+						"h": 52
+					},
+					"frame": {
+						"x": 769,
+						"y": 0,
+						"w": 18,
+						"h": 52
+					}
+				},
+				{
+					"filename": "swarm-right-walk-1.png",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 64,
+						"h": 64
+					},
+					"spriteSourceSize": {
+						"x": 24,
+						"y": 11,
+						"w": 18,
+						"h": 52
+					},
+					"frame": {
+						"x": 787,
+						"y": 0,
+						"w": 18,
+						"h": 52
+					}
+				},
+				{
+					"filename": "swarm-right-walk-3.png",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 64,
+						"h": 64
+					},
+					"spriteSourceSize": {
+						"x": 24,
+						"y": 11,
+						"w": 18,
+						"h": 52
+					},
+					"frame": {
+						"x": 787,
+						"y": 0,
+						"w": 18,
+						"h": 52
+					}
+				}
+			]
+		}
+	],
+	"meta": {
+		"app": "https://www.codeandweb.com/texturepacker",
+		"version": "3.0",
+		"smartupdate": "$TexturePacker:SmartUpdate:0a98a23f00296a24c609ae5a30caa8d4:fb548cfbc47a03931574bcfadaba7def:4a34101925bca164e4b282562aafc943$"
+	}
+}

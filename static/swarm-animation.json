@@ -1,0 +1,75 @@
+{
+    "anims": [
+        {
+            "key": "swarm-left-walk",
+            "type": "frame",
+            "frames": [
+                {
+                    "key": "swarmByTP_1",
+                    "frame": "swarm-left-walk-1.png",
+                    "duration": 0,
+                    "keyframe": false
+                },
+                {
+                    "key": "swarmByTP_1",
+                    "frame": "swarm-left-walk-2.png",
+                    "duration": 0,
+                    "keyframe": false
+                },
+                {
+                    "key": "swarmByTP_1",
+                    "frame": "swarm-left-walk-3.png",
+                    "duration": 0,
+                    "keyframe": false
+                },
+                {
+                    "key": "swarmByTP_1",
+                    "frame": "swarm-left-walk-4.png",
+                    "duration": 0,
+                    "keyframe": false
+                }
+            ],
+            "frameRate": 12,
+            "skipMissedFrames": true,
+            "repeat": -1
+        },
+        {
+            "key": "swarm-right-walk",
+            "type": "frame",
+            "frames": [
+                {
+                    "key": "swarmByTP_1",
+                    "frame": "swarm-right-walk-1.png",
+                    "duration": 0,
+                    "keyframe": false
+                },
+                {
+                    "key": "swarmByTP_1",
+                    "frame": "swarm-right-walk-2.png",
+                    "duration": 0,
+                    "keyframe": false
+                },
+                {
+                    "key": "swarmByTP_1",
+                    "frame": "swarm-right-walk-3.png",
+                    "duration": 0,
+                    "keyframe": false
+                },
+                {
+                    "key": "swarmByTP_1",
+                    "frame": "swarm-right-walk-4.png",
+                    "duration": 0,
+                    "keyframe": false
+                }
+            ],
+            "frameRate": 12,
+            "skipMissedFrames": true,
+            "repeat": -1
+        }
+    ],
+    "globalTimeScale": 1,
+    "meta": {
+        "app": "Phaser Editor 2D v3",
+        "contentType": "Phaser v3 Animations"
+    }
+}
