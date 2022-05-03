@@ -1,0 +1,333 @@
+{
+    "anims": [
+        {
+            "key": "boss-back-attack",
+            "type": "frame",
+            "frames": [
+                {
+                    "key": "bossByTP",
+                    "frame": "boss-back-attack-1.png",
+                    "duration": 0,
+                    "keyframe": false
+                },
+                {
+                    "key": "bossByTP",
+                    "frame": "boss-back-attack-2.png",
+                    "duration": 0,
+                    "keyframe": false
+                },
+                {
+                    "key": "bossByTP",
+                    "frame": "boss-back-attack-3.png",
+                    "duration": 0,
+                    "keyframe": false
+                },
+                {
+                    "key": "bossByTP",
+                    "frame": "boss-back-attack-4.png",
+                    "duration": 0,
+                    "keyframe": false
+                }
+            ],
+            "frameRate": 12,
+            "skipMissedFrames": true,
+            "repeat": -1
+        },
+        {
+            "key": "boss-back-walk",
+            "type": "frame",
+            "frames": [
+                {
+                    "key": "bossByTP",
+                    "frame": "boss-back-walk-1.png",
+                    "duration": 0,
+                    "keyframe": false
+                },
+                {
+                    "key": "bossByTP",
+                    "frame": "boss-back-walk-2.png",
+                    "duration": 0,
+                    "keyframe": false
+                },
+                {
+                    "key": "bossByTP",
+                    "frame": "boss-back-walk-3.png",
+                    "duration": 0,
+                    "keyframe": false
+                },
+                {
+                    "key": "bossByTP",
+                    "frame": "boss-back-walk-4.png",
+                    "duration": 0,
+                    "keyframe": false
+                }
+            ],
+            "frameRate": 12,
+            "skipMissedFrames": true,
+            "repeat": -1
+        },
+        {
+            "key": "boss-front-attack",
+            "type": "frame",
+            "frames": [
+                {
+                    "key": "bossByTP",
+                    "frame": "boss-front-attack-1.png",
+                    "duration": 0,
+                    "keyframe": false
+                },
+                {
+                    "key": "bossByTP",
+                    "frame": "boss-front-attack-2.png",
+                    "duration": 0,
+                    "keyframe": false
+                },
+                {
+                    "key": "bossByTP",
+                    "frame": "boss-front-attack-3.png",
+                    "duration": 0,
+                    "keyframe": false
+                },
+                {
+                    "key": "bossByTP",
+                    "frame": "boss-front-attack-4.png",
+                    "duration": 0,
+                    "keyframe": false
+                }
+            ],
+            "frameRate": 12,
+            "skipMissedFrames": true,
+            "repeat": -1
+        },
+        {
+            "key": "boss-front-walk",
+            "type": "frame",
+            "frames": [
+                {
+                    "key": "bossByTP",
+                    "frame": "boss-front-walk-1.png",
+                    "duration": 0,
+                    "keyframe": false
+                },
+                {
+                    "key": "bossByTP",
+                    "frame": "boss-front-walk-2.png",
+                    "duration": 0,
+                    "keyframe": false
+                },
+                {
+                    "key": "bossByTP",
+                    "frame": "boss-front-walk-3.png",
+                    "duration": 0,
+                    "keyframe": false
+                },
+                {
+                    "key": "bossByTP",
+                    "frame": "boss-front-walk-4.png",
+                    "duration": 0,
+                    "keyframe": false
+                }
+            ],
+            "frameRate": 12,
+            "skipMissedFrames": true,
+            "repeat": -1
+        },
+        {
+            "key": "boss-left-attack",
+            "type": "frame",
+            "frames": [
+                {
+                    "key": "bossByTP",
+                    "frame": "boss-left-attack-1.png",
+                    "duration": 0,
+                    "keyframe": false
+                },
+                {
+                    "key": "bossByTP",
+                    "frame": "boss-left-attack-2.png",
+                    "duration": 0,
+                    "keyframe": false
+                },
+                {
+                    "key": "bossByTP",
+                    "frame": "boss-left-attack-3.png",
+                    "duration": 0,
+                    "keyframe": false
+                },
+                {
+                    "key": "bossByTP",
+                    "frame": "boss-left-attack-4.png",
+                    "duration": 0,
+                    "keyframe": false
+                }
+            ],
+            "frameRate": 12,
+            "skipMissedFrames": true,
+            "repeat": -1
+        },
+        {
+            "key": "boss-left-walk",
+            "type": "frame",
+            "frames": [
+                {
+                    "key": "bossByTP",
+                    "frame": "boss-left-walk-1.png",
+                    "duration": 0,
+                    "keyframe": false
+                },
+                {
+                    "key": "bossByTP",
+                    "frame": "boss-left-walk-2.png",
+                    "duration": 0,
+                    "keyframe": false
+                },
+                {
+                    "key": "bossByTP",
+                    "frame": "boss-left-walk-3.png",
+                    "duration": 0,
+                    "keyframe": false
+                },
+                {
+                    "key": "bossByTP",
+                    "frame": "boss-left-walk-4.png",
+                    "duration": 0,
+                    "keyframe": false
+                }
+            ],
+            "frameRate": 12,
+            "skipMissedFrames": true,
+            "repeat": -1
+        },
+        {
+            "key": "boss-right-attack",
+            "type": "frame",
+            "frames": [
+                {
+                    "key": "bossByTP",
+                    "frame": "boss-right-attack-1.png",
+                    "duration": 0,
+                    "keyframe": false
+                },
+                {
+                    "key": "bossByTP",
+                    "frame": "boss-right-attack-2.png",
+                    "duration": 0,
+                    "keyframe": false
+                },
+                {
+                    "key": "bossByTP",
+                    "frame": "boss-right-attack-3.png",
+                    "duration": 0,
+                    "keyframe": false
+                },
+                {
+                    "key": "bossByTP",
+                    "frame": "boss-right-attack-4.png",
+                    "duration": 0,
+                    "keyframe": false
+                }
+            ],
+            "frameRate": 12,
+            "skipMissedFrames": true,
+            "repeat": -1
+        },
+        {
+            "key": "boss-right-walk",
+            "type": "frame",
+            "frames": [
+                {
+                    "key": "bossByTP",
+                    "frame": "boss-right-walk-1.png",
+                    "duration": 0,
+                    "keyframe": false
+                },
+                {
+                    "key": "bossByTP",
+                    "frame": "boss-right-walk-2.png",
+                    "duration": 0,
+                    "keyframe": false
+                },
+                {
+                    "key": "bossByTP",
+                    "frame": "boss-right-walk-3.png",
+                    "duration": 0,
+                    "keyframe": false
+                },
+                {
+                    "key": "bossByTP",
+                    "frame": "boss-right-walk-4.png",
+                    "duration": 0,
+                    "keyframe": false
+                }
+            ],
+            "frameRate": 12,
+            "skipMissedFrames": true,
+            "repeat": -1
+        },
+        {
+            "key": "boss-back-idle",
+            "type": "frame",
+            "frames": [
+                {
+                    "key": "bossByTP",
+                    "frame": "boss-back-idle-1.png",
+                    "duration": 0,
+                    "keyframe": false
+                }
+            ],
+            "frameRate": 24,
+            "skipMissedFrames": true,
+            "repeat": -1
+        },
+        {
+            "key": "boss-front-idle",
+            "type": "frame",
+            "frames": [
+                {
+                    "key": "bossByTP",
+                    "frame": "boss-front-idle-1.png",
+                    "duration": 0,
+                    "keyframe": false
+                }
+            ],
+            "frameRate": 24,
+            "skipMissedFrames": true,
+            "repeat": -1
+        },
+        {
+            "key": "boss-left-idle",
+            "type": "frame",
+            "frames": [
+                {
+                    "key": "bossByTP",
+                    "frame": "boss-left-idle-1.png",
+                    "duration": 0,
+                    "keyframe": false
+                }
+            ],
+            "frameRate": 24,
+            "skipMissedFrames": true,
+            "repeat": -1
+        },
+        {
+            "key": "boss-right-idle",
+            "type": "frame",
+            "frames": [
+                {
+                    "key": "bossByTP",
+                    "frame": "boss-right-idle-1.png",
+                    "duration": 0,
+                    "keyframe": false
+                }
+            ],
+            "frameRate": 24,
+            "skipMissedFrames": true,
+            "repeat": -1
+        }
+    ],
+    "globalTimeScale": 1,
+    "meta": {
+        "app": "Phaser Editor 2D v3",
+        "contentType": "Phaser v3 Animations"
+    }
+}

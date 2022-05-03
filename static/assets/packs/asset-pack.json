@@ -40,6 +40,12 @@
                 "key": "Borders"
             },
             {
+                "type": "multiatlas",
+                "url": "assets/bossByTP.json",
+                "path": "assets",
+                "key": "bossByTP"
+            },
+            {
                 "url": "assets/END GAME/YouSurvived/ByTeam.png",
                 "type": "image",
                 "key": "ByTeam"
@@ -475,6 +481,12 @@
                 "url": "assets/idle title anim/idle-title-Anim-57.png",
                 "type": "image",
                 "key": "idle-title-Anim-57"
+            },
+            {
+                "type": "multiatlas",
+                "url": "assets/largeBossByTP.json",
+                "path": "assets",
+                "key": "largeBossByTP"
             },
             {
                 "url": "assets/gunOnly/left-gunonly/left-gunonly-1.png",
@@ -1895,6 +1907,11 @@
                 "url": "assets/Start level Anim Short/Start-Level-Anim-Short-20.png",
                 "type": "image",
                 "key": "Start-Level-Anim-Short-20"
+            },
+            {
+                "url": "assets/animations/swarm-animation.json",
+                "type": "animation",
+                "key": "swarm-animation"
             },
             {
                 "url": "assets/swarm/back-attack/swarm-back-attack-1.png",

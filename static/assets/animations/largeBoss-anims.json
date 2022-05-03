@@ -1,0 +1,333 @@
+{
+    "anims": [
+        {
+            "key": "largeboss-back-attack",
+            "type": "frame",
+            "frames": [
+                {
+                    "key": "largeBossByTP",
+                    "frame": "largeboss-back-attack-1.png",
+                    "duration": 0,
+                    "keyframe": false
+                },
+                {
+                    "key": "largeBossByTP",
+                    "frame": "largeboss-back-attack-2.png",
+                    "duration": 0,
+                    "keyframe": false
+                },
+                {
+                    "key": "largeBossByTP",
+                    "frame": "largeboss-back-attack-3.png",
+                    "duration": 0,
+                    "keyframe": false
+                },
+                {
+                    "key": "largeBossByTP",
+                    "frame": "largeboss-back-attack-4.png",
+                    "duration": 0,
+                    "keyframe": false
+                }
+            ],
+            "frameRate": 12,
+            "skipMissedFrames": true,
+            "repeat": -1
+        },
+        {
+            "key": "largeboss-back-walk",
+            "type": "frame",
+            "frames": [
+                {
+                    "key": "largeBossByTP",
+                    "frame": "largeboss-back-walk-1.png",
+                    "duration": 0,
+                    "keyframe": false
+                },
+                {
+                    "key": "largeBossByTP",
+                    "frame": "largeboss-back-walk-2.png",
+                    "duration": 0,
+                    "keyframe": false
+                },
+                {
+                    "key": "largeBossByTP",
+                    "frame": "largeboss-back-walk-3.png",
+                    "duration": 0,
+                    "keyframe": false
+                },
+                {
+                    "key": "largeBossByTP",
+                    "frame": "largeboss-back-walk-4.png",
+                    "duration": 0,
+                    "keyframe": false
+                }
+            ],
+            "frameRate": 12,
+            "skipMissedFrames": true,
+            "repeat": -1
+        },
+        {
+            "key": "largeboss-front-attack",
+            "type": "frame",
+            "frames": [
+                {
+                    "key": "largeBossByTP",
+                    "frame": "largeboss-front-attack-1.png",
+                    "duration": 0,
+                    "keyframe": false
+                },
+                {
+                    "key": "largeBossByTP",
+                    "frame": "largeboss-front-attack-2.png",
+                    "duration": 0,
+                    "keyframe": false
+                },
+                {
+                    "key": "largeBossByTP",
+                    "frame": "largeboss-front-attack-3.png",
+                    "duration": 0,
+                    "keyframe": false
+                },
+                {
+                    "key": "largeBossByTP",
+                    "frame": "largeboss-front-attack-4.png",
+                    "duration": 0,
+                    "keyframe": false
+                }
+            ],
+            "frameRate": 12,
+            "skipMissedFrames": true,
+            "repeat": -1
+        },
+        {
+            "key": "largeboss-front-walk",
+            "type": "frame",
+            "frames": [
+                {
+                    "key": "largeBossByTP",
+                    "frame": "largeboss-front-walk-1.png",
+                    "duration": 0,
+                    "keyframe": false
+                },
+                {
+                    "key": "largeBossByTP",
+                    "frame": "largeboss-front-walk-2.png",
+                    "duration": 0,
+                    "keyframe": false
+                },
+                {
+                    "key": "largeBossByTP",
+                    "frame": "largeboss-front-walk-3.png",
+                    "duration": 0,
+                    "keyframe": false
+                },
+                {
+                    "key": "largeBossByTP",
+                    "frame": "largeboss-front-walk-4.png",
+                    "duration": 0,
+                    "keyframe": false
+                }
+            ],
+            "frameRate": 12,
+            "skipMissedFrames": true,
+            "repeat": -1
+        },
+        {
+            "key": "largeboss-left-attack",
+            "type": "frame",
+            "frames": [
+                {
+                    "key": "largeBossByTP",
+                    "frame": "largeboss-left-attack-1.png",
+                    "duration": 0,
+                    "keyframe": false
+                },
+                {
+                    "key": "largeBossByTP",
+                    "frame": "largeboss-left-attack-2.png",
+                    "duration": 0,
+                    "keyframe": false
+                },
+                {
+                    "key": "largeBossByTP",
+                    "frame": "largeboss-left-attack-3.png",
+                    "duration": 0,
+                    "keyframe": false
+                },
+                {
+                    "key": "largeBossByTP",
+                    "frame": "largeboss-left-attack-4.png",
+                    "duration": 0,
+                    "keyframe": false
+                }
+            ],
+            "frameRate": 12,
+            "skipMissedFrames": true,
+            "repeat": -1
+        },
+        {
+            "key": "largeboss-left-walk",
+            "type": "frame",
+            "frames": [
+                {
+                    "key": "largeBossByTP",
+                    "frame": "largeboss-left-walk-1.png",
+                    "duration": 0,
+                    "keyframe": false
+                },
+                {
+                    "key": "largeBossByTP",
+                    "frame": "largeboss-left-walk-2.png",
+                    "duration": 0,
+                    "keyframe": false
+                },
+                {
+                    "key": "largeBossByTP",
+                    "frame": "largeboss-left-walk-3.png",
+                    "duration": 0,
+                    "keyframe": false
+                },
+                {
+                    "key": "largeBossByTP",
+                    "frame": "largeboss-left-walk-4.png",
+                    "duration": 0,
+                    "keyframe": false
+                }
+            ],
+            "frameRate": 12,
+            "skipMissedFrames": true,
+            "repeat": -1
+        },
+        {
+            "key": "largeboss-right-attack",
+            "type": "frame",
+            "frames": [
+                {
+                    "key": "largeBossByTP",
+                    "frame": "largeboss-right-attack-1.png",
+                    "duration": 0,
+                    "keyframe": false
+                },
+                {
+                    "key": "largeBossByTP",
+                    "frame": "largeboss-right-attack-2.png",
+                    "duration": 0,
+                    "keyframe": false
+                },
+                {
+                    "key": "largeBossByTP",
+                    "frame": "largeboss-right-attack-3.png",
+                    "duration": 0,
+                    "keyframe": false
+                },
+                {
+                    "key": "largeBossByTP",
+                    "frame": "largeboss-right-attack-4.png",
+                    "duration": 0,
+                    "keyframe": false
+                }
+            ],
+            "frameRate": 12,
+            "skipMissedFrames": true,
+            "repeat": -1
+        },
+        {
+            "key": "largeboss-right-walk",
+            "type": "frame",
+            "frames": [
+                {
+                    "key": "largeBossByTP",
+                    "frame": "largeboss-right-walk-1.png",
+                    "duration": 0,
+                    "keyframe": false
+                },
+                {
+                    "key": "largeBossByTP",
+                    "frame": "largeboss-right-walk-2.png",
+                    "duration": 0,
+                    "keyframe": false
+                },
+                {
+                    "key": "largeBossByTP",
+                    "frame": "largeboss-right-walk-3.png",
+                    "duration": 0,
+                    "keyframe": false
+                },
+                {
+                    "key": "largeBossByTP",
+                    "frame": "largeboss-right-walk-4.png",
+                    "duration": 0,
+                    "keyframe": false
+                }
+            ],
+            "frameRate": 12,
+            "skipMissedFrames": true,
+            "repeat": -1
+        },
+        {
+            "key": "largeboss-front-idle",
+            "type": "frame",
+            "frames": [
+                {
+                    "key": "largeBossByTP",
+                    "frame": "largeboss-front-idle-.png",
+                    "duration": 0,
+                    "keyframe": false
+                }
+            ],
+            "frameRate": 24,
+            "skipMissedFrames": true,
+            "repeat": -1
+        },
+        {
+            "key": "largeboss-back-idle",
+            "type": "frame",
+            "frames": [
+                {
+                    "key": "largeBossByTP",
+                    "frame": "largeboss-back-idle-.png",
+                    "duration": 0,
+                    "keyframe": false
+                }
+            ],
+            "frameRate": 24,
+            "skipMissedFrames": true,
+            "repeat": -1
+        },
+        {
+            "key": "largeboss-left-idle",
+            "type": "frame",
+            "frames": [
+                {
+                    "key": "largeBossByTP",
+                    "frame": "largeboss-left-idle-.png",
+                    "duration": 0,
+                    "keyframe": false
+                }
+            ],
+            "frameRate": 24,
+            "skipMissedFrames": true,
+            "repeat": -1
+        },
+        {
+            "key": "largeboss-right-idle",
+            "type": "frame",
+            "frames": [
+                {
+                    "key": "largeBossByTP",
+                    "frame": "largeboss-right-idle-.png",
+                    "duration": 0,
+                    "keyframe": false
+                }
+            ],
+            "frameRate": 24,
+            "skipMissedFrames": true,
+            "repeat": -1
+        }
+    ],
+    "globalTimeScale": 1,
+    "meta": {
+        "app": "Phaser Editor 2D v3",
+        "contentType": "Phaser v3 Animations"
+    }
+}

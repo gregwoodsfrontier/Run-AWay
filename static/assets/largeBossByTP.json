@@ -1,0 +1,776 @@
+{
+	"textures": [
+		{
+			"image": "largeBossByTP.png",
+			"format": "RGBA8888",
+			"size": {
+				"w": 127,
+				"h": 721
+			},
+			"scale": 1,
+			"frames": [
+				{
+					"filename": "largeboss-back-attack-1.png",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 64,
+						"h": 64
+					},
+					"spriteSourceSize": {
+						"x": 16,
+						"y": 2,
+						"w": 40,
+						"h": 62
+					},
+					"frame": {
+						"x": 1,
+						"y": 1,
+						"w": 40,
+						"h": 62
+					}
+				},
+				{
+					"filename": "largeboss-back-attack-3.png",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 64,
+						"h": 64
+					},
+					"spriteSourceSize": {
+						"x": 16,
+						"y": 2,
+						"w": 40,
+						"h": 62
+					},
+					"frame": {
+						"x": 43,
+						"y": 1,
+						"w": 40,
+						"h": 62
+					}
+				},
+				{
+					"filename": "largeboss-back-idle-.png",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 64,
+						"h": 64
+					},
+					"spriteSourceSize": {
+						"x": 15,
+						"y": 1,
+						"w": 41,
+						"h": 63
+					},
+					"frame": {
+						"x": 85,
+						"y": 1,
+						"w": 41,
+						"h": 63
+					}
+				},
+				{
+					"filename": "largeboss-back-walk-1.png",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 64,
+						"h": 64
+					},
+					"spriteSourceSize": {
+						"x": 15,
+						"y": 1,
+						"w": 41,
+						"h": 63
+					},
+					"frame": {
+						"x": 1,
+						"y": 66,
+						"w": 41,
+						"h": 63
+					}
+				},
+				{
+					"filename": "largeboss-back-walk-3.png",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 64,
+						"h": 64
+					},
+					"spriteSourceSize": {
+						"x": 15,
+						"y": 1,
+						"w": 41,
+						"h": 63
+					},
+					"frame": {
+						"x": 44,
+						"y": 66,
+						"w": 41,
+						"h": 63
+					}
+				},
+				{
+					"filename": "largeboss-front-attack-1.png",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 64,
+						"h": 64
+					},
+					"spriteSourceSize": {
+						"x": 9,
+						"y": 1,
+						"w": 40,
+						"h": 63
+					},
+					"frame": {
+						"x": 1,
+						"y": 131,
+						"w": 40,
+						"h": 63
+					}
+				},
+				{
+					"filename": "largeboss-front-attack-3.png",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 64,
+						"h": 64
+					},
+					"spriteSourceSize": {
+						"x": 9,
+						"y": 1,
+						"w": 40,
+						"h": 63
+					},
+					"frame": {
+						"x": 43,
+						"y": 131,
+						"w": 40,
+						"h": 63
+					}
+				},
+				{
+					"filename": "largeboss-front-idle-.png",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 64,
+						"h": 64
+					},
+					"spriteSourceSize": {
+						"x": 9,
+						"y": 1,
+						"w": 41,
+						"h": 63
+					},
+					"frame": {
+						"x": 85,
+						"y": 131,
+						"w": 41,
+						"h": 63
+					}
+				},
+				{
+					"filename": "largeboss-front-walk-1.png",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 64,
+						"h": 64
+					},
+					"spriteSourceSize": {
+						"x": 9,
+						"y": 1,
+						"w": 41,
+						"h": 63
+					},
+					"frame": {
+						"x": 1,
+						"y": 196,
+						"w": 41,
+						"h": 63
+					}
+				},
+				{
+					"filename": "largeboss-front-walk-3.png",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 64,
+						"h": 64
+					},
+					"spriteSourceSize": {
+						"x": 9,
+						"y": 1,
+						"w": 41,
+						"h": 63
+					},
+					"frame": {
+						"x": 44,
+						"y": 196,
+						"w": 41,
+						"h": 63
+					}
+				},
+				{
+					"filename": "largeboss-left-attack-1.png",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 64,
+						"h": 64
+					},
+					"spriteSourceSize": {
+						"x": 12,
+						"y": 1,
+						"w": 37,
+						"h": 63
+					},
+					"frame": {
+						"x": 87,
+						"y": 196,
+						"w": 37,
+						"h": 63
+					}
+				},
+				{
+					"filename": "largeboss-left-attack-3.png",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 64,
+						"h": 64
+					},
+					"spriteSourceSize": {
+						"x": 12,
+						"y": 1,
+						"w": 37,
+						"h": 63
+					},
+					"frame": {
+						"x": 1,
+						"y": 261,
+						"w": 37,
+						"h": 63
+					}
+				},
+				{
+					"filename": "largeboss-left-idle-.png",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 64,
+						"h": 64
+					},
+					"spriteSourceSize": {
+						"x": 18,
+						"y": 1,
+						"w": 31,
+						"h": 63
+					},
+					"frame": {
+						"x": 40,
+						"y": 261,
+						"w": 31,
+						"h": 63
+					}
+				},
+				{
+					"filename": "largeboss-left-walk-1.png",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 64,
+						"h": 64
+					},
+					"spriteSourceSize": {
+						"x": 18,
+						"y": 1,
+						"w": 31,
+						"h": 63
+					},
+					"frame": {
+						"x": 40,
+						"y": 261,
+						"w": 31,
+						"h": 63
+					}
+				},
+				{
+					"filename": "largeboss-left-walk-3.png",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 64,
+						"h": 64
+					},
+					"spriteSourceSize": {
+						"x": 18,
+						"y": 1,
+						"w": 31,
+						"h": 63
+					},
+					"frame": {
+						"x": 40,
+						"y": 261,
+						"w": 31,
+						"h": 63
+					}
+				},
+				{
+					"filename": "largeboss-right-attack-1.png",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 64,
+						"h": 64
+					},
+					"spriteSourceSize": {
+						"x": 16,
+						"y": 1,
+						"w": 37,
+						"h": 63
+					},
+					"frame": {
+						"x": 73,
+						"y": 261,
+						"w": 37,
+						"h": 63
+					}
+				},
+				{
+					"filename": "largeboss-right-attack-3.png",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 64,
+						"h": 64
+					},
+					"spriteSourceSize": {
+						"x": 16,
+						"y": 1,
+						"w": 37,
+						"h": 63
+					},
+					"frame": {
+						"x": 1,
+						"y": 326,
+						"w": 37,
+						"h": 63
+					}
+				},
+				{
+					"filename": "largeboss-right-idle-.png",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 64,
+						"h": 64
+					},
+					"spriteSourceSize": {
+						"x": 15,
+						"y": 1,
+						"w": 31,
+						"h": 63
+					},
+					"frame": {
+						"x": 40,
+						"y": 326,
+						"w": 31,
+						"h": 63
+					}
+				},
+				{
+					"filename": "largeboss-right-walk-1.png",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 64,
+						"h": 64
+					},
+					"spriteSourceSize": {
+						"x": 15,
+						"y": 1,
+						"w": 31,
+						"h": 63
+					},
+					"frame": {
+						"x": 40,
+						"y": 326,
+						"w": 31,
+						"h": 63
+					}
+				},
+				{
+					"filename": "largeboss-right-walk-3.png",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 64,
+						"h": 64
+					},
+					"spriteSourceSize": {
+						"x": 15,
+						"y": 1,
+						"w": 31,
+						"h": 63
+					},
+					"frame": {
+						"x": 40,
+						"y": 326,
+						"w": 31,
+						"h": 63
+					}
+				},
+				{
+					"filename": "largeboss-back-attack-2.png",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 64,
+						"h": 64
+					},
+					"spriteSourceSize": {
+						"x": 17,
+						"y": 0,
+						"w": 39,
+						"h": 64
+					},
+					"frame": {
+						"x": 73,
+						"y": 326,
+						"w": 39,
+						"h": 64
+					}
+				},
+				{
+					"filename": "largeboss-back-attack-4.png",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 64,
+						"h": 64
+					},
+					"spriteSourceSize": {
+						"x": 17,
+						"y": 0,
+						"w": 39,
+						"h": 64
+					},
+					"frame": {
+						"x": 1,
+						"y": 392,
+						"w": 39,
+						"h": 64
+					}
+				},
+				{
+					"filename": "largeboss-back-walk-2.png",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 64,
+						"h": 64
+					},
+					"spriteSourceSize": {
+						"x": 17,
+						"y": 0,
+						"w": 39,
+						"h": 64
+					},
+					"frame": {
+						"x": 42,
+						"y": 392,
+						"w": 39,
+						"h": 64
+					}
+				},
+				{
+					"filename": "largeboss-back-walk-4.png",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 64,
+						"h": 64
+					},
+					"spriteSourceSize": {
+						"x": 17,
+						"y": 0,
+						"w": 39,
+						"h": 64
+					},
+					"frame": {
+						"x": 83,
+						"y": 392,
+						"w": 39,
+						"h": 64
+					}
+				},
+				{
+					"filename": "largeboss-front-attack-2.png",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 64,
+						"h": 64
+					},
+					"spriteSourceSize": {
+						"x": 9,
+						"y": 0,
+						"w": 39,
+						"h": 64
+					},
+					"frame": {
+						"x": 1,
+						"y": 458,
+						"w": 39,
+						"h": 64
+					}
+				},
+				{
+					"filename": "largeboss-front-attack-4.png",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 64,
+						"h": 64
+					},
+					"spriteSourceSize": {
+						"x": 9,
+						"y": 0,
+						"w": 39,
+						"h": 64
+					},
+					"frame": {
+						"x": 42,
+						"y": 458,
+						"w": 39,
+						"h": 64
+					}
+				},
+				{
+					"filename": "largeboss-front-walk-2.png",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 64,
+						"h": 64
+					},
+					"spriteSourceSize": {
+						"x": 9,
+						"y": 0,
+						"w": 40,
+						"h": 64
+					},
+					"frame": {
+						"x": 83,
+						"y": 458,
+						"w": 40,
+						"h": 64
+					}
+				},
+				{
+					"filename": "largeboss-front-walk-4.png",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 64,
+						"h": 64
+					},
+					"spriteSourceSize": {
+						"x": 9,
+						"y": 0,
+						"w": 39,
+						"h": 64
+					},
+					"frame": {
+						"x": 1,
+						"y": 524,
+						"w": 39,
+						"h": 64
+					}
+				},
+				{
+					"filename": "largeboss-left-attack-2.png",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 64,
+						"h": 64
+					},
+					"spriteSourceSize": {
+						"x": 11,
+						"y": 0,
+						"w": 37,
+						"h": 64
+					},
+					"frame": {
+						"x": 42,
+						"y": 524,
+						"w": 37,
+						"h": 64
+					}
+				},
+				{
+					"filename": "largeboss-left-attack-4.png",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 64,
+						"h": 64
+					},
+					"spriteSourceSize": {
+						"x": 11,
+						"y": 0,
+						"w": 37,
+						"h": 64
+					},
+					"frame": {
+						"x": 81,
+						"y": 524,
+						"w": 37,
+						"h": 64
+					}
+				},
+				{
+					"filename": "largeboss-left-walk-2.png",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 64,
+						"h": 64
+					},
+					"spriteSourceSize": {
+						"x": 11,
+						"y": 0,
+						"w": 37,
+						"h": 64
+					},
+					"frame": {
+						"x": 1,
+						"y": 590,
+						"w": 37,
+						"h": 64
+					}
+				},
+				{
+					"filename": "largeboss-left-walk-4.png",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 64,
+						"h": 64
+					},
+					"spriteSourceSize": {
+						"x": 11,
+						"y": 0,
+						"w": 37,
+						"h": 64
+					},
+					"frame": {
+						"x": 40,
+						"y": 590,
+						"w": 37,
+						"h": 64
+					}
+				},
+				{
+					"filename": "largeboss-right-attack-2.png",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 64,
+						"h": 64
+					},
+					"spriteSourceSize": {
+						"x": 17,
+						"y": 0,
+						"w": 37,
+						"h": 64
+					},
+					"frame": {
+						"x": 79,
+						"y": 590,
+						"w": 37,
+						"h": 64
+					}
+				},
+				{
+					"filename": "largeboss-right-attack-4.png",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 64,
+						"h": 64
+					},
+					"spriteSourceSize": {
+						"x": 17,
+						"y": 0,
+						"w": 37,
+						"h": 64
+					},
+					"frame": {
+						"x": 1,
+						"y": 656,
+						"w": 37,
+						"h": 64
+					}
+				},
+				{
+					"filename": "largeboss-right-walk-2.png",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 64,
+						"h": 64
+					},
+					"spriteSourceSize": {
+						"x": 16,
+						"y": 0,
+						"w": 37,
+						"h": 64
+					},
+					"frame": {
+						"x": 40,
+						"y": 656,
+						"w": 37,
+						"h": 64
+					}
+				},
+				{
+					"filename": "largeboss-right-walk-4.png",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 64,
+						"h": 64
+					},
+					"spriteSourceSize": {
+						"x": 16,
+						"y": 0,
+						"w": 37,
+						"h": 64
+					},
+					"frame": {
+						"x": 79,
+						"y": 656,
+						"w": 37,
+						"h": 64
+					}
+				}
+			]
+		}
+	],
+	"meta": {
+		"app": "https://www.codeandweb.com/texturepacker",
+		"version": "3.0",
+		"smartupdate": "$TexturePacker:SmartUpdate:c03e2e1502a32eda28ec496adfc4689f:01c896eb169e003af3fe3512e5220fbb:828096c58ded88ebc00d5d017869f78c$"
+	}
+}
