@@ -1,0 +1,1784 @@
+{
+	"textures": [
+		{
+			"image": "playerByTP.png",
+			"format": "RGBA8888",
+			"size": {
+				"w": 1801,
+				"h": 55
+			},
+			"scale": 1,
+			"frames": [
+				{
+					"filename": "playerOnly-5.png",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 64,
+						"h": 64
+					},
+					"spriteSourceSize": {
+						"x": 20,
+						"y": 9,
+						"w": 24,
+						"h": 55
+					},
+					"frame": {
+						"x": 0,
+						"y": 0,
+						"w": 24,
+						"h": 55
+					}
+				},
+				{
+					"filename": "playerPSDGun-5.png",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 64,
+						"h": 64
+					},
+					"spriteSourceSize": {
+						"x": 20,
+						"y": 9,
+						"w": 24,
+						"h": 55
+					},
+					"frame": {
+						"x": 0,
+						"y": 0,
+						"w": 24,
+						"h": 55
+					}
+				},
+				{
+					"filename": "playerOnly-7.png",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 64,
+						"h": 64
+					},
+					"spriteSourceSize": {
+						"x": 20,
+						"y": 9,
+						"w": 24,
+						"h": 55
+					},
+					"frame": {
+						"x": 24,
+						"y": 0,
+						"w": 24,
+						"h": 55
+					}
+				},
+				{
+					"filename": "playerPSDGun-7.png",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 64,
+						"h": 64
+					},
+					"spriteSourceSize": {
+						"x": 20,
+						"y": 9,
+						"w": 24,
+						"h": 55
+					},
+					"frame": {
+						"x": 24,
+						"y": 0,
+						"w": 24,
+						"h": 55
+					}
+				},
+				{
+					"filename": "playerHoldGun-21.png",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 64,
+						"h": 64
+					},
+					"spriteSourceSize": {
+						"x": 20,
+						"y": 9,
+						"w": 23,
+						"h": 55
+					},
+					"frame": {
+						"x": 48,
+						"y": 0,
+						"w": 23,
+						"h": 55
+					}
+				},
+				{
+					"filename": "playerPSDGun-21.png",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 64,
+						"h": 64
+					},
+					"spriteSourceSize": {
+						"x": 20,
+						"y": 9,
+						"w": 23,
+						"h": 55
+					},
+					"frame": {
+						"x": 48,
+						"y": 0,
+						"w": 23,
+						"h": 55
+					}
+				},
+				{
+					"filename": "playerHoldGun-23.png",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 64,
+						"h": 64
+					},
+					"spriteSourceSize": {
+						"x": 20,
+						"y": 9,
+						"w": 23,
+						"h": 55
+					},
+					"frame": {
+						"x": 71,
+						"y": 0,
+						"w": 23,
+						"h": 55
+					}
+				},
+				{
+					"filename": "playerPSDGun-23.png",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 64,
+						"h": 64
+					},
+					"spriteSourceSize": {
+						"x": 20,
+						"y": 9,
+						"w": 23,
+						"h": 55
+					},
+					"frame": {
+						"x": 71,
+						"y": 0,
+						"w": 23,
+						"h": 55
+					}
+				},
+				{
+					"filename": "playerOnly-21.png",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 64,
+						"h": 64
+					},
+					"spriteSourceSize": {
+						"x": 20,
+						"y": 9,
+						"w": 23,
+						"h": 55
+					},
+					"frame": {
+						"x": 94,
+						"y": 0,
+						"w": 23,
+						"h": 55
+					}
+				},
+				{
+					"filename": "playerOnly-23.png",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 64,
+						"h": 64
+					},
+					"spriteSourceSize": {
+						"x": 20,
+						"y": 9,
+						"w": 23,
+						"h": 55
+					},
+					"frame": {
+						"x": 117,
+						"y": 0,
+						"w": 23,
+						"h": 55
+					}
+				},
+				{
+					"filename": "playerHoldGun-33.png",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 64,
+						"h": 64
+					},
+					"spriteSourceSize": {
+						"x": 19,
+						"y": 9,
+						"w": 25,
+						"h": 54
+					},
+					"frame": {
+						"x": 140,
+						"y": 0,
+						"w": 25,
+						"h": 54
+					}
+				},
+				{
+					"filename": "playerHoldGun-35.png",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 64,
+						"h": 64
+					},
+					"spriteSourceSize": {
+						"x": 19,
+						"y": 9,
+						"w": 25,
+						"h": 54
+					},
+					"frame": {
+						"x": 165,
+						"y": 0,
+						"w": 25,
+						"h": 54
+					}
+				},
+				{
+					"filename": "playerPSDGun-33.png",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 64,
+						"h": 64
+					},
+					"spriteSourceSize": {
+						"x": 19,
+						"y": 9,
+						"w": 25,
+						"h": 54
+					},
+					"frame": {
+						"x": 190,
+						"y": 0,
+						"w": 25,
+						"h": 54
+					}
+				},
+				{
+					"filename": "playerPSDGun-35.png",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 64,
+						"h": 64
+					},
+					"spriteSourceSize": {
+						"x": 19,
+						"y": 9,
+						"w": 25,
+						"h": 54
+					},
+					"frame": {
+						"x": 215,
+						"y": 0,
+						"w": 25,
+						"h": 54
+					}
+				},
+				{
+					"filename": "playerOnly-17.png",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 64,
+						"h": 64
+					},
+					"spriteSourceSize": {
+						"x": 20,
+						"y": 9,
+						"w": 24,
+						"h": 54
+					},
+					"frame": {
+						"x": 240,
+						"y": 0,
+						"w": 24,
+						"h": 54
+					}
+				},
+				{
+					"filename": "playerOnly-19.png",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 64,
+						"h": 64
+					},
+					"spriteSourceSize": {
+						"x": 20,
+						"y": 9,
+						"w": 24,
+						"h": 54
+					},
+					"frame": {
+						"x": 264,
+						"y": 0,
+						"w": 24,
+						"h": 54
+					}
+				},
+				{
+					"filename": "playerOnly-33.png",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 64,
+						"h": 64
+					},
+					"spriteSourceSize": {
+						"x": 20,
+						"y": 9,
+						"w": 24,
+						"h": 54
+					},
+					"frame": {
+						"x": 288,
+						"y": 0,
+						"w": 24,
+						"h": 54
+					}
+				},
+				{
+					"filename": "playerPSDGun-17.png",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 64,
+						"h": 64
+					},
+					"spriteSourceSize": {
+						"x": 20,
+						"y": 9,
+						"w": 24,
+						"h": 54
+					},
+					"frame": {
+						"x": 312,
+						"y": 0,
+						"w": 24,
+						"h": 54
+					}
+				},
+				{
+					"filename": "playerPSDGun-19.png",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 64,
+						"h": 64
+					},
+					"spriteSourceSize": {
+						"x": 20,
+						"y": 9,
+						"w": 24,
+						"h": 54
+					},
+					"frame": {
+						"x": 336,
+						"y": 0,
+						"w": 24,
+						"h": 54
+					}
+				},
+				{
+					"filename": "playerOnly-35.png",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 64,
+						"h": 64
+					},
+					"spriteSourceSize": {
+						"x": 21,
+						"y": 9,
+						"w": 23,
+						"h": 54
+					},
+					"frame": {
+						"x": 360,
+						"y": 0,
+						"w": 23,
+						"h": 54
+					}
+				},
+				{
+					"filename": "playerPSDGun-25.png",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 64,
+						"h": 64
+					},
+					"spriteSourceSize": {
+						"x": 4,
+						"y": 10,
+						"w": 39,
+						"h": 53
+					},
+					"frame": {
+						"x": 383,
+						"y": 0,
+						"w": 39,
+						"h": 53
+					}
+				},
+				{
+					"filename": "playerPSDGun-27.png",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 64,
+						"h": 64
+					},
+					"spriteSourceSize": {
+						"x": 4,
+						"y": 10,
+						"w": 39,
+						"h": 53
+					},
+					"frame": {
+						"x": 422,
+						"y": 0,
+						"w": 39,
+						"h": 53
+					}
+				},
+				{
+					"filename": "playerHoldGun-25.png",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 64,
+						"h": 64
+					},
+					"spriteSourceSize": {
+						"x": 4,
+						"y": 10,
+						"w": 38,
+						"h": 53
+					},
+					"frame": {
+						"x": 461,
+						"y": 0,
+						"w": 38,
+						"h": 53
+					}
+				},
+				{
+					"filename": "playerPSDGun-29.png",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 64,
+						"h": 64
+					},
+					"spriteSourceSize": {
+						"x": 21,
+						"y": 10,
+						"w": 38,
+						"h": 53
+					},
+					"frame": {
+						"x": 499,
+						"y": 0,
+						"w": 38,
+						"h": 53
+					}
+				},
+				{
+					"filename": "playerPSDGun-31.png",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 64,
+						"h": 64
+					},
+					"spriteSourceSize": {
+						"x": 21,
+						"y": 10,
+						"w": 38,
+						"h": 53
+					},
+					"frame": {
+						"x": 537,
+						"y": 0,
+						"w": 38,
+						"h": 53
+					}
+				},
+				{
+					"filename": "playerHoldGun-27.png",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 64,
+						"h": 64
+					},
+					"spriteSourceSize": {
+						"x": 4,
+						"y": 10,
+						"w": 37,
+						"h": 53
+					},
+					"frame": {
+						"x": 575,
+						"y": 0,
+						"w": 37,
+						"h": 53
+					}
+				},
+				{
+					"filename": "playerHoldGun-29.png",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 64,
+						"h": 64
+					},
+					"spriteSourceSize": {
+						"x": 22,
+						"y": 10,
+						"w": 37,
+						"h": 53
+					},
+					"frame": {
+						"x": 612,
+						"y": 0,
+						"w": 37,
+						"h": 53
+					}
+				},
+				{
+					"filename": "playerHoldGun-31.png",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 64,
+						"h": 64
+					},
+					"spriteSourceSize": {
+						"x": 23,
+						"y": 10,
+						"w": 36,
+						"h": 53
+					},
+					"frame": {
+						"x": 649,
+						"y": 0,
+						"w": 36,
+						"h": 53
+					}
+				},
+				{
+					"filename": "playerPSDGun-11.png",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 64,
+						"h": 64
+					},
+					"spriteSourceSize": {
+						"x": 15,
+						"y": 10,
+						"w": 28,
+						"h": 53
+					},
+					"frame": {
+						"x": 685,
+						"y": 0,
+						"w": 28,
+						"h": 53
+					}
+				},
+				{
+					"filename": "playerPSDGun-13.png",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 64,
+						"h": 64
+					},
+					"spriteSourceSize": {
+						"x": 21,
+						"y": 10,
+						"w": 28,
+						"h": 53
+					},
+					"frame": {
+						"x": 713,
+						"y": 0,
+						"w": 28,
+						"h": 53
+					}
+				},
+				{
+					"filename": "playerPSDGun-15.png",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 64,
+						"h": 64
+					},
+					"spriteSourceSize": {
+						"x": 21,
+						"y": 10,
+						"w": 28,
+						"h": 53
+					},
+					"frame": {
+						"x": 741,
+						"y": 0,
+						"w": 28,
+						"h": 53
+					}
+				},
+				{
+					"filename": "playerPSDGun-9.png",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 64,
+						"h": 64
+					},
+					"spriteSourceSize": {
+						"x": 15,
+						"y": 10,
+						"w": 28,
+						"h": 53
+					},
+					"frame": {
+						"x": 769,
+						"y": 0,
+						"w": 28,
+						"h": 53
+					}
+				},
+				{
+					"filename": "playerOnly-13.png",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 64,
+						"h": 64
+					},
+					"spriteSourceSize": {
+						"x": 22,
+						"y": 10,
+						"w": 27,
+						"h": 53
+					},
+					"frame": {
+						"x": 797,
+						"y": 0,
+						"w": 27,
+						"h": 53
+					}
+				},
+				{
+					"filename": "playerOnly-25.png",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 64,
+						"h": 64
+					},
+					"spriteSourceSize": {
+						"x": 15,
+						"y": 10,
+						"w": 27,
+						"h": 53
+					},
+					"frame": {
+						"x": 824,
+						"y": 0,
+						"w": 27,
+						"h": 53
+					}
+				},
+				{
+					"filename": "playerOnly-29.png",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 64,
+						"h": 64
+					},
+					"spriteSourceSize": {
+						"x": 22,
+						"y": 10,
+						"w": 27,
+						"h": 53
+					},
+					"frame": {
+						"x": 851,
+						"y": 0,
+						"w": 27,
+						"h": 53
+					}
+				},
+				{
+					"filename": "playerOnly-9.png",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 64,
+						"h": 64
+					},
+					"spriteSourceSize": {
+						"x": 15,
+						"y": 10,
+						"w": 27,
+						"h": 53
+					},
+					"frame": {
+						"x": 878,
+						"y": 0,
+						"w": 27,
+						"h": 53
+					}
+				},
+				{
+					"filename": "playerHoldGun-32.png",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 64,
+						"h": 64
+					},
+					"spriteSourceSize": {
+						"x": 19,
+						"y": 10,
+						"w": 26,
+						"h": 53
+					},
+					"frame": {
+						"x": 905,
+						"y": 0,
+						"w": 26,
+						"h": 53
+					}
+				},
+				{
+					"filename": "playerHoldGun-34.png",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 64,
+						"h": 64
+					},
+					"spriteSourceSize": {
+						"x": 19,
+						"y": 10,
+						"w": 26,
+						"h": 53
+					},
+					"frame": {
+						"x": 931,
+						"y": 0,
+						"w": 26,
+						"h": 53
+					}
+				},
+				{
+					"filename": "playerOnly-11.png",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 64,
+						"h": 64
+					},
+					"spriteSourceSize": {
+						"x": 15,
+						"y": 10,
+						"w": 26,
+						"h": 53
+					},
+					"frame": {
+						"x": 957,
+						"y": 0,
+						"w": 26,
+						"h": 53
+					}
+				},
+				{
+					"filename": "playerOnly-15.png",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 64,
+						"h": 64
+					},
+					"spriteSourceSize": {
+						"x": 23,
+						"y": 10,
+						"w": 26,
+						"h": 53
+					},
+					"frame": {
+						"x": 983,
+						"y": 0,
+						"w": 26,
+						"h": 53
+					}
+				},
+				{
+					"filename": "playerOnly-31.png",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 64,
+						"h": 64
+					},
+					"spriteSourceSize": {
+						"x": 23,
+						"y": 10,
+						"w": 26,
+						"h": 53
+					},
+					"frame": {
+						"x": 983,
+						"y": 0,
+						"w": 26,
+						"h": 53
+					}
+				},
+				{
+					"filename": "playerOnly-16.png",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 64,
+						"h": 64
+					},
+					"spriteSourceSize": {
+						"x": 19,
+						"y": 10,
+						"w": 26,
+						"h": 53
+					},
+					"frame": {
+						"x": 1009,
+						"y": 0,
+						"w": 26,
+						"h": 53
+					}
+				},
+				{
+					"filename": "playerOnly-18.png",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 64,
+						"h": 64
+					},
+					"spriteSourceSize": {
+						"x": 19,
+						"y": 10,
+						"w": 26,
+						"h": 53
+					},
+					"frame": {
+						"x": 1035,
+						"y": 0,
+						"w": 26,
+						"h": 53
+					}
+				},
+				{
+					"filename": "playerOnly-27.png",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 64,
+						"h": 64
+					},
+					"spriteSourceSize": {
+						"x": 15,
+						"y": 10,
+						"w": 26,
+						"h": 53
+					},
+					"frame": {
+						"x": 1061,
+						"y": 0,
+						"w": 26,
+						"h": 53
+					}
+				},
+				{
+					"filename": "playerOnly-4.png",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 64,
+						"h": 64
+					},
+					"spriteSourceSize": {
+						"x": 19,
+						"y": 10,
+						"w": 26,
+						"h": 53
+					},
+					"frame": {
+						"x": 1087,
+						"y": 0,
+						"w": 26,
+						"h": 53
+					}
+				},
+				{
+					"filename": "playerOnly-6.png",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 64,
+						"h": 64
+					},
+					"spriteSourceSize": {
+						"x": 19,
+						"y": 10,
+						"w": 26,
+						"h": 53
+					},
+					"frame": {
+						"x": 1087,
+						"y": 0,
+						"w": 26,
+						"h": 53
+					}
+				},
+				{
+					"filename": "playerPSDGun-0.png",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 64,
+						"h": 64
+					},
+					"spriteSourceSize": {
+						"x": 19,
+						"y": 10,
+						"w": 26,
+						"h": 53
+					},
+					"frame": {
+						"x": 1087,
+						"y": 0,
+						"w": 26,
+						"h": 53
+					}
+				},
+				{
+					"filename": "playerPSDGun-4.png",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 64,
+						"h": 64
+					},
+					"spriteSourceSize": {
+						"x": 19,
+						"y": 10,
+						"w": 26,
+						"h": 53
+					},
+					"frame": {
+						"x": 1087,
+						"y": 0,
+						"w": 26,
+						"h": 53
+					}
+				},
+				{
+					"filename": "playerPSDGun-6.png",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 64,
+						"h": 64
+					},
+					"spriteSourceSize": {
+						"x": 19,
+						"y": 10,
+						"w": 26,
+						"h": 53
+					},
+					"frame": {
+						"x": 1087,
+						"y": 0,
+						"w": 26,
+						"h": 53
+					}
+				},
+				{
+					"filename": "playerPSDGun-16.png",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 64,
+						"h": 64
+					},
+					"spriteSourceSize": {
+						"x": 19,
+						"y": 10,
+						"w": 26,
+						"h": 53
+					},
+					"frame": {
+						"x": 1113,
+						"y": 0,
+						"w": 26,
+						"h": 53
+					}
+				},
+				{
+					"filename": "playerPSDGun-18.png",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 64,
+						"h": 64
+					},
+					"spriteSourceSize": {
+						"x": 19,
+						"y": 10,
+						"w": 26,
+						"h": 53
+					},
+					"frame": {
+						"x": 1113,
+						"y": 0,
+						"w": 26,
+						"h": 53
+					}
+				},
+				{
+					"filename": "playerPSDGun-3.png",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 64,
+						"h": 64
+					},
+					"spriteSourceSize": {
+						"x": 19,
+						"y": 10,
+						"w": 26,
+						"h": 53
+					},
+					"frame": {
+						"x": 1139,
+						"y": 0,
+						"w": 26,
+						"h": 53
+					}
+				},
+				{
+					"filename": "playerPSDGun-32.png",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 64,
+						"h": 64
+					},
+					"spriteSourceSize": {
+						"x": 19,
+						"y": 10,
+						"w": 26,
+						"h": 53
+					},
+					"frame": {
+						"x": 1165,
+						"y": 0,
+						"w": 26,
+						"h": 53
+					}
+				},
+				{
+					"filename": "playerPSDGun-34.png",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 64,
+						"h": 64
+					},
+					"spriteSourceSize": {
+						"x": 19,
+						"y": 10,
+						"w": 26,
+						"h": 53
+					},
+					"frame": {
+						"x": 1191,
+						"y": 0,
+						"w": 26,
+						"h": 53
+					}
+				},
+				{
+					"filename": "playerHoldGun-20.png",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 64,
+						"h": 64
+					},
+					"spriteSourceSize": {
+						"x": 19,
+						"y": 10,
+						"w": 25,
+						"h": 53
+					},
+					"frame": {
+						"x": 1217,
+						"y": 0,
+						"w": 25,
+						"h": 53
+					}
+				},
+				{
+					"filename": "playerHoldGun-22.png",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 64,
+						"h": 64
+					},
+					"spriteSourceSize": {
+						"x": 19,
+						"y": 10,
+						"w": 25,
+						"h": 53
+					},
+					"frame": {
+						"x": 1217,
+						"y": 0,
+						"w": 25,
+						"h": 53
+					}
+				},
+				{
+					"filename": "playerPSDGun-20.png",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 64,
+						"h": 64
+					},
+					"spriteSourceSize": {
+						"x": 19,
+						"y": 10,
+						"w": 25,
+						"h": 53
+					},
+					"frame": {
+						"x": 1217,
+						"y": 0,
+						"w": 25,
+						"h": 53
+					}
+				},
+				{
+					"filename": "playerPSDGun-22.png",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 64,
+						"h": 64
+					},
+					"spriteSourceSize": {
+						"x": 19,
+						"y": 10,
+						"w": 25,
+						"h": 53
+					},
+					"frame": {
+						"x": 1217,
+						"y": 0,
+						"w": 25,
+						"h": 53
+					}
+				},
+				{
+					"filename": "playerOnly-20.png",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 64,
+						"h": 64
+					},
+					"spriteSourceSize": {
+						"x": 19,
+						"y": 10,
+						"w": 25,
+						"h": 53
+					},
+					"frame": {
+						"x": 1242,
+						"y": 0,
+						"w": 25,
+						"h": 53
+					}
+				},
+				{
+					"filename": "playerOnly-22.png",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 64,
+						"h": 64
+					},
+					"spriteSourceSize": {
+						"x": 19,
+						"y": 10,
+						"w": 25,
+						"h": 53
+					},
+					"frame": {
+						"x": 1242,
+						"y": 0,
+						"w": 25,
+						"h": 53
+					}
+				},
+				{
+					"filename": "playerOnly-32.png",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 64,
+						"h": 64
+					},
+					"spriteSourceSize": {
+						"x": 20,
+						"y": 10,
+						"w": 25,
+						"h": 53
+					},
+					"frame": {
+						"x": 1267,
+						"y": 0,
+						"w": 25,
+						"h": 53
+					}
+				},
+				{
+					"filename": "playerOnly-34.png",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 64,
+						"h": 64
+					},
+					"spriteSourceSize": {
+						"x": 20,
+						"y": 10,
+						"w": 25,
+						"h": 53
+					},
+					"frame": {
+						"x": 1292,
+						"y": 0,
+						"w": 25,
+						"h": 53
+					}
+				},
+				{
+					"filename": "playerPSDGun-24.png",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 64,
+						"h": 64
+					},
+					"spriteSourceSize": {
+						"x": 5,
+						"y": 11,
+						"w": 39,
+						"h": 52
+					},
+					"frame": {
+						"x": 1317,
+						"y": 0,
+						"w": 39,
+						"h": 52
+					}
+				},
+				{
+					"filename": "playerPSDGun-26.png",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 64,
+						"h": 64
+					},
+					"spriteSourceSize": {
+						"x": 5,
+						"y": 11,
+						"w": 39,
+						"h": 52
+					},
+					"frame": {
+						"x": 1317,
+						"y": 0,
+						"w": 39,
+						"h": 52
+					}
+				},
+				{
+					"filename": "playerPSDGun-28.png",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 64,
+						"h": 64
+					},
+					"spriteSourceSize": {
+						"x": 20,
+						"y": 11,
+						"w": 37,
+						"h": 52
+					},
+					"frame": {
+						"x": 1356,
+						"y": 0,
+						"w": 37,
+						"h": 52
+					}
+				},
+				{
+					"filename": "playerPSDGun-30.png",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 64,
+						"h": 64
+					},
+					"spriteSourceSize": {
+						"x": 20,
+						"y": 11,
+						"w": 37,
+						"h": 52
+					},
+					"frame": {
+						"x": 1393,
+						"y": 0,
+						"w": 37,
+						"h": 52
+					}
+				},
+				{
+					"filename": "playerHoldGun-24.png",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 64,
+						"h": 64
+					},
+					"spriteSourceSize": {
+						"x": 5,
+						"y": 11,
+						"w": 36,
+						"h": 52
+					},
+					"frame": {
+						"x": 1430,
+						"y": 0,
+						"w": 36,
+						"h": 52
+					}
+				},
+				{
+					"filename": "playerHoldGun-26.png",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 64,
+						"h": 64
+					},
+					"spriteSourceSize": {
+						"x": 5,
+						"y": 11,
+						"w": 36,
+						"h": 52
+					},
+					"frame": {
+						"x": 1430,
+						"y": 0,
+						"w": 36,
+						"h": 52
+					}
+				},
+				{
+					"filename": "playerHoldGun-28.png",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 64,
+						"h": 64
+					},
+					"spriteSourceSize": {
+						"x": 23,
+						"y": 11,
+						"w": 34,
+						"h": 52
+					},
+					"frame": {
+						"x": 1466,
+						"y": 0,
+						"w": 34,
+						"h": 52
+					}
+				},
+				{
+					"filename": "playerHoldGun-30.png",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 64,
+						"h": 64
+					},
+					"spriteSourceSize": {
+						"x": 23,
+						"y": 11,
+						"w": 34,
+						"h": 52
+					},
+					"frame": {
+						"x": 1500,
+						"y": 0,
+						"w": 34,
+						"h": 52
+					}
+				},
+				{
+					"filename": "playerOnly-24.png",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 64,
+						"h": 64
+					},
+					"spriteSourceSize": {
+						"x": 17,
+						"y": 11,
+						"w": 24,
+						"h": 52
+					},
+					"frame": {
+						"x": 1534,
+						"y": 0,
+						"w": 24,
+						"h": 52
+					}
+				},
+				{
+					"filename": "playerOnly-26.png",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 64,
+						"h": 64
+					},
+					"spriteSourceSize": {
+						"x": 17,
+						"y": 11,
+						"w": 24,
+						"h": 52
+					},
+					"frame": {
+						"x": 1534,
+						"y": 0,
+						"w": 24,
+						"h": 52
+					}
+				},
+				{
+					"filename": "playerOnly-28.png",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 64,
+						"h": 64
+					},
+					"spriteSourceSize": {
+						"x": 23,
+						"y": 11,
+						"w": 24,
+						"h": 52
+					},
+					"frame": {
+						"x": 1558,
+						"y": 0,
+						"w": 24,
+						"h": 52
+					}
+				},
+				{
+					"filename": "playerOnly-30.png",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 64,
+						"h": 64
+					},
+					"spriteSourceSize": {
+						"x": 23,
+						"y": 11,
+						"w": 24,
+						"h": 52
+					},
+					"frame": {
+						"x": 1582,
+						"y": 0,
+						"w": 24,
+						"h": 52
+					}
+				},
+				{
+					"filename": "playerPSDGun-1.png",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 64,
+						"h": 64
+					},
+					"spriteSourceSize": {
+						"x": 21,
+						"y": 11,
+						"w": 23,
+						"h": 52
+					},
+					"frame": {
+						"x": 1606,
+						"y": 0,
+						"w": 23,
+						"h": 52
+					}
+				},
+				{
+					"filename": "playerPSDGun-10.png",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 64,
+						"h": 64
+					},
+					"spriteSourceSize": {
+						"x": 21,
+						"y": 11,
+						"w": 23,
+						"h": 52
+					},
+					"frame": {
+						"x": 1606,
+						"y": 0,
+						"w": 23,
+						"h": 52
+					}
+				},
+				{
+					"filename": "playerPSDGun-12.png",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 64,
+						"h": 64
+					},
+					"spriteSourceSize": {
+						"x": 20,
+						"y": 11,
+						"w": 23,
+						"h": 52
+					},
+					"frame": {
+						"x": 1629,
+						"y": 0,
+						"w": 23,
+						"h": 52
+					}
+				},
+				{
+					"filename": "playerPSDGun-14.png",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 64,
+						"h": 64
+					},
+					"spriteSourceSize": {
+						"x": 20,
+						"y": 11,
+						"w": 23,
+						"h": 52
+					},
+					"frame": {
+						"x": 1652,
+						"y": 0,
+						"w": 23,
+						"h": 52
+					}
+				},
+				{
+					"filename": "playerPSDGun-2.png",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 64,
+						"h": 64
+					},
+					"spriteSourceSize": {
+						"x": 20,
+						"y": 11,
+						"w": 23,
+						"h": 52
+					},
+					"frame": {
+						"x": 1675,
+						"y": 0,
+						"w": 23,
+						"h": 52
+					}
+				},
+				{
+					"filename": "playerPSDGun-8.png",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 64,
+						"h": 64
+					},
+					"spriteSourceSize": {
+						"x": 21,
+						"y": 11,
+						"w": 23,
+						"h": 52
+					},
+					"frame": {
+						"x": 1698,
+						"y": 0,
+						"w": 23,
+						"h": 52
+					}
+				},
+				{
+					"filename": "playerOnly-10.png",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 64,
+						"h": 64
+					},
+					"spriteSourceSize": {
+						"x": 21,
+						"y": 11,
+						"w": 20,
+						"h": 52
+					},
+					"frame": {
+						"x": 1721,
+						"y": 0,
+						"w": 20,
+						"h": 52
+					}
+				},
+				{
+					"filename": "playerOnly-12.png",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 64,
+						"h": 64
+					},
+					"spriteSourceSize": {
+						"x": 23,
+						"y": 11,
+						"w": 20,
+						"h": 52
+					},
+					"frame": {
+						"x": 1741,
+						"y": 0,
+						"w": 20,
+						"h": 52
+					}
+				},
+				{
+					"filename": "playerOnly-14.png",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 64,
+						"h": 64
+					},
+					"spriteSourceSize": {
+						"x": 23,
+						"y": 11,
+						"w": 20,
+						"h": 52
+					},
+					"frame": {
+						"x": 1761,
+						"y": 0,
+						"w": 20,
+						"h": 52
+					}
+				},
+				{
+					"filename": "playerOnly-8.png",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 64,
+						"h": 64
+					},
+					"spriteSourceSize": {
+						"x": 21,
+						"y": 11,
+						"w": 20,
+						"h": 52
+					},
+					"frame": {
+						"x": 1781,
+						"y": 0,
+						"w": 20,
+						"h": 52
+					}
+				}
+			]
+		}
+	],
+	"meta": {
+		"app": "https://www.codeandweb.com/texturepacker",
+		"version": "3.0",
+		"smartupdate": "$TexturePacker:SmartUpdate:7edd42026339ef8f0998db630759dc95:951f450ec53f15be45a3e2cc09a73b4e:920a6129349c143957f4902eb9cfaf5d$"
+	}
+}

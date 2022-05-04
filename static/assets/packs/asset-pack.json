@@ -40,6 +40,11 @@
                 "key": "Borders"
             },
             {
+                "url": "assets/animations/boss-anims.json",
+                "type": "animation",
+                "key": "boss-anims"
+            },
+            {
                 "type": "multiatlas",
                 "url": "assets/bossByTP.json",
                 "path": "assets",
@@ -483,6 +488,11 @@
                 "key": "idle-title-Anim-57"
             },
             {
+                "url": "assets/animations/largeBoss-anims.json",
+                "type": "animation",
+                "key": "largeBoss-anims"
+            },
+            {
                 "type": "multiatlas",
                 "url": "assets/largeBossByTP.json",
                 "path": "assets",
@@ -593,6 +603,17 @@
                 "url": "assets/placeHolderTunnel.png",
                 "type": "image",
                 "key": "placeHolderTunnel"
+            },
+            {
+                "url": "assets/animations/player-anims.json",
+                "type": "animation",
+                "key": "player-anims"
+            },
+            {
+                "type": "multiatlas",
+                "url": "assets/playerByTP.json",
+                "path": "assets",
+                "key": "playerByTP"
             },
             {
                 "url": "assets/playerOnly/front-walk-gun/playerHoldGun-20.png",
