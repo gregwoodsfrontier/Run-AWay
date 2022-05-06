@@ -3,7 +3,7 @@ const path = require('path')
 
 // https://vitejs.dev/config/
 export default defineConfig({
-  base: '/gamedevjs-project',
+  base: '/gamedevjs-project/',
   publicDir: "static",
   resolve:{
     alias:{
