@@ -2106,6 +2106,12 @@
                 "key": "swarmByTP_1"
             },
             {
+                "type": "multiatlas",
+                "url": "assets/titleStartByTP.json",
+                "path": "assets",
+                "key": "titleStartByTP"
+            },
+            {
                 "url": "assets/END GAME/YouSurvived/YouSurvived.png",
                 "type": "image",
                 "key": "YouSurvived"

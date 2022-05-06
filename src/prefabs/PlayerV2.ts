@@ -4,6 +4,7 @@
 /* START OF COMPILED CODE */
 
 import Phaser from "phaser";
+import StateMachine from "../stateMachine";
 /* START-USER-IMPORTS */
 /* END-USER-IMPORTS */
 
@@ -14,10 +15,13 @@ export default class PlayerV2 extends Phaser.GameObjects.Sprite {
 
 		/* START-USER-CTR-CODE */
 		// Write your code here.
+		this.stateM = new StateMachine(this, 'player-V2')
+		this.stateM.addState('idle')
 		/* END-USER-CTR-CODE */
 	}
 
 	/* START-USER-CODE */
+	private stateM: StateMachine
 
 	// Write your code here.
 
