@@ -36,7 +36,8 @@
             "AimComp.facingDir": 2,
             "AimComp.movingDir": 2,
             "texture": {
-                "key": "playerOnly-4"
+                "key": "playerByTP",
+                "frame": "playerOnly-4.png"
             }
         }
     ],

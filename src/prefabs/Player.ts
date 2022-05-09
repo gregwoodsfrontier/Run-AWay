@@ -28,7 +28,7 @@ import { AUDIO_PLAY_EVENTS } from "../types/scenes";
 export default class Player extends Phaser.GameObjects.Sprite {
 
 	constructor(scene: Phaser.Scene, x?: number, y?: number, texture?: string, frame?: number | string) {
-		super(scene, x ?? 0, y ?? 0, texture || "playerOnly-4", frame);
+		super(scene, x ?? 0, y ?? 0, texture || "playerByTP", frame ?? "playerOnly-4.png");
 
 		// this (components)
 		const thisPhysics = new Physics(this);
