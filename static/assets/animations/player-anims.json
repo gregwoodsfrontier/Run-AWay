@@ -593,6 +593,238 @@
             "frameRate": 12,
             "skipMissedFrames": true,
             "repeat": -1
+        },
+        {
+            "key": "left-gun",
+            "type": "frame",
+            "frames": [
+                {
+                    "key": "left-gunonly-1",
+                    "duration": 0,
+                    "keyframe": false
+                },
+                {
+                    "key": "left-gunonly-2",
+                    "duration": 0,
+                    "keyframe": false
+                },
+                {
+                    "key": "left-gunonly-3",
+                    "duration": 0,
+                    "keyframe": false
+                },
+                {
+                    "key": "left-gunonly-4",
+                    "duration": 0,
+                    "keyframe": false
+                }
+            ],
+            "frameRate": 12,
+            "skipMissedFrames": true,
+            "repeat": -1
+        },
+        {
+            "key": "back-hold",
+            "type": "frame",
+            "frames": [
+                {
+                    "key": "back-hold-01",
+                    "duration": 0,
+                    "keyframe": false
+                },
+                {
+                    "key": "back-hold-02",
+                    "duration": 0,
+                    "keyframe": false
+                },
+                {
+                    "key": "back-hold-03",
+                    "duration": 0,
+                    "keyframe": false
+                },
+                {
+                    "key": "back-hold-04",
+                    "duration": 0,
+                    "keyframe": false
+                }
+            ],
+            "frameRate": 12,
+            "skipMissedFrames": true,
+            "repeat": -1
+        },
+        {
+            "key": "left-hold",
+            "type": "frame",
+            "frames": [
+                {
+                    "key": "left-hold-01",
+                    "duration": 0,
+                    "keyframe": false
+                },
+                {
+                    "key": "left-hold-02",
+                    "duration": 0,
+                    "keyframe": false
+                },
+                {
+                    "key": "left-hold-03",
+                    "duration": 0,
+                    "keyframe": false
+                },
+                {
+                    "key": "left-hold-04",
+                    "duration": 0,
+                    "keyframe": false
+                }
+            ],
+            "frameRate": 12,
+            "skipMissedFrames": true,
+            "repeat": -1
+        },
+        {
+            "key": "right-hold",
+            "type": "frame",
+            "frames": [
+                {
+                    "key": "right-hold-01",
+                    "duration": 0,
+                    "keyframe": false
+                },
+                {
+                    "key": "right-hold-02",
+                    "duration": 0,
+                    "keyframe": false
+                },
+                {
+                    "key": "right-hold-03",
+                    "duration": 0,
+                    "keyframe": false
+                },
+                {
+                    "key": "right-hold-04",
+                    "duration": 0,
+                    "keyframe": false
+                }
+            ],
+            "frameRate": 12,
+            "skipMissedFrames": true,
+            "repeat": -1
+        },
+        {
+            "key": "right-walk",
+            "type": "frame",
+            "frames": [
+                {
+                    "key": "right-walk-01",
+                    "duration": 0,
+                    "keyframe": false
+                },
+                {
+                    "key": "right-walk-02",
+                    "duration": 0,
+                    "keyframe": false
+                },
+                {
+                    "key": "right-walk-03",
+                    "duration": 0,
+                    "keyframe": false
+                },
+                {
+                    "key": "right-walk-04",
+                    "duration": 0,
+                    "keyframe": false
+                }
+            ],
+            "frameRate": 12,
+            "skipMissedFrames": true,
+            "repeat": -1
+        },
+        {
+            "key": "left-walk",
+            "type": "frame",
+            "frames": [
+                {
+                    "key": "left-walk-01",
+                    "duration": 0,
+                    "keyframe": false
+                },
+                {
+                    "key": "left-walk-02",
+                    "duration": 0,
+                    "keyframe": false
+                },
+                {
+                    "key": "left-walk-03",
+                    "duration": 0,
+                    "keyframe": false
+                },
+                {
+                    "key": "left-walk-04",
+                    "duration": 0,
+                    "keyframe": false
+                }
+            ],
+            "frameRate": 12,
+            "skipMissedFrames": true,
+            "repeat": -1
+        },
+        {
+            "key": "back-walk",
+            "type": "frame",
+            "frames": [
+                {
+                    "key": "back-walk-01",
+                    "duration": 0,
+                    "keyframe": false
+                },
+                {
+                    "key": "back-walk-02",
+                    "duration": 0,
+                    "keyframe": false
+                },
+                {
+                    "key": "back-walk-03",
+                    "duration": 0,
+                    "keyframe": false
+                },
+                {
+                    "key": "back-walk-04",
+                    "duration": 0,
+                    "keyframe": false
+                }
+            ],
+            "frameRate": 12,
+            "skipMissedFrames": true,
+            "repeat": -1
+        },
+        {
+            "key": "right-gunonly",
+            "type": "frame",
+            "frames": [
+                {
+                    "key": "right-gunonly-1",
+                    "duration": 0,
+                    "keyframe": false
+                },
+                {
+                    "key": "right-gunonly-2",
+                    "duration": 0,
+                    "keyframe": false
+                },
+                {
+                    "key": "right-gunonly-3",
+                    "duration": 0,
+                    "keyframe": false
+                },
+                {
+                    "key": "right-gunonly-4",
+                    "duration": 0,
+                    "keyframe": false
+                }
+            ],
+            "frameRate": 12,
+            "skipMissedFrames": true,
+            "repeat": -1
         }
     ],
     "globalTimeScale": 1,

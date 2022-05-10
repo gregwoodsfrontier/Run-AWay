@@ -27,6 +27,46 @@
                 "key": "back-gunonly-4"
             },
             {
+                "url": "assets/PSD/back-hold-01.png",
+                "type": "image",
+                "key": "back-hold-01"
+            },
+            {
+                "url": "assets/PSD/back-hold-02.png",
+                "type": "image",
+                "key": "back-hold-02"
+            },
+            {
+                "url": "assets/PSD/back-hold-03.png",
+                "type": "image",
+                "key": "back-hold-03"
+            },
+            {
+                "url": "assets/PSD/back-hold-04.png",
+                "type": "image",
+                "key": "back-hold-04"
+            },
+            {
+                "url": "assets/PSD/back-walk-01.png",
+                "type": "image",
+                "key": "back-walk-01"
+            },
+            {
+                "url": "assets/PSD/back-walk-02.png",
+                "type": "image",
+                "key": "back-walk-02"
+            },
+            {
+                "url": "assets/PSD/back-walk-03.png",
+                "type": "image",
+                "key": "back-walk-03"
+            },
+            {
+                "url": "assets/PSD/back-walk-04.png",
+                "type": "image",
+                "key": "back-walk-04"
+            },
+            {
                 "url": "assets/Borders.png",
                 "frameConfig": {
                     "frameWidth": 64,
@@ -519,6 +559,46 @@
                 "key": "left-gunonly-4"
             },
             {
+                "url": "assets/PSD/left-hold-01.png",
+                "type": "image",
+                "key": "left-hold-01"
+            },
+            {
+                "url": "assets/PSD/left-hold-02.png",
+                "type": "image",
+                "key": "left-hold-02"
+            },
+            {
+                "url": "assets/PSD/left-hold-03.png",
+                "type": "image",
+                "key": "left-hold-03"
+            },
+            {
+                "url": "assets/PSD/left-hold-04.png",
+                "type": "image",
+                "key": "left-hold-04"
+            },
+            {
+                "url": "assets/PSD/left-walk-01.png",
+                "type": "image",
+                "key": "left-walk-01"
+            },
+            {
+                "url": "assets/PSD/left-walk-02.png",
+                "type": "image",
+                "key": "left-walk-02"
+            },
+            {
+                "url": "assets/PSD/left-walk-03.png",
+                "type": "image",
+                "key": "left-walk-03"
+            },
+            {
+                "url": "assets/PSD/left-walk-04.png",
+                "type": "image",
+                "key": "left-walk-04"
+            },
+            {
                 "url": "assets/Logo v2.png",
                 "type": "image",
                 "key": "Logo v2"
@@ -923,6 +1003,46 @@
                 "url": "assets/gunOnly/right-gunonly/right-gunonly-4.png",
                 "type": "image",
                 "key": "right-gunonly-4"
+            },
+            {
+                "url": "assets/PSD/right-hold-01.png",
+                "type": "image",
+                "key": "right-hold-01"
+            },
+            {
+                "url": "assets/PSD/right-hold-02.png",
+                "type": "image",
+                "key": "right-hold-02"
+            },
+            {
+                "url": "assets/PSD/right-hold-03.png",
+                "type": "image",
+                "key": "right-hold-03"
+            },
+            {
+                "url": "assets/PSD/right-hold-04.png",
+                "type": "image",
+                "key": "right-hold-04"
+            },
+            {
+                "url": "assets/PSD/right-walk-01.png",
+                "type": "image",
+                "key": "right-walk-01"
+            },
+            {
+                "url": "assets/PSD/right-walk-02.png",
+                "type": "image",
+                "key": "right-walk-02"
+            },
+            {
+                "url": "assets/PSD/right-walk-03.png",
+                "type": "image",
+                "key": "right-walk-03"
+            },
+            {
+                "url": "assets/PSD/right-walk-04.png",
+                "type": "image",
+                "key": "right-walk-04"
             },
             {
                 "url": "assets/Start Anim/Start-Anim-1.png",
