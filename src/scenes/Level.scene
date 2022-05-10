@@ -65,7 +65,8 @@
             "scope": "PUBLIC",
             "components": [],
             "x": 160,
-            "y": 160
+            "y": 160,
+            "nestedPrefabs": []
         },
         {
             "prefabId": "169b350d-b922-409d-8da8-e86ab037d35d",

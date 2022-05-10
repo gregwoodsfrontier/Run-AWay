@@ -13,6 +13,8 @@ import HoldComp from "../components/HoldComp";
 import AimComp from "../components/AimComp";
 import PSDComp from "../components/PSDComp";
 import SelectionSquare from "../components/SelectionSquare";
+import Gun from "./Gun";
+import BackpackPSD from "./BackpackPSD";
 /* START-USER-IMPORTS */
 import StateMachine from "../stateMachine";
 import { PLAYER_STATE } from "../types/playerState";
@@ -25,29 +27,53 @@ import eventsCenter from "../EventsCenter";
 import { AUDIO_PLAY_EVENTS } from "../types/scenes";
 /* END-USER-IMPORTS */
 
-export default class Player extends Phaser.GameObjects.Sprite {
+export default class Player extends Phaser.GameObjects.Container {
 
-	constructor(scene: Phaser.Scene, x?: number, y?: number, texture?: string, frame?: number | string) {
-		super(scene, x ?? 0, y ?? 0, texture || "playerByTP", frame ?? "playerOnly-4.png");
+	constructor(scene: Phaser.Scene, x?: number, y?: number) {
+		super(scene, x ?? 0, y ?? 0);
 
-		// this (components)
-		const thisPhysics = new Physics(this);
-		thisPhysics.width = 28;
-		thisPhysics.height = 28;
-		thisPhysics.offsetX = 18;
-		thisPhysics.offsetY = 26;
-		const thisJustMovement = new JustMovement(this);
-		thisJustMovement.speed = 155;
-		new KeyboardInput(this);
-		new DepthSortY(this);
-		new AnimationV2(this);
-		new CameraFollow(this);
-		new HoldComp(this);
-		const thisAimComp = new AimComp(this);
-		thisAimComp.facingDir = 2;
-		thisAimComp.movingDir = 2;
-		new PSDComp(this);
-		new SelectionSquare(this);
+		// player
+		const player = scene.add.sprite(0, 0, "playerByTP", "playerOnly-24.png");
+		this.add(player);
+
+		// gun
+		const gun = new Gun(scene, 0, 0);
+		this.add(gun);
+
+		// backpackPSD
+		const backpackPSD = new BackpackPSD(scene, 0, 0);
+		this.add(backpackPSD);
+
+		// player (components)
+		const playerPhysics = new Physics(player);
+		playerPhysics.width = 28;
+		playerPhysics.height = 28;
+		playerPhysics.offsetX = 18;
+		playerPhysics.offsetY = 26;
+		const playerJustMovement = new JustMovement(player);
+		playerJustMovement.speed = 155;
+		new KeyboardInput(player);
+		new DepthSortY(player);
+		new AnimationV2(player);
+		new CameraFollow(player);
+		new HoldComp(player);
+		const playerAimComp = new AimComp(player);
+		playerAimComp.facingDir = 2;
+		playerAimComp.movingDir = 2;
+		new PSDComp(player);
+		new SelectionSquare(player);
+
+		// gun (components)
+		new Physics(gun);
+		new JustMovement(gun);
+
+		// backpackPSD (components)
+		new Physics(backpackPSD);
+		new JustMovement(backpackPSD);
+
+		this.player = player;
+		this.gun = gun;
+		this.backpackPSD = backpackPSD;
 
 		/* START-USER-CTR-CODE */
 		// Write your code here.
@@ -86,6 +112,10 @@ export default class Player extends Phaser.GameObjects.Sprite {
 
 		/* END-USER-CTR-CODE */
 	}
+
+	public player: Phaser.GameObjects.Sprite;
+	public gun: Gun;
+	public backpackPSD: BackpackPSD;
 
 	/* START-USER-CODE */
 

@@ -13,32 +13,73 @@
     },
     "displayList": [
         {
-            "type": "Sprite",
-            "id": "14c39eb9-c1a6-44a6-b835-1047b510aeee",
-            "label": "container_1",
-            "components": [
-                "Physics",
-                "JustMovement",
-                "KeyboardInput",
-                "DepthSortY",
-                "AnimationV2",
-                "CameraFollow",
-                "HoldComp",
-                "AimComp",
-                "PSDComp",
-                "SelectionSquare"
-            ],
-            "Physics.width": 28,
-            "Physics.height": 28,
-            "Physics.offsetX": 18,
-            "Physics.offsetY": 26,
-            "JustMovement.speed": 155,
-            "AimComp.facingDir": 2,
-            "AimComp.movingDir": 2,
-            "texture": {
-                "key": "playerByTP",
-                "frame": "playerOnly-4.png"
-            }
+            "type": "Container",
+            "id": "485aed8f-9c3a-40d4-a948-0835d820e772",
+            "label": "container_2",
+            "components": [],
+            "list": [
+                {
+                    "type": "Sprite",
+                    "id": "14c39eb9-c1a6-44a6-b835-1047b510aeee",
+                    "label": "player",
+                    "scope": "NESTED_PREFAB",
+                    "components": [
+                        "Physics",
+                        "JustMovement",
+                        "KeyboardInput",
+                        "DepthSortY",
+                        "AnimationV2",
+                        "CameraFollow",
+                        "HoldComp",
+                        "AimComp",
+                        "PSDComp",
+                        "SelectionSquare"
+                    ],
+                    "Physics.width": 28,
+                    "Physics.height": 28,
+                    "Physics.offsetX": 18,
+                    "Physics.offsetY": 26,
+                    "JustMovement.speed": 155,
+                    "AimComp.facingDir": 2,
+                    "AimComp.movingDir": 2,
+                    "texture": {
+                        "key": "playerByTP",
+                        "frame": "playerOnly-24.png"
+                    }
+                },
+                {
+                    "prefabId": "eeb79810-6ef8-493c-abd4-5564eb5320b3",
+                    "id": "ac4ff0c1-cf1a-479e-9cc6-847621bdb642",
+                    "unlock": [
+                        "x",
+                        "y"
+                    ],
+                    "label": "gun",
+                    "scope": "NESTED_PREFAB",
+                    "components": [
+                        "Physics",
+                        "JustMovement"
+                    ],
+                    "x": 0,
+                    "y": 0
+                },
+                {
+                    "prefabId": "36b87ccf-dd20-43c3-aedf-e923214097b1",
+                    "id": "579bc48b-8047-4877-88d5-489b1e734726",
+                    "unlock": [
+                        "x",
+                        "y"
+                    ],
+                    "label": "backpackPSD",
+                    "scope": "NESTED_PREFAB",
+                    "components": [
+                        "Physics",
+                        "JustMovement"
+                    ],
+                    "x": 0,
+                    "y": 0
+                }
+            ]
         }
     ],
     "plainObjects": [],
