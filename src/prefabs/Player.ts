@@ -63,14 +63,6 @@ export default class Player extends Phaser.GameObjects.Container {
 		new PSDComp(player);
 		new SelectionSquare(player);
 
-		// gun (components)
-		new Physics(gun);
-		new JustMovement(gun);
-
-		// backpackPSD (components)
-		new Physics(backpackPSD);
-		new JustMovement(backpackPSD);
-
 		this.player = player;
 		this.gun = gun;
 		this.backpackPSD = backpackPSD;
@@ -103,12 +95,12 @@ export default class Player extends Phaser.GameObjects.Container {
 		this.scene.events.on(Phaser.Scenes.Events.UPDATE, this.Update, this);
 
 		this.direction = DIRECTION.FRONT
-		this.playerMovement = JustMovement.getComponent(this)
-		this.playerAnims = AnimationV2.getComponent(this)
-		this.playerHold = HoldComp.getComponent(this)
-		this.playerAimComp = AimComp.getComponent(this)
-		this.playerKeyboard = KeyboardInput.getComponent(this)
-		this.playerPSD = PSDComp.getComponent(this)
+		this.playerMovement = JustMovement.getComponent(this.player)
+		this.playerAnims = AnimationV2.getComponent(this.player)
+		this.playerHold = HoldComp.getComponent(this.player)
+		this.playerAimComp = AimComp.getComponent(this.player)
+		this.playerKeyboard = KeyboardInput.getComponent(this.player)
+		this.playerPSD = PSDComp.getComponent(this.player)
 
 		/* END-USER-CTR-CODE */
 	}
@@ -152,7 +144,7 @@ export default class Player extends Phaser.GameObjects.Container {
 		this.playerAimComp.stateMachine.update(dt)
 		this.playerPSD.stateMachine.update(dt)
 
-		const selectSquareComp = SelectionSquare.getComponent(this)
+		const selectSquareComp = SelectionSquare.getComponent(this.player)
 		selectSquareComp.setDir(this.direction)
 
 		// ensure the player tint and speed unless in mud
@@ -186,15 +178,15 @@ export default class Player extends Phaser.GameObjects.Container {
 	{
 		console.log('in mud con')
 		// this.setTint(this.mudcolor)
-		this.tint = 0x654321;
-		const move = JustMovement.getComponent(this)
+		this.player.tint = 0x654321;
+		const move = JustMovement.getComponent(this.player)
 		move.speed = 155 * 0.5
 	}
 
 	outMudCondition()
 	{
-		this.clearTint()
-		const move = JustMovement.getComponent(this)
+		this.player.clearTint()
+		const move = JustMovement.getComponent(this.player)
 		move.speed = 155
 	}
 

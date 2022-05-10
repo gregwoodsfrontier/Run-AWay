@@ -56,10 +56,7 @@
                     ],
                     "label": "gun",
                     "scope": "NESTED_PREFAB",
-                    "components": [
-                        "Physics",
-                        "JustMovement"
-                    ],
+                    "components": [],
                     "x": 0,
                     "y": 0
                 },
@@ -72,10 +69,7 @@
                     ],
                     "label": "backpackPSD",
                     "scope": "NESTED_PREFAB",
-                    "components": [
-                        "Physics",
-                        "JustMovement"
-                    ],
+                    "components": [],
                     "x": 0,
                     "y": 0
                 }
