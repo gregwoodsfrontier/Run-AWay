@@ -343,6 +343,53 @@
             "baseClass": "UserComponent",
             "gameObjectType": "Phaser.GameObjects.Image",
             "properties": []
+        },
+        {
+            "name": "DirectionState",
+            "baseClass": "UserComponent",
+            "gameObjectType": "Phaser.GameObjects.Sprite",
+            "properties": [
+                {
+                    "name": "leftAnims",
+                    "label": "leftAnims",
+                    "tooltip": "leftAnims",
+                    "defValue": "",
+                    "customDefinition": false,
+                    "type": {
+                        "id": "string"
+                    }
+                },
+                {
+                    "name": "rightAnims",
+                    "label": "rightAnims",
+                    "tooltip": "rightAnims",
+                    "defValue": "",
+                    "customDefinition": false,
+                    "type": {
+                        "id": "string"
+                    }
+                },
+                {
+                    "name": "frontAnims",
+                    "label": "frontAnims",
+                    "tooltip": "frontAnims",
+                    "defValue": "",
+                    "customDefinition": false,
+                    "type": {
+                        "id": "string"
+                    }
+                },
+                {
+                    "name": "backAnims",
+                    "label": "backAnims",
+                    "tooltip": "backAnims",
+                    "defValue": "",
+                    "customDefinition": false,
+                    "type": {
+                        "id": "string"
+                    }
+                }
+            ]
         }
     ],
     "meta": {

@@ -35,6 +35,11 @@ export default class StateMachine
 		this.context = context
 	}
 
+	setID(id: string)
+	{
+		this.id = id
+	}
+
 	isCurrentState(name: string)
 	{
 		if (!this.currentState)
