@@ -90,7 +90,7 @@ export default class Chunk extends Phaser.Scene {
 
 		this.editorCreate();
 		eventsCenter.emit(SCENE_SWITCH_EVENTS.UPDATE_ACTIVE, "Chunk")
-		this.playerContainer.play('player-front-idle')
+		this.playerContainer.player.play('player-front-idle')
 
 		this.startWorldGen()
 
