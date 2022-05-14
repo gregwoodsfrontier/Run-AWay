@@ -108,7 +108,8 @@ export default class Bootstrap extends Phaser.Scene {
 		if(process.env.NODE_ENV === "development")
 		{
 			// this.createNewChunk()
-			this.createNewGame()
+			// this.createNewGame()
+			this.startTitleScene()
 			// this.toChunks("Title")
 			// this.goToGameOver("Title")
 			return

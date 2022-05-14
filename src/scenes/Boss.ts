@@ -4,7 +4,7 @@
 /* START OF COMPILED CODE */
 
 import Phaser from "phaser";
-import Player from "../prefabs/Player";
+import Player from "../prefabs/PlayerContainer";
 /* START-USER-IMPORTS */
 import eventsCenter from "../EventsCenter";
 import { SCENE_SWITCH_EVENTS } from "../types/scenes";
