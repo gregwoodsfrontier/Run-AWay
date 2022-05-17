@@ -9,7 +9,7 @@ import Phaser from "phaser";
 
 export default class DepthSortY {
 
-	constructor(gameObject: Phaser.GameObjects.Sprite) {
+	constructor(gameObject: Phaser.GameObjects.Sprite | Phaser.GameObjects.Container) {
 		this.gameObject = gameObject;
 		(gameObject as any)["__DepthSortY"] = this;
 
@@ -18,11 +18,11 @@ export default class DepthSortY {
 		/* END-USER-CTR-CODE */
 	}
 
-	static getComponent(gameObject: Phaser.GameObjects.Sprite): DepthSortY {
+	static getComponent(gameObject: Phaser.GameObjects.Sprite | Phaser.GameObjects.Container): DepthSortY {
 		return (gameObject as any)["__DepthSortY"];
 	}
 
-	private gameObject: Phaser.GameObjects.Sprite;
+	private gameObject: Phaser.GameObjects.Sprite | Phaser.GameObjects.Container;
 
 	/* START-USER-CODE */
 

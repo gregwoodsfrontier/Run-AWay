@@ -16,36 +16,32 @@
             "type": "Container",
             "id": "485aed8f-9c3a-40d4-a948-0835d820e772",
             "label": "container_2",
-            "components": [],
+            "components": [
+                "KeyboardInput",
+                "Physics",
+                "JustMovement",
+                "DepthSortY",
+                "CameraFollow",
+                "SelectionSquare"
+            ],
+            "Physics.width": 28,
+            "Physics.height": 28,
+            "Physics.offsetX": 18,
+            "Physics.offsetY": 26,
+            "JustMovement.speed": 155,
             "list": [
                 {
-                    "type": "Sprite",
+                    "prefabId": "98da4764-3fe8-47db-89a5-d66c72dfe8a2",
                     "id": "14c39eb9-c1a6-44a6-b835-1047b510aeee",
+                    "unlock": [
+                        "x",
+                        "y"
+                    ],
                     "label": "player",
                     "scope": "NESTED_PREFAB",
-                    "components": [
-                        "Physics",
-                        "JustMovement",
-                        "KeyboardInput",
-                        "DepthSortY",
-                        "AnimationV2",
-                        "CameraFollow",
-                        "HoldComp",
-                        "AimComp",
-                        "PSDComp",
-                        "SelectionSquare"
-                    ],
-                    "Physics.width": 28,
-                    "Physics.height": 28,
-                    "Physics.offsetX": 18,
-                    "Physics.offsetY": 26,
-                    "JustMovement.speed": 155,
-                    "AimComp.facingDir": 2,
-                    "AimComp.movingDir": 2,
-                    "texture": {
-                        "key": "playerByTP",
-                        "frame": "playerOnly-24.png"
-                    }
+                    "components": [],
+                    "x": 0,
+                    "y": 0
                 },
                 {
                     "prefabId": "eeb79810-6ef8-493c-abd4-5564eb5320b3",

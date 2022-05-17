@@ -11,7 +11,7 @@ import { DIRECTION } from "../types/direction";
 
 export default class SelectionSquare extends UserComponent {
 
-	constructor(gameObject: Phaser.GameObjects.Sprite) {
+	constructor(gameObject: Phaser.GameObjects.Sprite | Phaser.GameObjects.Container) {
 		super(gameObject);
 
 		this.gameObject = gameObject;
@@ -24,11 +24,11 @@ export default class SelectionSquare extends UserComponent {
 		/* END-USER-CTR-CODE */
 	}
 
-	static getComponent(gameObject: Phaser.GameObjects.Sprite): SelectionSquare {
+	static getComponent(gameObject: Phaser.GameObjects.Sprite | Phaser.GameObjects.Container): SelectionSquare {
 		return (gameObject as any)["__SelectionSquare"];
 	}
 
-	private gameObject: Phaser.GameObjects.Sprite;
+	private gameObject: Phaser.GameObjects.Sprite | Phaser.GameObjects.Container;
 
 	/* START-USER-CODE */
 	private selectSquare!: Phaser.GameObjects.Zone

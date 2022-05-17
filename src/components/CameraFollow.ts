@@ -10,7 +10,7 @@ import Phaser from "phaser";
 
 export default class CameraFollow extends UserComponent {
 
-	constructor(gameObject: Phaser.GameObjects.Sprite) {
+	constructor(gameObject: Phaser.GameObjects.Sprite | Phaser.GameObjects.Container) {
 		super(gameObject);
 
 		this.gameObject = gameObject;
@@ -21,11 +21,11 @@ export default class CameraFollow extends UserComponent {
 		/* END-USER-CTR-CODE */
 	}
 
-	static getComponent(gameObject: Phaser.GameObjects.Sprite): CameraFollow {
+	static getComponent(gameObject: Phaser.GameObjects.Sprite | Phaser.GameObjects.Container): CameraFollow {
 		return (gameObject as any)["__CameraFollow"];
 	}
 
-	private gameObject: Phaser.GameObjects.Sprite;
+	private gameObject: Phaser.GameObjects.Sprite | Phaser.GameObjects.Container;
 
 	/* START-USER-CODE */
 	start()

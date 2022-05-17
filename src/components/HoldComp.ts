@@ -58,7 +58,7 @@ export default class HoldComp {
 	}
 
 	private gameObject: Phaser.GameObjects.Sprite;
-	public stateMachine: StateMachine;
+	public stateMachine!: StateMachine;
 	public direction: number = 1;
 	public item: number = 0;
 

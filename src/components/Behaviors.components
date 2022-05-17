@@ -15,7 +15,7 @@
         {
             "name": "Physics",
             "baseClass": "UserComponent",
-            "gameObjectType": "Phaser.GameObjects.Image",
+            "gameObjectType": "Phaser.GameObjects.Image | Phaser.GameObjects.Container",
             "properties": [
                 {
                     "name": "static",
@@ -78,13 +78,13 @@
         {
             "name": "KeyboardInput",
             "baseClass": "UserComponent",
-            "gameObjectType": "Phaser.GameObjects.Sprite",
+            "gameObjectType": "Phaser.GameObjects.Container",
             "properties": []
         },
         {
             "name": "JustMovement",
             "baseClass": "UserComponent",
-            "gameObjectType": "Phaser.GameObjects.Sprite",
+            "gameObjectType": "Phaser.GameObjects.Sprite | Phaser.GameObjects.Container",
             "properties": [
                 {
                     "name": "speed",
@@ -101,7 +101,7 @@
         {
             "name": "DepthSortY",
             "baseClass": "",
-            "gameObjectType": "Phaser.GameObjects.Sprite",
+            "gameObjectType": "Phaser.GameObjects.Sprite | Phaser.GameObjects.Container",
             "properties": []
         },
         {
@@ -161,7 +161,7 @@
         {
             "name": "CameraFollow",
             "baseClass": "UserComponent",
-            "gameObjectType": "Phaser.GameObjects.Sprite",
+            "gameObjectType": "Phaser.GameObjects.Sprite | Phaser.GameObjects.Container",
             "properties": []
         },
         {
@@ -249,7 +249,7 @@
         {
             "name": "SelectionSquare",
             "baseClass": "UserComponent",
-            "gameObjectType": "Phaser.GameObjects.Sprite",
+            "gameObjectType": "Phaser.GameObjects.Sprite | Phaser.GameObjects.Container",
             "properties": []
         },
         {

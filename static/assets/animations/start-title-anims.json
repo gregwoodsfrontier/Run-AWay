@@ -946,6 +946,115 @@
             ],
             "frameRate": 12,
             "skipMissedFrames": true
+        },
+        {
+            "key": "start-level-short",
+            "type": "frame",
+            "frames": [
+                {
+                    "key": "Start-Level-Anim-Short-01",
+                    "duration": 0,
+                    "keyframe": false
+                },
+                {
+                    "key": "Start-Level-Anim-Short-02",
+                    "duration": 0,
+                    "keyframe": false
+                },
+                {
+                    "key": "Start-Level-Anim-Short-03",
+                    "duration": 0,
+                    "keyframe": false
+                },
+                {
+                    "key": "Start-Level-Anim-Short-04",
+                    "duration": 0,
+                    "keyframe": false
+                },
+                {
+                    "key": "Start-Level-Anim-Short-05",
+                    "duration": 0,
+                    "keyframe": false
+                },
+                {
+                    "key": "Start-Level-Anim-Short-06",
+                    "duration": 0,
+                    "keyframe": false
+                },
+                {
+                    "key": "Start-Level-Anim-Short-07",
+                    "duration": 0,
+                    "keyframe": false
+                },
+                {
+                    "key": "Start-Level-Anim-Short-08",
+                    "duration": 0,
+                    "keyframe": false
+                },
+                {
+                    "key": "Start-Level-Anim-Short-09",
+                    "duration": 0,
+                    "keyframe": false
+                },
+                {
+                    "key": "Start-Level-Anim-Short-10",
+                    "duration": 0,
+                    "keyframe": false
+                },
+                {
+                    "key": "Start-Level-Anim-Short-11",
+                    "duration": 0,
+                    "keyframe": false
+                },
+                {
+                    "key": "Start-Level-Anim-Short-12",
+                    "duration": 0,
+                    "keyframe": false
+                },
+                {
+                    "key": "Start-Level-Anim-Short-13",
+                    "duration": 0,
+                    "keyframe": false
+                },
+                {
+                    "key": "Start-Level-Anim-Short-14",
+                    "duration": 0,
+                    "keyframe": false
+                },
+                {
+                    "key": "Start-Level-Anim-Short-15",
+                    "duration": 0,
+                    "keyframe": false
+                },
+                {
+                    "key": "Start-Level-Anim-Short-16",
+                    "duration": 0,
+                    "keyframe": false
+                },
+                {
+                    "key": "Start-Level-Anim-Short-17",
+                    "duration": 0,
+                    "keyframe": false
+                },
+                {
+                    "key": "Start-Level-Anim-Short-18",
+                    "duration": 0,
+                    "keyframe": false
+                },
+                {
+                    "key": "Start-Level-Anim-Short-19",
+                    "duration": 0,
+                    "keyframe": false
+                },
+                {
+                    "key": "Start-Level-Anim-Short-20",
+                    "duration": 0,
+                    "keyframe": false
+                }
+            ],
+            "frameRate": 12,
+            "skipMissedFrames": true,
+            "hideOnComplete": true
         }
     ],
     "globalTimeScale": 1,

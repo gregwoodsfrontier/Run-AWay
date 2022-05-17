@@ -29,7 +29,7 @@ export default class FollowTarget extends UserComponent {
 	}
 
 	private gameObject: Phaser.GameObjects.Sprite;
-	public target: Phaser.GameObjects.Sprite;
+	public target!: Phaser.GameObjects.Sprite;
 	public range: number = 35;
 	public deadRangeX: number = 15;
 	public deadRangeY: number = 60;

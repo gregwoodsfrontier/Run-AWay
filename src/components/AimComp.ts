@@ -42,7 +42,7 @@ export default class AimComp {
 	}
 
 	private gameObject: Phaser.GameObjects.Sprite;
-	public stateMachine: StateMachine;
+	public stateMachine!: StateMachine;
 	public facingDir: number = 0;
 	public movingDir: number = 0;
 

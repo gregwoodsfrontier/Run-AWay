@@ -798,7 +798,7 @@
             "repeat": -1
         },
         {
-            "key": "right-gunonly",
+            "key": "right-gun",
             "type": "frame",
             "frames": [
                 {
@@ -818,6 +818,124 @@
                 },
                 {
                     "key": "right-gunonly-4",
+                    "duration": 0,
+                    "keyframe": false
+                }
+            ],
+            "frameRate": 12,
+            "skipMissedFrames": true,
+            "repeat": -1
+        },
+        {
+            "key": "player-right-idle-none",
+            "type": "frame",
+            "frames": [
+                {
+                    "key": "playerByTP",
+                    "frame": "playerOnly-12.png",
+                    "duration": 0,
+                    "keyframe": false
+                }
+            ],
+            "frameRate": 24,
+            "skipMissedFrames": true,
+            "repeat": -1
+        },
+        {
+            "key": "player-left-idle-none",
+            "type": "frame",
+            "frames": [
+                {
+                    "key": "playerByTP",
+                    "frame": "playerOnly-10.png",
+                    "duration": 0,
+                    "keyframe": false
+                }
+            ],
+            "frameRate": 24,
+            "skipMissedFrames": true,
+            "repeat": -1
+        },
+        {
+            "key": "player-front-idle-none",
+            "type": "frame",
+            "frames": [
+                {
+                    "key": "playerByTP",
+                    "frame": "playerOnly-4.png",
+                    "duration": 0,
+                    "keyframe": false
+                }
+            ],
+            "frameRate": 24,
+            "skipMissedFrames": true,
+            "repeat": -1
+        },
+        {
+            "key": "player-back-idle-none",
+            "type": "frame",
+            "frames": [
+                {
+                    "key": "playerByTP",
+                    "frame": "playerOnly-16.png",
+                    "duration": 0,
+                    "keyframe": false
+                }
+            ],
+            "frameRate": 24,
+            "skipMissedFrames": true,
+            "repeat": -1
+        },
+        {
+            "key": "front-gun",
+            "type": "frame",
+            "frames": [
+                {
+                    "key": "front-gunonly-1",
+                    "duration": 0,
+                    "keyframe": false
+                },
+                {
+                    "key": "front-gunonly-2",
+                    "duration": 0,
+                    "keyframe": false
+                },
+                {
+                    "key": "front-gunonly-3",
+                    "duration": 0,
+                    "keyframe": false
+                },
+                {
+                    "key": "front-gunonly-4",
+                    "duration": 0,
+                    "keyframe": false
+                }
+            ],
+            "frameRate": 12,
+            "skipMissedFrames": true,
+            "repeat": -1
+        },
+        {
+            "key": "back-gun",
+            "type": "frame",
+            "frames": [
+                {
+                    "key": "back-gunonly-1",
+                    "duration": 0,
+                    "keyframe": false
+                },
+                {
+                    "key": "back-gunonly-2",
+                    "duration": 0,
+                    "keyframe": false
+                },
+                {
+                    "key": "back-gunonly-3",
+                    "duration": 0,
+                    "keyframe": false
+                },
+                {
+                    "key": "back-gunonly-4",
                     "duration": 0,
                     "keyframe": false
                 }
