@@ -50,6 +50,18 @@ export default class Gun extends Phaser.GameObjects.Sprite {
 		this.SM?.update(dt)
 	}
 
+	setToWalkWithDir(dir: number)
+	{
+		this.setDirection(dir)
+		this.SM?.setState(STATES.WALK)
+	}
+
+	setToIdleWithDir(dir: number)
+	{
+		this.setDirection(dir)
+		this.SM?.setState(STATES.IDLE)
+	}
+
 	setDirection(dir: number)
 	{
 		if(dir < 0|| dir > 3)

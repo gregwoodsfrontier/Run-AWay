@@ -55,6 +55,18 @@ export default class BackpackPSD extends Phaser.GameObjects.Sprite {
 		this.isHold = boo
 	}
 
+	setToWalkWithDir(dir: number)
+	{
+		this.setDirection(dir)
+		this.SM?.setState(STATES.WALK)
+	}
+
+	setToIdleWithDir(dir: number)
+	{
+		this.setDirection(dir)
+		this.SM?.setState(STATES.IDLE)
+	}
+
 	setDirection(dir: number)
 	{
 		if(dir < 0|| dir > 3)

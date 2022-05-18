@@ -105,6 +105,7 @@ export default class PlayerContainer extends Phaser.GameObjects.Container {
 
 		this.keyboard = KeyboardInput.getComponent(this)
 
+		this.assignKeyCommands()
 		
 	}
 
@@ -116,6 +117,42 @@ export default class PlayerContainer extends Phaser.GameObjects.Container {
 			const selectSquareComp = SelectionSquare.getComponent(this.player)
 			selectSquareComp.setDir(this.direction)
 		}
+	}
+
+	private assignKeyCommands()
+	{
+		const {keyboard} = this
+
+		if(!keyboard)
+		{
+			return
+		}
+
+		keyboard.executeKeyUp = () => {
+			this.stateMachine?.setState(PLAYER_STATE.IDLE)
+		}
+
+		keyboard.executeLeft = () => {
+			this.setWalkWithDirection(DIRECTION.LEFT)
+		}
+
+		keyboard.executeRight = () => {
+			this.setWalkWithDirection(DIRECTION.RIGHT)
+		}
+
+		keyboard.executeUp = () => {
+			this.setWalkWithDirection(DIRECTION.BACK)
+		}
+
+		keyboard.executeDown = () => {
+			this.setWalkWithDirection(DIRECTION.FRONT)
+		}
+	}
+
+	private setWalkWithDirection(dir: number)
+	{
+		this.direction = dir
+		this.stateMachine?.setState(PLAYER_STATE.WALK)
 	}
 
 	setHoldState(boo: boolean)
@@ -133,7 +170,7 @@ export default class PlayerContainer extends Phaser.GameObjects.Container {
 		eventsCenter.emit(AUDIO_PLAY_EVENTS.PLAYER_FOOT_STOP)
 	}
 
-	public inMudCondition()
+	inMudCondition()
 	{
 		console.log('in mud con')
 		// this.setTint(this.mudcolor)
@@ -193,18 +230,12 @@ export default class PlayerContainer extends Phaser.GameObjects.Container {
 	private makePlayerWalk(boo: boolean)
 	{
 		let walkState = ''
-		if(boo)
-		{
-			walkState = 'walk'
-		}
-		else
-		{
-			walkState = 'idle'
-		}
-
+		
 		const dirName = getDirectionName(this.direction)
 
 		const holdName = this.getHoldStateString()
+
+		const {direction} = this
 
 		if(!dirName)
 		{
@@ -214,8 +245,22 @@ export default class PlayerContainer extends Phaser.GameObjects.Container {
 
 		// player physically move
 		this.handlePlayerMovement()
+		
+		if(boo)
+		{
+			walkState = 'walk'
+			this.gun.setToWalkWithDir(direction)
+			this.backpackPSD.setToWalkWithDir(direction)
+		}
+		else
+		{
+			walkState = 'idle'
+			this.gun.setToIdleWithDir(direction)
+			this.backpackPSD.setToIdleWithDir(direction)
+		}
 
 		this.player.play(`player-${dirName}-${walkState}-${holdName}`, true)
+
 	}
 
 	private onIdleEnter()
