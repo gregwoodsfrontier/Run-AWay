@@ -690,7 +690,7 @@ export default class Level extends Phaser.Scene {
 			this.playerContainer.setVisible(true)
 		}
 
-		const input = KeyboardInput.getComponent(this.playerContainer.player)
+		const input = KeyboardInput.getComponent(this.playerContainer)
 		if(!input)
 		{
 			return
@@ -754,7 +754,7 @@ export default class Level extends Phaser.Scene {
 		}
 
 		this.pSDRobot.returnToPlayer()
-		this.playerContainer.emit('player-recover-psd')
+		this.playerContainer.emit(EVENTKEYS.PLAYER_RECOVER)
 	}
 
 	private checkSelectionPSDOverlap()

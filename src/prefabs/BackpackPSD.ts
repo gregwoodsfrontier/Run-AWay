@@ -8,11 +8,7 @@ import Phaser from "phaser";
 import StateMachine from "../stateMachine";
 import { DIRECTION } from "../types/direction";
 import { getDirectionName } from "../types/direction";
-enum STATES {
-	IDLE = 'IDLE',
-	WALK = 'WALK',
-	DEPLOY = 'deploy'
-}
+
 /* END-USER-IMPORTS */
 
 export default class BackpackPSD extends Phaser.GameObjects.Sprite {
@@ -37,17 +33,22 @@ export default class BackpackPSD extends Phaser.GameObjects.Sprite {
 		this.direction = DIRECTION.LEFT
 
 		this.SM = new StateMachine(this, 'bpPsd')
-		this.SM.addState(STATES.IDLE, {
+		this.SM.addState(PSD_STATES.IDLE, {
 			onEnter: this.onIdleEnter
 		})
-		.addState(STATES.WALK, {
+		.addState(PSD_STATES.WALK, {
 			onEnter: this.onWalkEnter,
 			onUpdate: this.onWalkUpdate
 		})
-		.addState(STATES.DEPLOY, {
+		.addState(PSD_STATES.DEPLOY, {
 			onEnter: this.onDeployEnter
 		})
-		.setState(STATES.IDLE)
+		.setState(PSD_STATES.IDLE)
+	}
+
+	isSMCurrentState(state: string)
+	{
+		return this.SM?.isCurrentState(state)
 	}
 
 	private onDeployEnter()
@@ -68,19 +69,19 @@ export default class BackpackPSD extends Phaser.GameObjects.Sprite {
 	setToWalkWithDir(dir: number)
 	{
 		this.setDirection(dir)
-		this.SM?.setState(STATES.WALK)
+		this.SM?.setState(PSD_STATES.WALK)
 	}
 
 	setToIdleWithDir(dir: number)
 	{
 		this.setDirection(dir)
-		this.SM?.setState(STATES.IDLE)
+		this.SM?.setState(PSD_STATES.IDLE)
 	}
 
 	setToDeployWithDir(dir: number)
 	{
 		this.setDirection(dir)
-		this.SM?.setState(STATES.DEPLOY)
+		this.SM?.setState(PSD_STATES.DEPLOY)
 	}
 
 	setDirection(dir: number)

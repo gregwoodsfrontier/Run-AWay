@@ -20,6 +20,7 @@ import { DARK_BROWN } from "../types/colors";
 import eventsCenter from "../EventsCenter";
 import { AUDIO_PLAY_EVENTS } from "../types/scenes";
 import { EVENTKEYS } from "../types/eventKeys";
+import PSD from "./PSD";
 
 const mudcolor = DARK_BROWN
 /* END-USER-IMPORTS */
@@ -149,21 +150,37 @@ export default class PlayerContainer extends Phaser.GameObjects.Container {
 			this.setWalkWithDirection(DIRECTION.FRONT)
 		}
 
-		keyboard.executeCKeyJustUp = () => {
-			if(!this.flipSwitch)
+		keyboard.executeCKeyJustDown = () => {
+			if(this.backpackPSD.isSMCurrentState(PSD_STATES.DEPLOY))
 			{
-				this.scene.events.emit(EVENTKEYS.DEPLOY_PSD)
-				this.backpackPSD.setToDeployWithDir(this.direction)
-				this.flipSwitch = !this.flipSwitch
-				return
+				// the func just skips if it does not have overlap with PSD
+				this.scene.events.emit(EVENTKEYS.TAKEBACK_PSD)
+				this.once(EVENTKEYS.PLAYER_RECOVER, this.handlePSDReturn, this)
+				return			
 			}
 
-			//'takeback-PSD'
-			this.scene.events.emit(EVENTKEYS.TAKEBACK_PSD)
-			// if
+			this.scene.events.emit(EVENTKEYS.DEPLOY_PSD)
+			this.backpackPSD.setToDeployWithDir(this.direction)
 			this.flipSwitch = !this.flipSwitch
 			return
+			
 		}
+	}
+
+	private handlePSDReturn()
+	{
+		if(this.stateMachine?.isCurrentState(PLAYER_STATE.IDLE))
+		{
+			this.backpackPSD.setToIdleWithDir(this.direction)
+			return
+		}
+		else if(this.stateMachine?.isCurrentState(PLAYER_STATE.WALK))
+		{
+			this.backpackPSD.setToWalkWithDir(this.direction)
+			return
+		}
+
+		console.error('such state machine state does not exist.')
 	}
 
 	private setWalkWithDirection(dir: number)
