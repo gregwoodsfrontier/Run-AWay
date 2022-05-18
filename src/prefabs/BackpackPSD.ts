@@ -10,7 +10,8 @@ import { DIRECTION } from "../types/direction";
 import { getDirectionName } from "../types/direction";
 enum STATES {
 	IDLE = 'IDLE',
-	WALK = 'WALK'
+	WALK = 'WALK',
+	DEPLOY = 'deploy'
 }
 /* END-USER-IMPORTS */
 
@@ -40,9 +41,18 @@ export default class BackpackPSD extends Phaser.GameObjects.Sprite {
 			onEnter: this.onIdleEnter
 		})
 		.addState(STATES.WALK, {
+			onEnter: this.onWalkEnter,
 			onUpdate: this.onWalkUpdate
 		})
+		.addState(STATES.DEPLOY, {
+			onEnter: this.onDeployEnter
+		})
 		.setState(STATES.IDLE)
+	}
+
+	private onDeployEnter()
+	{
+		this.setVisible(false)
 	}
 
 	private sceneUpdate(dt: number)
@@ -67,6 +77,12 @@ export default class BackpackPSD extends Phaser.GameObjects.Sprite {
 		this.SM?.setState(STATES.IDLE)
 	}
 
+	setToDeployWithDir(dir: number)
+	{
+		this.setDirection(dir)
+		this.SM?.setState(STATES.DEPLOY)
+	}
+
 	setDirection(dir: number)
 	{
 		if(dir < 0|| dir > 3)
@@ -87,6 +103,11 @@ export default class BackpackPSD extends Phaser.GameObjects.Sprite {
 		return 'walk'
 	}
 
+	private onWalkEnter()
+	{
+		this.setVisible(true)
+	}
+
 	private onIdleEnter()
 	{
 		const dirName = getDirectionName(this.direction)
@@ -98,6 +119,7 @@ export default class BackpackPSD extends Phaser.GameObjects.Sprite {
 		}
 
 		this.setTexture(`${dirName}-walk-01`)
+		this.setVisible(true)
 	}
 
 	private onWalkUpdate()

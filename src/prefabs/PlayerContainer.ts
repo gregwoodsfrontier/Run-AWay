@@ -19,6 +19,7 @@ import { DIRECTION, getDirectionName } from "../types/direction";
 import { DARK_BROWN } from "../types/colors";
 import eventsCenter from "../EventsCenter";
 import { AUDIO_PLAY_EVENTS } from "../types/scenes";
+import { EVENTKEYS } from "../types/eventKeys";
 
 const mudcolor = DARK_BROWN
 /* END-USER-IMPORTS */
@@ -146,6 +147,22 @@ export default class PlayerContainer extends Phaser.GameObjects.Container {
 
 		keyboard.executeDown = () => {
 			this.setWalkWithDirection(DIRECTION.FRONT)
+		}
+
+		keyboard.executeCKeyJustUp = () => {
+			if(!this.flipSwitch)
+			{
+				this.scene.events.emit(EVENTKEYS.DEPLOY_PSD)
+				this.backpackPSD.setToDeployWithDir(this.direction)
+				this.flipSwitch = !this.flipSwitch
+				return
+			}
+
+			//'takeback-PSD'
+			this.scene.events.emit(EVENTKEYS.TAKEBACK_PSD)
+			// if
+			this.flipSwitch = !this.flipSwitch
+			return
 		}
 	}
 

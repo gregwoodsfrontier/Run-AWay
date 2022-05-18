@@ -22,6 +22,7 @@ import { ENEMY_STATE_KEYS } from "../types/enemyStateKeys";
 import psdField from "../prefabs/psdField";
 import { GameState } from "../manager/gameState";
 import FollowTarget from "../components/FollowTarget";
+import { EVENTKEYS } from "../types/eventKeys";
 /* END-USER-IMPORTS */
 
 export default class Level extends Phaser.Scene {
@@ -418,10 +419,10 @@ export default class Level extends Phaser.Scene {
 
 		this.#destination = SelectionSquare.getComponent(this.playerContainer.player)
 
-		this.events.on('create-bullet', this.handleBulletUpdate, this)
-		this.events.on('deploy-PSD', this.deployPSD, this)
-		this.events.on('takeback-PSD', this.takeBackPSD, this)
-		this.events.on('gen-psd-field', this.addColliderEnemyField, this)
+		this.events.on(EVENTKEYS.CREATE_BULLETS, this.handleBulletUpdate, this)
+		this.events.on(EVENTKEYS.DEPLOY_PSD, this.deployPSD, this)
+		this.events.on(EVENTKEYS.TAKEBACK_PSD, this.takeBackPSD, this)
+		this.events.on(EVENTKEYS.GEN_PSD_FIELD, this.addColliderEnemyField, this)
 
 		this.start_level.once('animationcomplete', () => {
 			this.events.once('resume', this.onStartLevelAnimsComplete, this)

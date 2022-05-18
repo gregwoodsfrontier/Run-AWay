@@ -10,7 +10,8 @@ import { DIRECTION } from "../types/direction";
 import { getDirectionName } from "../types/direction";
 enum STATES {
 	IDLE = 'IDLE',
-	WALK = 'WALK'
+	WALK = 'WALK',
+	PUTBACK = 'putback'
 }
 /* END-USER-IMPORTS */
 
@@ -40,9 +41,23 @@ export default class Gun extends Phaser.GameObjects.Sprite {
 			onEnter: this.onIdleEnter
 		})
 		.addState(STATES.WALK, {
+			onEnter: this.onWalkEnter,
 			onUpdate: this.onWalkUpdate
 		})
+		.addState(STATES.PUTBACK, {
+			onEnter: this.onPutbackEnter
+		})
 		.setState(STATES.IDLE)
+	}
+
+	private onWalkEnter()
+	{
+		this.setVisible(true)
+	}
+
+	private onPutbackEnter()
+	{
+		this.setVisible(false)
 	}
 
 	private sceneUpdate(dt: number)
@@ -84,6 +99,7 @@ export default class Gun extends Phaser.GameObjects.Sprite {
 		}
 
 		this.setTexture(`${dirName}-gunonly-1`)
+		this.setVisible(true)
 	}
 
 	private onWalkUpdate()
