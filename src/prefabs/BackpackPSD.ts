@@ -8,7 +8,7 @@ import Phaser from "phaser";
 import StateMachine from "../stateMachine";
 import { DIRECTION } from "../types/direction";
 import { getDirectionName } from "../types/direction";
-
+import { PSD_STATES } from "../types/PSD";
 /* END-USER-IMPORTS */
 
 export default class BackpackPSD extends Phaser.GameObjects.Sprite {

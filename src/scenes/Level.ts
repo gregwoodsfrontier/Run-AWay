@@ -15,7 +15,7 @@ import Bullet from "../prefabs/Bullet";
 import JustMovement from "../components/JustMovement";
 import SelectionSquare from "../components/SelectionSquare";
 import KeyboardInput from "../components/KeyboardInput";
-import { PSD_STATE } from "../types/PSD";
+import { PSD_STATES } from "../types/PSD";
 import eventsCenter from "../EventsCenter";
 import { AUDIO_PLAY_EVENTS, SCENE_SWITCH_EVENTS } from "../types/scenes";
 import { ENEMY_STATE_KEYS } from "../types/enemyStateKeys";
@@ -737,7 +737,7 @@ export default class Level extends Phaser.Scene {
 		if(this.cave_test_map_2.hasTileAtWorldXY(x, y, this.cameras.main, this.wall_1))
 		{
 			// revert psd comp state back to idle
-			this.playerContainer.setPSDCompState(PSD_STATE.EQIUP_IDLE)
+			this.playerContainer.setPSDCompState(PSD_STATES.EQIUP_IDLE)
 			return
 		}
 

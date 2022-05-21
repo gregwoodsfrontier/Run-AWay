@@ -96,17 +96,6 @@
                 "key": "ByTeam"
             },
             {
-                "url": "assets/cards.png",
-                "type": "image",
-                "key": "cards"
-            },
-            {
-                "atlasURL": "assets/cards.json",
-                "textureURL": "assets/cards.png",
-                "type": "atlas",
-                "key": "cards_1"
-            },
-            {
                 "url": "assets/cave-test-map-2.json",
                 "type": "tilemapTiledJSON",
                 "key": "cave-test-map-2"
