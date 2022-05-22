@@ -58,6 +58,15 @@ export default class BackpackPSD extends Phaser.GameObjects.Sprite {
 
 	private sceneUpdate(dt: number)
 	{
+		if(this.direction === DIRECTION.FRONT)
+		{
+			this.setVisible(false)
+		}
+		else
+		{
+			this.setVisible(true)
+		}
+
 		this.SM?.update(dt)
 	}
 
@@ -113,13 +122,15 @@ export default class BackpackPSD extends Phaser.GameObjects.Sprite {
 	{
 		const dirName = getDirectionName(this.direction)
 
-		if(!dirName)
+		const spr = `${dirName}-walk-01`
+
+		if(!dirName || this.direction === DIRECTION.FRONT)
 		{
 			console.warn('direction should be defined')
 			return
 		}
 
-		this.setTexture(`${dirName}-walk-01`)
+		this.setTexture(spr)
 		this.setVisible(true)
 	}
 
@@ -127,15 +138,17 @@ export default class BackpackPSD extends Phaser.GameObjects.Sprite {
 	{
 		const dirName = getDirectionName(this.direction)
 
-		if(!dirName)
+		const hold = this.giveHoldStateStr()
+
+		const spr = `${dirName}-${hold}`
+
+		if(!dirName || this.direction === DIRECTION.FRONT)
 		{
 			console.warn('direction should be defined')
 			return
 		}
 
-		const hold = this.giveHoldStateStr()
-
-		this.play(`${dirName}-${hold}`, true)
+		this.play(spr, true)
 	}
 
 	/* END-USER-CODE */
