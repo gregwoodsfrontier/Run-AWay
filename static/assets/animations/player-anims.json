@@ -837,7 +837,7 @@
                     "keyframe": false
                 }
             ],
-            "frameRate": 24,
+            "frameRate": 12,
             "skipMissedFrames": true,
             "repeat": -1
         },
@@ -852,7 +852,7 @@
                     "keyframe": false
                 }
             ],
-            "frameRate": 24,
+            "frameRate": 12,
             "skipMissedFrames": true,
             "repeat": -1
         },
@@ -867,7 +867,7 @@
                     "keyframe": false
                 }
             ],
-            "frameRate": 24,
+            "frameRate": 12,
             "skipMissedFrames": true,
             "repeat": -1
         },
@@ -882,7 +882,7 @@
                     "keyframe": false
                 }
             ],
-            "frameRate": 24,
+            "frameRate": 12,
             "skipMissedFrames": true,
             "repeat": -1
         },
@@ -936,6 +936,66 @@
                 },
                 {
                     "key": "back-gunonly-4",
+                    "duration": 0,
+                    "keyframe": false
+                }
+            ],
+            "frameRate": 12,
+            "skipMissedFrames": true,
+            "repeat": -1
+        },
+        {
+            "key": "player-right-idle-hold",
+            "type": "frame",
+            "frames": [
+                {
+                    "key": "playerByTP",
+                    "frame": "playerOnly-28.png",
+                    "duration": 0,
+                    "keyframe": false
+                }
+            ],
+            "frameRate": 12,
+            "skipMissedFrames": true,
+            "repeat": -1
+        },
+        {
+            "key": "player-left-idle-hold",
+            "type": "frame",
+            "frames": [
+                {
+                    "key": "playerByTP",
+                    "frame": "playerOnly-24.png",
+                    "duration": 0,
+                    "keyframe": false
+                }
+            ],
+            "frameRate": 12,
+            "skipMissedFrames": true,
+            "repeat": -1
+        },
+        {
+            "key": "player-front-idle-hold",
+            "type": "frame",
+            "frames": [
+                {
+                    "key": "playerByTP",
+                    "frame": "playerOnly-20.png",
+                    "duration": 0,
+                    "keyframe": false
+                }
+            ],
+            "frameRate": 12,
+            "skipMissedFrames": true,
+            "repeat": -1
+        },
+        {
+            "key": "player-back-idle-hold",
+            "type": "frame",
+            "frames": [
+                {
+                    "key": "playerByTP",
+                    "frame": "playerOnly-32.png",
                     "duration": 0,
                     "keyframe": false
                 }

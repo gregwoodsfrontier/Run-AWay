@@ -8,11 +8,7 @@ import Phaser from "phaser";
 import StateMachine from "../stateMachine";
 import { DIRECTION } from "../types/direction";
 import { getDirectionName } from "../types/direction";
-enum STATES {
-	IDLE = 'IDLE',
-	WALK = 'WALK',
-	PUTBACK = 'putback'
-}
+import { GUN_STATES } from "../types/gunStates";
 /* END-USER-IMPORTS */
 
 export default class Gun extends Phaser.GameObjects.Sprite {
@@ -37,17 +33,17 @@ export default class Gun extends Phaser.GameObjects.Sprite {
 		this.direction = DIRECTION.LEFT
 
 		this.SM = new StateMachine(this, 'bpPsd')
-		this.SM.addState(STATES.IDLE, {
+		this.SM.addState(GUN_STATES.IDLE, {
 			onEnter: this.onIdleEnter
 		})
-		.addState(STATES.WALK, {
+		.addState(GUN_STATES.WALK, {
 			onEnter: this.onWalkEnter,
 			onUpdate: this.onWalkUpdate
 		})
-		.addState(STATES.PUTBACK, {
+		.addState(GUN_STATES.PUTBACK, {
 			onEnter: this.onPutbackEnter
 		})
-		.setState(STATES.IDLE)
+		.setState(GUN_STATES.IDLE)
 	}
 
 	private onWalkEnter()
@@ -65,16 +61,15 @@ export default class Gun extends Phaser.GameObjects.Sprite {
 		this.SM?.update(dt)
 	}
 
-	setToWalkWithDir(dir: number)
+	setStateWithDir(dir: number, state: string)
 	{
 		this.setDirection(dir)
-		this.SM?.setState(STATES.WALK)
+		this.SM?.setState(state)
 	}
 
-	setToIdleWithDir(dir: number)
+	checkCurrentState(state: string)
 	{
-		this.setDirection(dir)
-		this.SM?.setState(STATES.IDLE)
+		return this.SM?.isCurrentState(state)
 	}
 
 	setDirection(dir: number)

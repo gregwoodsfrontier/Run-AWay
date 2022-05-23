@@ -14,13 +14,14 @@ import Gun from "./Gun";
 import BackpackPSD from "./BackpackPSD";
 /* START-USER-IMPORTS */
 import StateMachine from "../stateMachine";
+import { PSD_STATES } from "../types/PSD";
 import { PLAYER_STATE } from "../types/playerState";
 import { DIRECTION, getDirectionName } from "../types/direction";
 import { DARK_BROWN } from "../types/colors";
 import eventsCenter from "../EventsCenter";
 import { AUDIO_PLAY_EVENTS } from "../types/scenes";
 import { EVENTKEYS } from "../types/eventKeys";
-import PSD from "./PSD";
+import { GUN_STATES } from "../types/gunStates";
 
 const mudcolor = DARK_BROWN
 /* END-USER-IMPORTS */
@@ -92,7 +93,8 @@ export default class PlayerContainer extends Phaser.GameObjects.Container {
 		this.isHold = false
 		this.stateMachine = new StateMachine(this, 'player')
 		this.stateMachine.addState(PLAYER_STATE.IDLE, {
-			onEnter: this.onIdleEnter
+			onEnter: this.onIdleEnter,
+			onUpdate: this.onIdleUpdate
 		})
 		.addState(PLAYER_STATE.WALK, {
 			onEnter: this.onWalkEnter,
@@ -101,6 +103,7 @@ export default class PlayerContainer extends Phaser.GameObjects.Container {
 		})
 
 		this.stateMachine.setState(PLAYER_STATE.IDLE)
+		this.isHold = false
 
 		const body = this.player.body as Phaser.Physics.Arcade.Body
 		body.pushable = false
@@ -108,7 +111,8 @@ export default class PlayerContainer extends Phaser.GameObjects.Container {
 		this.keyboard = KeyboardInput.getComponent(this)
 
 		this.assignKeyCommands()
-		
+
+		this.gun.setStateWithDir(this.direction, GUN_STATES.PUTBACK)
 	}
 
 	Update(dt: number)
@@ -119,6 +123,11 @@ export default class PlayerContainer extends Phaser.GameObjects.Container {
 			const selectSquareComp = SelectionSquare.getComponent(this.player)
 			selectSquareComp.setDir(this.direction)
 		}
+	}
+
+	private onIdleUpdate()
+	{
+		this.makePlayerWalk(false)
 	}
 
 	private assignKeyCommands()
@@ -164,6 +173,11 @@ export default class PlayerContainer extends Phaser.GameObjects.Container {
 			this.flipSwitch = !this.flipSwitch
 			return
 			
+		}
+
+		keyboard.executeSpace = () => {
+			this.isHold = !this.isHold
+			console.log(`isHold: ${this.isHold}`)
 		}
 	}
 
@@ -255,9 +269,11 @@ export default class PlayerContainer extends Phaser.GameObjects.Container {
 	{
 		if(this.isHold)
 		{
+			this.gun.setStateWithDir(this.direction, GUN_STATES.IDLE)
 			return 'hold'
 		}
 
+		this.gun.setStateWithDir(this.direction, GUN_STATES.PUTBACK)
 		return 'none'
 	}
 
@@ -283,13 +299,21 @@ export default class PlayerContainer extends Phaser.GameObjects.Container {
 		if(boo)
 		{
 			walkState = 'walk'
-			this.gun.setToWalkWithDir(direction)
+			if(!this.gun.checkCurrentState(GUN_STATES.PUTBACK))
+			{
+				this.gun.setStateWithDir(direction, GUN_STATES.WALK)
+			}
+			
 			this.backpackPSD.setToWalkWithDir(direction)
 		}
 		else
 		{
 			walkState = 'idle'
-			this.gun.setToIdleWithDir(direction)
+			if(!this.gun.checkCurrentState(GUN_STATES.PUTBACK))
+			{
+				this.gun.setStateWithDir(direction, GUN_STATES.IDLE)
+			}
+
 			this.backpackPSD.setToIdleWithDir(direction)
 		}
 
@@ -306,6 +330,7 @@ export default class PlayerContainer extends Phaser.GameObjects.Container {
 	{
 		if(this.stateMachine?.isCurrentState(PLAYER_STATE.IDLE))
 		{
+			this.movement.stayStill()
 			return
 		}
 		

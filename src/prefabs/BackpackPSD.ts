@@ -95,7 +95,7 @@ export default class BackpackPSD extends Phaser.GameObjects.Sprite {
 
 	setDirection(dir: number)
 	{
-		if(dir < 0|| dir > 3)
+		if(dir < 0 || dir > 3)
 		{
 			console.error('such direction does not exist')
 			return
