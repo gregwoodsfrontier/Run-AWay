@@ -103,9 +103,6 @@ export default class PlayerContainer extends Phaser.GameObjects.Container {
 
 		this.gun.setStateWithDir(this.direction, GUN_STATES.PUTBACK)
 
-		// this.player.addToUpdateList()
-		// this.gun.addToUpdateList()
-		// this.backpackPSD.addToUpdateList()
 		this.addChildrenToUpdateList()
 
 	}
