@@ -11,6 +11,7 @@ import Chunk from "./scenes/Chunk";
 import rnd from "./drand/random";
 import YouSurvived from "./scenes/YouSurvived"
 import GameOver from "./scenes/GameOver"
+import MidLevel from "./scenes/MidLevel";
 
 class Boot extends Phaser.Scene {
     seed = 0
@@ -99,7 +100,7 @@ const game = new Phaser.Game({
     },
     scene: [
         Boot, Preload, Bootstrap, 
-        Title, PauseMenu, Level, Chunk,
+        Title, PauseMenu, Level, MidLevel, Chunk,
         UI, Explainer, Boss, YouSurvived, GameOver
     ]
 });

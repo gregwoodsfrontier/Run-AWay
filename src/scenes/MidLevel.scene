@@ -14,30 +14,6 @@
     },
     "displayList": [
         {
-            "type": "TilemapLayer",
-            "id": "35e37bb6-083f-409e-bdea-63169d70fd6c",
-            "label": "floor_1",
-            "components": [],
-            "y": -5760,
-            "tilemapId": "255ccac2-9d5d-4b63-8663-60bfb9354fd9",
-            "layerName": "floor",
-            "tilesets": [
-                "gamedevjs-cave-tileset-1"
-            ]
-        },
-        {
-            "type": "TilemapLayer",
-            "id": "9143184a-4bd8-4ee0-8f0f-9136f81aa1bb",
-            "label": "wall_1",
-            "components": [],
-            "y": -5760,
-            "tilemapId": "255ccac2-9d5d-4b63-8663-60bfb9354fd9",
-            "layerName": "wall",
-            "tilesets": [
-                "gamedevjs-cave-tileset-1"
-            ]
-        },
-        {
             "type": "Image",
             "id": "88412611-3788-4751-bc9e-93f8a5c0683f",
             "label": "endTunnel",
@@ -56,9 +32,12 @@
                 "y"
             ],
             "label": "player",
+            "useGameObjectName": true,
+            "scope": "CLASS",
             "components": [],
             "x": 160,
-            "y": 368
+            "y": 368,
+            "nestedPrefabs": []
         },
         {
             "prefabId": "169b350d-b922-409d-8da8-e86ab037d35d",
@@ -1562,20 +1541,7 @@
             "y": -5280
         }
     ],
-    "plainObjects": [
-        {
-            "id": "255ccac2-9d5d-4b63-8663-60bfb9354fd9",
-            "type": "Tilemap",
-            "label": "mid_level",
-            "key": "mid level",
-            "tilesets": [
-                {
-                    "name": "gamedevjs-cave-tileset-1",
-                    "imageKey": "cave-test-tileset-1"
-                }
-            ]
-        }
-    ],
+    "plainObjects": [],
     "meta": {
         "app": "Phaser Editor 2D - Scene Editor",
         "url": "https://phasereditor2d.com",

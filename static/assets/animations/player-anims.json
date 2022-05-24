@@ -1,138 +1,6 @@
 {
     "anims": [
         {
-            "key": "player-front-walk-gun",
-            "type": "frame",
-            "frames": [
-                {
-                    "key": "playerByTP",
-                    "frame": "playerHoldGun-20.png",
-                    "duration": 0,
-                    "keyframe": false
-                },
-                {
-                    "key": "playerByTP",
-                    "frame": "playerHoldGun-21.png",
-                    "duration": 0,
-                    "keyframe": false
-                },
-                {
-                    "key": "playerByTP",
-                    "frame": "playerHoldGun-22.png",
-                    "duration": 0,
-                    "keyframe": false
-                },
-                {
-                    "key": "playerByTP",
-                    "frame": "playerHoldGun-23.png",
-                    "duration": 0,
-                    "keyframe": false
-                }
-            ],
-            "frameRate": 12,
-            "skipMissedFrames": true,
-            "repeat": -1
-        },
-        {
-            "key": "player-left-walk-gun",
-            "type": "frame",
-            "frames": [
-                {
-                    "key": "playerByTP",
-                    "frame": "playerHoldGun-24.png",
-                    "duration": 0,
-                    "keyframe": false
-                },
-                {
-                    "key": "playerByTP",
-                    "frame": "playerHoldGun-25.png",
-                    "duration": 0,
-                    "keyframe": false
-                },
-                {
-                    "key": "playerByTP",
-                    "frame": "playerHoldGun-26.png",
-                    "duration": 0,
-                    "keyframe": false
-                },
-                {
-                    "key": "playerByTP",
-                    "frame": "playerHoldGun-27.png",
-                    "duration": 0,
-                    "keyframe": false
-                }
-            ],
-            "frameRate": 12,
-            "skipMissedFrames": true,
-            "repeat": -1
-        },
-        {
-            "key": "player-right-walk-gun",
-            "type": "frame",
-            "frames": [
-                {
-                    "key": "playerByTP",
-                    "frame": "playerHoldGun-28.png",
-                    "duration": 0,
-                    "keyframe": false
-                },
-                {
-                    "key": "playerByTP",
-                    "frame": "playerHoldGun-29.png",
-                    "duration": 0,
-                    "keyframe": false
-                },
-                {
-                    "key": "playerByTP",
-                    "frame": "playerHoldGun-30.png",
-                    "duration": 0,
-                    "keyframe": false
-                },
-                {
-                    "key": "playerByTP",
-                    "frame": "playerHoldGun-31.png",
-                    "duration": 0,
-                    "keyframe": false
-                }
-            ],
-            "frameRate": 12,
-            "skipMissedFrames": true,
-            "repeat": -1
-        },
-        {
-            "key": "player-back-walk-gun",
-            "type": "frame",
-            "frames": [
-                {
-                    "key": "playerByTP",
-                    "frame": "playerHoldGun-32.png",
-                    "duration": 0,
-                    "keyframe": false
-                },
-                {
-                    "key": "playerByTP",
-                    "frame": "playerHoldGun-33.png",
-                    "duration": 0,
-                    "keyframe": false
-                },
-                {
-                    "key": "playerByTP",
-                    "frame": "playerHoldGun-34.png",
-                    "duration": 0,
-                    "keyframe": false
-                },
-                {
-                    "key": "playerByTP",
-                    "frame": "playerHoldGun-35.png",
-                    "duration": 0,
-                    "keyframe": false
-                }
-            ],
-            "frameRate": 12,
-            "skipMissedFrames": true,
-            "repeat": -1
-        },
-        {
             "key": "player-right-walk-none",
             "type": "frame",
             "frames": [
@@ -163,7 +31,8 @@
             ],
             "frameRate": 12,
             "skipMissedFrames": true,
-            "repeat": -1
+            "repeat": -1,
+            "showOnStart": true
         },
         {
             "key": "player-back-walk-none",
@@ -196,7 +65,8 @@
             ],
             "frameRate": 12,
             "skipMissedFrames": true,
-            "repeat": -1
+            "repeat": -1,
+            "showOnStart": true
         },
         {
             "key": "player-left-walk-none",
@@ -229,7 +99,8 @@
             ],
             "frameRate": 12,
             "skipMissedFrames": true,
-            "repeat": -1
+            "repeat": -1,
+            "showOnStart": true
         },
         {
             "key": "player-front-walk-none",
@@ -262,106 +133,8 @@
             ],
             "frameRate": 12,
             "skipMissedFrames": true,
-            "repeat": -1
-        },
-        {
-            "key": "ppsd-left-walk-none",
-            "type": "frame",
-            "frames": [
-                {
-                    "key": "playerByTP",
-                    "frame": "playerPSDGun-8.png",
-                    "duration": 0,
-                    "keyframe": false
-                },
-                {
-                    "key": "playerByTP",
-                    "frame": "playerPSDGun-9.png",
-                    "duration": 0,
-                    "keyframe": false
-                },
-                {
-                    "key": "playerByTP",
-                    "frame": "playerPSDGun-10.png",
-                    "duration": 0,
-                    "keyframe": false
-                },
-                {
-                    "key": "playerByTP",
-                    "frame": "playerPSDGun-11.png",
-                    "duration": 0,
-                    "keyframe": false
-                }
-            ],
-            "frameRate": 12,
-            "skipMissedFrames": true,
-            "repeat": -1
-        },
-        {
-            "key": "ppsd-right-walk-none",
-            "type": "frame",
-            "frames": [
-                {
-                    "key": "playerByTP",
-                    "frame": "playerPSDGun-12.png",
-                    "duration": 0,
-                    "keyframe": false
-                },
-                {
-                    "key": "playerByTP",
-                    "frame": "playerPSDGun-13.png",
-                    "duration": 0,
-                    "keyframe": false
-                },
-                {
-                    "key": "playerByTP",
-                    "frame": "playerPSDGun-14.png",
-                    "duration": 0,
-                    "keyframe": false
-                },
-                {
-                    "key": "playerByTP",
-                    "frame": "playerPSDGun-15.png",
-                    "duration": 0,
-                    "keyframe": false
-                }
-            ],
-            "frameRate": 12,
-            "skipMissedFrames": true,
-            "repeat": -1
-        },
-        {
-            "key": "ppsd-left-walk-gun",
-            "type": "frame",
-            "frames": [
-                {
-                    "key": "playerByTP",
-                    "frame": "playerPSDGun-24.png",
-                    "duration": 0,
-                    "keyframe": false
-                },
-                {
-                    "key": "playerByTP",
-                    "frame": "playerPSDGun-25.png",
-                    "duration": 0,
-                    "keyframe": false
-                },
-                {
-                    "key": "playerByTP",
-                    "frame": "playerPSDGun-26.png",
-                    "duration": 0,
-                    "keyframe": false
-                },
-                {
-                    "key": "playerByTP",
-                    "frame": "playerPSDGun-27.png",
-                    "duration": 0,
-                    "keyframe": false
-                }
-            ],
-            "frameRate": 12,
-            "skipMissedFrames": true,
-            "repeat": -1
+            "repeat": -1,
+            "showOnStart": true
         },
         {
             "key": "ppsd-right-walk-gun",
@@ -388,39 +161,6 @@
                 {
                     "key": "playerByTP",
                     "frame": "playerPSDGun-31.png",
-                    "duration": 0,
-                    "keyframe": false
-                }
-            ],
-            "frameRate": 12,
-            "skipMissedFrames": true,
-            "repeat": -1
-        },
-        {
-            "key": "ppsd-back-walk-none",
-            "type": "frame",
-            "frames": [
-                {
-                    "key": "playerByTP",
-                    "frame": "playerPSDGun-16.png",
-                    "duration": 0,
-                    "keyframe": false
-                },
-                {
-                    "key": "playerByTP",
-                    "frame": "playerPSDGun-17.png",
-                    "duration": 0,
-                    "keyframe": false
-                },
-                {
-                    "key": "playerByTP",
-                    "frame": "playerPSDGun-18.png",
-                    "duration": 0,
-                    "keyframe": false
-                },
-                {
-                    "key": "playerByTP",
-                    "frame": "playerPSDGun-19.png",
                     "duration": 0,
                     "keyframe": false
                 }

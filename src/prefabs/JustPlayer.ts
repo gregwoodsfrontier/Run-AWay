@@ -34,12 +34,28 @@ export default class JustPlayer extends Phaser.GameObjects.Sprite {
 		/* START-USER-CTR-CODE */
 		// Write your code here.
 		// this.play(`player-left-walk-none`)
+		this.start()
 		/* END-USER-CTR-CODE */
 	}
 
 	/* START-USER-CODE */
 
 	// Write your code here.
+	start()
+	{
+		this.play('player-front-walk-none', true)
+	}
+
+	/* update()
+	{
+
+	} */
+
+	private playMoveLeftAnims()
+	{
+		console.log('move-left is received')
+		this.play('player-left-walk-none')
+	}
 
 	/* END-USER-CODE */
 }

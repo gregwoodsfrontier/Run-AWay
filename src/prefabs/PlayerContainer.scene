@@ -2,6 +2,7 @@
     "id": "e0ddcad0-6688-4c91-8511-b98aa83b6507",
     "sceneType": "PREFAB",
     "settings": {
+        "snapEnabled": true,
         "exportClass": true,
         "autoImport": true,
         "preloadMethodName": "",
@@ -36,6 +37,7 @@
                         "y"
                     ],
                     "label": "player",
+                    "useGameObjectName": true,
                     "scope": "NESTED_PREFAB",
                     "components": [],
                     "x": 0,
@@ -49,6 +51,7 @@
                         "y"
                     ],
                     "label": "gun",
+                    "useGameObjectName": true,
                     "scope": "NESTED_PREFAB",
                     "components": [],
                     "x": 0,
@@ -62,6 +65,7 @@
                         "y"
                     ],
                     "label": "backpackPSD",
+                    "useGameObjectName": true,
                     "scope": "NESTED_PREFAB",
                     "components": [],
                     "x": 0,

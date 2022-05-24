@@ -21,7 +21,7 @@ import { DARK_BROWN } from "../types/colors";
 import eventsCenter from "../EventsCenter";
 import { AUDIO_PLAY_EVENTS } from "../types/scenes";
 import { EVENTKEYS } from "../types/eventKeys";
-import { GUN_STATES } from "../types/gunStates";
+import { GUN_STATES } from "../types/gunStates"
 
 const mudcolor = DARK_BROWN
 /* END-USER-IMPORTS */
@@ -33,14 +33,17 @@ export default class PlayerContainer extends Phaser.GameObjects.Container {
 
 		// player
 		const player = new JustPlayer(scene, 0, 0);
+		player.name = "player";
 		this.add(player);
 
 		// gun
 		const gun = new Gun(scene, 0, 0);
+		gun.name = "gun";
 		this.add(gun);
 
 		// backpackPSD
 		const backpackPSD = new BackpackPSD(scene, 0, 0);
+		backpackPSD.name = "backpackPSD";
 		this.add(backpackPSD);
 
 		// this (components)
@@ -82,26 +85,14 @@ export default class PlayerContainer extends Phaser.GameObjects.Container {
 	private keyboard?: KeyboardInput
 	private flipSwitch = false
 	private isHold = false
-	//@ts-ignore
-	private direction: number
+	private direction = DIRECTION.LEFT
 
 	start()
 	{
 		this.direction = DIRECTION.LEFT
 		this.isHold = false
-		this.stateMachine = new StateMachine(this, 'player')
-		this.stateMachine.addState(PLAYER_STATE.IDLE, {
-			onEnter: this.onIdleEnter,
-			onUpdate: this.onIdleUpdate
-		})
-		.addState(PLAYER_STATE.WALK, {
-			onEnter: this.onWalkEnter,
-			onUpdate: this.onWalkUpdate,
-			onExit: this.onWalkExit
-		})
 
-		this.stateMachine.setState(PLAYER_STATE.IDLE)
-		this.isHold = false
+		this.createStateMachine()
 
 		const body = this.player.body as Phaser.Physics.Arcade.Body
 		body.pushable = false
@@ -111,6 +102,12 @@ export default class PlayerContainer extends Phaser.GameObjects.Container {
 		this.assignKeyCommands()
 
 		this.gun.setStateWithDir(this.direction, GUN_STATES.PUTBACK)
+
+		// this.player.addToUpdateList()
+		// this.gun.addToUpdateList()
+		// this.backpackPSD.addToUpdateList()
+		this.addChildrenToUpdateList()
+
 	}
 
 	Update(dt: number)
@@ -118,10 +115,34 @@ export default class PlayerContainer extends Phaser.GameObjects.Container {
 		if(this.stateMachine)
 		{
 			this.stateMachine.update(dt)
-
-			const selectSquareComp = SelectionSquare.getComponent(this.player)
-			selectSquareComp.setDir(this.direction)
 		}
+
+		const selectSquareComp = SelectionSquare.getComponent(this.player)
+		selectSquareComp.setDir(this.direction)
+	}
+
+	private addChildrenToUpdateList()
+	{
+		const cont = this.getAll()
+		cont.forEach(child => {
+			child.addToUpdateList()
+		})
+	}
+
+	private createStateMachine()
+	{
+		this.stateMachine = new StateMachine(this, 'player')
+		this.stateMachine.addState(PLAYER_STATE.IDLE, {
+			onEnter: this.onIdleEnter,
+			// onUpdate: this.onIdleUpdate
+		})
+		.addState(PLAYER_STATE.WALK, {
+			onEnter: this.onWalkEnter,
+			onUpdate: this.onWalkUpdate,
+			onExit: this.onWalkExit
+		})
+
+		this.stateMachine.setState(PLAYER_STATE.IDLE)
 	}
 
 	private onIdleUpdate()
@@ -324,11 +345,12 @@ export default class PlayerContainer extends Phaser.GameObjects.Container {
 		}
 
 		const animString = `player-${dirName}-${walkState}-${holdName}`
+		const player = this.getByName("player") as Phaser.GameObjects.Sprite
+		// const animString = `player-${dirName}-walk-none`
 
-		// console.log(animString)
-
-		this.player.play(animString, true)
+		// this.player.play(`player-${dirName}-walk-none`, true)
 		// this.player.play(animString)
+		player.play(animString, true)
 
 	}
 
@@ -345,26 +367,30 @@ export default class PlayerContainer extends Phaser.GameObjects.Container {
 			return
 		}
 
-		switch (this.direction) {
-			case DIRECTION.BACK: {
-				this.movement.moveUp()
-				break
-			}
+		if(this.stateMachine?.isCurrentState(PLAYER_STATE.WALK))
+		{
+			switch (this.direction) {
+				case DIRECTION.BACK: {
+					this.movement.moveUp()
+					break
+				}
 
-			case DIRECTION.FRONT: {
-				this.movement.moveDown()
-				break
-			}
+				case DIRECTION.FRONT: {
+					this.movement.moveDown()
+					break
+				}
 
-			case DIRECTION.LEFT: {
-				this.movement.moveLeft()
-				break
-			}
+				case DIRECTION.LEFT: {
+					this.movement.moveLeft()
+					break
+				}
 
-			case DIRECTION.RIGHT: {
-				this.movement.moveRight()
-				break
+				case DIRECTION.RIGHT: {
+					this.movement.moveRight()
+					break
+				}
 			}
+			return
 		}
 	}
 
@@ -372,7 +398,8 @@ export default class PlayerContainer extends Phaser.GameObjects.Container {
 	{
 		this.makePlayerWalk(true)
 
-		console.log('player anims ' ,this.player.anims.currentAnim.key)
+		// console.log('player anims ' ,this.player.anims.currentAnim.key)
+		// console.log(this.player.anims.getProgress())
 	}
 
 	/* END-USER-CODE */
