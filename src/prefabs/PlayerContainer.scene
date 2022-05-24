@@ -26,8 +26,6 @@
             ],
             "Physics.width": 28,
             "Physics.height": 28,
-            "Physics.offsetX": 18,
-            "Physics.offsetY": 26,
             "JustMovement.speed": 155,
             "list": [
                 {

@@ -48,8 +48,6 @@ export default class PlayerContainer extends Phaser.GameObjects.Container {
 		const thisPhysics = new Physics(this);
 		thisPhysics.width = 28;
 		thisPhysics.height = 28;
-		thisPhysics.offsetX = 18;
-		thisPhysics.offsetY = 26;
 		const thisJustMovement = new JustMovement(this);
 		thisJustMovement.speed = 155;
 		new DepthSortY(this);
@@ -62,7 +60,7 @@ export default class PlayerContainer extends Phaser.GameObjects.Container {
 
 		/* START-USER-CTR-CODE */
 		// Write your code here.
-		this.physicComp = thisPhysics;
+		// this.physicComp = thisPhysics;
 		this.movement = thisJustMovement;
 
 		this.scene.events.once(Phaser.Scenes.Events.UPDATE, this.start, this);
@@ -79,7 +77,7 @@ export default class PlayerContainer extends Phaser.GameObjects.Container {
 
 	// Write your code here.
 	private stateMachine?: StateMachine
-	private physicComp: Physics
+	// private physicComp: Physics
 	private movement: JustMovement
 	private keyboard?: KeyboardInput
 	private flipSwitch = false
@@ -120,6 +118,7 @@ export default class PlayerContainer extends Phaser.GameObjects.Container {
 		if(this.stateMachine)
 		{
 			this.stateMachine.update(dt)
+
 			const selectSquareComp = SelectionSquare.getComponent(this.player)
 			selectSquareComp.setDir(this.direction)
 		}
@@ -172,7 +171,7 @@ export default class PlayerContainer extends Phaser.GameObjects.Container {
 			this.backpackPSD.setToDeployWithDir(this.direction)
 			this.flipSwitch = !this.flipSwitch
 			return
-			
+
 		}
 
 		keyboard.executeSpace = () => {
@@ -267,6 +266,12 @@ export default class PlayerContainer extends Phaser.GameObjects.Container {
 
 	private getHoldStateString()
 	{
+		if(!this.gun)
+		{ 
+			console.error('this gun is undefined')
+			return 
+		}
+
 		if(this.isHold)
 		{
 			this.gun.setStateWithDir(this.direction, GUN_STATES.IDLE)
@@ -277,15 +282,18 @@ export default class PlayerContainer extends Phaser.GameObjects.Container {
 		return 'none'
 	}
 
-	private makePlayerWalk(boo: boolean)
+	private getWalkStateString(boo: boolean)
 	{
-		let walkState = ''
-		
+		return boo ? 'walk' : 'idle'
+	}
+
+	private makePlayerWalk(isWalk: boolean)
+	{
+		const walkState = this.getWalkStateString(isWalk)
+
 		const dirName = getDirectionName(this.direction)
 
 		const holdName = this.getHoldStateString()
-
-		const {direction} = this
 
 		if(!dirName)
 		{
@@ -295,29 +303,32 @@ export default class PlayerContainer extends Phaser.GameObjects.Container {
 
 		// player physically move
 		this.handlePlayerMovement()
-		
-		if(boo)
+
+		if(isWalk)
 		{
-			walkState = 'walk'
 			if(!this.gun.checkCurrentState(GUN_STATES.PUTBACK))
 			{
-				this.gun.setStateWithDir(direction, GUN_STATES.WALK)
+				this.gun.setStateWithDir(this.direction, GUN_STATES.WALK)
 			}
-			
-			this.backpackPSD.setToWalkWithDir(direction)
+
+			this.backpackPSD.setToWalkWithDir(this.direction)
 		}
 		else
 		{
-			walkState = 'idle'
 			if(!this.gun.checkCurrentState(GUN_STATES.PUTBACK))
 			{
-				this.gun.setStateWithDir(direction, GUN_STATES.IDLE)
+				this.gun.setStateWithDir(this.direction, GUN_STATES.IDLE)
 			}
 
-			this.backpackPSD.setToIdleWithDir(direction)
+			this.backpackPSD.setToIdleWithDir(this.direction)
 		}
 
-		this.player.play(`player-${dirName}-${walkState}-${holdName}`, true)
+		const animString = `player-${dirName}-${walkState}-${holdName}`
+
+		// console.log(animString)
+
+		this.player.play(animString, true)
+		// this.player.play(animString)
 
 	}
 
@@ -333,7 +344,7 @@ export default class PlayerContainer extends Phaser.GameObjects.Container {
 			this.movement.stayStill()
 			return
 		}
-		
+
 		switch (this.direction) {
 			case DIRECTION.BACK: {
 				this.movement.moveUp()
@@ -360,6 +371,8 @@ export default class PlayerContainer extends Phaser.GameObjects.Container {
 	private onWalkUpdate()
 	{
 		this.makePlayerWalk(true)
+
+		console.log('player anims ' ,this.player.anims.currentAnim.key)
 	}
 
 	/* END-USER-CODE */

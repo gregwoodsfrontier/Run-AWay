@@ -124,9 +124,15 @@ export default class BackpackPSD extends Phaser.GameObjects.Sprite {
 
 		const spr = `${dirName}-walk-01`
 
-		if(!dirName || this.direction === DIRECTION.FRONT)
+		if(!dirName)
 		{
 			console.warn('direction should be defined')
+			return
+		}
+
+		if(this.direction === DIRECTION.FRONT)
+		{
+			console.warn('backpack does not have front anims')
 			return
 		}
 
@@ -142,9 +148,15 @@ export default class BackpackPSD extends Phaser.GameObjects.Sprite {
 
 		const spr = `${dirName}-${hold}`
 
-		if(!dirName || this.direction === DIRECTION.FRONT)
+		if(!dirName)
 		{
 			console.warn('direction should be defined')
+			return
+		}
+
+		if(this.direction === DIRECTION.FRONT)
+		{
+			console.warn('backpack does not have front anims')
 			return
 		}
 

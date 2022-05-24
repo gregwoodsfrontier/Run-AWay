@@ -697,12 +697,18 @@ export default class Level extends Phaser.Scene {
 		}
 		input.setActive(true)
 
+		// this.genEnemy()
+		
+
+		this.RocksPropagator(80, -624, 9)
+	}
+
+	private genEnemy()
+	{
 		this.SwarmGenerator(80, 384, 20, 4000, 0)
 		this.SwarmGenerator(128, 384, 20, 4000, 2500)
 		this.SwarmGenerator(176, 384, 20, 4000, 1500)
 		this.SwarmGenerator(224, 384, 20, 4000,  500)
-
-		this.RocksPropagator(80, -624, 9)
 	}
 
 	private handleBulletSwarm(a: Phaser.Types.Physics.Arcade.GameObjectWithBody, b: Phaser.Types.Physics.Arcade.GameObjectWithBody)

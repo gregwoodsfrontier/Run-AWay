@@ -33,6 +33,7 @@ export default class JustPlayer extends Phaser.GameObjects.Sprite {
 
 		/* START-USER-CTR-CODE */
 		// Write your code here.
+		// this.play(`player-left-walk-none`)
 		/* END-USER-CTR-CODE */
 	}
 
