@@ -130,8 +130,7 @@ export default class PlayerContainer extends Phaser.GameObjects.Container {
 	{
 		this.stateMachine = new StateMachine(this, 'player')
 		this.stateMachine.addState(PLAYER_STATE.IDLE, {
-			onEnter: this.onIdleEnter,
-			// onUpdate: this.onIdleUpdate
+			onUpdate: this.onIdleUpdate
 		})
 		.addState(PLAYER_STATE.WALK, {
 			onEnter: this.onWalkEnter,

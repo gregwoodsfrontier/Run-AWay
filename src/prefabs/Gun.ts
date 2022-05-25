@@ -93,8 +93,12 @@ export default class Gun extends Phaser.GameObjects.Sprite {
 			return
 		}
 
-		this.setTexture(`${dirName}-gunonly-1`)
+		const sprName = `${dirName}-gunonly-1`
+
+		this.stop()
 		this.setVisible(true)
+		this.setTexture(sprName)
+		
 	}
 
 	private onWalkUpdate()

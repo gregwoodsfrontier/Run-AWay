@@ -136,6 +136,7 @@ export default class BackpackPSD extends Phaser.GameObjects.Sprite {
 			return
 		}
 
+		this.stop()
 		this.setTexture(spr)
 		this.setVisible(true)
 	}
