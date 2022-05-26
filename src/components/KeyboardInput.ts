@@ -106,7 +106,7 @@ export default class KeyboardInput extends UserComponent {
 
 		if(Phaser.Input.Keyboard.JustUp(this.XKey))
 		{
-			this.executeXKeyUp()
+			this.executeXKeyJustUp()
 		}
 
 		if(this.cursors.shift.isDown)
@@ -174,7 +174,7 @@ export default class KeyboardInput extends UserComponent {
 	executeCKeyJustDown(){}
 	executeCKeyJustUp(){}
 	executeXKeyDown(){}
-	executeXKeyUp(){}
+	executeXKeyJustUp(){}
 	executeShiftJustUp(){}
 	executeShiftUp(){}
 	executeShiftDown(){}

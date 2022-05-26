@@ -193,7 +193,15 @@ export default class PlayerContainer extends Phaser.GameObjects.Container {
 
 		keyboard.executeSpace = () => {
 			this.isHold = !this.isHold
-			console.log(`isHold: ${this.isHold}`)
+		}
+
+		keyboard.executeXKeyDown = () => {
+			if(this.gun.isCurrentState(GUN_STATES.PUTBACK))
+			{
+				return
+			}
+
+			this.scene.events.emit(EVENTKEYS.CREATE_BULLETS, this.direction)
 		}
 	}
 

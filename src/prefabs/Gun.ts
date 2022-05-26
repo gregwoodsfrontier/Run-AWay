@@ -46,6 +46,11 @@ export default class Gun extends Phaser.GameObjects.Sprite {
 		.setState(GUN_STATES.IDLE)
 	}
 
+	isCurrentState(state: string)
+	{
+		return this.SM?.isCurrentState(state)
+	}
+
 	private onWalkEnter()
 	{
 		this.setVisible(true)

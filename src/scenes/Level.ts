@@ -752,7 +752,7 @@ export default class Level extends Phaser.Scene {
 		if(this.cave_test_map_2.hasTileAtWorldXY(x, y, this.cameras.main, this.wall_1))
 		{
 			// revert psd comp state back to idle
-			this.playerContainer.setPSDCompState(PSD_STATES.EQIUP_IDLE)
+			// this.playerContainer.setPSDCompState(PSD_STATES.EQIUP_IDLE)
 			return
 		}
 
@@ -796,6 +796,7 @@ export default class Level extends Phaser.Scene {
 		if(bullet && this.time.now > this.lastfired)
 		{
 			eventsCenter.emit(AUDIO_PLAY_EVENTS.LASERGUN)
+
 			bullet.fire(this.playerContainer.x, this.playerContainer.y)
 
 			this.setBulletRotationAndVel(bullet, dir)
