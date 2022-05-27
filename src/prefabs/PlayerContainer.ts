@@ -8,7 +8,6 @@ import Physics from "../components/Physics";
 import JustMovement from "../components/JustMovement";
 import DepthSortY from "../components/DepthSortY";
 import CameraFollow from "../components/CameraFollow";
-import SelectionSquare from "../components/SelectionSquare";
 import JustPlayer from "./JustPlayer";
 import Gun from "./Gun";
 import BackpackPSD from "./BackpackPSD";
@@ -46,68 +45,37 @@ export default class PlayerContainer extends Phaser.GameObjects.Container {
 		backpackPSD.name = "backpackPSD";
 		this.add(backpackPSD);
 
-		// downSelect
-		const downSelect = scene.add.rectangle(0, 48, 32, 32);
-		downSelect.name = "downSelect";
-		downSelect.fillAlpha = 0;
-		downSelect.isStroked = true;
-		downSelect.strokeColor = 65535;
-		downSelect.lineWidth = 2;
-		this.add(downSelect);
-
-		// leftSelect
-		const leftSelect = scene.add.rectangle(-48, 16, 32, 32);
-		leftSelect.name = "leftSelect";
-		leftSelect.fillAlpha = 0;
-		leftSelect.isStroked = true;
-		leftSelect.strokeColor = 65535;
-		leftSelect.lineWidth = 2;
-		this.add(leftSelect);
-
-		// rightSelect
-		const rightSelect = scene.add.rectangle(48, 16, 32, 32);
-		rightSelect.name = "rightSelect";
-		rightSelect.fillAlpha = 0;
-		rightSelect.isStroked = true;
-		rightSelect.strokeColor = 65535;
-		rightSelect.lineWidth = 2;
-		this.add(rightSelect);
-
-		// upSelect
-		const upSelect = scene.add.rectangle(0, -40, 32, 32);
-		upSelect.name = "upSelect";
-		upSelect.fillAlpha = 0;
-		upSelect.isStroked = true;
-		upSelect.strokeColor = 65535;
-		upSelect.lineWidth = 2;
-		this.add(upSelect);
+		// activeSelect
+		const activeSelect = scene.add.rectangle(-48, 16, 32, 32);
+		activeSelect.name = "activeSelect";
+		activeSelect.visible = false;
+		activeSelect.fillAlpha = 0;
+		activeSelect.isStroked = true;
+		activeSelect.strokeColor = 65535;
+		activeSelect.lineWidth = 2;
+		this.add(activeSelect);
 
 		// this (components)
 		new KeyboardInput(this);
 		const thisPhysics = new Physics(this);
-		thisPhysics.width = 28;
+		thisPhysics.width = 18;
 		thisPhysics.height = 28;
-		thisPhysics.offsetX = -14;
+		thisPhysics.offsetX = -9;
 		thisPhysics.offsetY = -7;
 		const thisJustMovement = new JustMovement(this);
 		thisJustMovement.speed = 155;
 		new DepthSortY(this);
 		new CameraFollow(this);
-		new SelectionSquare(this);
 
 		this.player = player;
 		this.gun = gun;
 		this.backpackPSD = backpackPSD;
-		this.downSelect = downSelect;
-		this.leftSelect = leftSelect;
-		this.rightSelect = rightSelect;
-		this.upSelect = upSelect;
+		this.activeSelect = activeSelect;
 
 		/* START-USER-CTR-CODE */
 		// Write your code here.
 		// this.physicComp = thisPhysics;
 		this.movement = thisJustMovement;
-		this.selectComp = SelectionSquare.getComponent(this)
 
 		/* squares.forEach(sq => {
 			this.add(sq)
@@ -123,30 +91,29 @@ export default class PlayerContainer extends Phaser.GameObjects.Container {
 	public player: JustPlayer;
 	public gun: Gun;
 	public backpackPSD: BackpackPSD;
-	private downSelect: Phaser.GameObjects.Rectangle;
-	private leftSelect: Phaser.GameObjects.Rectangle;
-	private rightSelect: Phaser.GameObjects.Rectangle;
-	private upSelect: Phaser.GameObjects.Rectangle;
+	private activeSelect: Phaser.GameObjects.Rectangle;
 
 	/* START-USER-CODE */
 
 	// Write your code here.
 	private stateMachine?: StateMachine
-	private selectComp: SelectionSquare
 	// private physicComp: Physics
 	private movement: JustMovement
 	private keyboard?: KeyboardInput
 	private flipSwitch = false
 	private isHold = false
 	private direction = DIRECTION.LEFT
+	private selectCord = [
+		{x: 0, y: -40},  // up
+		{x: -48, y: 16},  // left
+		{x: 0, y: 48},  // down
+		{x: 48, y: 16},  // right
+	]
 
 	start()
 	{
 		this.direction = DIRECTION.LEFT
 		this.isHold = false
-
-		const squares = this.selectComp.giveDirectionSquare()
-		this.add(squares)
 
 		this.createStateMachine()
 
@@ -161,6 +128,11 @@ export default class PlayerContainer extends Phaser.GameObjects.Container {
 
 		this.addChildrenToUpdateList()
 
+		if(process.env.NODE_ENV === 'development')
+		{
+			this.activeSelect.setVisible(true)
+		}
+
 	}
 
 	Update(dt: number)
@@ -170,8 +142,18 @@ export default class PlayerContainer extends Phaser.GameObjects.Container {
 			this.stateMachine.update(dt)
 		}
 
-		const selectSquareComp = SelectionSquare.getComponent(this.player)
-		selectSquareComp.setDir(this.direction)
+		this.updateSelectionSquare(this.direction, this.activeSelect)
+	}
+
+	private updateSelectionSquare(dir: number, zone: Phaser.GameObjects.Rectangle)
+	{
+		if(dir < 0 || dir > 3)
+		{
+			console.error('such direction does not exist')
+			return
+		}
+
+		zone.setPosition(this.selectCord[dir].x, this.selectCord[dir].y)
 	}
 
 	private addChildrenToUpdateList()
