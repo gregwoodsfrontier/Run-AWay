@@ -8,7 +8,6 @@ import TileMapLayerPhysics from "../components/TileMapLayerPhysics";
 import PlayerContainer from "../prefabs/PlayerContainer";
 import PSD from "../prefabs/PSD";
 import Rock from "../prefabs/Rock";
-import JustPlayer from "../prefabs/JustPlayer";
 /* START-USER-IMPORTS */
 import Enemy from "../prefabs/Enemy";
 import { DIRECTION } from "../types/direction";
@@ -225,11 +224,6 @@ export default class Level extends Phaser.Scene {
 		exitZone.alpha = 0.1;
 		exitZone.isFilled = true;
 
-		// test
-		const test = new JustPlayer(this, 160, 240);
-		this.add.existing(test);
-		test.name = "test";
-
 		// lists
 		const obstacles = [rock_38, rock_37, rock_36, rock_35, rock_34, rock_33, rock_32, rock_31, rock_30, rock_29, rock_26, rock_28, rock_27, rock_25, rock_24, rock_23, rock_22, rock_21, rock_20, rock_19, rock_18, rock_17, rock_16, rock_15, rock_14, rock_13, rock_12, rock_11, rock_10, rock_9, rock_8, rock_7, rock_6, rock_5, rock_4, rock_3, rock_2, rock, rock_1];
 		const mudList: Array<any> = [];
@@ -353,7 +347,6 @@ export default class Level extends Phaser.Scene {
 		this.rock_22 = rock_22;
 		this.rock_27 = rock_27;
 		this.exitZone = exitZone;
-		this.test = test;
 		this.cave_test_map_2 = cave_test_map_2;
 		this.obstacles = obstacles;
 		this.mudList = mudList;
@@ -378,7 +371,6 @@ export default class Level extends Phaser.Scene {
 	private rock_22!: Rock;
 	private rock_27!: Rock;
 	private exitZone!: Phaser.GameObjects.Rectangle;
-	private test!: JustPlayer;
 	private obstacles!: Rock[];
 	private mudList!: Array<any>;
 

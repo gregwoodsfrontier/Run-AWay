@@ -46,11 +46,49 @@ export default class PlayerContainer extends Phaser.GameObjects.Container {
 		backpackPSD.name = "backpackPSD";
 		this.add(backpackPSD);
 
+		// downSelect
+		const downSelect = scene.add.rectangle(0, 48, 32, 32);
+		downSelect.name = "downSelect";
+		downSelect.fillAlpha = 0;
+		downSelect.isStroked = true;
+		downSelect.strokeColor = 65535;
+		downSelect.lineWidth = 2;
+		this.add(downSelect);
+
+		// leftSelect
+		const leftSelect = scene.add.rectangle(-48, 16, 32, 32);
+		leftSelect.name = "leftSelect";
+		leftSelect.fillAlpha = 0;
+		leftSelect.isStroked = true;
+		leftSelect.strokeColor = 65535;
+		leftSelect.lineWidth = 2;
+		this.add(leftSelect);
+
+		// rightSelect
+		const rightSelect = scene.add.rectangle(48, 16, 32, 32);
+		rightSelect.name = "rightSelect";
+		rightSelect.fillAlpha = 0;
+		rightSelect.isStroked = true;
+		rightSelect.strokeColor = 65535;
+		rightSelect.lineWidth = 2;
+		this.add(rightSelect);
+
+		// upSelect
+		const upSelect = scene.add.rectangle(0, -40, 32, 32);
+		upSelect.name = "upSelect";
+		upSelect.fillAlpha = 0;
+		upSelect.isStroked = true;
+		upSelect.strokeColor = 65535;
+		upSelect.lineWidth = 2;
+		this.add(upSelect);
+
 		// this (components)
 		new KeyboardInput(this);
 		const thisPhysics = new Physics(this);
 		thisPhysics.width = 28;
 		thisPhysics.height = 28;
+		thisPhysics.offsetX = -14;
+		thisPhysics.offsetY = -7;
 		const thisJustMovement = new JustMovement(this);
 		thisJustMovement.speed = 155;
 		new DepthSortY(this);
@@ -60,11 +98,21 @@ export default class PlayerContainer extends Phaser.GameObjects.Container {
 		this.player = player;
 		this.gun = gun;
 		this.backpackPSD = backpackPSD;
+		this.downSelect = downSelect;
+		this.leftSelect = leftSelect;
+		this.rightSelect = rightSelect;
+		this.upSelect = upSelect;
 
 		/* START-USER-CTR-CODE */
 		// Write your code here.
 		// this.physicComp = thisPhysics;
 		this.movement = thisJustMovement;
+		this.selectComp = SelectionSquare.getComponent(this)
+
+		/* squares.forEach(sq => {
+			this.add(sq)
+			sq.addToUpdateList()
+		}) */
 
 		this.scene.events.once(Phaser.Scenes.Events.UPDATE, this.start, this);
 		this.scene.events.on(Phaser.Scenes.Events.UPDATE, this.Update, this);
@@ -75,11 +123,16 @@ export default class PlayerContainer extends Phaser.GameObjects.Container {
 	public player: JustPlayer;
 	public gun: Gun;
 	public backpackPSD: BackpackPSD;
+	private downSelect: Phaser.GameObjects.Rectangle;
+	private leftSelect: Phaser.GameObjects.Rectangle;
+	private rightSelect: Phaser.GameObjects.Rectangle;
+	private upSelect: Phaser.GameObjects.Rectangle;
 
 	/* START-USER-CODE */
 
 	// Write your code here.
 	private stateMachine?: StateMachine
+	private selectComp: SelectionSquare
 	// private physicComp: Physics
 	private movement: JustMovement
 	private keyboard?: KeyboardInput
@@ -92,9 +145,12 @@ export default class PlayerContainer extends Phaser.GameObjects.Container {
 		this.direction = DIRECTION.LEFT
 		this.isHold = false
 
+		const squares = this.selectComp.giveDirectionSquare()
+		this.add(squares)
+
 		this.createStateMachine()
 
-		const body = this.player.body as Phaser.Physics.Arcade.Body
+		const body = this.body as Phaser.Physics.Arcade.Body
 		body.pushable = false
 
 		this.keyboard = KeyboardInput.getComponent(this)

@@ -27,6 +27,8 @@
             ],
             "Physics.width": 28,
             "Physics.height": 28,
+            "Physics.offsetX": -14,
+            "Physics.offsetY": -7,
             "JustMovement.speed": 155,
             "list": [
                 {
@@ -70,6 +72,68 @@
                     "components": [],
                     "x": 0,
                     "y": 0
+                },
+                {
+                    "type": "Rectangle",
+                    "id": "ebe72312-1289-4a66-9c25-20474b0ce1ce",
+                    "label": "downSelect",
+                    "useGameObjectName": true,
+                    "scope": "CLASS",
+                    "components": [],
+                    "y": 48,
+                    "fillAlpha": 0,
+                    "strokeColor": "#00ffff",
+                    "lineWidth": 2,
+                    "isStroked": true,
+                    "width": 32,
+                    "height": 32
+                },
+                {
+                    "type": "Rectangle",
+                    "id": "181c6672-03d4-4b55-ac39-2d4f82095a98",
+                    "label": "leftSelect",
+                    "useGameObjectName": true,
+                    "scope": "CLASS",
+                    "components": [],
+                    "x": -48,
+                    "y": 16,
+                    "fillAlpha": 0,
+                    "strokeColor": "#00ffff",
+                    "lineWidth": 2,
+                    "isStroked": true,
+                    "width": 32,
+                    "height": 32
+                },
+                {
+                    "type": "Rectangle",
+                    "id": "0d7c4f7a-f0b9-4a0c-a58c-8498445fa056",
+                    "label": "rightSelect",
+                    "useGameObjectName": true,
+                    "scope": "CLASS",
+                    "components": [],
+                    "x": 48,
+                    "y": 16,
+                    "fillAlpha": 0,
+                    "strokeColor": "#00ffff",
+                    "lineWidth": 2,
+                    "isStroked": true,
+                    "width": 32,
+                    "height": 32
+                },
+                {
+                    "type": "Rectangle",
+                    "id": "49c0a9cf-7984-4442-ab80-444e93693f32",
+                    "label": "upSelect",
+                    "useGameObjectName": true,
+                    "scope": "CLASS",
+                    "components": [],
+                    "y": -40,
+                    "fillAlpha": 0,
+                    "strokeColor": "#00ffff",
+                    "lineWidth": 2,
+                    "isStroked": true,
+                    "width": 32,
+                    "height": 32
                 }
             ]
         }

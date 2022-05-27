@@ -650,20 +650,6 @@
             "isFilled": true,
             "width": 192,
             "height": 32
-        },
-        {
-            "prefabId": "98da4764-3fe8-47db-89a5-d66c72dfe8a2",
-            "id": "b58d0916-b67e-4953-a187-b18aaf21bd58",
-            "unlock": [
-                "x",
-                "y"
-            ],
-            "label": "test",
-            "useGameObjectName": true,
-            "scope": "CLASS",
-            "components": [],
-            "x": 160,
-            "y": 240
         }
     ],
     "plainObjects": [
