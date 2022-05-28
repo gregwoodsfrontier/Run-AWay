@@ -45,8 +45,6 @@ export default class Bullet extends Phaser.GameObjects.Sprite {
 		body.enable = true
 		this.scene.physics.world.add(body)
 		this.addToUpdateList()
-
-		console.log(this)
 	}
 
 	despawn()

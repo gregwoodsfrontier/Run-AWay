@@ -3,5 +3,6 @@ export enum EVENTKEYS {
     DEPLOY_PSD = 'deploy-psd',
     TAKEBACK_PSD = 'takeback-psd',
     GEN_PSD_FIELD = 'gen-psd-field',
-    PLAYER_RECOVER = 'player-recover-psd'
+    PLAYER_RECOVER = 'player-recover-psd',
+    PSD_FULLY_SHUTDOWN = 'psd-fully-shutdown'
 }

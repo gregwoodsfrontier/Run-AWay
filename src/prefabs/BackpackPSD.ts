@@ -53,7 +53,8 @@ export default class BackpackPSD extends Phaser.GameObjects.Sprite {
 
 	private onDeployEnter()
 	{
-		this.setVisible(false)
+		// this.setVisible(false)
+		this.setAlpha(0)
 	}
 
 	private sceneUpdate(dt: number)
@@ -115,6 +116,7 @@ export default class BackpackPSD extends Phaser.GameObjects.Sprite {
 
 	private onWalkEnter()
 	{
+		this.setAlpha(1)
 		this.setVisible(true)
 	}
 
@@ -138,6 +140,7 @@ export default class BackpackPSD extends Phaser.GameObjects.Sprite {
 
 		this.stop()
 		this.setTexture(spr)
+		this.setAlpha(1)
 		this.setVisible(true)
 	}
 

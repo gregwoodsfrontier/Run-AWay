@@ -731,17 +731,12 @@ export default class Level extends Phaser.Scene {
 		this.start_level.play('start-level-short')
 	}
 
-	private deployPSD()
+	private deployPSD(rect: Phaser.GameObjects.Rectangle)
 	{
-		const destination = SelectionSquare.getComponent(this.playerContainer.player)
-		if(!destination)
-		{
-			console.error(`selection square is undefined`)
-			return
-		}
-
-		const {x, y} = destination.getSelectionSquare()
-		if(this.cave_test_map_2.hasTileAtWorldXY(x, y, this.cameras.main, this.wall_1))
+		const {x, y} = rect
+		const Xspawn = x + this.playerContainer.x
+		const Yspawn = y + this.playerContainer.y
+		if(this.cave_test_map_2.hasTileAtWorldXY(Xspawn, Yspawn, this.cameras.main, this.wall_1))
 		{
 			// revert psd comp state back to idle
 			// this.playerContainer.setPSDCompState(PSD_STATES.EQIUP_IDLE)
@@ -749,30 +744,33 @@ export default class Level extends Phaser.Scene {
 		}
 
 		eventsCenter.emit(AUDIO_PLAY_EVENTS.DEPLOY)
-		this.pSDRobot.spawn(x, y)
+		this.pSDRobot.spawn(Xspawn, Yspawn)
 		this.pSDRobot.deploy()
 	}
 
-	private takeBackPSD()
+	private takeBackPSD(rect: Phaser.GameObjects.Rectangle)
 	{
-		if(!this.checkSelectionPSDOverlap())
+		if(!this.checkSelectionPSDOverlap(rect))
 		{
 			return
 		}
 
 		this.pSDRobot.returnToPlayer()
-		this.playerContainer.emit(EVENTKEYS.PLAYER_RECOVER)
+		this.events.once(EVENTKEYS.PSD_FULLY_SHUTDOWN, () => {
+			this.playerContainer.emit(EVENTKEYS.PLAYER_RECOVER)
+		})
+		// 
 	}
 
-	private checkSelectionPSDOverlap()
+	private checkSelectionPSDOverlap(rect: Phaser.GameObjects.Rectangle)
 	{
-		if(!this.#destination)
+		if(!rect)
 		{
 			console.error(`selection square is undefined`)
 			return
 		}
 
-		const checkRect = this.#destination.getSelectionSquare().getBounds()
+		const checkRect = rect.getBounds()
 		const PSDRect = this.pSDRobot.getBounds()
 
 		return Phaser.Geom.Intersects.RectangleToRectangle(checkRect, PSDRect)

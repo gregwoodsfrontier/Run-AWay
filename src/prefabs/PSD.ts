@@ -12,6 +12,7 @@ import StateMachine from "../stateMachine";
 import { AUDIO_PLAY_EVENTS } from "../types/scenes";
 import psdField from "./psdField";
 import { PSD_STATES, DEPLOY_PSD_STATES } from "../types/PSD";
+import { EVENTKEYS } from "../types/eventKeys";
 /* END-USER-IMPORTS */
 
 export default class PSD extends Phaser.GameObjects.Sprite {
@@ -60,10 +61,15 @@ export default class PSD extends Phaser.GameObjects.Sprite {
 	{
 		GameState.setPSDDeploy(false)
 		eventsCenter.emit(AUDIO_PLAY_EVENTS.DEPLOY)
-		this.once(Phaser.Animations.Events.ANIMATION_COMPLETE, this.despawn, this)
-		this.playReverse('psd-deploy', true)
-		this.clearAllField()
-	}
+		this.once(Phaser.Animations.Events.ANIMATION_COMPLETE, () => {
+			this.scene.time.delayedCall(500, () => {
+				this.despawn();
+				this.clearAllField()
+				this.scene.events.emit(EVENTKEYS.PSD_FULLY_SHUTDOWN)
+			})
+		}, this)
+		this.play('psd-return', true)		
+	}	
 
 	private onDeployEnter()
 	{

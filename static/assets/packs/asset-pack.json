@@ -232,6 +232,11 @@
                 "key": "GameOver-Anim-9"
             },
             {
+                "url": "assets/animations/generalAnims.json",
+                "type": "animation",
+                "key": "generalAnims"
+            },
+            {
                 "url": "assets/idle title anim/idle-title-Anim-01.png",
                 "type": "image",
                 "key": "idle-title-Anim-01"

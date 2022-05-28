@@ -217,14 +217,13 @@ export default class PlayerContainer extends Phaser.GameObjects.Container {
 			if(this.backpackPSD.isSMCurrentState(PSD_STATES.DEPLOY))
 			{
 				// the func just skips if it does not have overlap with PSD
-				this.scene.events.emit(EVENTKEYS.TAKEBACK_PSD)
+				this.scene.events.emit(EVENTKEYS.TAKEBACK_PSD, this.activeSelect)
 				this.once(EVENTKEYS.PLAYER_RECOVER, this.handlePSDReturn, this)
 				return			
 			}
 
-			this.scene.events.emit(EVENTKEYS.DEPLOY_PSD)
+			this.scene.events.emit(EVENTKEYS.DEPLOY_PSD, this.activeSelect)
 			this.backpackPSD.setToDeployWithDir(this.direction)
-			this.flipSwitch = !this.flipSwitch
 			return
 
 		}
@@ -296,37 +295,6 @@ export default class PlayerContainer extends Phaser.GameObjects.Container {
 		move.speed = 155
 	}
 
-	/* private handleAimModeAnims(isWalk: boolean)
-	{
-		const dirname = getDirectionName(this.direction)
-
-		if(!dirname)
-		{
-			return
-		}
-
-		if(isWalk)
-		{
-			this.playerAnims.playAnims({
-				character: 'player',
-				direction: dirname,
-				state: 'walk',
-				holdState: 'hold'
-			})
-		}
-		else
-		{
-			this.playerAnims.playAnims({
-				character: 'player',
-				direction: dirname,
-				state: 'idle',
-				holdState: 'hold'
-			})
-		}
-
-
-	} */
-
 	private getHoldStateString()
 	{
 		if(!this.gun)
@@ -374,7 +342,10 @@ export default class PlayerContainer extends Phaser.GameObjects.Container {
 				this.gun.setStateWithDir(this.direction, GUN_STATES.WALK)
 			}
 
-			this.backpackPSD.setToWalkWithDir(this.direction)
+			if(!this.backpackPSD.isSMCurrentState(PSD_STATES.DEPLOY))
+			{
+				this.backpackPSD.setToWalkWithDir(this.direction)
+			}
 		}
 		else
 		{
@@ -383,7 +354,10 @@ export default class PlayerContainer extends Phaser.GameObjects.Container {
 				this.gun.setStateWithDir(this.direction, GUN_STATES.IDLE)
 			}
 
-			this.backpackPSD.setToIdleWithDir(this.direction)
+			if(!this.backpackPSD.isSMCurrentState(PSD_STATES.DEPLOY))
+			{
+				this.backpackPSD.setToIdleWithDir(this.direction)
+			}
 		}
 
 		const animString = `player-${dirName}-${walkState}-${holdName}`
