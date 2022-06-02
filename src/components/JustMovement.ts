@@ -10,7 +10,7 @@ import Phaser from "phaser";
 
 export default class JustMovement extends UserComponent {
 
-	constructor(gameObject: Phaser.GameObjects.Sprite) {
+	constructor(gameObject: Phaser.GameObjects.Sprite | Phaser.GameObjects.Container) {
 		super(gameObject);
 
 		this.gameObject = gameObject;
@@ -21,11 +21,11 @@ export default class JustMovement extends UserComponent {
 		/* END-USER-CTR-CODE */
 	}
 
-	static getComponent(gameObject: Phaser.GameObjects.Sprite): JustMovement {
+	static getComponent(gameObject: Phaser.GameObjects.Sprite | Phaser.GameObjects.Container): JustMovement {
 		return (gameObject as any)["__JustMovement"];
 	}
 
-	private gameObject: Phaser.GameObjects.Sprite;
+	private gameObject: Phaser.GameObjects.Sprite | Phaser.GameObjects.Container;
 	public speed: number = 10;
 
 	/* START-USER-CODE */

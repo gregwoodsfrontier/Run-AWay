@@ -11,10 +11,8 @@ import { GameState } from "../manager/gameState";
 import StateMachine from "../stateMachine";
 import { AUDIO_PLAY_EVENTS } from "../types/scenes";
 import psdField from "./psdField";
-enum PSD_STATE {
-	BACKPACK = 'backpack',
-	DEPLOY = 'deploy'
-}
+import { PSD_STATES, DEPLOY_PSD_STATES } from "../types/PSD";
+import { EVENTKEYS } from "../types/eventKeys";
 /* END-USER-IMPORTS */
 
 export default class PSD extends Phaser.GameObjects.Sprite {
@@ -31,13 +29,13 @@ export default class PSD extends Phaser.GameObjects.Sprite {
 		/* START-USER-CTR-CODE */
 		// Write your code here.
 		this.stateMachine = new StateMachine(this, 'psd')
-		this.stateMachine.addState(PSD_STATE.BACKPACK, {
+		this.stateMachine.addState(DEPLOY_PSD_STATES.BACKPACK, {
 			onEnter: this.onBackpackEnter
 		})
-		.addState(PSD_STATE.DEPLOY, {
+		.addState(DEPLOY_PSD_STATES.DEPLOY, {
 			onEnter: this.onDeployEnter
 		})
-		.setState(PSD_STATE.BACKPACK)
+		.setState(DEPLOY_PSD_STATES.BACKPACK)
 		/* END-USER-CTR-CODE */
 	}
 
@@ -51,22 +49,27 @@ export default class PSD extends Phaser.GameObjects.Sprite {
 	// Write your code here.
 	public deploy()
 	{
-		this.stateMachine.setState(PSD_STATE.DEPLOY)
+		this.stateMachine.setState(DEPLOY_PSD_STATES.DEPLOY)
 	}
 
 	public returnToPlayer()
 	{
-		this.stateMachine.setState(PSD_STATE.BACKPACK)
+		this.stateMachine.setState(DEPLOY_PSD_STATES.BACKPACK)
 	}
 
 	private onBackpackEnter()
 	{
 		GameState.setPSDDeploy(false)
 		eventsCenter.emit(AUDIO_PLAY_EVENTS.DEPLOY)
-		this.once(Phaser.Animations.Events.ANIMATION_COMPLETE, this.despawn, this)
-		this.playReverse('psd-deploy', true)
-		this.clearAllField()
-	}
+		this.once(Phaser.Animations.Events.ANIMATION_COMPLETE, () => {
+			this.scene.time.delayedCall(500, () => {
+				this.despawn();
+				this.clearAllField()
+				this.scene.events.emit(EVENTKEYS.PSD_FULLY_SHUTDOWN)
+			})
+		}, this)
+		this.play('psd-return', true)		
+	}	
 
 	private onDeployEnter()
 	{

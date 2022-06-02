@@ -14,7 +14,7 @@
     },
     "displayList": [
         {
-            "type": "Image",
+            "type": "Sprite",
             "id": "e2b765f8-af5d-486f-a3be-74d1f5eaa4a3",
             "label": "endTunnel___Wide",
             "components": [
@@ -61,11 +61,12 @@
                 "x",
                 "y"
             ],
-            "label": "player",
+            "label": "playerContainer",
             "scope": "PUBLIC",
             "components": [],
             "x": 160,
-            "y": 160
+            "y": 160,
+            "nestedPrefabs": []
         },
         {
             "prefabId": "169b350d-b922-409d-8da8-e86ab037d35d",

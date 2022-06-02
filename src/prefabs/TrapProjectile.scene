@@ -1,7 +1,8 @@
 {
-    "id": "e0ddcad0-6688-4c91-8511-b98aa83b6507",
+    "id": "01e83630-f2ff-4b27-997b-cc3cd36e8dd5",
     "sceneType": "PREFAB",
     "settings": {
+        "snapEnabled": true,
         "exportClass": true,
         "autoImport": true,
         "preloadMethodName": "",
@@ -14,29 +15,19 @@
     "displayList": [
         {
             "type": "Sprite",
-            "id": "14c39eb9-c1a6-44a6-b835-1047b510aeee",
-            "label": "container_1",
+            "id": "254949bb-2fe2-4342-b353-c52cc1655e5a",
+            "label": "raw_break_interact77",
             "components": [
                 "Physics",
-                "JustMovement",
-                "KeyboardInput",
-                "DepthSortY",
-                "AnimationV2",
-                "CameraFollow",
-                "HoldComp",
-                "AimComp",
-                "PSDComp",
-                "SelectionSquare"
+                "JustMovement"
             ],
-            "Physics.width": 28,
-            "Physics.height": 28,
-            "Physics.offsetX": 18,
-            "Physics.offsetY": 26,
-            "JustMovement.speed": 155,
-            "AimComp.facingDir": 2,
-            "AimComp.movingDir": 2,
+            "Physics.width": 32,
+            "Physics.height": 16,
+            "Physics.offsetY": 8,
+            "JustMovement.speed": 50,
             "texture": {
-                "key": "playerOnly-4"
+                "key": "raw-break-interact",
+                "frame": 77
             }
         }
     ],

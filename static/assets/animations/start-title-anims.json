@@ -1,0 +1,1065 @@
+{
+    "anims": [
+        {
+            "key": "idle-title",
+            "type": "frame",
+            "frames": [
+                {
+                    "key": "titleStartByTP",
+                    "frame": "idle-title-Anim-01.png",
+                    "duration": 0,
+                    "keyframe": false
+                },
+                {
+                    "key": "titleStartByTP",
+                    "frame": "idle-title-Anim-02.png",
+                    "duration": 0,
+                    "keyframe": false
+                },
+                {
+                    "key": "titleStartByTP",
+                    "frame": "idle-title-Anim-03.png",
+                    "duration": 0,
+                    "keyframe": false
+                },
+                {
+                    "key": "titleStartByTP",
+                    "frame": "idle-title-Anim-04.png",
+                    "duration": 0,
+                    "keyframe": false
+                },
+                {
+                    "key": "titleStartByTP",
+                    "frame": "idle-title-Anim-05.png",
+                    "duration": 0,
+                    "keyframe": false
+                },
+                {
+                    "key": "titleStartByTP",
+                    "frame": "idle-title-Anim-06.png",
+                    "duration": 0,
+                    "keyframe": false
+                },
+                {
+                    "key": "titleStartByTP",
+                    "frame": "idle-title-Anim-07.png",
+                    "duration": 0,
+                    "keyframe": false
+                },
+                {
+                    "key": "titleStartByTP",
+                    "frame": "idle-title-Anim-08.png",
+                    "duration": 0,
+                    "keyframe": false
+                },
+                {
+                    "key": "titleStartByTP",
+                    "frame": "idle-title-Anim-09.png",
+                    "duration": 0,
+                    "keyframe": false
+                },
+                {
+                    "key": "titleStartByTP",
+                    "frame": "idle-title-Anim-10.png",
+                    "duration": 0,
+                    "keyframe": false
+                },
+                {
+                    "key": "titleStartByTP",
+                    "frame": "idle-title-Anim-11.png",
+                    "duration": 0,
+                    "keyframe": false
+                },
+                {
+                    "key": "titleStartByTP",
+                    "frame": "idle-title-Anim-12.png",
+                    "duration": 0,
+                    "keyframe": false
+                },
+                {
+                    "key": "titleStartByTP",
+                    "frame": "idle-title-Anim-13.png",
+                    "duration": 0,
+                    "keyframe": false
+                },
+                {
+                    "key": "titleStartByTP",
+                    "frame": "idle-title-Anim-14.png",
+                    "duration": 0,
+                    "keyframe": false
+                },
+                {
+                    "key": "titleStartByTP",
+                    "frame": "idle-title-Anim-15.png",
+                    "duration": 0,
+                    "keyframe": false
+                },
+                {
+                    "key": "titleStartByTP",
+                    "frame": "idle-title-Anim-16.png",
+                    "duration": 0,
+                    "keyframe": false
+                },
+                {
+                    "key": "titleStartByTP",
+                    "frame": "idle-title-Anim-17.png",
+                    "duration": 0,
+                    "keyframe": false
+                },
+                {
+                    "key": "titleStartByTP",
+                    "frame": "idle-title-Anim-18.png",
+                    "duration": 0,
+                    "keyframe": false
+                },
+                {
+                    "key": "titleStartByTP",
+                    "frame": "idle-title-Anim-19.png",
+                    "duration": 0,
+                    "keyframe": false
+                },
+                {
+                    "key": "titleStartByTP",
+                    "frame": "idle-title-Anim-20.png",
+                    "duration": 0,
+                    "keyframe": false
+                },
+                {
+                    "key": "titleStartByTP",
+                    "frame": "idle-title-Anim-21.png",
+                    "duration": 0,
+                    "keyframe": false
+                },
+                {
+                    "key": "titleStartByTP",
+                    "frame": "idle-title-Anim-22.png",
+                    "duration": 0,
+                    "keyframe": false
+                },
+                {
+                    "key": "titleStartByTP",
+                    "frame": "idle-title-Anim-23.png",
+                    "duration": 0,
+                    "keyframe": false
+                },
+                {
+                    "key": "titleStartByTP",
+                    "frame": "idle-title-Anim-24.png",
+                    "duration": 0,
+                    "keyframe": false
+                },
+                {
+                    "key": "titleStartByTP",
+                    "frame": "idle-title-Anim-25.png",
+                    "duration": 0,
+                    "keyframe": false
+                },
+                {
+                    "key": "titleStartByTP",
+                    "frame": "idle-title-Anim-26.png",
+                    "duration": 0,
+                    "keyframe": false
+                },
+                {
+                    "key": "titleStartByTP",
+                    "frame": "idle-title-Anim-27.png",
+                    "duration": 0,
+                    "keyframe": false
+                },
+                {
+                    "key": "titleStartByTP",
+                    "frame": "idle-title-Anim-28.png",
+                    "duration": 0,
+                    "keyframe": false
+                },
+                {
+                    "key": "titleStartByTP",
+                    "frame": "idle-title-Anim-29.png",
+                    "duration": 0,
+                    "keyframe": false
+                },
+                {
+                    "key": "titleStartByTP",
+                    "frame": "idle-title-Anim-30.png",
+                    "duration": 0,
+                    "keyframe": false
+                },
+                {
+                    "key": "titleStartByTP",
+                    "frame": "idle-title-Anim-31.png",
+                    "duration": 0,
+                    "keyframe": false
+                },
+                {
+                    "key": "titleStartByTP",
+                    "frame": "idle-title-Anim-32.png",
+                    "duration": 0,
+                    "keyframe": false
+                },
+                {
+                    "key": "titleStartByTP",
+                    "frame": "idle-title-Anim-33.png",
+                    "duration": 0,
+                    "keyframe": false
+                },
+                {
+                    "key": "titleStartByTP",
+                    "frame": "idle-title-Anim-34.png",
+                    "duration": 0,
+                    "keyframe": false
+                },
+                {
+                    "key": "titleStartByTP",
+                    "frame": "idle-title-Anim-35.png",
+                    "duration": 0,
+                    "keyframe": false
+                },
+                {
+                    "key": "titleStartByTP",
+                    "frame": "idle-title-Anim-36.png",
+                    "duration": 0,
+                    "keyframe": false
+                },
+                {
+                    "key": "titleStartByTP",
+                    "frame": "idle-title-Anim-37.png",
+                    "duration": 0,
+                    "keyframe": false
+                },
+                {
+                    "key": "titleStartByTP",
+                    "frame": "idle-title-Anim-38.png",
+                    "duration": 0,
+                    "keyframe": false
+                },
+                {
+                    "key": "titleStartByTP",
+                    "frame": "idle-title-Anim-39.png",
+                    "duration": 0,
+                    "keyframe": false
+                },
+                {
+                    "key": "titleStartByTP",
+                    "frame": "idle-title-Anim-40.png",
+                    "duration": 0,
+                    "keyframe": false
+                },
+                {
+                    "key": "titleStartByTP",
+                    "frame": "idle-title-Anim-41.png",
+                    "duration": 0,
+                    "keyframe": false
+                },
+                {
+                    "key": "titleStartByTP",
+                    "frame": "idle-title-Anim-42.png",
+                    "duration": 0,
+                    "keyframe": false
+                },
+                {
+                    "key": "titleStartByTP",
+                    "frame": "idle-title-Anim-43.png",
+                    "duration": 0,
+                    "keyframe": false
+                },
+                {
+                    "key": "titleStartByTP",
+                    "frame": "idle-title-Anim-44.png",
+                    "duration": 0,
+                    "keyframe": false
+                },
+                {
+                    "key": "titleStartByTP",
+                    "frame": "idle-title-Anim-45.png",
+                    "duration": 0,
+                    "keyframe": false
+                },
+                {
+                    "key": "titleStartByTP",
+                    "frame": "idle-title-Anim-46.png",
+                    "duration": 0,
+                    "keyframe": false
+                },
+                {
+                    "key": "titleStartByTP",
+                    "frame": "idle-title-Anim-47.png",
+                    "duration": 0,
+                    "keyframe": false
+                },
+                {
+                    "key": "titleStartByTP",
+                    "frame": "idle-title-Anim-48.png",
+                    "duration": 0,
+                    "keyframe": false
+                },
+                {
+                    "key": "titleStartByTP",
+                    "frame": "idle-title-Anim-49.png",
+                    "duration": 0,
+                    "keyframe": false
+                },
+                {
+                    "key": "titleStartByTP",
+                    "frame": "idle-title-Anim-50.png",
+                    "duration": 0,
+                    "keyframe": false
+                },
+                {
+                    "key": "titleStartByTP",
+                    "frame": "idle-title-Anim-51.png",
+                    "duration": 0,
+                    "keyframe": false
+                },
+                {
+                    "key": "titleStartByTP",
+                    "frame": "idle-title-Anim-52.png",
+                    "duration": 0,
+                    "keyframe": false
+                },
+                {
+                    "key": "titleStartByTP",
+                    "frame": "idle-title-Anim-53.png",
+                    "duration": 0,
+                    "keyframe": false
+                },
+                {
+                    "key": "titleStartByTP",
+                    "frame": "idle-title-Anim-54.png",
+                    "duration": 0,
+                    "keyframe": false
+                },
+                {
+                    "key": "titleStartByTP",
+                    "frame": "idle-title-Anim-55.png",
+                    "duration": 0,
+                    "keyframe": false
+                },
+                {
+                    "key": "titleStartByTP",
+                    "frame": "idle-title-Anim-56.png",
+                    "duration": 0,
+                    "keyframe": false
+                },
+                {
+                    "key": "titleStartByTP",
+                    "frame": "idle-title-Anim-57.png",
+                    "duration": 0,
+                    "keyframe": false
+                }
+            ],
+            "frameRate": 12,
+            "skipMissedFrames": true,
+            "repeat": -1
+        },
+        {
+            "key": "start-title",
+            "type": "frame",
+            "frames": [
+                {
+                    "key": "titleStartByTP",
+                    "frame": "Start-Anim-01.png",
+                    "duration": 0,
+                    "keyframe": false
+                },
+                {
+                    "key": "titleStartByTP",
+                    "frame": "Start-Anim-02.png",
+                    "duration": 0,
+                    "keyframe": false
+                },
+                {
+                    "key": "titleStartByTP",
+                    "frame": "Start-Anim-03.png",
+                    "duration": 0,
+                    "keyframe": false
+                },
+                {
+                    "key": "titleStartByTP",
+                    "frame": "Start-Anim-04.png",
+                    "duration": 0,
+                    "keyframe": false
+                },
+                {
+                    "key": "titleStartByTP",
+                    "frame": "Start-Anim-05.png",
+                    "duration": 0,
+                    "keyframe": false
+                },
+                {
+                    "key": "titleStartByTP",
+                    "frame": "Start-Anim-06.png",
+                    "duration": 0,
+                    "keyframe": false
+                },
+                {
+                    "key": "titleStartByTP",
+                    "frame": "Start-Anim-07.png",
+                    "duration": 0,
+                    "keyframe": false
+                },
+                {
+                    "key": "titleStartByTP",
+                    "frame": "Start-Anim-08.png",
+                    "duration": 0,
+                    "keyframe": false
+                },
+                {
+                    "key": "titleStartByTP",
+                    "frame": "Start-Anim-09.png",
+                    "duration": 0,
+                    "keyframe": false
+                },
+                {
+                    "key": "titleStartByTP",
+                    "frame": "Start-Anim-10.png",
+                    "duration": 0,
+                    "keyframe": false
+                },
+                {
+                    "key": "titleStartByTP",
+                    "frame": "Start-Anim-11.png",
+                    "duration": 0,
+                    "keyframe": false
+                },
+                {
+                    "key": "titleStartByTP",
+                    "frame": "Start-Anim-12.png",
+                    "duration": 0,
+                    "keyframe": false
+                },
+                {
+                    "key": "titleStartByTP",
+                    "frame": "Start-Anim-13.png",
+                    "duration": 0,
+                    "keyframe": false
+                },
+                {
+                    "key": "titleStartByTP",
+                    "frame": "Start-Anim-14.png",
+                    "duration": 0,
+                    "keyframe": false
+                },
+                {
+                    "key": "titleStartByTP",
+                    "frame": "Start-Anim-15.png",
+                    "duration": 0,
+                    "keyframe": false
+                },
+                {
+                    "key": "titleStartByTP",
+                    "frame": "Start-Anim-16.png",
+                    "duration": 0,
+                    "keyframe": false
+                },
+                {
+                    "key": "titleStartByTP",
+                    "frame": "Start-Anim-17.png",
+                    "duration": 0,
+                    "keyframe": false
+                },
+                {
+                    "key": "titleStartByTP",
+                    "frame": "Start-Anim-18.png",
+                    "duration": 0,
+                    "keyframe": false
+                },
+                {
+                    "key": "titleStartByTP",
+                    "frame": "Start-Anim-19.png",
+                    "duration": 0,
+                    "keyframe": false
+                },
+                {
+                    "key": "titleStartByTP",
+                    "frame": "Start-Anim-20.png",
+                    "duration": 0,
+                    "keyframe": false
+                },
+                {
+                    "key": "titleStartByTP",
+                    "frame": "Start-Anim-21.png",
+                    "duration": 0,
+                    "keyframe": false
+                },
+                {
+                    "key": "titleStartByTP",
+                    "frame": "Start-Anim-22.png",
+                    "duration": 0,
+                    "keyframe": false
+                },
+                {
+                    "key": "titleStartByTP",
+                    "frame": "Start-Anim-23.png",
+                    "duration": 0,
+                    "keyframe": false
+                },
+                {
+                    "key": "titleStartByTP",
+                    "frame": "Start-Anim-24.png",
+                    "duration": 0,
+                    "keyframe": false
+                },
+                {
+                    "key": "titleStartByTP",
+                    "frame": "Start-Anim-25.png",
+                    "duration": 0,
+                    "keyframe": false
+                },
+                {
+                    "key": "titleStartByTP",
+                    "frame": "Start-Anim-26.png",
+                    "duration": 0,
+                    "keyframe": false
+                },
+                {
+                    "key": "titleStartByTP",
+                    "frame": "Start-Anim-27.png",
+                    "duration": 0,
+                    "keyframe": false
+                },
+                {
+                    "key": "titleStartByTP",
+                    "frame": "Start-Anim-28.png",
+                    "duration": 0,
+                    "keyframe": false
+                },
+                {
+                    "key": "titleStartByTP",
+                    "frame": "Start-Anim-29.png",
+                    "duration": 0,
+                    "keyframe": false
+                },
+                {
+                    "key": "titleStartByTP",
+                    "frame": "Start-Anim-30.png",
+                    "duration": 0,
+                    "keyframe": false
+                },
+                {
+                    "key": "titleStartByTP",
+                    "frame": "Start-Anim-31.png",
+                    "duration": 0,
+                    "keyframe": false
+                },
+                {
+                    "key": "titleStartByTP",
+                    "frame": "Start-Anim-32.png",
+                    "duration": 0,
+                    "keyframe": false
+                },
+                {
+                    "key": "titleStartByTP",
+                    "frame": "Start-Anim-33.png",
+                    "duration": 0,
+                    "keyframe": false
+                },
+                {
+                    "key": "titleStartByTP",
+                    "frame": "Start-Anim-34.png",
+                    "duration": 0,
+                    "keyframe": false
+                },
+                {
+                    "key": "titleStartByTP",
+                    "frame": "Start-Anim-35.png",
+                    "duration": 0,
+                    "keyframe": false
+                },
+                {
+                    "key": "titleStartByTP",
+                    "frame": "Start-Anim-36.png",
+                    "duration": 0,
+                    "keyframe": false
+                },
+                {
+                    "key": "titleStartByTP",
+                    "frame": "Start-Anim-37.png",
+                    "duration": 0,
+                    "keyframe": false
+                },
+                {
+                    "key": "titleStartByTP",
+                    "frame": "Start-Anim-38.png",
+                    "duration": 0,
+                    "keyframe": false
+                },
+                {
+                    "key": "titleStartByTP",
+                    "frame": "Start-Anim-39.png",
+                    "duration": 0,
+                    "keyframe": false
+                },
+                {
+                    "key": "titleStartByTP",
+                    "frame": "Start-Anim-40.png",
+                    "duration": 0,
+                    "keyframe": false
+                },
+                {
+                    "key": "titleStartByTP",
+                    "frame": "Start-Anim-41.png",
+                    "duration": 0,
+                    "keyframe": false
+                },
+                {
+                    "key": "titleStartByTP",
+                    "frame": "Start-Anim-42.png",
+                    "duration": 0,
+                    "keyframe": false
+                },
+                {
+                    "key": "titleStartByTP",
+                    "frame": "Start-Anim-43.png",
+                    "duration": 0,
+                    "keyframe": false
+                },
+                {
+                    "key": "titleStartByTP",
+                    "frame": "Start-Anim-44.png",
+                    "duration": 0,
+                    "keyframe": false
+                },
+                {
+                    "key": "titleStartByTP",
+                    "frame": "Start-Anim-45.png",
+                    "duration": 0,
+                    "keyframe": false
+                },
+                {
+                    "key": "titleStartByTP",
+                    "frame": "Start-Anim-46.png",
+                    "duration": 0,
+                    "keyframe": false
+                },
+                {
+                    "key": "titleStartByTP",
+                    "frame": "Start-Anim-47.png",
+                    "duration": 0,
+                    "keyframe": false
+                },
+                {
+                    "key": "titleStartByTP",
+                    "frame": "Start-Anim-48.png",
+                    "duration": 0,
+                    "keyframe": false
+                },
+                {
+                    "key": "titleStartByTP",
+                    "frame": "Start-Anim-49.png",
+                    "duration": 0,
+                    "keyframe": false
+                },
+                {
+                    "key": "titleStartByTP",
+                    "frame": "Start-Anim-50.png",
+                    "duration": 0,
+                    "keyframe": false
+                },
+                {
+                    "key": "titleStartByTP",
+                    "frame": "Start-Anim-51.png",
+                    "duration": 0,
+                    "keyframe": false
+                },
+                {
+                    "key": "titleStartByTP",
+                    "frame": "Start-Anim-52.png",
+                    "duration": 0,
+                    "keyframe": false
+                },
+                {
+                    "key": "titleStartByTP",
+                    "frame": "Start-Anim-53.png",
+                    "duration": 0,
+                    "keyframe": false
+                },
+                {
+                    "key": "titleStartByTP",
+                    "frame": "Start-Anim-54.png",
+                    "duration": 0,
+                    "keyframe": false
+                },
+                {
+                    "key": "titleStartByTP",
+                    "frame": "Start-Anim-55.png",
+                    "duration": 0,
+                    "keyframe": false
+                },
+                {
+                    "key": "titleStartByTP",
+                    "frame": "Start-Anim-56.png",
+                    "duration": 0,
+                    "keyframe": false
+                },
+                {
+                    "key": "titleStartByTP",
+                    "frame": "Start-Anim-57.png",
+                    "duration": 0,
+                    "keyframe": false
+                },
+                {
+                    "key": "titleStartByTP",
+                    "frame": "Start-Anim-58.png",
+                    "duration": 0,
+                    "keyframe": false
+                },
+                {
+                    "key": "titleStartByTP",
+                    "frame": "Start-Anim-59.png",
+                    "duration": 0,
+                    "keyframe": false
+                },
+                {
+                    "key": "titleStartByTP",
+                    "frame": "Start-Anim-60.png",
+                    "duration": 0,
+                    "keyframe": false
+                },
+                {
+                    "key": "titleStartByTP",
+                    "frame": "Start-Anim-61.png",
+                    "duration": 0,
+                    "keyframe": false
+                },
+                {
+                    "key": "titleStartByTP",
+                    "frame": "Start-Anim-62.png",
+                    "duration": 0,
+                    "keyframe": false
+                },
+                {
+                    "key": "titleStartByTP",
+                    "frame": "Start-Anim-63.png",
+                    "duration": 0,
+                    "keyframe": false
+                },
+                {
+                    "key": "titleStartByTP",
+                    "frame": "Start-Anim-64.png",
+                    "duration": 0,
+                    "keyframe": false
+                },
+                {
+                    "key": "titleStartByTP",
+                    "frame": "Start-Anim-65.png",
+                    "duration": 0,
+                    "keyframe": false
+                },
+                {
+                    "key": "titleStartByTP",
+                    "frame": "Start-Anim-66.png",
+                    "duration": 0,
+                    "keyframe": false
+                },
+                {
+                    "key": "titleStartByTP",
+                    "frame": "Start-Anim-67.png",
+                    "duration": 0,
+                    "keyframe": false
+                },
+                {
+                    "key": "titleStartByTP",
+                    "frame": "Start-Anim-68.png",
+                    "duration": 0,
+                    "keyframe": false
+                },
+                {
+                    "key": "titleStartByTP",
+                    "frame": "Start-Anim-69.png",
+                    "duration": 0,
+                    "keyframe": false
+                },
+                {
+                    "key": "titleStartByTP",
+                    "frame": "Start-Anim-70.png",
+                    "duration": 0,
+                    "keyframe": false
+                },
+                {
+                    "key": "titleStartByTP",
+                    "frame": "Start-Anim-71.png",
+                    "duration": 0,
+                    "keyframe": false
+                },
+                {
+                    "key": "titleStartByTP",
+                    "frame": "Start-Anim-72.png",
+                    "duration": 0,
+                    "keyframe": false
+                },
+                {
+                    "key": "titleStartByTP",
+                    "frame": "Start-Anim-73.png",
+                    "duration": 0,
+                    "keyframe": false
+                },
+                {
+                    "key": "titleStartByTP",
+                    "frame": "Start-Anim-74.png",
+                    "duration": 0,
+                    "keyframe": false
+                },
+                {
+                    "key": "titleStartByTP",
+                    "frame": "Start-Anim-75.png",
+                    "duration": 0,
+                    "keyframe": false
+                },
+                {
+                    "key": "titleStartByTP",
+                    "frame": "Start-Anim-76.png",
+                    "duration": 0,
+                    "keyframe": false
+                },
+                {
+                    "key": "titleStartByTP",
+                    "frame": "Start-Anim-77.png",
+                    "duration": 0,
+                    "keyframe": false
+                },
+                {
+                    "key": "titleStartByTP",
+                    "frame": "Start-Anim-78.png",
+                    "duration": 0,
+                    "keyframe": false
+                },
+                {
+                    "key": "titleStartByTP",
+                    "frame": "Start-Anim-79.png",
+                    "duration": 0,
+                    "keyframe": false
+                },
+                {
+                    "key": "titleStartByTP",
+                    "frame": "Start-Anim-80.png",
+                    "duration": 0,
+                    "keyframe": false
+                },
+                {
+                    "key": "titleStartByTP",
+                    "frame": "Start-Anim-81.png",
+                    "duration": 0,
+                    "keyframe": false
+                },
+                {
+                    "key": "titleStartByTP",
+                    "frame": "Start-Anim-82.png",
+                    "duration": 0,
+                    "keyframe": false
+                },
+                {
+                    "key": "titleStartByTP",
+                    "frame": "Start-Anim-83.png",
+                    "duration": 0,
+                    "keyframe": false
+                },
+                {
+                    "key": "titleStartByTP",
+                    "frame": "Start-Anim-84.png",
+                    "duration": 0,
+                    "keyframe": false
+                },
+                {
+                    "key": "titleStartByTP",
+                    "frame": "Start-Anim-85.png",
+                    "duration": 0,
+                    "keyframe": false
+                },
+                {
+                    "key": "titleStartByTP",
+                    "frame": "Start-Anim-86.png",
+                    "duration": 0,
+                    "keyframe": false
+                },
+                {
+                    "key": "titleStartByTP",
+                    "frame": "Start-Anim-87.png",
+                    "duration": 0,
+                    "keyframe": false
+                },
+                {
+                    "key": "titleStartByTP",
+                    "frame": "Start-Anim-88.png",
+                    "duration": 0,
+                    "keyframe": false
+                },
+                {
+                    "key": "titleStartByTP",
+                    "frame": "Start-Anim-89.png",
+                    "duration": 0,
+                    "keyframe": false
+                },
+                {
+                    "key": "titleStartByTP",
+                    "frame": "Start-Anim-90.png",
+                    "duration": 0,
+                    "keyframe": false
+                },
+                {
+                    "key": "titleStartByTP",
+                    "frame": "Start-Anim-91.png",
+                    "duration": 0,
+                    "keyframe": false
+                },
+                {
+                    "key": "titleStartByTP",
+                    "frame": "Start-Anim-92.png",
+                    "duration": 0,
+                    "keyframe": false
+                },
+                {
+                    "key": "titleStartByTP",
+                    "frame": "Start-Anim-93.png",
+                    "duration": 0,
+                    "keyframe": false
+                },
+                {
+                    "key": "titleStartByTP",
+                    "frame": "Start-Anim-94.png",
+                    "duration": 0,
+                    "keyframe": false
+                },
+                {
+                    "key": "titleStartByTP",
+                    "frame": "Start-Anim-95.png",
+                    "duration": 0,
+                    "keyframe": false
+                },
+                {
+                    "key": "titleStartByTP",
+                    "frame": "Start-Anim-96.png",
+                    "duration": 0,
+                    "keyframe": false
+                },
+                {
+                    "key": "titleStartByTP",
+                    "frame": "Start-Anim-97.png",
+                    "duration": 0,
+                    "keyframe": false
+                },
+                {
+                    "key": "titleStartByTP",
+                    "frame": "Start-Anim-98.png",
+                    "duration": 0,
+                    "keyframe": false
+                }
+            ],
+            "frameRate": 12,
+            "skipMissedFrames": true
+        },
+        {
+            "key": "start-level-short",
+            "type": "frame",
+            "frames": [
+                {
+                    "key": "Start-Level-Anim-Short-01",
+                    "duration": 0,
+                    "keyframe": false
+                },
+                {
+                    "key": "Start-Level-Anim-Short-02",
+                    "duration": 0,
+                    "keyframe": false
+                },
+                {
+                    "key": "Start-Level-Anim-Short-03",
+                    "duration": 0,
+                    "keyframe": false
+                },
+                {
+                    "key": "Start-Level-Anim-Short-04",
+                    "duration": 0,
+                    "keyframe": false
+                },
+                {
+                    "key": "Start-Level-Anim-Short-05",
+                    "duration": 0,
+                    "keyframe": false
+                },
+                {
+                    "key": "Start-Level-Anim-Short-06",
+                    "duration": 0,
+                    "keyframe": false
+                },
+                {
+                    "key": "Start-Level-Anim-Short-07",
+                    "duration": 0,
+                    "keyframe": false
+                },
+                {
+                    "key": "Start-Level-Anim-Short-08",
+                    "duration": 0,
+                    "keyframe": false
+                },
+                {
+                    "key": "Start-Level-Anim-Short-09",
+                    "duration": 0,
+                    "keyframe": false
+                },
+                {
+                    "key": "Start-Level-Anim-Short-10",
+                    "duration": 0,
+                    "keyframe": false
+                },
+                {
+                    "key": "Start-Level-Anim-Short-11",
+                    "duration": 0,
+                    "keyframe": false
+                },
+                {
+                    "key": "Start-Level-Anim-Short-12",
+                    "duration": 0,
+                    "keyframe": false
+                },
+                {
+                    "key": "Start-Level-Anim-Short-13",
+                    "duration": 0,
+                    "keyframe": false
+                },
+                {
+                    "key": "Start-Level-Anim-Short-14",
+                    "duration": 0,
+                    "keyframe": false
+                },
+                {
+                    "key": "Start-Level-Anim-Short-15",
+                    "duration": 0,
+                    "keyframe": false
+                },
+                {
+                    "key": "Start-Level-Anim-Short-16",
+                    "duration": 0,
+                    "keyframe": false
+                },
+                {
+                    "key": "Start-Level-Anim-Short-17",
+                    "duration": 0,
+                    "keyframe": false
+                },
+                {
+                    "key": "Start-Level-Anim-Short-18",
+                    "duration": 0,
+                    "keyframe": false
+                },
+                {
+                    "key": "Start-Level-Anim-Short-19",
+                    "duration": 0,
+                    "keyframe": false
+                },
+                {
+                    "key": "Start-Level-Anim-Short-20",
+                    "duration": 0,
+                    "keyframe": false
+                }
+            ],
+            "frameRate": 12,
+            "skipMissedFrames": true,
+            "hideOnComplete": true
+        }
+    ],
+    "globalTimeScale": 1,
+    "meta": {
+        "app": "Phaser Editor 2D v3",
+        "contentType": "Phaser v3 Animations"
+    }
+}

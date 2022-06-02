@@ -44,6 +44,7 @@ export default class Bullet extends Phaser.GameObjects.Sprite {
 		const body = this.body as Phaser.Physics.Arcade.Body
 		body.enable = true
 		this.scene.physics.world.add(body)
+		this.addToUpdateList()
 	}
 
 	despawn()

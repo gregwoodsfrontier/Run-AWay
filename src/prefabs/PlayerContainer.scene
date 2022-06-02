@@ -1,0 +1,102 @@
+{
+    "id": "e0ddcad0-6688-4c91-8511-b98aa83b6507",
+    "sceneType": "PREFAB",
+    "settings": {
+        "snapEnabled": true,
+        "exportClass": true,
+        "autoImport": true,
+        "preloadMethodName": "",
+        "preloadPackFiles": [],
+        "createMethodName": "",
+        "compilerOutputLanguage": "TYPE_SCRIPT",
+        "borderWidth": 320,
+        "borderHeight": 640
+    },
+    "displayList": [
+        {
+            "type": "Container",
+            "id": "485aed8f-9c3a-40d4-a948-0835d820e772",
+            "label": "container_2",
+            "components": [
+                "KeyboardInput",
+                "Physics",
+                "JustMovement",
+                "DepthSortY",
+                "CameraFollow"
+            ],
+            "Physics.width": 18,
+            "Physics.height": 28,
+            "Physics.offsetX": -9,
+            "Physics.offsetY": -7,
+            "JustMovement.speed": 155,
+            "list": [
+                {
+                    "prefabId": "98da4764-3fe8-47db-89a5-d66c72dfe8a2",
+                    "id": "14c39eb9-c1a6-44a6-b835-1047b510aeee",
+                    "unlock": [
+                        "x",
+                        "y"
+                    ],
+                    "label": "player",
+                    "useGameObjectName": true,
+                    "scope": "NESTED_PREFAB",
+                    "components": [],
+                    "x": 0,
+                    "y": 0
+                },
+                {
+                    "prefabId": "eeb79810-6ef8-493c-abd4-5564eb5320b3",
+                    "id": "ac4ff0c1-cf1a-479e-9cc6-847621bdb642",
+                    "unlock": [
+                        "x",
+                        "y"
+                    ],
+                    "label": "gun",
+                    "useGameObjectName": true,
+                    "scope": "NESTED_PREFAB",
+                    "components": [],
+                    "x": 0,
+                    "y": 0
+                },
+                {
+                    "prefabId": "36b87ccf-dd20-43c3-aedf-e923214097b1",
+                    "id": "579bc48b-8047-4877-88d5-489b1e734726",
+                    "unlock": [
+                        "x",
+                        "y"
+                    ],
+                    "label": "backpackPSD",
+                    "useGameObjectName": true,
+                    "scope": "NESTED_PREFAB",
+                    "components": [],
+                    "x": 0,
+                    "y": 0
+                },
+                {
+                    "type": "Rectangle",
+                    "id": "f0a75827-dced-4537-8d2f-ad602bfe50b9",
+                    "label": "activeSelect",
+                    "useGameObjectName": true,
+                    "scope": "CLASS",
+                    "components": [],
+                    "x": -48,
+                    "y": 16,
+                    "visible": false,
+                    "fillAlpha": 0,
+                    "strokeColor": "#00ffff",
+                    "lineWidth": 2,
+                    "isStroked": true,
+                    "width": 32,
+                    "height": 32
+                }
+            ]
+        }
+    ],
+    "plainObjects": [],
+    "meta": {
+        "app": "Phaser Editor 2D - Scene Editor",
+        "url": "https://phasereditor2d.com",
+        "contentType": "phasereditor2d.core.scene.SceneContentType",
+        "version": 3
+    }
+}

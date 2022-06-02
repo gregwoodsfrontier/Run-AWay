@@ -106,7 +106,7 @@ export default class Title extends Phaser.Scene {
 		}, this)
 		this.start_Anim1.once(Phaser.Animations.Events.ANIMATION_COMPLETE, this.handleAnimsEnd,this)
 
-		this.start_Anim1.play('start-anim-idle')
+		this.start_Anim1.play('idle-title')
 	}
 
 	private handleAnimsEnd()
@@ -134,7 +134,7 @@ export default class Title extends Phaser.Scene {
 			return
 		}
 
-		this.start_Anim1.play('start-anim', true)
+		this.start_Anim1.play('start-title', true)
 		this.startAnimSFX.play()
 	}
 

@@ -109,6 +109,8 @@ export default class Bootstrap extends Phaser.Scene {
 		{
 			// this.createNewChunk()
 			this.createNewGame()
+			// this.playMidLevel()
+			// this.startTitleScene()
 			// this.toChunks("Title")
 			// this.goToGameOver("Title")
 			return
@@ -116,6 +118,11 @@ export default class Bootstrap extends Phaser.Scene {
 
 		this.startTitleScene()
 		// this.createNewGame()
+	}
+
+	private playMidLevel()
+	{
+		this.scene.launch("MidLevel")
 	}
 
 	private defineSceneSwitchEvents()

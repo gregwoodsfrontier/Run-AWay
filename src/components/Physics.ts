@@ -10,7 +10,7 @@ import Phaser from "phaser";
 
 export default class Physics extends UserComponent {
 
-	constructor(gameObject: Phaser.GameObjects.Image) {
+	constructor(gameObject: Phaser.GameObjects.Image | Phaser.GameObjects.Container) {
 		super(gameObject);
 
 		this.gameObject = gameObject;
@@ -21,11 +21,11 @@ export default class Physics extends UserComponent {
 		/* END-USER-CTR-CODE */
 	}
 
-	static getComponent(gameObject: Phaser.GameObjects.Image): Physics {
+	static getComponent(gameObject: Phaser.GameObjects.Image | Phaser.GameObjects.Container): Physics {
 		return (gameObject as any)["__Physics"];
 	}
 
-	private gameObject: Phaser.GameObjects.Image;
+	private gameObject: Phaser.GameObjects.Image | Phaser.GameObjects.Container;
 	public static: boolean = false;
 	public width: number = 0;
 	public height: number = 0;

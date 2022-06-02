@@ -35,6 +35,11 @@ export default class StateMachine
 		this.context = context
 	}
 
+	setID(id: string)
+	{
+		this.id = id
+	}
+
 	isCurrentState(name: string)
 	{
 		if (!this.currentState)
@@ -80,7 +85,7 @@ export default class StateMachine
 
 		this.isChangingState = true
 
-		// console.warn(`[StateMachine (${this.id})] change from ${this.currentState?.name ?? 'none'} to ${name}`)
+		console.warn(`[StateMachine (${this.id})] change from ${this.currentState?.name ?? 'none'} to ${name}`)
 
 		if (this.currentState && this.currentState.onExit)
 		{

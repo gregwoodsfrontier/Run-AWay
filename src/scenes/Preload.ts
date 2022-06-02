@@ -50,10 +50,10 @@ export default class Preload extends Phaser.Scene {
 
 		this.editorCreate();
 
-		this.load.pack("asset-pack", "assets/asset-pack.json");
-		this.load.pack("audio-asset-pack", "assets/audio-asset-pack.json")
-		this.load.pack("ingame-menu", "assets/ingame-menu-asset-pack.json")
-		this.load.pack("boss", "assets/boss-asset-pack.json")
+		this.load.pack("asset-pack", "assets/packs/asset-pack.json");
+		this.load.pack("audio-asset-pack", "assets/packs/audio-asset-pack.json")
+		this.load.pack("ingame-menu", "assets/packs/ingame-menu-asset-pack.json")
+		this.load.pack("boss", "assets/packs/boss-asset-pack.json")
 
 		this.load.on(Phaser.Loader.Events.COMPLETE, () => this.scene.start("Bootstrap"));
 	}

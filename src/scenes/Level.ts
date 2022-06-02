@@ -5,24 +5,24 @@
 import Phaser from "phaser";
 import DepthSortY from "../components/DepthSortY";
 import TileMapLayerPhysics from "../components/TileMapLayerPhysics";
-import Player from "../prefabs/Player";
+import PlayerContainer from "../prefabs/PlayerContainer";
 import PSD from "../prefabs/PSD";
 import Rock from "../prefabs/Rock";
 /* START-USER-IMPORTS */
 import Enemy from "../prefabs/Enemy";
-import DepthSortY from "../components/DepthSortY";
 import { DIRECTION } from "../types/direction";
 import Bullet from "../prefabs/Bullet";
 import JustMovement from "../components/JustMovement";
 import SelectionSquare from "../components/SelectionSquare";
 import KeyboardInput from "../components/KeyboardInput";
-import { PSD_STATE } from "../types/PSD";
+import { PSD_STATES } from "../types/PSD";
 import eventsCenter from "../EventsCenter";
 import { AUDIO_PLAY_EVENTS, SCENE_SWITCH_EVENTS } from "../types/scenes";
 import { ENEMY_STATE_KEYS } from "../types/enemyStateKeys";
 import psdField from "../prefabs/psdField";
 import { GameState } from "../manager/gameState";
 import FollowTarget from "../components/FollowTarget";
+import { EVENTKEYS } from "../types/eventKeys";
 /* END-USER-IMPORTS */
 
 export default class Level extends Phaser.Scene {
@@ -43,7 +43,7 @@ export default class Level extends Phaser.Scene {
 		cave_test_map_2.addTilesetImage("gamedevjs-cave-tileset-1", "cave-test-tileset-1");
 
 		// endTunnel___Wide
-		const endTunnel___Wide = this.add.image(160, -976, "EndTunnel - Wide");
+		const endTunnel___Wide = this.add.sprite(160, -976, "EndTunnel - Wide");
 
 		// floor_1
 		const floor_1 = cave_test_map_2.createLayer("floor", ["gamedevjs-cave-tileset-1"], 0, -960);
@@ -51,9 +51,9 @@ export default class Level extends Phaser.Scene {
 		// wall_1
 		const wall_1 = cave_test_map_2.createLayer("wall", ["gamedevjs-cave-tileset-1"], 0, -960);
 
-		// player
-		const player = new Player(this, 160, 160);
-		this.add.existing(player);
+		// playerContainer
+		const playerContainer = new PlayerContainer(this, 160, 160);
+		this.add.existing(playerContainer);
 
 		// pSDRobot
 		const pSDRobot = new PSD(this, -200, 0);
@@ -332,7 +332,7 @@ export default class Level extends Phaser.Scene {
 
 		this.floor_1 = floor_1;
 		this.wall_1 = wall_1;
-		this.player = player;
+		this.playerContainer = playerContainer;
 		this.pSDRobot = pSDRobot;
 		this.start_level = start_level;
 		this.rock_1 = rock_1;
@@ -356,7 +356,7 @@ export default class Level extends Phaser.Scene {
 
 	private floor_1!: Phaser.Tilemaps.TilemapLayer;
 	private wall_1!: Phaser.Tilemaps.TilemapLayer;
-	public player!: Player;
+	public playerContainer!: PlayerContainer;
 	private pSDRobot!: PSD;
 	private start_level!: Phaser.GameObjects.Sprite;
 	private rock_1!: Rock;
@@ -385,24 +385,17 @@ export default class Level extends Phaser.Scene {
 	lastfired = 0
 	#destination!: SelectionSquare
 
-	gamePlayTrack!: Phaser.Sound.BaseSound
-	deployPSDTrack!: Phaser.Sound.BaseSound
-	fieldStartTrack!: Phaser.Sound.BaseSound
-	fieldLoopTrack!: Phaser.Sound.BaseSound
-	fieldFadeTrack!: Phaser.Sound.BaseSound
-	collectMineral!: Phaser.Sound.BaseSound
-
-
 	create() {
 
-		this.editorCreate();
+		this.editorCreate()
+
 		this.exitZone.setDepth(-1000)
 		// this.loadSoundAssets()
 		// eventcenter emit to tell Bootstrap which scene is active now
 		eventsCenter.emit(SCENE_SWITCH_EVENTS.UPDATE_ACTIVE, "Level")
 		eventsCenter.emit(AUDIO_PLAY_EVENTS.GAMEPLAY)
 
-		this.player.play('player-front-idle')
+		// this.playerContainer.player.play('player-front-idle')
 		this.floor_1.depth = this.wall_1.y * 2
 		this.wall_1.depth = this.wall_1.y * 2
 
@@ -410,8 +403,8 @@ export default class Level extends Phaser.Scene {
 
 		this.initObjectPool()
 
-		this.physics.add.collider(this.player, this.wall_1);
-		this.physics.add.collider(this.player, this.enemyGroup, this.handlePlayerSwarm, undefined, this)
+		this.physics.add.collider(this.playerContainer, this.wall_1);
+		this.physics.add.collider(this.playerContainer, this.enemyGroup, this.handlePlayerSwarm, undefined, this)
 
 		//@ts-ignore
 		this.physics.add.collider(this.enemyGroup)
@@ -420,24 +413,24 @@ export default class Level extends Phaser.Scene {
 		this.physics.add.overlap(this.bulletGroup, this.enemyGroup, this.handleBulletSwarm, undefined, this)
 		this.physics.add.collider(this.bulletGroup, this.wall_1, this.handleBulletWallCollision, undefined, this)
 		this.physics.add.collider(this.bulletGroup, this.obstacles, this.handleBulletRocks, this.checkBulletRocks)
-		this.physics.add.collider(this.player, this.obstacles, this.handlePlayerRocks)
+		this.physics.add.collider(this.playerContainer, this.obstacles, this.handlePlayerRocks)
 
 		this.physics.add.existing(this.exitZone, true)
-		this.physics.add.collider(this.player, this.exitZone, this.goToChunks)
+		this.physics.add.collider(this.playerContainer, this.exitZone, this.goToChunks)
 
-		this.#destination = SelectionSquare.getComponent(this.player)
+		this.#destination = SelectionSquare.getComponent(this.playerContainer.player)
 
-		this.events.on('create-bullet', this.handleBulletUpdate, this)
-		this.events.on('deploy-PSD', this.deployPSD, this)
-		this.events.on('takeback-PSD', this.takeBackPSD, this)
-		this.events.on('gen-psd-field', this.addColliderEnemyField, this)
+		this.events.on(EVENTKEYS.CREATE_BULLETS, this.handleBulletUpdate, this)
+		this.events.on(EVENTKEYS.DEPLOY_PSD, this.deployPSD, this)
+		this.events.on(EVENTKEYS.TAKEBACK_PSD, this.takeBackPSD, this)
+		this.events.on(EVENTKEYS.GEN_PSD_FIELD, this.addColliderEnemyField, this)
 
 		this.start_level.once('animationcomplete', () => {
 			this.events.once('resume', this.onStartLevelAnimsComplete, this)
 			eventsCenter.emit(SCENE_SWITCH_EVENTS.TO_EXPLAINER)
 		}, this)
 
-		this.player.setVisible(false)
+		this.playerContainer.setVisible(false)
 		this.playStartLevelAnims()
 
 		/* if(process.env.NODE_ENV !== "development")
@@ -484,7 +477,7 @@ export default class Level extends Phaser.Scene {
 	//@ts-ignore
 	private handlePlayerMud(p, m)
 	{
-		const player = p as Player
+		const player = p as PlayerContainer
 		const pBody = player.body as Phaser.Physics.Arcade.Body
 		if(!pBody)
 		{
@@ -544,7 +537,7 @@ export default class Level extends Phaser.Scene {
 
 	private handlePlayerRocks(p: Phaser.Types.Physics.Arcade.GameObjectWithBody, r: Phaser.Types.Physics.Arcade.GameObjectWithBody)
 	{
-		const player = p as Player
+		// const player = p.player as PlayerContainer
 		const rocks = r as Rock
 		if(!rocks.isPickable)
 		{
@@ -616,12 +609,12 @@ export default class Level extends Phaser.Scene {
 		this.physics.add.existing(enemy)
 
 		enemy.startMovement()
-		FollowTarget.getComponent(enemy).setTarget(this.player)
+		FollowTarget.getComponent(enemy).setTarget(this.playerContainer.player)
 
 		const follow = FollowTarget.getComponent(enemy);
 
 		if(!follow){ return }
-		follow.setTarget(this.player)
+		follow.setTarget(this.playerContainer.player)
 		follow.range = 300
 		follow.deadRangeX = 20
 
@@ -693,24 +686,30 @@ export default class Level extends Phaser.Scene {
 
 	private onStartLevelAnimsComplete()
 	{
-		if(this.player)
+		if(this.playerContainer)
 		{
-			this.player.setVisible(true)
+			this.playerContainer.setVisible(true)
 		}
 
-		const input = KeyboardInput.getComponent(this.player)
+		const input = KeyboardInput.getComponent(this.playerContainer)
 		if(!input)
 		{
 			return
 		}
 		input.setActive(true)
 
+		// this.genEnemy()
+
+
+		this.RocksPropagator(80, -624, 9)
+	}
+
+	private genEnemy()
+	{
 		this.SwarmGenerator(80, 384, 20, 4000, 0)
 		this.SwarmGenerator(128, 384, 20, 4000, 2500)
 		this.SwarmGenerator(176, 384, 20, 4000, 1500)
 		this.SwarmGenerator(224, 384, 20, 4000,  500)
-
-		this.RocksPropagator(80, -624, 9)
 	}
 
 	private handleBulletSwarm(a: Phaser.Types.Physics.Arcade.GameObjectWithBody, b: Phaser.Types.Physics.Arcade.GameObjectWithBody)
@@ -728,52 +727,50 @@ export default class Level extends Phaser.Scene {
 
 	private playStartLevelAnims()
 	{
-		this.player.setVisible(false)
+		this.playerContainer.setVisible(false)
 		this.start_level.play('start-level-short')
 	}
 
-	private deployPSD()
+	private deployPSD(rect: Phaser.GameObjects.Rectangle)
 	{
-		const destination = SelectionSquare.getComponent(this.player)
-		if(!destination)
-		{
-			console.error(`selection square is undefined`)
-			return
-		}
-
-		const {x, y} = destination.getSelectionSquare()
-		if(this.cave_test_map_2.hasTileAtWorldXY(x, y, this.cameras.main, this.wall_1))
+		const {x, y} = rect
+		const Xspawn = x + this.playerContainer.x
+		const Yspawn = y + this.playerContainer.y
+		if(this.cave_test_map_2.hasTileAtWorldXY(Xspawn, Yspawn, this.cameras.main, this.wall_1))
 		{
 			// revert psd comp state back to idle
-			this.player.setPSDCompState(PSD_STATE.EQIUP_IDLE)
+			// this.playerContainer.setPSDCompState(PSD_STATES.EQIUP_IDLE)
 			return
 		}
 
 		eventsCenter.emit(AUDIO_PLAY_EVENTS.DEPLOY)
-		this.pSDRobot.spawn(x, y)
+		this.pSDRobot.spawn(Xspawn, Yspawn)
 		this.pSDRobot.deploy()
 	}
 
-	private takeBackPSD()
+	private takeBackPSD(rect: Phaser.GameObjects.Rectangle)
 	{
-		if(!this.checkSelectionPSDOverlap())
+		if(!this.checkSelectionPSDOverlap(rect))
 		{
 			return
 		}
 
 		this.pSDRobot.returnToPlayer()
-		this.player.emit('player-recover-psd')
+		this.events.once(EVENTKEYS.PSD_FULLY_SHUTDOWN, () => {
+			this.playerContainer.emit(EVENTKEYS.PLAYER_RECOVER)
+		})
+		// 
 	}
 
-	private checkSelectionPSDOverlap()
+	private checkSelectionPSDOverlap(rect: Phaser.GameObjects.Rectangle)
 	{
-		if(!this.#destination)
+		if(!rect)
 		{
 			console.error(`selection square is undefined`)
 			return
 		}
 
-		const checkRect = this.#destination.getSelectionSquare().getBounds()
+		const checkRect = rect.getBounds()
 		const PSDRect = this.pSDRobot.getBounds()
 
 		return Phaser.Geom.Intersects.RectangleToRectangle(checkRect, PSDRect)
@@ -789,7 +786,8 @@ export default class Level extends Phaser.Scene {
 		if(bullet && this.time.now > this.lastfired)
 		{
 			eventsCenter.emit(AUDIO_PLAY_EVENTS.LASERGUN)
-			bullet.fire(this.player.x, this.player.y)
+
+			bullet.fire(this.playerContainer.x, this.playerContainer.y)
 
 			this.setBulletRotationAndVel(bullet, dir)
 			// console.log('bullet', bullet.x, bullet.y)

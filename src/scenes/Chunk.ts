@@ -3,7 +3,7 @@
 /* START OF COMPILED CODE */
 
 import Phaser from "phaser";
-import Player from "../prefabs/Player";
+import Player from "../prefabs/PlayerContainer";
 import Rock from "../prefabs/Rock";
 import PSD from "../prefabs/PSD";
 import { PSD_STATE } from "../types/PSD";
@@ -57,13 +57,13 @@ export default class Chunk extends Phaser.Scene {
 		// lists
 		const obstacles = [rock];
 
-		this.player = player;
+		this.playerContainer = player;
 		this.obstacles = obstacles;
 
 		this.events.emit("scene-awake");
 	}
 
-	public player!: Player;
+	public playerContainer!: Player;
 	private obstacles!: Rock[];
 
 	/* START-USER-CODE */
@@ -90,7 +90,7 @@ export default class Chunk extends Phaser.Scene {
 
 		this.editorCreate();
 		eventsCenter.emit(SCENE_SWITCH_EVENTS.UPDATE_ACTIVE, "Chunk")
-		this.player.play('player-front-idle')
+		this.playerContainer.player.play('player-front-idle')
 
 		this.startWorldGen()
 
@@ -99,18 +99,18 @@ export default class Chunk extends Phaser.Scene {
 		// this code moves the player down to the beginning of the level (bottom left corner)
 		// const tempSeed = Phaser.Math.Between(100, 999)
 		this.events.once('send-seed', (tempSeed: number) => {
-			this.player.x = 48;
-			this.player.y = 640*(20+Math.round(((tempSeed/3)/999)*100))+640-this.player.height;	
+			this.playerContainer.x = 48;
+			this.playerContainer.y = 640*(20+Math.round(((tempSeed/3)/999)*100))+640-this.playerContainer.height;	
 		}, this)
 
 		//PSD
-		const pSDRobot = new PSD(this, -this.player.x, this.player.y);
+		const pSDRobot = new PSD(this, -this.playerContainer.x, this.playerContainer.y);
 		this.add.existing(pSDRobot);
 
 		this.pSDRobot = pSDRobot;
 		
 		// enemyA
-		const enemyA = new Enemy(this, this.player.x +30 , this.player.y + 250);
+		const enemyA = new Enemy(this, this.playerContainer.x +30 , this.playerContainer.y + 250);
 		this.add.existing(enemyA);
 
 		//enemyteam
@@ -122,14 +122,14 @@ export default class Chunk extends Phaser.Scene {
 		this.enemyTeam = enemyTeam;
 
 		// enable player input
-        const input = KeyboardInput.getComponent(this.player)
+        const input = KeyboardInput.getComponent(this.playerContainer.player)
         input.setActive(true)
 
 		const block = new Block(this)
 		const blasts = new BlastsTrap(this);
 		//const blaststrap = new BlastsTrap(this)
 
-		this.#destination = SelectionSquare.getComponent(this.player)
+		this.#destination = SelectionSquare.getComponent(this.playerContainer.player)
 
 		this.enemyTeam.forEach(e => {
 			FollowTarget.getComponent(e).activate()
@@ -154,10 +154,10 @@ export default class Chunk extends Phaser.Scene {
 		this.physics.add.overlap(this.bulletGroup, this.enemyTeam, this.handleBulletSwarm, undefined, this)
 
 			//Player collision
-		this.physics.add.collider(this.player, this.blocks, block.onPlayerHit);
-		this.physics.add.collider(this.player, this.mud, () =>{this.onPlayerMud()});
-		this.physics.add.collider(this.player, this.tunnel , this.switchtoBossScene);
-		this.physics.add.collider(this.player, this.enemyTeam, this.handlePlayerSwarm, undefined, this)
+		this.physics.add.collider(this.playerContainer, this.blocks, block.onPlayerHit);
+		this.physics.add.collider(this.playerContainer, this.mud, () =>{this.onPlayerMud()});
+		this.physics.add.collider(this.playerContainer, this.tunnel , this.switchtoBossScene);
+		this.physics.add.collider(this.playerContainer, this.enemyTeam, this.handlePlayerSwarm, undefined, this)
 			
 			//Enemy Collision
 		this.physics.add.collider(this.enemyTeam, this.enemyTeam)
@@ -192,7 +192,7 @@ export default class Chunk extends Phaser.Scene {
 		for(let i = 0; i < this.proxymines.length; i++)
 		{
 			this.add.existing(this.proxymines[i]);
-			this.proxymines[i].player = this.player;
+			this.proxymines[i].player = this.playerContainer;
 			this.proxymines[i].walls = this.blocks;
 		}
 
@@ -204,7 +204,7 @@ export default class Chunk extends Phaser.Scene {
 
 	optimize()
 	{
-		BlockOptimizer.HideIrrelevant(this.blocks, this.player.x, this.player.y);
+		BlockOptimizer.HideIrrelevant(this.blocks, this.playerContainer.x, this.playerContainer.y);
 
 		// repeat this function after 2.5 seconds
 		//this.time.delayedCall(2500, this.optimize, undefined, this)
@@ -264,7 +264,7 @@ export default class Chunk extends Phaser.Scene {
 
 		if(bullet && this.time.now > this.lastfired)
 		{
-			bullet.fire(this.player.x, this.player.y)
+			bullet.fire(this.playerContainer.x, this.playerContainer.y)
 
 			this.setBulletRotationAndVel(bullet, dir)
 			// console.log('bullet', bullet.x, bullet.y)
@@ -327,7 +327,7 @@ export default class Chunk extends Phaser.Scene {
 		this.add.existing(enemy)
 		this.enemyTeam.push(enemy)
 		const follow = FollowTarget.getComponent(enemy);
-		follow.setTarget(this.player)
+		follow.setTarget(this.playerContainer.player)
 		follow.range = 300
 		follow.deadRangeX = 20
 
@@ -441,7 +441,7 @@ export default class Chunk extends Phaser.Scene {
 
 	private deployPSD()
 	{
-		const destination = SelectionSquare.getComponent(this.player)
+		const destination = SelectionSquare.getComponent(this.playerContainer.player)
 		if(!destination)
 		{
 			console.error(`selection square is undefined`)
@@ -464,7 +464,7 @@ export default class Chunk extends Phaser.Scene {
 		}
 
 		this.pSDRobot.returnToPlayer()
-		this.player.emit('player-recover-psd')
+		this.playerContainer.emit('player-recover-psd')
 		this.enemyTeam.forEach(e => {
 			FollowTarget.getComponent(e).activate()
 		})
@@ -507,11 +507,11 @@ export default class Chunk extends Phaser.Scene {
 	}
 
 	onPlayerMud(){
-		this.player.inMudCondition();
+		this.playerContainer.inMudCondition();
 		this.timer = this.time.addEvent({
 			delay: 5000,                // ms
 			callback: () =>{
-				this.player.outMudCondition();
+				this.playerContainer.outMudCondition();
 			}
 		});
 	}
