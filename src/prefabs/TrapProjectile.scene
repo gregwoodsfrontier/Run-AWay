@@ -1,0 +1,41 @@
+{
+    "id": "01e83630-f2ff-4b27-997b-cc3cd36e8dd5",
+    "sceneType": "PREFAB",
+    "settings": {
+        "snapEnabled": true,
+        "exportClass": true,
+        "autoImport": true,
+        "preloadMethodName": "",
+        "preloadPackFiles": [],
+        "createMethodName": "",
+        "compilerOutputLanguage": "TYPE_SCRIPT",
+        "borderWidth": 320,
+        "borderHeight": 640
+    },
+    "displayList": [
+        {
+            "type": "Sprite",
+            "id": "254949bb-2fe2-4342-b353-c52cc1655e5a",
+            "label": "raw_break_interact77",
+            "components": [
+                "Physics",
+                "JustMovement"
+            ],
+            "Physics.width": 32,
+            "Physics.height": 16,
+            "Physics.offsetY": 8,
+            "JustMovement.speed": 50,
+            "texture": {
+                "key": "raw-break-interact",
+                "frame": 77
+            }
+        }
+    ],
+    "plainObjects": [],
+    "meta": {
+        "app": "Phaser Editor 2D - Scene Editor",
+        "url": "https://phasereditor2d.com",
+        "contentType": "phasereditor2d.core.scene.SceneContentType",
+        "version": 3
+    }
+}

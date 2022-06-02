@@ -7,6 +7,7 @@ import Phaser from "phaser";
 import PlayerContainer from "../prefabs/PlayerContainer";
 import PSD from "../prefabs/PSD";
 import Rock from "../prefabs/Rock";
+import BlastTrapContainer from "../prefabs/BlastTrapContainer";
 /* START-USER-IMPORTS */
 /* END-USER-IMPORTS */
 
@@ -21,6 +22,10 @@ export default class MidLevel extends Phaser.Scene {
 	}
 
 	editorCreate(): void {
+
+		// mid_level
+		const mid_level = this.add.tilemap("mid level");
+		mid_level.addTilesetImage("gamedevjs-cave-tileset-1", "cave-test-tileset-1");
 
 		// endTunnel
 		this.add.image(159, -5719, "EndTunnel");
@@ -530,11 +535,30 @@ export default class MidLevel extends Phaser.Scene {
 		const rock_123 = new Rock(this, 176, -5280);
 		this.add.existing(rock_123);
 
+		// floor_1
+		mid_level.createLayer("floor", ["gamedevjs-cave-tileset-1"], 0, -5760);
+
+		// wall_1
+		mid_level.createLayer("wall", ["gamedevjs-cave-tileset-1"], 0, -5760);
+
+		// playerContainer
+		const playerContainer = new PlayerContainer(this, 176, 480);
+		this.add.existing(playerContainer);
+
+		// blastTrapContainer
+		const blastTrapContainer = new BlastTrapContainer(this, 144, 320);
+		this.add.existing(blastTrapContainer);
+
+		// blastTrapContainer_1
+		const blastTrapContainer_1 = new BlastTrapContainer(this, 80, 192);
+		this.add.existing(blastTrapContainer_1);
+
 		// lists
 		const rocksList = [rock_19, rock_18, rock_17, rock_16, rock_15, rock_14, rock_13, rock_12, rock_11, rock_10, rock_9, rock_8, rock_7, rock_6, rock_5, rock_4, rock_3, rock_2, rock_1, rock, rock_75, rock_74, rock_73, rock_72, rock_71, rock_70, rock_69, rock_68, rock_67, rock_66, rock_65, rock_64, rock_63, rock_62, rock_61, rock_60, rock_59, rock_58, rock_57, rock_56, rock_55, rock_54, rock_53, rock_52, rock_51, rock_50, rock_49, rock_48, rock_47, rock_46, rock_45, rock_44, rock_43, rock_42, rock_41, rock_40, rock_39, rock_38, rock_37, rock_36, rock_35, rock_34, rock_33, rock_32, rock_31, rock_30, rock_29, rock_28, rock_27, rock_26, rock_25, rock_24, rock_23, rock_22, rock_21, rock_20, rock_76, rock_77, rock_78, rock_79, rock_80, rock_81, rock_82, rock_83, rock_84, rock_85, rock_86, rock_87, rock_88, rock_93, rock_92, rock_91, rock_90, rock_89, rock_94, rock_99, rock_98, rock_97, rock_96, rock_95, rock_100, rock_105, rock_104, rock_103, rock_102, rock_101, rock_106, rock_107, rock_108, rock_109, rock_110, rock_111, rock_112, rock_117, rock_116, rock_115, rock_114, rock_113, rock_118, rock_119, rock_120, rock_121, rock_122, rock_123];
 
 		this.player = player;
 		this.pSDRobot = pSDRobot;
+		this.mid_level = mid_level;
 		this.rocksList = rocksList;
 
 		this.events.emit("scene-awake");

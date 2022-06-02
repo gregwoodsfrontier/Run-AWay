@@ -1539,9 +1539,85 @@
             "components": [],
             "x": 176,
             "y": -5280
+        },
+        {
+            "type": "TilemapLayer",
+            "id": "879be261-fb82-4a28-a2ac-4a09d3d0c9c2",
+            "label": "floor_1",
+            "components": [],
+            "y": -5760,
+            "tilemapId": "38ad51d1-d49c-4e09-ac98-7ba0ba5e0ffd",
+            "layerName": "floor",
+            "tilesets": [
+                "gamedevjs-cave-tileset-1"
+            ]
+        },
+        {
+            "type": "TilemapLayer",
+            "id": "8fe6d82f-d76f-4c49-8e52-6c7189d107a4",
+            "label": "wall_1",
+            "components": [],
+            "y": -5760,
+            "tilemapId": "38ad51d1-d49c-4e09-ac98-7ba0ba5e0ffd",
+            "layerName": "wall",
+            "tilesets": [
+                "gamedevjs-cave-tileset-1"
+            ]
+        },
+        {
+            "prefabId": "e0ddcad0-6688-4c91-8511-b98aa83b6507",
+            "id": "ebab4c14-9aec-4329-b5c6-06d502d64fe0",
+            "unlock": [
+                "x",
+                "y"
+            ],
+            "label": "playerContainer",
+            "components": [],
+            "x": 176,
+            "y": 480,
+            "nestedPrefabs": []
+        },
+        {
+            "prefabId": "b85115a8-992d-4ce0-91bd-d3f4294eac09",
+            "id": "683133db-5f98-4d07-8ad7-080af584cb4f",
+            "unlock": [
+                "x",
+                "y"
+            ],
+            "label": "blastTrapContainer",
+            "components": [],
+            "x": 144,
+            "y": 320,
+            "nestedPrefabs": []
+        },
+        {
+            "prefabId": "b85115a8-992d-4ce0-91bd-d3f4294eac09",
+            "id": "ef400018-6e7b-4147-8d14-78a10332ec3d",
+            "unlock": [
+                "x",
+                "y"
+            ],
+            "label": "blastTrapContainer_1",
+            "components": [],
+            "x": 80,
+            "y": 192,
+            "nestedPrefabs": []
         }
     ],
-    "plainObjects": [],
+    "plainObjects": [
+        {
+            "id": "38ad51d1-d49c-4e09-ac98-7ba0ba5e0ffd",
+            "type": "Tilemap",
+            "label": "mid_level",
+            "key": "mid level",
+            "tilesets": [
+                {
+                    "name": "gamedevjs-cave-tileset-1",
+                    "imageKey": "cave-test-tileset-1"
+                }
+            ]
+        }
+    ],
     "meta": {
         "app": "Phaser Editor 2D - Scene Editor",
         "url": "https://phasereditor2d.com",

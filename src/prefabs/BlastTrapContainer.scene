@@ -1,0 +1,111 @@
+{
+    "id": "b85115a8-992d-4ce0-91bd-d3f4294eac09",
+    "sceneType": "PREFAB",
+    "settings": {
+        "snapEnabled": true,
+        "exportClass": true,
+        "autoImport": true,
+        "preloadMethodName": "",
+        "preloadPackFiles": [],
+        "createMethodName": "",
+        "compilerOutputLanguage": "TYPE_SCRIPT",
+        "borderWidth": 320,
+        "borderHeight": 640
+    },
+    "displayList": [
+        {
+            "type": "Container",
+            "id": "6db10eec-b15a-420d-9b80-e16aad25ce22",
+            "label": "container_1",
+            "components": [],
+            "list": [
+                {
+                    "prefabId": "f40d26d2-12a7-4f32-987e-b77e53202537",
+                    "id": "86eb1cdb-7d1b-468d-a8ba-bfcc17458ad4",
+                    "unlock": [
+                        "x",
+                        "y"
+                    ],
+                    "label": "blastTrapV2",
+                    "scope": "NESTED_PREFAB",
+                    "components": [],
+                    "x": 0,
+                    "y": 0
+                },
+                {
+                    "prefabId": "01e83630-f2ff-4b27-997b-cc3cd36e8dd5",
+                    "id": "c6920fb7-01c3-4047-a4e4-b31112fb37ef",
+                    "unlock": [
+                        "x",
+                        "y",
+                        "visible"
+                    ],
+                    "label": "trapProjectile_right",
+                    "scope": "NESTED_PREFAB",
+                    "components": [],
+                    "x": 32,
+                    "y": 0,
+                    "visible": true
+                },
+                {
+                    "prefabId": "01e83630-f2ff-4b27-997b-cc3cd36e8dd5",
+                    "id": "39ee2ac6-033c-4cf3-ace6-d7ebb69931f0",
+                    "unlock": [
+                        "x",
+                        "y",
+                        "angle",
+                        "visible"
+                    ],
+                    "label": "trapProjectile_up",
+                    "scope": "NESTED_PREFAB",
+                    "components": [],
+                    "x": 0,
+                    "y": -16,
+                    "angle": -90,
+                    "visible": true
+                },
+                {
+                    "prefabId": "01e83630-f2ff-4b27-997b-cc3cd36e8dd5",
+                    "id": "33888953-afb1-466d-99c7-3783a257cffc",
+                    "unlock": [
+                        "x",
+                        "y",
+                        "angle",
+                        "visible"
+                    ],
+                    "label": "trapProjectile_left",
+                    "scope": "NESTED_PREFAB",
+                    "components": [],
+                    "x": -32,
+                    "y": 0,
+                    "angle": -180,
+                    "visible": true
+                },
+                {
+                    "prefabId": "01e83630-f2ff-4b27-997b-cc3cd36e8dd5",
+                    "id": "b8923af1-9917-42e3-97ee-fae29fcdbc51",
+                    "unlock": [
+                        "x",
+                        "y",
+                        "angle",
+                        "visible"
+                    ],
+                    "label": "trapProjectile_down",
+                    "scope": "NESTED_PREFAB",
+                    "components": [],
+                    "x": 0,
+                    "y": 32,
+                    "angle": 90,
+                    "visible": true
+                }
+            ]
+        }
+    ],
+    "plainObjects": [],
+    "meta": {
+        "app": "Phaser Editor 2D - Scene Editor",
+        "url": "https://phasereditor2d.com",
+        "contentType": "phasereditor2d.core.scene.SceneContentType",
+        "version": 3
+    }
+}
