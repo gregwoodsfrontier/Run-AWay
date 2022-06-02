@@ -76,6 +76,183 @@
             ],
             "frameRate": 8,
             "skipMissedFrames": true
+        },
+        {
+            "key": "blood-splash",
+            "type": "frame",
+            "frames": [
+                {
+                    "key": "raw-break-interact",
+                    "frame": 72,
+                    "duration": 0,
+                    "keyframe": false
+                },
+                {
+                    "key": "raw-break-interact",
+                    "frame": 73,
+                    "duration": 0,
+                    "keyframe": false
+                },
+                {
+                    "key": "raw-break-interact",
+                    "frame": 74,
+                    "duration": 0,
+                    "keyframe": false
+                }
+            ],
+            "frameRate": 8,
+            "skipMissedFrames": true,
+            "hideOnComplete": true
+        },
+        {
+            "key": "missle-shoot",
+            "type": "frame",
+            "frames": [
+                {
+                    "key": "raw-break-interact",
+                    "frame": 77,
+                    "duration": 0,
+                    "keyframe": false
+                },
+                {
+                    "key": "raw-break-interact",
+                    "frame": 78,
+                    "duration": 0,
+                    "keyframe": false
+                }
+            ],
+            "frameRate": 8,
+            "skipMissedFrames": true,
+            "repeat": -1
+        },
+        {
+            "key": "projectile",
+            "type": "frame",
+            "frames": [
+                {
+                    "key": "raw-break-interact",
+                    "frame": 100,
+                    "duration": 0,
+                    "keyframe": false
+                },
+                {
+                    "key": "raw-break-interact",
+                    "frame": 101,
+                    "duration": 0,
+                    "keyframe": false
+                }
+            ],
+            "frameRate": 8,
+            "skipMissedFrames": true,
+            "repeat": -1
+        },
+        {
+            "key": "rock-mine",
+            "type": "frame",
+            "frames": [
+                {
+                    "key": "raw-break-interact",
+                    "frame": 7,
+                    "duration": 0,
+                    "keyframe": false
+                },
+                {
+                    "key": "raw-break-interact",
+                    "frame": 15,
+                    "duration": 0,
+                    "keyframe": false
+                },
+                {
+                    "key": "raw-break-interact",
+                    "frame": 23,
+                    "duration": 0,
+                    "keyframe": false
+                },
+                {
+                    "key": "raw-break-interact",
+                    "frame": 31,
+                    "duration": 0,
+                    "keyframe": false
+                }
+            ],
+            "frameRate": 8,
+            "skipMissedFrames": true
+        },
+        {
+            "key": "trap-project",
+            "type": "frame",
+            "frames": [
+                {
+                    "key": "raw-break-interact",
+                    "frame": 96,
+                    "duration": 0,
+                    "keyframe": false
+                },
+                {
+                    "key": "raw-break-interact",
+                    "frame": 97,
+                    "duration": 0,
+                    "keyframe": false
+                },
+                {
+                    "key": "raw-break-interact",
+                    "frame": 98,
+                    "duration": 0,
+                    "keyframe": false
+                },
+                {
+                    "key": "raw-break-interact",
+                    "frame": 99,
+                    "duration": 0,
+                    "keyframe": false
+                },
+                {
+                    "key": "raw-break-interact",
+                    "frame": 28,
+                    "duration": 0,
+                    "keyframe": false
+                }
+            ],
+            "frameRate": 12,
+            "skipMissedFrames": true
+        },
+        {
+            "key": "trap-poison",
+            "type": "frame",
+            "frames": [
+                {
+                    "key": "raw-break-interact",
+                    "frame": 104,
+                    "duration": 0,
+                    "keyframe": false
+                },
+                {
+                    "key": "raw-break-interact",
+                    "frame": 105,
+                    "duration": 0,
+                    "keyframe": false
+                },
+                {
+                    "key": "raw-break-interact",
+                    "frame": 106,
+                    "duration": 0,
+                    "keyframe": false
+                },
+                {
+                    "key": "raw-break-interact",
+                    "frame": 107,
+                    "duration": 0,
+                    "keyframe": false
+                },
+                {
+                    "key": "raw-break-interact",
+                    "frame": 28,
+                    "duration": 0,
+                    "keyframe": false
+                }
+            ],
+            "frameRate": 8,
+            "skipMissedFrames": true
         }
     ],
     "globalTimeScale": 1,
