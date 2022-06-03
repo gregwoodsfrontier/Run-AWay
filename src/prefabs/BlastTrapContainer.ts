@@ -77,7 +77,7 @@ export default class BlastTrapContainer extends Phaser.GameObjects.Container {
 	public trapProjectile_down: TrapProjectile;
 
 	/* START-USER-CODE */
-	private trapProjArr: TrapProjectile[]
+	private trapProjArr!: TrapProjectile[]
 
 	// Write your code here.
 	start()

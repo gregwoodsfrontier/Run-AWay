@@ -16,7 +16,7 @@ export interface IDataInput {
     swarm: Phaser.GameObjects.Group,
     bullets: Phaser.GameObjects.Group,
     rocks: Rock[],
-    psdfield?: Phaser.GameObjects.GameObject[] | undefined,
+    psdfield: Phaser.GameObjects.GameObject[] | undefined,
     exitzone: Phaser.GameObjects.Rectangle
 }
 
@@ -98,7 +98,7 @@ export default class PhysicsChecker {
     private swarmPSDField()
     {
         const { swarm, psdfield } = this.data
-        if(!swarm || psdfield)
+        if(!swarm || !psdfield)
         {
             console.error('either swarm or field is undefined')
             return

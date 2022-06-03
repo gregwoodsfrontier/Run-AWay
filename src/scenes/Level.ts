@@ -374,7 +374,7 @@ export default class Level extends Phaser.Scene {
 	private exitZone!: Phaser.GameObjects.Rectangle;
 	private obstacles!: Rock[];
 	private mudList!: Array<any>;
-	private physicsChecker: PhysicsChecker
+	private physicsChecker!: PhysicsChecker
 
 	/* START-USER-CODE */
 	public platformer_fun!: Phaser.Tilemaps.Tilemap
