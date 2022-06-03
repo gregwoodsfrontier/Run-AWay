@@ -16,9 +16,8 @@ export interface IDataInput {
     swarm: Phaser.GameObjects.Group,
     bullets: Phaser.GameObjects.Group,
     rocks: Rock[],
-    exit: Phaser.GameObjects.Zone,
-    psdfield: Phaser.GameObjects.Image[],
-    exitzone: Phaser.GameObjects.Zone
+    psdfield?: Phaser.GameObjects.GameObject[] | undefined,
+    exitzone: Phaser.GameObjects.Rectangle
 }
 
 export default class PhysicsChecker {
@@ -206,7 +205,7 @@ export default class PhysicsChecker {
         }
 
         this.scene.physics.add.collider( player, wall );
-        this.scene.physics.add.collider( player, rocks, this.handlePlayerRocks, this.checkPlayerRocks, this )
+        this.scene.physics.add.collider( player, rocks, this.handlePlayerRocks)
         this.scene.physics.add.collider( player, exitzone, this.handlePlayerExit)
     }
 
@@ -215,17 +214,13 @@ export default class PhysicsChecker {
     )
     {
         const rocks = b as Rock
+		if(!rocks.isPickable)
+		{
+			return
+		}
 
 		eventsCenter.emit(AUDIO_PLAY_EVENTS.COLLECT)
 		rocks.beingPickedUp()
-    }
-
-    private checkPlayerRocks(
-        a: Phaser.Types.Physics.Arcade.GameObjectWithBody, b: Phaser.Types.Physics.Arcade.GameObjectWithBody
-    )
-    {
-        const rocks = b as Rock
-        return rocks.isPickable
     }
 
     private swarmSelfCheck()

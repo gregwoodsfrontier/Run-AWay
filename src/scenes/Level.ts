@@ -23,6 +23,7 @@ import psdField from "../prefabs/psdField";
 import { GameState } from "../manager/gameState";
 import FollowTarget from "../components/FollowTarget";
 import { EVENTKEYS } from "../types/eventKeys";
+import PhysicsChecker from "../manager/PhysicsChecker";
 /* END-USER-IMPORTS */
 
 export default class Level extends Phaser.Scene {
@@ -373,6 +374,7 @@ export default class Level extends Phaser.Scene {
 	private exitZone!: Phaser.GameObjects.Rectangle;
 	private obstacles!: Rock[];
 	private mudList!: Array<any>;
+	private physicsChecker: PhysicsChecker
 
 	/* START-USER-CODE */
 	public platformer_fun!: Phaser.Tilemaps.Tilemap
@@ -402,22 +404,7 @@ export default class Level extends Phaser.Scene {
 		// this.wall_1.setCollisionByProperty({collides: true})
 
 		this.initObjectPool()
-
-		this.physics.add.collider(this.playerContainer, this.wall_1);
-		this.physics.add.collider(this.playerContainer, this.enemyGroup, this.handlePlayerSwarm, undefined, this)
-
-		//@ts-ignore
-		this.physics.add.collider(this.enemyGroup)
-		this.physics.add.collider(this.enemyGroup, this.wall_1)
-		this.physics.add.collider(this.enemyGroup, this.obstacles)
-		this.physics.add.overlap(this.bulletGroup, this.enemyGroup, this.handleBulletSwarm, undefined, this)
-		this.physics.add.collider(this.bulletGroup, this.wall_1, this.handleBulletWallCollision, undefined, this)
-		this.physics.add.collider(this.bulletGroup, this.obstacles, this.handleBulletRocks, this.checkBulletRocks)
-		this.physics.add.collider(this.playerContainer, this.obstacles, this.handlePlayerRocks)
-
-		this.physics.add.existing(this.exitZone, true)
-		this.physics.add.collider(this.playerContainer, this.exitZone, this.goToChunks)
-
+		
 		this.#destination = SelectionSquare.getComponent(this.playerContainer.player)
 
 		this.events.on(EVENTKEYS.CREATE_BULLETS, this.handleBulletUpdate, this)
@@ -432,6 +419,25 @@ export default class Level extends Phaser.Scene {
 
 		this.playerContainer.setVisible(false)
 		this.playStartLevelAnims()
+
+		const fieldArr = [] as Phaser.GameObjects.GameObject[]
+		this.pSDRobot.innerField?.getAll().forEach(item => {
+			fieldArr.push(item)
+		})
+		this.pSDRobot.outerField?.getAll().forEach(item => {
+			fieldArr.push(item)
+		})
+		// fieldArr.push(this.pSDRobot.innerField?.getAll(), this.pSDRobot.outerField?.getAll())
+
+		this.physicsChecker = new PhysicsChecker(this, {
+			player: this.playerContainer,
+			swarm: this.enemyGroup,
+			wall: this.wall_1,
+			bullets: this.bulletGroup,
+			rocks: this.obstacles,
+			exitzone: this.exitZone,
+			psdfield: fieldArr
+		})
 	}
 
 	update(time: number, delta: number)
@@ -472,12 +478,6 @@ export default class Level extends Phaser.Scene {
 		}
 	}
 
-	private goToChunks()
-	{
-		// console.log('scene key', this.scene.key)
-		eventsCenter.emit(SCENE_SWITCH_EVENTS.GO_YOUSURVIVED, "Level")
-	}
-
 	private RocksPropagator(startx: number, starty: number, endY: number)
 	{
 		const distX = 32
@@ -510,40 +510,6 @@ export default class Level extends Phaser.Scene {
 		// return r
 	}
 
-	private handlePlayerRocks(p: Phaser.Types.Physics.Arcade.GameObjectWithBody, r: Phaser.Types.Physics.Arcade.GameObjectWithBody)
-	{
-		// const player = p.player as PlayerContainer
-		const rocks = r as Rock
-		if(!rocks.isPickable)
-		{
-			return
-		}
-
-		eventsCenter.emit(AUDIO_PLAY_EVENTS.COLLECT)
-		rocks.beingPickedUp()
-	}
-
-	//@ts-ignore
-	private checkBulletRocks(a, b)
-	{
-		const rock = b as Rock
-		return !rock.isPickable
-	}
-
-	//@ts-ignore
-	private handleBulletRocks(a, b)
-	{
-		const bullet = a as Bullet
-		const rock = b as Rock
-
-		bullet.despawn()
-
-		eventsCenter.emit(AUDIO_PLAY_EVENTS.TARGET_HIT)
-		rock.damage(1)
-
-		// rock.destroy()
-	}
-
 	/**
 	 * Spawn a up-going swarm per x, y
 	 */
@@ -557,15 +523,6 @@ export default class Level extends Phaser.Scene {
 			callbackScope: this,
 			args: [x, y]
 		})
-	}
-
-	private handlePlayerSwarm(p: any, e: any)
-	{
-		const enemy = e as Enemy
-		GameState.changeHealthBy(-5)
-
-		eventsCenter.emit(AUDIO_PLAY_EVENTS.TARGET_HIT)
-		enemy.despawn()
 	}
 
 	private createSingleSwarm(x: number, y: number)
@@ -608,57 +565,6 @@ export default class Level extends Phaser.Scene {
 		this.physics.add.collider(this.enemyGroup, this.pSDRobot.innerField.getAll(), this.handleEnemyFieldCollides, undefined, this)
 	}
 
-	//@ts-ignore
-	private handleEnemyFieldCollides(e, f)
-	{
-		// enemy enrages
-		const enemy = e as Enemy
-		const field = f as Phaser.Physics.Arcade.Image
-		const fieldCon = field.parentContainer as psdField
-		const follow = FollowTarget.getComponent(enemy)
-		follow.deactivate()
-		enemy.enrage()
-
-		let ty = 5
-		const t = this.tweens.create({
-			targets: enemy,
-			duration: 200,
-			onStart: () => {
-				enemy.setSMState(ENEMY_STATE_KEYS.IDLE)
-				const b = enemy.body as Phaser.Physics.Arcade.Body
-				b.setVelocity(ty)
-			},
-			onComplete: () => {
-				enemy.setSMState(ENEMY_STATE_KEYS.WALK)
-			}
-		})
-
-
-		fieldCon.damage(enemy.attack)
-		this.time.delayedCall(500, () => {
-			if(field.y < enemy.y)
-			{
-				ty = 4
-				t.play()
-			}
-			else if(field.y > enemy.y)
-			{
-				ty = -4
-				t.play()
-			}
-		})
-
-	}
-
-	//@ts-ignore
-	private enrageEnemy(enemy, field)
-	{
-		const e = enemy as Enemy
-		const follow = FollowTarget.getComponent(e)
-		follow.deactivate()
-		e.enrage()
-	}
-
 	private onStartLevelAnimsComplete()
 	{
 		if(this.playerContainer)
@@ -685,19 +591,6 @@ export default class Level extends Phaser.Scene {
 		this.SwarmGenerator(128, 384, 20, 4000, 2500)
 		this.SwarmGenerator(176, 384, 20, 4000, 1500)
 		this.SwarmGenerator(224, 384, 20, 4000,  500)
-	}
-
-	private handleBulletSwarm(a: Phaser.Types.Physics.Arcade.GameObjectWithBody, b: Phaser.Types.Physics.Arcade.GameObjectWithBody)
-	{
-		const bullet = a as Bullet
-		const enemy = b as Enemy
-		bullet.despawn()
-
-		eventsCenter.emit(AUDIO_PLAY_EVENTS.TARGET_HIT)
-
-		enemy.emit('stay-still')
-		enemy.despawn()
-
 	}
 
 	private playStartLevelAnims()
