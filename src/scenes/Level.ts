@@ -432,31 +432,6 @@ export default class Level extends Phaser.Scene {
 
 		this.playerContainer.setVisible(false)
 		this.playStartLevelAnims()
-
-		/* if(process.env.NODE_ENV !== "development")
-		{
-			this.start_level.once('animationcomplete', () => {
-				this.events.once('resume', this.onStartLevelAnimsComplete, this)
-				eventsCenter.emit(SCENE_SWITCH_EVENTS.TO_EXPLAINER)
-			}, this)
-			this.enemyTeam.forEach(e => {
-				FollowTarget.getComponent(e).deactivate()
-			})
-
-			this.player.setVisible(false)
-			this.playStartLevelAnims()
-
-			// swarm and rock propagator are in onStartLevelAnimsComplete
-			return
-		} */
-
-		// bypass if environment is in development
-		/* this.start_level.setVisible(false).setActive(false)
-		this.onStartLevelAnimsComplete()
-
-		this.SwarmGenerator(80, 384, 5, 3000, 0)
-		this.SwarmGenerator(192, 384, 5, 3000, 1500)
-		this.RocksPropagator(80, -624, 9) */
 	}
 
 	update(time: number, delta: number)
