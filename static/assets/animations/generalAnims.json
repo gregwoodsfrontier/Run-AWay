@@ -179,7 +179,7 @@
             "skipMissedFrames": true
         },
         {
-            "key": "trap-project",
+            "key": "trap-explode",
             "type": "frame",
             "frames": [
                 {

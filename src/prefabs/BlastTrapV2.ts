@@ -17,44 +17,12 @@ export default class BlastTrapV2 extends Phaser.GameObjects.Sprite {
 		thisPhysics.offsetY = 32;
 
 		/* START-USER-CTR-CODE */
-      this.scene.events.once(Phaser.Scenes.Events.UPDATE, this.start, this)
-      this.scene.events.on(Phaser.Scenes.Events.UPDATE, this.update, this)
 		/* END-USER-CTR-CODE */
 	}
 
 	/* START-USER-CODE */
 
 	// Write your code here.
-  start()
-  {
-    this.tweenRed()
-  }
-
-  update()
-  {
-
-  }
-
-  private createProjectiles()
-  {
-    console.log('projectiles in 4 directions')
-  }
-
-  private tweenRed()
-  {
-    const tween = this.scene.tweens.addCounter({
-      from: 255,
-      to: 0,
-      duration: 100,
-      repeat: 5,
-      onUpdate: tween => {
-        const val = Math.floor(tween.getValue())
-        this.setTint(Phaser.Display.Color.GetColor(255, val, val))
-      }
-    })
-
-    tween.once(Phaser.Tweens.Events.TWEEN_COMPLETE, this.createProjectiles, this)
-  }
 
 	/* END-USER-CODE */
 }

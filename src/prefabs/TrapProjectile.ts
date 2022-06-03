@@ -30,6 +30,15 @@ export default class TrapProjectile extends Phaser.GameObjects.Sprite {
 	/* START-USER-CODE */
 
 	// Write your code here.
+	spawn()
+	{
+		
+	}
+
+	despawn()
+	{
+		this.destroy()
+	}
 
 	/* END-USER-CODE */
 }

@@ -6,7 +6,9 @@
 import Phaser from "phaser";
 import BlastTrapV2 from "./BlastTrapV2";
 import TrapProjectile from "./TrapProjectile";
+import Physics from "../components/Physics";
 /* START-USER-IMPORTS */
+import JustMovement from "../components/JustMovement";
 /* END-USER-IMPORTS */
 
 export default class BlastTrapContainer extends Phaser.GameObjects.Container {
@@ -41,18 +43,25 @@ export default class BlastTrapContainer extends Phaser.GameObjects.Container {
 		trapProjectile_down.visible = true;
 		this.add(trapProjectile_down);
 
+		// trapProjectile_up (components)
+		const trapProjectile_upPhysics = Physics.getComponent(trapProjectile_up);
+		trapProjectile_upPhysics.width = 16;
+		trapProjectile_upPhysics.height = 32;
+		trapProjectile_upPhysics.offsetX = 8;
+		trapProjectile_upPhysics.offsetY = 0;
+
+		// trapProjectile_down (components)
+		const trapProjectile_downPhysics = Physics.getComponent(trapProjectile_down);
+		trapProjectile_downPhysics.width = 16;
+		trapProjectile_downPhysics.height = 32;
+		trapProjectile_downPhysics.offsetX = 8;
+		trapProjectile_downPhysics.offsetY = 0;
+
 		this.blastTrapV2 = blastTrapV2;
 		this.trapProjectile_right = trapProjectile_right;
 		this.trapProjectile_up = trapProjectile_up;
 		this.trapProjectile_left = trapProjectile_left;
 		this.trapProjectile_down = trapProjectile_down;
-
-		this.trapProjArr = [
-			this.trapProjectile_down,
-			this.trapProjectile_left,
-			this.trapProjectile_right,
-			this.trapProjectile_up
-		]
 
 		/* START-USER-CTR-CODE */
 		// Write your code here.
@@ -73,15 +82,87 @@ export default class BlastTrapContainer extends Phaser.GameObjects.Container {
 	// Write your code here.
 	start()
 	{
+		this.trapProjArr =[
+			this.trapProjectile_down,
+			this.trapProjectile_up,
+			this.trapProjectile_left,
+			this.trapProjectile_right
+		]
+
+		this.hideAllProjectiles()
+		this.state = 1
+	}
+
+	update()
+	{
+		if(this.state !== 1)
+		{
+			return
+		}
+
+		const testKey = this.scene.input.keyboard.addKey(Phaser.Input.Keyboard.KeyCodes.P)
+
+		if(Phaser.Input.Keyboard.JustUp(testKey))
+		{
+			this.executeTest()
+		}
+	}
+
+	private executeTest()
+	{
+		this.shootProjectiles()
+	}
+
+	private hideAllProjectiles()
+	{
 		this.trapProjArr.forEach(item => {
 			const proj = item as TrapProjectile
 			proj.visible = false
 		})
 	}
 
-	update()
+	private showAllProjectiles()
 	{
+		this.trapProjArr.forEach(item => {
+			const proj = item as TrapProjectile
+			proj.visible = true
+		})
+	}
 
+	private shootProjectiles()
+	{
+		this.blastTrapV2.play('trap-explode')
+
+		this.showAllProjectiles()
+
+		const down = JustMovement.getComponent(this.trapProjectile_down)
+		down.moveDown()
+
+		const up = JustMovement.getComponent(this.trapProjectile_up)
+		up.moveUp()
+
+		const left = JustMovement.getComponent(this.trapProjectile_left)
+		left.moveLeft()
+
+		const right = JustMovement.getComponent(this.trapProjectile_right)
+		right.moveRight()
+
+	}
+
+	private tweenRed()
+	{
+		const tween = this.scene.tweens.addCounter({
+		from: 255,
+		to: 0,
+		duration: 100,
+		repeat: 5,
+		onUpdate: tween => {
+			const val = Math.floor(tween.getValue())
+			this.blastTrapV2.setTint(Phaser.Display.Color.GetColor(255, val, val))
+		}
+		})
+
+		tween.once(Phaser.Tweens.Events.TWEEN_COMPLETE, this.shootProjectiles, this)
 	}
 
 	/* END-USER-CODE */
