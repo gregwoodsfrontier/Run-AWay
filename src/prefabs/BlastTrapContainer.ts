@@ -9,6 +9,7 @@ import TrapProjectile from "./TrapProjectile";
 import Physics from "../components/Physics";
 /* START-USER-IMPORTS */
 import JustMovement from "../components/JustMovement";
+import { EVENTKEYS } from "../types/eventKeys";
 /* END-USER-IMPORTS */
 
 export default class BlastTrapContainer extends Phaser.GameObjects.Container {
@@ -26,7 +27,7 @@ export default class BlastTrapContainer extends Phaser.GameObjects.Container {
 		this.add(trapProjectile_right);
 
 		// trapProjectile_up
-		const trapProjectile_up = new TrapProjectile(scene, 0, -16);
+		const trapProjectile_up = new TrapProjectile(scene, 0, -32);
 		trapProjectile_up.angle = -90;
 		trapProjectile_up.visible = true;
 		this.add(trapProjectile_up);
@@ -111,6 +112,7 @@ export default class BlastTrapContainer extends Phaser.GameObjects.Container {
 	private executeTest()
 	{
 		this.shootProjectiles()
+		this.emitShootEvents()
 	}
 
 	private hideAllProjectiles()
@@ -127,6 +129,14 @@ export default class BlastTrapContainer extends Phaser.GameObjects.Container {
 			const proj = item as TrapProjectile
 			proj.visible = true
 		})
+	}
+
+	private emitShootEvents()
+	{
+		this.trapProjArr.forEach(item => {
+			this.scene.events.emit(EVENTKEYS.GEN_TRAP_PROJECTILE, item)
+		})
+		
 	}
 
 	private shootProjectiles()

@@ -14,6 +14,34 @@
     },
     "displayList": [
         {
+            "type": "TilemapLayer",
+            "id": "cdb64216-6ea0-44aa-b705-df6eb2bd9b22",
+            "label": "floor_1",
+            "scope": "CLASS",
+            "components": [],
+            "y": -960,
+            "tilemapId": "2666579a-03f9-49f7-8b2e-dd9cd7ef8c88",
+            "layerName": "floor",
+            "tilesets": [
+                "gamedevjs-cave-tileset-1"
+            ]
+        },
+        {
+            "type": "TilemapLayer",
+            "id": "3527abbc-f158-4e23-8185-48385190550f",
+            "label": "wall_1",
+            "scope": "CLASS",
+            "components": [
+                "TileMapLayerPhysics"
+            ],
+            "y": -960,
+            "tilemapId": "2666579a-03f9-49f7-8b2e-dd9cd7ef8c88",
+            "layerName": "wall",
+            "tilesets": [
+                "gamedevjs-cave-tileset-1"
+            ]
+        },
+        {
             "type": "Layer",
             "id": "88d3467b-679c-4d28-9cbe-4c5e27094088",
             "label": "starting",
@@ -32,34 +60,6 @@
                     },
                     "x": 160,
                     "y": -976
-                },
-                {
-                    "type": "TilemapLayer",
-                    "id": "3cb32ef7-9d34-4243-b050-f51e961d2b80",
-                    "label": "floor_1",
-                    "scope": "CLASS",
-                    "components": [],
-                    "y": -960,
-                    "tilemapId": "2666579a-03f9-49f7-8b2e-dd9cd7ef8c88",
-                    "layerName": "floor",
-                    "tilesets": [
-                        "gamedevjs-cave-tileset-1"
-                    ]
-                },
-                {
-                    "type": "TilemapLayer",
-                    "id": "65d66230-55e4-487b-9960-a35c714369d2",
-                    "label": "wall_1",
-                    "scope": "CLASS",
-                    "components": [
-                        "TileMapLayerPhysics"
-                    ],
-                    "y": -960,
-                    "tilemapId": "2666579a-03f9-49f7-8b2e-dd9cd7ef8c88",
-                    "layerName": "wall",
-                    "tilesets": [
-                        "gamedevjs-cave-tileset-1"
-                    ]
                 },
                 {
                     "prefabId": "792be592-4edd-40b5-9eaa-2c4b650603a0",
@@ -618,6 +618,19 @@
                     "isFilled": true,
                     "width": 192,
                     "height": 32
+                },
+                {
+                    "prefabId": "b85115a8-992d-4ce0-91bd-d3f4294eac09",
+                    "id": "eeec3ad1-1739-499c-be70-5ef4288a7d4e",
+                    "unlock": [
+                        "x",
+                        "y"
+                    ],
+                    "label": "blastTrapContainer",
+                    "components": [],
+                    "x": 160,
+                    "y": 240,
+                    "nestedPrefabs": []
                 }
             ]
         },

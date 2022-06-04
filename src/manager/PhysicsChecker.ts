@@ -9,6 +9,7 @@ import PSDField from "../prefabs/psdField";
 import FollowTarget from "../components/FollowTarget";
 import { ENEMY_STATE_KEYS } from "../types/enemyStateKeys";
 import { SCENE_SWITCH_EVENTS } from "../types/scenes";
+import TrapProjectile from "../prefabs/TrapProjectile";
 
 export interface IDataInput {
     player: PlayerContainer,
@@ -17,7 +18,8 @@ export interface IDataInput {
     bullets: Phaser.GameObjects.Group,
     rocks: Rock[],
     psdfield: Phaser.GameObjects.GameObject[] | undefined,
-    exitzone: Phaser.GameObjects.Rectangle
+    exitzone: Phaser.GameObjects.Rectangle,
+    trapProj?: Phaser.GameObjects.Group
 }
 
 export default class PhysicsChecker {
@@ -38,6 +40,29 @@ export default class PhysicsChecker {
         this.swarmPSDField()
 
         this.bulletPairCheck()
+
+        this.trapProjWall()
+    }
+
+    private trapProjWall()
+    {
+        const { trapProj, wall, rocks }= this.data
+
+        if(!trapProj)
+        {
+            console.error('trap projectile group is undefined in PhysicsChecker')
+            return
+        }
+
+        this.scene.physics.add.collider(trapProj, wall, (a, b) => {
+            const trap_Proj = a as TrapProjectile
+            trap_Proj.despawn()
+        })
+
+        this.scene.physics.add.collider(trapProj, rocks, (a, b) => {
+            const trap_Proj = a as TrapProjectile
+            trap_Proj.despawn()
+        })
     }
 
     private handlePlayerExit()

@@ -3,9 +3,10 @@
 /* START OF COMPILED CODE */
 
 import Phaser from "phaser";
-import DepthSortY from "../components/DepthSortY";
 import TileMapLayerPhysics from "../components/TileMapLayerPhysics";
+import DepthSortY from "../components/DepthSortY";
 import Rock from "../prefabs/Rock";
+import BlastTrapContainer from "../prefabs/BlastTrapContainer";
 import PlayerContainer from "../prefabs/PlayerContainer";
 import PSD from "../prefabs/PSD";
 /* START-USER-IMPORTS */
@@ -15,15 +16,13 @@ import Bullet from "../prefabs/Bullet";
 import JustMovement from "../components/JustMovement";
 import SelectionSquare from "../components/SelectionSquare";
 import KeyboardInput from "../components/KeyboardInput";
-import { PSD_STATES } from "../types/PSD";
 import eventsCenter from "../EventsCenter";
 import { AUDIO_PLAY_EVENTS, SCENE_SWITCH_EVENTS } from "../types/scenes";
-import { ENEMY_STATE_KEYS } from "../types/enemyStateKeys";
-import psdField from "../prefabs/psdField";
 import { GameState } from "../manager/gameState";
 import FollowTarget from "../components/FollowTarget";
 import { EVENTKEYS } from "../types/eventKeys";
 import PhysicsChecker from "../manager/PhysicsChecker";
+import TrapProjectile from "../prefabs/TrapProjectile";
 /* END-USER-IMPORTS */
 
 export default class Level extends Phaser.Scene {
@@ -43,20 +42,18 @@ export default class Level extends Phaser.Scene {
 		const cave_test_map_2 = this.add.tilemap("cave-test-map-2");
 		cave_test_map_2.addTilesetImage("gamedevjs-cave-tileset-1", "cave-test-tileset-1");
 
+		// floor_1
+		const floor_1 = cave_test_map_2.createLayer("floor", ["gamedevjs-cave-tileset-1"], 0, -960);
+
+		// wall_1
+		const wall_1 = cave_test_map_2.createLayer("wall", ["gamedevjs-cave-tileset-1"], 0, -960);
+
 		// starting
 		const starting = this.add.layer();
 
 		// endTunnel_Wide
 		const endTunnel_Wide = this.add.sprite(160, -976, "EndTunnel - Wide");
 		starting.add(endTunnel_Wide);
-
-		// floor_1
-		const floor_1 = cave_test_map_2.createLayer("floor", ["gamedevjs-cave-tileset-1"], 0, -960);
-		starting.add(floor_1);
-
-		// wall_1
-		const wall_1 = cave_test_map_2.createLayer("wall", ["gamedevjs-cave-tileset-1"], 0, -960);
-		starting.add(wall_1);
 
 		// rock_1
 		const rock_1 = new Rock(this, 80, 32);
@@ -221,6 +218,10 @@ export default class Level extends Phaser.Scene {
 		exitZone.isFilled = true;
 		starting.add(exitZone);
 
+		// blastTrapContainer
+		const blastTrapContainer = new BlastTrapContainer(this, 160, 240);
+		starting.add(blastTrapContainer);
+
 		// playerContainer
 		const playerContainer = new PlayerContainer(this, 160, 160);
 		this.add.existing(playerContainer);
@@ -236,11 +237,11 @@ export default class Level extends Phaser.Scene {
 		const obstacles = [rock_38, rock_37, rock_36, rock_35, rock_34, rock_33, rock_32, rock_31, rock_30, rock_29, rock_26, rock_28, rock_27, rock_25, rock_24, rock_23, rock_22, rock_21, rock_20, rock_19, rock_18, rock_17, rock_16, rock_15, rock_14, rock_13, rock_12, rock_11, rock_10, rock_9, rock_8, rock_7, rock_6, rock_5, rock_4, rock_3, rock_2, rock, rock_1];
 		const mudList: Array<any> = [];
 
-		// endTunnel_Wide (components)
-		new DepthSortY(endTunnel_Wide);
-
 		// wall_1 (components)
 		new TileMapLayerPhysics(wall_1);
+
+		// endTunnel_Wide (components)
+		new DepthSortY(endTunnel_Wide);
 
 		// rock (prefab fields)
 		rock.rawType = 2;
@@ -338,9 +339,9 @@ export default class Level extends Phaser.Scene {
 		// rock_37 (prefab fields)
 		rock_37.rawType = 2;
 
-		this.starting = starting;
 		this.floor_1 = floor_1;
 		this.wall_1 = wall_1;
+		this.starting = starting;
 		this.rock_1 = rock_1;
 		this.rock = rock;
 		this.rock_5 = rock_5;
@@ -363,9 +364,9 @@ export default class Level extends Phaser.Scene {
 		this.events.emit("scene-awake");
 	}
 
-	private starting!: Phaser.GameObjects.Layer;
 	private floor_1!: Phaser.Tilemaps.TilemapLayer;
 	private wall_1!: Phaser.Tilemaps.TilemapLayer;
+	private starting!: Phaser.GameObjects.Layer;
 	private rock_1!: Rock;
 	private rock!: Rock;
 	private rock_5!: Rock;
@@ -391,6 +392,7 @@ export default class Level extends Phaser.Scene {
 	// Write your code here
 	bulletGroup!: Phaser.GameObjects.Group
 	enemyGroup!: Phaser.GameObjects.Group
+	trapProjGroup!: Phaser.GameObjects.Group
 	private physicsChecker!: PhysicsChecker
 
 	lastfired = 0
@@ -419,7 +421,8 @@ export default class Level extends Phaser.Scene {
 		this.events.on(EVENTKEYS.CREATE_BULLETS, this.handleBulletUpdate, this)
 		this.events.on(EVENTKEYS.DEPLOY_PSD, this.deployPSD, this)
 		this.events.on(EVENTKEYS.TAKEBACK_PSD, this.takeBackPSD, this)
-		this.events.on(EVENTKEYS.GEN_PSD_FIELD, this.addColliderEnemyField, this)
+		this.events.on(EVENTKEYS.GEN_TRAP_PROJECTILE, this.addTrapProj, this)
+		// this.events.on(EVENTKEYS.GEN_PSD_FIELD, this.addColliderEnemyField, this)
 
 		this.start_level.once('animationcomplete', () => {
 			this.events.once('resume', this.onStartLevelAnimsComplete, this)
@@ -445,7 +448,8 @@ export default class Level extends Phaser.Scene {
 			bullets: this.bulletGroup,
 			rocks: this.obstacles,
 			exitzone: this.exitZone,
-			psdfield: fieldArr
+			psdfield: fieldArr,
+			trapProj: this.trapProjGroup
 		})
 	}
 
@@ -454,6 +458,67 @@ export default class Level extends Phaser.Scene {
 		this.handleDepthSort()
 		this.checkForGameOver()
 	}
+
+	// private genTrapProjectile(trapx: number, trapy: number)
+	// {
+	// 	const pos = [
+	// 		{x: 0, y: -32}, 
+	// 		{x:  -32, y: 0}, 
+	// 		{x: 0, y: 32}, 
+	// 		{x: 32, y: 0}, 
+	// 	]
+
+	// 	const physData = [
+	// 		{
+	// 			width: 16,
+	// 			height: 32,
+	// 			offsetX: 8,
+	// 			offsetY: 0
+	// 		},
+	// 		{
+	// 			width: 32,
+	// 			height: 16,
+	// 			offsetX: 0,
+	// 			offsetY: 8
+	// 		}
+	// 	]
+
+	// 	for(let i = 0; i < pos.length; i++)
+	// 	{
+	// 		const proj = this.trapProjGroup.create(trapx + pos[i].x, trapy + pos[i].y) as TrapProjectile
+
+	// 		const justMove = JustMovement.getComponent(proj)
+	// 		justMove.speed = 100
+	// 		switch(i) {
+	// 			case DIRECTION.BACK: {
+	// 				proj.setPhysicsData(physData[0])
+	// 				proj.angle = -90;
+	// 				justMove.moveUp();
+	// 				break;
+	// 			}
+	// 			case DIRECTION.LEFT: {
+	// 				proj.setPhysicsData(physData[1])
+	// 				proj.angle = 180;
+	// 				proj.flipY = true
+	// 				justMove.moveLeft();
+	// 				break;
+	// 			}
+	// 			case DIRECTION.FRONT: {
+	// 				proj.setPhysicsData(physData[0])
+	// 				proj.angle = 90;
+	// 				proj.flipY = true
+	// 				justMove.moveDown();
+	// 				break;
+	// 			}
+	// 			case DIRECTION.RIGHT: {
+	// 				proj.setPhysicsData(physData[1])
+	// 				proj.angle = 0;
+	// 				justMove.moveRight();
+	// 				break;
+	// 			}
+	// 		}
+	// 	}
+	// }
 
 	private checkForGameOver()
 	{
@@ -564,7 +629,7 @@ export default class Level extends Phaser.Scene {
 	 * Spawns more swarm that goes
 	 */
 
-	private addColliderEnemyField()
+	/* private addColliderEnemyField()
 	{
 		if(!this.pSDRobot.outerField || !this.pSDRobot.innerField)
 		{
@@ -572,7 +637,7 @@ export default class Level extends Phaser.Scene {
 		}
 		this.physics.add.collider(this.enemyGroup, this.pSDRobot.outerField.getAll(), this.handleEnemyFieldCollides, undefined, this)
 		this.physics.add.collider(this.enemyGroup, this.pSDRobot.innerField.getAll(), this.handleEnemyFieldCollides, undefined, this)
-	}
+	} */
 
 	private onStartLevelAnimsComplete()
 	{
@@ -653,6 +718,10 @@ export default class Level extends Phaser.Scene {
 		return Phaser.Geom.Intersects.RectangleToRectangle(checkRect, PSDRect)
 	}
 
+	private addTrapProj(proj: TrapProjectile)
+	{
+		this.trapProjGroup.add(proj)
+	}
 
 	private handleBulletUpdate(dir: number)
 	{
@@ -675,6 +744,12 @@ export default class Level extends Phaser.Scene {
 
 	private initObjectPool()
 	{
+		this.trapProjGroup = this.add.group({
+			classType: TrapProjectile,
+			maxSize: 50,
+			runChildUpdate: true
+		})
+
 		this.bulletGroup = this.add.group({
 			classType: Bullet,
 			maxSize: 50,

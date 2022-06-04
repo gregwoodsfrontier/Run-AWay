@@ -7,6 +7,12 @@ import Phaser from "phaser";
 import Physics from "../components/Physics";
 import JustMovement from "../components/JustMovement";
 /* START-USER-IMPORTS */
+export interface IPhysicsComp {
+	width: number,
+	height: number,
+	offsetX: number,
+	offsetY: number
+}
 /* END-USER-IMPORTS */
 
 export default class TrapProjectile extends Phaser.GameObjects.Sprite {
@@ -28,6 +34,20 @@ export default class TrapProjectile extends Phaser.GameObjects.Sprite {
 	}
 
 	/* START-USER-CODE */
+	setPhysicsData(data: IPhysicsComp)
+	{
+		const thisPhysics = new Physics(this);
+		thisPhysics.width = data.width
+		thisPhysics.height = data.height
+		thisPhysics.offsetX = data.offsetX
+		thisPhysics.offsetY = data.offsetY
+	}
+
+	setMovementSpeed(spd: number)
+	{
+		const thisJustMovement = new JustMovement(this);
+		thisJustMovement.speed = spd;
+	}
 
 	// Write your code here.
 	despawn()

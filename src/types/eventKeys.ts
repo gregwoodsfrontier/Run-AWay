@@ -4,5 +4,6 @@ export enum EVENTKEYS {
     TAKEBACK_PSD = 'takeback-psd',
     GEN_PSD_FIELD = 'gen-psd-field',
     PLAYER_RECOVER = 'player-recover-psd',
-    PSD_FULLY_SHUTDOWN = 'psd-fully-shutdown'
+    PSD_FULLY_SHUTDOWN = 'psd-fully-shutdown',
+    GEN_TRAP_PROJECTILE = 'gen-trap-projectile'
 }

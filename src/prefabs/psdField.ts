@@ -2,8 +2,6 @@
 // You can write more code here
 
 /* START OF COMPILED CODE */
-
-import { SAT } from "matter";
 import Phaser from "phaser";
 import Physics from "../components/Physics";
 import { GameState } from "../manager/gameState";
