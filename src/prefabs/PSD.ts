@@ -10,8 +10,8 @@ import eventsCenter from "../EventsCenter";
 import { GameState } from "../manager/gameState";
 import StateMachine from "../stateMachine";
 import { AUDIO_PLAY_EVENTS } from "../types/scenes";
-import psdField from "./psdField";
-import { PSD_STATES, DEPLOY_PSD_STATES } from "../types/PSD";
+import PSDField from "./psdField";
+import { DEPLOY_PSD_STATES } from "../types/PSD";
 import { EVENTKEYS } from "../types/eventKeys";
 /* END-USER-IMPORTS */
 
@@ -36,6 +36,14 @@ export default class PSD extends Phaser.GameObjects.Sprite {
 			onEnter: this.onDeployEnter
 		})
 		.setState(DEPLOY_PSD_STATES.BACKPACK)
+
+		// this.innerField = new PSDField(this.scene, this.x - 16, this.y - 16)
+		this.innerField = new PSDField(this.scene, -200, 0)
+		this.innerField.makeNextLevel(1)
+		
+		// this.outerField = new PSDField(this.scene, this.x - 16, this.y - 16)
+		this.outerField = new PSDField(this.scene, -200, 0)
+		this.outerField.makeNextLevel(3)
 		/* END-USER-CTR-CODE */
 	}
 
@@ -44,8 +52,8 @@ export default class PSD extends Phaser.GameObjects.Sprite {
 
 	/* START-USER-CODE */
 	public stateMachine: StateMachine
-	public innerField?: psdField
-	public outerField?: psdField
+	public innerField?: PSDField
+	public outerField?: PSDField
 	// Write your code here.
 	public deploy()
 	{
@@ -81,8 +89,10 @@ export default class PSD extends Phaser.GameObjects.Sprite {
 
 	private clearAllField()
 	{
-		this.innerField?.clearField()
-		this.outerField?.clearField()
+		// this.innerField?.clearField()
+		// this.outerField?.clearField()
+		this.innerField?.setPosition(-200, 0)
+		this.outerField?.setPosition(-200, 0)
 	}
 
 	private generateField()
@@ -95,17 +105,14 @@ export default class PSD extends Phaser.GameObjects.Sprite {
 		{
 			console.error('can only deploy inner field')
 			eventsCenter.emit(AUDIO_PLAY_EVENTS.FIELD_START)
-			this.innerField = new psdField(this.scene, this.x - 16, this.y - 16)
-			this.innerField.makeNextLevel(1)
+			this.innerField?.setPosition(this.x - 16, this.y -16)
 			return
 		}
 		else
 		{
 			eventsCenter.emit(AUDIO_PLAY_EVENTS.FIELD_START)
-			this.innerField = new psdField(this.scene, this.x - 16, this.y - 16)
-			this.innerField.makeNextLevel(1)
-			this.outerField = new psdField(this.scene, this.x - 16, this.y - 16)
-			this.outerField.makeNextLevel(3)
+			this.innerField?.setPosition(this.x - 16, this.y -16)
+			this.outerField?.setPosition(this.x - 16, this.y -16)
 		}
 	}
 

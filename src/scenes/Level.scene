@@ -14,44 +14,611 @@
     },
     "displayList": [
         {
-            "type": "Sprite",
-            "id": "e2b765f8-af5d-486f-a3be-74d1f5eaa4a3",
-            "label": "endTunnel___Wide",
-            "components": [
-                "DepthSortY"
-            ],
-            "texture": {
-                "key": "EndTunnel - Wide"
-            },
-            "x": 160,
-            "y": -976
-        },
-        {
-            "type": "TilemapLayer",
-            "id": "3cb32ef7-9d34-4243-b050-f51e961d2b80",
-            "label": "floor_1",
+            "type": "Layer",
+            "id": "88d3467b-679c-4d28-9cbe-4c5e27094088",
+            "label": "starting",
             "scope": "CLASS",
             "components": [],
-            "y": -960,
-            "tilemapId": "2666579a-03f9-49f7-8b2e-dd9cd7ef8c88",
-            "layerName": "floor",
-            "tilesets": [
-                "gamedevjs-cave-tileset-1"
-            ]
-        },
-        {
-            "type": "TilemapLayer",
-            "id": "65d66230-55e4-487b-9960-a35c714369d2",
-            "label": "wall_1",
-            "scope": "CLASS",
-            "components": [
-                "TileMapLayerPhysics"
-            ],
-            "y": -960,
-            "tilemapId": "2666579a-03f9-49f7-8b2e-dd9cd7ef8c88",
-            "layerName": "wall",
-            "tilesets": [
-                "gamedevjs-cave-tileset-1"
+            "list": [
+                {
+                    "type": "Sprite",
+                    "id": "e2b765f8-af5d-486f-a3be-74d1f5eaa4a3",
+                    "label": "endTunnel_Wide",
+                    "components": [
+                        "DepthSortY"
+                    ],
+                    "texture": {
+                        "key": "EndTunnel - Wide"
+                    },
+                    "x": 160,
+                    "y": -976
+                },
+                {
+                    "type": "TilemapLayer",
+                    "id": "3cb32ef7-9d34-4243-b050-f51e961d2b80",
+                    "label": "floor_1",
+                    "scope": "CLASS",
+                    "components": [],
+                    "y": -960,
+                    "tilemapId": "2666579a-03f9-49f7-8b2e-dd9cd7ef8c88",
+                    "layerName": "floor",
+                    "tilesets": [
+                        "gamedevjs-cave-tileset-1"
+                    ]
+                },
+                {
+                    "type": "TilemapLayer",
+                    "id": "65d66230-55e4-487b-9960-a35c714369d2",
+                    "label": "wall_1",
+                    "scope": "CLASS",
+                    "components": [
+                        "TileMapLayerPhysics"
+                    ],
+                    "y": -960,
+                    "tilemapId": "2666579a-03f9-49f7-8b2e-dd9cd7ef8c88",
+                    "layerName": "wall",
+                    "tilesets": [
+                        "gamedevjs-cave-tileset-1"
+                    ]
+                },
+                {
+                    "prefabId": "792be592-4edd-40b5-9eaa-2c4b650603a0",
+                    "id": "c955acd6-0c66-4048-abda-45868cc57180",
+                    "unlock": [
+                        "x",
+                        "y"
+                    ],
+                    "label": "rock_1",
+                    "scope": "CLASS",
+                    "components": [],
+                    "x": 80,
+                    "y": 32
+                },
+                {
+                    "prefabId": "792be592-4edd-40b5-9eaa-2c4b650603a0",
+                    "id": "e3c424a0-c940-4986-af4a-451588ec5d24",
+                    "unlock": [
+                        "x",
+                        "y",
+                        "rawType"
+                    ],
+                    "label": "rock",
+                    "scope": "CLASS",
+                    "rawType": 2,
+                    "components": [],
+                    "x": 176,
+                    "y": 32
+                },
+                {
+                    "prefabId": "792be592-4edd-40b5-9eaa-2c4b650603a0",
+                    "id": "2fc1ecd1-3404-4190-b8a6-9c0c3481f48b",
+                    "unlock": [
+                        "x",
+                        "y",
+                        "rawType"
+                    ],
+                    "label": "rock_2",
+                    "rawType": 2,
+                    "components": [],
+                    "x": 144,
+                    "y": 0
+                },
+                {
+                    "prefabId": "792be592-4edd-40b5-9eaa-2c4b650603a0",
+                    "id": "981f2479-76dc-44fe-a421-49c9b0b19ed1",
+                    "unlock": [
+                        "x",
+                        "y",
+                        "rawType"
+                    ],
+                    "label": "rock_3",
+                    "rawType": 1,
+                    "components": [],
+                    "x": 112,
+                    "y": 32
+                },
+                {
+                    "prefabId": "792be592-4edd-40b5-9eaa-2c4b650603a0",
+                    "id": "0488a1e6-4396-4268-895f-4b50e5af7c9a",
+                    "unlock": [
+                        "x",
+                        "y"
+                    ],
+                    "label": "rock_4",
+                    "components": [],
+                    "x": 208,
+                    "y": 0
+                },
+                {
+                    "prefabId": "792be592-4edd-40b5-9eaa-2c4b650603a0",
+                    "id": "ce9f73a4-765d-40b0-ae7a-6a28a84d5ceb",
+                    "unlock": [
+                        "x",
+                        "y",
+                        "rawType"
+                    ],
+                    "label": "rock_5",
+                    "scope": "CLASS",
+                    "rawType": 1,
+                    "components": [],
+                    "x": 80,
+                    "y": -32
+                },
+                {
+                    "prefabId": "792be592-4edd-40b5-9eaa-2c4b650603a0",
+                    "id": "6b5d1272-77d4-4ff4-b54f-b81d2410e901",
+                    "unlock": [
+                        "x",
+                        "y"
+                    ],
+                    "label": "rock_6",
+                    "components": [],
+                    "x": 208,
+                    "y": -80
+                },
+                {
+                    "prefabId": "792be592-4edd-40b5-9eaa-2c4b650603a0",
+                    "id": "17656a9d-83e5-4df3-9214-8287ab41b78d",
+                    "unlock": [
+                        "x",
+                        "y",
+                        "rawType"
+                    ],
+                    "label": "rock_7",
+                    "rawType": 2,
+                    "components": [],
+                    "x": 112,
+                    "y": -80
+                },
+                {
+                    "prefabId": "792be592-4edd-40b5-9eaa-2c4b650603a0",
+                    "id": "36485946-98b2-48fa-884d-ce3dd85b4bed",
+                    "unlock": [
+                        "x",
+                        "y",
+                        "rawType"
+                    ],
+                    "label": "rock_8",
+                    "rawType": 2,
+                    "components": [],
+                    "x": 144,
+                    "y": -32
+                },
+                {
+                    "prefabId": "792be592-4edd-40b5-9eaa-2c4b650603a0",
+                    "id": "fdf51e00-dd38-4b46-80d6-b4ffa00119ee",
+                    "unlock": [
+                        "x",
+                        "y",
+                        "rawType"
+                    ],
+                    "label": "rock_9",
+                    "scope": "CLASS",
+                    "rawType": 3,
+                    "components": [],
+                    "x": 176,
+                    "y": -112
+                },
+                {
+                    "prefabId": "792be592-4edd-40b5-9eaa-2c4b650603a0",
+                    "id": "431b99be-94e7-488f-94ef-677e7b79aed3",
+                    "unlock": [
+                        "x",
+                        "y",
+                        "rawType"
+                    ],
+                    "label": "rock_10",
+                    "scope": "CLASS",
+                    "rawType": 2,
+                    "components": [],
+                    "x": 80,
+                    "y": -192
+                },
+                {
+                    "prefabId": "792be592-4edd-40b5-9eaa-2c4b650603a0",
+                    "id": "cb597992-cd40-48a3-ab73-37008b1236ca",
+                    "unlock": [
+                        "x",
+                        "y",
+                        "rawType"
+                    ],
+                    "label": "rock_11",
+                    "rawType": 2,
+                    "components": [],
+                    "x": 208,
+                    "y": -160
+                },
+                {
+                    "prefabId": "792be592-4edd-40b5-9eaa-2c4b650603a0",
+                    "id": "8e4cb2ea-a9b8-40fd-bf66-6a88a4b8f4ce",
+                    "unlock": [
+                        "x",
+                        "y",
+                        "rawType"
+                    ],
+                    "label": "rock_12",
+                    "rawType": 1,
+                    "components": [],
+                    "x": 112,
+                    "y": -144
+                },
+                {
+                    "prefabId": "792be592-4edd-40b5-9eaa-2c4b650603a0",
+                    "id": "016a9e14-80aa-4951-8e8f-9deef78f5f55",
+                    "unlock": [
+                        "x",
+                        "y",
+                        "rawType"
+                    ],
+                    "label": "rock_13",
+                    "rawType": 2,
+                    "components": [],
+                    "x": 144,
+                    "y": -176
+                },
+                {
+                    "prefabId": "792be592-4edd-40b5-9eaa-2c4b650603a0",
+                    "id": "6b72b9c9-ac18-4662-9bef-77fb4a57aceb",
+                    "unlock": [
+                        "x",
+                        "y",
+                        "rawType"
+                    ],
+                    "label": "rock_14",
+                    "scope": "CLASS",
+                    "rawType": 2,
+                    "components": [],
+                    "x": 176,
+                    "y": -224
+                },
+                {
+                    "prefabId": "792be592-4edd-40b5-9eaa-2c4b650603a0",
+                    "id": "94792968-56f6-4fa0-9f81-4f8ef15ff5da",
+                    "unlock": [
+                        "x",
+                        "y",
+                        "rawType"
+                    ],
+                    "label": "rock_15",
+                    "scope": "CLASS",
+                    "rawType": 2,
+                    "components": [],
+                    "x": 80,
+                    "y": -272
+                },
+                {
+                    "prefabId": "792be592-4edd-40b5-9eaa-2c4b650603a0",
+                    "id": "4b9b2b0b-0b62-41f1-9104-222f647ba2ad",
+                    "unlock": [
+                        "x",
+                        "y"
+                    ],
+                    "label": "rock_16",
+                    "components": [],
+                    "x": 208,
+                    "y": -368
+                },
+                {
+                    "prefabId": "792be592-4edd-40b5-9eaa-2c4b650603a0",
+                    "id": "89182cfd-67f4-46e0-a629-04293966bd7f",
+                    "unlock": [
+                        "x",
+                        "y",
+                        "rawType"
+                    ],
+                    "label": "rock_17",
+                    "rawType": 2,
+                    "components": [],
+                    "x": 112,
+                    "y": -320
+                },
+                {
+                    "prefabId": "792be592-4edd-40b5-9eaa-2c4b650603a0",
+                    "id": "1492392b-319a-43f6-acde-7bed1f5a8521",
+                    "unlock": [
+                        "x",
+                        "y",
+                        "rawType"
+                    ],
+                    "label": "rock_18",
+                    "rawType": 2,
+                    "components": [],
+                    "x": 144,
+                    "y": -368
+                },
+                {
+                    "prefabId": "792be592-4edd-40b5-9eaa-2c4b650603a0",
+                    "id": "25231832-c752-48a7-91cf-23172fb232ba",
+                    "unlock": [
+                        "x",
+                        "y",
+                        "rawType"
+                    ],
+                    "label": "rock_19",
+                    "scope": "CLASS",
+                    "rawType": 1,
+                    "components": [],
+                    "x": 176,
+                    "y": -304
+                },
+                {
+                    "prefabId": "792be592-4edd-40b5-9eaa-2c4b650603a0",
+                    "id": "451c919c-f1bf-4440-ba00-55f5ff5fd3e5",
+                    "unlock": [
+                        "x",
+                        "y",
+                        "rawType"
+                    ],
+                    "label": "rock_20",
+                    "rawType": 2,
+                    "components": [],
+                    "x": 176,
+                    "y": -400
+                },
+                {
+                    "prefabId": "792be592-4edd-40b5-9eaa-2c4b650603a0",
+                    "id": "5f6960fe-8332-432a-925f-217f56305498",
+                    "unlock": [
+                        "x",
+                        "y",
+                        "rawType"
+                    ],
+                    "label": "rock_21",
+                    "scope": "CLASS",
+                    "rawType": 1,
+                    "components": [],
+                    "x": 80,
+                    "y": -592
+                },
+                {
+                    "prefabId": "792be592-4edd-40b5-9eaa-2c4b650603a0",
+                    "id": "09d7ee76-9d39-4437-afcb-c2995ba3cc72",
+                    "unlock": [
+                        "x",
+                        "y"
+                    ],
+                    "label": "rock_22",
+                    "scope": "CLASS",
+                    "components": [],
+                    "x": 80,
+                    "y": -384
+                },
+                {
+                    "prefabId": "792be592-4edd-40b5-9eaa-2c4b650603a0",
+                    "id": "5b4cc728-d4d8-4963-be0c-33e5c15ea01b",
+                    "unlock": [
+                        "x",
+                        "y",
+                        "rawType"
+                    ],
+                    "label": "rock_23",
+                    "rawType": 2,
+                    "components": [],
+                    "x": 112,
+                    "y": -432
+                },
+                {
+                    "prefabId": "792be592-4edd-40b5-9eaa-2c4b650603a0",
+                    "id": "7b460f8a-1898-4a84-8c29-b14974d8af64",
+                    "unlock": [
+                        "x",
+                        "y",
+                        "rawType"
+                    ],
+                    "label": "rock_24",
+                    "rawType": 2,
+                    "components": [],
+                    "x": 80,
+                    "y": -464
+                },
+                {
+                    "prefabId": "792be592-4edd-40b5-9eaa-2c4b650603a0",
+                    "id": "f73360ae-1aa1-4064-99d1-f4cae5e964b8",
+                    "unlock": [
+                        "x",
+                        "y",
+                        "rawType"
+                    ],
+                    "label": "rock_25",
+                    "rawType": 2,
+                    "components": [],
+                    "x": 144,
+                    "y": -480
+                },
+                {
+                    "prefabId": "792be592-4edd-40b5-9eaa-2c4b650603a0",
+                    "id": "070eec44-3404-4d0d-a6bc-e53072bce36f",
+                    "unlock": [
+                        "x",
+                        "y",
+                        "rawType"
+                    ],
+                    "label": "rock_27",
+                    "scope": "CLASS",
+                    "rawType": 1,
+                    "components": [],
+                    "x": 176,
+                    "y": -448
+                },
+                {
+                    "prefabId": "792be592-4edd-40b5-9eaa-2c4b650603a0",
+                    "id": "617e2c9a-2f12-4e22-9e85-ed6e9adf5e02",
+                    "unlock": [
+                        "x",
+                        "y",
+                        "rawType"
+                    ],
+                    "label": "rock_28",
+                    "rawType": 1,
+                    "components": [],
+                    "x": 144,
+                    "y": -544
+                },
+                {
+                    "prefabId": "792be592-4edd-40b5-9eaa-2c4b650603a0",
+                    "id": "6b39aa74-89ce-46d4-89e6-2c1d386b84f1",
+                    "unlock": [
+                        "x",
+                        "y",
+                        "rawType"
+                    ],
+                    "label": "rock_26",
+                    "rawType": 2,
+                    "components": [],
+                    "x": 208,
+                    "y": -480
+                },
+                {
+                    "prefabId": "792be592-4edd-40b5-9eaa-2c4b650603a0",
+                    "id": "b76ca84c-8cfb-44fd-a7df-3b63845ad429",
+                    "unlock": [
+                        "x",
+                        "y",
+                        "rawType"
+                    ],
+                    "label": "rock_29",
+                    "rawType": 2,
+                    "components": [],
+                    "x": 208,
+                    "y": -512
+                },
+                {
+                    "prefabId": "792be592-4edd-40b5-9eaa-2c4b650603a0",
+                    "id": "6dcf7614-2308-4d5f-b10e-ac787ae307e8",
+                    "unlock": [
+                        "x",
+                        "y"
+                    ],
+                    "label": "rock_30",
+                    "components": [],
+                    "x": 80,
+                    "y": -544
+                },
+                {
+                    "prefabId": "792be592-4edd-40b5-9eaa-2c4b650603a0",
+                    "id": "035bf070-7dde-44e3-8bda-614fc27bb773",
+                    "unlock": [
+                        "x",
+                        "y",
+                        "rawType"
+                    ],
+                    "label": "rock_31",
+                    "rawType": 2,
+                    "components": [],
+                    "x": 112,
+                    "y": -560
+                },
+                {
+                    "prefabId": "792be592-4edd-40b5-9eaa-2c4b650603a0",
+                    "id": "a5db1487-0689-4ee5-b6a7-7d1a2f552054",
+                    "unlock": [
+                        "x",
+                        "y",
+                        "rawType"
+                    ],
+                    "label": "rock_32",
+                    "rawType": 1,
+                    "components": [],
+                    "x": 176,
+                    "y": -560
+                },
+                {
+                    "prefabId": "792be592-4edd-40b5-9eaa-2c4b650603a0",
+                    "id": "f1cccce4-3a77-4369-814d-6d228d85c84f",
+                    "unlock": [
+                        "x",
+                        "y",
+                        "rawType"
+                    ],
+                    "label": "rock_33",
+                    "rawType": 2,
+                    "components": [],
+                    "x": 208,
+                    "y": -544
+                },
+                {
+                    "prefabId": "792be592-4edd-40b5-9eaa-2c4b650603a0",
+                    "id": "ab8be940-0bf8-418a-ae4e-781c490893a7",
+                    "unlock": [
+                        "x",
+                        "y",
+                        "rawType"
+                    ],
+                    "label": "rock_34",
+                    "rawType": 1,
+                    "components": [],
+                    "x": 112,
+                    "y": -512
+                },
+                {
+                    "prefabId": "792be592-4edd-40b5-9eaa-2c4b650603a0",
+                    "id": "60dfac7a-72de-4309-b476-d0ee23ff5d97",
+                    "unlock": [
+                        "x",
+                        "y",
+                        "rawType"
+                    ],
+                    "label": "rock_35",
+                    "rawType": 1,
+                    "components": [],
+                    "x": 112,
+                    "y": -592
+                },
+                {
+                    "prefabId": "792be592-4edd-40b5-9eaa-2c4b650603a0",
+                    "id": "b57e53c9-0c0a-49d1-82c6-d2ceec61b7b8",
+                    "unlock": [
+                        "x",
+                        "y",
+                        "rawType"
+                    ],
+                    "label": "rock_36",
+                    "rawType": 1,
+                    "components": [],
+                    "x": 144,
+                    "y": -592
+                },
+                {
+                    "prefabId": "792be592-4edd-40b5-9eaa-2c4b650603a0",
+                    "id": "14eda738-5a70-4805-a838-3728b89837e4",
+                    "unlock": [
+                        "x",
+                        "y",
+                        "rawType"
+                    ],
+                    "label": "rock_37",
+                    "rawType": 2,
+                    "components": [],
+                    "x": 176,
+                    "y": -592
+                },
+                {
+                    "prefabId": "792be592-4edd-40b5-9eaa-2c4b650603a0",
+                    "id": "ed85b092-38b3-41df-908a-c064f4533975",
+                    "unlock": [
+                        "x",
+                        "y"
+                    ],
+                    "label": "rock_38",
+                    "components": [],
+                    "x": 208,
+                    "y": -592
+                },
+                {
+                    "type": "Rectangle",
+                    "id": "33a9c4d1-6577-4dfa-b0a0-a06d8c231ba2",
+                    "label": "exitZone",
+                    "scope": "CLASS",
+                    "components": [],
+                    "x": 64,
+                    "y": -992,
+                    "originX": 0,
+                    "originY": 1,
+                    "alpha": 0.1,
+                    "isFilled": true,
+                    "width": 192,
+                    "height": 32
+                }
             ]
         },
         {
@@ -92,564 +659,6 @@
             },
             "x": 144,
             "y": 160
-        },
-        {
-            "prefabId": "792be592-4edd-40b5-9eaa-2c4b650603a0",
-            "id": "c955acd6-0c66-4048-abda-45868cc57180",
-            "unlock": [
-                "x",
-                "y"
-            ],
-            "label": "rock_1",
-            "scope": "CLASS",
-            "components": [],
-            "x": 80,
-            "y": 32
-        },
-        {
-            "prefabId": "792be592-4edd-40b5-9eaa-2c4b650603a0",
-            "id": "e3c424a0-c940-4986-af4a-451588ec5d24",
-            "unlock": [
-                "x",
-                "y",
-                "rawType"
-            ],
-            "label": "rock",
-            "scope": "CLASS",
-            "rawType": 2,
-            "components": [],
-            "x": 176,
-            "y": 32
-        },
-        {
-            "prefabId": "792be592-4edd-40b5-9eaa-2c4b650603a0",
-            "id": "2fc1ecd1-3404-4190-b8a6-9c0c3481f48b",
-            "unlock": [
-                "x",
-                "y",
-                "rawType"
-            ],
-            "label": "rock_2",
-            "rawType": 2,
-            "components": [],
-            "x": 144,
-            "y": 0
-        },
-        {
-            "prefabId": "792be592-4edd-40b5-9eaa-2c4b650603a0",
-            "id": "981f2479-76dc-44fe-a421-49c9b0b19ed1",
-            "unlock": [
-                "x",
-                "y",
-                "rawType"
-            ],
-            "label": "rock_3",
-            "rawType": 1,
-            "components": [],
-            "x": 112,
-            "y": 32
-        },
-        {
-            "prefabId": "792be592-4edd-40b5-9eaa-2c4b650603a0",
-            "id": "0488a1e6-4396-4268-895f-4b50e5af7c9a",
-            "unlock": [
-                "x",
-                "y"
-            ],
-            "label": "rock_4",
-            "components": [],
-            "x": 208,
-            "y": 0
-        },
-        {
-            "prefabId": "792be592-4edd-40b5-9eaa-2c4b650603a0",
-            "id": "ce9f73a4-765d-40b0-ae7a-6a28a84d5ceb",
-            "unlock": [
-                "x",
-                "y",
-                "rawType"
-            ],
-            "label": "rock_5",
-            "scope": "CLASS",
-            "rawType": 1,
-            "components": [],
-            "x": 80,
-            "y": -32
-        },
-        {
-            "prefabId": "792be592-4edd-40b5-9eaa-2c4b650603a0",
-            "id": "6b5d1272-77d4-4ff4-b54f-b81d2410e901",
-            "unlock": [
-                "x",
-                "y"
-            ],
-            "label": "rock_6",
-            "components": [],
-            "x": 208,
-            "y": -80
-        },
-        {
-            "prefabId": "792be592-4edd-40b5-9eaa-2c4b650603a0",
-            "id": "17656a9d-83e5-4df3-9214-8287ab41b78d",
-            "unlock": [
-                "x",
-                "y",
-                "rawType"
-            ],
-            "label": "rock_7",
-            "rawType": 2,
-            "components": [],
-            "x": 112,
-            "y": -80
-        },
-        {
-            "prefabId": "792be592-4edd-40b5-9eaa-2c4b650603a0",
-            "id": "36485946-98b2-48fa-884d-ce3dd85b4bed",
-            "unlock": [
-                "x",
-                "y",
-                "rawType"
-            ],
-            "label": "rock_8",
-            "rawType": 2,
-            "components": [],
-            "x": 144,
-            "y": -32
-        },
-        {
-            "prefabId": "792be592-4edd-40b5-9eaa-2c4b650603a0",
-            "id": "fdf51e00-dd38-4b46-80d6-b4ffa00119ee",
-            "unlock": [
-                "x",
-                "y",
-                "rawType"
-            ],
-            "label": "rock_9",
-            "scope": "CLASS",
-            "rawType": 3,
-            "components": [],
-            "x": 176,
-            "y": -112
-        },
-        {
-            "prefabId": "792be592-4edd-40b5-9eaa-2c4b650603a0",
-            "id": "431b99be-94e7-488f-94ef-677e7b79aed3",
-            "unlock": [
-                "x",
-                "y",
-                "rawType"
-            ],
-            "label": "rock_10",
-            "scope": "CLASS",
-            "rawType": 2,
-            "components": [],
-            "x": 80,
-            "y": -192
-        },
-        {
-            "prefabId": "792be592-4edd-40b5-9eaa-2c4b650603a0",
-            "id": "cb597992-cd40-48a3-ab73-37008b1236ca",
-            "unlock": [
-                "x",
-                "y",
-                "rawType"
-            ],
-            "label": "rock_11",
-            "rawType": 2,
-            "components": [],
-            "x": 208,
-            "y": -160
-        },
-        {
-            "prefabId": "792be592-4edd-40b5-9eaa-2c4b650603a0",
-            "id": "8e4cb2ea-a9b8-40fd-bf66-6a88a4b8f4ce",
-            "unlock": [
-                "x",
-                "y",
-                "rawType"
-            ],
-            "label": "rock_12",
-            "rawType": 1,
-            "components": [],
-            "x": 112,
-            "y": -144
-        },
-        {
-            "prefabId": "792be592-4edd-40b5-9eaa-2c4b650603a0",
-            "id": "016a9e14-80aa-4951-8e8f-9deef78f5f55",
-            "unlock": [
-                "x",
-                "y",
-                "rawType"
-            ],
-            "label": "rock_13",
-            "rawType": 2,
-            "components": [],
-            "x": 144,
-            "y": -176
-        },
-        {
-            "prefabId": "792be592-4edd-40b5-9eaa-2c4b650603a0",
-            "id": "6b72b9c9-ac18-4662-9bef-77fb4a57aceb",
-            "unlock": [
-                "x",
-                "y",
-                "rawType"
-            ],
-            "label": "rock_14",
-            "scope": "CLASS",
-            "rawType": 2,
-            "components": [],
-            "x": 176,
-            "y": -224
-        },
-        {
-            "prefabId": "792be592-4edd-40b5-9eaa-2c4b650603a0",
-            "id": "94792968-56f6-4fa0-9f81-4f8ef15ff5da",
-            "unlock": [
-                "x",
-                "y",
-                "rawType"
-            ],
-            "label": "rock_15",
-            "scope": "CLASS",
-            "rawType": 2,
-            "components": [],
-            "x": 80,
-            "y": -272
-        },
-        {
-            "prefabId": "792be592-4edd-40b5-9eaa-2c4b650603a0",
-            "id": "4b9b2b0b-0b62-41f1-9104-222f647ba2ad",
-            "unlock": [
-                "x",
-                "y"
-            ],
-            "label": "rock_16",
-            "components": [],
-            "x": 208,
-            "y": -368
-        },
-        {
-            "prefabId": "792be592-4edd-40b5-9eaa-2c4b650603a0",
-            "id": "89182cfd-67f4-46e0-a629-04293966bd7f",
-            "unlock": [
-                "x",
-                "y",
-                "rawType"
-            ],
-            "label": "rock_17",
-            "rawType": 2,
-            "components": [],
-            "x": 112,
-            "y": -320
-        },
-        {
-            "prefabId": "792be592-4edd-40b5-9eaa-2c4b650603a0",
-            "id": "1492392b-319a-43f6-acde-7bed1f5a8521",
-            "unlock": [
-                "x",
-                "y",
-                "rawType"
-            ],
-            "label": "rock_18",
-            "rawType": 2,
-            "components": [],
-            "x": 144,
-            "y": -368
-        },
-        {
-            "prefabId": "792be592-4edd-40b5-9eaa-2c4b650603a0",
-            "id": "25231832-c752-48a7-91cf-23172fb232ba",
-            "unlock": [
-                "x",
-                "y",
-                "rawType"
-            ],
-            "label": "rock_19",
-            "scope": "CLASS",
-            "rawType": 1,
-            "components": [],
-            "x": 176,
-            "y": -304
-        },
-        {
-            "prefabId": "792be592-4edd-40b5-9eaa-2c4b650603a0",
-            "id": "451c919c-f1bf-4440-ba00-55f5ff5fd3e5",
-            "unlock": [
-                "x",
-                "y",
-                "rawType"
-            ],
-            "label": "rock_20",
-            "rawType": 2,
-            "components": [],
-            "x": 176,
-            "y": -400
-        },
-        {
-            "prefabId": "792be592-4edd-40b5-9eaa-2c4b650603a0",
-            "id": "5f6960fe-8332-432a-925f-217f56305498",
-            "unlock": [
-                "x",
-                "y",
-                "rawType"
-            ],
-            "label": "rock_21",
-            "scope": "CLASS",
-            "rawType": 1,
-            "components": [],
-            "x": 80,
-            "y": -592
-        },
-        {
-            "prefabId": "792be592-4edd-40b5-9eaa-2c4b650603a0",
-            "id": "09d7ee76-9d39-4437-afcb-c2995ba3cc72",
-            "unlock": [
-                "x",
-                "y"
-            ],
-            "label": "rock_22",
-            "scope": "CLASS",
-            "components": [],
-            "x": 80,
-            "y": -384
-        },
-        {
-            "prefabId": "792be592-4edd-40b5-9eaa-2c4b650603a0",
-            "id": "5b4cc728-d4d8-4963-be0c-33e5c15ea01b",
-            "unlock": [
-                "x",
-                "y",
-                "rawType"
-            ],
-            "label": "rock_23",
-            "rawType": 2,
-            "components": [],
-            "x": 112,
-            "y": -432
-        },
-        {
-            "prefabId": "792be592-4edd-40b5-9eaa-2c4b650603a0",
-            "id": "7b460f8a-1898-4a84-8c29-b14974d8af64",
-            "unlock": [
-                "x",
-                "y",
-                "rawType"
-            ],
-            "label": "rock_24",
-            "rawType": 2,
-            "components": [],
-            "x": 80,
-            "y": -464
-        },
-        {
-            "prefabId": "792be592-4edd-40b5-9eaa-2c4b650603a0",
-            "id": "f73360ae-1aa1-4064-99d1-f4cae5e964b8",
-            "unlock": [
-                "x",
-                "y",
-                "rawType"
-            ],
-            "label": "rock_25",
-            "rawType": 2,
-            "components": [],
-            "x": 144,
-            "y": -480
-        },
-        {
-            "prefabId": "792be592-4edd-40b5-9eaa-2c4b650603a0",
-            "id": "070eec44-3404-4d0d-a6bc-e53072bce36f",
-            "unlock": [
-                "x",
-                "y",
-                "rawType"
-            ],
-            "label": "rock_27",
-            "scope": "CLASS",
-            "rawType": 1,
-            "components": [],
-            "x": 176,
-            "y": -448
-        },
-        {
-            "prefabId": "792be592-4edd-40b5-9eaa-2c4b650603a0",
-            "id": "617e2c9a-2f12-4e22-9e85-ed6e9adf5e02",
-            "unlock": [
-                "x",
-                "y",
-                "rawType"
-            ],
-            "label": "rock_28",
-            "rawType": 1,
-            "components": [],
-            "x": 144,
-            "y": -544
-        },
-        {
-            "prefabId": "792be592-4edd-40b5-9eaa-2c4b650603a0",
-            "id": "6b39aa74-89ce-46d4-89e6-2c1d386b84f1",
-            "unlock": [
-                "x",
-                "y",
-                "rawType"
-            ],
-            "label": "rock_26",
-            "rawType": 2,
-            "components": [],
-            "x": 208,
-            "y": -480
-        },
-        {
-            "prefabId": "792be592-4edd-40b5-9eaa-2c4b650603a0",
-            "id": "b76ca84c-8cfb-44fd-a7df-3b63845ad429",
-            "unlock": [
-                "x",
-                "y",
-                "rawType"
-            ],
-            "label": "rock_29",
-            "rawType": 2,
-            "components": [],
-            "x": 208,
-            "y": -512
-        },
-        {
-            "prefabId": "792be592-4edd-40b5-9eaa-2c4b650603a0",
-            "id": "6dcf7614-2308-4d5f-b10e-ac787ae307e8",
-            "unlock": [
-                "x",
-                "y"
-            ],
-            "label": "rock_30",
-            "components": [],
-            "x": 80,
-            "y": -544
-        },
-        {
-            "prefabId": "792be592-4edd-40b5-9eaa-2c4b650603a0",
-            "id": "035bf070-7dde-44e3-8bda-614fc27bb773",
-            "unlock": [
-                "x",
-                "y",
-                "rawType"
-            ],
-            "label": "rock_31",
-            "rawType": 2,
-            "components": [],
-            "x": 112,
-            "y": -560
-        },
-        {
-            "prefabId": "792be592-4edd-40b5-9eaa-2c4b650603a0",
-            "id": "a5db1487-0689-4ee5-b6a7-7d1a2f552054",
-            "unlock": [
-                "x",
-                "y",
-                "rawType"
-            ],
-            "label": "rock_32",
-            "rawType": 1,
-            "components": [],
-            "x": 176,
-            "y": -560
-        },
-        {
-            "prefabId": "792be592-4edd-40b5-9eaa-2c4b650603a0",
-            "id": "f1cccce4-3a77-4369-814d-6d228d85c84f",
-            "unlock": [
-                "x",
-                "y",
-                "rawType"
-            ],
-            "label": "rock_33",
-            "rawType": 2,
-            "components": [],
-            "x": 208,
-            "y": -544
-        },
-        {
-            "prefabId": "792be592-4edd-40b5-9eaa-2c4b650603a0",
-            "id": "ab8be940-0bf8-418a-ae4e-781c490893a7",
-            "unlock": [
-                "x",
-                "y",
-                "rawType"
-            ],
-            "label": "rock_34",
-            "rawType": 1,
-            "components": [],
-            "x": 112,
-            "y": -512
-        },
-        {
-            "prefabId": "792be592-4edd-40b5-9eaa-2c4b650603a0",
-            "id": "60dfac7a-72de-4309-b476-d0ee23ff5d97",
-            "unlock": [
-                "x",
-                "y",
-                "rawType"
-            ],
-            "label": "rock_35",
-            "rawType": 1,
-            "components": [],
-            "x": 112,
-            "y": -592
-        },
-        {
-            "prefabId": "792be592-4edd-40b5-9eaa-2c4b650603a0",
-            "id": "b57e53c9-0c0a-49d1-82c6-d2ceec61b7b8",
-            "unlock": [
-                "x",
-                "y",
-                "rawType"
-            ],
-            "label": "rock_36",
-            "rawType": 1,
-            "components": [],
-            "x": 144,
-            "y": -592
-        },
-        {
-            "prefabId": "792be592-4edd-40b5-9eaa-2c4b650603a0",
-            "id": "14eda738-5a70-4805-a838-3728b89837e4",
-            "unlock": [
-                "x",
-                "y",
-                "rawType"
-            ],
-            "label": "rock_37",
-            "rawType": 2,
-            "components": [],
-            "x": 176,
-            "y": -592
-        },
-        {
-            "prefabId": "792be592-4edd-40b5-9eaa-2c4b650603a0",
-            "id": "ed85b092-38b3-41df-908a-c064f4533975",
-            "unlock": [
-                "x",
-                "y"
-            ],
-            "label": "rock_38",
-            "components": [],
-            "x": 208,
-            "y": -592
-        },
-        {
-            "type": "Rectangle",
-            "id": "33a9c4d1-6577-4dfa-b0a0-a06d8c231ba2",
-            "label": "exitZone",
-            "scope": "CLASS",
-            "components": [],
-            "x": 64,
-            "y": -992,
-            "originX": 0,
-            "originY": 1,
-            "alpha": 0.1,
-            "isFilled": true,
-            "width": 192,
-            "height": 32
         }
     ],
     "plainObjects": [

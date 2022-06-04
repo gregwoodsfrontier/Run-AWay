@@ -5,9 +5,9 @@
 import Phaser from "phaser";
 import DepthSortY from "../components/DepthSortY";
 import TileMapLayerPhysics from "../components/TileMapLayerPhysics";
+import Rock from "../prefabs/Rock";
 import PlayerContainer from "../prefabs/PlayerContainer";
 import PSD from "../prefabs/PSD";
-import Rock from "../prefabs/Rock";
 /* START-USER-IMPORTS */
 import Enemy from "../prefabs/Enemy";
 import { DIRECTION } from "../types/direction";
@@ -43,14 +43,183 @@ export default class Level extends Phaser.Scene {
 		const cave_test_map_2 = this.add.tilemap("cave-test-map-2");
 		cave_test_map_2.addTilesetImage("gamedevjs-cave-tileset-1", "cave-test-tileset-1");
 
-		// endTunnel___Wide
-		const endTunnel___Wide = this.add.sprite(160, -976, "EndTunnel - Wide");
+		// starting
+		const starting = this.add.layer();
+
+		// endTunnel_Wide
+		const endTunnel_Wide = this.add.sprite(160, -976, "EndTunnel - Wide");
+		starting.add(endTunnel_Wide);
 
 		// floor_1
 		const floor_1 = cave_test_map_2.createLayer("floor", ["gamedevjs-cave-tileset-1"], 0, -960);
+		starting.add(floor_1);
 
 		// wall_1
 		const wall_1 = cave_test_map_2.createLayer("wall", ["gamedevjs-cave-tileset-1"], 0, -960);
+		starting.add(wall_1);
+
+		// rock_1
+		const rock_1 = new Rock(this, 80, 32);
+		starting.add(rock_1);
+
+		// rock
+		const rock = new Rock(this, 176, 32);
+		starting.add(rock);
+
+		// rock_2
+		const rock_2 = new Rock(this, 144, 0);
+		starting.add(rock_2);
+
+		// rock_3
+		const rock_3 = new Rock(this, 112, 32);
+		starting.add(rock_3);
+
+		// rock_4
+		const rock_4 = new Rock(this, 208, 0);
+		starting.add(rock_4);
+
+		// rock_5
+		const rock_5 = new Rock(this, 80, -32);
+		starting.add(rock_5);
+
+		// rock_6
+		const rock_6 = new Rock(this, 208, -80);
+		starting.add(rock_6);
+
+		// rock_7
+		const rock_7 = new Rock(this, 112, -80);
+		starting.add(rock_7);
+
+		// rock_8
+		const rock_8 = new Rock(this, 144, -32);
+		starting.add(rock_8);
+
+		// rock_9
+		const rock_9 = new Rock(this, 176, -112);
+		starting.add(rock_9);
+
+		// rock_10
+		const rock_10 = new Rock(this, 80, -192);
+		starting.add(rock_10);
+
+		// rock_11
+		const rock_11 = new Rock(this, 208, -160);
+		starting.add(rock_11);
+
+		// rock_12
+		const rock_12 = new Rock(this, 112, -144);
+		starting.add(rock_12);
+
+		// rock_13
+		const rock_13 = new Rock(this, 144, -176);
+		starting.add(rock_13);
+
+		// rock_14
+		const rock_14 = new Rock(this, 176, -224);
+		starting.add(rock_14);
+
+		// rock_15
+		const rock_15 = new Rock(this, 80, -272);
+		starting.add(rock_15);
+
+		// rock_16
+		const rock_16 = new Rock(this, 208, -368);
+		starting.add(rock_16);
+
+		// rock_17
+		const rock_17 = new Rock(this, 112, -320);
+		starting.add(rock_17);
+
+		// rock_18
+		const rock_18 = new Rock(this, 144, -368);
+		starting.add(rock_18);
+
+		// rock_19
+		const rock_19 = new Rock(this, 176, -304);
+		starting.add(rock_19);
+
+		// rock_20
+		const rock_20 = new Rock(this, 176, -400);
+		starting.add(rock_20);
+
+		// rock_21
+		const rock_21 = new Rock(this, 80, -592);
+		starting.add(rock_21);
+
+		// rock_22
+		const rock_22 = new Rock(this, 80, -384);
+		starting.add(rock_22);
+
+		// rock_23
+		const rock_23 = new Rock(this, 112, -432);
+		starting.add(rock_23);
+
+		// rock_24
+		const rock_24 = new Rock(this, 80, -464);
+		starting.add(rock_24);
+
+		// rock_25
+		const rock_25 = new Rock(this, 144, -480);
+		starting.add(rock_25);
+
+		// rock_27
+		const rock_27 = new Rock(this, 176, -448);
+		starting.add(rock_27);
+
+		// rock_28
+		const rock_28 = new Rock(this, 144, -544);
+		starting.add(rock_28);
+
+		// rock_26
+		const rock_26 = new Rock(this, 208, -480);
+		starting.add(rock_26);
+
+		// rock_29
+		const rock_29 = new Rock(this, 208, -512);
+		starting.add(rock_29);
+
+		// rock_30
+		const rock_30 = new Rock(this, 80, -544);
+		starting.add(rock_30);
+
+		// rock_31
+		const rock_31 = new Rock(this, 112, -560);
+		starting.add(rock_31);
+
+		// rock_32
+		const rock_32 = new Rock(this, 176, -560);
+		starting.add(rock_32);
+
+		// rock_33
+		const rock_33 = new Rock(this, 208, -544);
+		starting.add(rock_33);
+
+		// rock_34
+		const rock_34 = new Rock(this, 112, -512);
+		starting.add(rock_34);
+
+		// rock_35
+		const rock_35 = new Rock(this, 112, -592);
+		starting.add(rock_35);
+
+		// rock_36
+		const rock_36 = new Rock(this, 144, -592);
+		starting.add(rock_36);
+
+		// rock_37
+		const rock_37 = new Rock(this, 176, -592);
+		starting.add(rock_37);
+
+		// rock_38
+		const rock_38 = new Rock(this, 208, -592);
+		starting.add(rock_38);
+
+		// exitZone
+		const exitZone = this.add.rectangle(64, -992, 192, 32);
+		exitZone.setOrigin(0, 1);
+		exitZone.alpha = 0.1;
+		exitZone.isFilled = true;
+		starting.add(exitZone);
 
 		// playerContainer
 		const playerContainer = new PlayerContainer(this, 160, 160);
@@ -63,174 +232,12 @@ export default class Level extends Phaser.Scene {
 		// start_level
 		const start_level = this.add.sprite(144, 160, "Start-Level-Anim-Short-20");
 
-		// rock_1
-		const rock_1 = new Rock(this, 80, 32);
-		this.add.existing(rock_1);
-
-		// rock
-		const rock = new Rock(this, 176, 32);
-		this.add.existing(rock);
-
-		// rock_2
-		const rock_2 = new Rock(this, 144, 0);
-		this.add.existing(rock_2);
-
-		// rock_3
-		const rock_3 = new Rock(this, 112, 32);
-		this.add.existing(rock_3);
-
-		// rock_4
-		const rock_4 = new Rock(this, 208, 0);
-		this.add.existing(rock_4);
-
-		// rock_5
-		const rock_5 = new Rock(this, 80, -32);
-		this.add.existing(rock_5);
-
-		// rock_6
-		const rock_6 = new Rock(this, 208, -80);
-		this.add.existing(rock_6);
-
-		// rock_7
-		const rock_7 = new Rock(this, 112, -80);
-		this.add.existing(rock_7);
-
-		// rock_8
-		const rock_8 = new Rock(this, 144, -32);
-		this.add.existing(rock_8);
-
-		// rock_9
-		const rock_9 = new Rock(this, 176, -112);
-		this.add.existing(rock_9);
-
-		// rock_10
-		const rock_10 = new Rock(this, 80, -192);
-		this.add.existing(rock_10);
-
-		// rock_11
-		const rock_11 = new Rock(this, 208, -160);
-		this.add.existing(rock_11);
-
-		// rock_12
-		const rock_12 = new Rock(this, 112, -144);
-		this.add.existing(rock_12);
-
-		// rock_13
-		const rock_13 = new Rock(this, 144, -176);
-		this.add.existing(rock_13);
-
-		// rock_14
-		const rock_14 = new Rock(this, 176, -224);
-		this.add.existing(rock_14);
-
-		// rock_15
-		const rock_15 = new Rock(this, 80, -272);
-		this.add.existing(rock_15);
-
-		// rock_16
-		const rock_16 = new Rock(this, 208, -368);
-		this.add.existing(rock_16);
-
-		// rock_17
-		const rock_17 = new Rock(this, 112, -320);
-		this.add.existing(rock_17);
-
-		// rock_18
-		const rock_18 = new Rock(this, 144, -368);
-		this.add.existing(rock_18);
-
-		// rock_19
-		const rock_19 = new Rock(this, 176, -304);
-		this.add.existing(rock_19);
-
-		// rock_20
-		const rock_20 = new Rock(this, 176, -400);
-		this.add.existing(rock_20);
-
-		// rock_21
-		const rock_21 = new Rock(this, 80, -592);
-		this.add.existing(rock_21);
-
-		// rock_22
-		const rock_22 = new Rock(this, 80, -384);
-		this.add.existing(rock_22);
-
-		// rock_23
-		const rock_23 = new Rock(this, 112, -432);
-		this.add.existing(rock_23);
-
-		// rock_24
-		const rock_24 = new Rock(this, 80, -464);
-		this.add.existing(rock_24);
-
-		// rock_25
-		const rock_25 = new Rock(this, 144, -480);
-		this.add.existing(rock_25);
-
-		// rock_27
-		const rock_27 = new Rock(this, 176, -448);
-		this.add.existing(rock_27);
-
-		// rock_28
-		const rock_28 = new Rock(this, 144, -544);
-		this.add.existing(rock_28);
-
-		// rock_26
-		const rock_26 = new Rock(this, 208, -480);
-		this.add.existing(rock_26);
-
-		// rock_29
-		const rock_29 = new Rock(this, 208, -512);
-		this.add.existing(rock_29);
-
-		// rock_30
-		const rock_30 = new Rock(this, 80, -544);
-		this.add.existing(rock_30);
-
-		// rock_31
-		const rock_31 = new Rock(this, 112, -560);
-		this.add.existing(rock_31);
-
-		// rock_32
-		const rock_32 = new Rock(this, 176, -560);
-		this.add.existing(rock_32);
-
-		// rock_33
-		const rock_33 = new Rock(this, 208, -544);
-		this.add.existing(rock_33);
-
-		// rock_34
-		const rock_34 = new Rock(this, 112, -512);
-		this.add.existing(rock_34);
-
-		// rock_35
-		const rock_35 = new Rock(this, 112, -592);
-		this.add.existing(rock_35);
-
-		// rock_36
-		const rock_36 = new Rock(this, 144, -592);
-		this.add.existing(rock_36);
-
-		// rock_37
-		const rock_37 = new Rock(this, 176, -592);
-		this.add.existing(rock_37);
-
-		// rock_38
-		const rock_38 = new Rock(this, 208, -592);
-		this.add.existing(rock_38);
-
-		// exitZone
-		const exitZone = this.add.rectangle(64, -992, 192, 32);
-		exitZone.setOrigin(0, 1);
-		exitZone.alpha = 0.1;
-		exitZone.isFilled = true;
-
 		// lists
 		const obstacles = [rock_38, rock_37, rock_36, rock_35, rock_34, rock_33, rock_32, rock_31, rock_30, rock_29, rock_26, rock_28, rock_27, rock_25, rock_24, rock_23, rock_22, rock_21, rock_20, rock_19, rock_18, rock_17, rock_16, rock_15, rock_14, rock_13, rock_12, rock_11, rock_10, rock_9, rock_8, rock_7, rock_6, rock_5, rock_4, rock_3, rock_2, rock, rock_1];
 		const mudList: Array<any> = [];
 
-		// endTunnel___Wide (components)
-		new DepthSortY(endTunnel___Wide);
+		// endTunnel_Wide (components)
+		new DepthSortY(endTunnel_Wide);
 
 		// wall_1 (components)
 		new TileMapLayerPhysics(wall_1);
@@ -331,11 +338,9 @@ export default class Level extends Phaser.Scene {
 		// rock_37 (prefab fields)
 		rock_37.rawType = 2;
 
+		this.starting = starting;
 		this.floor_1 = floor_1;
 		this.wall_1 = wall_1;
-		this.playerContainer = playerContainer;
-		this.pSDRobot = pSDRobot;
-		this.start_level = start_level;
 		this.rock_1 = rock_1;
 		this.rock = rock;
 		this.rock_5 = rock_5;
@@ -348,6 +353,9 @@ export default class Level extends Phaser.Scene {
 		this.rock_22 = rock_22;
 		this.rock_27 = rock_27;
 		this.exitZone = exitZone;
+		this.playerContainer = playerContainer;
+		this.pSDRobot = pSDRobot;
+		this.start_level = start_level;
 		this.cave_test_map_2 = cave_test_map_2;
 		this.obstacles = obstacles;
 		this.mudList = mudList;
@@ -355,11 +363,9 @@ export default class Level extends Phaser.Scene {
 		this.events.emit("scene-awake");
 	}
 
+	private starting!: Phaser.GameObjects.Layer;
 	private floor_1!: Phaser.Tilemaps.TilemapLayer;
 	private wall_1!: Phaser.Tilemaps.TilemapLayer;
-	public playerContainer!: PlayerContainer;
-	private pSDRobot!: PSD;
-	private start_level!: Phaser.GameObjects.Sprite;
 	private rock_1!: Rock;
 	private rock!: Rock;
 	private rock_5!: Rock;
@@ -372,9 +378,11 @@ export default class Level extends Phaser.Scene {
 	private rock_22!: Rock;
 	private rock_27!: Rock;
 	private exitZone!: Phaser.GameObjects.Rectangle;
+	public playerContainer!: PlayerContainer;
+	private pSDRobot!: PSD;
+	private start_level!: Phaser.GameObjects.Sprite;
 	private obstacles!: Rock[];
 	private mudList!: Array<any>;
-	private physicsChecker!: PhysicsChecker
 
 	/* START-USER-CODE */
 	public platformer_fun!: Phaser.Tilemaps.Tilemap
@@ -383,9 +391,10 @@ export default class Level extends Phaser.Scene {
 	// Write your code here
 	bulletGroup!: Phaser.GameObjects.Group
 	enemyGroup!: Phaser.GameObjects.Group
+	private physicsChecker!: PhysicsChecker
 
 	lastfired = 0
-	#destination!: SelectionSquare
+	destination!: SelectionSquare
 
 	create() {
 
@@ -404,8 +413,8 @@ export default class Level extends Phaser.Scene {
 		// this.wall_1.setCollisionByProperty({collides: true})
 
 		this.initObjectPool()
-		
-		this.#destination = SelectionSquare.getComponent(this.playerContainer.player)
+
+		this.destination = SelectionSquare.getComponent(this.playerContainer.player)
 
 		this.events.on(EVENTKEYS.CREATE_BULLETS, this.handleBulletUpdate, this)
 		this.events.on(EVENTKEYS.DEPLOY_PSD, this.deployPSD, this)
