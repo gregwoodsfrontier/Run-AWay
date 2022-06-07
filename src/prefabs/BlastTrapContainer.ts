@@ -4,9 +4,10 @@
 /* START OF COMPILED CODE */
 
 import Phaser from "phaser";
+import Physics from "../components/Physics";
+import CheckDistance from "../components/CheckDistance";
 import BlastTrapV2 from "./BlastTrapV2";
 import TrapProjectile from "./TrapProjectile";
-import Physics from "../components/Physics";
 /* START-USER-IMPORTS */
 import JustMovement from "../components/JustMovement";
 import { EVENTKEYS } from "../types/eventKeys";
@@ -43,6 +44,16 @@ export default class BlastTrapContainer extends Phaser.GameObjects.Container {
 		trapProjectile_down.angle = 90;
 		trapProjectile_down.visible = true;
 		this.add(trapProjectile_down);
+
+		// this (components)
+		const thisPhysics = new Physics(this);
+		thisPhysics.static = true;
+		thisPhysics.width = 32;
+		thisPhysics.height = 16;
+		thisPhysics.offsetX = 16;
+		thisPhysics.offsetY = 32;
+		const thisCheckDistance = new CheckDistance(this);
+		thisCheckDistance.limit = 55;
 
 		// trapProjectile_up (components)
 		const trapProjectile_upPhysics = Physics.getComponent(trapProjectile_up);
@@ -92,24 +103,17 @@ export default class BlastTrapContainer extends Phaser.GameObjects.Container {
 
 		this.hideAllProjectiles()
 		this.state = 1
-	}
 
-	update()
-	{
-		if(this.state !== 1)
-		{
-			return
-		}
-
-		const testKey = this.scene.input.keyboard.addKey(Phaser.Input.Keyboard.KeyCodes.P)
-
-		if(Phaser.Input.Keyboard.JustUp(testKey))
-		{
+		const thisCheckDistance = CheckDistance.getComponent(this)
+		thisCheckDistance.execute = () => {
 			this.executeTest()
 		}
+
+		// this.blastTrapV2.setInteractive()
+		// this.blastTrapV2.on('pointerup', this.executeTest, this)
 	}
 
-	private executeTest()
+	executeTest()
 	{
 		this.shootProjectiles()
 		this.emitShootEvents()
@@ -136,7 +140,7 @@ export default class BlastTrapContainer extends Phaser.GameObjects.Container {
 		this.trapProjArr.forEach(item => {
 			this.scene.events.emit(EVENTKEYS.GEN_TRAP_PROJECTILE, item)
 		})
-		
+
 	}
 
 	private shootProjectiles()

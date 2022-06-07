@@ -624,10 +624,12 @@
                     "id": "eeec3ad1-1739-499c-be70-5ef4288a7d4e",
                     "unlock": [
                         "x",
-                        "y"
+                        "y",
+                        "CheckDistance.target"
                     ],
                     "label": "blastTrapContainer",
                     "components": [],
+                    "CheckDistance.target": "playerContainer",
                     "x": 160,
                     "y": 240,
                     "nestedPrefabs": []
@@ -672,6 +674,21 @@
             },
             "x": 144,
             "y": 160
+        },
+        {
+            "prefabId": "b85115a8-992d-4ce0-91bd-d3f4294eac09",
+            "id": "70b63ca6-a058-47df-9fa9-43c8afcdf7e2",
+            "unlock": [
+                "x",
+                "y",
+                "CheckDistance.target"
+            ],
+            "label": "blastTrapContainer_1",
+            "components": [],
+            "CheckDistance.target": "playerContainer",
+            "x": 208,
+            "y": 352,
+            "nestedPrefabs": []
         }
     ],
     "plainObjects": [
@@ -752,6 +769,14 @@
                 "bb105433-6876-4fe7-9375-499c6745d7a8",
                 "78ff9f08-dd11-4cfa-860e-198349467d03",
                 "099a4665-61fc-4ef8-a04c-8755b9089130"
+            ]
+        },
+        {
+            "id": "f7360024-794e-459d-ae89-14d8e8e0e19e",
+            "label": "traps",
+            "objectIds": [
+                "70b63ca6-a058-47df-9fa9-43c8afcdf7e2",
+                "eeec3ad1-1739-499c-be70-5ef4288a7d4e"
             ]
         }
     ]

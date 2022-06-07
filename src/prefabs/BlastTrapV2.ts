@@ -1,7 +1,6 @@
 /* START OF COMPILED CODE */
 
 import Phaser from "phaser";
-import Physics from "../components/Physics";
 /* START-USER-IMPORTS */
 /* END-USER-IMPORTS */
 
@@ -9,12 +8,6 @@ export default class BlastTrapV2 extends Phaser.GameObjects.Sprite {
 
 	constructor(scene: Phaser.Scene, x?: number, y?: number, texture?: string, frame?: number | string) {
 		super(scene, x ?? 0, y ?? 0, texture || "raw-break-interact", frame ?? 96);
-
-		// this (components)
-		const thisPhysics = new Physics(this);
-		thisPhysics.static = true;
-		thisPhysics.height = 32;
-		thisPhysics.offsetY = 32;
 
 		/* START-USER-CTR-CODE */
 		/* END-USER-CTR-CODE */

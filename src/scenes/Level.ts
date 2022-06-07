@@ -7,6 +7,7 @@ import TileMapLayerPhysics from "../components/TileMapLayerPhysics";
 import DepthSortY from "../components/DepthSortY";
 import Rock from "../prefabs/Rock";
 import BlastTrapContainer from "../prefabs/BlastTrapContainer";
+import CheckDistance from "../components/CheckDistance";
 import PlayerContainer from "../prefabs/PlayerContainer";
 import PSD from "../prefabs/PSD";
 /* START-USER-IMPORTS */
@@ -233,9 +234,14 @@ export default class Level extends Phaser.Scene {
 		// start_level
 		const start_level = this.add.sprite(144, 160, "Start-Level-Anim-Short-20");
 
+		// blastTrapContainer_1
+		const blastTrapContainer_1 = new BlastTrapContainer(this, 208, 352);
+		this.add.existing(blastTrapContainer_1);
+
 		// lists
 		const obstacles = [rock_38, rock_37, rock_36, rock_35, rock_34, rock_33, rock_32, rock_31, rock_30, rock_29, rock_26, rock_28, rock_27, rock_25, rock_24, rock_23, rock_22, rock_21, rock_20, rock_19, rock_18, rock_17, rock_16, rock_15, rock_14, rock_13, rock_12, rock_11, rock_10, rock_9, rock_8, rock_7, rock_6, rock_5, rock_4, rock_3, rock_2, rock, rock_1];
 		const mudList: Array<any> = [];
+		const traps = [blastTrapContainer_1, blastTrapContainer];
 
 		// wall_1 (components)
 		new TileMapLayerPhysics(wall_1);
@@ -339,6 +345,14 @@ export default class Level extends Phaser.Scene {
 		// rock_37 (prefab fields)
 		rock_37.rawType = 2;
 
+		// blastTrapContainer (components)
+		const blastTrapContainerCheckDistance = CheckDistance.getComponent(blastTrapContainer);
+		blastTrapContainerCheckDistance.target = playerContainer;
+
+		// blastTrapContainer_1 (components)
+		const blastTrapContainer_1CheckDistance = CheckDistance.getComponent(blastTrapContainer_1);
+		blastTrapContainer_1CheckDistance.target = playerContainer;
+
 		this.floor_1 = floor_1;
 		this.wall_1 = wall_1;
 		this.starting = starting;
@@ -360,6 +374,7 @@ export default class Level extends Phaser.Scene {
 		this.cave_test_map_2 = cave_test_map_2;
 		this.obstacles = obstacles;
 		this.mudList = mudList;
+		this.traps = traps;
 
 		this.events.emit("scene-awake");
 	}
@@ -384,6 +399,7 @@ export default class Level extends Phaser.Scene {
 	private start_level!: Phaser.GameObjects.Sprite;
 	private obstacles!: Rock[];
 	private mudList!: Array<any>;
+	private traps!: BlastTrapContainer[];
 
 	/* START-USER-CODE */
 	public platformer_fun!: Phaser.Tilemaps.Tilemap

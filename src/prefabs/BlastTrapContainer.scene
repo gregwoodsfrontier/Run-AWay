@@ -17,7 +17,16 @@
             "type": "Container",
             "id": "6db10eec-b15a-420d-9b80-e16aad25ce22",
             "label": "container_1",
-            "components": [],
+            "components": [
+                "Physics",
+                "CheckDistance"
+            ],
+            "Physics.static": true,
+            "Physics.width": 32,
+            "Physics.height": 16,
+            "Physics.offsetX": 16,
+            "Physics.offsetY": 32,
+            "CheckDistance.limit": 55,
             "list": [
                 {
                     "prefabId": "f40d26d2-12a7-4f32-987e-b77e53202537",

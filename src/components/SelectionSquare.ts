@@ -40,7 +40,7 @@ export default class SelectionSquare extends UserComponent {
 	private rightSelect!: Phaser.GameObjects.Zone
 	private activeSelect!: Phaser.GameObjects.Zone
 	private distance = 50
-	
+
 	private dir: number
 
 	// Write your code here.
@@ -56,7 +56,7 @@ export default class SelectionSquare extends UserComponent {
 		scene.physics.world.enable(this.selectSquare);
 		(this.selectSquare.body as Phaser.Physics.Arcade.Body).setAllowGravity(false);
 		(this.selectSquare.body as Phaser.Physics.Arcade.Body).moves = false;
-		
+
 		// this.selectSquare.setStrokeStyle(2, 0xff0000)
 		this.upSelect = scene.add.zone(0, -0.8 * distance, zoneWid, zoneHei)
 		this.downSelect = scene.add.zone(0, 1 * distance, zoneWid, zoneHei)

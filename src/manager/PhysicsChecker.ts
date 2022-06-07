@@ -10,6 +10,7 @@ import FollowTarget from "../components/FollowTarget";
 import { ENEMY_STATE_KEYS } from "../types/enemyStateKeys";
 import { SCENE_SWITCH_EVENTS } from "../types/scenes";
 import TrapProjectile from "../prefabs/TrapProjectile";
+import BlastTrapContainer from "../prefabs/BlastTrapContainer";
 
 export interface IDataInput {
     player: PlayerContainer,
@@ -42,6 +43,13 @@ export default class PhysicsChecker {
         this.bulletPairCheck()
 
         this.trapProjWall()
+
+        this.scene.events.on(Phaser.Scenes.Events.UPDATE, this.update, this)
+    }
+
+    private update()
+    {
+        
     }
 
     private trapProjWall()
@@ -203,7 +211,7 @@ export default class PhysicsChecker {
 
     private playerPairCheck()
     {
-        const { player, wall, rocks, exitzone } = this.data
+        const { player, wall, rocks, exitzone, trapProj } = this.data
 
         if(!player)
         {
@@ -229,9 +237,34 @@ export default class PhysicsChecker {
             return
         }
 
+        if(!trapProj)
+        {
+            console.error('exit zone is undefined in PhysicsChecker')
+            return
+        }
+
         this.scene.physics.add.collider( player, wall );
         this.scene.physics.add.collider( player, rocks, this.handlePlayerRocks)
         this.scene.physics.add.collider( player, exitzone, this.handlePlayerExit)
+
+
+        // this.scene.physics.add.collider( player, trapProj, this.handlePlayerTrapProj)
+    }
+
+    private handlePlayerTrapProj(
+        a: Phaser.GameObjects.Container, b: Phaser.Types.Physics.Arcade.GameObjectWithBody
+    )
+    {
+        const player = a as PlayerContainer
+        const trapproj = b as BlastTrapContainer
+        const dist = Phaser.Math.Distance.Between(player.x, player.y, trapproj.x, trapproj.y)
+        const limit = 50
+        
+        if(dist > limit)
+        {
+            return
+        }
+        trapproj.executeTest()
     }
 
     private handlePlayerRocks(

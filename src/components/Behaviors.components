@@ -390,6 +390,34 @@
                     }
                 }
             ]
+        },
+        {
+            "name": "CheckDistance",
+            "baseClass": "UserComponent",
+            "gameObjectType": "Phaser.GameObjects.Container",
+            "properties": [
+                {
+                    "name": "limit",
+                    "label": "limit",
+                    "tooltip": "limit",
+                    "defValue": 0,
+                    "customDefinition": false,
+                    "type": {
+                        "id": "number"
+                    }
+                },
+                {
+                    "name": "target",
+                    "label": "target",
+                    "tooltip": "target",
+                    "defValue": "",
+                    "customDefinition": false,
+                    "type": {
+                        "id": "object-var",
+                        "expressionType": "Phaser.GameObjects.GameObject"
+                    }
+                }
+            ]
         }
     ],
     "meta": {
