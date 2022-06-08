@@ -1,8 +1,7 @@
 {
-    "id": "b685c081-ee5f-4b67-b583-415922c9e2c4",
+    "id": "e8f6e71f-8384-4fe2-95f3-4053fe04deae",
     "sceneType": "SCENE",
     "settings": {
-        "snapEnabled": true,
         "exportClass": true,
         "autoImport": true,
         "preloadPackFiles": [],
@@ -15,28 +14,29 @@
     "displayList": [
         {
             "prefabId": "e0ddcad0-6688-4c91-8511-b98aa83b6507",
-            "id": "42b95460-e481-4d5a-a546-36ecd30eebd5",
+            "id": "3b1e08cb-256a-4a5f-a5a1-efa40e66b8f9",
             "unlock": [
                 "x",
                 "y"
             ],
-            "label": "player",
-            "scope": "PUBLIC",
+            "label": "playerContainer",
+            "scope": "CLASS",
             "components": [],
-            "x": 148,
-            "y": 474
+            "x": 179,
+            "y": 356,
+            "nestedPrefabs": []
         },
         {
             "prefabId": "792be592-4edd-40b5-9eaa-2c4b650603a0",
-            "id": "7a30c4dc-1f81-478b-a94d-d16653e2d79d",
+            "id": "7f0e8433-f1cb-44bb-9315-7228097b86a9",
             "unlock": [
                 "x",
                 "y"
             ],
             "label": "rock",
             "components": [],
-            "x": 368,
-            "y": 480
+            "x": 102,
+            "y": 267
         }
     ],
     "plainObjects": [],
@@ -45,14 +45,5 @@
         "url": "https://phasereditor2d.com",
         "contentType": "phasereditor2d.core.scene.SceneContentType",
         "version": 3
-    },
-    "lists": [
-        {
-            "id": "09bb5e6b-17f3-445f-b8dd-5e7543e2ea4b",
-            "label": "obstacles",
-            "objectIds": [
-                "7a30c4dc-1f81-478b-a94d-d16653e2d79d"
-            ]
-        }
-    ]
+    }
 }

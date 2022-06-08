@@ -475,67 +475,6 @@ export default class Level extends Phaser.Scene {
 		this.checkForGameOver()
 	}
 
-	// private genTrapProjectile(trapx: number, trapy: number)
-	// {
-	// 	const pos = [
-	// 		{x: 0, y: -32}, 
-	// 		{x:  -32, y: 0}, 
-	// 		{x: 0, y: 32}, 
-	// 		{x: 32, y: 0}, 
-	// 	]
-
-	// 	const physData = [
-	// 		{
-	// 			width: 16,
-	// 			height: 32,
-	// 			offsetX: 8,
-	// 			offsetY: 0
-	// 		},
-	// 		{
-	// 			width: 32,
-	// 			height: 16,
-	// 			offsetX: 0,
-	// 			offsetY: 8
-	// 		}
-	// 	]
-
-	// 	for(let i = 0; i < pos.length; i++)
-	// 	{
-	// 		const proj = this.trapProjGroup.create(trapx + pos[i].x, trapy + pos[i].y) as TrapProjectile
-
-	// 		const justMove = JustMovement.getComponent(proj)
-	// 		justMove.speed = 100
-	// 		switch(i) {
-	// 			case DIRECTION.BACK: {
-	// 				proj.setPhysicsData(physData[0])
-	// 				proj.angle = -90;
-	// 				justMove.moveUp();
-	// 				break;
-	// 			}
-	// 			case DIRECTION.LEFT: {
-	// 				proj.setPhysicsData(physData[1])
-	// 				proj.angle = 180;
-	// 				proj.flipY = true
-	// 				justMove.moveLeft();
-	// 				break;
-	// 			}
-	// 			case DIRECTION.FRONT: {
-	// 				proj.setPhysicsData(physData[0])
-	// 				proj.angle = 90;
-	// 				proj.flipY = true
-	// 				justMove.moveDown();
-	// 				break;
-	// 			}
-	// 			case DIRECTION.RIGHT: {
-	// 				proj.setPhysicsData(physData[1])
-	// 				proj.angle = 0;
-	// 				justMove.moveRight();
-	// 				break;
-	// 			}
-	// 		}
-	// 	}
-	// }
-
 	private checkForGameOver()
 	{
 		if(GameState.hp < 1 || GameState.sanity < 1)
