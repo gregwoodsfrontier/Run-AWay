@@ -41,7 +41,7 @@ export default class KeyboardInput extends UserComponent {
 	private AKey: Phaser.Input.Keyboard.Key
 	private SKey: Phaser.Input.Keyboard.Key
 	private DKey: Phaser.Input.Keyboard.Key
-	private active = false
+	private active = true
 
 	start()
 	{

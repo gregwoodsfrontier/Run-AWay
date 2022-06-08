@@ -417,6 +417,8 @@ export default class Level extends Phaser.Scene {
 	create() {
 
 		this.editorCreate()
+		const playerInput = KeyboardInput.getComponent(this.playerContainer)
+		playerInput.setActive(false)
 
 		this.exitZone.setDepth(-1000)
 		// this.loadSoundAssets()

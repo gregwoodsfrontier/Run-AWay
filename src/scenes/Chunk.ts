@@ -44,18 +44,6 @@ export default class Chunk extends Phaser.Scene {
 	create() {
 
 		this.editorCreate();
-
-		this.activatePlayerInput()
-	}
-
-	activatePlayerInput()
-	{
-		const input = KeyboardInput.getComponent(this.playerContainer)
-		if(!input)
-		{
-			return
-		}
-		input.setActive(true)
 	}
 
 	/* END-USER-CODE */
