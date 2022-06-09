@@ -119,6 +119,11 @@
                 "key": "Dithered Triangles"
             },
             {
+                "url": "assets/chunks/end_chunk.json",
+                "type": "tilemapTiledJSON",
+                "key": "end_chunk"
+            },
+            {
                 "url": "assets/EndTunnel.png",
                 "type": "image",
                 "key": "EndTunnel"
@@ -797,6 +802,11 @@
                 "url": "assets/PSD/right-walk-04.png",
                 "type": "image",
                 "key": "right-walk-04"
+            },
+            {
+                "url": "assets/chunks/start_chunk.json",
+                "type": "tilemapTiledJSON",
+                "key": "start_chunk"
             },
             {
                 "url": "assets/Start Anim/Start-Anim-01.png",

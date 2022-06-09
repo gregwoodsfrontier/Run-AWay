@@ -13,6 +13,32 @@
     },
     "displayList": [
         {
+            "type": "TilemapLayer",
+            "id": "9b84d64b-05e5-4ce2-97a3-7b75e7f8e66b",
+            "label": "floor_1",
+            "scope": "CLASS",
+            "components": [],
+            "tilemapId": "f49ded42-e498-416c-b8e4-da13535536e0",
+            "layerName": "floor",
+            "tilesets": [
+                "gamedevjs-cave-tileset-1"
+            ]
+        },
+        {
+            "type": "TilemapLayer",
+            "id": "7183e545-8f0d-41ee-8426-ca4f56c2dbf5",
+            "label": "wall_1",
+            "scope": "CLASS",
+            "components": [
+                "TileMapLayerPhysics"
+            ],
+            "tilemapId": "f49ded42-e498-416c-b8e4-da13535536e0",
+            "layerName": "wall",
+            "tilesets": [
+                "gamedevjs-cave-tileset-1"
+            ]
+        },
+        {
             "prefabId": "e0ddcad0-6688-4c91-8511-b98aa83b6507",
             "id": "3b1e08cb-256a-4a5f-a5a1-efa40e66b8f9",
             "unlock": [
@@ -22,8 +48,8 @@
             "label": "playerContainer",
             "scope": "CLASS",
             "components": [],
-            "x": 179,
-            "y": 356,
+            "x": 176,
+            "y": 280,
             "nestedPrefabs": []
         },
         {
@@ -35,11 +61,25 @@
             ],
             "label": "rock",
             "components": [],
-            "x": 102,
-            "y": 267
+            "x": 85,
+            "y": 154
         }
     ],
-    "plainObjects": [],
+    "plainObjects": [
+        {
+            "id": "f49ded42-e498-416c-b8e4-da13535536e0",
+            "type": "Tilemap",
+            "label": "start_chunk",
+            "scope": "PUBLIC",
+            "key": "start_chunk",
+            "tilesets": [
+                {
+                    "name": "gamedevjs-cave-tileset-1",
+                    "imageKey": "cave-test-tileset-1"
+                }
+            ]
+        }
+    ],
     "meta": {
         "app": "Phaser Editor 2D - Scene Editor",
         "url": "https://phasereditor2d.com",
